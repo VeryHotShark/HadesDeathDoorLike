@@ -13,7 +13,7 @@ public class CharacterRoll : CharacterModule {
 
     private bool _lostGround;
     private bool _rollStopped;
-    private float _rollProgress;
+    private bool _rollStarted;
     private float _rollTimestamp;
     private float _rollDotThreshold;
     
@@ -21,12 +21,10 @@ public class CharacterRoll : CharacterModule {
     private Vector3 _startPos;
     private Vector3 _rollDirection;
 
-    private void Awake() {
-        _rollDotThreshold = Mathf.Cos(_maxRollAngle * Mathf.Deg2Rad);
-    }
+    private void Awake() => _rollDotThreshold = Mathf.Cos(_maxRollAngle * Mathf.Deg2Rad);
 
     public override void OnEnter() {
-        Debug.Log("Dupa");
+        _rollStarted = true;
         _rollTimestamp = Time.time;
         _rollDirection = Controller.MoveInput.sqrMagnitude < Mathf.Epsilon ? Controller.LastNonZeroMoveInput : Controller.MoveInput;
         _startPos = Motor.TransientPosition;
@@ -34,7 +32,7 @@ public class CharacterRoll : CharacterModule {
     }
 
     public override void OnExit() {
-        _rollProgress = 0.0f;
+        _rollStarted = false;
         _rollStopped = false;
     }
 
@@ -46,8 +44,8 @@ public class CharacterRoll : CharacterModule {
             return;
         }
 
-        _rollProgress = (Time.time - _rollTimestamp) / _duration;
-        float t = _curve.Evaluate(_rollProgress);
+        float rollProgress = (Time.time - _rollTimestamp) / _duration;
+        float t = _curve.Evaluate(rollProgress);
         Vector3 desiredPos = Vector3.Lerp(_startPos, _endPos, t);
         Vector3 direction = Motor.TransientPosition.DirectionTo(desiredPos);
         float deltaDistance = Vector3.Distance(Motor.TransientPosition, desiredPos);
@@ -57,7 +55,7 @@ public class CharacterRoll : CharacterModule {
         currentVelocity = Motor.GetDirectionTangentToSurface(currentVelocity, 
             Motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
 
-        if (_rollProgress > 1.0f) 
+        if (rollProgress > 1.0f) 
             _rollStopped = true;
     }
 
@@ -81,5 +79,5 @@ public class CharacterRoll : CharacterModule {
         _rollStopped = true;
     }
 
-    public bool DuringRoll => _rollProgress > 0.0f && !_rollStopped;
+    public bool DuringRoll => _rollStarted && !_rollStopped;
 }
