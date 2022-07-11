@@ -8,17 +8,17 @@ namespace VHS {
         [SerializeField] private Transform _characterReferencePoint;
 
         private Plane _cursorPlane;
-        private CameraController _cameraController;
+        private OldCameraController _oldCameraController;
         
         private void Awake() {
-            _cameraController = GetComponent<CameraController>();
+            _oldCameraController = GetComponent<OldCameraController>();
             _cursorPlane = new Plane(Vector3.up, -_characterReferencePoint.position.y);
         }
 
         public void SetCursorPos(Vector2 mousePos) {
             _cursorPlane.distance = -_characterReferencePoint.position.y;
             
-            Ray ray = _cameraController.Camera.ScreenPointToRay(mousePos);
+            Ray ray = _oldCameraController.Camera.ScreenPointToRay(mousePos);
 
             if (_cursorPlane.Raycast(ray, out float distance)) {
                 Vector3 pos = ray.GetPoint(distance);

@@ -23,14 +23,14 @@ namespace VHS {
         private float _targetClimb;
 
         private Animator _animator;
-        private CharacterController _cc;
+        private OldCharacterController _cc;
 
         public Animator Animator => _animator;
         public float GetMoveParam => _animator.GetFloat(_moveParam);
 
         private void Awake() {
             _animator = GetComponent<Animator>();
-            _cc = GetComponent<CharacterController>();
+            _cc = GetComponent<OldCharacterController>();
         }
 
         private void OnEnable() {
@@ -81,7 +81,7 @@ namespace VHS {
 
         private void OnHeavyAttack() => _animator.SetInteger(_attackTypeParam,2);
 
-        public void SetInputs(CharacterInputs inputs) {
+        public void SetInputs(OldCharacterInputs inputs) {
             _targetMove = _cc.MoveInput.magnitude;
             _targetClimb = inputs.MoveAxisForward;
         }

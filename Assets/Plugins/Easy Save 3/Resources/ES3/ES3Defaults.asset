@@ -44,7 +44,9 @@ MonoBehaviour:
     - AstarPathfindingProjectEditor
     - PPv2URPConverters
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
+    - RotaryHeart.PhysicsDebugExtension.Editor
     - PackageToolsEditor
+    - RotaryHeart
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0

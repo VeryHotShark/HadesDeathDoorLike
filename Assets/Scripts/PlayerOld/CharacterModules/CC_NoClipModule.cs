@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace VHS {
-    public class CC_NoClipModule : CharacterControllerModule {
+    public class CC_NoClipModule : OldCharacterControllerModule {
         [SerializeField] private float _noClipMoveSpeed = 10f;
         [SerializeField] private float _noClipSharpness = 15f;
         [SerializeField] private float _orientationSharpness = 15f;
         
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             Vector3 moveInput = new Vector3(inputs.MoveAxisRight, 0f, inputs.MoveAxisForward);
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(moveInput, 1f);
             Vector3 cameraPlanarDirection = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;

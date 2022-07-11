@@ -4,17 +4,17 @@ using KinematicCharacterController;
 using UnityEngine;
 
 namespace VHS {
-    public abstract class CharacterControllerModule : MonoBehaviour {
-        private CharacterController _controller;
+    public abstract class OldCharacterControllerModule : MonoBehaviour {
+        private OldCharacterController _controller;
         protected KinematicCharacterMotor Motor => Controller.Motor;
         protected CC_StateMachine StateMachine => Controller.StateMachine;
-        protected CharacterController Controller => _controller ??= GetComponent<CharacterController>();
+        protected OldCharacterController Controller => _controller ??= GetComponent<OldCharacterController>();
 
         public virtual void OnStateEnter() { }
         public virtual void OnStateExit() { }
         public virtual void ResetValues() { }
         
-        public abstract void SetInputs(CharacterInputs inputs);
+        public abstract void SetInputs(OldCharacterInputs inputs);
         public virtual void HandlePreCharacterUpdate(float deltaTime) { }
         public virtual void HandlePostCharacterUpdate(float deltaTime) { }
         public virtual void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) { }

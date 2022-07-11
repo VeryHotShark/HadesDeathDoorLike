@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_CrouchModule : CharacterControllerModule {
+    public class CC_CrouchModule : OldCharacterControllerModule {
         [SerializeField, Range(0f, 1f)] private float _crouchRatio = 0.5f;
         
         private bool _isCrouching;
@@ -12,7 +12,7 @@ namespace VHS {
         
         private Collider[] _probedColliders = new Collider[8];
         
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             if (inputs.CrouchDown) {
                 _shouldBeCrouching = true;
 

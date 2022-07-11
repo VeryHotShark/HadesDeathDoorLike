@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 namespace VHS {
-    public class CC_SwimModule : CharacterControllerModule {
+    public class CC_SwimModule : OldCharacterControllerModule {
         [SerializeField] private Transform _swimReferencePoint;
         [SerializeField] private LayerMask _waterLayer;
         [SerializeField] private float _jumpOutSpeed = 10f;
@@ -18,7 +18,7 @@ namespace VHS {
         private Collider _waterZone;
         private Collider[] _probedColliders = new Collider[8];
         
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             Vector3 moveInput = new Vector3(inputs.MoveAxisRight, 0f, inputs.MoveAxisForward);
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(moveInput, 1f);
 

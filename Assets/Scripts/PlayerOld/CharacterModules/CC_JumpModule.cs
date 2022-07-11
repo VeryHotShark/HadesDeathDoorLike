@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_JumpModule : CharacterControllerModule {
+    public class CC_JumpModule : OldCharacterControllerModule {
         [Header("Jumping")]
         [SerializeField] private float _jumpSpeed = 10f;
         [SerializeField] private float _jumpPreGroundingGraceTime = 0.2f;
@@ -15,7 +15,7 @@ namespace VHS {
         private float _timeSinceJumpRequested;
         private float _timeSinceLastAbleToJump;
         
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             if (inputs.RollPressed) {
                 _jumpRequested = true;
                 _timeSinceJumpRequested = 0f;

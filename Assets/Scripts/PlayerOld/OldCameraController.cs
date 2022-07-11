@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CameraController : MonoBehaviour {
+    public class OldCameraController : MonoBehaviour {
         
         private Camera _camera;
         private CC_Cursor _cursor;

@@ -4,7 +4,7 @@ using KinematicCharacterController;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_ChargeModule : CharacterControllerModule {
+    public class CC_ChargeModule : OldCharacterControllerModule {
         [SerializeField] private float _chargeSpeed = 15f;
         [SerializeField] private float _stoppedTime = 1f;
         [SerializeField] private float _maxChargeTime = 1.5f;
@@ -15,7 +15,7 @@ namespace VHS {
         private float _timeSinceStartedCharge;
         private Vector3 _currentChargeVelocity;
         
-        public override void SetInputs(CharacterInputs inputs) { }
+        public override void SetInputs(OldCharacterInputs inputs) { }
 
         public override void OnStateEnter() {
             _isStopped = false;

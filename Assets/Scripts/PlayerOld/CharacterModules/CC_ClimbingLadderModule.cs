@@ -10,7 +10,7 @@ namespace VHS {
         DeAnchoring,
     }
     
-    public class CC_ClimbingLadderModule : CharacterControllerModule {
+    public class CC_ClimbingLadderModule : OldCharacterControllerModule {
         [SerializeField] private float _climbingSpeed = 4f;
         [SerializeField] private float _anchoringDuration = 0.25f;
         [SerializeField] private LayerMask _interactionLayer;
@@ -44,7 +44,7 @@ namespace VHS {
             }
         }
         
-        public override void SetInputs(CharacterInputs inputs) => _ladderVerticalInput = inputs.MoveAxisForward;
+        public override void SetInputs(OldCharacterInputs inputs) => _ladderVerticalInput = inputs.MoveAxisForward;
 
         public void HandlePotentialLadderAnchor() {
             bool overlapSomething = Motor.CharacterOverlap(Motor.TransientPosition,

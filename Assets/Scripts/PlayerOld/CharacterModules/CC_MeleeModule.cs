@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_MeleeModule : CharacterControllerModule {
+    public class CC_MeleeModule : OldCharacterControllerModule {
         [SerializeField] private int _comboChainCount = 3;
         
         [SerializeField] private float _heavyAttackThreshold = 0.75f;
@@ -16,7 +16,7 @@ namespace VHS {
         private float _timeSinceAttackReleased;
 
         
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             if (_lastAttackDown != inputs.AttackDown) {
                 if(!_lastAttackDown && inputs.AttackDown)
                     OnAttackPressed();

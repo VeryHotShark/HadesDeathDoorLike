@@ -3,7 +3,7 @@ using UnityEngine;
 using KinematicCharacterController;
 
 namespace VHS {
-    public class CharacterController : MonoBehaviour, ICharacterController {
+    public class OldCharacterController : MonoBehaviour, ICharacterController {
         [SerializeField] private Vector3 _gravity = new(0f,-30f,0f);
 
         private KinematicCharacterMotor _motor;
@@ -28,7 +28,7 @@ namespace VHS {
         public CC_StateMachine StateMachine => _stateMachine;
         public CC_CombinedStatesModule DefaultMovementModule => _defaultMovementModule;
         
-        public CharacterInputs LastCharacterInputs { get; private set; }
+        public OldCharacterInputs LastOldCharacterInputs { get; private set; }
 
         public Vector3 Gravity => _gravity;
         
@@ -70,8 +70,8 @@ namespace VHS {
             _motor.CharacterController = this;
         }
 
-        public void SetInputs(ref CharacterInputs inputs) {
-            LastCharacterInputs = inputs;
+        public void SetInputs(ref OldCharacterInputs inputs) {
+            LastOldCharacterInputs = inputs;
             _animatorController.SetInputs(inputs);
             
             if(inputs.RollPressed)

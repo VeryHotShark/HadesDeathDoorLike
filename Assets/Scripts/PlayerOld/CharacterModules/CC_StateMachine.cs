@@ -7,24 +7,24 @@ namespace VHS {
     public class CC_StateMachine {
         // TODO zrobić tablicę która po nazwie wyszukuje Indexu State-a, by nie porównywać po Typach
         
-        public event Action<CharacterControllerModule> OnStateChanged = delegate { };
+        public event Action<OldCharacterControllerModule> OnStateChanged = delegate { };
 
-        private List<CharacterControllerModule> _states = new List<CharacterControllerModule>();
+        private List<OldCharacterControllerModule> _states = new List<OldCharacterControllerModule>();
 
-        private CharacterControllerModule _currentState = null;
-        private CharacterControllerModule _lastState = null;
+        private OldCharacterControllerModule _currentState = null;
+        private OldCharacterControllerModule _lastState = null;
 
-        public CC_StateMachine(CharacterControllerModule initState) {
+        public CC_StateMachine(OldCharacterControllerModule initState) {
             _currentState = initState;
             AddState(initState);
         }
 
-        private void AddState(CharacterControllerModule behaviour) {
+        private void AddState(OldCharacterControllerModule behaviour) {
             if (!_states.Contains(behaviour))
                 _states.Add(behaviour);
         }
 
-        public void SetState(CharacterControllerModule newState) {
+        public void SetState(OldCharacterControllerModule newState) {
             if (_currentState == newState)
                 return;
             
@@ -40,11 +40,11 @@ namespace VHS {
         }
 
         public void ResetStatesValues() {
-            foreach (CharacterControllerModule state in _states)
+            foreach (OldCharacterControllerModule state in _states)
                 state.ResetValues();
         }
 
-        public CharacterControllerModule CurrentState => _currentState;
-        public CharacterControllerModule LastState => _lastState;
+        public OldCharacterControllerModule CurrentState => _currentState;
+        public OldCharacterControllerModule LastState => _lastState;
     }
 }

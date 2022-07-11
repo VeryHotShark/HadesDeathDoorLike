@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_MovementModule : CharacterControllerModule {
+    public class CC_MovementModule : OldCharacterControllerModule {
         [Header("Stable Movement")]
         [SerializeField] private float _maxStableMoveSpeed = 10f;
         [SerializeField] private float _stableMovementSharpness = 15;
@@ -22,7 +22,7 @@ namespace VHS {
         
         private Vector3 _rootMotionPositionDelta;
 
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             Vector3 moveInput = new Vector3(inputs.MoveAxisRight, 0f, inputs.MoveAxisForward);
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(moveInput, 1f);
 

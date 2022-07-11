@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_RollModule : CharacterControllerModule {
+    public class CC_RollModule : OldCharacterControllerModule {
         [SerializeField] private float _rollDuration = 1.5f;
             
         [Header("Root Motion")]
@@ -17,7 +17,7 @@ namespace VHS {
         
         private Vector3 _rootMotionPositionDelta;
 
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             _rollRequested = true;
         }
 

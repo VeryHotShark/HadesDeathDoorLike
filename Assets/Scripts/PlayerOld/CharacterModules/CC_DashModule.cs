@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_DashModule : CharacterControllerModule {
+    public class CC_DashModule : OldCharacterControllerModule {
         [SerializeField] private float _force = 10f;
         
         private Vector3 _internalVelocityAdd;
         
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             if (inputs.DashPressed) {
                 Motor.ForceUnground();
                 Vector3 dashDirection = Controller.MoveInput.sqrMagnitude > 0 ? Controller.MoveInput : Motor.CharacterForward; 

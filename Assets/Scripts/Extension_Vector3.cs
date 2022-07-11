@@ -45,6 +45,10 @@ namespace VHS {
             return Vector3.Lerp(ab_bc, bc_cd, t);
         }
 
+        public static float DistanceSquaredTo(this Vector3 a, Vector3 b) {
+            return (a - b).sqrMagnitude;
+        }
+
         /// <summary>
         /// Returns -1 if point is to the left of forward direction, 1 if it's on the right, 0 if it's on the forward/backward direction
         /// </summary>

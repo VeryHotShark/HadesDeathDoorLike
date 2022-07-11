@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace VHS {
-    public struct CharacterInputs {
+    public struct OldCharacterInputs {
         public bool CrouchUp;
         public bool CrouchDown;
         public bool ChargingDown;
@@ -20,10 +20,10 @@ namespace VHS {
         public Quaternion CursorRotation;
     }
     
-    public class Player : MonoBehaviour {
+    public class OldPlayer : MonoBehaviour {
         [SerializeField] private bool _lockCursor;
-        [SerializeField] private CameraController _camera;
-        [SerializeField] private CharacterController _character;
+        [SerializeField] private OldCameraController _oldCamera;
+        [SerializeField] private OldCharacterController _oldCharacter;
 
         private Vector3 _lookVector;
         private Vector2 _moveInput;
@@ -67,26 +67,26 @@ namespace VHS {
         }
 
         private void LateUpdate() {
-            _camera.SetCursorPos(_mousePos);
+            _oldCamera.SetCursorPos(_mousePos);
         }
 
         private void HandleCharacterInput() {
-            CharacterInputs characterInputs = new CharacterInputs();
+            OldCharacterInputs oldCharacterInputs = new OldCharacterInputs();
 
-            characterInputs.AttackDown = _attackDown;
-            characterInputs.MoveAxisRight = _moveInput.x;
-            characterInputs.MoveAxisForward = _moveInput.y;
-            characterInputs.CursorRotation = _camera.RotationToCursor;
-            characterInputs.CameraRotation = _camera.transform.rotation;
-            characterInputs.RollPressed = _input.CharacterControls.Roll.triggered;
-            characterInputs.DashPressed = Keyboard.current.vKey.wasPressedThisFrame;
-            characterInputs.ChargingDown = Keyboard.current.cKey.wasPressedThisFrame;
-            characterInputs.InteractPressed = Keyboard.current.eKey.wasPressedThisFrame;
-            characterInputs.IgnoreCollisionsPressed = Keyboard.current.qKey.wasPressedThisFrame;
-            characterInputs.CrouchDown = _input.CharacterControls.Crouch.WasPressedThisFrame();
-            characterInputs.CrouchUp = _input.CharacterControls.Crouch.WasReleasedThisFrame();
+            oldCharacterInputs.AttackDown = _attackDown;
+            oldCharacterInputs.MoveAxisRight = _moveInput.x;
+            oldCharacterInputs.MoveAxisForward = _moveInput.y;
+            oldCharacterInputs.CursorRotation = _oldCamera.RotationToCursor;
+            oldCharacterInputs.CameraRotation = _oldCamera.transform.rotation;
+            oldCharacterInputs.RollPressed = _input.CharacterControls.Roll.triggered;
+            oldCharacterInputs.DashPressed = Keyboard.current.vKey.wasPressedThisFrame;
+            oldCharacterInputs.ChargingDown = Keyboard.current.cKey.wasPressedThisFrame;
+            oldCharacterInputs.InteractPressed = Keyboard.current.eKey.wasPressedThisFrame;
+            oldCharacterInputs.IgnoreCollisionsPressed = Keyboard.current.qKey.wasPressedThisFrame;
+            oldCharacterInputs.CrouchDown = _input.CharacterControls.Crouch.WasPressedThisFrame();
+            oldCharacterInputs.CrouchUp = _input.CharacterControls.Crouch.WasReleasedThisFrame();
             
-            _character.SetInputs(ref characterInputs);
+            _oldCharacter.SetInputs(ref oldCharacterInputs);
         }
     }
 }

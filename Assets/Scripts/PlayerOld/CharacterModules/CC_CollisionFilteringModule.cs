@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class CC_CollisionFilteringModule : CharacterControllerModule {
+    public class CC_CollisionFilteringModule : OldCharacterControllerModule {
         [SerializeField] private List<Collider> _ignoredColliders = new List<Collider>();
 
         private bool _ignoreCollisions;
         
-        public override void SetInputs(CharacterInputs inputs) {
+        public override void SetInputs(OldCharacterInputs inputs) {
             if (inputs.IgnoreCollisionsPressed)
                 _ignoreCollisions = !_ignoreCollisions;
         }
