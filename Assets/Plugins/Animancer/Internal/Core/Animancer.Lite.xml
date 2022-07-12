@@ -10,7 +10,7 @@
             <see cref="P:System.Collections.Generic.EqualityComparer`1.Default"/> for types derived from <see cref="T:UnityEngine.Object"/>.
             </summary>
             <remarks>
-            This class is used when <see cref="P:Animancer.AnimancerPlayable.StateDictionary.ReferenceKeysOnly"/> is false.
+            This class is used in <see cref="P:Animancer.AnimancerPlayable.StateDictionary.EqualityComparer"/> by default.
             <para></para>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/playing/states#performance">Performance</see>
             </remarks>
@@ -32,7 +32,7 @@
             <see cref="T:Animancer.FastComparer"/>. Unfortunately this means it will not work for boxed value types (such as enums).
             </summary>
             <remarks>
-            This class is used when <see cref="P:Animancer.AnimancerPlayable.StateDictionary.ReferenceKeysOnly"/> is true.
+            This class can be used in <see cref="P:Animancer.AnimancerPlayable.StateDictionary.EqualityComparer"/>.
             <para></para>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/playing/states#performance">Performance</see>
             </remarks>
@@ -476,6 +476,9 @@
             </remarks>
             https://kybernetik.com.au/animancer/api/Animancer/ControllerState
             
+            https://kybernetik.com.au/animancer/api/Animancer/ControllerState
+            https://kybernetik.com.au/animancer/api/Animancer/ControllerState
+            https://kybernetik.com.au/animancer/api/Animancer/ControllerState
         </member>
         <member name="T:Animancer.ControllerState.ITransition">
             <summary>An <see cref="T:Animancer.ITransition`1"/> that creates a <see cref="T:Animancer.ControllerState"/>.</summary>
@@ -489,19 +492,34 @@
         <member name="P:Animancer.ControllerState.Playable">
             <summary>The internal system which plays the <see cref="T:UnityEngine.RuntimeAnimatorController"/>.</summary>
         </member>
-        <member name="P:Animancer.ControllerState.KeepStateOnStop">
-            <summary>
-            If false, <see cref="M:Animancer.ControllerState.Stop"/> will reset all layers to their default state. Default False.
+        <member name="T:Animancer.ControllerState.ActionOnStop">
+            <summary>Determines what a layer does when <see cref="M:Animancer.ControllerState.Stop"/> is called.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.ActionOnStop.DefaultState">
+            <summary>Reset the layer to the first state it was in.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.ActionOnStop.RewindTime">
+            <summary>Rewind the current state's time to 0.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.ActionOnStop.Continue">
+            <summary>Allow the current state to stay at its current time.</summary>
+        </member>
+        <member name="P:Animancer.ControllerState.ActionsOnStop">
+            <summary>Determines what each layer does when <see cref="M:Animancer.ControllerState.Stop"/> is called.</summary>
+            <remarks>
+            If empty, all layers will reset to their <see cref="F:Animancer.ControllerState.ActionOnStop.DefaultState"/>.
             <para></para>
-            The <see cref="P:Animancer.ControllerState.DefaultStateHashes"/> will only be gathered the first time this property is set to false or
-            <see cref="M:Animancer.ControllerState.GatherDefaultStates"/> is called manually.
-            </summary>
+            If this array is smaller than the <see cref="M:UnityEngine.Animations.AnimatorControllerPlayable.GetLayerCount"/>, any additional
+            layers will use the last value in this array.
+            </remarks>
         </member>
         <member name="P:Animancer.ControllerState.DefaultStateHashes">
             <summary>
             The <see cref="P:UnityEngine.AnimatorStateInfo.shortNameHash"/> of the default state on each layer, used to reset to
-            those states when <see cref="M:Animancer.ControllerState.Stop"/> is called if <see cref="P:Animancer.ControllerState.KeepStateOnStop"/> is true.
+            those states when <see cref="M:Animancer.ControllerState.ApplyActionsOnStop"/> is called for layers using
+            <see cref="F:Animancer.ControllerState.ActionOnStop.DefaultState"/>.
             </summary>
+            <remarks>Gathered using <see cref="M:Animancer.ControllerState.GatherDefaultStates"/>.</remarks>
         </member>
         <member name="P:Animancer.ControllerState.UnsupportedEventsMessage">
             <summary>[Assert-Only] Animancer Events doesn't work properly on <see cref="T:Animancer.ControllerState"/>s.</summary>
@@ -510,6 +528,10 @@
             <summary>[Assert-Only]
             <see cref="M:UnityEngine.Playables.PlayableExtensions.SetSpeed``1(``0,System.Double)"/> does nothing on <see cref="T:Animancer.ControllerState"/>s.
             </summary>
+        </member>
+        <member name="M:Animancer.ControllerState.AssertParameterValue(System.Single,System.String)">
+            <summary>[Assert-Conditional] Asserts that the `value` is valid.</summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The `value` is NaN or Infinity.</exception>
         </member>
         <member name="M:Animancer.ControllerState.CopyIKFlags(Animancer.AnimancerNode)">
             <summary>IK cannot be dynamically enabled on a <see cref="T:Animancer.ControllerState"/>.</summary>
@@ -520,7 +542,17 @@
         <member name="P:Animancer.ControllerState.ApplyFootIK">
             <summary>IK cannot be dynamically enabled on a <see cref="T:Animancer.ControllerState"/>.</summary>
         </member>
-        <member name="M:Animancer.ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,System.Boolean)">
+        <member name="P:Animancer.ControllerState.ParameterCount">
+            <summary>The number of parameters being wrapped by this state.</summary>
+        </member>
+        <member name="M:Animancer.ControllerState.GetParameterHash(System.Int32)">
+            <summary>Returns the hash of a parameter being wrapped by this state.</summary>
+            <exception cref="T:System.NotSupportedException">This state doesn't wrap any parameters.</exception>
+        </member>
+        <member name="M:Animancer.ControllerState.#ctor(UnityEngine.RuntimeAnimatorController)">
+            <summary>Creates a new <see cref="T:Animancer.ControllerState"/> to play the `controller`.</summary>
+        </member>
+        <member name="M:Animancer.ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ActionOnStop[])">
             <summary>Creates a new <see cref="T:Animancer.ControllerState"/> to play the `controller`.</summary>
         </member>
         <member name="M:Animancer.ControllerState.CreatePlayable(UnityEngine.Playables.Playable@)">
@@ -532,41 +564,34 @@
             parameter values.
             </summary>
         </member>
-        <member name="P:Animancer.ControllerState.StateInfo">
+        <member name="M:Animancer.ControllerState.GetStateInfo(System.Int32)">
             <summary>
-            The current state on layer 0, or the next state if it is currently in a transition.
+            Returns the current state on the specified `layer`, or the next state if it is currently in a transition.
             </summary>
         </member>
         <member name="P:Animancer.ControllerState.RawTime">
             <summary>
-            The <see cref="P:UnityEngine.AnimatorStateInfo.normalizedTime"/> * <see cref="P:UnityEngine.AnimatorStateInfo.length"/> of the
-            <see cref="P:Animancer.ControllerState.StateInfo"/>.
+            The <see cref="P:UnityEngine.AnimatorStateInfo.normalizedTime"/> * <see cref="P:UnityEngine.AnimatorStateInfo.length"/> of layer 0.
             </summary>
         </member>
         <member name="P:Animancer.ControllerState.Length">
-            <summary>The current <see cref="P:UnityEngine.AnimatorStateInfo.length"/> (on layer 0).</summary>
+            <summary>The current <see cref="P:UnityEngine.AnimatorStateInfo.length"/> of layer 0.</summary>
         </member>
         <member name="P:Animancer.ControllerState.IsLooping">
             <summary>Indicates whether the current state on layer 0 will loop back to the start when it reaches the end.</summary>
         </member>
         <member name="M:Animancer.ControllerState.GatherDefaultStates">
-            <summary>Gathers the <see cref="P:Animancer.ControllerState.DefaultStateHashes"/> from the current states.</summary>
+            <summary>Gathers the <see cref="P:Animancer.ControllerState.DefaultStateHashes"/> from the current states on each layer.</summary>
         </member>
         <member name="M:Animancer.ControllerState.Stop">
             <summary>
-            Calls the base <see cref="M:Animancer.AnimancerState.Stop"/> and if <see cref="P:Animancer.ControllerState.KeepStateOnStop"/> is false it also
-            calls <see cref="M:Animancer.ControllerState.ResetToDefaultStates"/>.
+            Stops the animation and makes it inactive immediately so it no longer affects the output.
+            Also calls <see cref="M:Animancer.ControllerState.ApplyActionsOnStop"/>.
             </summary>
         </member>
-        <member name="M:Animancer.ControllerState.ResetToDefaultStates">
-            <summary>
-            Resets all layers to their default state.
-            </summary>
+        <member name="M:Animancer.ControllerState.ApplyActionsOnStop">
+            <summary>Applies the <see cref="P:Animancer.ControllerState.ActionsOnStop"/> to their corresponding layers.</summary>
             <exception cref="T:System.NullReferenceException"><see cref="P:Animancer.ControllerState.DefaultStateHashes"/> is null.</exception>
-            <exception cref="T:System.IndexOutOfRangeException">
-            The size of <see cref="P:Animancer.ControllerState.DefaultStateHashes"/> is larger than the number of layers in the
-            <see cref="P:Animancer.ControllerState.Controller"/>.
-            </exception>
         </member>
         <member name="M:Animancer.ControllerState.GatherAnimationClips(System.Collections.Generic.ICollection{UnityEngine.AnimationClip})">
             <inheritdoc/>
@@ -722,6 +747,70 @@
         <member name="M:Animancer.ControllerState.GetNextAnimatorClipInfoCount(System.Int32)">
             <summary>Gets the number of <see cref="T:UnityEngine.AnimationClip"/>s currently being transitioned towards.</summary>
         </member>
+        <member name="T:Animancer.ControllerState.DampedFloatParameter">
+            <summary>
+            A wrapper for <see cref="M:UnityEngine.Mathf.SmoothDamp(System.Single,System.Single,System.Single@,System.Single,System.Single,System.Single)"/> to control float
+            parameters in <see cref="T:Animancer.ControllerState"/>s similar to
+            <see cref="M:UnityEngine.Animator.SetFloat(System.Int32,System.Single,System.Single,System.Single)"/>.
+            </summary>
+        </member>
+        <member name="F:Animancer.ControllerState.DampedFloatParameter.parameter">
+            <summary>The name of this parameter.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.DampedFloatParameter.smoothTime">
+            <summary>The amount of time allowed to smooth out a value change.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.DampedFloatParameter.currentValue">
+            <summary>The last value the parameter was set to.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.DampedFloatParameter.targetValue">
+            <summary>The value that the parameter is moving towards.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.DampedFloatParameter.maxSpeed">
+            <summary>The maximum speed that the current value can move towards the target.</summary>
+        </member>
+        <member name="F:Animancer.ControllerState.DampedFloatParameter.velocity">
+            <summary>The speed at which the value is currently moving.</summary>
+        </member>
+        <member name="M:Animancer.ControllerState.DampedFloatParameter.#ctor(Animancer.ControllerState.ParameterID,System.Single,System.Single,System.Single)">
+            <summary>Creates a new <see cref="T:Animancer.ControllerState.DampedFloatParameter"/>.</summary>
+        </member>
+        <member name="M:Animancer.ControllerState.DampedFloatParameter.Apply(Animancer.ControllerState)">
+            <summary>Updates the target parameter.</summary>
+        </member>
+        <member name="M:Animancer.ControllerState.DampedFloatParameter.Apply(Animancer.ControllerState,System.Single)">
+            <summary>Updates the target parameter.</summary>
+        </member>
+        <member name="M:Animancer.ControllerState.CreateDrawer">
+            <summary>[Editor-Only] Returns a <see cref="T:Animancer.ControllerState.Drawer"/> for this state.</summary>
+        </member>
+        <member name="T:Animancer.ControllerState.Drawer">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.ControllerState.Drawer.#ctor(Animancer.ControllerState)">
+            <summary>Creates a new <see cref="T:Animancer.ControllerState.Drawer"/> to manage the Inspector GUI for the `state`.</summary>
+        </member>
+        <member name="M:Animancer.ControllerState.Drawer.DoDetailsGUI">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.ControllerState.Drawer.GatherParameters">
+            <summary>Fills the <see cref="F:Animancer.ControllerState.Drawer.Parameters"/> list with the current parameter details.</summary>
+        </member>
+        <member name="P:Animancer.ControllerState.Drawer.ParameterCount">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.ControllerState.Drawer.GetParameterName(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.ControllerState.Drawer.GetParameterType(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.ControllerState.Drawer.GetParameterValue(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.ControllerState.Drawer.SetParameterValue(System.Int32,System.Object)">
+            <inheritdoc/>
+        </member>
         <member name="T:Animancer.ControllerState.ParameterID">
             <summary>A wrapper for the name and hash of an <see cref="T:UnityEngine.AnimatorControllerParameter"/>.</summary>
         </member>
@@ -769,45 +858,12 @@
             </summary>
             <exception cref="T:System.ArgumentException"/>
         </member>
+        <member name="M:Animancer.ControllerState.ParameterID.GetParameterDetails(UnityEngine.RuntimeAnimatorController)">
+            <summary>[Editor-Only] Returns the hash mapped to the type of all parameters in the `controller`.</summary>
+            <remarks>This doesn't work for if the `controller` was loaded from an Asset Bundle.</remarks>
+        </member>
         <member name="M:Animancer.ControllerState.ParameterID.ToString">
             <summary>Returns a string containing the <see cref="F:Animancer.ControllerState.ParameterID.Name"/> and <see cref="F:Animancer.ControllerState.ParameterID.Hash"/>.</summary>
-        </member>
-        <member name="P:Animancer.ControllerState.ParameterCount">
-            <summary>The number of parameters being wrapped by this state.</summary>
-        </member>
-        <member name="M:Animancer.ControllerState.GetParameterHash(System.Int32)">
-            <summary>Returns the hash of a parameter being wrapped by this state.</summary>
-            <exception cref="T:System.NotSupportedException">This state doesn't wrap any parameters.</exception>
-        </member>
-        <member name="M:Animancer.ControllerState.CreateDrawer">
-            <summary>[Editor-Only] Returns a <see cref="T:Animancer.ControllerState.Drawer"/> for this state.</summary>
-        </member>
-        <member name="T:Animancer.ControllerState.Drawer">
-            <inheritdoc/>
-        </member>
-        <member name="M:Animancer.ControllerState.Drawer.#ctor(Animancer.ControllerState)">
-            <summary>Creates a new <see cref="T:Animancer.ControllerState.Drawer"/> to manage the Inspector GUI for the `state`.</summary>
-        </member>
-        <member name="M:Animancer.ControllerState.Drawer.DoDetailsGUI">
-            <inheritdoc/>
-        </member>
-        <member name="M:Animancer.ControllerState.Drawer.GatherParameters">
-            <summary>Fills the <see cref="F:Animancer.ControllerState.Drawer.Parameters"/> list with the current parameter details.</summary>
-        </member>
-        <member name="P:Animancer.ControllerState.Drawer.ParameterCount">
-            <inheritdoc/>
-        </member>
-        <member name="M:Animancer.ControllerState.Drawer.GetParameterName(System.Int32)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Animancer.ControllerState.Drawer.GetParameterType(System.Int32)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Animancer.ControllerState.Drawer.GetParameterValue(System.Int32)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Animancer.ControllerState.Drawer.SetParameterValue(System.Int32,System.Object)">
-            <inheritdoc/>
         </member>
         <member name="T:Animancer.Float1ControllerState">
             <summary>[Pro-Only] A <see cref="T:Animancer.ControllerState"/> which manages one float parameter.</summary>
@@ -830,8 +886,12 @@
             Gets and sets a float parameter in the <see cref="P:Animancer.ControllerState.Controller"/> using the
             <see cref="P:Animancer.Float1ControllerState.ParameterID"/>.
             </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is NaN or Infinity.</exception>
         </member>
-        <member name="M:Animancer.Float1ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,System.Boolean)">
+        <member name="M:Animancer.Float1ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ActionOnStop[])">
+            <summary>Creates a new <see cref="T:Animancer.Float1ControllerState"/> to play the `controller`.</summary>
+        </member>
+        <member name="M:Animancer.Float1ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID)">
             <summary>Creates a new <see cref="T:Animancer.Float1ControllerState"/> to play the `controller`.</summary>
         </member>
         <member name="P:Animancer.Float1ControllerState.ParameterCount">
@@ -861,6 +921,7 @@
             Gets and sets a float parameter in the <see cref="P:Animancer.ControllerState.Controller"/> using the
             <see cref="P:Animancer.Float2ControllerState.ParameterXID"/>.
             </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is NaN or Infinity.</exception>
         </member>
         <member name="P:Animancer.Float2ControllerState.ParameterYID">
             <summary>The identifier of the parameter which <see cref="P:Animancer.Float2ControllerState.ParameterY"/> will get and set.</summary>
@@ -870,13 +931,17 @@
             Gets and sets a float parameter in the <see cref="P:Animancer.ControllerState.Controller"/> using the
             <see cref="P:Animancer.Float2ControllerState.ParameterYID"/>.
             </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is NaN or Infinity.</exception>
         </member>
         <member name="P:Animancer.Float2ControllerState.Parameter">
             <summary>
             Gets and sets <see cref="P:Animancer.Float2ControllerState.ParameterX"/> and <see cref="P:Animancer.Float2ControllerState.ParameterY"/>.
             </summary>
         </member>
-        <member name="M:Animancer.Float2ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID,System.Boolean)">
+        <member name="M:Animancer.Float2ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ActionOnStop[])">
+            <summary>Creates a new <see cref="T:Animancer.Float2ControllerState"/> to play the `controller`.</summary>
+        </member>
+        <member name="M:Animancer.Float2ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID)">
             <summary>Creates a new <see cref="T:Animancer.Float2ControllerState"/> to play the `controller`.</summary>
         </member>
         <member name="P:Animancer.Float2ControllerState.ParameterCount">
@@ -906,6 +971,7 @@
             Gets and sets a float parameter in the <see cref="P:Animancer.ControllerState.Controller"/> using the
             <see cref="P:Animancer.Float3ControllerState.ParameterXID"/>.
             </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is NaN or Infinity.</exception>
         </member>
         <member name="P:Animancer.Float3ControllerState.ParameterYID">
             <summary>The identifier of the parameter which <see cref="P:Animancer.Float3ControllerState.ParameterY"/> will get and set.</summary>
@@ -915,6 +981,7 @@
             Gets and sets a float parameter in the <see cref="P:Animancer.ControllerState.Controller"/> using the
             <see cref="P:Animancer.Float3ControllerState.ParameterYID"/>.
             </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is NaN or Infinity.</exception>
         </member>
         <member name="P:Animancer.Float3ControllerState.ParameterZID">
             <summary>The identifier of the parameter which <see cref="P:Animancer.Float3ControllerState.ParameterZ"/> will get and set.</summary>
@@ -924,13 +991,17 @@
             Gets and sets a float parameter in the <see cref="P:Animancer.ControllerState.Controller"/> using the
             <see cref="P:Animancer.Float3ControllerState.ParameterZID"/>.
             </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is NaN or Infinity.</exception>
         </member>
         <member name="P:Animancer.Float3ControllerState.Parameter">
             <summary>
             Gets and sets <see cref="P:Animancer.Float3ControllerState.ParameterX"/>, <see cref="P:Animancer.Float3ControllerState.ParameterY"/>, and <see cref="P:Animancer.Float3ControllerState.ParameterZ"/>.
             </summary>
         </member>
-        <member name="M:Animancer.Float3ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID,System.Boolean)">
+        <member name="M:Animancer.Float3ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ActionOnStop[])">
+            <summary>Creates a new <see cref="T:Animancer.Float3ControllerState"/> to play the `controller`.</summary>
+        </member>
+        <member name="M:Animancer.Float3ControllerState.#ctor(UnityEngine.RuntimeAnimatorController,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID,Animancer.ControllerState.ParameterID)">
             <summary>Creates a new <see cref="T:Animancer.Float3ControllerState"/> to play the `controller`.</summary>
         </member>
         <member name="P:Animancer.Float3ControllerState.ParameterCount">
@@ -996,6 +1067,12 @@
             <remarks>This method catches and logs any exception thrown by the <see cref="F:Animancer.AnimancerEvent.callback"/>.</remarks>
             <exception cref="T:System.NullReferenceException">The <see cref="F:Animancer.AnimancerEvent.callback"/> is null.</exception>
         </member>
+        <member name="M:Animancer.AnimancerEvent.GetFadeOutDuration">
+            <summary>
+            Returns either the <see cref="P:Animancer.AnimancerPlayable.DefaultFadeDuration"/> or the
+            <see cref="P:Animancer.AnimancerState.RemainingDuration"/> of the <see cref="P:Animancer.AnimancerEvent.CurrentState"/> (whichever is higher).
+            </summary>
+        </member>
         <member name="M:Animancer.AnimancerEvent.GetFadeOutDuration(System.Single)">
             <summary>
             Returns either the `minDuration` or the <see cref="P:Animancer.AnimancerState.RemainingDuration"/> of the
@@ -1041,46 +1118,58 @@
             https://kybernetik.com.au/animancer/api/Animancer/Sequence
         </member>
         <member name="F:Animancer.AnimancerEvent.Sequence._Events">
-            <summary>All of the <see cref="T:Animancer.AnimancerEvent"/>s in this sequence (excluding the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>).</summary>
+            <summary>All of the <see cref="T:Animancer.AnimancerEvent"/>s in this sequence (excluding the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>).</summary>
             <remarks>This field should never be null. It should use <see cref="M:System.Array.Empty``1"/> instead.</remarks>
         </member>
         <member name="P:Animancer.AnimancerEvent.Sequence.Count">
-            <summary>[Pro-Only] The number of events in this sequence (excluding the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>).</summary>
+            <summary>[Pro-Only] The number of events in this sequence (excluding the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>).</summary>
         </member>
         <member name="P:Animancer.AnimancerEvent.Sequence.IsEmpty">
-            <summary>Indicates whether the sequence has any events in it (including the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>).</summary>
+            <summary>Indicates whether the sequence has any events in it (including the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>).</summary>
         </member>
         <member name="F:Animancer.AnimancerEvent.Sequence.DefaultCapacity">
             <summary>The initial <see cref="P:Animancer.AnimancerEvent.Sequence.Capacity"/> that will be used if another value is not specified.</summary>
         </member>
         <member name="P:Animancer.AnimancerEvent.Sequence.Capacity">
-            <summary>[Pro-Only]
-            The size of the internal array used to hold events.
-            <para></para>
+            <summary>[Pro-Only] The size of the internal array used to hold events.</summary>
+            <remarks>
             When set, the array is reallocated to the given size.
             <para></para>
             By default, the <see cref="P:Animancer.AnimancerEvent.Sequence.Capacity"/> starts at 0 and increases to the <see cref="F:Animancer.AnimancerEvent.Sequence.DefaultCapacity"/>
             when the first event is added.
-            </summary>
+            </remarks>
         </member>
         <member name="P:Animancer.AnimancerEvent.Sequence.Version">
             <summary>[Pro-Only]
             The number of times the contents of this sequence have been modified. This applies to general events,
-            but not the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>.
+            but not the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>.
             </summary>
         </member>
-        <member name="F:Animancer.AnimancerEvent.Sequence.endEvent">
+        <member name="P:Animancer.AnimancerEvent.Sequence.ShouldNotModifyReason">
+            <summary>[Assert-Only]
+            If this property is set, any attempt to modify this sequence will trigger
+            <see cref="F:Animancer.OptionalWarning.LockedEvents"/> (which will include this value in its message).
+            </summary>
+            <remarks>This value can be set by <see cref="M:Animancer.AnimancerEvent.Sequence.SetShouldNotModifyReason(System.String)"/>.</remarks>
+        </member>
+        <member name="M:Animancer.AnimancerEvent.Sequence.SetShouldNotModifyReason(System.String)">
+            <summary>[Assert-Conditional]
+            Sets the <see cref="P:Animancer.AnimancerEvent.Sequence.ShouldNotModifyReason"/> for <see cref="F:Animancer.OptionalWarning.LockedEvents"/>.
+            </summary>
+            <remarks>
+            If the warning is triggered, the message is formatted as:
+            "The <see cref="T:Animancer.AnimancerEvent.Sequence"/> being modified should not be modified because " + 
+            <see cref="P:Animancer.AnimancerEvent.Sequence.ShouldNotModifyReason"/>.
+            </remarks>
+        </member>
+        <member name="M:Animancer.AnimancerEvent.Sequence.OnSequenceModified">
+            <summary>[Assert-Conditional] Logs <see cref="F:Animancer.OptionalWarning.LockedEvents"/> if necessary.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerEvent.Sequence.EndEvent">
              <summary>
              A <see cref="F:Animancer.AnimancerEvent.callback"/> that will be triggered every frame after the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> has
              passed. If you want it to only get triggered once, you can either have the event clear itself or just
              use a regular event instead.
-             <para></para>
-             Interrupting the animation does not trigger this event.
-             <para></para>
-             By default, the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> will be <see cref="F:System.Single.NaN"/> so that it can choose the
-             correct value based on the current play direction: forwards ends at 1 and backwards ends at 0.
-             <para></para>
-             <em>Animancer Lite does not allow the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> to be changed in Runtime Builds.</em>
              </summary>
             
              <example><code>
@@ -1091,7 +1180,7 @@
                  state.Events.OnEnd = OnAnimationEnd;
             
                  // Or set the time and callback at the same time:
-                 state.Events.endEvent = new AnimancerEvent(0.75f, OnAnimationEnd);
+                 state.Events.EndEvent = new AnimancerEvent(0.75f, OnAnimationEnd);
              }
             
              void OnAnimationEnd()
@@ -1102,25 +1191,32 @@
             
              <remarks>
              Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/events/end">End Events</see>
+             <para></para>
+             Interrupting the animation does not trigger this event.
+             <para></para>
+             By default, the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> will be <see cref="F:System.Single.NaN"/> so that it can choose the
+             correct value based on the current play direction: forwards ends at 1 and backwards ends at 0.
+             <para></para>
+             <em>Animancer Lite does not allow the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> to be changed in Runtime Builds.</em>
              </remarks>
              
              <seealso cref="P:Animancer.AnimancerEvent.Sequence.OnEnd"/>
              <seealso cref="P:Animancer.AnimancerEvent.Sequence.NormalizedEndTime"/>
         </member>
         <member name="P:Animancer.AnimancerEvent.Sequence.OnEnd">
-            <summary>Shorthand for the <c>endEvent.callback</c>.</summary>
-            <seealso cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>
+            <summary>Shorthand for the <c>EndEvent.callback</c>.</summary>
+            <seealso cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>
             <seealso cref="P:Animancer.AnimancerEvent.Sequence.NormalizedEndTime"/>
         </member>
         <member name="P:Animancer.AnimancerEvent.Sequence.NormalizedEndTime">
-            <summary>[Pro-Only] Shorthand for <c>endEvent.normalizedTime</c>.</summary>
+            <summary>[Pro-Only] Shorthand for <c>EndEvent.normalizedTime</c>.</summary>
             <remarks>
             This value is <see cref="F:System.Single.NaN"/> by default so that the actual time can be determined based on the
             <see cref="P:Animancer.AnimancerNode.EffectiveSpeed"/>: positive speed ends at 1 and negative speed ends at 0.
             <para></para>
             Use <see cref="P:Animancer.AnimancerState.NormalizedEndTime"/> to access that value.
             </remarks>
-            <seealso cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>
+            <seealso cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>
             <seealso cref="P:Animancer.AnimancerEvent.Sequence.OnEnd"/>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.GetDefaultNormalizedStartTime(System.Single)">
@@ -1137,14 +1233,14 @@
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.GetDefaultNormalizedEndTime(System.Single)">
             <summary>
-            The default <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> for an <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/> when playing forwards is 1 (the
+            The default <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> for an <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/> when playing forwards is 1 (the
             end of the animation) and when playing backwards is 0 (the start of the animation).
             <para></para>
             `speed` 0 or <see cref="F:System.Single.NaN"/> will also return 1.
             </summary>
         </member>
         <member name="P:Animancer.AnimancerEvent.Sequence.Names">
-            <summary>[Pro-Only] The names of the events (excluding the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>).</summary>
+            <summary>[Pro-Only] The names of the events (excluding the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>).</summary>
             <remarks>This array can be <c>null</c>.</remarks>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.GetName(System.Int32)">
@@ -1204,7 +1300,7 @@
             Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> of any events
             is less than 0 or greater than or equal to 1.
             <para></para>
-            This does not include the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/> since it works differently to other events.
+            This does not include the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/> since it works differently to other events.
             </summary>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.AssertNormalizedTimes(Animancer.AnimancerState,System.Boolean)">
@@ -1218,7 +1314,7 @@
         <member name="M:Animancer.AnimancerEvent.Sequence.GetEnumerator">
             <summary>[Pro-Only]
             Returns a <see cref="T:Animancer.FastEnumerator`1"/> for the events in this sequence excluding the
-            <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>.
+            <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>.
             </summary>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.IndexOf(Animancer.AnimancerEvent)">
@@ -1418,11 +1514,21 @@
             </summary>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.Clear">
-            <summary>Removes all events, including the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>.</summary>
+            <summary>Removes all events, including the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>.</summary>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.CopyFrom(Animancer.AnimancerEvent.Sequence)">
-            <summary>Copies all the events from the `source` to replace the previous contents of this sequence.</summary>
-            <remarks>To create a new <see cref="T:Animancer.AnimancerEvent.Sequence"/> as a copy of another, use the constructor instead.</remarks>
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.AnimancerEvent.Sequence.AddAllEvents(UnityEngine.AnimationClip)">
+            <summary>[Pro-Only] Copies the <see cref="P:UnityEngine.AnimationClip.events"/> into this <see cref="T:Animancer.AnimancerEvent.Sequence"/>.</summary>
+            <remarks>
+            The <see cref="F:Animancer.AnimancerEvent.callback"/> of the new events will be empty and can be set by
+            <see cref="M:Animancer.AnimancerEvent.Sequence.SetCallback(System.String,System.Action)"/>.
+            <para></para>
+            If you are going to play the `animation`, consider disabling <see cref="P:UnityEngine.Animator.fireEvents"/> so that
+            the events copied by this method are not triggered as <see cref="T:UnityEngine.AnimationEvent"/>s. Otherwise they
+            would still trigger in addition to the <see cref="T:Animancer.AnimancerEvent"/>s copied here.
+            </remarks>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.CopyTo(Animancer.AnimancerEvent[],System.Int32)">
             <summary>[<see cref="T:System.Collections.Generic.ICollection`1"/>] [Pro-Only]
@@ -1522,11 +1628,14 @@
             </summary>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.Serializable.GetNormalizedEndTime(System.Single)">
-            <summary>Returns the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> of the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>.</summary>
+            <summary>Returns the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> of the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>.</summary>
             <remarks>If the value is not set, the value is determined by <see cref="M:Animancer.AnimancerEvent.Sequence.GetDefaultNormalizedEndTime(System.Single)"/>.</remarks>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.Serializable.SetNormalizedEndTime(System.Single)">
-            <summary>Sets the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> of the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>.</summary>
+            <summary>Sets the <see cref="F:Animancer.AnimancerEvent.normalizedTime"/> of the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerEvent.Sequence.Serializable.CopyFrom(Animancer.AnimancerEvent.Sequence.Serializable)">
+            <inheritdoc/>
         </member>
         <member name="M:Animancer.AnimancerEvent.Sequence.Serializable.UnityEngine#ISerializationCallbackReceiver#OnAfterDeserialize">
             <summary>[Editor-Only] Does nothing.</summary>
@@ -1570,6 +1679,11 @@
         <member name="F:Animancer.Editor.SerializableCallbackHolder.CallbackField">
             <summary>The name of the field which stores the <see cref="T:UnityEngine.Events.UnityEvent"/>.</summary>
         </member>
+        <member name="T:Animancer.Editor.SoloAnimationEditor">
+            <summary>[Editor-Only] A custom Inspector for <see cref="!:SoloAnimation"/>.</summary>
+            https://kybernetik.com.au/animancer/api/Animancer.Editor/SoloAnimationEditor
+            
+        </member>
         <member name="F:Animancer.Editor.SoloAnimationEditor._Animators">
             <summary>The animator referenced by each target.</summary>
         </member>
@@ -1579,8 +1693,14 @@
         <member name="F:Animancer.Editor.SoloAnimationEditor._KeepStateOnDisable">
             <summary>The <see cref="P:UnityEngine.Animator.keepAnimatorControllerStateOnDisable"/> property.</summary>
         </member>
+        <member name="M:Animancer.Editor.SoloAnimationEditor.OnInspectorGUI">
+            <inheritdoc/>
+        </member>
         <member name="M:Animancer.Editor.SoloAnimationEditor.DoSerializedFieldsGUI">
             <summary>Draws the target's serialized fields.</summary>
+        </member>
+        <member name="M:Animancer.Editor.SoloAnimationEditor.RefreshSerializedAnimator">
+            <summary>Ensures that the cached references relating to the target's <see cref="T:UnityEngine.Animator"/> are correct.</summary>
         </member>
         <member name="M:Animancer.Editor.SoloAnimationEditor.DoStopOnDisableGUI">
             <summary>
@@ -1590,387 +1710,497 @@
         <member name="M:Animancer.Editor.SoloAnimationEditor.DoRuntimeDetailsGUI">
             <summary>Draws the target's runtime details.</summary>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow">
+        <member name="M:Animancer.Editor.SoloAnimationEditor.OnDisable">
+            <summary>Cleans up cached references relating to the target's <see cref="T:UnityEngine.Animator"/>.</summary>
+        </member>
+        <member name="T:Animancer.Editor.Tools.AnimancerSettingsTool">
+            <summary>[Editor-Only] Displays the <see cref="T:Animancer.Editor.AnimancerSettingsInternal"/>.</summary>
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/AnimancerSettingsTool
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerSettingsTool.DisplayOrder">
+            <inheritdoc/>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerSettingsTool.Name">
+            <inheritdoc/>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerSettingsTool.Instructions">
+            <inheritdoc/>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerSettingsTool.HelpURL">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerSettingsTool.OnEnable(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerSettingsTool.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerSettingsTool.DoBodyGUI">
+            <inheritdoc/>
+        </member>
+        <member name="T:Animancer.Editor.Tools.AnimancerToolsWindow">
             <summary>[Editor-Only] [Pro-Only]
             An <see cref="T:UnityEditor.EditorWindow"/> with various utilities for managing sprites and generating animations.
             </summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools">Animancer Tools</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/AnimancerToolsWindow
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/AnimancerToolsWindow
             
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel">
-            <summary>[Editor-Only] [Pro-Only] A base <see cref="T:Animancer.Editor.AnimancerToolsWindow.Panel"/> for modifying <see cref="T:UnityEngine.AnimationClip"/>s.</summary>
+        <member name="F:Animancer.Editor.Tools.AnimancerToolsWindow.Name">
+            <summary>The display name of this window.</summary>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Instance">
+            <summary>The singleton instance of this window.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.FindSerializedPropertyForTool(Animancer.Editor.Tools.AnimancerToolsWindow.Tool)">
+            <summary>Returns the <see cref="T:UnityEditor.SerializedProperty"/> which represents the specified `tool`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Repaint">
+            <summary>Causes this window to redraw its GUI.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.RecordUndo">
+            <summary>Calls <see cref="M:UnityEditor.Undo.RecordObject(UnityEngine.Object,System.String)"/> for this window.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.BeginChangeCheck">
+            <summary>Calls <see cref="M:UnityEditor.EditorGUI.BeginChangeCheck"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.EndChangeCheck">
+            <summary>Calls <see cref="M:UnityEditor.EditorGUI.EndChangeCheck"/> and <see cref="M:Animancer.Editor.Tools.AnimancerToolsWindow.RecordUndo"/> if it returned true.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.EndChangeCheck``1(``0@,``0)">
+            <summary>Calls <see cref="M:Animancer.Editor.Tools.AnimancerToolsWindow.EndChangeCheck"/> and sets the <c>field = value</c> if it returned true.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.CreateReorderableList``1(System.Collections.Generic.List{``0},System.String,UnityEditorInternal.ReorderableList.ElementCallbackDelegate,System.Boolean)">
+            <summary>Creates and initializes a new <see cref="T:UnityEditorInternal.ReorderableList"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.CreateReorderableObjectList``1(System.Collections.Generic.List{``0},System.String,System.Boolean)">
+            <summary>Creates and initializes a new <see cref="T:UnityEditorInternal.ReorderableList"/> for <see cref="T:UnityEngine.Sprite"/>s.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.CreateReorderableStringList(System.Collections.Generic.List{System.String},System.String,System.Func{UnityEngine.Rect,System.Int32,System.String})">
+            <summary>Creates a new <see cref="T:UnityEditorInternal.ReorderableList"/> for <see cref="T:System.String"/>s.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.CreateReorderableStringList(System.Collections.Generic.List{System.String},System.String)">
+            <summary>Creates a new <see cref="T:UnityEditorInternal.ReorderableList"/> for <see cref="T:System.String"/>s.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Open">
+            <summary>Opens the <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Open(System.Type)">
+            <summary>Opens the <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow"/> showing the specified `tool`.</summary>
+        </member>
+        <member name="T:Animancer.Editor.Tools.AnimancerToolsWindow.Tool">
+            <summary>[Editor-Only] [Pro-Only] Base class for tools in the <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow"/>.</summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools">Animancer Tools</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/AnimationModifierPanel
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/Tool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.Animation">
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.IsVisible">
+            <summary>Is this tool currently visible?</summary>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.IsExpanded">
+            <summary>Is the body of this tool currently visible?</summary>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.DisplayOrder">
+            <summary>Lower numbers display first.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.CompareTo(Animancer.Editor.Tools.AnimancerToolsWindow.Tool)">
+            <summary>Compares the <see cref="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.DisplayOrder"/> to put lower numbers first.</summary>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.Name">
+            <summary>The display name of this tool.</summary>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.Instructions">
+            <summary>The usage instructions to display at the top of this tool.</summary>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.HelpURL">
+            <summary>The URL for the help button in the header to open.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.OnSelectionChanged">
+            <summary>Called whenever the <see cref="T:UnityEditor.Selection"/> changes.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.OnEnable(System.Int32)">
+            <summary>Called by <see cref="M:Animancer.Editor.Tools.AnimancerToolsWindow.OnEnable"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.OnDisable">
+            <summary>Called by <see cref="M:Animancer.Editor.Tools.AnimancerToolsWindow.OnDisable"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.DoGUI">
+            <summary>Draws the GUI for this tool.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.DoHeaderGUI">
+            <summary>
+            Draws the Header GUI for this tool which is displayed regardless of whether it is expanded or not.
+            </summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.DoBodyGUI">
+            <summary>Draws the Body GUI for this tool which is only displayed while it is expanded.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.SaveModifiedAsset``1(System.String,System.String,``0,System.Action{``0})">
+            <summary>Asks the user where they want to save a modified asset, calls `modify` on it, and saves it.</summary>
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.HelpIcon">
+            <summary>The help icon image used in the tool header.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.AnimancerToolsWindow.Tool.HandleDragAndDropIntoList``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},System.Boolean,System.Func{``0,System.Boolean})">
+            <summary>Adds any objects dropped in the `area` to the `list`.</summary>
+        </member>
+        <member name="T:Animancer.Editor.Tools.AnimationModifierTool">
+            <summary>[Editor-Only] [Pro-Only]
+            A base <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow.Tool"/> for modifying <see cref="T:UnityEngine.AnimationClip"/>s.
+            </summary>
+            <remarks>
+            Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools">Animancer Tools</see>
+            </remarks>
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/AnimationModifierTool
+            
+        </member>
+        <member name="P:Animancer.Editor.Tools.AnimationModifierTool.Animation">
             <summary>The currently selected <see cref="T:UnityEngine.AnimationClip"/> asset.</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.OnEnable(System.Int32)">
+        <member name="M:Animancer.Editor.Tools.AnimationModifierTool.OnEnable(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.OnSelectionChanged">
+        <member name="M:Animancer.Editor.Tools.AnimationModifierTool.OnSelectionChanged">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.OnAnimationChanged">
-            <summary>Called whenever the selected <see cref="P:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.Animation"/> changes.</summary>
+        <member name="M:Animancer.Editor.Tools.AnimationModifierTool.OnAnimationChanged">
+            <summary>Called whenever the selected <see cref="P:Animancer.Editor.Tools.AnimationModifierTool.Animation"/> changes.</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.DoBodyGUI">
+        <member name="M:Animancer.Editor.Tools.AnimationModifierTool.DoBodyGUI">
             <inheritdoc/>
         </member>
-        <member name="F:Animancer.Editor.AnimancerToolsWindow.Name">
-            <summary>The display name of this window.</summary>
-        </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Instance">
-            <summary>The singleton instance of this window.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.BeginChangeCheck">
-            <summary>Calls <see cref="M:UnityEditor.EditorGUI.BeginChangeCheck"/>.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.EndChangeCheck">
-            <summary>Calls <see cref="M:UnityEditor.EditorGUI.EndChangeCheck"/> and <see cref="M:Animancer.Editor.AnimancerToolsWindow.RecordUndo"/> if it returned true.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.EndChangeCheck``1(``0@,``0)">
-            <summary>Calls <see cref="M:Animancer.Editor.AnimancerToolsWindow.EndChangeCheck"/> and sets the <c>field = value</c> if it returned true.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.CreateReorderableList``1(System.Collections.Generic.List{``0},System.String,UnityEditorInternal.ReorderableList.ElementCallbackDelegate,System.Boolean)">
-            <summary>Creates and initializes a new <see cref="T:UnityEditorInternal.ReorderableList"/>.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.CreateReorderableObjectList``1(System.Collections.Generic.List{``0},System.String,System.Boolean)">
-            <summary>Creates and initializes a new <see cref="T:UnityEditorInternal.ReorderableList"/> for <see cref="T:UnityEngine.Sprite"/>s.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.CreateReorderableStringList(System.Collections.Generic.List{System.String},System.String,System.Func{UnityEngine.Rect,System.Int32,System.String})">
-            <summary>Creates a new <see cref="T:UnityEditorInternal.ReorderableList"/> for <see cref="T:System.String"/>s.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.CreateReorderableStringList(System.Collections.Generic.List{System.String},System.String)">
-            <summary>Creates a new <see cref="T:UnityEditorInternal.ReorderableList"/> for <see cref="T:System.String"/>s.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.LoadAllSpritesInTexture(UnityEngine.Texture2D)">
-            <summary>Returns all the <see cref="T:UnityEngine.Sprite"/> sub-assets of the `texture`.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.LoadAllSpritesAtPath(System.String)">
-            <summary>Returns all the <see cref="T:UnityEngine.Sprite"/> assets at the `path`.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.NaturalCompare(UnityEngine.Object,UnityEngine.Object)">
-            <summary>Calls <see cref="M:UnityEditor.EditorUtility.NaturalCompare(System.String,System.String)"/> on the <see cref="P:UnityEngine.Object.name"/>s.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Open">
-            <summary>Opens the <see cref="T:Animancer.Editor.AnimancerToolsWindow"/>.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Open(System.Type)">
-            <summary>Opens the <see cref="T:Animancer.Editor.AnimancerToolsWindow"/> showing the specified `panel`.</summary>
-        </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations">
+        <member name="T:Animancer.Editor.Tools.GenerateSpriteAnimationsTool">
             <summary>[Editor-Only] [Pro-Only] 
-            A <see cref="T:Animancer.Editor.AnimancerToolsWindow.SpriteModifierPanel"/> for generating <see cref="T:UnityEngine.AnimationClip"/>s from <see cref="T:UnityEngine.Sprite"/>s.
+            A <see cref="T:Animancer.Editor.Tools.SpriteModifierTool"/> for generating <see cref="T:UnityEngine.AnimationClip"/>s from <see cref="T:UnityEngine.Sprite"/>s.
             </summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools/generate-sprite-animations">Generate Sprite Animations</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/GenerateSpriteAnimations
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/GenerateSpriteAnimationsTool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.Name">
+        <member name="P:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.DisplayOrder">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.HelpURL">
+        <member name="P:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.Name">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.Instructions">
+        <member name="P:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.HelpURL">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.OnEnable(System.Int32)">
+        <member name="P:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.Instructions">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.OnSelectionChanged">
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.OnEnable(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.DoBodyGUI">
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.OnSelectionChanged">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsBySpriteName(System.Collections.Generic.List{UnityEngine.Sprite})">
-            <summary>Uses <see cref="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GatherNameToSprites(System.Collections.Generic.List{UnityEngine.Sprite},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{UnityEngine.Sprite}})"/> and creates new animations from those groups.</summary>
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.DoBodyGUI">
+            <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GatherNameToSprites(System.Collections.Generic.List{UnityEngine.Sprite},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{UnityEngine.Sprite}})">
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsBySpriteName(System.Collections.Generic.List{UnityEngine.Sprite})">
+            <summary>Uses <see cref="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GatherNameToSprites(System.Collections.Generic.List{UnityEngine.Sprite},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{UnityEngine.Sprite}})"/> and creates new animations from those groups.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GatherNameToSprites(System.Collections.Generic.List{UnityEngine.Sprite},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{UnityEngine.Sprite}})">
             <summary>Groups the `sprites` by name into the `nameToSptires`.</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.ValidateGenerateAnimationsBySpriteName">
-            <summary>Should <see cref="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsBySpriteName"/> be enabled or greyed out?</summary>
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.ValidateGenerateAnimationsBySpriteName">
+            <summary>Should <see cref="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsBySpriteName"/> be enabled or greyed out?</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsBySpriteName">
-            <summary>Calls <see cref="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsBySpriteName(System.Collections.Generic.List{UnityEngine.Sprite})"/> with the selected <see cref="T:UnityEngine.Sprite"/>s.</summary>
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsBySpriteName">
+            <summary>Calls <see cref="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsBySpriteName(System.Collections.Generic.List{UnityEngine.Sprite})"/> with the selected <see cref="T:UnityEngine.Sprite"/>s.</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GetCachedSpritesToGenerateAnimations">
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GetCachedSpritesToGenerateAnimations">
             <summary>
             Returns a list of <see cref="T:UnityEngine.Sprite"/>s which will be passed into
-            <see cref="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsBySpriteName(System.Collections.Generic.List{UnityEngine.Sprite})"/> by <see cref="F:UnityEditor.EditorApplication.delayCall"/>.
+            <see cref="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsBySpriteName(System.Collections.Generic.List{UnityEngine.Sprite})"/> by <see cref="F:UnityEditor.EditorApplication.delayCall"/>.
             </summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsFromSpriteByName(UnityEditor.MenuCommand)">
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsFromSpriteByName(UnityEditor.MenuCommand)">
             <summary>
-            Adds the <see cref="F:UnityEditor.MenuCommand.context"/> to the <see cref="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GetCachedSpritesToGenerateAnimations"/>.
+            Adds the <see cref="F:UnityEditor.MenuCommand.context"/> to the <see cref="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GetCachedSpritesToGenerateAnimations"/>.
             </summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.ValidateGenerateAnimationsFromTextureBySpriteName(UnityEditor.MenuCommand)">
-            <summary>Should <see cref="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsFromTextureBySpriteName(UnityEditor.MenuCommand)"/> be enabled or greyed out?</summary>
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.ValidateGenerateAnimationsFromTextureBySpriteName(UnityEditor.MenuCommand)">
+            <summary>Should <see cref="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsFromTextureBySpriteName(UnityEditor.MenuCommand)"/> be enabled or greyed out?</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GenerateAnimationsFromTextureBySpriteName(UnityEditor.MenuCommand)">
+        <member name="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GenerateAnimationsFromTextureBySpriteName(UnityEditor.MenuCommand)">
             <summary>
             Adds all <see cref="T:UnityEngine.Sprite"/> sub-assets of the <see cref="F:UnityEditor.MenuCommand.context"/> to the
-            <see cref="M:Animancer.Editor.AnimancerToolsWindow.GenerateSpriteAnimations.GetCachedSpritesToGenerateAnimations"/>.
+            <see cref="M:Animancer.Editor.Tools.GenerateSpriteAnimationsTool.GetCachedSpritesToGenerateAnimations"/>.
             </summary>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.ModifySprites">
+        <member name="T:Animancer.Editor.Tools.ModifySpritesTool">
             <summary>[Editor-Only] [Pro-Only] 
-            A <see cref="T:Animancer.Editor.AnimancerToolsWindow.SpriteModifierPanel"/> for modifying <see cref="T:UnityEngine.Sprite"/> detauls.
+            A <see cref="T:Animancer.Editor.Tools.SpriteModifierTool"/> for modifying <see cref="T:UnityEngine.Sprite"/> detauls.
             </summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools/modify-sprites">Modify Sprites</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/ModifySprites
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/ModifySpritesTool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.ModifySprites.Name">
+        <member name="P:Animancer.Editor.Tools.ModifySpritesTool.DisplayOrder">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.ModifySprites.HelpURL">
+        <member name="P:Animancer.Editor.Tools.ModifySpritesTool.Name">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.ModifySprites.Instructions">
+        <member name="P:Animancer.Editor.Tools.ModifySpritesTool.HelpURL">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.ModifySprites.DoBodyGUI">
+        <member name="P:Animancer.Editor.Tools.ModifySpritesTool.Instructions">
             <inheritdoc/>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.PackTextures">
+        <member name="M:Animancer.Editor.Tools.ModifySpritesTool.OnEnable(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.Editor.Tools.ModifySpritesTool.DoBodyGUI">
+            <inheritdoc/>
+        </member>
+        <member name="T:Animancer.Editor.Tools.PackTexturesTool">
             <summary>[Editor-Only] [Pro-Only] 
-            A <see cref="T:Animancer.Editor.AnimancerToolsWindow.Panel"/> for packing multiple <see cref="T:UnityEngine.Texture2D"/>s into a single image.
+            A <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow.Tool"/> for packing multiple <see cref="T:UnityEngine.Texture2D"/>s into a single image.
             </summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools/pack-textures">Pack Textures</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/PackTextures
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/PackTexturesTool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.PackTextures.Name">
+        <member name="P:Animancer.Editor.Tools.PackTexturesTool.DisplayOrder">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.PackTextures.HelpURL">
+        <member name="P:Animancer.Editor.Tools.PackTexturesTool.Name">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.PackTextures.Instructions">
+        <member name="P:Animancer.Editor.Tools.PackTexturesTool.HelpURL">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.PackTextures.OnEnable(System.Int32)">
+        <member name="P:Animancer.Editor.Tools.PackTexturesTool.Instructions">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.PackTextures.DoBodyGUI">
+        <member name="M:Animancer.Editor.Tools.PackTexturesTool.OnEnable(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.PackTextures.RemoveDuplicates``1(System.Collections.Generic.IList{``0})">
+        <member name="M:Animancer.Editor.Tools.PackTexturesTool.DoBodyGUI">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.Editor.Tools.PackTexturesTool.RemoveDuplicates``1(System.Collections.Generic.IList{``0})">
             <summary>Removes any items from the `list` that are the same as earlier items.</summary>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.Panel">
-            <summary>[Editor-Only] [Pro-Only] Base class for panels in the <see cref="T:Animancer.Editor.AnimancerToolsWindow"/>.</summary>
-            <remarks>
-            Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools">Animancer Tools</see>
-            </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/Panel
-            
-        </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Panel.IsVisible">
-            <summary>Is this panel currently visible?</summary>
-        </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Panel.IsExpanded">
-            <summary>Is the body of this panel currently visible?</summary>
-        </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Panel.Name">
-            <summary>The display name of this panel.</summary>
-        </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Panel.Instructions">
-            <summary>The usage instructions to display at the top of this panel.</summary>
-        </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Panel.HelpURL">
-            <summary>The URL for the help button in the header to open.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.OnSelectionChanged">
-            <summary>Called whenever the <see cref="T:UnityEditor.Selection"/> changes.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.OnEnable(System.Int32)">
-            <summary>Called by <see cref="M:Animancer.Editor.AnimancerToolsWindow.OnEnable"/>.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.OnDisable">
-            <summary>Called by <see cref="M:Animancer.Editor.AnimancerToolsWindow.OnDisable"/>.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.DoGUI">
-            <summary>Draws the GUI for this panel.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.DoHeaderGUI">
-            <summary>
-            Draws the Header GUI for this panel which is displayed regardless of whether it is expanded or not.
-            </summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.DoBodyGUI">
-            <summary>Draws the Body GUI for this panel which is only displayed while it is expanded.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.SaveModifiedAsset``1(System.String,System.String,``0,System.Action{``0})">
-            <summary>Asks the user where they want to save a modified asset, calls `modify` on it, and saves it.</summary>
-        </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Panel.HelpIcon">
-            <summary>The help icon image used in the panel header.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Panel.HandleDragAndDropIntoList``1(UnityEngine.Rect,System.Collections.Generic.IList{``0},System.Boolean,System.Func{``0,System.Boolean})">
-            <summary>Adds any objects dropped in the `area` to the `list`.</summary>
-        </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings">
+        <member name="T:Animancer.Editor.Tools.RemapAnimationBindingsTool">
             <summary>[Editor-Only] [Pro-Only] 
-            An <see cref="T:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel"/> for changing which bones an <see cref="T:UnityEngine.AnimationClip"/>s controls.
+            A <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow.Tool"/> for changing which bones an <see cref="T:UnityEngine.AnimationClip"/>s controls.
             </summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools/remap-animation-bindings">Remap Animation Bindings</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/RemapAnimationBindings
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/RemapAnimationBindingsTool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.Name">
+        <member name="P:Animancer.Editor.Tools.RemapAnimationBindingsTool.DisplayOrder">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.HelpURL">
+        <member name="P:Animancer.Editor.Tools.RemapAnimationBindingsTool.Name">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.Instructions">
+        <member name="P:Animancer.Editor.Tools.RemapAnimationBindingsTool.HelpURL">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.OnEnable(System.Int32)">
+        <member name="P:Animancer.Editor.Tools.RemapAnimationBindingsTool.Instructions">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.OnAnimationChanged">
+        <member name="M:Animancer.Editor.Tools.RemapAnimationBindingsTool.OnEnable(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.DoBodyGUI">
+        <member name="M:Animancer.Editor.Tools.RemapAnimationBindingsTool.OnAnimationChanged">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.GatherBindings">
-            <summary>Gathers the bindings from the <see cref="P:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.Animation"/>.</summary>
+        <member name="M:Animancer.Editor.Tools.RemapAnimationBindingsTool.DoBodyGUI">
+            <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.IsHumanoidBinding(System.String)">
+        <member name="M:Animancer.Editor.Tools.RemapAnimationBindingsTool.GatherBindings">
+            <summary>Gathers the bindings from the <see cref="P:Animancer.Editor.Tools.AnimationModifierTool.Animation"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.RemapAnimationBindingsTool.IsHumanoidBinding(System.String)">
             <summary>Is the `propertyName` one of the bindings used by Humanoid animations?</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.CopyAll">
-            <summary>Copies all of the <see cref="F:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings._NewBindingPaths"/> to the system clipboard.</summary>
+        <member name="M:Animancer.Editor.Tools.RemapAnimationBindingsTool.CopyAll">
+            <summary>Copies all of the <see cref="F:Animancer.Editor.Tools.RemapAnimationBindingsTool._NewBindingPaths"/> to the system clipboard.</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings.PasteAll">
-            <summary>Pastes the string from the system clipboard into the <see cref="F:Animancer.Editor.AnimancerToolsWindow.RemapAnimationBindings._NewBindingPaths"/>.</summary>
+        <member name="M:Animancer.Editor.Tools.RemapAnimationBindingsTool.PasteAll">
+            <summary>Pastes the string from the system clipboard into the <see cref="F:Animancer.Editor.Tools.RemapAnimationBindingsTool._NewBindingPaths"/>.</summary>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation">
+        <member name="T:Animancer.Editor.Tools.RemapSpriteAnimationTool">
             <summary>[Editor-Only] [Pro-Only] 
-            An <see cref="T:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel"/> for changing which <see cref="T:UnityEngine.Sprite"/>s an
+            An <see cref="T:Animancer.Editor.Tools.AnimationModifierTool"/> for changing which <see cref="T:UnityEngine.Sprite"/>s an
             <see cref="T:UnityEngine.AnimationClip"/> uses.
             </summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools/remap-sprite-animation">Remap Sprite Animation</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/RemapSpriteAnimation
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/RemapSpriteAnimationTool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.Name">
+        <member name="P:Animancer.Editor.Tools.RemapSpriteAnimationTool.DisplayOrder">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.HelpURL">
+        <member name="P:Animancer.Editor.Tools.RemapSpriteAnimationTool.Name">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.Instructions">
+        <member name="P:Animancer.Editor.Tools.RemapSpriteAnimationTool.HelpURL">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.OnEnable(System.Int32)">
+        <member name="P:Animancer.Editor.Tools.RemapSpriteAnimationTool.Instructions">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.OnAnimationChanged">
+        <member name="M:Animancer.Editor.Tools.RemapSpriteAnimationTool.OnEnable(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.DoBodyGUI">
+        <member name="M:Animancer.Editor.Tools.RemapSpriteAnimationTool.OnAnimationChanged">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.GatherOldSprites">
-            <summary>Gathers the <see cref="F:Animancer.Editor.AnimancerToolsWindow.RemapSpriteAnimation.OldSprites"/> from the <see cref="P:Animancer.Editor.AnimancerToolsWindow.AnimationModifierPanel.Animation"/>.</summary>
+        <member name="M:Animancer.Editor.Tools.RemapSpriteAnimationTool.DoBodyGUI">
+            <inheritdoc/>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.RenameSprites">
-            <summary>[Editor-Only] [Pro-Only] 
-            A <see cref="T:Animancer.Editor.AnimancerToolsWindow.SpriteModifierPanel"/> for bulk-renaming <see cref="T:UnityEngine.Sprite"/>s.
-            </summary>
+        <member name="M:Animancer.Editor.Tools.RemapSpriteAnimationTool.GatherOldSprites">
+            <summary>Gathers the <see cref="F:Animancer.Editor.Tools.RemapSpriteAnimationTool._OldSprites"/> from the <see cref="P:Animancer.Editor.Tools.AnimationModifierTool.Animation"/>.</summary>
+        </member>
+        <member name="T:Animancer.Editor.Tools.RenameSpritesTool">
+            <summary>[Editor-Only] [Pro-Only] A <see cref="T:Animancer.Editor.Tools.SpriteModifierTool"/> for bulk-renaming <see cref="T:UnityEngine.Sprite"/>s.</summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools/rename-sprites">Rename Sprites</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/RenameSprites
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/RenameSpritesTool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RenameSprites.Name">
+        <member name="P:Animancer.Editor.Tools.RenameSpritesTool.DisplayOrder">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RenameSprites.HelpURL">
+        <member name="P:Animancer.Editor.Tools.RenameSpritesTool.Name">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.RenameSprites.Instructions">
+        <member name="P:Animancer.Editor.Tools.RenameSpritesTool.HelpURL">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RenameSprites.OnEnable(System.Int32)">
+        <member name="P:Animancer.Editor.Tools.RenameSpritesTool.Instructions">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RenameSprites.OnSelectionChanged">
+        <member name="M:Animancer.Editor.Tools.RenameSpritesTool.OnEnable(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RenameSprites.UpdateNames">
-            <summary>Refreshes the <see cref="F:Animancer.Editor.AnimancerToolsWindow.RenameSprites.Names"/>.</summary>
-        </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.RenameSprites.DoBodyGUI">
+        <member name="M:Animancer.Editor.Tools.RenameSpritesTool.OnSelectionChanged">
             <inheritdoc/>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.Settings">
-            <summary>[Editor-Only] Displays the <see cref="T:Animancer.Editor.AnimancerSettingsInternal"/>.</summary>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/Settings
+        <member name="M:Animancer.Editor.Tools.RenameSpritesTool.UpdateNames">
+            <summary>Refreshes the <see cref="F:Animancer.Editor.Tools.RenameSpritesTool._Names"/>.</summary>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Settings.Name">
+        <member name="M:Animancer.Editor.Tools.RenameSpritesTool.DoBodyGUI">
             <inheritdoc/>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Settings.Instructions">
-            <inheritdoc/>
+        <member name="T:Animancer.Editor.Tools.SpriteDataEditor">
+            <summary>A wrapper around the '2D Sprite' package features for editing Sprite data.</summary>
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.Settings.HelpURL">
-            <inheritdoc/>
+        <member name="F:Animancer.Editor.Tools.SpriteDataEditor.Is2dPackagePresent">
+            <summary>Is the '2D Sprite' package currently in the project?</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Settings.OnEnable(System.Int32)">
-            <inheritdoc/>
+        <member name="F:Animancer.Editor.Tools.SpriteDataEditor.SpritePackageDefineSymbol">
+            <summary>The scripting define symbol used to enable the features from the '2D Sprite' package.</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Settings.OnDisable">
-            <inheritdoc/>
+        <member name="P:Animancer.Editor.Tools.SpriteDataEditor.IsSpritePackageSymbolDefined">
+            <summary>Is the <see cref="F:Animancer.Editor.Tools.SpriteDataEditor.SpritePackageDefineSymbol"/> defined in the current platform?</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.Settings.DoBodyGUI">
-            <inheritdoc/>
+        <member name="P:Animancer.Editor.Tools.SpriteDataEditor.SpriteCount">
+            <summary>The number of sprites in the target data.</summary>
         </member>
-        <member name="T:Animancer.Editor.AnimancerToolsWindow.SpriteModifierPanel">
-            <summary>[Editor-Only] [Pro-Only] A base <see cref="T:Animancer.Editor.AnimancerToolsWindow.Panel"/> for modifying <see cref="T:UnityEngine.Sprite"/>s.</summary>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.GetName(System.Int32)">
+            <summary>Returns the name of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.SetName(System.Int32,System.String)">
+            <summary>Sets the name of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.GetRect(System.Int32)">
+            <summary>Returns the rect of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.SetRect(System.Int32,UnityEngine.Rect)">
+            <summary>Sets the rect of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.GetPivot(System.Int32)">
+            <summary>Returns the pivot of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.SetPivot(System.Int32,UnityEngine.Vector2)">
+            <summary>Sets the pivot of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.GetAlignment(System.Int32)">
+            <summary>Returns the alignment of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.SetAlignment(System.Int32,UnityEngine.SpriteAlignment)">
+            <summary>Sets the alignment of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.GetBorder(System.Int32)">
+            <summary>Returns the border of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.SetBorder(System.Int32,UnityEngine.Vector4)">
+            <summary>Sets the border of the sprite at the specified `index`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.#ctor(UnityEditor.TextureImporter)">
+            <summary>Creates a new <see cref="T:Animancer.Editor.Tools.SpriteDataEditor"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.IndexOf(UnityEngine.Sprite)">
+            <summary>Tries to find the index of the data matching the `sprite`.</summary>
+            <remarks>
+            Returns -1 if there is no data matching the <see cref="P:UnityEngine.Object.name"/>.
+            <para></para>
+            Returns -2 if there is more than one data matching the <see cref="P:UnityEngine.Object.name"/> but no
+            <see cref="P:UnityEngine.Sprite.rect"/> match.
+            </remarks>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.ValidateBounds(System.Int32,UnityEngine.Sprite)">
+            <summary>Logs an error and returns false if the data at the specified `index` is out of the texture bounds.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteDataEditor.Apply">
+            <summary>Applies any modifications to the target asset.</summary>
+        </member>
+        <member name="T:Animancer.Editor.Tools.SpriteModifierTool">
+            <summary>[Editor-Only] [Pro-Only]
+            A base <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow.Tool"/> for modifying <see cref="T:UnityEngine.Sprite"/>s.
+            </summary>
             <remarks>
             Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/tools">Animancer Tools</see>
             </remarks>
-            https://kybernetik.com.au/animancer/api/Animancer.Editor/SpriteModifierPanel
+            https://kybernetik.com.au/animancer/api/Animancer.Editor.Tools/SpriteModifierTool
             
         </member>
-        <member name="P:Animancer.Editor.AnimancerToolsWindow.SpriteModifierPanel.Sprites">
+        <member name="P:Animancer.Editor.Tools.SpriteModifierTool.Sprites">
             <summary>The currently selected <see cref="T:UnityEngine.Sprite"/>s.</summary>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.SpriteModifierPanel.OnSelectionChanged">
+        <member name="M:Animancer.Editor.Tools.SpriteModifierTool.OnSelectionChanged">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.AnimancerToolsWindow.SpriteModifierPanel.GatherSelectedSprites(System.Collections.Generic.List{UnityEngine.Sprite})">
+        <member name="M:Animancer.Editor.Tools.SpriteModifierTool.DoBodyGUI">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteModifierTool.GatherSelectedSprites(System.Collections.Generic.List{UnityEngine.Sprite})">
             <summary>
             Adds all <see cref="T:UnityEngine.Sprite"/>s in the <see cref="P:UnityEditor.Selection.objects"/> or their sub-assets to the
             list of `sprites`.
             </summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteModifierTool.LoadAllSpritesInTexture(UnityEngine.Texture2D)">
+            <summary>Returns all the <see cref="T:UnityEngine.Sprite"/> sub-assets of the `texture`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteModifierTool.LoadAllSpritesAtPath(System.String)">
+            <summary>Returns all the <see cref="T:UnityEngine.Sprite"/> assets at the `path`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.Tools.SpriteModifierTool.NaturalCompare(UnityEngine.Object,UnityEngine.Object)">
+            <summary>Calls <see cref="M:UnityEditor.EditorUtility.NaturalCompare(System.String,System.String)"/> on the <see cref="P:UnityEngine.Object.name"/>s.</summary>
         </member>
         <member name="T:Animancer.Editor.AnimancerEditorUtilities">
             <summary>[Editor-Only] Various utilities used throughout Animancer.</summary>
@@ -2124,8 +2354,8 @@
              <para></para>
              Otherwise, if the object is part of a prefab then it returns the root of that prefab instance.
              <para></para>
-             Otherwise, it counts the number of <see cref="T:UnityEngine.Animator"/>s in the children of the `gameObject` then does
-             the same for each parent. If it finds a parent with a different number of child <see cref="T:UnityEngine.Animator"/>s, it
+             Otherwise, it counts the number of Animators in the children of the `gameObject` then does
+             the same for each parent. If it finds a parent with a different number of child Animators, it
              assumes that object is the parent of multiple characters and returns the previous parent as the root.
              </remarks>
             
@@ -2137,7 +2367,7 @@
                  - States - Various components which reference the AnimationClips they will play
              </code>
              Passing the <c>Model</c> into this method will return the <c>Character</c> because it has the same
-             number of <see cref="T:UnityEngine.Animator"/> components in its children.
+             number of Animator components in its children.
             
              <h2>Shared Hierarchy</h2>
              <code>
@@ -2150,9 +2380,9 @@
                      - States
              </code>
              <list type="bullet">
-             <item><c>Model</c> has one <see cref="T:UnityEngine.Animator"/> and no more in its children.</item>
-             <item>And <c>Character</c> has one <see cref="T:UnityEngine.Animator"/> in its children (the same one).</item>
-             <item>But <c>Characters</c> has two <see cref="T:UnityEngine.Animator"/>s in its children (one on each character).</item>
+             <item><c>Model</c> has one Animator and no more in its children.</item>
+             <item>And <c>Character</c> has one Animator in its children (the same one).</item>
+             <item>But <c>Characters</c> has two Animators in its children (one on each character).</item>
              </list>
              So it picks the <c>Character</c> as the root.
             
@@ -2201,8 +2431,8 @@
             The default location is <em>Assets/Plugins/Animancer/Editor</em>, but you can freely move it (and the whole
             Animancer folder) anywhere in your project.
             <para></para>
-            These settings can also be accessed in <see cref="T:Animancer.Editor.AnimancerToolsWindow.Settings"/> panel in the
-            <see cref="T:Animancer.Editor.AnimancerToolsWindow"/> (<c>Window/Animation/Animancer Tools</c>).
+            These settings can also be accessed via the Settings in the <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow"/>
+            (<c>Window/Animation/Animancer Tools</c>).
             </remarks>
             https://kybernetik.com.au/animancer/api/Animancer.Editor/AnimancerSettings
             
@@ -2230,6 +2460,9 @@
             Draws a <see cref="M:UnityEditor.EditorGUILayout.PropertyField(UnityEditor.SerializedProperty,UnityEngine.GUILayoutOption[])"/> for a
             property in this group.
             </summary>
+        </member>
+        <member name="M:Animancer.Editor.AnimancerSettingsInternal.OnEnable">
+            <summary>Initializes the serialized fields.</summary>
         </member>
         <member name="M:Animancer.Editor.AnimancerSettingsInternal.SetDirty">
             <summary>Calls <see cref="M:UnityEditor.EditorUtility.SetDirty(UnityEngine.Object)"/> on the <see cref="P:Animancer.Editor.AnimancerSettingsInternal.Instance"/>.</summary>
@@ -2297,6 +2530,9 @@
         </member>
         <member name="M:Animancer.Editor.AnimationBindings.GetBindings(UnityEngine.AnimationClip)">
             <summary>Returns a cached array of all properties animated by the specified `clip`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.AnimationBindings.OnPostprocessAnimation(UnityEngine.GameObject,UnityEngine.AnimationClip)">
+            <summary>Called when Unity imports an animation.</summary>
         </member>
         <member name="M:Animancer.Editor.AnimationBindings.OnAnimationChanged(UnityEngine.AnimationClip)">
             <summary>Clears any cached values relating to the `clip` since they may no longer be correct.</summary>
@@ -2452,7 +2688,7 @@
         </member>
         <member name="T:Animancer.Editor.AttributeCache`1">
             <summary>[Editor-Only] A cache to optimize repeated attribute access.</summary>
-            https://kybernetik.com.au/animancer/api/Animancer/AttributeCache_1
+            https://kybernetik.com.au/animancer/api/Animancer.Editor/AttributeCache_1
             
         </member>
         <member name="M:Animancer.Editor.AttributeCache`1.GetAttribute(System.Reflection.MemberInfo)">
@@ -2767,7 +3003,7 @@
             <summary>Deselects any selected IMGUI control.</summary>
         </member>
         <member name="T:Animancer.Editor.AnimancerLayerDrawer">
-            <summary>[Internal]
+            <summary>[Editor-Only]
             A custom Inspector for an <see cref="T:Animancer.AnimancerLayer"/> which sorts and exposes some of its internal values.
             </summary>
             https://kybernetik.com.au/animancer/api/Animancer.Editor/AnimancerLayerDrawer
@@ -2829,6 +3065,9 @@
         </member>
         <member name="M:Animancer.Editor.AnimancerLayerDrawer.DoChildStatesGUI(Animancer.AnimancerState)">
             <summary>Draws all child states of the `state`.</summary>
+        </member>
+        <member name="M:Animancer.Editor.AnimancerLayerDrawer.DoHeaderGUI">
+            <inheritdoc/>
         </member>
         <member name="M:Animancer.Editor.AnimancerLayerDrawer.DoGUI">
             <inheritdoc/>
@@ -3232,11 +3471,20 @@
         </member>
         <member name="T:Animancer.Editor.SpriteEditor">
             <summary>[Editor-Only]
-            A custom Inspector for <see cref="T:UnityEngine.Sprite"/>s allows you to directly edit them instead of just showing their
-            details like the default one does.
+            A custom Inspector for <see cref="T:UnityEngine.Sprite"/>s which allows you to directly edit them instead of just showing
+            their details like the default one does.
             </summary>
             https://kybernetik.com.au/animancer/api/Animancer.Editor/SpriteEditor
             
+        </member>
+        <member name="M:Animancer.Editor.SpriteEditor.OnEnable">
+            <summary>Initializes this editor.</summary>
+        </member>
+        <member name="M:Animancer.Editor.SpriteEditor.OnDisable">
+            <summary>Cleans up this editor.</summary>
+        </member>
+        <member name="P:Animancer.Editor.SpriteEditor.AllSpriteModeMultiple">
+            <summary>Are all targets set to <see cref="F:UnityEditor.SpriteImportMode.Multiple"/>?</summary>
         </member>
         <member name="M:Animancer.Editor.SpriteEditor.OnInspectorGUI">
             <summary>Called by the Unity editor to draw the custom Inspector GUI elements.</summary>
@@ -3397,6 +3645,9 @@
         <member name="M:Animancer.Editor.TransitionDrawer.DoHeaderGUI(UnityEngine.Rect@,UnityEditor.SerializedProperty,UnityEditor.SerializedProperty,UnityEngine.GUIContent,System.Boolean)">
             <summary>Draws the root property of a transition with an optional main property on the same line.</summary>
         </member>
+        <member name="M:Animancer.Editor.TransitionDrawer.DoMainPropertyGUI(UnityEngine.Rect,UnityEngine.Rect@,UnityEditor.SerializedProperty,UnityEditor.SerializedProperty)">
+            <summary>Draws the GUI the the target transition's main property.</summary>
+        </member>
         <member name="M:Animancer.Editor.TransitionDrawer.DoPreviewButtonGUI(UnityEngine.Rect@,UnityEditor.SerializedProperty,System.Boolean)">
             <summary>Draws a small button using the <see cref="P:Animancer.Editor.TransitionPreviewWindow.Icon"/>.</summary>
         </member>
@@ -3450,12 +3701,31 @@
         <member name="M:Animancer.Editor.TransitionDrawer.DrawerContext.Dispose">
             <summary>Decrements the <see cref="F:Animancer.Editor.TransitionDrawer.DrawerContext.Stack"/>.</summary>
         </member>
+        <member name="T:Animancer.Editor.ScriptingDefineSymbols">
+            <summary>[Editor-Only]
+            Various utility functions for accessing scripting define symbols.
+            </summary>
+            https://kybernetik.com.au/animancer/api/Animancer.Editor/ScriptingDefineSymbols
+            
+        </member>
+        <member name="P:Animancer.Editor.ScriptingDefineSymbols.CurrentBuildTarget">
+            <summary>The platform currently selected in the Player Settings.</summary>
+        </member>
+        <member name="P:Animancer.Editor.ScriptingDefineSymbols.Symbols">
+            <summary>The symbols defined in the <see cref="P:Animancer.Editor.ScriptingDefineSymbols.CurrentBuildTarget"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.ScriptingDefineSymbols.IsSymbolDefined(System.String)">
+            <summary>Is the `symbol` defined in the <see cref="P:Animancer.Editor.ScriptingDefineSymbols.CurrentBuildTarget"/>.</summary>
+        </member>
+        <member name="M:Animancer.Editor.ScriptingDefineSymbols.SetSymbolDefined(System.String,System.Boolean)">
+            <summary>Defines or undefines the `symbol` in the <see cref="P:Animancer.Editor.ScriptingDefineSymbols.CurrentBuildTarget"/>.</summary>
+        </member>
         <member name="T:Animancer.Editor.BoolPref">
             <summary>[Editor-Only]
             A simple wrapper around <see cref="T:UnityEditor.EditorPrefs"/> to get and set a bool.
             <para></para>
             If you are interested in a more comprehensive pref wrapper that supports more types, you should check out
-            <see href="https://kybernetik.com.au/inspector-gadgets">Inspector Gadgets</see>.
+            <see href="https://kybernetik.com.au/inspector-gadgets/docs/other/auto-prefs">Inspector Gadgets - Auto Prefs</see>.
             </summary>
             https://kybernetik.com.au/animancer/api/Animancer.Editor/BoolPref
             
@@ -3877,14 +4147,10 @@
             </summary>
         </member>
         <member name="M:Animancer.Editor.Serialization.ObjectReference.op_Implicit(Animancer.Editor.Serialization.ObjectReference)~UnityEngine.Object">
-            <summary>
-            Returns the target <see cref="P:Animancer.Editor.Serialization.ObjectReference.Object"/>.
-            </summary>
+            <summary>Returns the target <see cref="P:Animancer.Editor.Serialization.ObjectReference.Object"/>.</summary>
         </member>
         <member name="M:Animancer.Editor.Serialization.ObjectReference.Convert(UnityEngine.Object[])">
-            <summary>
-            Creates a new array of <see cref="T:Animancer.Editor.Serialization.ObjectReference"/>s representing the `objects`.
-            </summary>
+            <summary>Creates a new array of <see cref="T:Animancer.Editor.Serialization.ObjectReference"/>s representing the `objects`.</summary>
         </member>
         <member name="M:Animancer.Editor.Serialization.ObjectReference.Convert(Animancer.Editor.Serialization.ObjectReference[])">
             <summary>
@@ -3893,9 +4159,7 @@
             </summary>
         </member>
         <member name="M:Animancer.Editor.Serialization.ObjectReference.AreSameObjects(Animancer.Editor.Serialization.ObjectReference[],UnityEngine.Object[])">
-            <summary>
-            Indicates whether both arrays refer to the same set of objects.
-            </summary>
+            <summary>Indicates whether both arrays refer to the same set of objects.</summary>
         </member>
         <member name="M:Animancer.Editor.Serialization.ObjectReference.ToString">
             <summary>Returns a string describing this object.</summary>
@@ -4129,7 +4393,10 @@
         <member name="M:Animancer.Editor.TransitionPreviewWindow.OnDisable">
             <inheritdoc/>
         </member>
-        <member name="M:Animancer.Editor.TransitionPreviewWindow.OnGUI">
+        <member name="M:Animancer.Editor.TransitionPreviewWindow.OnDestroy">
+            <summary>Cleans up this window.</summary>
+        </member>
+        <member name="M:Animancer.Editor.TransitionPreviewWindow.OnSceneGUI">
             <inheritdoc/>
         </member>
         <member name="M:Animancer.Editor.TransitionPreviewWindow.Update">
@@ -4180,6 +4447,12 @@
         </member>
         <member name="P:Animancer.Editor.TransitionPreviewWindow.Scene.InstanceRoot">
             <summary>The root of the model in the preview scene. A child of the <see cref="P:Animancer.Editor.TransitionPreviewWindow.Scene.PreviewSceneRoot"/>.</summary>
+        </member>
+        <member name="P:Animancer.Editor.TransitionPreviewWindow.Scene.EnvironmentInstance">
+            <summary>
+            An instance of the <see cref="P:Animancer.Editor.TransitionPreviewWindow.Settings.SceneEnvironment"/>.
+            A child of the <see cref="P:Animancer.Editor.TransitionPreviewWindow.Scene.PreviewSceneRoot"/>.
+            </summary>
         </member>
         <member name="P:Animancer.Editor.TransitionPreviewWindow.Scene.OriginalRoot">
             <summary>The original model which was instantiated to create the <see cref="P:Animancer.Editor.TransitionPreviewWindow.Scene.InstanceRoot"/>.</summary>
@@ -4555,7 +4828,7 @@
             <em>Animancer Lite only allows the default `fadeDuration` (0.25 seconds) in runtime builds.</em>
             </remarks>
         </member>
-        <member name="M:Animancer.AnimancerLayer.EvaluateFadeMode(Animancer.FadeMode,Animancer.AnimancerState@,System.Single@)">
+        <member name="M:Animancer.AnimancerLayer.EvaluateFadeMode(Animancer.FadeMode,Animancer.AnimancerState@,System.Single@,System.Single@)">
             <summary>Manipulates the other parameters according to the `mode`.</summary>
             <exception cref="T:System.ArgumentException">
             The <see cref="P:Animancer.AnimancerState.Clip"/> is null when using <see cref="F:Animancer.FadeMode.FromStart"/> or
@@ -4567,21 +4840,26 @@
             The maximum number of duplicate states that can be created by <see cref="M:Animancer.AnimancerLayer.GetOrCreateWeightlessState(Animancer.AnimancerState)"/> for
             a single clip before it will start giving usage warnings. Default = 5.
             </summary>
+            <remarks>This value can be set by <see cref="M:Animancer.AnimancerLayer.SetMaxStateDepth(System.Int32)"/>.</remarks>
         </member>
         <member name="M:Animancer.AnimancerLayer.SetMaxStateDepth(System.Int32)">
             <summary>[Assert-Conditional] Sets the <see cref="P:Animancer.AnimancerLayer.MaxStateDepth"/>.</summary>
             <remarks>This would not need to be a separate method if C# supported conditional property setters.</remarks>
         </member>
+        <member name="P:Animancer.AnimancerLayer.WeightlessThreshold">
+            <summary>
+            The maximum <see cref="P:Animancer.AnimancerNode.Weight"/> that <see cref="M:Animancer.AnimancerLayer.GetOrCreateWeightlessState(Animancer.AnimancerState)"/> will treat as
+            being weightless. Default = 0.01.
+            </summary>
+            <remarks>This allows states with very small weights to be reused instead of needing to create new ones.</remarks>
+        </member>
         <member name="M:Animancer.AnimancerLayer.GetOrCreateWeightlessState(Animancer.AnimancerState)">
             <summary>
-            If the `state` is not currently at 0 <see cref="P:Animancer.AnimancerNode.Weight"/>, this method finds a copy of it
-            which is at 0 or creates a new one.
+            If the `state` is not currently at low <see cref="P:Animancer.AnimancerNode.Weight"/>, this method finds a copy of it
+            which is at low or creates a new one.
             </summary>
+            <remarks>"Low" weight is defined as less than or equal to the <see cref="P:Animancer.AnimancerLayer.WeightlessThreshold"/>.</remarks>
             <exception cref="T:System.InvalidOperationException">The <see cref="P:Animancer.AnimancerState.Clip"/> is null.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">
-            More states have been created for this <see cref="P:Animancer.AnimancerState.Clip"/> than the
-            <see cref="P:Animancer.AnimancerLayer.MaxStateDepth"/> allows.
-            </exception>
         </member>
         <member name="M:Animancer.AnimancerLayer.Stop">
             <summary>
@@ -5146,7 +5424,10 @@
              </code></example>
         </member>
         <member name="P:Animancer.AnimancerPlayable.KeepChildrenConnected">
-            <summary>Should playables stay connected to the graph at all times?</summary>
+            <summary>
+            Should playables stay connected to the graph at all times?
+            Otherwise they will be disconnected when their  <see cref="P:Animancer.AnimancerNode.Weight"/> is 0.
+            </summary>
             
             <remarks>
             Humanoid Rigs default this value to <c>false</c> so that playables will be disconnected from the graph
@@ -5201,7 +5482,7 @@
             <summary>Creates an <see cref="T:Animancer.AnimancerPlayable"/> in an existing <see cref="T:UnityEngine.Playables.PlayableGraph"/>.</summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.OnPlayableCreate(UnityEngine.Playables.Playable)">
-            <summary>[Internal] Called by Unity as it creates this <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
+            <summary>[Internal] Called by Unity when it creates this <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.SetNextGraphName(System.String)">
             <summary>[Editor-Conditional]
@@ -5234,16 +5515,16 @@
         <member name="M:Animancer.AnimancerPlayable.InsertOutputPlayable(UnityEngine.Playables.Playable)">
             <summary>[Pro-Only]
             Inserts a `playable` after the root of the <see cref="P:Animancer.AnimancerPlayable.Graph"/> so that it can modify the final output.
-            <para></para>
-            It can be removed using <see cref="M:Animancer.AnimancerUtilities.RemovePlayable(UnityEngine.Playables.Playable,System.Boolean)"/>.
             </summary>
+            <remarks>It can be removed using <see cref="M:Animancer.AnimancerUtilities.RemovePlayable(UnityEngine.Playables.Playable,System.Boolean)"/>.</remarks>
         </member>
         <member name="M:Animancer.AnimancerPlayable.InsertOutputJob``1(``0)">
             <summary>[Pro-Only]
             Inserts an animation job after the root of the <see cref="P:Animancer.AnimancerPlayable.Graph"/> so that it can modify the final output.
-            <para></para>
-            It can can be removed by passing the returned value into <see cref="M:Animancer.AnimancerUtilities.RemovePlayable(UnityEngine.Playables.Playable,System.Boolean)"/>.
             </summary>
+            <remarks>
+            It can can be removed by passing the returned value into <see cref="M:Animancer.AnimancerUtilities.RemovePlayable(UnityEngine.Playables.Playable,System.Boolean)"/>.
+            </remarks>
         </member>
         <member name="P:Animancer.AnimancerPlayable.IsValid">
             <summary>Is this <see cref="T:Animancer.AnimancerPlayable"/> currently usable (not destroyed)?</summary>
@@ -5255,12 +5536,6 @@
             <summary>
             Destroys the <see cref="T:UnityEngine.Playables.PlayableOutput"/> connected to this <see cref="T:Animancer.AnimancerPlayable"/> and returns
             true if it was found. Otherwise returns false.
-            </summary>
-        </member>
-        <member name="M:Animancer.AnimancerPlayable.DestroyPlayable">
-            <summary>
-            Destroys this <see cref="T:Animancer.AnimancerPlayable"/> and the <see cref="T:UnityEngine.Playables.PlayableOutput"/> connected to it (if
-            any). This operation cannot be undone.
             </summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.OnPlayableDestroy(UnityEngine.Playables.Playable)">
@@ -5587,6 +5862,9 @@
             Called by the <see cref="T:UnityEngine.Playables.PlayableGraph"/> before the rest of the <see cref="T:UnityEngine.Playables.Playable"/>s are evaluated.
             </remarks>
         </member>
+        <member name="M:Animancer.AnimancerPlayable.UpdateAll(Animancer.Key.KeyedList{Animancer.IUpdatable},System.Single)">
+            <summary>Calls <see cref="M:Animancer.IUpdatable.Update"/> on each of the updatables`.</summary>
+        </member>
         <member name="M:Animancer.AnimancerPlayable.IsRunningPostUpdate(Animancer.AnimancerPlayable)">
             <summary>Indicates whether the internal <see cref="T:Animancer.AnimancerPlayable.PostUpdate"/> is currently executing.</summary>
         </member>
@@ -5610,7 +5888,7 @@
             <summary>Creates a new <see cref="T:Animancer.AnimancerPlayable.PostUpdate"/> for the `root`.</summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.PostUpdate.OnPlayableCreate(UnityEngine.Playables.Playable)">
-            <summary>Called by Unity as it creates this <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
+            <summary>[Internal] Called by Unity when it creates this <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
         </member>
         <member name="P:Animancer.AnimancerPlayable.PostUpdate.IsConnected">
             <summary>
@@ -5736,13 +6014,8 @@
             <exception cref="T:System.ArgumentOutOfRangeException">The value is not greater than 0.</exception>
         </member>
         <member name="M:Animancer.AnimancerPlayable.LayerList.Add">
-            <summary>[Pro-Only]
-            Creates and returns a new <see cref="T:Animancer.AnimancerLayer"/>. New layers will override earlier layers by default.
-            </summary>
-            <exception cref="T:System.InvalidOperationException">
-            The value is set higher than the <see cref="P:Animancer.AnimancerPlayable.LayerList.Capacity"/>. This is simply a safety measure,
-            so if you do actually need more layers you can just increase the limit.
-            </exception>
+            <summary>[Pro-Only] Creates and returns a new <see cref="T:Animancer.AnimancerLayer"/> at the end of this list.</summary>
+            <remarks>If the <see cref="P:Animancer.AnimancerPlayable.LayerList.Capacity"/> would be exceeded, it will be doubled.</remarks>
         </member>
         <member name="P:Animancer.AnimancerPlayable.LayerList.Item(System.Int32)">
             <summary>Returns the layer at the specified index. If it didn't already exist, this method creates it.</summary>
@@ -5801,16 +6074,16 @@
         <member name="F:Animancer.AnimancerPlayable.StateDictionary.Root">
             <summary>The <see cref="T:Animancer.AnimancerPlayable"/> at the root of the graph.</summary>
         </member>
-        <member name="P:Animancer.AnimancerPlayable.StateDictionary.ReferenceKeysOnly">
-            <summary>
-            Determines the <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> used by every new <see cref="T:Animancer.AnimancerPlayable.StateDictionary"/> when
-            it is created. Changing this value will not affect existing instances.
-            <list type="bullet">
-            <item>The default is false, which will use a <see cref="T:Animancer.FastComparer"/>.</item>
-            <item>Setting it to true will use a <see cref="T:Animancer.FastReferenceComparer"/>, which is faster but does not
-            work for value types such as enums because it uses <see cref="M:System.Object.ReferenceEquals(System.Object,System.Object)"/>.</item>
-            </list>
-            </summary>
+        <member name="P:Animancer.AnimancerPlayable.StateDictionary.EqualityComparer">
+            <summary>The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> used by every new <see cref="T:Animancer.AnimancerPlayable.StateDictionary"/>.</summary>
+            <remarks>
+            By default, this will use <see cref="F:Animancer.FastComparer.Instance"/>.
+            <para></para>
+            Setting it to <see cref="F:Animancer.FastReferenceComparer.Instance"/> would make it slightly faster, but would
+            not work for value types such as enums.
+            <para></para>
+            Changing this value will not affect existing instances.
+            </remarks>
         </member>
         <member name="F:Animancer.AnimancerPlayable.StateDictionary.States">
             <summary><see cref="P:Animancer.AnimancerState.Key"/> mapped to <see cref="T:Animancer.AnimancerState"/>.</summary>
@@ -5822,46 +6095,32 @@
             <summary>The number of states that have been registered with a <see cref="P:Animancer.AnimancerState.Key"/>.</summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.StateDictionary.Create(UnityEngine.AnimationClip)">
-            <summary>
-            Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the `clip`.
-            <para></para>
-            To create a state on a different layer, use <c>animancer.Layers[x].CreateState(clip)</c> instead.
-            </summary>
+            <summary>Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the `clip`.</summary>
             <remarks>
+            To create a state on a specific layer, use <c>animancer.Layers[x].CreateState(clip)</c> instead.
+            <para></para>
             <see cref="M:Animancer.AnimancerPlayable.GetKey(UnityEngine.AnimationClip)"/> is used to determine the <see cref="P:Animancer.AnimancerState.Key"/>.
             </remarks>
         </member>
         <member name="M:Animancer.AnimancerPlayable.StateDictionary.Create(System.Object,UnityEngine.AnimationClip)">
             <summary>
             Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the `clip` and registers it with the `key`.
-            <para></para>
-            To create a state on a different layer, use <c>animancer.Layers[x].CreateState(key, clip)</c> instead.
             </summary>
+            <remarks>
+            To create a state on a specific layer, use <c>animancer.Layers[x].CreateState(key, clip)</c> instead.
+            </remarks>
         </member>
         <member name="M:Animancer.AnimancerPlayable.StateDictionary.CreateIfNew(UnityEngine.AnimationClip,UnityEngine.AnimationClip)">
-            <summary>
-            Calls <see cref="M:Animancer.AnimancerPlayable.StateDictionary.GetOrCreate(UnityEngine.AnimationClip,System.Boolean)"/> for each of the specified clips.
-            <para></para>
-            If you only want to create a single state, use <see cref="M:Animancer.AnimancerLayer.CreateState(UnityEngine.AnimationClip)"/>.
-            </summary>
+            <summary>Calls <see cref="M:Animancer.AnimancerPlayable.StateDictionary.GetOrCreate(UnityEngine.AnimationClip,System.Boolean)"/> for each of the specified clips.</summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.StateDictionary.CreateIfNew(UnityEngine.AnimationClip,UnityEngine.AnimationClip,UnityEngine.AnimationClip)">
-            <summary>
-            Calls <see cref="M:Animancer.AnimancerPlayable.StateDictionary.GetOrCreate(UnityEngine.AnimationClip,System.Boolean)"/> for each of the specified clips.
-            <para></para>
-            If you only want to create a single state, use <see cref="M:Animancer.AnimancerLayer.CreateState(UnityEngine.AnimationClip)"/>.
-            </summary>
+            <summary>Calls <see cref="M:Animancer.AnimancerPlayable.StateDictionary.GetOrCreate(UnityEngine.AnimationClip,System.Boolean)"/> for each of the specified clips.</summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.StateDictionary.CreateIfNew(UnityEngine.AnimationClip,UnityEngine.AnimationClip,UnityEngine.AnimationClip,UnityEngine.AnimationClip)">
-            <summary>
-            Calls <see cref="M:Animancer.AnimancerPlayable.StateDictionary.GetOrCreate(UnityEngine.AnimationClip,System.Boolean)"/> for each of the specified clips.
-            <para></para>
-            If you only want to create a single state, use <see cref="M:Animancer.AnimancerLayer.CreateState(UnityEngine.AnimationClip)"/>.
-            </summary>
+            <summary>Calls <see cref="M:Animancer.AnimancerPlayable.StateDictionary.GetOrCreate(UnityEngine.AnimationClip,System.Boolean)"/> for each of the specified clips.</summary>
         </member>
         <member name="M:Animancer.AnimancerPlayable.StateDictionary.CreateIfNew(UnityEngine.AnimationClip[])">
             <summary>Calls <see cref="M:Animancer.AnimancerPlayable.StateDictionary.GetOrCreate(UnityEngine.AnimationClip,System.Boolean)"/> for each of the specified `clips`.</summary>
-            <remarks>To create a single state, use <see cref="M:Animancer.AnimancerLayer.CreateState(UnityEngine.AnimationClip)"/> instead.</remarks>
         </member>
         <member name="P:Animancer.AnimancerPlayable.StateDictionary.Current">
             <summary>
@@ -6038,6 +6297,7 @@
             </remarks>
             https://kybernetik.com.au/animancer/api/Animancer/AnimancerState
             
+            https://kybernetik.com.au/animancer/api/Animancer/AnimancerState
             https://kybernetik.com.au/animancer/api/Animancer/AnimancerState
         </member>
         <member name="M:Animancer.AnimancerState.SetRoot(Animancer.AnimancerPlayable)">
@@ -6373,7 +6633,7 @@
         <member name="M:Animancer.AnimancerState.IsPlayingAndNotEnding">
             <summary>
             Returns true if the animation is playing and has not yet passed the
-            <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/>.
+            <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/>.
             </summary>
             <remarks>
             This method is called by <see cref="M:System.Collections.IEnumerator.MoveNext"/> so this object can be used as a custom yield
@@ -6400,6 +6660,28 @@
         </member>
         <member name="M:Animancer.AnimancerState.AppendPortAndType(System.Text.StringBuilder)">
             <summary>Appends "[Index] -> GetType().Name".</summary>
+        </member>
+        <member name="T:Animancer.AnimancerState.DelayedPause">
+            <summary>
+            Uses <see cref="M:Animancer.AnimancerPlayable.RequirePostUpdate(Animancer.IUpdatable)"/> to pause a <see cref="F:Animancer.AnimancerNode._Playable"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.DelayedPause.Root">
+            <summary>The <see cref="P:Animancer.AnimancerNode.Root"/>.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.DelayedPause.State">
+            <summary>The state that will be paused.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.DelayedPause.Register(Animancer.AnimancerState)">
+            <summary>
+            Gets a <see cref="T:Animancer.AnimancerState.DelayedPause"/> from the <see cref="T:Animancer.ObjectPool"/> and initializes it for the `state`.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.DelayedPause.Update">
+            <summary>
+            Pauses the <see cref="P:Animancer.AnimancerState.DelayedPause.State"/> if <see cref="P:Animancer.AnimancerState.IsPlaying"/> hasn't been set to true and returns this
+            object to the <see cref="T:Animancer.ObjectPool"/>.
+            </summary>
         </member>
         <member name="F:Animancer.AnimancerState._EventDispatcher">
             <summary>The <see cref="T:Animancer.IUpdatable"/> that manages the events of this state.</summary>
@@ -6428,10 +6710,8 @@
             </remarks>
         </member>
         <member name="P:Animancer.AnimancerState.HasEvents">
-            <summary>
-            Indicates whether this state currently has an <see cref="T:Animancer.AnimancerEvent.Sequence"/> (since accessing the
-            <see cref="P:Animancer.AnimancerState.Events"/> would automatically get one from the <see cref="T:Animancer.ObjectPool"/>).
-            </summary>
+            <summary>Does this state have an <see cref="T:Animancer.AnimancerEvent.Sequence"/>?</summary>
+            <remarks>Accessing <see cref="P:Animancer.AnimancerState.Events"/> would automatically get one from the <see cref="T:Animancer.ObjectPool"/>.</remarks>
         </member>
         <member name="P:Animancer.AnimancerState.AutomaticallyClearEvents">
             <summary>
@@ -6456,6 +6736,7 @@
         <member name="T:Animancer.AnimancerState.EventDispatcher">
             <summary>An <see cref="T:Animancer.IUpdatable"/> which triggers events in an <see cref="T:Animancer.AnimancerEvent.Sequence"/>.</summary>
             https://kybernetik.com.au/animancer/api/Animancer/EventDispatcher
+            
         </member>
         <member name="M:Animancer.AnimancerState.EventDispatcher.Acquire(Animancer.AnimancerState)">
             <summary>
@@ -6484,33 +6765,37 @@
             which events have been checked/invoked and which still need to be checked.
             </summary>
         </member>
+        <member name="P:Animancer.AnimancerState.EventDispatcher.HasEvents">
+            <summary>Does this dispatcher have an <see cref="T:Animancer.AnimancerEvent.Sequence"/>?</summary>
+            <remarks>Accessing <see cref="P:Animancer.AnimancerState.EventDispatcher.Events"/> would automatically get one from the <see cref="T:Animancer.ObjectPool"/>.</remarks>
+        </member>
         <member name="P:Animancer.AnimancerState.EventDispatcher.Events">
             <summary>The events managed by this dispatcher.</summary>
             <remarks>If <c>null</c>, a new sequence will be acquired from the <see cref="T:Animancer.ObjectPool"/>.</remarks>
         </member>
         <member name="M:Animancer.AnimancerState.EventDispatcher.ValidateBeforeEndEvent">
             <summary>[Assert-Conditional]
-            Called after the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/> is triggered to log a warning if the
+            Called after the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/> is triggered to log a warning if the
             <see cref="F:Animancer.AnimancerState.EventDispatcher._State"/> was not interrupted or the `callback` contains multiple calls to the same method.
             </summary>
             <remarks>
             It would be better if we could validate the callback when it is assigned to get a useful stack trace,
-            but that is unfortunately not possible since <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/> needs to be
+            but that is unfortunately not possible since <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/> needs to be
             a field for efficiency.
             </remarks>
         </member>
         <member name="M:Animancer.AnimancerState.EventDispatcher.ValidateAfterEndEvent(System.Action)">
             <summary>[Assert-Conditional]
-            Called after the <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/> is triggered to log a warning if the
+            Called after the <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/> is triggered to log a warning if the
             <see cref="F:Animancer.AnimancerState.EventDispatcher._State"/> was not interrupted or the `callback` contains multiple calls to the same method.
             </summary>
             <remarks>
             It would be better if we could validate the callback when it is assigned to get a useful stack trace,
-            but that is unfortunately not possible since <see cref="F:Animancer.AnimancerEvent.Sequence.endEvent"/> needs to be
+            but that is unfortunately not possible since <see cref="P:Animancer.AnimancerEvent.Sequence.EndEvent"/> needs to be
             a field for efficiency.
             </remarks>
         </member>
-        <member name="M:Animancer.AnimancerState.EventDispatcher.ShouldLogEndEventInterrupt">
+        <member name="M:Animancer.AnimancerState.EventDispatcher.ShouldLogEndEventInterrupt(System.Action)">
             <summary>Should <see cref="F:Animancer.OptionalWarning.EndEventInterrupt"/> be logged?</summary>
         </member>
         <member name="M:Animancer.AnimancerState.EventDispatcher.OnTimeChanged">
@@ -6519,6 +6804,12 @@
         <member name="M:Animancer.AnimancerState.EventDispatcher.UpdateZeroLength">
             <summary>If the state has zero length, trigger its end event every frame.</summary>
         </member>
+        <member name="M:Animancer.AnimancerState.EventDispatcher.GetLoopDelta(System.Single,System.Single,System.Single)">
+            <summary>
+            Calculates the number of times an event at `eventTime` should be invoked when the
+            <see cref="P:Animancer.AnimancerState.NormalizedTime"/> goes from `previousTime` to `nextTime` on a looping animation.
+            </summary>
+        </member>
         <member name="M:Animancer.AnimancerState.EventDispatcher.ToString">
             <summary>Returns "<see cref="T:Animancer.AnimancerState.EventDispatcher"/> (Target State)".</summary>
         </member>
@@ -6526,6 +6817,8 @@
             <summary>Various extension methods and utilities.</summary>
             https://kybernetik.com.au/animancer/api/Animancer/AnimancerUtilities
             
+            https://kybernetik.com.au/animancer/api/Animancer/AnimancerUtilities
+            https://kybernetik.com.au/animancer/api/Animancer/AnimancerUtilities
             https://kybernetik.com.au/animancer/api/Animancer/AnimancerUtilities
             https://kybernetik.com.au/animancer/api/Animancer/AnimancerUtilities
             https://kybernetik.com.au/animancer/api/Animancer/AnimancerUtilities
@@ -6552,8 +6845,11 @@
             </summary>
         </member>
         <member name="M:Animancer.AnimancerUtilities.IsFinite(System.Single)">
-            <summary>[Animancer Extension] Returns true as long as the `value` is not NaN or Infinity.</summary>
+            <summary>[Animancer Extension] Is the `value` not NaN or Infinity?</summary>
             <remarks>Newer versions of the .NET framework apparently have a <c>float.IsFinite</c> method.</remarks>
+        </member>
+        <member name="M:Animancer.AnimancerUtilities.IsFinite(UnityEngine.Vector2)">
+            <summary>[Animancer Extension] Are all components of the `value` not NaN or Infinity?</summary>
         </member>
         <member name="M:Animancer.AnimancerUtilities.ToStringOrNull(System.Object)">
             <summary>
@@ -6561,6 +6857,9 @@
             Or if it is <c>null</c>, this method returns <c>"Null"</c>.
             Or if it is an <see cref="T:UnityEngine.Object"/> that has been destroyed, this method returns <c>"Null (ObjectType)"</c>.
             </summary>
+        </member>
+        <member name="M:Animancer.AnimancerUtilities.CopyExactArray``1(``0[],``0[]@)">
+            <summary>Ensures that the length and contents of `copyTo` match `copyFrom`.</summary>
         </member>
         <member name="M:Animancer.AnimancerUtilities.Swap``1(``0[],System.Int32,System.Int32)">
             <summary>[Animancer Extension] Swaps <c>array[a]</c> with <c>array[b]</c>.</summary>
@@ -6629,6 +6928,12 @@
             <para></para>
             Note that you must call <see cref="M:Unity.Collections.NativeArray`1.Dispose"/> when you are done with the array.
             </summary>
+        </member>
+        <member name="M:Animancer.AnimancerUtilities.GetUnsupportedMessage``1(``0)">
+            <summary>Returns a string stating that the `value` is unsupported.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerUtilities.CreateUnsupportedArgumentException``1(``0)">
+            <summary>Returns an exception stating that the `value` is unsupported.</summary>
         </member>
         <member name="M:Animancer.AnimancerUtilities.AddAnimancerComponent``1(UnityEngine.Animator)">
             <summary>[Animancer Extension]
@@ -6746,6 +7051,9 @@
             successful. If it has multiple animations with different rates, this method returns false.
             </summary>
         </member>
+        <member name="M:Animancer.AnimancerUtilities.Clone``1(``0)">
+            <summary>Creates a new <typeparamref name="T"/> and calls <see cref="M:Animancer.ICopyable`1.CopyFrom(`0)"/> on it.</summary>
+        </member>
         <member name="M:Animancer.AnimancerUtilities.TryGetAverageAngularSpeed(System.Object,System.Single@)">
             <summary>Outputs the <see cref="P:UnityEngine.Motion.averageAngularSpeed"/> or <see cref="P:Animancer.IMotion.AverageAngularSpeed"/>.</summary>
             <remarks>Returns false if the `motion` is null or an unsupported type.</remarks>
@@ -6833,9 +7141,9 @@
         <member name="T:Animancer.FadeMode">
             <summary>Determines how <see cref="M:Animancer.AnimancerLayer.Play(Animancer.AnimancerState,System.Single,Animancer.FadeMode)"/> works.</summary>
             <remarks>
-            Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/blending/fading">Fading</see>
+            Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/blending/fading/modes">Fade Modes</see>
             <para></para>
-            Example: <see href="https://kybernetik.com.au/animancer/docs/examples/basics/playing-and-fading">Playing and Fading</see>
+            Example: <see href="https://kybernetik.com.au/animancer/docs/examples/basics/transitions">Transitions</see>
             </remarks>
             https://kybernetik.com.au/animancer/api/Animancer/FadeMode
             
@@ -6895,22 +7203,29 @@
         </member>
         <member name="F:Animancer.FadeMode.FromStart">
              <summary>
-             If the state is not currently at 0 <see cref="P:Animancer.AnimancerNode.Weight"/>, this mode will use
-             <see cref="M:Animancer.AnimancerLayer.GetOrCreateWeightlessState(Animancer.AnimancerState)"/> to get a copy of it that is at 0 weight so it can
-             fade the copy in while the original fades out with all other states.
-             <para></para>
+             If the <see cref="P:Animancer.AnimancerNode.Weight"/> is above the <see cref="P:Animancer.AnimancerLayer.WeightlessThreshold"/>,
+             this mode will use <see cref="M:Animancer.AnimancerLayer.GetOrCreateWeightlessState(Animancer.AnimancerState)"/> to get a copy of it that is at 0
+             weight so it can fade the copy in while the original fades out with all other states. This allows an
+             animation to fade into itself.
+             </summary>
+            
+             <example>
+             This mode can be useful when you want to repeat an action while the previous animation is still fading out.
+             For example, if you play an 'Attack' animation, it ends and starts fading back to 'Idle', and while it is
+             doing so you want to start another 'Attack' with the same animation. The previous 'Attack' can't simply
+             snap back to the start, so you can use this mode to create a second 'Attack' state to fade in while the old
+             one fades out.
+             </example>
+             
+             <remarks>
              Using this mode repeatedly on subsequent frames will probably have undesirable effects because it will
              create a new state each time. In such a situation you most likely want <see cref="F:Animancer.FadeMode.FixedSpeed"/> instead.
              <para></para>
              This mode only works for <see cref="T:Animancer.ClipState"/>s.
-             </summary>
-            
-             <example>
-             This can be useful when you want to repeat an action while the previous animation is still fading out.
-             For example, if you play an 'Attack' animation, it ends and starts fading back to 'Idle', and while it is
-             doing so you want to start another 'Attack'. The previous 'Attack' can't simply snap back to the start, so
-             you can use this method to create a second 'Attack' state to fade in while the old one fades out.
-             </example>
+             <para></para>
+             The <see href="https://kybernetik.com.au/animancer/docs/manual/blending/fading/modes">Fade Modes</see> page
+             explains this mode in more detail.
+             </remarks>
         </member>
         <member name="F:Animancer.FadeMode.NormalizedSpeed">
             <summary>
@@ -6979,6 +7294,9 @@
             <summary>Should the `binding` be skipped when determining how to map the <see cref="P:Animancer.PlayableAssetState.Bindings"/>?</summary>
         </member>
         <member name="M:Animancer.PlayableAssetState.Destroy">
+            <inheritdoc/>
+        </member>
+        <member name="M:Animancer.PlayableAssetState.AppendDetails(System.Text.StringBuilder,System.String)">
             <inheritdoc/>
         </member>
         <member name="T:Animancer.SoloAnimationInternal">
@@ -7093,21 +7411,17 @@
         </member>
         <member name="M:Animancer.SoloAnimationInternal.OnEnable">
             <summary>Plays the <see cref="P:Animancer.SoloAnimationInternal.Clip"/> on the target <see cref="P:Animancer.SoloAnimationInternal.Animator"/>.</summary>
-            <remarks>Called by Unity when this component becomes enabled and active.</remarks>
         </member>
         <member name="M:Animancer.SoloAnimationInternal.Update">
             <summary>
             Checks if the animation is done so it can pause the <see cref="T:UnityEngine.Playables.PlayableGraph"/> to improve performance.
             </summary>
-            <remarks>Called by Unity every frame while this component is enabled and active.</remarks>
         </member>
         <member name="M:Animancer.SoloAnimationInternal.OnDisable">
             <summary>Ensures that the <see cref="F:Animancer.SoloAnimationInternal._Graph"/> is properly cleaned up.</summary>
-            <remarks>Called by Unity when this component becomes disabled or inactive.</remarks>
         </member>
         <member name="M:Animancer.SoloAnimationInternal.OnDestroy">
             <summary>Ensures that the <see cref="T:UnityEngine.Playables.PlayableGraph"/> is properly cleaned up.</summary>
-            <remarks>Called by Unity when this component is destroyed.</remarks>
         </member>
         <member name="M:Animancer.SoloAnimationInternal.Finalize">
             <summary>[Editor-Only] Ensures that the <see cref="T:UnityEngine.Playables.PlayableGraph"/> is destroyed.</summary>
@@ -7191,7 +7505,7 @@
             Note that values selected using the dropdown menu are still stored as strings. Modifying the names in the
             script will NOT automatically update any values previously set in the Inspector.
             <para></para>
-            Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/events/animancer#event-names">Event Names</see>
+            Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/events/animancer/usage#event-names">Event Names</see>
             </remarks>
             
             <example><code>
@@ -7500,8 +7814,8 @@
             <remarks>
             All warnings are enabled by default, but are compiled out of runtime builds (except development builds).
             <para></para>
-            You can manually disable warnings using the <see cref="T:Animancer.Editor.AnimancerToolsWindow.Settings"/> panel in the
-            <see cref="T:Animancer.Editor.AnimancerToolsWindow"/> (<c>Window/Animation/Animancer Tools</c>).
+            You can manually disable warnings using the Settings in the <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow"/>
+            (<c>Window/Animation/Animancer Tools</c>).
             </remarks>
             
             <example>
@@ -7641,6 +7955,18 @@
             Unused events should be removed to avoid wasting performance checking and invoking them.
             </remarks>
         </member>
+        <member name="F:Animancer.OptionalWarning.LockedEvents">
+            <summary>
+            An <see cref="T:Animancer.AnimancerEvent.Sequence"/> is being modified even though its
+            <see cref="P:Animancer.AnimancerEvent.Sequence.ShouldNotModifyReason"/> is set.
+            </summary>
+            
+            <remarks>
+            This is primarily used by transitions. Their events should generally be configured on startup rather
+            than repeating the setup on the state after the transition is played because such modifications will apply
+            back to the transition's events (which is usually not intended).
+            </remarks>
+        </member>
         <member name="F:Animancer.OptionalWarning.UnsupportedEvents">
             <summary>
             <see href="https://kybernetik.com.au/animancer/docs/manual/events/animancer">Animancer Events</see> are
@@ -7775,6 +8101,17 @@
             Doing this will replace Animancer's output so its animations would not work anymore.
             </remarks>
         </member>
+        <member name="F:Animancer.OptionalWarning.MaxStateDepth">
+            <summary>
+            <see cref="M:Animancer.AnimancerLayer.GetOrCreateWeightlessState(Animancer.AnimancerState)"/> has created too many clones of a particular state.
+            </summary>
+            <remarks>
+            <see cref="M:Animancer.AnimancerLayer.SetMaxStateDepth(System.Int32)"/> can be used to increase the allowed number of clones.
+            <para></para>
+            The <see href="https://kybernetik.com.au/animancer/docs/manual/blending/fading/modes">Fade Modes</see> page
+            explains how this system works in more detail.
+            </remarks>
+        </member>
         <member name="F:Animancer.OptionalWarning.All">
             <summary>All warning types.</summary>
         </member>
@@ -7834,11 +8171,7 @@
             <summary>[Animancer Extension] [Assert-Only]
             Disables the specified warnings and returns those that were previously enabled.
             </summary>
-            <example><code>
-            var warnings = OptionalWarning.All.DisableTemporarily();
-            // Do stuff.
-            warnings.Enable();
-            </code></example>
+            <remarks>Call <see cref="M:Animancer.Validate.Enable(Animancer.OptionalWarning)"/> on the returned value to re-enable it.</remarks>
         </member>
         <member name="P:Animancer.Validate.PermanentlyDisabledWarnings">
             <summary>[Assert-Only] Warnings that are automatically disabled and stored in <see cref="T:UnityEngine.PlayerPrefs"/>.</summary>
@@ -7966,7 +8299,7 @@
             <summary>The standard prefix for <see cref="T:UnityEngine.AddComponentMenu"/> for the examples.</summary>
         </member>
         <member name="F:Animancer.Strings.AnimancerToolsMenuPath">
-            <summary>The menu path of the <see cref="T:Animancer.Editor.AnimancerToolsWindow"/>.</summary>
+            <summary>The menu path of the <see cref="T:Animancer.Editor.Tools.AnimancerToolsWindow"/>.</summary>
         </member>
         <member name="F:Animancer.Strings.AssetMenuOrder">
             <summary>
@@ -7991,6 +8324,9 @@
             <summary>[Internal] [Lite-Only]
             Disables member renaming in a [<see cref="T:System.Reflection.ObfuscationAttribute"/>].
             </summary>
+        </member>
+        <member name="F:Animancer.Strings.MustBeFinite">
+            <summary>An error message for when <see cref="M:Animancer.AnimancerUtilities.IsFinite(System.Single)"/> fails.</summary>
         </member>
         <member name="T:Animancer.Strings.DocsURLs">
             <summary>URLs of various documentation pages.</summary>
@@ -8115,6 +8451,15 @@
                  Transform IAnimancerRoot.transform => ???;
              }
              </code></example>
+        </member>
+        <member name="T:Animancer.ICopyable`1">
+            <summary>Interface for objects that can be copied.</summary>
+            https://kybernetik.com.au/animancer/api/Animancer/ICopyable_1
+            
+        </member>
+        <member name="M:Animancer.ICopyable`1.CopyFrom(`0)">
+            <summary>Copies the contents of `copyFrom` into this object, replacing its previous contents.</summary>
+            <remarks><see cref="M:Animancer.AnimancerUtilities.Clone``1(``0)"/> uses this method internally.</remarks>
         </member>
         <member name="T:Animancer.IHasEvents">
             <summary>An object which has an <see cref="T:Animancer.AnimancerEvent.Sequence.Serializable"/>.</summary>
@@ -8406,6 +8751,9 @@
         <member name="P:Animancer.CartesianMixerState.ParameterY">
             <summary><see cref="P:Animancer.MixerState`1.Parameter"/>.y.</summary>
         </member>
+        <member name="M:Animancer.CartesianMixerState.GetParameterError(UnityEngine.Vector2)">
+            <inheritdoc/>
+        </member>
         <member name="F:Animancer.CartesianMixerState._BlendFactors">
             <summary>Precalculated values to speed up the recalculation of weights.</summary>
         </member>
@@ -8460,6 +8808,9 @@
         </member>
         <member name="P:Animancer.DirectionalMixerState.ParameterY">
             <summary><see cref="P:Animancer.MixerState`1.Parameter"/>.y.</summary>
+        </member>
+        <member name="M:Animancer.DirectionalMixerState.GetParameterError(UnityEngine.Vector2)">
+            <inheritdoc/>
         </member>
         <member name="F:Animancer.DirectionalMixerState._ThresholdMagnitudes">
             <summary>Precalculated magnitudes of all thresholds to speed up the recalculation of weights.</summary>
@@ -8524,6 +8875,9 @@
             Should setting the <see cref="P:Animancer.MixerState`1.Parameter"/> above the highest threshold increase the
             <see cref="P:Animancer.AnimancerNode.Speed"/> of this mixer proportionally?
             </summary>
+        </member>
+        <member name="M:Animancer.LinearMixerState.GetParameterError(System.Single)">
+            <inheritdoc/>
         </member>
         <member name="M:Animancer.LinearMixerState.Initialize(UnityEngine.AnimationClip[],System.Single,System.Single)">
             <summary>
@@ -8663,7 +9017,7 @@
             <summary>An <see cref="T:Animancer.ITransition`1"/> that creates a <see cref="T:Animancer.MixerState`1"/> for <see cref="T:UnityEngine.Vector2"/>.</summary>
         </member>
         <member name="P:Animancer.MixerState.KeepChildrenConnected">
-            <summary>Mixers should keep child playables connected to the graph at all times.</summary>
+            <summary>Returns true because mixers should always keep child playables connected to the graph.</summary>
         </member>
         <member name="P:Animancer.MixerState.Clip">
             <summary>A <see cref="T:Animancer.MixerState"/> has no <see cref="T:UnityEngine.AnimationClip"/>.</summary>
@@ -8997,9 +9351,7 @@
             <inheritdoc/>
         </member>
         <member name="M:Animancer.MixerState.Drawer`1.#ctor(`0)">
-            <summary>
-            Creates a new <see cref="T:Animancer.MixerState.Drawer`1"/> to manage the Inspector GUI for the `state`.
-            </summary>
+            <summary>Creates a new <see cref="T:Animancer.MixerState.Drawer`1"/> to manage the Inspector GUI for the `state`.</summary>
         </member>
         <member name="P:Animancer.MixerState.Drawer`1.ParameterCount">
             <inheritdoc/>
@@ -9035,6 +9387,13 @@
             Setting this value takes effect immediately (during the next animation update) without any
             <see href="https://kybernetik.com.au/animancer/docs/manual/blending/mixers#smoothing">Smoothing</see>.
             </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is NaN or Infinity.</exception>
+        </member>
+        <member name="M:Animancer.MixerState`1.GetParameterError(`0)">
+            <summary>
+            Returns an error message if the given `parameter` value can't be assigned to the <see cref="P:Animancer.MixerState`1.Parameter"/>.
+            Otherwise returns null.
+            </summary>
         </member>
         <member name="P:Animancer.MixerState`1.HasThresholds">
             <summary>

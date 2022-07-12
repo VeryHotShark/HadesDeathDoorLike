@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -49,7 +49,7 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
 
         /************************************************************************************************************************/
 
-        public override bool CanEnterState => Character.IsGrounded;
+        public override bool CanEnterState => Character.Movement.IsGrounded;
 
         /************************************************************************************************************************/
 
@@ -72,7 +72,7 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
             if (Character.CheckMotionState())
                 return;
 
-            Character.UpdateSpeedControl();
+            Character.Movement.UpdateSpeedControl();
 
             // We use time where Mecanim used normalized time because choosing a number of seconds is much simpler than
             // finding out how long the animation is and working with multiples of that value.

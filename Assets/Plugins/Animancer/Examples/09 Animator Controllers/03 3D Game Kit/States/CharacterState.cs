@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -19,16 +19,36 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
     {
         /************************************************************************************************************************/
 
+        [System.Serializable]
+        public class StateMachine : StateMachine<CharacterState>.WithDefault
+        {
+            /************************************************************************************************************************/
+
+            [SerializeField]
+            private CharacterState _Locomotion;
+            public CharacterState Locomotion => _Locomotion;
+
+            [SerializeField]
+            private CharacterState _Airborne;
+            public CharacterState Airborne => _Airborne;
+
+            /************************************************************************************************************************/
+        }
+
+        /************************************************************************************************************************/
+
         [SerializeField]
         private Character _Character;
-
-        /// <summary>The <see cref="Brains.Character"/> that owns this state.</summary>
         public Character Character => _Character;
 
+        /************************************************************************************************************************/
+
 #if UNITY_EDITOR
-        protected void Reset()
+        protected override void OnValidate()
         {
-            _Character = gameObject.GetComponentInParentOrChildren<Character>();
+            base.OnValidate();
+
+            gameObject.GetComponentInParentOrChildren(ref _Character);
         }
 #endif
 

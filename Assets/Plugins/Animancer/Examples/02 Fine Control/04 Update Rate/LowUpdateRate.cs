@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -18,7 +18,7 @@ namespace Animancer.Examples.FineControl
 
         // This script doesn't play any animations.
         // In a real game, you would have other scripts doing that.
-        // But for this example, we are just using a NamedAnimancerComponent for its Play Automatically field.
+        // But for this example, we're just using a NamedAnimancerComponent for its Play Automatically field.
 
         [SerializeField] private AnimancerComponent _Animancer;
         [SerializeField] private float _UpdatesPerSecond = 10;

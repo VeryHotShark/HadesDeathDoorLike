@@ -29,25 +29,40 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
+    - Animancer.Examples
     - ParadoxNotion
     - AstarPathfindingProject
     - Assembly-CSharp-firstpass
+    - MoreMountains.Feedbacks
+    - MoreMountains.Tools
+    - MoreMountains.Feedbacks.URP
     - Cinemachine
-    - Animancer.Examples
+    - MoreMountains.Feedbacks.MMTools
+    - MoreMountains.Feedbacks.NiceVibrations
+    - MoreMountains.Feedbacks.Cinemachine
     - Animancer
-    - Assembly-CSharp
     - Animancer.FSM
+    - MoreMountains.Interface
+    - MoreMountains.Feedbacks.TextMeshPro
+    - Assembly-CSharp
+    - MoreMountains.Tools.TextMeshPro
+    - MoreMountains.Tools.Cinemachine
+    - MoreMountains.Tools.Feedbacks
     - Sirenix.OdinInspector.CompatibilityLayer
+    - MoreMountains.Tools.Editor
     - Ludiq.PeekCore.Runtime
     - Ludiq.PeekCore.Editor
     - Ludiq.Peek.Editor
     - AstarPathfindingProjectEditor
+    - MoreMountains.Feedbacks.Editor
     - PPv2URPConverters
+    - MoreMountains.Tools.Feedbacks.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - RotaryHeart.PhysicsDebugExtension.Editor
     - PackageToolsEditor
     - RotaryHeart
     - Sirenix.OdinInspector.Modules.UnityMathematics
+    - MoreMountains.Interface.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

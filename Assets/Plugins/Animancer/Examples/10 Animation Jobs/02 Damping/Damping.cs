@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -32,7 +32,7 @@ namespace Animancer.Examples.Jobs
     /// 
     [AddComponentMenu(Strings.ExamplesMenuPrefix + "Jobs - Damping")]
     [HelpURL(Strings.DocsURLs.ExampleAPIDocumentation + nameof(Jobs) + "/" + nameof(Damping))]
-    public class Damping : MonoBehaviour
+    public sealed class Damping : MonoBehaviour
     {
         /************************************************************************************************************************/
 

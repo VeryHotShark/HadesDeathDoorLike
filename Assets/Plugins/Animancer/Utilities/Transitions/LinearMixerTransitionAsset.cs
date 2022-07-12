@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 using System;
 using UnityEngine;
@@ -17,8 +17,8 @@ namespace Animancer
     {
         /// <inheritdoc/>
         [Serializable]
-        public class UnShared :
-            AnimancerTransitionAsset.UnShared<LinearMixerTransitionAsset, LinearMixerTransition, LinearMixerState>,
+        public new class UnShared :
+            UnShared<LinearMixerTransitionAsset, LinearMixerTransition, LinearMixerState>,
             LinearMixerState.ITransition
         { }
     }
@@ -29,7 +29,8 @@ namespace Animancer
 #if ! UNITY_EDITOR
     [System.Obsolete(Validate.ProOnlyMessage)]
 #endif
-    public class LinearMixerTransition : MixerTransition<LinearMixerState, float>, LinearMixerState.ITransition
+    public class LinearMixerTransition : MixerTransition<LinearMixerState, float>,
+        LinearMixerState.ITransition, ICopyable<LinearMixerTransition>
     {
         /************************************************************************************************************************/
 
@@ -145,6 +146,22 @@ namespace Animancer
                     previousThreshold = Thresholds[i];
                 }
             }
+        }
+
+        /************************************************************************************************************************/
+
+        /// <inheritdoc/>
+        public virtual void CopyFrom(LinearMixerTransition copyFrom)
+        {
+            CopyFrom((MixerTransition<LinearMixerState, float>)copyFrom);
+
+            if (copyFrom == null)
+            {
+                _ExtrapolateSpeed = true;
+                return;
+            }
+
+            _ExtrapolateSpeed = copyFrom._ExtrapolateSpeed;
         }
 
         /************************************************************************************************************************/

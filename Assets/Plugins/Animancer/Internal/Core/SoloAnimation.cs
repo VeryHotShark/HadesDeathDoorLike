@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 using Animancer.Units;
 using System;
@@ -21,5 +21,5 @@ namespace Animancer
     [AddComponentMenu(Strings.MenuPrefix + "Solo Animation")]
     [DefaultExecutionOrder(DefaultExecutionOrder)]
     [HelpURL(Strings.DocsURLs.APIDocumentation + "/" + nameof(SoloAnimation))]
-    public sealed class SoloAnimation : SoloAnimationInternal { }
+    public class SoloAnimation : SoloAnimationInternal { }
 }

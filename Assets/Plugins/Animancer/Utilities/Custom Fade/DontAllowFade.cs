@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #if ! UNITY_EDITOR
 #pragma warning disable CS0612 // Type or member is obsolete (for Layers in Animancer Lite).
@@ -33,7 +33,7 @@ namespace Animancer
     /// 
     /// https://kybernetik.com.au/animancer/api/Animancer/DontAllowFade
     /// 
-    public sealed class DontAllowFade : Key, IUpdatable
+    public class DontAllowFade : Key, IUpdatable
     {
         /************************************************************************************************************************/
 

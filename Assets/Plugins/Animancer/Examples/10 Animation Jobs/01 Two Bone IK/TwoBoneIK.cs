@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 // Compare to the original script: https://github.com/Unity-Technologies/animation-jobs-samples/blob/master/Assets/animation-jobs-samples/Samples/Scripts/TwoBoneIK/TwoBoneIK.cs
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
@@ -34,7 +34,7 @@ namespace Animancer.Examples.Jobs
     /// 
     [AddComponentMenu(Strings.ExamplesMenuPrefix + "Jobs - Two Bone IK")]
     [HelpURL(Strings.DocsURLs.ExampleAPIDocumentation + nameof(Jobs) + "/" + nameof(TwoBoneIK))]
-    public class TwoBoneIK : MonoBehaviour
+    public sealed class TwoBoneIK : MonoBehaviour
     {
         /************************************************************************************************************************/
 

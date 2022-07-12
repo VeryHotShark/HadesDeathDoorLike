@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 using UnityEngine;
 
@@ -21,10 +21,10 @@ namespace Animancer.Examples.InverseKinematics
 
         private void Update()
         {
-            // On click, do a raycast and grab whatever it hits and calculate how far away it is.
-            if (Input.GetMouseButtonDown(0))
+            // On click, do a raycast from the mouse, grab whatever it hits, and calculate how far away it is.
+            if (ExampleInput.LeftMouseDown)
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var ray = Camera.main.ScreenPointToRay(ExampleInput.MousePosition);
                 if (Physics.Raycast(ray, out var hit))
                 {
                     _Dragging = hit.transform;
@@ -32,9 +32,9 @@ namespace Animancer.Examples.InverseKinematics
                 }
             }
             // While holding the button, move the object in line with the mouse ray.
-            else if (_Dragging != null && Input.GetMouseButton(0))
+            else if (_Dragging != null && ExampleInput.LeftMouseHold)
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var ray = Camera.main.ScreenPointToRay(ExampleInput.MousePosition);
                 _Dragging.position = Camera.main.transform.position + ray.direction * _Distance;
             }
             else

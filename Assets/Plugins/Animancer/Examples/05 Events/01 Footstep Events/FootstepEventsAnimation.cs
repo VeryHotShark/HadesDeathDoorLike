@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -14,12 +14,13 @@ namespace Animancer.Examples.Events
     /// <example><see href="https://kybernetik.com.au/animancer/docs/examples/events/footsteps">Footstep Events</see></example>
     /// https://kybernetik.com.au/animancer/api/Animancer.Examples.Events/FootstepEventsAnimation
     /// 
-    [AddComponentMenu(Strings.ExamplesMenuPrefix + "Footstep Events - Animation")]
+    [AddComponentMenu(Strings.ExamplesMenuPrefix + "Footstep Events - Footstep Events Animation")]
     [HelpURL(Strings.DocsURLs.ExampleAPIDocumentation + nameof(Events) + "/" + nameof(FootstepEventsAnimation))]
-    public sealed class FootstepEventsAnimation : FootstepEvents
+    public sealed class FootstepEventsAnimation : MonoBehaviour
     {
         /************************************************************************************************************************/
 
+        [SerializeField] private FootstepEvents _FootstepEvents;
         [SerializeField] private AudioSource[] _FootSources;
 
         /************************************************************************************************************************/
@@ -27,7 +28,7 @@ namespace Animancer.Examples.Events
         // Called by Animation Events.
         private void Footstep(int foot)
         {
-            PlaySound(_FootSources[foot]);
+            _FootstepEvents.PlaySound(_FootSources[foot]);
         }
 
         /************************************************************************************************************************/

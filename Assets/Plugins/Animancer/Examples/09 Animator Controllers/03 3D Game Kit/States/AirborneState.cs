@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #if ! UNITY_EDITOR
 #pragma warning disable CS0618 // Type or member is obsolete (for MixerState in Animancer Lite).
@@ -47,7 +47,8 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
         /// <summary>
         /// The airborne animations do not have root motion, so we just let the brain determine which way to go.
         /// </summary>
-        public override Vector3 RootMotion => Character.Brain.Movement * (Character.ForwardSpeed * Time.deltaTime);
+        public override Vector3 RootMotion
+            => Character.Parameters.MovementDirection * (Character.Parameters.ForwardSpeed * Time.deltaTime);
 
         /************************************************************************************************************************/
 
@@ -56,7 +57,7 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
             // When you jump, do not start checking if you have landed until you stop going up.
             if (_IsJumping)
             {
-                if (Character.VerticalSpeed <= 0)
+                if (Character.Parameters.VerticalSpeed <= 0)
                     _IsJumping = false;
             }
             else
@@ -75,23 +76,23 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
 
                 // If the jump was cancelled but we are still going up, apply some extra downwards acceleration in
                 // addition to the regular graivty applied in Character.OnAnimatorMove.
-                if (Character.VerticalSpeed > 0)
-                    Character.VerticalSpeed -= _JumpAbortSpeed * Time.deltaTime;
+                if (Character.Parameters.VerticalSpeed > 0)
+                    Character.Parameters.VerticalSpeed -= _JumpAbortSpeed * Time.deltaTime;
             }
 
-            _Animations.State.Parameter = Character.VerticalSpeed;
+            _Animations.State.Parameter = Character.Parameters.VerticalSpeed;
 
-            Character.UpdateSpeedControl();
+            Character.Movement.UpdateSpeedControl();
 
-            var input = Character.Brain.Movement;
+            var movement = Character.Parameters.MovementDirection;
 
             // Since we do not have quick turn animations like the LocomotionState, we just increase the turn speed
             // when the direction we want to go is further away from the direction we are currently facing.
-            var turnSpeed = Vector3.Angle(Character.transform.forward, input) * (1f / 180) *
+            var turnSpeed = Vector3.Angle(Character.transform.forward, movement) * (1f / 180) *
                 _TurnSpeedProportion *
-                Character.CurrentTurnSpeed;
+                Character.Movement.CurrentTurnSpeed;
 
-            Character.TurnTowards(input, turnSpeed);
+            Character.Movement.TurnTowards(movement, turnSpeed);
         }
 
         /************************************************************************************************************************/
@@ -100,13 +101,13 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
         {
             // We did not override CanEnterState to check if the Character is grounded because this state is also used
             // if you walk off a ledge, so instead we check that condition here when specifically attempting to jump.
-            if (Character.IsGrounded &&
+            if (Character.Movement.IsGrounded &&
                 Character.StateMachine.TryResetState(this))
             {
                 // Entering this state would have called OnEnable.
 
                 _IsJumping = true;
-                Character.VerticalSpeed = _JumpSpeed;
+                Character.Parameters.VerticalSpeed = _JumpSpeed;
 
                 // In the 3D Game Kit the jump sound is actually triggered whenever you have a positive VerticalSpeed
                 // when you become airborne, which could happen if you go up a ramp for example.

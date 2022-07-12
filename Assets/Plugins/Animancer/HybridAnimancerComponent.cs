@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #if ! UNITY_EDITOR
 #pragma warning disable CS0618 // Type or member is obsolete (for ControllerState in Animancer Lite).
@@ -73,7 +73,6 @@ namespace Animancer
         /// Plays the <see cref="Controller"/> if <see cref="PlayAutomatically"/> is false (otherwise it plays the
         /// first animation in the <see cref="NamedAnimancerComponent.Animations"/> array).
         /// </summary>
-        /// <remarks>Called by Unity when this component becomes enabled and active.</remarks>
         protected override void OnEnable()
         {
             PlayController();
@@ -90,6 +89,7 @@ namespace Animancer
 
         /************************************************************************************************************************/
 
+        /// <inheritdoc/>
         public override void GatherAnimationClips(ICollection<AnimationClip> clips)
         {
             base.GatherAnimationClips(clips);

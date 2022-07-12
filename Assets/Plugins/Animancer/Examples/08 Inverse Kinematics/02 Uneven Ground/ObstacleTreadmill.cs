@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -34,7 +34,7 @@ namespace Animancer.Examples.InverseKinematics
 
         private void Awake()
         {
-            // Spawn a bunch of obstacles and randomise their layout.
+            // Spawn a bunch of obstacles and randomize their layout.
             for (int i = 0; i < _SpawnCount; i++)
             {
                 var obj = GameObject.CreatePrimitive(PrimitiveType.Capsule).transform;
@@ -72,7 +72,7 @@ namespace Animancer.Examples.InverseKinematics
 
                 position.x += _Length;
 
-                // Adjust the height to make sure it is above the ground.
+                // Adjust the height to make sure it's above the ground.
                 position.y += 5;
                 if (Physics.Raycast(position, Vector3.down, out var raycastHit, 10))
                     position = raycastHit.point;
@@ -86,6 +86,7 @@ namespace Animancer.Examples.InverseKinematics
         [SerializeField]
         private Transform _Ground;
 
+        // Set by a UI Slider.
         public float Slope
         {
             get => _Ground.localEulerAngles.z;

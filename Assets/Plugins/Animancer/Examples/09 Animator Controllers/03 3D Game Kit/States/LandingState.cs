@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #if ! UNITY_EDITOR
 #pragma warning disable CS0618 // Type or member is obsolete (for MixerState in Animancer Lite).
@@ -40,7 +40,7 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
 
         /************************************************************************************************************************/
 
-        public override bool CanEnterState => Character.IsGrounded;
+        public override bool CanEnterState => Character.Movement.IsGrounded;
 
         /************************************************************************************************************************/
 
@@ -49,10 +49,10 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
         /// </summary>
         private void OnEnable()
         {
-            Character.ForwardSpeed = Character.DesiredForwardSpeed;
+            Character.Parameters.ForwardSpeed = Character.Parameters.DesiredForwardSpeed;
 
-            if (Character.VerticalSpeed <= _HardLandingVerticalSpeed &&
-                Character.ForwardSpeed >= _HardLandingForwardSpeed)
+            if (Character.Parameters.VerticalSpeed <= _HardLandingVerticalSpeed &&
+                Character.Parameters.ForwardSpeed >= _HardLandingForwardSpeed)
             {
                 _IsSoftLanding = false;
                 Character.Animancer.Play(_HardLanding);
@@ -61,7 +61,9 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
             {
                 _IsSoftLanding = true;
                 Character.Animancer.Play(_SoftLanding);
-                _SoftLanding.State.Parameter = new Vector2(Character.ForwardSpeed, Character.VerticalSpeed);
+                _SoftLanding.State.Parameter = new Vector2(
+                    Character.Parameters.ForwardSpeed,
+                    Character.Parameters.VerticalSpeed);
             }
 
             // The landing sounds in the full 3D Game Kit have different variations based on the ground material, just
@@ -78,17 +80,17 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
 
         private void FixedUpdate()
         {
-            if (!Character.IsGrounded &&
-                Character.StateMachine.TrySetState(Character.Airborne))
+            if (!Character.Movement.IsGrounded &&
+                Character.StateMachine.TrySetState(Character.StateMachine.Airborne))
                 return;
 
-            Character.UpdateSpeedControl();
+            Character.Movement.UpdateSpeedControl();
 
             if (_IsSoftLanding)
             {
                 // Update the horizontal speed but keep the initial vertical speed from when you first landed.
                 var parameter = _SoftLanding.State.Parameter;
-                parameter.x = Character.ForwardSpeed;
+                parameter.x = Character.Parameters.ForwardSpeed;
                 _SoftLanding.State.Parameter = parameter;
             }
         }

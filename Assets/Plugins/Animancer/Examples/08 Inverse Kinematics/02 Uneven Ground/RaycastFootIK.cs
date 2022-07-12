@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0414 // Field is assigned but its value is never used.
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
@@ -22,7 +22,6 @@ namespace Animancer.Examples.InverseKinematics
         /************************************************************************************************************************/
 
         [SerializeField] private AnimancerComponent _Animancer;
-        [SerializeField] private AnimationClip _Animation;
         [SerializeField, Meters] private float _RaycastOriginY = 0.5f;
         [SerializeField, Meters] private float _RaycastEndY = -0.2f;
 
@@ -51,11 +50,8 @@ namespace Animancer.Examples.InverseKinematics
 
             _FootWeights = new AnimatedFloat(_Animancer, "LeftFootIK", "RightFootIK");
 
-            _Animancer.Play(_Animation);
-
             // Tell Unity that OnAnimatorIK needs to be called every frame.
             ApplyAnimatorIK = true;
-
         }
 
         /************************************************************************************************************************/

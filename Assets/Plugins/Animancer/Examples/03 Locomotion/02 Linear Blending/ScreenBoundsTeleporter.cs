@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -26,9 +26,13 @@ namespace Animancer.Examples.Locomotion
             if (camera == null)
                 return;
 
+            // Move this object directly in front of the camera.
+
             var position = camera.transform.position;
             position.z = 0;
             transform.position = position;
+
+            // Resize the trigger collider to match the area the camera can see.
 
             var topLeft = camera.ScreenPointToRay(default).origin;
             _Collider.size = (position - topLeft) * 2;
@@ -36,6 +40,7 @@ namespace Animancer.Examples.Locomotion
 
         /************************************************************************************************************************/
 
+        // When an object exits the trigger, teleport it to the left.
         private void OnTriggerExit(Collider collider)
         {
             var position = collider.transform.position;

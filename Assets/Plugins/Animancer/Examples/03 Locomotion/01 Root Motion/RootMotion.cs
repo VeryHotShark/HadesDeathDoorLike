@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2021 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -26,7 +26,7 @@ namespace Animancer.Examples.Locomotion
         {
             /************************************************************************************************************************/
 
-            [SerializeField, Tooltip("Determines if Root Motion should be enabled when this animation plays")]
+            [SerializeField, Tooltip("Should Root Motion be enabled when this animation plays?")]
             private bool _ApplyRootMotion;
 
             /************************************************************************************************************************/
