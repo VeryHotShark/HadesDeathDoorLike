@@ -9,13 +9,13 @@ namespace VHS {
     public class CharacterController : MonoBehaviour, ICharacterController, IUpdateListener {
         [ShowInInspector] public CharacterModule CurrentModule => _stateMachine?.CurrentState;
 
-        private StateMachine<CharacterModule> _stateMachine;
         private Vector3 _internalVelocityAdd;
 
         private CharacterRoll _rollModule;
         private CharacterMovement _movementModule;
         private CharacterMeleeCombat _meleeCombatModule;
         private CharacterRangeCombat _rangeCombatModule;
+        private StateMachine<CharacterModule> _stateMachine;
 
         private KinematicCharacterMotor _motor;
         public KinematicCharacterMotor Motor => _motor;
@@ -37,16 +37,16 @@ namespace VHS {
 
             _stateMachine = new StateMachine<CharacterModule>(_movementModule);
 
-            bool CanTryAttack() => LastCharacterInputs.AttackDown && !_meleeCombatModule.IsOnCooldown;
-
             // Pomyśl czy nie rodzielić na Osobno SetState i osobno transition by
             // Set Inputs przedstawiać na dany state jak eventy,
             // a AddTransitionTo jako update na czas działania modułu
+            
+            /*
             _stateMachine.AddTransitionTo(_rollModule, () => LastCharacterInputs.RollDown || _rollModule.DuringRoll);
-            _stateMachine.AddTransitionTo(_meleeCombatModule,
-                () => CanTryAttack() || _meleeCombatModule.IsDuringAttack);
+            _stateMachine.AddTransitionTo(_meleeCombatModule, () => CanTryAttack() || _meleeCombatModule.IsDuringAttack);
             _stateMachine.AddTransitionTo(_rangeCombatModule, () => LastCharacterInputs.AimDown);
             _stateMachine.AddTransitionTo(_movementModule, () => true);
+            */
         }
 
         private void OnEnable() => UpdateManager.AddUpdateListener(this);
@@ -55,6 +55,11 @@ namespace VHS {
 
         public void SetInputs(ref CharacterInputs inputs) {
             LookInput = transform.position.DirectionTo(inputs.CursorPosition);
+            
+            if(inputs.RollDown)
+                _stateMachine.SetState(_rollModule);
+            else if(inputs.AttackDown && !_meleeCombatModule.IsOnCooldown)
+                _stateMachine.SetState(_meleeCombatModule);
 
             _stateMachine.CurrentState.SetInputs(inputs);
 
@@ -110,5 +115,8 @@ namespace VHS {
         private void OnStableGroundRegained() => _stateMachine.CurrentState.OnStableGroundRegained();
 
         public void AddVelocity(Vector3 velocity) => _internalVelocityAdd += velocity;
+
+        public void TransitionToDefaultState() => _stateMachine.TransitionToDefaultState();
+        public void TransitionToLastState() => _stateMachine.TransitionToLastState();
     }
 }

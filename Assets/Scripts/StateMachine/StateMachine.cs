@@ -19,10 +19,16 @@ public class StateMachine<TState> where TState : class, IState  {
     private List<TState> _states = new();
     private List<Transition> _transitions = new();
 
+    private TState _defaultState;
     private TState _currentState;
     private TState _lastState;
+    
+    public TState DefaultState => _defaultState;
+    public TState CurrentState => _currentState;
+    public TState LastState => _lastState;
 
     public StateMachine(TState initState) {
+        _defaultState = initState;
         _currentState = initState;
         AddState(initState);
     }
@@ -76,6 +82,6 @@ public class StateMachine<TState> where TState : class, IState  {
             state.OnReset();
     }
 
-    public TState CurrentState => _currentState;
-    public TState LastState => _lastState;
+    public void TransitionToDefaultState() => SetState(_defaultState);
+    public void TransitionToLastState() => SetState(_lastState);
 }

@@ -384,7 +384,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 0.8239353
+  m_FrequencyGain: 1.140065
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &323129980
 GameObject:
@@ -1674,18 +1674,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4ac9bf2f2b4744e84cafc1adc6c2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitFeedback: {fileID: 75920694}
-  _pushForce: 10
-  _attackTimer:
-    _duration: 0.3
-  _maxComboChain: 3
+  _attacks:
+  - duration:
+      _duration: 0.25
+    pushForce: 10
+    zOffset: 1.5
+    radius: 1.25
+  - duration:
+      _duration: 0.25
+    pushForce: 10
+    zOffset: 1.5
+    radius: 1.5
+  - duration:
+      _duration: 0.3
+    pushForce: 15
+    zOffset: 2
+    radius: 2
   _comboCooldown:
-    _duration: 0.5
-  _attackBufferTimer:
+    _duration: 0.1
+  _preAttackBufferTimer:
+    _duration: 0.3
+  _postAttackBufferTimer:
     _duration: 0.3
   _hitDelay: 0.1
-  _radius: 1.5
-  _zOffset: 2.5
+  _hitFeedback: {fileID: 75920694}
 --- !u!114 &1498138894
 MonoBehaviour:
   m_ObjectHideFlags: 0

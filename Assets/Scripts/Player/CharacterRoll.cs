@@ -20,6 +20,8 @@ public class CharacterRoll : CharacterModule {
     private Vector3 _endPos;
     private Vector3 _startPos;
     private Vector3 _rollDirection;
+    
+    public bool DuringRoll => _rollStarted && !_rollStopped;
 
     private void Awake() => _rollDotThreshold = Mathf.Cos(_maxRollAngle * Mathf.Deg2Rad);
 
@@ -34,6 +36,11 @@ public class CharacterRoll : CharacterModule {
     public override void OnExit() {
         _rollStarted = false;
         _rollStopped = false;
+    }
+
+    public override void SetInputs(CharacterInputs inputs) {
+        if(_rollStopped)
+            Controller.TransitionToDefaultState();
     }
 
     public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
@@ -78,6 +85,4 @@ public class CharacterRoll : CharacterModule {
         _lostGround = true;
         _rollStopped = true;
     }
-
-    public bool DuringRoll => _rollStarted && !_rollStopped;
 }

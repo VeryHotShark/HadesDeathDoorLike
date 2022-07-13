@@ -7,62 +7,89 @@ using UnityEngine;
 namespace VHS {
     public class CharacterMeleeCombat : CharacterModule {
         [Serializable]
-        public struct AttackInfo {
-            
+        public class AttackInfo {
+            public Timer duration = new(0.3f);
+            public float pushForce = 10.0f;
+            public float zOffset = 1.0f;
+            public float radius = 1.0f;
         }
-        
-        [SerializeField] private MMF_Player _hitFeedback;
-        [SerializeField] private float _pushForce = 10.0f;
-        [SerializeField] private Timer _attackTimer = new Timer(0.3f);
 
-        [Header("Combo")] 
-        [SerializeField] private int _maxComboChain = 3;
-        [SerializeField] private Timer _comboCooldown = new Timer(0.5f);
-        [SerializeField] private Timer _attackBufferTimer = new Timer(0.2f);
+        [Header("Attacks")] 
+        [SerializeField] private List<AttackInfo> _attacks;
+        [SerializeField] private Timer _comboCooldown = new(0.5f);
+        [SerializeField] private Timer _preAttackBufferTimer = new(0.3f);
+        [SerializeField] private Timer _postAttackBufferTimer = new(0.3f);
 
-        [Header("Collision Check")]
+        [Header("Hit")]
         [SerializeField] private float _hitDelay = 0.2f;
-        [SerializeField] private float _radius = 0.5f;
-        [SerializeField] private float _zOffset = 2f;
+        [SerializeField] private MMF_Player _hitFeedback;
 
-        private int _attackCount = 0;
+        private int _attackIndex;
+        private bool _duringLastAtttack;
+        private AttackInfo _currentAttack;
 
-        public Timer AttackTimer => _attackTimer;
         public Timer ComboCooldown => _comboCooldown;
-        public Timer AttackBufferTimer => _attackBufferTimer;
+        public Timer AttackTimer => _currentAttack.duration;
+        public Timer PreAttackBufferTimer => _preAttackBufferTimer;
 
         public bool IsOnCooldown => _comboCooldown.IsActive;
-        public bool IsDuringAttack => _attackTimer.IsActive || _attackBufferTimer.IsActive;
+        public bool IsDuringAttack => AttackTimer.IsActive;
+        public bool IsDurinLastAttack => _attackIndex >= _attacks.Count;
+        public bool IsDuringInputBuffering => _preAttackBufferTimer.IsActive || _postAttackBufferTimer.IsActive;
 
-        public override void OnEnter() {
-            _attackCount = 0;
-            Attack();
+        private void Awake() => _currentAttack = _attacks[0];
+
+        private void OnEnable() {
+            foreach (AttackInfo attack in _attacks) 
+                attack.duration.OnEnd += OnAttackEnd;
+
+            _postAttackBufferTimer.OnEnd += OnPostInputBufferEnd;
         }
 
-        public override void OnExit() {
-            _attackCount = 0;
-        }
-
-        private void Attack() {
-            _attackTimer.Start();
-            _attackBufferTimer.Reset();
-            Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
-            Controller.LastNonZeroMoveInput = Controller.LookInput;
-            Controller.AddVelocity(_pushForce * Controller.LookInput);
+        private void OnDisable() {
+            foreach (AttackInfo attack in _attacks) 
+                attack.duration.OnEnd -= OnAttackEnd;
             
-            _attackCount++;
+            _postAttackBufferTimer.OnEnd -= OnPostInputBufferEnd;
+        }
 
-            if (_attackCount >= _maxComboChain)
+        private void OnPostInputBufferEnd() {
+            if(!IsDuringAttack)
+                Controller.TransitionToDefaultState();
+        }
+
+        private void OnAttackEnd() {
+            if(!IsDurinLastAttack)
+                _postAttackBufferTimer.Start();
+            else
                 _comboCooldown.Start();
             
-            this.CallWithDelay(() => CheckForHittables(), _hitDelay);
+            if(!IsDuringInputBuffering)
+                Controller.TransitionToDefaultState();
+        }
+
+        public override void OnEnter() => _attackIndex = 0;
+        public override void OnExit() => _attackIndex = 0;
+
+        private void Attack() {
+            _currentAttack = _attacks[_attackIndex];
+            
+            _preAttackBufferTimer.Reset();
+            _currentAttack.duration.Start();
+            Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
+            Controller.LastNonZeroMoveInput = Controller.LookInput;
+            Controller.AddVelocity(_currentAttack.pushForce * Controller.LookInput);
+            
+            _attackIndex++;
+
+            this.CallWithDelay(CheckForHittables, _hitDelay);
         }
 
         private void CheckForHittables() {
             Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter +
-                               Motor.CharacterForward * _zOffset;
+                               Motor.CharacterForward * _currentAttack.zOffset;
 
-            Collider[] _colliders = Physics.OverlapSphere(position, _radius, LayerManager.Masks.DEFAULT_AND_NPC);
+            Collider[] _colliders = Physics.OverlapSphere(position, _currentAttack.radius, LayerManager.Masks.DEFAULT_AND_NPC);
 
             bool hitSomething = false;
             
@@ -77,7 +104,7 @@ namespace VHS {
                 }
             } 
             
-            DebugExtension.DebugWireSphere(position, _radius, 1.0f);
+            DebugExtension.DebugWireSphere(position, _currentAttack.radius, 1.0f);
             
             if(hitSomething && _hitFeedback)
                 _hitFeedback.PlayFeedbacks();
@@ -86,14 +113,20 @@ namespace VHS {
         public override void SetInputs(CharacterInputs inputs) {
             Controller.MoveInput = Vector3.zero;
 
-            if (_comboCooldown.IsActive)
+            if (IsDurinLastAttack)
                 return;
 
-            if (inputs.AttackDown)
-                _attackBufferTimer.Start();
+            if (inputs.AttackDown) {
+                if(AttackTimer.IsActive)   
+                    _preAttackBufferTimer.Start();
+                else 
+                    Attack();
+            }
 
-            if (!_attackTimer.IsActive && _attackBufferTimer.IsActive)
+            // Handle Pre Input Buffering
+            if (!AttackTimer.IsActive && _preAttackBufferTimer.IsActive) 
                 Attack();
+            
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) { }
