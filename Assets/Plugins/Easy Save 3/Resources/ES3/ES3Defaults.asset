@@ -39,15 +39,13 @@ MonoBehaviour:
     - Cinemachine
     - MoreMountains.Feedbacks.MMTools
     - MoreMountains.Feedbacks.NiceVibrations
-    - MoreMountains.Feedbacks.Cinemachine
+    - MoreMountains.Feedbacks.PostProcessing
+    - MoreMountains.Feedbacks.HDRP
     - Animancer
     - Animancer.FSM
-    - MoreMountains.Interface
     - MoreMountains.Feedbacks.TextMeshPro
     - Assembly-CSharp
-    - MoreMountains.Tools.TextMeshPro
-    - MoreMountains.Tools.Cinemachine
-    - MoreMountains.Tools.Feedbacks
+    - MoreMountains.Feedbacks.Cinemachine
     - Sirenix.OdinInspector.CompatibilityLayer
     - MoreMountains.Tools.Editor
     - Ludiq.PeekCore.Runtime
@@ -56,13 +54,11 @@ MonoBehaviour:
     - AstarPathfindingProjectEditor
     - MoreMountains.Feedbacks.Editor
     - PPv2URPConverters
-    - MoreMountains.Tools.Feedbacks.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - RotaryHeart.PhysicsDebugExtension.Editor
     - PackageToolsEditor
     - RotaryHeart
     - Sirenix.OdinInspector.Modules.UnityMathematics
-    - MoreMountains.Interface.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
