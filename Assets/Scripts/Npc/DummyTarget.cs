@@ -24,7 +24,6 @@ namespace VHS {
                 PropertyName = "_BaseColor",
             };
 
-            flickerFeedback.Timing = new MMFeedbackTiming();
             _hitFeedbacks.AddFeedback(flickerFeedback);
             _hitFeedbacks.Initialization();
         }

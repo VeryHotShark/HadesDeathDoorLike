@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace VHS {
     public class CharacterRangeCombat : CharacterModule {
-        [SerializeField] private float _aimSharpness = 20.0f;
+        [SerializeField] private Projectile _projectile;
 
-        public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
-            currentVelocity = Vector3.zero;
+        public override void OnEnter() {
+            Shoot();
         }
 
-        public override void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
-            float t = 1 - Mathf.Exp(-_aimSharpness * deltaTime);
-            currentRotation =
-                Quaternion.Slerp(Motor.TransientRotation, Controller.LastCharacterInputs.CursorRotation, t);
-            Controller.LastNonZeroMoveInput = Controller.LookInput;
+        public void Shoot() {
+            Vector3 spawnPos = Motor.TransientPosition + Vector3.up + Motor.CharacterForward;
+            Quaternion spawnRot = Quaternion.LookRotation(Motor.CharacterForward);
+            Projectile spawnedProjectile = Instantiate(_projectile, spawnPos, spawnRot);
+            spawnedProjectile.Init();
+            Controller.TransitionToDefaultState();
         }
     }
 }

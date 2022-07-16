@@ -389,7 +389,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 1.144714
+  m_FrequencyGain: 1.389519
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &323129980
 GameObject:
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbc5fd42d91be5439bf079c8fd0fe12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aimSharpness: 20
+  _projectile: {fileID: 1345823360672541587, guid: 01caea0028fae5c4b836c5d5d2d5e04f, type: 3}
 --- !u!114 &1498138895
 MonoBehaviour:
   m_ObjectHideFlags: 0

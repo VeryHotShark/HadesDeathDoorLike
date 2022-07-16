@@ -13,6 +13,9 @@ namespace VHS {
         [SerializeField] private float _stableMovementSharpness = 10.0f;
         [SerializeField] private float _orientationSharpness = 10.0f;
 
+        private bool _aimAtCursor;
+        public bool AimAtCursor => _aimAtCursor;
+
         public override void SetInputs(CharacterInputs inputs) {
             Vector3 rawInput = new Vector3(inputs.MoveAxisRight, 0.0f, inputs.MoveAxisForward);
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
@@ -25,6 +28,12 @@ namespace VHS {
 
             if (clampedMoveInput != Vector3.zero)
                 Controller.LastNonZeroMoveInput = Controller.MoveInput;
+            
+            if(_aimAtCursor)
+                Controller.LastNonZeroMoveInput = Controller.LookInput;
+
+            if (inputs.SwitchAim)
+                _aimAtCursor = !_aimAtCursor;
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
@@ -56,9 +65,9 @@ namespace VHS {
         public override void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
             if (_orientationSharpness > 0f) {
                 float t = 1 - Mathf.Exp(-_orientationSharpness * deltaTime);
-                Vector3 smoothLookInputDirection =
-                    Vector3.Slerp(Motor.CharacterForward, Controller.LastNonZeroMoveInput, t).normalized;
-                currentRotation = Quaternion.LookRotation(smoothLookInputDirection, Motor.CharacterUp);
+                Vector3 desiredRotation = _aimAtCursor ? Controller.LookInput : Controller.LastNonZeroMoveInput;
+                Vector3 smoothDesiredRotation = Vector3.Slerp(Motor.CharacterForward, desiredRotation, t).normalized;
+                currentRotation = Quaternion.LookRotation(smoothDesiredRotation, Motor.CharacterUp);
             }
         }
     }
