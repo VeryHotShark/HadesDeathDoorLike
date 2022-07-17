@@ -9,20 +9,6 @@ namespace VHS {
         [SerializeField] private float _maxAirMoveSpeed = 10.0f;
         [SerializeField] private float _airAccelerationSpeed = 10.0f;
         [SerializeField] private float _orientationSharpness = 10.0f;
-        
-        public override void SetInputs(CharacterInputs inputs) {
-            Vector3 rawInput = new Vector3(inputs.MoveAxisRight, 0.0f, inputs.MoveAxisForward);
-            Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
-
-            Vector3 cameraPlanarDirection =
-                Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
-
-            Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
-            Controller.MoveInput = cameraPlanarRotation * clampedMoveInput;
-
-            if (clampedMoveInput != Vector3.zero)
-                Controller.LastNonZeroMoveInput = Controller.MoveInput;
-        }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
             if (Controller.MoveInput.sqrMagnitude > 0.0f) {

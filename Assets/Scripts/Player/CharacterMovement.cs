@@ -7,25 +7,12 @@ namespace VHS {
         [SerializeField] private float _maxStableMoveSpeed = 10.0f;
         [SerializeField] private float _stableMovementSharpness = 10.0f;
         [SerializeField] private float _orientationSharpness = 10.0f;
-
-        public override void SetInputs(CharacterInputs inputs) {
-            Vector3 rawInput = new Vector3(inputs.MoveAxisRight, 0.0f, inputs.MoveAxisForward);
-            Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
-
-            Vector3 cameraPlanarDirection =
-                Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
-
-            Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
-            Controller.MoveInput = cameraPlanarRotation * clampedMoveInput;
-
-            if (clampedMoveInput != Vector3.zero)
-                Controller.LastNonZeroMoveInput = Controller.MoveInput;
-        }
-
+        
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
             currentVelocity = Motor.GetDirectionTangentToSurface(currentVelocity,
                 Motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
 
+            // handle slope compensation
             Vector3 crossInput = Vector3.Cross(Controller.MoveInput, Motor.CharacterUp);
             Vector3 reorientedInput = Vector3.Cross(Motor.GroundingStatus.GroundNormal, crossInput).normalized *
                                       Controller.MoveInput.magnitude;

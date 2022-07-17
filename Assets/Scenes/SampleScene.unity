@@ -389,7 +389,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 1.469418
+  m_FrequencyGain: 1.50617
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &323129980
 GameObject:
@@ -1677,6 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4ac9bf2f2b4744e84cafc1adc6c2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _slowDownSharpness: 10
   _attacks:
   - duration:
       _duration: 0.25
@@ -1727,7 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 0.4
-  _distance: 8
+  _distance: 7
   _maxRollAngle: 45
   _curve:
     serializedVersion: 2

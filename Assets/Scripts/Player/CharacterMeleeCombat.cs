@@ -13,6 +13,8 @@ namespace VHS {
             public float zOffset = 1.0f;
             public float radius = 1.0f;
         }
+        
+        [SerializeField] private float _slowDownSharpness = 10.0f;
 
         [Header("Attacks")] 
         [SerializeField] private List<AttackInfo> _attacks;
@@ -116,7 +118,7 @@ namespace VHS {
         }
 
         public override void SetInputs(CharacterInputs inputs) {
-            Controller.MoveInput = Vector3.zero;
+            // Controller.MoveInput = Vector3.zero;
 
             if (IsDurinLastAttack)
                 return;
@@ -134,6 +136,9 @@ namespace VHS {
             
         }
 
-        public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) { }
+        public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
+            float t = 1 - Mathf.Exp(-_slowDownSharpness * deltaTime);
+            currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, t);
+        }
     }
 }

@@ -19,6 +19,7 @@ public class CharacterRoll : CharacterModule {
     
     private Vector3 _endPos;
     private Vector3 _startPos;
+    private Vector3 _lastDesiredPos;
     private Vector3 _rollDirection;
     
     public bool DuringRoll => _rollStarted && !_rollStopped;
@@ -29,8 +30,9 @@ public class CharacterRoll : CharacterModule {
         _rollStarted = true;
         _rollTimestamp = Time.time;
         _rollDirection = Controller.MoveInput.sqrMagnitude < Mathf.Epsilon ? Controller.LastNonZeroMoveInput : Controller.MoveInput;
-        _startPos = Motor.TransientPosition;
-        _endPos = Motor.TransientPosition + _rollDirection * _distance;
+        _lastDesiredPos = Motor.TransientPosition;
+        _startPos = _lastDesiredPos;
+        _endPos = _startPos + _rollDirection * _distance;
     }
 
     public override void OnExit() {
@@ -38,7 +40,7 @@ public class CharacterRoll : CharacterModule {
         _rollStopped = false;
     }
 
-    public override void SetInputs(CharacterInputs inputs) {
+    public override void HandlePostCharacterUpdate(float deltaTime) {
         if(_rollStopped)
             Controller.TransitionToDefaultState();
     }
@@ -54,11 +56,11 @@ public class CharacterRoll : CharacterModule {
         float rollProgress = (Time.time - _rollTimestamp) / _duration;
         float t = _curve.Evaluate(rollProgress);
         Vector3 desiredPos = Vector3.Lerp(_startPos, _endPos, t);
-        Vector3 direction = Motor.TransientPosition.DirectionTo(desiredPos);
-        float deltaDistance = Vector3.Distance(Motor.TransientPosition, desiredPos);
+        float deltaDistance = Vector3.Distance(_lastDesiredPos, desiredPos);
         float speed = deltaDistance / deltaTime;
+        _lastDesiredPos = desiredPos;
         
-        currentVelocity = (direction * speed).With(y: currentVelocity.y);
+        currentVelocity = (_rollDirection * speed).With(y: currentVelocity.y);
         currentVelocity = Motor.GetDirectionTangentToSurface(currentVelocity, 
             Motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
 
@@ -73,7 +75,7 @@ public class CharacterRoll : CharacterModule {
 
     public override void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint,
         ref HitStabilityReport hitStabilityReport) {
-        Debug.DrawLine(hitPoint, hitPoint + hitNormal * 10.0f, Color.red, 5.0f);
+        Debug.DrawLine(hitPoint, hitPoint + hitNormal * 5.0f, Color.red, 5.0f);
         
         if (Vector3.Dot(hitNormal,Vector3.up) > _rollDotThreshold) 
             _endPos.y = hitPoint.y;

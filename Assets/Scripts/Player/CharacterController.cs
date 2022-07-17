@@ -52,6 +52,18 @@ namespace VHS {
         public void SetInputs(ref CharacterInputs inputs) {
             LookInput = transform.position.DirectionTo(inputs.CursorPosition).Flatten();
 
+            Vector3 rawInput = new Vector3(inputs.MoveAxisRight, 0.0f, inputs.MoveAxisForward);
+            Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
+
+            Vector3 cameraPlanarDirection =
+                Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
+
+            Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
+            MoveInput = cameraPlanarRotation * clampedMoveInput;
+
+            if (clampedMoveInput != Vector3.zero)
+                LastNonZeroMoveInput = MoveInput;
+
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.LockTarget && _lockTargetModule)
                     _lockTargetModule.ToggleLockTarget();
@@ -68,15 +80,9 @@ namespace VHS {
 
             LastCharacterInputs = inputs;
         }
-        
-        // TODO przenieś do osobnej klasy
-       
 
         public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
             _stateMachine.CurrentState.UpdateVelocity(ref currentVelocity, deltaTime);
-
-            if (_meleeCombatModule.AttackTimer.IsActive)
-                _movementModule.UpdateVelocity(ref currentVelocity, deltaTime);
 
             if (_internalVelocityAdd.sqrMagnitude > 0f) {
                 currentVelocity += _internalVelocityAdd;
