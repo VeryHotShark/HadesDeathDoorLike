@@ -8,7 +8,7 @@ namespace VHS {
     public struct CharacterInputs {
         public float MoveAxisForward;
         public float MoveAxisRight;
-        public bool SwitchAim;
+        public bool LockTarget;
         public bool RollDown;
         public bool AimDown;
         public bool AimUp;
@@ -61,7 +61,7 @@ namespace VHS {
             CharacterInputs characterInputs = new CharacterInputs();
 
             characterInputs.AimDown = _aimDown;
-            characterInputs.SwitchAim = Keyboard.current.shiftKey.wasPressedThisFrame;
+            characterInputs.LockTarget = Keyboard.current.shiftKey.wasPressedThisFrame;
             characterInputs.RollDown = _input.CharacterControls.Roll.triggered;
             characterInputs.AttackDown = _input.CharacterControls.Attack.triggered;
             characterInputs.MoveAxisRight = _moveInput.x;

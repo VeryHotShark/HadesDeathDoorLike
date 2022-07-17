@@ -41,10 +41,10 @@ MonoBehaviour:
     - MoreMountains.Feedbacks.NiceVibrations
     - MoreMountains.Feedbacks.PostProcessing
     - MoreMountains.Feedbacks.HDRP
+    - Assembly-CSharp
     - Animancer
     - Animancer.FSM
     - MoreMountains.Feedbacks.TextMeshPro
-    - Assembly-CSharp
     - MoreMountains.Feedbacks.Cinemachine
     - Sirenix.OdinInspector.CompatibilityLayer
     - MoreMountains.Tools.Editor

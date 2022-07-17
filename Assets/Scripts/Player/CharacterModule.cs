@@ -4,7 +4,7 @@ using KinematicCharacterController;
 using UnityEngine;
 
 namespace VHS {
-    public abstract class CharacterModule : MonoBehaviour, IState {
+    public abstract class CharacterModule : BaseBehaviour, IState {
         private CharacterController _controller;
         protected KinematicCharacterMotor Motor => Controller.Motor;
         protected CharacterController Controller => _controller ??= GetComponent<CharacterController>();

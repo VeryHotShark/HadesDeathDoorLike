@@ -76,9 +76,14 @@ namespace VHS {
             
             _preAttackBufferTimer.Reset();
             _currentAttack.duration.Start();
-            Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
-            Controller.LastNonZeroMoveInput = Controller.LookInput;
-            Controller.AddVelocity(_currentAttack.pushForce * Controller.LookInput);
+
+            if (Controller.LockTarget == null) {
+                Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
+                Controller.LastNonZeroMoveInput = Controller.LookInput;
+                Controller.AddVelocity(_currentAttack.pushForce * Controller.LookInput);
+            }
+            else 
+                Controller.AddVelocity(_currentAttack.pushForce * Motor.CharacterForward);
             
             _attackIndex++;
 
