@@ -35,17 +35,19 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - MoreMountains.Feedbacks
     - MoreMountains.Tools
+    - Assembly-CSharp
     - MoreMountains.Feedbacks.URP
     - Cinemachine
     - MoreMountains.Feedbacks.MMTools
     - MoreMountains.Feedbacks.NiceVibrations
     - MoreMountains.Feedbacks.PostProcessing
     - MoreMountains.Feedbacks.HDRP
-    - Assembly-CSharp
     - Animancer
     - Animancer.FSM
     - MoreMountains.Feedbacks.TextMeshPro
+    - PackageTools
     - MoreMountains.Feedbacks.Cinemachine
+    - Drawing
     - Sirenix.OdinInspector.CompatibilityLayer
     - MoreMountains.Tools.Editor
     - Ludiq.PeekCore.Runtime
@@ -56,9 +58,11 @@ MonoBehaviour:
     - PPv2URPConverters
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - RotaryHeart.PhysicsDebugExtension.Editor
-    - PackageToolsEditor
+    - AstarPackageToolsEditor
     - RotaryHeart
     - Sirenix.OdinInspector.Modules.UnityMathematics
+    - DrawingPackageToolsEditor
+    - DrawingEditor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

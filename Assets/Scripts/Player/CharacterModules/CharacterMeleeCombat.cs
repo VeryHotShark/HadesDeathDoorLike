@@ -36,7 +36,7 @@ namespace VHS {
 
         public bool IsOnCooldown => _comboCooldown.IsActive;
         public bool IsDuringAttack => AttackTimer.IsActive;
-        public bool IsDurinLastAttack => _attackIndex >= _attacks.Count;
+        public bool IsDuringLastAttack => _attackIndex >= _attacks.Count;
         public bool IsDuringInputBuffering => _preAttackBufferTimer.IsActive || _postAttackBufferTimer.IsActive;
 
         private void Awake() => _currentAttack = _attacks[0];
@@ -61,7 +61,7 @@ namespace VHS {
         }
 
         private void OnAttackEnd() {
-            if(!IsDurinLastAttack)
+            if(!IsDuringLastAttack)
                 _postAttackBufferTimer.Start();
             else
                 _comboCooldown.Start();
@@ -120,7 +120,7 @@ namespace VHS {
         public override void SetInputs(CharacterInputs inputs) {
             // Controller.MoveInput = Vector3.zero;
 
-            if (IsDurinLastAttack)
+            if (IsDuringLastAttack)
                 return;
 
             if (inputs.AttackDown) {
