@@ -32,6 +32,8 @@ namespace VHS {
 
         private PlayerInput _input;
 
+        public CharacterController Character => _character;
+
         private void Awake() => SetInputs();
 
         private void OnEnable() => _input.Enable();

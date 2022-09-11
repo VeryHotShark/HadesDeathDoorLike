@@ -11,7 +11,10 @@ namespace VHS {
 
         private void Awake() {
             _richAI = GetComponent<RichAI>();
-            _richAI.destination = Vector3.zero;
+        }
+
+        public override void OnCustomUpdate(float deltaTime) {
+            _richAI.destination = NpcBlackboard.PlayerInstance.Character.Motor.TransientPosition;
         }
     }
 }

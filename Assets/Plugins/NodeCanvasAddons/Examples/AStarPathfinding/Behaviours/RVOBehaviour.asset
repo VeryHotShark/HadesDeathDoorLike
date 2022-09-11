@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: RVOBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":5552.0,"y":5453.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"filterMode":0,"maxCount":{"_value":1},"coolDownTime":{"_value":5.0},"_position":{"x":5147.0,"y":5558.0},"$type":"NodeCanvas.BehaviourTrees.Filter","$id":"1"},{"_action":{"minValue":{"_name":"MinMovementRefresh","_targetVariableID":"8ff16e89-4cfe-4130-9fce-b59fed3bb380"},"maxValue":{"_name":"MaxMovementRefresh","_targetVariableID":"7c88b9cb-7500-475e-a0ca-04fa12c387d2"},"floatVariable":{"_name":"_movementDelay"},"$type":"NodeCanvas.Tasks.Actions.SetFloatRandom"},"_position":{"x":4952.0,"y":5663.0},"_comment":"This
+    seeds the random wait timer for movements to occur on entities","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"maxCount":{"_value":1},"coolDownTime":{"_name":"_movementDelay"},"_position":{"x":5897.0,"y":5573.0},"_comment":"This
+    gives the entities some random delay between movements to make sure they dont
+    zip around too much.","$type":"NodeCanvas.BehaviourTrees.Filter","$id":"3"},{"_position":{"x":5897.0,"y":5678.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"4"},{"_action":{"SearchLength":{"_name":"RandomMovementScore","_targetVariableID":"3e71a710-86db-4327-8a07-a70b6fc8ee26"},"OutputPath":{"_name":"currentPath","_targetVariableID":"456fde8f-4a5e-44c0-aba0-4b3bc94b8b2d"},"$type":"NodeCanvasAddons.AStarPathfinding.CreateRandomPathAction"},"_position":{"x":5732.0,"y":5768.0},"_comment":"This
+    generates the random path for the entity to follow.","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"timeout":{"_name":"PathingTimeout","_targetVariableID":"3f5c23db-8516-4fc8-b50d-eb6b556bfb98"},"_position":{"x":5956.0,"y":5757.0},"$type":"NodeCanvas.BehaviourTrees.Timeout","$id":"6"},{"_subTree":{"_value":1},"_position":{"x":5925.0,"y":5862.0},"_comment":"This
+    is the same as the normal follow but uses the move within RVO controller rather
+    than direct transform changes","$type":"NodeCanvas.BehaviourTrees.SubTree","$id":"7"},{"_action":{"minValue":{"_name":"MinMovementRefresh","_targetVariableID":"8ff16e89-4cfe-4130-9fce-b59fed3bb380"},"maxValue":{"_name":"MaxMovementRefresh","_targetVariableID":"7c88b9cb-7500-475e-a0ca-04fa12c387d2"},"floatVariable":{"_name":"_movementDelay"},"$type":"NodeCanvas.Tasks.Actions.SetFloatRandom"},"_position":{"x":6141.0,"y":5767.0},"_comment":"This
+    resets the delay for the next time around.","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 6086e131709754e47a0d49dd180c6ad7, type: 2}
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -5681, y: -5351}
+    _zoomFactor: 1
+  _haltSerialization: 0

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: SpawnBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":6150.0,"y":5895.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"filterMode":0,"maxCount":{"_value":1},"coolDownTime":{"_value":5.0},"_position":{"x":5880.0,"y":6015.0},"$type":"NodeCanvas.BehaviourTrees.Filter","$id":"1"},{"_position":{"x":5895.0,"y":6105.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_action":{"functionWrapper":{"result":{"_name":"_spawnPosition"},"_targetMethod":{"_baseInfo":"UnityEngine.Transform|get_position|UnityEngine.Vector3","_paramsInfo":""},"$type":"NodeCanvas.Framework.Internal.ReflectedFunction`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"$type":"NodeCanvas.Tasks.Actions.GetProperty"},"_position":{"x":5685.0,"y":6180.0},"_comment":"Cache
+    the spawn position from the container game object","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"valueA":{"_name":"_currentEntities"},"valueB":{},"$type":"NodeCanvas.Tasks.Actions.SetInt"},"_position":{"x":5985.0,"y":6180.0},"_comment":"Create
+    the variable to store the current entries once they are spawned","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"repeaterMode":2,"repeatTimes":{"_value":1},"_position":{"x":6615.0,"y":6015.0},"_comment":"Keep
+    the spawning logic running forever","$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"5"},{"maxCount":{"_value":1},"coolDownTime":{"_name":"SpawnRate","_targetVariableID":"94d91f14-5184-4ff5-903d-6a6342d807a7"},"_position":{"x":6615.0,"y":6090.0},"_comment":"Maintain
+    a constant spawn rate","$type":"NodeCanvas.BehaviourTrees.Filter","$id":"6"},{"_condition":{"valueA":{"_name":"_currentEntities"},"checkType":2,"valueB":{"_name":"MaxEntities","_targetVariableID":"12b9958b-9850-4139-b670-e5f1d89a79da"},"$type":"NodeCanvas.Tasks.Conditions.CheckInt"},"_position":{"x":6540.0,"y":6180.0},"_comment":"Check
+    if we have already spawned enough","$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"7"},{"_position":{"x":6615.0,"y":6255.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"8"},{"_action":{"parent":{},"clonePosition":{"_name":"_spawnPosition"},"cloneRotation":{},"saveCloneAs":{"_name":"_createdEntity"},"overrideAgent":{"_type":"UnityEngine.Transform","_name":"EntityType","_targetVariableID":"7a2feeed-cfcf-4c91-876a-8bb0594468dd"},"$type":"NodeCanvas.Tasks.Actions.InstantiateGameObject"},"_position":{"x":6255.0,"y":6360.0},"_comment":"Create
+    an instance of the actual game object at the spawners position","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"9"},{"_action":{"ChildObject":{"_name":"_createdEntity"},"ParentObject":{"_name":"CreatedParent","_targetVariableID":"01b308b8-c3c7-4d90-9c71-b2ab5c085f7c"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.ParentGameObjectAction"},"_position":{"x":6705.0,"y":6360.0},"_comment":"Parent
+    the game object to the correct scene object","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"10"},{"_action":{"valueA":{"_name":"_currentEntities"},"Operation":1,"valueB":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.SetInt"},"_position":{"x":6870.0,"y":6360.0},"_comment":"Increment
+    the entity count","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"11"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"10"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"11"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[{"name":"Setup","rect":{"xMin":5645.289,"yMin":5962.509,"xMax":6186.005,"yMax":6334.761}},{"name":"Spawn
+    Logic","rect":{"xMin":6216.944,"yMin":5964.755,"xMax":7080.0,"yMax":6489.0}}],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -6154, y: -5911}
+    _zoomFactor: 1
+  _haltSerialization: 0

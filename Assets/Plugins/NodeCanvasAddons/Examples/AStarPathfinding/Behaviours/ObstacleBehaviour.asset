@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: ObstacleBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":5445.0,"y":5355.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"filterMode":0,"maxCount":{"_value":1},"coolDownTime":{"_value":5.0},"_position":{"x":5130.0,"y":5460.0},"$type":"NodeCanvas.BehaviourTrees.Filter","$id":"1"},{"_action":{"Position":{"_name":"_previousPosition"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.GetPositionAction"},"_position":{"x":5145.0,"y":5550.0},"_comment":"Seed
+    the position cache","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"Position":{"_name":"_currentPosition"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.GetPositionAction"},"_position":{"x":5445.0,"y":5460.0},"_comment":"Get
+    the current psoition","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_condition":{"PreviousPosition":{"_name":"_previousPosition"},"CurrentPosition":{"_name":"_currentPosition"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.HasMovedCondition"},"_position":{"x":5715.0,"y":5460.0},"_comment":"Wait
+    until the position has changed","$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"4"},{"_position":{"x":5715.0,"y":5655.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"5"},{"_action":{"valueA":{"_name":"_previousPosition"},"valueB":{"_name":"_currentPosition"},"$type":"NodeCanvas.Tasks.Actions.SetVector3"},"_position":{"x":5370.0,"y":5730.0},"_comment":"Update
+    the position cache to now be the current position, to reset the movement changed
+    check","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"},{"_action":{"Bounds":{"_name":"_bounds"},"$type":"NodeCanvasAddons.GetBoundsFromGameObjectAction"},"_position":{"x":5670.0,"y":5730.0},"_comment":"Get
+    the bounds of the object for using to refresh the graph boundries on the area","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"},{"_action":{"UpdateBoundry":{"_name":"_bounds"},"$type":"NodeCanvasAddons.AStarPathfinding.UpdateGraphsAction"},"_position":{"x":5895.0,"y":5730.0},"_comment":"Update
+    the underlying graph to refresh the walkable nodes allowing for better pathing","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[{"name":"Setup","rect":{"xMin":5086.998,"yMin":5415.998,"xMax":5299.998,"yMax":5674.998}},{"name":"Wait
+    For Movement","rect":{"xMin":5382.998,"yMin":5416.998,"xMax":6031.998,"yMax":5569.998}},{"name":"New
+    Canvas Group","rect":{"xMin":5327.998,"yMin":5600.998,"xMax":6146.998,"yMax":5859.998}}],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -5094, y: -5126}
+    _zoomFactor: 1
+  _haltSerialization: 0

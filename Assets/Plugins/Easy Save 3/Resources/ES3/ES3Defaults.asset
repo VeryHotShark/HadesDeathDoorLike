@@ -29,19 +29,19 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
+    - Assembly-CSharp-firstpass
     - Animancer.Examples
     - ParadoxNotion
     - AstarPathfindingProject
-    - Assembly-CSharp-firstpass
     - MoreMountains.Feedbacks
     - MoreMountains.Tools
-    - Assembly-CSharp
     - MoreMountains.Feedbacks.URP
     - Cinemachine
     - MoreMountains.Feedbacks.MMTools
     - MoreMountains.Feedbacks.NiceVibrations
     - MoreMountains.Feedbacks.PostProcessing
     - MoreMountains.Feedbacks.HDRP
+    - Assembly-CSharp
     - Animancer
     - Animancer.FSM
     - MoreMountains.Feedbacks.TextMeshPro

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: EntityMoverBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":6105.0,"y":5955.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_position":{"x":5805.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.StepIterator","$id":"1"},{"_action":{"Position":{"_name":"_destination"},"overrideAgent":{"_type":"UnityEngine.Transform","_name":"EndPosition","_targetVariableID":"fe0de52e-b0d2-4001-aed7-1a47df1c3305"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.GetPositionAction"},"_position":{"x":5730.0,"y":6105.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"_action":{"Position":{"_name":"_destination"},"overrideAgent":{"_type":"UnityEngine.Transform","_name":"StartPosition","_targetVariableID":"30693781-888b-46e6-aea0-9c7700ecc999"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.GetPositionAction"},"_position":{"x":5865.0,"y":6105.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"DestinationPosition":{"_name":"_destination"},"OutputPath":{"_name":"currentPath","_targetVariableID":"05088fba-1a4e-43e4-877a-54174a9a9114"},"$type":"NodeCanvasAddons.AStarPathfinding.CreatePathAction"},"_position":{"x":6030.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_action":{"Path":{"_name":"currentPath","_targetVariableID":"05088fba-1a4e-43e4-877a-54174a9a9114"},"$type":"NodeCanvasAddons.AStarPathfinding.SeekerProcessPathAction"},"_position":{"x":6180.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_subTree":{"_value":1},"_position":{"x":6330.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.SubTree","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 20dc2f767780523468c774281e4776d4, type: 2}
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -5899, y: -5626}
+    _zoomFactor: 1
+  _haltSerialization: 0

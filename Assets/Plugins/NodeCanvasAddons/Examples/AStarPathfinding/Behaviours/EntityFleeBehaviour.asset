@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: EntityFleeBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":5325.0,"y":5250.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_condition":{"checkTarget":{"_name":"FleeTarget","_targetVariableID":"8e2c54e8-6867-4c1b-97d7-26747a38af88"},"distance":{"_name":"FleeCheckDistance","_targetVariableID":"71b5d25b-ef1c-45e1-807d-8637f87a2955"},"floatingPoint":0.1,"$type":"NodeCanvas.Tasks.Conditions.CheckDistanceToGameObject"},"_position":{"x":4875.0,"y":5370.0},"_comment":"Checks
+    to see if the player is close enough to flee from, as you would realistically
+    only want to flee when the threat is within a reasonable distance or some other
+    predicate in a real world scenario.","$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"1"},{"maxCount":{"_value":1},"coolDownTime":{"_value":1.0},"_position":{"x":5505.0,"y":5370.0},"$type":"NodeCanvas.BehaviourTrees.Filter","$id":"2"},{"_position":{"x":5505.0,"y":5460.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_action":{"Position":{"_name":"_playerPosition"},"overrideAgent":{"_type":"UnityEngine.Transform","_name":"FleeTarget","_targetVariableID":"8e2c54e8-6867-4c1b-97d7-26747a38af88"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.GetPositionAction"},"_position":{"x":5355.0,"y":5550.0},"_comment":"Get
+    the position of the threat","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_action":{"AvoidPosition":{"_name":"_playerPosition"},"GScoreToStopAt":{"_name":"FleeGScore","_targetVariableID":"733d8e7c-8565-4984-b0a8-2be4951cd2c5"},"OutputPath":{"_name":"currentPath","_targetVariableID":"f64f096e-37e1-4c00-85f9-a280f57344ed"},"$type":"NodeCanvasAddons.AStarPathfinding.CreateFleePathAction"},"_position":{"x":5475.0,"y":5550.0},"_comment":"Generate
+    a path to avoid the threat, moving a reasonable distance away","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_subTree":{"_value":1},"_position":{"x":5670.0,"y":5550.0},"_comment":"Follow
+    the flee path that has been created","$type":"NodeCanvas.BehaviourTrees.SubTree","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[{"name":"Flee
+    & Follow Behaviour","rect":{"xMin":5305.0,"yMin":5320.0,"xMax":5844.0,"yMax":5712.0}},{"name":"Flee
+    Required Check","rect":{"xMin":4824.0,"yMin":5322.0,"xMax":5266.0,"yMax":5506.0}}],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 20dc2f767780523468c774281e4776d4, type: 2}
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -5253, y: -5050}
+    _zoomFactor: 1
+  _haltSerialization: 0

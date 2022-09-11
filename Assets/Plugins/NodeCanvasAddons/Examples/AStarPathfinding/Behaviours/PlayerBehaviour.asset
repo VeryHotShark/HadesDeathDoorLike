@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: PlayerBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":5370.0,"y":5280.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"_action":{"xAxisName":{"_value":"Horizontal"},"yAxisName":{"_value":""},"zAxisName":{"_value":"Vertical"},"multiplier":{"_value":1.0},"saveAs":{"_name":""},"saveXAs":{"_name":"_turnChange"},"saveYAs":{"_name":""},"saveZAs":{"_name":"_forwardChange"},"$type":"NodeCanvas.Tasks.Actions.GetInputAxis"},"_position":{"x":5295.0,"y":5370.0},"_comment":"This
+    is a shortcut to get the input changes","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"1"},{"_action":{"StrafeChange":{},"TurnChange":{"_name":"_turnChange"},"ForwardChange":{"_name":"_forwardChange"},"MovementSpeed":{"_name":"MovementSpeed","_targetVariableID":"93d84140-72c8-4942-a6ca-4419e55bebde"},"RotationSpeed":{"_name":"MovementSpeed","_targetVariableID":"93d84140-72c8-4942-a6ca-4419e55bebde"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.TimeBasedMovementAction"},"_position":{"x":5430.0,"y":5370.0},"_comment":"This
+    applies the changes based upon the frames delta time","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":null,"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -5086, y: -4963}
+    _zoomFactor: 1
+  _haltSerialization: 0

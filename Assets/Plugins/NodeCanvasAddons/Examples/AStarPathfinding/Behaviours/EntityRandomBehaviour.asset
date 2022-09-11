@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: EntityRandomBehaviour
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"_position":{"x":5385.0,"y":5310.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"0"},{"filterMode":0,"maxCount":{"_value":1},"coolDownTime":{"_value":5.0},"_position":{"x":4980.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.Filter","$id":"1"},{"_action":{"minValue":{"_name":"MinMovementRefresh","_targetVariableID":"8ff16e89-4cfe-4130-9fce-b59fed3bb380"},"maxValue":{"_name":"MaxMovementRefresh","_targetVariableID":"7c88b9cb-7500-475e-a0ca-04fa12c387d2"},"floatVariable":{"_name":"_movementDelay"},"$type":"NodeCanvas.Tasks.Actions.SetFloatRandom"},"_position":{"x":4785.0,"y":5520.0},"_comment":"This
+    seeds the random wait timer for movements to occur on entities","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"2"},{"maxCount":{"_value":1},"coolDownTime":{"_name":"_movementDelay"},"_position":{"x":5730.0,"y":5430.0},"_comment":"This
+    gives the entities some random delay between movements to make sure they dont
+    zip around too much.","$type":"NodeCanvas.BehaviourTrees.Filter","$id":"3"},{"_position":{"x":5730.0,"y":5535.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"4"},{"_action":{"SearchLength":{"_name":"RandomMovementScore","_targetVariableID":"3e71a710-86db-4327-8a07-a70b6fc8ee26"},"OutputPath":{"_name":"currentPath","_targetVariableID":"14fc5e8d-f78c-43d6-a997-fdae3d8a5ccb"},"$type":"NodeCanvasAddons.AStarPathfinding.CreateRandomPathAction"},"_position":{"x":5565.0,"y":5626.062},"_comment":"This
+    generates the random path for the entity to follow.","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_subTree":{"_value":1},"_position":{"x":5730.0,"y":5625.0},"_comment":"This
+    delegates to the shared follow path behaviour tree.","$type":"NodeCanvas.BehaviourTrees.SubTree","$id":"6"},{"_action":{"minValue":{"_name":"MinMovementRefresh","_targetVariableID":"8ff16e89-4cfe-4130-9fce-b59fed3bb380"},"maxValue":{"_name":"MaxMovementRefresh","_targetVariableID":"7c88b9cb-7500-475e-a0ca-04fa12c387d2"},"floatVariable":{"_name":"_movementDelay"},"$type":"NodeCanvas.Tasks.Actions.SetFloatRandom"},"_position":{"x":5895.0,"y":5625.0},"_comment":"This
+    resets the delay for the next time around.","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"7"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[{"name":"Wait,
+    Generate and Follow Random Path","rect":{"xMin":5496.999,"yMin":5353.0,"xMax":6458.999,"yMax":5773.0}},{"name":"Setup","rect":{"xMin":4714.0,"yMin":5358.0,"xMax":5379.999,"yMax":5712.0}}],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 20dc2f767780523468c774281e4776d4, type: 2}
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -5105, y: -4864}
+    _zoomFactor: 0.9412624
+  _haltSerialization: 0
