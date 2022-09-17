@@ -4,15 +4,14 @@ using UnityEngine;
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
 using System.Linq;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
 {
     public class MyPlayer : MonoBehaviour
     {
-        [FormerlySerializedAs("OrbitCamera")] public ExampleCharacterCamera _orbitCamera;
-        [FormerlySerializedAs("CameraFollowPoint")] public Transform _cameraFollowPoint;
-        [FormerlySerializedAs("Character")] public MyCharacterController _character;
+        public ExampleCharacterCamera OrbitCamera;
+        public Transform CameraFollowPoint;
+        public MyCharacterController Character;
 
         private const string MouseXInput = "Mouse X";
         private const string MouseYInput = "Mouse Y";
@@ -25,11 +24,11 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
             Cursor.lockState = CursorLockMode.Locked;
 
             // Tell camera to follow transform
-            _orbitCamera.SetFollowTransform(_cameraFollowPoint);
+            OrbitCamera.SetFollowTransform(CameraFollowPoint);
 
             // Ignore the character's collider(s) for camera obstruction checks
-            _orbitCamera.IgnoredColliders.Clear();
-            _orbitCamera.IgnoredColliders.AddRange(_character.GetComponentsInChildren<Collider>());
+            OrbitCamera.IgnoredColliders.Clear();
+            OrbitCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
         }
 
         private void Update()
@@ -45,7 +44,7 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
         private void LateUpdate()
         {
             HandleCameraInput();
-            _character.PostInputUpdate(Time.deltaTime, _orbitCamera.transform.forward);
+            Character.PostInputUpdate(Time.deltaTime, OrbitCamera.transform.forward);
         }
 
         private void HandleCameraInput()
@@ -68,12 +67,12 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
 #endif
 
             // Apply inputs to the camera
-            _orbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
+            OrbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
 
             // Handle toggling zoom level
             if (Input.GetMouseButtonDown(1))
             {
-                _orbitCamera.TargetDistance = (_orbitCamera.TargetDistance == 0f) ? _orbitCamera.DefaultDistance : 0f;
+                OrbitCamera.TargetDistance = (OrbitCamera.TargetDistance == 0f) ? OrbitCamera.DefaultDistance : 0f;
             }
         }
 
@@ -84,10 +83,10 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
             // Build the CharacterInputs struct
             characterInputs.MoveAxisForward = Input.GetAxisRaw(VerticalInput);
             characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
-            characterInputs.CameraRotation = _orbitCamera.Transform.rotation;
+            characterInputs.CameraRotation = OrbitCamera.Transform.rotation;
 
             // Apply inputs to character
-            _character.SetInputs(ref characterInputs);
+            Character.SetInputs(ref characterInputs);
         }
     }
 }

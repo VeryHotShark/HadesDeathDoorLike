@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace VHS {
-    public class CharacterController : MonoBehaviour, ICharacterController, IUpdateListener {
+    public class CharacterController : MonoBehaviour, ICharacterController, IUpdateListener, IActor {
         [ShowInInspector] public CharacterModule CurrentModule => _stateMachine?.CurrentState;
 
         private Vector3 _internalVelocityAdd;
@@ -22,6 +22,8 @@ namespace VHS {
 
         private KinematicCharacterMotor _motor;
         public KinematicCharacterMotor Motor => _motor;
+        public Vector3 FeetPosition => _motor.TransientPosition;
+        public Vector3 CenterOfMass => FeetPosition + Motor.CharacterTransformToCapsuleCenter;
 
         public Vector3 LookInput { get; set; }
         public Vector3 MoveInput { get; set; }

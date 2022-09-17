@@ -13,14 +13,14 @@ namespace KinematicCharacterController
             KinematicCharacterMotor motor = (target as KinematicCharacterMotor);
             if (motor)
             {
-                Vector3 characterBottom = motor.transform.position + (motor._capsule.center + (-Vector3.up * (motor._capsule.height * 0.5f)));
+                Vector3 characterBottom = motor.transform.position + (motor.Capsule.center + (-Vector3.up * (motor.Capsule.height * 0.5f)));
 
                 Handles.color = Color.yellow;
                 Handles.CircleHandleCap(
                     0, 
-                    characterBottom + (motor.transform.up * motor._maxStepHeight), 
+                    characterBottom + (motor.transform.up * motor.MaxStepHeight), 
                     Quaternion.LookRotation(motor.transform.up, motor.transform.forward), 
-                    motor._capsule.radius + 0.1f, 
+                    motor.Capsule.radius + 0.1f, 
                     EventType.Repaint);
             }
         }

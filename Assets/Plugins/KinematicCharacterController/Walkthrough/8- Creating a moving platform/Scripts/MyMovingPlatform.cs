@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Playables;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Walkthrough.MovingPlatform
 {
@@ -16,9 +15,9 @@ namespace KinematicCharacterController.Walkthrough.MovingPlatform
 
     public class MyMovingPlatform : MonoBehaviour, IMoverController
     {
-        [FormerlySerializedAs("Mover")] public PhysicsMover _mover;
+        public PhysicsMover Mover;
 
-        [FormerlySerializedAs("Director")] public PlayableDirector _director;
+        public PlayableDirector Director;
 
         private Transform _transform;
 
@@ -26,7 +25,7 @@ namespace KinematicCharacterController.Walkthrough.MovingPlatform
         {
             _transform = this.transform;
 
-            _mover.MoverController = this;
+            Mover.MoverController = this;
         }
 
         // This is called every FixedUpdate by our PhysicsMover in order to tell it what pose it should go to
@@ -51,8 +50,8 @@ namespace KinematicCharacterController.Walkthrough.MovingPlatform
 
         public void EvaluateAtTime(double time)
         {
-            _director.time = time % _director.duration;
-            _director.Evaluate();
+            Director.time = time % Director.duration;
+            Director.Evaluate();
         }
     }
 }

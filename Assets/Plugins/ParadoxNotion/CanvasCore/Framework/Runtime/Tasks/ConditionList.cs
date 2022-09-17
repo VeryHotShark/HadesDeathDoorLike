@@ -63,18 +63,15 @@ namespace NodeCanvas.Framework
             return newList;
         }
 
-        //Forward Enable call
+        //...
         protected override void OnEnable() {
-            for ( var i = 0; i < conditions.Count; i++ ) {
-                conditions[i].Enable(agent, blackboard);
-            }
+            //Remark: disable this and instead enable conditions just before execution
+            // for ( var i = 0; i < conditions.Count; i++ ) { conditions[i].Enable(agent, blackboard); }
         }
 
-        //Forward Disable call
+        //...
         protected override void OnDisable() {
-            for ( var i = 0; i < conditions.Count; i++ ) {
-                conditions[i].Disable();
-            }
+            for ( var i = 0; i < conditions.Count; i++ ) { conditions[i].Disable(); }
         }
 
         protected override bool OnCheck() {
@@ -86,6 +83,8 @@ namespace NodeCanvas.Framework
                     continue;
                 }
 
+                //enable conditions here before execution, instead of altogether so that it is done only in order
+                conditions[i].Enable(agent, blackboard);
                 if ( conditions[i].Check(agent, blackboard) ) {
                     if ( !allTrueRequired ) {
                         return true;

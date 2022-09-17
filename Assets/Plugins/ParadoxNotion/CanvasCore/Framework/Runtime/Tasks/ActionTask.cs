@@ -104,7 +104,7 @@ namespace NodeCanvas.Framework
         public void EndAction(bool? success) {
 
             if ( status != Status.Running ) {
-                // if ( success == null ) { latch = false; }
+                if ( success == null ) { latch = false; }
                 return;
             }
 

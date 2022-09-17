@@ -4,59 +4,40 @@ using UnityEngine;
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
 using System.Linq;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Walkthrough.BasicMovement
 {
     public class MyPlayer : MonoBehaviour
     {
-        [FormerlySerializedAs("OrbitCamera")] public ExampleCharacterCamera _orbitCamera;
-        [FormerlySerializedAs("CameraFollowPoint")] public Transform _cameraFollowPoint;
-        [FormerlySerializedAs("Character")] public MyCharacterController _character;
+        public ExampleCharacterCamera OrbitCamera;
+        public Transform CameraFollowPoint;
+        public MyCharacterController Character;
 
-        private Vector3 _lookInputVector = Vector3.zero;
-        
-        private Vector2 _lookDelta;
-        private Vector2 _moveInput;
-        private PlayerInput _playerInput;
-
-        private void Awake() {
-            _playerInput = new PlayerInput();
-            
-            // _playerInput.CharacterControls.Look.performed += ctx => _lookDelta = ctx.ReadValue<Vector2>();
-            // _playerInput.CharacterControls.Look.canceled += ctx => _lookDelta = ctx.ReadValue<Vector2>();
-            
-            // _playerInput.CharacterControls.Movement.performed += ctx => _moveInput = ctx.ReadValue<Vector2>();
-            // _playerInput.CharacterControls.Movement.canceled += ctx => _moveInput = ctx.ReadValue<Vector2>();
-        }
-
-        private void OnEnable() {
-            // _playerInput.Enable();
-        }
-
-        private void OnDisable() {
-            // _playerInput.Disable();
-        }
+        private const string MouseXInput = "Mouse X";
+        private const string MouseYInput = "Mouse Y";
+        private const string MouseScrollInput = "Mouse ScrollWheel";
+        private const string HorizontalInput = "Horizontal";
+        private const string VerticalInput = "Vertical";
 
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
 
             // Tell camera to follow transform
-            _orbitCamera.SetFollowTransform(_cameraFollowPoint);
+            OrbitCamera.SetFollowTransform(CameraFollowPoint);
 
             // Ignore the character's collider(s) for camera obstruction checks
-            _orbitCamera.IgnoredColliders = _character.GetComponentsInChildren<Collider>().ToList();
+            OrbitCamera.IgnoredColliders.Clear();
+            OrbitCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
         }
 
         private void Update()
         {
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (Input.GetMouseButtonDown(0))
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
-            
+
             HandleCharacterInput();
         }
 
@@ -68,27 +49,29 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
         private void HandleCameraInput()
         {
             // Create the look input vector for the camera
-            _lookInputVector = new Vector3(_lookDelta.x, _lookDelta.y, 0f);
+            float mouseLookAxisUp = Input.GetAxisRaw(MouseYInput);
+            float mouseLookAxisRight = Input.GetAxisRaw(MouseXInput);
+            Vector3 lookInputVector = new Vector3(mouseLookAxisRight, mouseLookAxisUp, 0f);
 
             // Prevent moving the camera while the cursor isn't locked
             if (Cursor.lockState != CursorLockMode.Locked)
             {
-                _lookInputVector = Vector3.zero;
+                lookInputVector = Vector3.zero;
             }
 
             // Input for zooming the camera (disabled in WebGL because it can cause problems)
-            // float scrollInput = -Input.GetAxis("Mouse ScrollWheel");
-    #if UNITY_WEBGL
-            // scrollInput = 0f;
-    #endif
+            float scrollInput = -Input.GetAxis(MouseScrollInput);
+#if UNITY_WEBGL
+        scrollInput = 0f;
+#endif
 
             // Apply inputs to the camera
-            _orbitCamera.UpdateWithInput(Time.deltaTime,0f, _lookInputVector);
+            OrbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
 
             // Handle toggling zoom level
-            if (Mouse.current.middleButton.wasPressedThisFrame)
+            if (Input.GetMouseButtonDown(1))
             {
-                _orbitCamera.TargetDistance = (_orbitCamera.TargetDistance == 0f) ? _orbitCamera.DefaultDistance : 0f;
+                OrbitCamera.TargetDistance = (OrbitCamera.TargetDistance == 0f) ? OrbitCamera.DefaultDistance : 0f;
             }
         }
 
@@ -97,12 +80,12 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
             PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
 
             // Build the CharacterInputs struct
-            characterInputs.MoveAxisRight = _moveInput.x;
-            characterInputs.MoveAxisForward = _moveInput.y;
-            characterInputs.CameraRotation = _orbitCamera.Transform.rotation;
+            characterInputs.MoveAxisForward = Input.GetAxisRaw(VerticalInput);
+            characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
+            characterInputs.CameraRotation = OrbitCamera.Transform.rotation;
 
             // Apply inputs to character
-            _character.SetInputs(ref characterInputs);
+            Character.SetInputs(ref characterInputs);
         }
     }
 }

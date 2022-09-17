@@ -268,14 +268,14 @@ namespace NodeCanvas.Framework
                     return;
                 }
 
-                if ( prop.CanRead ) {
+                if ( prop.CanRead && getMethod != null ) {
                     try { getter = getMethod.RTCreateDelegate<Func<T>>(instance); } //JIT
                     catch { getter = () => { return (T)getMethod.Invoke(instance, null); }; } //AOT
                 } else {
                     getter = () => { Logger.LogError(string.Format("You tried to Get a Property Bound Variable '{0}', but the Bound Property '{1}' is Write Only!", name, _propertyPath), LogTag.VARIABLE, go); return default(T); };
                 }
 
-                if ( prop.CanWrite ) {
+                if ( prop.CanWrite && setMethod != null ) {
                     try { setter = setMethod.RTCreateDelegate<Action<T>>(instance); } //JIT
                     catch { setter = (o) => { setMethod.Invoke(instance, ReflectionTools.SingleTempArgsArray(o)); }; } //AOT
                     if ( callSetter ) { setter(_value); }

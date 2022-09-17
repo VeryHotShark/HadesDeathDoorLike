@@ -204,6 +204,9 @@ namespace NodeCanvas.Framework
             return instance;
         }
 
+        ///<summary>Makes and returns the runtime instance based on the current graph set.</summary>
+        public Graph MakeRuntimeGraphInstance() { return graph = GetInstance(graph); }
+
         ///<summary>Start the graph assigned. It will be auto updated.</summary>
         public void StartBehaviour() { StartBehaviour(updateMode, null); }
         ///<summary>Start the graph assigned providing a callback for when it's finished if at all.</summary>
@@ -241,9 +244,7 @@ namespace NodeCanvas.Framework
 
         ///<summary>Manually update the assigned graph</summary>
         public void UpdateBehaviour() {
-            if ( graph != null ) {
-                graph.UpdateGraph();
-            }
+            if ( graph != null ) { graph.UpdateGraph(); }
         }
 
         ///<summary>The same as calling Stop, Start Behaviour</summary>
@@ -276,8 +277,8 @@ namespace NodeCanvas.Framework
             if ( param != null ) { ( param as ExposedParameter<T> ).value = value; }
         }
 
-        ///<summary>Make a new exposed parameter from a blackboard variable name and bind it</summary>
-        ExposedParameter MakeNewExposedParameter<T>(string name) {
+        ///<summary>Make and return a new exposed parameter from a blackboard variable name and bind it</summary>
+        public ExposedParameter MakeNewExposedParameter<T>(string name) {
             if ( exposedParameters == null ) { exposedParameters = new List<ExposedParameter>(); }
             var variable = graph.blackboard.GetVariable<T>(name);
             if ( variable != null && variable.isExposedPublic && !variable.isPropertyBound ) {
@@ -286,6 +287,7 @@ namespace NodeCanvas.Framework
                 exposedParameters.Add(exposedParam);
                 return exposedParam;
             }
+            ParadoxNotion.Services.Logger.LogWarning(string.Format("Exposed Graph Variable named '{0}' was not found", name));
             return null;
         }
 
@@ -364,6 +366,15 @@ namespace NodeCanvas.Framework
             if ( exposedParameters != null && graph != null ) {
                 for ( var i = 0; i < exposedParameters.Count; i++ ) {
                     exposedParameters[i].Bind(graph.blackboard);
+                }
+            }
+        }
+
+        ///<summary>UnBind exposed parameters any local graph blackboard variables</summary>
+        public void UnBindExposedParameters() {
+            if ( exposedParameters != null ) {
+                for ( var i = 0; i < exposedParameters.Count; i++ ) {
+                    exposedParameters[i].UnBind();
                 }
             }
         }

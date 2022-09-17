@@ -3,679 +3,151 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Read Me v7.3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Read Me v7.3.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/P_Character.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/P_Character.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example10_LayeredGridGraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example10_LayeredGridGraph/Example10.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example10_LayeredGridGraph/Example10.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example10_LayeredGridGraph/Example10Settings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example10_LayeredGridGraph/Example10Settings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/Arrow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/Arrow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/Arrow.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/Arrow.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/Arrow2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/Arrow2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/GroupController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/GroupController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/LightweightRVO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/LightweightRVO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVO.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVO.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOAgent.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOAgent.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOAgentPlacer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOAgentPlacer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOExampleAgent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOExampleAgent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOLightweight.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOLightweight.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOLightweightSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOLightweightSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/selectionBox.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/selectionBox.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/Procedural.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/Procedural.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralGround.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralGround.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab4.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralPrefab4.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralWorld.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/ProceduralWorld.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/TopDownOverlay.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/TopDownOverlay.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/cylinder.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example12_Procedural/cylinder.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/BezierMover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/BezierMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Materials/No Name.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Materials/No Name.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Moving.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Moving.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/MovingSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/MovingSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Ship.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Ship.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Ship.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Ship.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Water fallback.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/Water fallback.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/WaterPlane.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/WaterPlane.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/ship.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example13_Moving/ship.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/Door.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/Door.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/Red.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/Red.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_button_hidden.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_button_hidden.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_button_show.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_button_show.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_door_blocked.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_door_blocked.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_door_open.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Animations/hexagon_door_open.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Astar3DButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Astar3DButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/HexagonTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/HexagonTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_blue.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_blue.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_green.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_green.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_purple.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_purple.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_red.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_red.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_yellow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_yellow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_yellow_transparent.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Materials/hexagon_yellow_transparent.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Textures/hexagon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Textures/hexagon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/TurnBasedDoor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/TurnBasedDoor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/TurnBasedManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/TurnBasedManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Turnbased.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/Turnbased.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/TurnbasedSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/TurnbasedSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon_cone.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon_cone.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon_obstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon_obstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon_outline.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example14_TurnBased_Hexagon/hexagon_outline.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D/2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D/2D.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D/2D.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D/2D/Volume Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D/2D/Volume Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D/2DSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example15_2D/2DSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/ExampleMover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/ExampleMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/RVO 2D.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/RVO 2D.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/RVO 2DSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/RVO 2DSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/grid_tile.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example16_RVO 2D/grid_tile.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/Pillars.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/Pillars.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSBattery.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSBattery.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSHarvesterHarvesting.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSHarvesterHarvesting.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSHarvesterHarvestingExit.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSHarvesterHarvestingExit.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSHarvesterNormal.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSHarvesterNormal.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSUnitHarvester.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/RTSUnitHarvester.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/WorkerLight.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/WorkerLight.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/WorkerLight.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Animations/WorkerLight.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/music.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/music/Abnormal Perfection (Ambient mix).ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/music/Abnormal Perfection (Ambient mix).ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/movement.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/movement/Motor 19.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/movement/Motor 19.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/ui.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/ui/PremiumBeat_0013_cursor_click_11.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/ui/PremiumBeat_0013_cursor_click_11.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/ui/PremiumBeat_0046_sci_fi_beep_electric.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/ui/PremiumBeat_0046_sci_fi_beep_electric.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/CK_Blaster_Shot-01.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/CK_Blaster_Shot-01.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-1.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-1.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-2.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-2.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-3.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-3.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-4.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_01_Shot-4.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_04_Shot-1.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_04_Shot-1.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_04_Shot-2.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_04_Shot-2.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_04_Shot-3.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Heavy_04_Shot-3.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-1.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-1.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-2.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-2.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-3.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-3.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-4.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-4.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-5.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-5.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-6.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_08_Shot-6.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-1.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-1.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-2.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-2.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-3.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-3.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-4.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Audio/sfx/weapons/DS_Light_13_Shot-4.ogg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/BTNode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/BTNode.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/Dust.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/Dust.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/Dust2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/Dust2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/GroundRTS.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/GroundRTS.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/No Name.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/No Name.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/None__Untitled_001.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/None__Untitled_001.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade3.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade3.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade4.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade4.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCliffs.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCliffs.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCrystal.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCrystal.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSFlashParticle.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSFlashParticle.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSHarvesterCrystalParticle.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSHarvesterCrystalParticle.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSHeavyUnitBlink.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSHeavyUnitBlink.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSMuzzleSmokeParticle.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSMuzzleSmokeParticle.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSTurret.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSTurret.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHarvesterTeam1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHarvesterTeam1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHeavyTeam2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHeavyTeam2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/SelectionCircle.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/SelectionCircle.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/SelectionCircleLarge.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/SelectionCircleLarge.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/unnamed.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/unnamed.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/PostProcessing.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/PostProcessing.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Buildings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Buildings/Barracks.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Buildings/Barracks.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Buildings/Battery.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Buildings/Battery.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Crystal.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Crystal.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/CrystalSmall.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/CrystalSmall.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Effects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Effects/CannonSourceEffect.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Effects/CannonSourceEffect.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Effects/RifleSourceEffect.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Effects/RifleSourceEffect.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Effects/RifleTargetEffect.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/Effects/RifleTargetEffect.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSTurret.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSTurret.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSUnit.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSUnit.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSUnitHarvester.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSUnitHarvester.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSUnitHeavy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/RTSUnitHeavy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/UI/RTSMenuItem.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/UI/RTSMenuItem.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/UI/WorldSpaceQueueUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Prefabs/UI/WorldSpaceQueueUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTS.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTS.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTS.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTS/LightmapSnapshot.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTS/LightmapSnapshot.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSAudio.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSAudio.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingBarracks.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingBarracks.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingQueueUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSBuildingQueueUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSHarvestableResource.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSHarvestableResource.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSHarvester.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSHarvester.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSPlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSResourceDeterioration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSResourceDeterioration.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSResourceView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSResourceView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSTiltInMovementDirection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSTiltInMovementDirection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSTimedDestruction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSTimedDestruction.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUnit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUnit.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUnitBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUnitBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUnitManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSUnitManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWaveSpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWaveSpawner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWeapon.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWeapon.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWeaponSimpleRanged.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWeaponSimpleRanged.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWorldSpaceUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/RTSWorldSpaceUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/cliffs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/cliffs.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/dust.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/dust.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/heavy.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/heavy.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/turret.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/turret.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/turret_emission.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/turret_emission.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/unit.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Textures/unit.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/menu_background.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/menu_background.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_main_mask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_main_mask.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_main_outer_mask.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_main_outer_mask.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_small_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_small_background.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_small_mask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/queue_small_mask.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/selection_box.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/selection_box.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/selection_circle.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/selection_circle.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/selection_circle_large.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/UI/selection_circle_large.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/rtsmap.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/rtsmap.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/turret.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/turret.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/turret.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/turret.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/turret2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/turret2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/unit.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/unit.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/unit_heavy.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/unit_heavy.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/worker.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/worker.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Materials/Planet.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Materials/Planet.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Resources/Icosphere.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Resources/Icosphere.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Resources/strange_box.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Resources/strange_box.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Spherical.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/Spherical.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/SphericalSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example19_Spherical/SphericalSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/Example2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/Example2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/Example2Settings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/Example2Settings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/Pathfinding_Terrain.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/Pathfinding_Terrain.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/checkerGround.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/checkerGround.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/checkerGroundLayer.terrainlayer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/checkerGroundLayer.terrainlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/dynamicObstacle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example2_Terrain/dynamicObstacle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Debris.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Debris.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Materials/Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Materials/Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Materials/structure2-Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Materials/structure2-Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/MecanimBridge.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/MecanimBridge.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/RecastExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/RecastExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/RecastExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/RecastExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/Animations/ClimbTest.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/Animations/ClimbTest.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/Animations/JumpTest.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/Animations/JumpTest.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/RecastExample2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/RecastExample2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/RecastExample2Settings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/RecastExample2Settings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/ListCubes.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/ListCubes.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/PointGraphExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/PointGraphExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/PointGraphExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/PointGraphExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/blackText.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/blackText.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/ex5Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/ex5Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/ground.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example5_PointGraph/ground.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/Materials/navmesh-navmesh_example6navmeshMat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/Materials/navmesh-navmesh_example6navmeshMat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/NavmeshExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/NavmeshExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/NavmeshExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/NavmeshExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/example6.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/example6.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/navmesh.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh/navmesh.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh_RichAI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh_RichAI/NavmeshExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh_RichAI/NavmeshExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh_RichAI/NavmeshExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example6_Navmesh_RichAI/NavmeshExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Animations/Close.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Animations/Close.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Animations/Open.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Animations/Open.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door1Settings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door1Settings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door2Settings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example7_Door1/Door2Settings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/PathTypes.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/PathTypes.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/PathTypesDemo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/PathTypesDemo.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/PathTypesSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/PathTypesSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/SquareShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/SquareShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/line.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/line.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathLine.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathLine.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathSquare.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathSquare.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathSquare.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathSquare.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathSquare.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example8_PathTypes/pathSquare.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example9_Penalties.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example9_Penalties/PenaltiesExample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example9_Penalties/PenaltiesExample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example9_Penalties/PenaltiesExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example9_Penalties/PenaltiesExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/AstarSmoothFollow2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/AstarSmoothFollow2.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/DoorController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/DoorController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/ManualRVOAgent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/ManualRVOAgent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/MineBotAI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/MineBotAI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/MineBotAnimation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/MineBotAnimation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/NavmeshClamp.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/NavmeshClamp.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/ObjectPlacer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/ObjectPlacer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/RecastTileUpdate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/RecastTileUpdate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/RecastTileUpdateHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/RecastTileUpdateHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/SnapToNode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/SnapToNode.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/TargetMover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/ExampleScripts/TargetMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/AI.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/AI.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/BlueBox.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/BlueBox.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/BlueCheckerGround.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/BlueCheckerGround.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/BlueGround.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/BlueGround.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/DiffuseAlwaysVisible.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/DiffuseAlwaysVisible.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Door.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Door.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/OrangeGround.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/OrangeGround.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/PathBlueArea.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/PathBlueArea.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/PathGreyCube.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/PathGreyCube.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/PathRedArea.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/PathRedArea.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Projector Light.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Projector Light.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/SomeBox.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/SomeBox.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Textures/Falloff-Reflected.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Textures/Falloff-Reflected.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Textures/Falloff.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Textures/Falloff.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Textures/Shadow.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Textures/Shadow.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Wall.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Wall.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/DynamicObstacle.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/DynamicObstacle.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/Minebot.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/Minebot.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/Minebot_NRM.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/Minebot_NRM.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot-minebot.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot-minebot.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@awake-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@awake-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@back-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@back-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@forward 1-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@forward 1-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@forward-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@forward-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@left-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@left-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@right-01 - Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/Materials/mine_bot@right-01 - Default.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@awake.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@awake.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@back.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@back.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@forward.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@forward.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@left.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@left.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@right.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot@right.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot_render.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/MineBot/mine_bot_render.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/SomeBox.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/SomeBox.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/TargetReachedEffect.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Prefabs/TargetReachedEffect.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/_Example Scenes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/A_ Pathfinding Project/4.3.51/Example scenes/_Example Scenes.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/Editor/KinematicCharacterMotorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/Editor/KinematicCharacterMotorEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/KCCSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/KCCSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/KinematicCharacterMotor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/KinematicCharacterMotor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/KinematicCharacterSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/KinematicCharacterSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/PhysicsMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Core/PhysicsMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Materials/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Materials/White.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Prefabs/ExampleCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Prefabs/ExampleCamera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Scripts/ExamplePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/ExampleCharacter/Scripts/ExamplePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Dark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Dark.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Ghost.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Ghost.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/GhostRed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/GhostRed.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Grid20.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Grid20.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Grid200.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Grid200.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/GridBlue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/GridBlue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Light.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Light.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Orange.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/PlanetMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/PlanetMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Purple.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Teleporter.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Teleporter.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/Water.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/tile_green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Materials/tile_green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Models/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Models/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scenes/CharacterPlayground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scenes/CharacterPlayground.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/BuildManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/BuildManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/ExampleAIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/ExampleAIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/ExampleMovingPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/ExampleMovingPlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/FrameratePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/FrameratePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PlanetManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PlanetManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PlayableMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PlayableMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PrefabLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PrefabLauncher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/StressTestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/StressTestManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/Teleporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/Teleporter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/10- Multiple movement states setup/Scene/WalkthroughScene10.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/10- Multiple movement states setup/Scene/WalkthroughScene10.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/10- Multiple movement states setup/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/10- Multiple movement states setup/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/10- Multiple movement states setup/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/10- Multiple movement states setup/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/11- Charging state/Scene/WalkthroughScene11.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/11- Charging state/Scene/WalkthroughScene11.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/11- Charging state/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/11- Charging state/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/11- Charging state/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/11- Charging state/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/12- NoClip state/Scene/WalkthroughScene12.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/12- NoClip state/Scene/WalkthroughScene12.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/12- NoClip state/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/12- NoClip state/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/12- NoClip state/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/12- NoClip state/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/13- Swimming state/Scene/WalkthroughScene13.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/13- Swimming state/Scene/WalkthroughScene13.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/13- Swimming state/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/13- Swimming state/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/13- Swimming state/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/13- Swimming state/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scene/WalkthroughScene14.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scene/WalkthroughScene14.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyLadder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyLadder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/EthanCharacter/Materials/Ethan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/EthanCharacter/Materials/Ethan.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/Scene/WalkthroughScene15.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/Scene/WalkthroughScene15.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/15- Root motion example/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/16- FramePerfect Rotation/Scene/WalkthroughScene16.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/16- FramePerfect Rotation/Scene/WalkthroughScene16.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/16- FramePerfect Rotation/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/16- FramePerfect Rotation/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/16- FramePerfect Rotation/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/16- FramePerfect Rotation/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/2- Basic Movement and Gravity/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/2- Basic Movement and Gravity/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/2- Basic Movement and Gravity/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/2- Basic Movement and Gravity/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scene/WalkthroughScene3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scene/WalkthroughScene3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/a- Simple Jumping/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/a- Simple Jumping/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/a- Simple Jumping/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/a- Simple Jumping/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/b- Double Jumping/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/b- Double Jumping/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/b- Double Jumping/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/b- Double Jumping/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/c- Wall Jumping/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/c- Wall Jumping/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/c- Wall Jumping/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/3- Jumping/Scripts/c- Wall Jumping/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/4- Landing and leaving ground/Scene/WalkthroughScene4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/4- Landing and leaving ground/Scene/WalkthroughScene4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/4- Landing and leaving ground/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/4- Landing and leaving ground/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/4- Landing and leaving ground/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/4- Landing and leaving ground/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/5- Adding velocities and impulses/Scene/WalkthroughScene5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/5- Adding velocities and impulses/Scene/WalkthroughScene5.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/5- Adding velocities and impulses/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/5- Adding velocities and impulses/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/5- Adding velocities and impulses/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/5- Adding velocities and impulses/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/6- Crouching/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/6- Crouching/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/6- Crouching/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/6- Crouching/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Scene/WalkthroughScene7.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Scene/WalkthroughScene7.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/7- Orienting towards arbitrary up direction/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scene/WalkthroughScene8.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scene/WalkthroughScene8.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scripts/MyMovingPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scripts/MyMovingPlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/8- Creating a moving platform/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/9- Custom collision filtering/Scene/WalkthroughScene9.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/9- Custom collision filtering/Scene/WalkthroughScene9.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/9- Custom collision filtering/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/9- Custom collision filtering/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/9- Custom collision filtering/Scripts/MyPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Walkthrough/9- Custom collision filtering/Scripts/MyPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Community.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Community.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Manual.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Manual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Resources.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Resources.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Support.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/Editor/Resources/Support.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/PartialEditor/TypePrefs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Design/PartialEditor/TypePrefs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Runtime/ReflectionTools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Common/Runtime/ReflectionTools.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Inspectors/GraphOwnerInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Inspectors/GraphOwnerInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/StyleSheet/StyleSheetTextures/Dark/Icons/Lens.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/StyleSheet/StyleSheetTextures/Dark/Icons/Lens.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/StyleSheet/StyleSheetTextures/Dark/Icons/Log.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/StyleSheet/StyleSheetTextures/Dark/Icons/Log.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/StyleSheet/StyleSheetTextures/Light/Icons/Lens.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/StyleSheet/StyleSheetTextures/Light/Icons/Lens.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Dialogue.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Dialogue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Filter.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Filter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Halt.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Halt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Repeat.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Repeat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Set.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Set.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Timeout.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Resources/TypeIcons/Explicit/Timeout.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Windows/GraphEditor.Toolbar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Windows/GraphEditor.Toolbar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Windows/WelcomeWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Design/Editor/Windows/WelcomeWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/ExposedParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/ExposedParameter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/Graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/Graph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/GraphOwner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/GraphOwner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Graphs/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Tasks/ActionTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Tasks/ActionTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Tasks/ConditionList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Tasks/ConditionList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Variables/Variable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/CanvasCore/Framework/Runtime/Variables/Variable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/FlowGraphExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/FlowGraphExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/Nodes/Events/Custom/CustomEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/Nodes/Events/Custom/CustomEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/Nodes/Functions/Custom/CustomFunctionCall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/Nodes/Functions/Custom/CustomFunctionCall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/Nodes/Functions/Implemented/Implemented Nodes/LogicalOperators.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/Modules/FlowGraphs/Nodes/Functions/Implemented/Implemented Nodes/LogicalOperators.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/FlowCanvas/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Decorators/Interruptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/BehaviourTrees/Nodes/Decorators/Interruptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/@DialogueUGUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/@DialogueUGUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/DialogueUGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/DialogueUGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/DialogueUGUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/DialogueUGUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/Sounds.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/Sounds.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/Nodes/MultipleChoiceNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/Nodes/MultipleChoiceNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Tasks/Conditions/SystemEvents/CheckTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion/NodeCanvas/Tasks/Conditions/SystemEvents/CheckTrigger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/BaseBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/BaseBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/PoolManager/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/PoolManager/PoolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/Singleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/UpdateManager/UpdateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/UpdateManager/UpdateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlaygroundScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlaygroundScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Extensions/Extension_MonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Extensions/Extension_MonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IHittable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IHittable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Npc/DummyTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Npc/DummyTarget.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Npc/Npc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Npc/Npc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_AnimatorController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_AnimatorController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_ChargeModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_ChargeModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_ClimbingLadderModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_ClimbingLadderModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_CollisionFilteringModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_CollisionFilteringModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_CombinedStatesModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_CombinedStatesModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_CrouchModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_CrouchModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_Cursor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_Cursor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_DashModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_DashModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_JumpModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_JumpModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_MeleeModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_MeleeModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_MovementModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_MovementModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_NoClipModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_NoClipModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_RollModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_RollModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_StateMachine.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_StateMachine.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_SwimModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/CC_SwimModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/OldCharacterController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/OldCharacterController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/OldCharacterControllerModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/CharacterModules/OldCharacterControllerModule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/OldCameraController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/OldCameraController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/OldPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerOld/OldPlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SMBSetInteger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SMBSetInteger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterModules/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterModules/CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterModules/CharacterRangeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/CharacterModules/CharacterRangeCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -685,13 +157,18 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/37aa21e651654934af8d03efcc2e26eab4200/a5/5e998951/MovementPlane.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c78161ca678a42e49c98ed1722112ff7bcc00/46/6daed4af/IAgent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Classes/HitData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/BaseBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Managers/UpdateManager/Listeners/ICustomUpdateListener.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IHittable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Npc/DummyTarget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Npc/Npc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Projectile/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileBullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.57/Core/AI/AIBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.57/Core/AI/RichAI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.57/Core/AI/RichPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.57/RVO/RVOController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@12.1.6/Editor/Data/Graphs/SerializableTexture.cs" root0="SKIP_HIGHLIGHTING" />
   </component>

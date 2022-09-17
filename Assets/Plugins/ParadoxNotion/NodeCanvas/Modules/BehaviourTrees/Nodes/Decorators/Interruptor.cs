@@ -32,11 +32,15 @@ namespace NodeCanvas.BehaviourTrees
                 return Status.Optional;
             }
 
+            if ( condition == null ) {
+                return decoratedConnection.Execute(agent, blackboard);
+            }
+
             if ( status == Status.Resting ) {
                 condition.Enable(agent, blackboard);
             }
 
-            if ( condition == null || condition.Check(agent, blackboard) == false ) {
+            if ( condition.Check(agent, blackboard) == false ) {
                 return decoratedConnection.Execute(agent, blackboard);
             }
 

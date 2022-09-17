@@ -88,7 +88,7 @@ namespace NodeCanvas.DialogueTrees
 #if UNITY_EDITOR
 
         public override void OnConnectionInspectorGUI(int i) {
-            DoChoiceGUI(availableChoices[i]);
+            if ( i >= 0 ) { DoChoiceGUI(availableChoices[i]); }
         }
 
         public override string GetConnectionInfo(int i) {

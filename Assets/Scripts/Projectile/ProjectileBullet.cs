@@ -11,7 +11,10 @@ namespace VHS {
         private Vector3 _lastPosition;
         private RaycastHit _hitInfo;
 
-        public override void Init() => _lastPosition = transform.position;
+        public override void Init(IActor owner) {
+            base.Init(owner);
+            _lastPosition = transform.position;
+        }
 
         private void OnEnable() => UpdateManager.AddUpdateListener(this);
         private void OnDisable() => UpdateManager.RemoveUpdateListener(this);
@@ -35,9 +38,14 @@ namespace VHS {
 
         protected override void OnHit() {
             IHittable hittable = _hitInfo.transform.GetComponentInParent<IHittable>();
-            
-            if(hittable != null)
-                hittable.OnHit();
+
+            if (hittable != null) {
+                HitData hitData = new HitData {
+                    dealer = _owner
+                };
+                
+                hittable.OnHit(hitData);
+            }
             
             Destroy(gameObject);
         }

@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// ReSharper disable All
 
 namespace KinematicCharacterController.Examples
 {

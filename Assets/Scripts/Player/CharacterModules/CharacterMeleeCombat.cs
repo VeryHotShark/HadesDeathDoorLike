@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using MEC;
 
 namespace VHS {
     public class CharacterMeleeCombat : CharacterModule {
@@ -89,7 +90,7 @@ namespace VHS {
             
             _attackIndex++;
 
-            this.CallWithDelay(CheckForHittables, _hitDelay);
+            Timing.CallDelayed(_hitDelay, CheckForHittables);
         }
 
         private void CheckForHittables() {
@@ -105,7 +106,13 @@ namespace VHS {
                     IHittable hittable = collider.GetComponentInParent<IHittable>();
 
                     if (hittable != null) {
-                        hittable.OnHit();
+                        HitData hitData = new HitData {
+                            dealer = Controller,
+                            position = collider.ClosestPoint(Controller.CenterOfMass),
+                            direction = Controller.FeetPosition.DirectionTo(collider.transform.position)
+                        };
+                            
+                        hittable.OnHit(hitData);
                         hitSomething = true;   
                     }
                 }

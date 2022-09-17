@@ -4,6 +4,6 @@ using UnityEngine;
 
 namespace VHS {
     public interface IHittable {
-        void OnHit();
+        void OnHit(HitData hitData);
     }
 }

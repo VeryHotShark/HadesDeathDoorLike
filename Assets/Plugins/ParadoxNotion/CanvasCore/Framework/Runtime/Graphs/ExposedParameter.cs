@@ -11,7 +11,7 @@ namespace NodeCanvas.Framework
         abstract public System.Type type { get; }
         abstract public object valueBoxed { get; set; }
         abstract public void Bind(IBlackboard blackboard);
-        abstract public void UnBind(IBlackboard blackboard);
+        abstract public void UnBind();
         abstract public Variable varRefBoxed { get; }
 
         public static ExposedParameter CreateInstance(Variable target) {
@@ -53,12 +53,13 @@ namespace NodeCanvas.Framework
 
         ///<summary>Initialize Variables binding from target blackboard</summary>
         public override void Bind(IBlackboard blackboard) {
+            if ( varRef != null ) { varRef.UnBind(); } //unbind if any
             varRef = (Variable<T>)blackboard.GetVariableByID(targetVariableID);
             if ( varRef != null ) { varRef.BindGetSet(GetRawValue, SetRawValue); }
         }
 
-        public override void UnBind(IBlackboard blackboard) {
-            varRef = (Variable<T>)blackboard.GetVariableByID(targetVariableID);
+        ///<summary>Unbind from variable if any</summary>
+        public override void UnBind() {
             if ( varRef != null ) { varRef.UnBind(); }
         }
 

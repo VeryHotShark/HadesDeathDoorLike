@@ -1,26 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Walkthrough.ClimbingLadders
 {
     public class MyLadder : MonoBehaviour
     {
         // Ladder segment
-        [FormerlySerializedAs("LadderSegmentBottom")] public Vector3 _ladderSegmentBottom;
-        [FormerlySerializedAs("LadderSegmentLength")] public float _ladderSegmentLength;
+        public Vector3 LadderSegmentBottom;
+        public float LadderSegmentLength;
 
         // Points to move to when reaching one of the extremities and moving off of the ladder
-        [FormerlySerializedAs("BottomReleasePoint")] public Transform _bottomReleasePoint;
-        [FormerlySerializedAs("TopReleasePoint")] public Transform _topReleasePoint;
+        public Transform BottomReleasePoint;
+        public Transform TopReleasePoint;
 
         // Gets the position of the bottom point of the ladder segment
         public Vector3 BottomAnchorPoint
         {
             get
             {
-                return transform.position + transform.TransformVector(_ladderSegmentBottom);
+                return transform.position + transform.TransformVector(LadderSegmentBottom);
             }
         }
 
@@ -29,7 +28,7 @@ namespace KinematicCharacterController.Walkthrough.ClimbingLadders
         {
             get
             {
-                return transform.position + transform.TransformVector(_ladderSegmentBottom) + (transform.up * _ladderSegmentLength);
+                return transform.position + transform.TransformVector(LadderSegmentBottom) + (transform.up * LadderSegmentLength);
             }
         }
 

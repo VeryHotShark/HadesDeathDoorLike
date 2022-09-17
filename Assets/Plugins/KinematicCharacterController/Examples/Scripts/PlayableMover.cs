@@ -4,25 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Playables;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Examples
 {
     public class PlayableMover : MonoBehaviour, IMoverController
     {
-        [FormerlySerializedAs("Mover")] public PhysicsMover _mover;
+        public PhysicsMover Mover;
 
-        [FormerlySerializedAs("Speed")] public float _speed = 1f;
-        [FormerlySerializedAs("Director")] public PlayableDirector _director;
+        public float Speed = 1f;
+        public PlayableDirector Director;
 
         private Transform _transform;
 
         private void Start()
         {
             _transform = this.transform;
-            _director.timeUpdateMode = DirectorUpdateMode.Manual;
+            Director.timeUpdateMode = DirectorUpdateMode.Manual;
 
-            _mover.MoverController = this;
+            Mover.MoverController = this;
         }
 
         // This is called every FixedUpdate by our PhysicsMover in order to tell it what pose it should go to
@@ -33,7 +32,7 @@ namespace KinematicCharacterController.Examples
             Quaternion _rotationBeforeAnim = _transform.rotation;
 
             // Update animation
-            EvaluateAtTime(Time.time * _speed);
+            EvaluateAtTime(Time.time * Speed);
 
             // Set our platform's goal pose to the animation's
             goalPosition = _transform.position;
@@ -47,8 +46,8 @@ namespace KinematicCharacterController.Examples
 
         public void EvaluateAtTime(double time)
         {
-            _director.time = time % _director.duration;
-            _director.Evaluate();
+            Director.time = time % Director.duration;
+            Director.Evaluate();
         }
     }
 }

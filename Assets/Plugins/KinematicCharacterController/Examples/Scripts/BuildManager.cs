@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class BuildManager : MonoBehaviour
 {
-    [FormerlySerializedAs("WebGLCanvas")] public GameObject _webGLCanvas;
-    [FormerlySerializedAs("WarningPanel")] public GameObject _warningPanel;
+    public GameObject WebGLCanvas;
+    public GameObject WarningPanel;
 
     void Awake()
     {
@@ -18,7 +16,7 @@ public class BuildManager : MonoBehaviour
 
     private void Update()
     {
-        if(Keyboard.current.f1Key.wasPressedThisFrame)
+        if(Input.GetKeyDown(KeyCode.F1))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }

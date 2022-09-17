@@ -1,22 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Examples
 {
     public class PrefabLauncher : MonoBehaviour
     {
-        [FormerlySerializedAs("ToLaunch")] public Rigidbody _toLaunch;
-        [FormerlySerializedAs("Force")] public float _force;
+        public Rigidbody ToLaunch;
+        public float Force;
 
         void Update()
         {
-            if (Keyboard.current.enterKey.wasPressedThisFrame)
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                Rigidbody inst = Instantiate(_toLaunch, transform.position, transform.rotation);
-                inst.AddForce(transform.forward * _force, ForceMode.VelocityChange);
+                Rigidbody inst = Instantiate(ToLaunch, transform.position, transform.rotation);
+                inst.AddForce(transform.forward * Force, ForceMode.VelocityChange);
                 Destroy(inst.gameObject, 8f);
             }
         }

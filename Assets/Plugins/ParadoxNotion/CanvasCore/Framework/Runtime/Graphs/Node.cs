@@ -158,7 +158,7 @@ namespace NodeCanvas.Framework
         abstract public System.Type outConnectionType { get; }
         ///<summary>Can this node be set as prime (Start)?</summary>
         abstract public bool allowAsPrime { get; }
-        // /Can this node connect to itself?
+        ///<summary>Can this node connect to itself?</summary>
         abstract public bool canSelfConnect { get; }
         ///<summary>Alignment of the comments when shown.</summary>
         abstract public Alignment2x2 commentsAlignment { get; }
@@ -421,6 +421,14 @@ namespace NodeCanvas.Framework
         ///<summary>Nodes can use coroutine as normal through MonoManager.</summary>
         public void StopCoroutine(Coroutine routine) {
             if ( MonoManager.current != null ) { MonoManager.current.StopCoroutine(routine); }
+        }
+
+        public void StartParallelTask(System.Action action) {
+
+        }
+
+        public void StopParallelTask(System.Action action) {
+
         }
 
 

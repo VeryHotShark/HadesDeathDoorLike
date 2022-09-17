@@ -22,6 +22,7 @@ namespace FlowCanvas.Nodes
 
         private ValueInput[] portArgs;
         private object[] objectArgs;
+        private object returnValue;
         private FlowOutput fOut;
 
         private System.WeakReference<CustomFunctionEvent> _sourceFunctionRef;
@@ -67,7 +68,7 @@ namespace FlowCanvas.Nodes
                 }
 
                 if ( sourceFunction.returns.type != null ) {
-                    AddValueOutput(sourceFunction.returns.name, sourceFunction.returns.ID, sourceFunction.returns.type, sourceFunction.GetReturnValue);
+                    AddValueOutput(sourceFunction.returns.name, sourceFunction.returns.ID, sourceFunction.returns.type, () => { return returnValue; });
                 }
 
                 fOut = AddFlowOutput(SPACE);
@@ -83,7 +84,7 @@ namespace FlowCanvas.Nodes
                 for ( var i = 0; i < portArgs.Length; i++ ) {
                     objectArgs[i] = portArgs[i].value;
                 }
-                sourceFunction.InvokeAsync(f, fOut.Call, objectArgs);
+                sourceFunction.InvokeAsync(f, (fx) => { this.returnValue = sourceFunction.GetReturnValue(); fOut.Call(fx); }, objectArgs);
             }
         }
 

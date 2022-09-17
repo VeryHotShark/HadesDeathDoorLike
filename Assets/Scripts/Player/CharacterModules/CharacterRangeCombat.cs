@@ -15,7 +15,7 @@ namespace VHS {
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up + Motor.CharacterForward;
             Quaternion spawnRot = Quaternion.LookRotation(Motor.CharacterForward);
             Projectile spawnedProjectile = Instantiate(_projectile, spawnPos, spawnRot);
-            spawnedProjectile.Init();
+            spawnedProjectile.Init(Controller);
             Controller.TransitionToDefaultState();
         }
     }

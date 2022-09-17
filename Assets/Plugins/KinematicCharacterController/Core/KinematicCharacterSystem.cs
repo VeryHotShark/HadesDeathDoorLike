@@ -19,7 +19,7 @@ namespace KinematicCharacterController
         private static float _lastCustomInterpolationStartTime = -1f;
         private static float _lastCustomInterpolationDeltaTime = -1f;
 
-        public static KccSettings Settings;
+        public static KCCSettings Settings;
 
         /// <summary>
         /// Creates a KinematicCharacterSystem instance if there isn't already one
@@ -34,7 +34,7 @@ namespace KinematicCharacterController
                 systemGameObject.hideFlags = HideFlags.NotEditable;
                 _instance.hideFlags = HideFlags.NotEditable;
 
-                Settings = ScriptableObject.CreateInstance<KccSettings>();
+                Settings = ScriptableObject.CreateInstance<KCCSettings>();
 
                 GameObject.DontDestroyOnLoad(systemGameObject);
             }
@@ -98,7 +98,7 @@ namespace KinematicCharacterController
         {
             PhysicsMovers.Add(mover);
 
-            mover._rigidbody.interpolation = RigidbodyInterpolation.None;
+            mover.Rigidbody.interpolation = RigidbodyInterpolation.None;
         }
 
         /// <summary>
@@ -122,18 +122,18 @@ namespace KinematicCharacterController
 
         private void FixedUpdate()
         {
-            if (Settings._autoSimulation)
+            if (Settings.AutoSimulation)
             {
                 float deltaTime = Time.deltaTime;
 
-                if (Settings._interpolate)
+                if (Settings.Interpolate)
                 {
                     PreSimulationInterpolationUpdate(deltaTime);
                 }
 
                 Simulate(deltaTime, CharacterMotors, PhysicsMovers);
 
-                if (Settings._interpolate)
+                if (Settings.Interpolate)
                 {
                     PostSimulationInterpolationUpdate(deltaTime);
                 }
@@ -142,7 +142,7 @@ namespace KinematicCharacterController
 
         private void LateUpdate()
         {
-            if (Settings._interpolate)
+            if (Settings.Interpolate)
             {
                 CustomInterpolationUpdate();
             }
@@ -172,8 +172,8 @@ namespace KinematicCharacterController
                 mover.InitialTickRotation = mover.TransientRotation;
 
                 mover.Transform.SetPositionAndRotation(mover.TransientPosition, mover.TransientRotation);
-                mover._rigidbody.position = mover.TransientPosition;
-                mover._rigidbody.rotation = mover.TransientRotation;
+                mover.Rigidbody.position = mover.TransientPosition;
+                mover.Rigidbody.rotation = mover.TransientRotation;
             }
         }
 
@@ -204,8 +204,8 @@ namespace KinematicCharacterController
                 PhysicsMover mover = movers[i];
 
                 mover.Transform.SetPositionAndRotation(mover.TransientPosition, mover.TransientRotation);
-                mover._rigidbody.position = mover.TransientPosition;
-                mover._rigidbody.rotation = mover.TransientRotation;
+                mover.Rigidbody.position = mover.TransientPosition;
+                mover.Rigidbody.rotation = mover.TransientRotation;
             }
 
             // Character controller update phase 2 and move
@@ -240,18 +240,18 @@ namespace KinematicCharacterController
             {
                 PhysicsMover mover = PhysicsMovers[i];
 
-                if (mover._moveWithPhysics)
+                if (mover.MoveWithPhysics)
                 {
-                    mover._rigidbody.position = mover.InitialTickPosition;
-                    mover._rigidbody.rotation = mover.InitialTickRotation;
+                    mover.Rigidbody.position = mover.InitialTickPosition;
+                    mover.Rigidbody.rotation = mover.InitialTickRotation;
 
-                    mover._rigidbody.MovePosition(mover.TransientPosition);
-                    mover._rigidbody.MoveRotation(mover.TransientRotation);
+                    mover.Rigidbody.MovePosition(mover.TransientPosition);
+                    mover.Rigidbody.MoveRotation(mover.TransientRotation);
                 }
                 else
                 {
-                    mover._rigidbody.position = (mover.TransientPosition);
-                    mover._rigidbody.rotation = (mover.TransientRotation);
+                    mover.Rigidbody.position = (mover.TransientPosition);
+                    mover.Rigidbody.rotation = (mover.TransientRotation);
                 }
             }
         }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using System;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Walkthrough.RootMotionExample
 {
@@ -15,26 +14,26 @@ namespace KinematicCharacterController.Walkthrough.RootMotionExample
 
     public class MyCharacterController : MonoBehaviour, ICharacterController
     {
-        [FormerlySerializedAs("Motor")] public KinematicCharacterMotor _motor;
+        public KinematicCharacterMotor Motor;
 
-        [FormerlySerializedAs("MaxStableMoveSpeed")] [Header("Stable Movement")]
-        public float _maxStableMoveSpeed = 10f;
-        [FormerlySerializedAs("StableMovementSharpness")] public float _stableMovementSharpness = 15;
-        [FormerlySerializedAs("OrientationSharpness")] public float _orientationSharpness = 10;
+        [Header("Stable Movement")]
+        public float MaxStableMoveSpeed = 10f;
+        public float StableMovementSharpness = 15;
+        public float OrientationSharpness = 10;
 
-        [FormerlySerializedAs("MaxAirMoveSpeed")] [Header("Air Movement")]
-        public float _maxAirMoveSpeed = 10f;
-        [FormerlySerializedAs("AirAccelerationSpeed")] public float _airAccelerationSpeed = 5f;
-        [FormerlySerializedAs("Drag")] public float _drag = 0.1f;
+        [Header("Air Movement")]
+        public float MaxAirMoveSpeed = 10f;
+        public float AirAccelerationSpeed = 5f;
+        public float Drag = 0.1f;
 
-        [FormerlySerializedAs("CharacterAnimator")] [Header("Animation Parameters")]
-        public Animator _characterAnimator;
-        [FormerlySerializedAs("ForwardAxisSharpness")] public float _forwardAxisSharpness = 10;
-        [FormerlySerializedAs("TurnAxisSharpness")] public float _turnAxisSharpness = 5;
+        [Header("Animation Parameters")]
+        public Animator CharacterAnimator;
+        public float ForwardAxisSharpness = 10;
+        public float TurnAxisSharpness = 5;
 
-        [FormerlySerializedAs("Gravity")] [Header("Misc")]
-        public Vector3 _gravity = new Vector3(0, -30f, 0);
-        [FormerlySerializedAs("MeshRoot")] public Transform _meshRoot;
+        [Header("Misc")]
+        public Vector3 Gravity = new Vector3(0, -30f, 0);
+        public Transform MeshRoot;
 
         private Vector3 _moveInputVector;
         private Vector3 _lookInputVector;
@@ -61,17 +60,17 @@ namespace KinematicCharacterController.Walkthrough.RootMotionExample
             _rootMotionRotationDelta = Quaternion.identity;
 
             // Assign to motor
-            _motor.CharacterController = this;
+            Motor.CharacterController = this;
         }
 
         private void Update()
         {
             // Handle animation
-            _forwardAxis = Mathf.Lerp(_forwardAxis, _targetForwardAxis, 1f - Mathf.Exp(-_forwardAxisSharpness * Time.deltaTime));
-            _rightAxis = Mathf.Lerp(_rightAxis, _targetRightAxis, 1f - Mathf.Exp(-_turnAxisSharpness * Time.deltaTime));
-            _characterAnimator.SetFloat("Forward", _forwardAxis);
-            _characterAnimator.SetFloat("Turn", _rightAxis);
-            _characterAnimator.SetBool("OnGround", _motor.GroundingStatus.IsStableOnGround);
+            _forwardAxis = Mathf.Lerp(_forwardAxis, _targetForwardAxis, 1f - Mathf.Exp(-ForwardAxisSharpness * Time.deltaTime));
+            _rightAxis = Mathf.Lerp(_rightAxis, _targetRightAxis, 1f - Mathf.Exp(-TurnAxisSharpness * Time.deltaTime));
+            CharacterAnimator.SetFloat("Forward", _forwardAxis);
+            CharacterAnimator.SetFloat("Turn", _rightAxis);
+            CharacterAnimator.SetBool("OnGround", Motor.GroundingStatus.IsStableOnGround);
         }
 
         /// <summary>
@@ -99,13 +98,13 @@ namespace KinematicCharacterController.Walkthrough.RootMotionExample
         /// </summary>
         public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
         {
-            if (_motor.GroundingStatus.IsStableOnGround)
+            if (Motor.GroundingStatus.IsStableOnGround)
             {
                 if (deltaTime > 0)
                 {
                     // The final velocity is the velocity from root motion reoriented on the ground plane
                     currentVelocity = _rootMotionPositionDelta / deltaTime;
-                    currentVelocity = _motor.GetDirectionTangentToSurface(currentVelocity, _motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
+                    currentVelocity = Motor.GetDirectionTangentToSurface(currentVelocity, Motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
                 }
                 else
                 {
@@ -118,16 +117,16 @@ namespace KinematicCharacterController.Walkthrough.RootMotionExample
                 if (_forwardAxis > 0f)
                 {
                     // If we want to move, add an acceleration to the velocity
-                    Vector3 targetMovementVelocity = _motor.CharacterForward * _forwardAxis * _maxAirMoveSpeed;
-                    Vector3 velocityDiff = Vector3.ProjectOnPlane(targetMovementVelocity - currentVelocity, _gravity);
-                    currentVelocity += velocityDiff * _airAccelerationSpeed * deltaTime;
+                    Vector3 targetMovementVelocity = Motor.CharacterForward * _forwardAxis * MaxAirMoveSpeed;
+                    Vector3 velocityDiff = Vector3.ProjectOnPlane(targetMovementVelocity - currentVelocity, Gravity);
+                    currentVelocity += velocityDiff * AirAccelerationSpeed * deltaTime;
                 }
 
                 // Gravity
-                currentVelocity += _gravity * deltaTime;
+                currentVelocity += Gravity * deltaTime;
 
                 // Drag
-                currentVelocity *= (1f / (1f + (_drag * deltaTime)));
+                currentVelocity *= (1f / (1f + (Drag * deltaTime)));
             }
         }
 
@@ -170,8 +169,8 @@ namespace KinematicCharacterController.Walkthrough.RootMotionExample
         private void OnAnimatorMove()
         {
             // Accumulate rootMotion deltas between character updates 
-            _rootMotionPositionDelta += _characterAnimator.deltaPosition;
-            _rootMotionRotationDelta = _characterAnimator.deltaRotation * _rootMotionRotationDelta;
+            _rootMotionPositionDelta += CharacterAnimator.deltaPosition;
+            _rootMotionRotationDelta = CharacterAnimator.deltaRotation * _rootMotionRotationDelta;
         }
 
         public void OnDiscreteCollisionDetected(Collider hitCollider)

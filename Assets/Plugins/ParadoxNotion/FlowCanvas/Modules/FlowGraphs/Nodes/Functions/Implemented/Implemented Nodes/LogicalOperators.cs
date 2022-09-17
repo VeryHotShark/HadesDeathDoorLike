@@ -6,7 +6,7 @@ using UnityEngine;
 namespace FlowCanvas.Nodes
 {
 
-    [Category("Logic Operators")]
+    [Category("Operators")]
     [Description("Returns if the object is not null")]
     [Name("Is Valid")]
     public class IsNotNull : PureFunctionNode<bool, object>
@@ -16,7 +16,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators")]
+    [Category("Operators")]
     [Description("Returns whether the input object is of type T as well as the object itself for convenience.")]
     public class IsOfType : PureFunctionNode<bool, object, System.Type>
     {
@@ -29,7 +29,7 @@ namespace FlowCanvas.Nodes
 
     //--ANY COMPARABLE
 
-    [Category("Logic Operators/Any")]
+    [Category("Operators/Any")]
     [Name(">")]
     [Description("Any Greater Than")]
     public class AnyGreaterThan : PureFunctionNode<bool, IComparable, IComparable>
@@ -39,7 +39,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Any")]
+    [Category("Operators/Any")]
     [Name("≥")]
     [Description("Any Greater Or Equal Than")]
     public class AnyGreaterEqualThan : PureFunctionNode<bool, IComparable, IComparable>
@@ -49,7 +49,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Any")]
+    [Category("Operators/Any")]
     [Name("<")]
     [Description("Any Less Than")]
     public class AnyLessThan : PureFunctionNode<bool, IComparable, IComparable>
@@ -59,7 +59,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Any")]
+    [Category("Operators/Any")]
     [Name("≤")]
     [Description("Any Less Or Equal Than")]
     public class AnyLessEqualThan : PureFunctionNode<bool, IComparable, IComparable>
@@ -69,7 +69,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Any")]
+    [Category("Operators/Any")]
     [Name("=")]
     [Description("Any Equal To")]
     public class AnyEqual : PureFunctionNode<bool, object, object>
@@ -79,7 +79,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Any")]
+    [Category("Operators/Any")]
     [Name("≠")]
     [Description("Any Not Equal To")]
     public class AnyNotEqual : PureFunctionNode<bool, object, object>
@@ -90,12 +90,9 @@ namespace FlowCanvas.Nodes
     }
 
 
-
-
-
     //--FLOATS
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("+")]
     [Description("Float Add")]
     public class FloatAdd : PureFunctionNode<float, float, float>
@@ -105,7 +102,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("-")]
     [Description("Float Subtract")]
     public class FloatSubtract : PureFunctionNode<float, float, float>
@@ -115,7 +112,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("×")]
     [Description("Float Mutliply")]
     public class FloatMultiply : PureFunctionNode<float, float, float>
@@ -125,7 +122,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("÷")]
     [Description("Float Divide")]
     public class FloatDivide : PureFunctionNode<float, float, float>
@@ -135,7 +132,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("%")]
     [Description("Float Modulo")]
     public class FloatModulo : PureFunctionNode<float, float, float>
@@ -145,7 +142,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name(">")]
     [Description("Float Greater Than")]
     public class FloatGreaterThan : PureFunctionNode<bool, float, float>
@@ -155,7 +152,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("≥")]
     [Description("Float Greater Or Equal Than")]
     public class FloatGreaterEqualThan : PureFunctionNode<bool, float, float>
@@ -165,7 +162,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("<")]
     [Description("Float Less Than")]
     public class FloatLessThan : PureFunctionNode<bool, float, float>
@@ -175,7 +172,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("≤")]
     [Description("Float Less Or Equal Than")]
     public class FloatLessEqualThan : PureFunctionNode<bool, float, float>
@@ -185,7 +182,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("=")]
     [Description("Float Equal To")]
     public class FloatEqual : PureFunctionNode<bool, float, float>
@@ -195,7 +192,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("≠")]
     [Description("Float Not Equal To")]
     public class FloatNotEqual : PureFunctionNode<bool, float, float>
@@ -205,7 +202,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Name("Invert")]
     [Description("Float Invert the input ( value = value * -1 )")]
     public class FloatInvert : PureFunctionNode<float, float>
@@ -215,7 +212,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Floats")]
+    [Category("Operators/Floats")]
     [Description("Float Round value to closest of interval ( round(value / interval) * interval )")]
     public class FloatSnap : PureFunctionNode<int, float, int>
     {
@@ -227,7 +224,7 @@ namespace FlowCanvas.Nodes
 
     //--INTEGER
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("+")]
     [Description("Integer Add")]
     public class IntegerAdd : PureFunctionNode<int, int, int>
@@ -237,7 +234,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("-")]
     [Description("Integer Subtract")]
     public class IntegerSubtract : PureFunctionNode<int, int, int>
@@ -247,7 +244,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("×")]
     [Description("Integer Multiply")]
     public class IntegerMultiply : PureFunctionNode<int, int, int>
@@ -257,7 +254,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("÷")]
     [Description("Integer Divide")]
     public class IntegerDivide : PureFunctionNode<int, int, int>
@@ -267,7 +264,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("%")]
     [Description("Integer Modulo")]
     public class IntegerModulo : PureFunctionNode<int, int, int>
@@ -278,7 +275,7 @@ namespace FlowCanvas.Nodes
     }
 
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name(">")]
     [Description("Integer Greater Than")]
     public class IntegerGreaterThan : PureFunctionNode<bool, int, int>
@@ -288,7 +285,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("≥")]
     [Description("Integer Greater Or Equal Than")]
     public class IntegerGreaterEqualThan : PureFunctionNode<bool, int, int>
@@ -298,7 +295,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("<")]
     [Description("Integer Less Than")]
     public class IntegerLessThan : PureFunctionNode<bool, int, int>
@@ -308,7 +305,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("≤")]
     [Description("Integer Less Or Equal Than")]
     public class IntegerLessEqualThan : PureFunctionNode<bool, int, int>
@@ -318,7 +315,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("=")]
     [Description("Integer Equal To")]
     public class IntegerEqual : PureFunctionNode<bool, int, int>
@@ -328,7 +325,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("≠")]
     [Description("Integer Not Equal To")]
     public class IntegerNotEqual : PureFunctionNode<bool, int, int>
@@ -338,7 +335,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Name("Invert")]
     [Description("Integer Invert the input ( value = value * -1 )")]
     public class IntegerInvert : PureFunctionNode<int, int>
@@ -348,7 +345,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Integers")]
+    [Category("Operators/Integers")]
     [Description("Integer Round value to closest of interval ( round(value / interval) * interval )")]
     public class IntegerSnap : PureFunctionNode<int, int, int>
     {
@@ -359,7 +356,7 @@ namespace FlowCanvas.Nodes
 
     //--BOOLEAN
 
-    [Category("Logic Operators/Boolean")]
+    [Category("Operators/Boolean")]
     [Name("=")]
     [Description("Boolean Equal To")]
     public class BooleanEqual : PureFunctionNode<bool, bool, bool>
@@ -369,7 +366,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Boolean")]
+    [Category("Operators/Boolean")]
     [Name("≠")]
     [Description("Boolean Not Equal To")]
     public class BooleanNotEqual : PureFunctionNode<bool, bool, bool>
@@ -379,7 +376,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Boolean")]
+    [Category("Operators/Boolean")]
     [Description("True if A and B are both true")]
     public class AND : PureFunctionNode<bool>
     {
@@ -395,7 +392,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Boolean")]
+    [Category("Operators/Boolean")]
     [Description("True if A or B is true")]
     public class OR : PureFunctionNode<bool>
     {
@@ -411,7 +408,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Boolean")]
+    [Category("Operators/Boolean")]
     [Description("True if A or B is true, but not both")]
     public class XOR : PureFunctionNode<bool>
     {
@@ -428,7 +425,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Boolean")]
+    [Category("Operators/Boolean")]
     [Description("Inverts the input")]
     public class NOT : PureFunctionNode<bool, bool>
     {
@@ -439,7 +436,7 @@ namespace FlowCanvas.Nodes
 
     //--VECTORS
 
-    [Category("Logic Operators/Vector3")]
+    [Category("Operators/Vector3")]
     [Name("=")]
     [Description("Vector3 Equal To")]
     public class Vector3Equal : PureFunctionNode<bool, Vector3, Vector3>
@@ -449,7 +446,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Vector3")]
+    [Category("Operators/Vector3")]
     [Name("≠")]
     [Description("Vector3 Not Equal To")]
     public class Vector3NotEqual : PureFunctionNode<bool, Vector3, Vector3>
@@ -459,7 +456,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Vector3")]
+    [Category("Operators/Vector3")]
     [Name("+")]
     [Description("Vector3 Add")]
     public class Vector3Add : PureFunctionNode<Vector3, Vector3, Vector3>
@@ -469,7 +466,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Vector3")]
+    [Category("Operators/Vector3")]
     [Name("-")]
     [Description("Vector3 Subtract")]
     public class Vector3Subtract : PureFunctionNode<Vector3, Vector3, Vector3>
@@ -479,7 +476,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Vector3")]
+    [Category("Operators/Vector3")]
     [Name("×")]
     [Description("Vector3 Multiply")]
     public class Vector3Multiply : PureFunctionNode<Vector3, Vector3, float>
@@ -489,7 +486,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Vector3")]
+    [Category("Operators/Vector3")]
     [Name("÷")]
     [Description("Vectro3 Divide")]
     public class Vector3Divide : PureFunctionNode<Vector3, Vector3, float>
@@ -499,7 +496,7 @@ namespace FlowCanvas.Nodes
         }
     }
 
-    [Category("Logic Operators/Vector3")]
+    [Category("Operators/Vector3")]
     [Name("Invert")]
     [Description("Vector3 Invert the input ( value = value * -1 )")]
     public class Vector3Invert : PureFunctionNode<Vector3, Vector3>
@@ -509,4 +506,38 @@ namespace FlowCanvas.Nodes
         }
     }
 
+    //--FLAGS
+
+    [Category("Operators/Flags")]
+    [Name("AND")]
+    [Description("Bitwise logical AND & operator")]
+    public class BitwiseAnd<T> : PureFunctionNode<T, T, T> where T : Enum
+    {
+        public override T Invoke(T a, T b) {
+            var result = ( (int)(object)a ) & ( (int)(object)b );
+            return (T)(object)result;
+        }
+    }
+
+    [Category("Operators/Flags")]
+    [Name("OR")]
+    [Description("Bitwise logical OR | operator")]
+    public class BitwiseOr<T> : PureFunctionNode<T, T, T> where T : Enum
+    {
+        public override T Invoke(T a, T b) {
+            var result = ( (int)(object)a ) | ( (int)(object)b );
+            return (T)(object)result;
+        }
+    }
+
+    [Category("Operators/Flags")]
+    [Name("Invert")]
+    [Description("Bitwise complement ~ operator")]
+    public class BitwiseInvert<T> : PureFunctionNode<T, T> where T : Enum
+    {
+        public override T Invoke(T a) {
+            var result = ~( (int)(object)a );
+            return (T)(object)result;
+        }
+    }
 }

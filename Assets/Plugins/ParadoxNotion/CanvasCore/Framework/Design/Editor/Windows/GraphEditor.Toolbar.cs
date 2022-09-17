@@ -93,8 +93,9 @@ namespace NodeCanvas.Editor
             //----------------------------------------------------------------------------------------------
 
             GUI.backgroundColor = Color.clear;
-            GUI.color = new Color(1, 1, 1, 0.3f);
-            GUILayout.Label(string.Format("{0} @NodeCanvas Framework v{1}", graph.GetType().Name, NodeCanvas.Framework.Internal.GraphSource.FRAMEWORK_VERSION.ToString("0.00")), EditorStyles.toolbarButton);
+            GUI.color = new Color(1, 1, 1, 0.4f);
+            var att = ParadoxNotion.ReflectionTools.RTGetAttribute<GraphInfoAttribute>(graph.GetType(), true);
+            if ( GUILayout.Button(string.Format("{0} @ {1} Framework v{2}", graph.GetType().Name, att.packageName, NodeCanvas.Framework.Internal.GraphSource.FRAMEWORK_VERSION.ToString("0.00")), EditorStyles.toolbarButton) ) { UnityEditor.Help.BrowseURL("https://paradoxnotion.com"); }
             GUILayout.Space(10);
             GUI.color = Color.white;
             GUI.backgroundColor = Color.white;

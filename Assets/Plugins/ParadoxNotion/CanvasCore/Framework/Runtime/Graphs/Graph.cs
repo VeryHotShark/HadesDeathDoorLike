@@ -356,7 +356,16 @@ namespace NodeCanvas.Framework
 
         ///<summary>The 'Start' node. It should always be the first node in the nodes collection</summary>
         public Node primeNode {
-            get { return allNodes.Count > 0 && allNodes[0].allowAsPrime ? allNodes[0] : null; }
+            get
+            {
+                if ( allNodes.Count > 0 ) {
+                    var first = allNodes[0];
+                    if ( first.allowAsPrime ) {
+                        return first;
+                    }
+                }
+                return null;
+            }
             set
             {
                 if ( primeNode != value && allNodes.Contains(value) ) {

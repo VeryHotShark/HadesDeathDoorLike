@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using System;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
 {
@@ -16,22 +15,22 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
 
     public class MyCharacterController : MonoBehaviour, ICharacterController
     {
-        [FormerlySerializedAs("Motor")] public KinematicCharacterMotor _motor;
+        public KinematicCharacterMotor Motor;
 
-        [FormerlySerializedAs("MaxStableMoveSpeed")] [Header("Stable Movement")]
-        public float _maxStableMoveSpeed = 10f;
-        [FormerlySerializedAs("StableMovementSharpness")] public float _stableMovementSharpness = 15;
-        [FormerlySerializedAs("OrientationSharpness")] public float _orientationSharpness = 10;
+        [Header("Stable Movement")]
+        public float MaxStableMoveSpeed = 10f;
+        public float StableMovementSharpness = 15;
+        public float OrientationSharpness = 10;
 
-        [FormerlySerializedAs("MaxAirMoveSpeed")] [Header("Air Movement")]
-        public float _maxAirMoveSpeed = 10f;
-        [FormerlySerializedAs("AirAccelerationSpeed")] public float _airAccelerationSpeed = 5f;
-        [FormerlySerializedAs("Drag")] public float _drag = 0.1f;
+        [Header("Air Movement")]
+        public float MaxAirMoveSpeed = 10f;
+        public float AirAccelerationSpeed = 5f;
+        public float Drag = 0.1f;
 
-        [FormerlySerializedAs("Gravity")] [Header("Misc")]
-        public Vector3 _gravity = new Vector3(0, -30f, 0);
-        [FormerlySerializedAs("MeshRoot")] public Transform _meshRoot;
-        [FormerlySerializedAs("FramePerfectRotation")] public bool _framePerfectRotation = true;
+        [Header("Misc")]
+        public Vector3 Gravity = new Vector3(0, -30f, 0);
+        public Transform MeshRoot;
+        public bool FramePerfectRotation = true;
 
         private Vector3 _moveInputVector;
         private Vector3 _lookInputVector;
@@ -39,7 +38,7 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
         private void Start()
         {
             // Assign to motor
-            _motor.CharacterController = this;
+            Motor.CharacterController = this;
         }
 
         /// <summary>
@@ -51,12 +50,12 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
             Vector3 moveInputVector = Vector3.ClampMagnitude(new Vector3(inputs.MoveAxisRight, 0f, inputs.MoveAxisForward), 1f);
 
             // Calculate camera direction and rotation on the character plane
-            Vector3 cameraPlanarDirection = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, _motor.CharacterUp).normalized;
+            Vector3 cameraPlanarDirection = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
             if (cameraPlanarDirection.sqrMagnitude == 0f)
             {
-                cameraPlanarDirection = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.up, _motor.CharacterUp).normalized;
+                cameraPlanarDirection = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.up, Motor.CharacterUp).normalized;
             }
-            Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, _motor.CharacterUp);
+            Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
 
             // Move and look inputs
             _moveInputVector = cameraPlanarRotation * moveInputVector;
@@ -65,13 +64,13 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
 
         public void PostInputUpdate(float deltaTime, Vector3 cameraForward)
         {
-            if (_framePerfectRotation)
+            if (FramePerfectRotation)
             {
-                _lookInputVector = Vector3.ProjectOnPlane(cameraForward, _motor.CharacterUp);
+                _lookInputVector = Vector3.ProjectOnPlane(cameraForward, Motor.CharacterUp);
 
                 Quaternion newRotation = default;
                 HandleRotation(ref newRotation, deltaTime);
-                _meshRoot.rotation = newRotation;
+                MeshRoot.rotation = newRotation;
             }
         }
 
@@ -79,7 +78,7 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
         {
             if (_lookInputVector != Vector3.zero)
             {
-                rot = Quaternion.LookRotation(_lookInputVector, _motor.CharacterUp);
+                rot = Quaternion.LookRotation(_lookInputVector, Motor.CharacterUp);
             }
         }
 
@@ -109,42 +108,42 @@ namespace KinematicCharacterController.Walkthrough.FramePerfectRotation
         public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
         {
             Vector3 targetMovementVelocity = Vector3.zero;
-            if (_motor.GroundingStatus.IsStableOnGround)
+            if (Motor.GroundingStatus.IsStableOnGround)
             {
                 // Reorient velocity on slope
-                currentVelocity = _motor.GetDirectionTangentToSurface(currentVelocity, _motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
+                currentVelocity = Motor.GetDirectionTangentToSurface(currentVelocity, Motor.GroundingStatus.GroundNormal) * currentVelocity.magnitude;
 
                 // Calculate target velocity
-                Vector3 inputRight = Vector3.Cross(_moveInputVector, _motor.CharacterUp);
-                Vector3 reorientedInput = Vector3.Cross(_motor.GroundingStatus.GroundNormal, inputRight).normalized * _moveInputVector.magnitude;
-                targetMovementVelocity = reorientedInput * _maxStableMoveSpeed;
+                Vector3 inputRight = Vector3.Cross(_moveInputVector, Motor.CharacterUp);
+                Vector3 reorientedInput = Vector3.Cross(Motor.GroundingStatus.GroundNormal, inputRight).normalized * _moveInputVector.magnitude;
+                targetMovementVelocity = reorientedInput * MaxStableMoveSpeed;
 
                 // Smooth movement Velocity
-                currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1 - Mathf.Exp(-_stableMovementSharpness * deltaTime));
+                currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1 - Mathf.Exp(-StableMovementSharpness * deltaTime));
             }
             else
             {
                 // Add move input
                 if (_moveInputVector.sqrMagnitude > 0f)
                 {
-                    targetMovementVelocity = _moveInputVector * _maxAirMoveSpeed;
+                    targetMovementVelocity = _moveInputVector * MaxAirMoveSpeed;
 
                     // Prevent climbing on un-stable slopes with air movement
-                    if (_motor.GroundingStatus.FoundAnyGround)
+                    if (Motor.GroundingStatus.FoundAnyGround)
                     {
-                        Vector3 perpenticularObstructionNormal = Vector3.Cross(Vector3.Cross(_motor.CharacterUp, _motor.GroundingStatus.GroundNormal), _motor.CharacterUp).normalized;
+                        Vector3 perpenticularObstructionNormal = Vector3.Cross(Vector3.Cross(Motor.CharacterUp, Motor.GroundingStatus.GroundNormal), Motor.CharacterUp).normalized;
                         targetMovementVelocity = Vector3.ProjectOnPlane(targetMovementVelocity, perpenticularObstructionNormal);
                     }
 
-                    Vector3 velocityDiff = Vector3.ProjectOnPlane(targetMovementVelocity - currentVelocity, _gravity);
-                    currentVelocity += velocityDiff * _airAccelerationSpeed * deltaTime;
+                    Vector3 velocityDiff = Vector3.ProjectOnPlane(targetMovementVelocity - currentVelocity, Gravity);
+                    currentVelocity += velocityDiff * AirAccelerationSpeed * deltaTime;
                 }
 
                 // Gravity
-                currentVelocity += _gravity * deltaTime;
+                currentVelocity += Gravity * deltaTime;
 
                 // Drag
-                currentVelocity *= (1f / (1f + (_drag * deltaTime)));
+                currentVelocity *= (1f / (1f + (Drag * deltaTime)));
             }
         }
 

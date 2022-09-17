@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18154702, g: 0.22719009, b: 0.30740646, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 1.506171
+  m_FrequencyGain: 1.644994
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &323129980
 GameObject:
@@ -1082,36 +1082,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1bc5515e3ab954e80599c538834774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _capsule: {fileID: 1498138890}
-  _capsuleRadius: 0.5
-  _capsuleHeight: 2
-  _capsuleYOffset: 1
-  _capsulePhysicsMaterial: {fileID: 0}
-  _groundDetectionExtraDistance: 0
-  _maxStableSlopeAngle: 60
-  _stableGroundLayers:
+  Capsule: {fileID: 1498138890}
+  CapsuleRadius: 0.5
+  CapsuleHeight: 1.5
+  CapsuleYOffset: 0.75
+  CapsulePhysicsMaterial: {fileID: 0}
+  GroundDetectionExtraDistance: 0
+  MaxStableSlopeAngle: 60
+  StableGroundLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  _discreteCollisionEvents: 0
-  _stepHandling: 1
-  _maxStepHeight: 0.5
-  _allowSteppingWithoutStableGrounding: 0
-  _minRequiredStepDepth: 0.1
-  _ledgeAndDenivelationHandling: 1
-  _maxStableDistanceFromLedge: 0.5
-  _maxVelocityForLedgeSnap: 0
-  _maxStableDenivelationAngle: 180
-  _interactiveRigidbodyHandling: 1
-  _rigidbodyInteractionType: 0
-  _simulatedCharacterMass: 1
-  _preserveAttachedRigidbodyMomentum: 1
-  _hasPlanarConstraint: 0
-  _planarConstraintAxis: {x: 0, y: 0, z: 1}
-  _maxMovementIterations: 5
-  _maxDecollisionIterations: 1
-  _checkMovementInitialOverlaps: 1
-  _killVelocityWhenExceedMaxMovementIterations: 1
-  _killRemainingMovementWhenExceedMaxMovementIterations: 1
+  DiscreteCollisionEvents: 0
+  StepHandling: 1
+  MaxStepHeight: 0.5
+  AllowSteppingWithoutStableGrounding: 0
+  MinRequiredStepDepth: 0.1
+  LedgeAndDenivelationHandling: 1
+  MaxStableDistanceFromLedge: 0.5
+  MaxVelocityForLedgeSnap: 0
+  MaxStableDenivelationAngle: 180
+  InteractiveRigidbodyHandling: 1
+  RigidbodyInteractionType: 0
+  SimulatedCharacterMass: 1
+  PreserveAttachedRigidbodyMomentum: 1
+  HasPlanarConstraint: 0
+  PlanarConstraintAxis: {x: 0, y: 0, z: 1}
+  MaxMovementIterations: 5
+  MaxDecollisionIterations: 1
+  CheckMovementInitialOverlaps: 1
+  KillVelocityWhenExceedMaxMovementIterations: 1
+  KillRemainingMovementWhenExceedMaxMovementIterations: 1
 --- !u!136 &1498138890
 CapsuleCollider:
   m_ObjectHideFlags: 8
@@ -1123,9 +1123,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!114 &1498138891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +1150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35cb645ab24754eb35297110101a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
   _maxStableMoveSpeed: 10
   _stableMovementSharpness: 10
   _orientationSharpness: 10
@@ -1165,6 +1167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4ac9bf2f2b4744e84cafc1adc6c2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
   _slowDownSharpness: 10
   _attacks:
   - duration:
@@ -1202,6 +1206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbc5fd42d91be5439bf079c8fd0fe12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
   _projectile: {fileID: 1345823360672541587, guid: 01caea0028fae5c4b836c5d5d2d5e04f, type: 3}
 --- !u!114 &1498138895
 MonoBehaviour:
@@ -1215,6 +1221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52308b3aab8922d4c9261386af9815a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
   _duration: 0.4
   _distance: 5
   _maxRollAngle: 45
@@ -1254,6 +1262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b90a65afaa4f442b87706e2bd6b8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
   _gravity: {x: 0, y: -20, z: 0}
   _airDrag: 0.1
   _maxAirMoveSpeed: 10
@@ -1271,6 +1281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fa3e0808f51af4ba1df9fe7d631894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
   _lockTargetRadius: 50
   _targetSelectDotThreshold: 0.8
 --- !u!1 &1553780252

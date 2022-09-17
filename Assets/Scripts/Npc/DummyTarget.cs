@@ -28,7 +28,7 @@ namespace VHS {
             _hitFeedbacks.Initialization();
         }
 
-        public void OnHit() {
+        public void OnHit(HitData hitData) {
             _hitFeedbacks.PlayFeedbacks();
         }
 

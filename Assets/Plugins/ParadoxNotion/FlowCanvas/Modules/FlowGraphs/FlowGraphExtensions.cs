@@ -469,6 +469,7 @@ namespace FlowCanvas
             //Methods
             foreach ( var _m in type.RTGetMethods().Concat(type.GetExtensionMethods()).OrderBy(x => x.GetMethodSpecialType() + ( x.IsStatic ? 0 : 1 ) + ( x.DeclaringType == type ? 0 : 10 )) ) {
                 var m = _m;
+
                 if ( !m.IsPublic || m.IsObsolete() ) {
                     continue;
                 }

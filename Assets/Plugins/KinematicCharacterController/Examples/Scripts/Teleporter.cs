@@ -3,36 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using KinematicCharacterController.Examples;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Examples
 {
     public class Teleporter : MonoBehaviour
     {
-        [FormerlySerializedAs("TeleportTo")] public Teleporter _teleportTo;
+        public Teleporter TeleportTo;
 
         public UnityAction<ExampleCharacterController> OnCharacterTeleport;
 
-        public bool IsBeingTeleportedTo { get; set; }
+        public bool isBeingTeleportedTo { get; set; }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!IsBeingTeleportedTo)
+            if (!isBeingTeleportedTo)
             {
                 ExampleCharacterController cc = other.GetComponent<ExampleCharacterController>();
                 if (cc)
                 {
-                    cc.Motor.SetPositionAndRotation(_teleportTo.transform.position, _teleportTo.transform.rotation);
+                    cc.Motor.SetPositionAndRotation(TeleportTo.transform.position, TeleportTo.transform.rotation);
 
                     if (OnCharacterTeleport != null)
                     {
                         OnCharacterTeleport(cc);
                     }
-                    _teleportTo.IsBeingTeleportedTo = true;
+                    TeleportTo.isBeingTeleportedTo = true;
                 }
             }
 
-            IsBeingTeleportedTo = false;
+            isBeingTeleportedTo = false;
         }
     }
 }

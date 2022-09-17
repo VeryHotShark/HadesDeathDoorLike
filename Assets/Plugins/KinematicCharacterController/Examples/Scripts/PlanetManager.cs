@@ -4,20 +4,19 @@ using UnityEngine;
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
 using System;
-using UnityEngine.Serialization;
 
 namespace KinematicCharacterController.Examples
 {
     public class PlanetManager : MonoBehaviour, IMoverController
     {
-        [FormerlySerializedAs("PlanetMover")] public PhysicsMover _planetMover;
-        [FormerlySerializedAs("GravityField")] public SphereCollider _gravityField;
-        [FormerlySerializedAs("GravityStrength")] public float _gravityStrength = 10;
-        [FormerlySerializedAs("OrbitAxis")] public Vector3 _orbitAxis = Vector3.forward;
-        [FormerlySerializedAs("OrbitSpeed")] public float _orbitSpeed = 10;
+        public PhysicsMover PlanetMover;
+        public SphereCollider GravityField;
+        public float GravityStrength = 10;
+        public Vector3 OrbitAxis = Vector3.forward;
+        public float OrbitSpeed = 10;
 
-        [FormerlySerializedAs("OnPlaygroundTeleportingZone")] public Teleporter _onPlaygroundTeleportingZone;
-        [FormerlySerializedAs("OnPlanetTeleportingZone")] public Teleporter _onPlanetTeleportingZone;
+        public Teleporter OnPlaygroundTeleportingZone;
+        public Teleporter OnPlanetTeleportingZone;
 
         private List<ExampleCharacterController> _characterControllersOnPlanet = new List<ExampleCharacterController>();
         private Vector3 _savedGravity;
@@ -25,30 +24,30 @@ namespace KinematicCharacterController.Examples
 
         private void Start()
         {
-            _onPlaygroundTeleportingZone.OnCharacterTeleport -= ControlGravity;
-            _onPlaygroundTeleportingZone.OnCharacterTeleport += ControlGravity;
+            OnPlaygroundTeleportingZone.OnCharacterTeleport -= ControlGravity;
+            OnPlaygroundTeleportingZone.OnCharacterTeleport += ControlGravity;
 
-            _onPlanetTeleportingZone.OnCharacterTeleport -= UnControlGravity;
-            _onPlanetTeleportingZone.OnCharacterTeleport += UnControlGravity;
+            OnPlanetTeleportingZone.OnCharacterTeleport -= UnControlGravity;
+            OnPlanetTeleportingZone.OnCharacterTeleport += UnControlGravity;
 
-            _lastRotation = _planetMover.transform.rotation;
+            _lastRotation = PlanetMover.transform.rotation;
 
-            _planetMover.MoverController = this;
+            PlanetMover.MoverController = this;
         }
 
         public void UpdateMovement(out Vector3 goalPosition, out Quaternion goalRotation, float deltaTime)
         {
-            goalPosition = _planetMover._rigidbody.position;
+            goalPosition = PlanetMover.Rigidbody.position;
 
             // Rotate
-            Quaternion targetRotation = Quaternion.Euler(_orbitAxis * _orbitSpeed * deltaTime) * _lastRotation;
+            Quaternion targetRotation = Quaternion.Euler(OrbitAxis * OrbitSpeed * deltaTime) * _lastRotation;
             goalRotation = targetRotation;
             _lastRotation = targetRotation;
 
             // Apply gravity to characters
             foreach (ExampleCharacterController cc in _characterControllersOnPlanet)
             {
-                cc.Gravity = (_planetMover.transform.position - cc.transform.position).normalized * _gravityStrength;
+                cc.Gravity = (PlanetMover.transform.position - cc.transform.position).normalized * GravityStrength;
             }
         }
 

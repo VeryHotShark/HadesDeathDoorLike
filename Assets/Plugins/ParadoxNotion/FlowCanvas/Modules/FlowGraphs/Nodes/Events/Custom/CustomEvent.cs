@@ -8,6 +8,7 @@ namespace FlowCanvas.Nodes
     [Name("Custom Event", 100)]
     [Description("Called when a custom event is received on target(s).\n- Receiver, is the object which received the event.\n- Sender, is the object which invoked the event.\n\n- To send an event from a graph use the SendEvent node.\n- To send an event from code use: 'FlowScriptController.SendEvent(string)'")]
     [Category("Events/Custom")]
+    [ExecutionPriority(100)]
     public class CustomEvent : RouterEventNode<GraphOwner>
     {
 

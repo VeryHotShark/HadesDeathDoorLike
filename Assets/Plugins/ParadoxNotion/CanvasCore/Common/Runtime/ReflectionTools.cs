@@ -874,8 +874,9 @@ namespace ParadoxNotion
         public static object[] RTGetAllAttributes(this Type type) {
             object[] attributes;
             if ( !_typeAttributes.TryGetValue(type, out attributes) ) {
-                //put in try clause to avoid problems with some unity types
+                //put in try catch clause to avoid problems with some unity types
                 try { attributes = type.GetCustomAttributes(true); }
+                catch { /*...*/ }
                 finally { _typeAttributes[type] = attributes; }
             }
             return attributes;

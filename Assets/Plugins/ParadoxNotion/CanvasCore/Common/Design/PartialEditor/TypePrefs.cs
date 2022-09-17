@@ -394,6 +394,9 @@ namespace ParadoxNotion.Design
                 if ( texture == null ) { //for user made icons where user don't have to know the path
                     texture = Resources.Load<Texture>(iconAttribute.iconName);
                 }
+                if ( texture == null ) { //for user made icons where user provide a non resources path
+                    texture = AssetDatabase.LoadAssetAtPath<Texture>(iconAttribute.iconName);
+                }
             }
             return typeIcons[iconAttribute.iconName] = texture;
         }
