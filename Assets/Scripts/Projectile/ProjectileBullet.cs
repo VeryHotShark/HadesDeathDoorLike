@@ -44,7 +44,7 @@ namespace VHS {
                     dealer = _owner
                 };
                 
-                hittable.OnHit(hitData);
+                hittable.Hit(hitData);
             }
             
             Destroy(gameObject);

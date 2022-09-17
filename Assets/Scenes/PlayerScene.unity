@@ -389,7 +389,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 1.644994
+  m_FrequencyGain: 2.021658
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &323129980
 GameObject:
@@ -522,7 +522,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7770492, y: 1}
+    m_SensorSize: {x: 1.7774245, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -575,7 +575,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-164574
+  m_Name: pb_Mesh40798
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1038,6 +1038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1498138888}
+  - component: {fileID: 1498138899}
   - component: {fileID: 1498138890}
   - component: {fileID: 1498138889}
   - component: {fileID: 1498138891}
@@ -1047,8 +1048,10 @@ GameObject:
   - component: {fileID: 1498138893}
   - component: {fileID: 1498138894}
   - component: {fileID: 1498138895}
+  - component: {fileID: 1498138900}
+  - component: {fileID: 1498138901}
   m_Layer: 7
-  m_Name: Character
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,6 +1141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4191f4fcba85824faebdb835501a20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
 --- !u!114 &1498138892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,6 +1290,50 @@ MonoBehaviour:
   _updateRate: 0.2
   _lockTargetRadius: 50
   _targetSelectDotThreshold: 0.8
+--- !u!114 &1498138899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498138887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f294e22026e7a2468f76fbeb2107ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+--- !u!114 &1498138900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498138887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c334f8f347c212a48aa674e8911c8fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  _hitPoints:
+    _max: 10
+--- !u!114 &1498138901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498138887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83d0c558dd46df4e9912f4bc9c0596d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
 --- !u!1 &1553780252
 GameObject:
   m_ObjectHideFlags: 0

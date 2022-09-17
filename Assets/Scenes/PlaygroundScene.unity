@@ -1301,46 +1301,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 373866698703507714, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: maxSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 373866698703507714, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: acceleration
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 373866698703507714, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
       propertyPath: endReachedDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: _pushSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: _customUpdate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: _pushDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: _recoveryDuration
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1972268876067189910, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: _serializedBlackboard
-      value: '{"_variables":{"Target":{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1972268876067189910, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: _serializedVariables.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1972268876067189910, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: _serializedVariables.Array.data[0]._json
-      value: '{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}

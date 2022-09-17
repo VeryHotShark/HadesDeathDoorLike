@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 373866698703507965}
   - component: {fileID: 8437594107729915311}
   - component: {fileID: 1972268876067189910}
+  - component: {fileID: 1921785161}
+  - component: {fileID: 1921785162}
   m_Layer: 8
   m_Name: Npc_Melee
   m_TagString: Untagged
@@ -50,8 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7615107d9f190634eaacde53f5b260c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _customUpdate: 1
+  _customUpdate: 0
   _updateRate: 2
+  _pushSpeed: 5
+  _pushDuration: 0.2
+  _recoveryDuration: 0.2
 --- !u!114 &373866698703507715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,12 +101,12 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 10
+  maxSpeed: 6
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  endReachedDistance: 0.2
+  endReachedDistance: 1.5
   whenCloseToDestination: 0
   rvoDensityBehavior:
     enabled: 1
@@ -121,7 +126,7 @@ MonoBehaviour:
     maximumPeriod: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
-  acceleration: 20
+  acceleration: 10
   rotationSpeed: 360
   slowdownTime: 0.5
   wallForce: 3
@@ -228,9 +233,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{}}'
+  _serializedBlackboard: '{"_variables":{"Target":{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
-  _serializedVariables: []
+  _serializedVariables:
+  - _json: '{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+--- !u!114 &1921785161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373866698703507712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c334f8f347c212a48aa674e8911c8fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  _hitPoints:
+    _max: 4
+--- !u!114 &1921785162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373866698703507712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83d0c558dd46df4e9912f4bc9c0596d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
 --- !u!1 &373866698728531755
 GameObject:
   m_ObjectHideFlags: 0
