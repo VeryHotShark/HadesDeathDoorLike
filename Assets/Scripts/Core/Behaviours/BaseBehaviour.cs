@@ -1,11 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace VHS {
     public class BaseBehaviour : MonoBehaviour, ICustomUpdateListener {
+        [FoldoutGroup("Debug Properties"), SerializeField] private bool _showLogs = true;
+        [FoldoutGroup("Debug Properties"), SerializeField, ColorUsage(false,false)] private Color _color = Color.white;
+        
         [FoldoutGroup("Behaviour Properties"),SerializeField] private bool _customUpdate = false;
         [FoldoutGroup("Behaviour Properties"),SerializeField, EnableIf("_customUpdate")] private float _updateRate = 0.2f;
         
@@ -40,5 +42,12 @@ namespace VHS {
         protected virtual void Disable() { }
         
         public virtual void OnCustomUpdate(float deltaTime) { }
+
+        protected void Log(params object[] msg) {
+            if(!_showLogs)
+                return;
+
+            VHSLogger.DoLog(Debug.Log, GetType().Name , gameObject, _color, msg );
+        }
     }
 }

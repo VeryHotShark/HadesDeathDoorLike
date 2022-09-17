@@ -389,7 +389,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 2.107257
+  m_FrequencyGain: 2.24388
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &323129980
 GameObject:
@@ -1141,6 +1141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4191f4fcba85824faebdb835501a20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 1
+  _color: {r: 0, g: 0.8378122, b: 0.9150943, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
 --- !u!114 &1498138892
@@ -1155,6 +1157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35cb645ab24754eb35297110101a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _maxStableMoveSpeed: 10
@@ -1172,6 +1176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4ac9bf2f2b4744e84cafc1adc6c2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _slowDownSharpness: 10
@@ -1211,6 +1217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbc5fd42d91be5439bf079c8fd0fe12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _projectile: {fileID: 1345823360672541587, guid: 01caea0028fae5c4b836c5d5d2d5e04f, type: 3}
@@ -1226,6 +1234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52308b3aab8922d4c9261386af9815a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _duration: 0.4
@@ -1267,6 +1277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b90a65afaa4f442b87706e2bd6b8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _gravity: {x: 0, y: -20, z: 0}
@@ -1286,6 +1298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fa3e0808f51af4ba1df9fe7d631894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _lockTargetRadius: 50
@@ -1302,6 +1316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f294e22026e7a2468f76fbeb2107ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 1
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
 --- !u!114 &1498138900
@@ -1316,6 +1332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c334f8f347c212a48aa674e8911c8fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _hitPoints:
@@ -1332,6 +1350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83d0c558dd46df4e9912f4bc9c0596d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showLogs: 0
+  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
 --- !u!1 &1553780252

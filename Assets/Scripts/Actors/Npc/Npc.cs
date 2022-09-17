@@ -24,7 +24,7 @@ namespace VHS {
         }
 
         protected override void Initialize() {
-            
+            Log("Test Log");
         }
 
         private void Start() {
