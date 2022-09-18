@@ -5,6 +5,7 @@ namespace VHS {
     public enum NpcState {
         Default,
         Recovery,
+        Attacking,
     }
     
     public class Npc : Actor, ITargetable {
@@ -15,7 +16,10 @@ namespace VHS {
 
         public RichAI RichAI => _richAI;
         public NpcState State => _state;
-        public GameObject Target => _target;
+        public GameObject Target => _target; // zmień na Actor
+
+        public Vector3 DirectionToTarget =>
+            Target ? FeetPosition.DirectionTo(Target.transform.position).Flatten() : transform.forward;
 
         protected override void GetComponents() {
             base.GetComponents();

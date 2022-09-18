@@ -20,7 +20,6 @@ namespace VHS {
         private WaitForEndOfFrame _frame;
         private WaitForFixedUpdate _fixedFrame;
 
-
         protected WaitForEndOfFrame Frame => _frame ??= new WaitForEndOfFrame();
         protected WaitForFixedUpdate FixedFrame => _fixedFrame ??= new WaitForFixedUpdate();
             

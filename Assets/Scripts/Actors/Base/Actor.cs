@@ -13,6 +13,7 @@ namespace VHS {
         protected HitProcessorComponent _hitProcessorComponent;
         public virtual Vector3 FeetPosition => transform.position;
         public virtual Vector3 CenterOfMass => FeetPosition + Vector3.up;
+        public virtual Vector3 Forward => transform.forward;
 
         private void Awake() {
             GetComponents();

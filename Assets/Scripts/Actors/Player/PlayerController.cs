@@ -56,10 +56,18 @@ namespace VHS {
         }
 
         private void Update() => HandleCharacterInput();
-        private void LateUpdate() => _camera.SetCursorPos(_mousePos);
+        private void LateUpdate() {
+            if(!_character)
+                return;
+            
+            _camera.SetCursorPos(_mousePos);
+        }
 
 
         private void HandleCharacterInput() {
+            if(!_character)
+                return;
+                
             CharacterInputs characterInputs = new CharacterInputs();
 
             characterInputs.AimDown = _aimDown;
