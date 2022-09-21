@@ -6,8 +6,6 @@ using UnityEngine;
 
 namespace VHS {
     public class SkillCasterComponent : ChildBehaviour<Actor> {
-        [SerializeReference] public Skill _skill;
-
         private float _endCastTimestamp;
         private ISkill _activeSkill;
 

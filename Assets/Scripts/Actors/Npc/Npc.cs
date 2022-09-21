@@ -33,6 +33,11 @@ namespace VHS {
         }
 
         protected override void Initialize() {
+            
+        }
+
+        public override void OnCustomUpdate(float dt) {
+            
         }
 
         private void Start() {

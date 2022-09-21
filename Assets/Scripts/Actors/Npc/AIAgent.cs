@@ -9,7 +9,8 @@ namespace VHS {
     /// </summary>
     public class AIAgent : RichAI {
         public void ResetPath() {
-            ClearPath();
+            enabled = false;
+            enabled = true;
         }
     }
 }
