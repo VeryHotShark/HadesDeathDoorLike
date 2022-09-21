@@ -39,7 +39,7 @@ namespace VHS {
                 case(CastType.SmartCast, SkillType.Instant) :
                     skill.StartSkill();
                     skill.FinishSkill();
-                    skill.SetState(SkillState.Finished);
+                    skill.SetState(SkillState.Finished); // Consider wheter State should be managed by SKillCaster or Skill itself
                     break;
                 case(CastType.SmartCast, SkillType.ForDuration) :
                     skill.StartSkill();

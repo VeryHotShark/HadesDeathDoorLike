@@ -15,6 +15,8 @@ namespace VHS {
         public virtual Vector3 CenterOfMass => FeetPosition + Vector3.up;
         public virtual Vector3 Forward => transform.forward;
 
+        public bool IsAlive => _hitProcessorComponent.HitPoints.AboveZero;
+
         private void Awake() {
             GetComponents();
             Initialize();

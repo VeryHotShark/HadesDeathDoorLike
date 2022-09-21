@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 373866698703507713}
   - component: {fileID: 373866698703507964}
   - component: {fileID: 373866698703507715}
-  - component: {fileID: 373866698703507714}
+  - component: {fileID: 2302786963422001411}
   - component: {fileID: 373866698703507965}
   - component: {fileID: 8437594107729915311}
   - component: {fileID: 1972268876067189910}
@@ -172,7 +172,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &373866698703507714
+--- !u!114 &2302786963422001411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,14 +181,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 373866698703507712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce11ea984e202491d9271f53021d8b89, type: 3}
+  m_Script: {fileID: 11500000, guid: 8af827b776261ee41b568a393c2c508a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 6
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 6
+  maxSpeed: 1
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -213,7 +213,7 @@ MonoBehaviour:
     maximumPeriod: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
-  acceleration: 10
+  acceleration: 5
   rotationSpeed: 360
   slowdownTime: 0.5
   wallForce: 3
@@ -320,12 +320,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{"Target":{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+  _serializedBlackboard: '{"_variables":{"Target":{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","_debugBoundValue":true,"$type":"NodeCanvas.Framework.Variable`1[[VHS.IActor,
+    Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences: []
   _serializedVariables:
-  - _json: '{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+  - _json: '{"_propertyPath":"VHS.Npc.Target","_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","_debugBoundValue":true,"$type":"NodeCanvas.Framework.Variable`1[[VHS.IActor,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
 --- !u!114 &1921785161
 MonoBehaviour:

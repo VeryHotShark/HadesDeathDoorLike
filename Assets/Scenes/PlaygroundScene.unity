@@ -1300,9 +1300,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 373866698703507714, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
-      propertyPath: autoRepath.mode
-      value: 2
+    - target: {fileID: 1972268876067189910, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+      propertyPath: _serializedBlackboard
+      value: '{"_variables":{"Target":{"_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972268876067189910, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+      propertyPath: _serializedVariables.Array.data[0]._json
+      value: '{"_name":"Target","_id":"dc22ca86-7fbf-440e-9094-324fb5299874","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302786963422001411, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302786963422001411, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+      propertyPath: acceleration
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}

@@ -8,6 +8,6 @@ namespace VHS {
     /// Wrapper for Inherited Components so they wont have to Call Parent.
     /// </summary>
     public abstract class NpcComponent : ChildBehaviour<Npc> {
-        protected RichAI RichAI => Parent.RichAI;
+        protected AIAgent AIAgent => Parent.AIAgent;
     }
 }

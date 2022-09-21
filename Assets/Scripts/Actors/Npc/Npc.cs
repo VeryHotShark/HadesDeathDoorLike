@@ -1,3 +1,4 @@
+using NodeCanvas.Framework;
 using Pathfinding;
 using UnityEngine;
 
@@ -11,28 +12,32 @@ namespace VHS {
     public class Npc : Actor, ITargetable {
 
         private NpcState _state;
-        private GameObject _target;
-        private RichAI _richAI;
+        private IActor _target;
+        private AIAgent _aiAgent;
+        private Blackboard _blackboard;
 
-        public RichAI RichAI => _richAI;
+        public bool HasTarget => _target is {IsAlive: true}; // equivalent to != null && IsAlive
+        public Vector3 TargetPosition => _target.FeetPosition;
+        public Vector3 DirectionToTarget => HasTarget ? FeetPosition.DirectionTo(Target.FeetPosition).Flatten() : transform.forward;
+        
         public NpcState State => _state;
-        public GameObject Target => _target; // zmień na Actor
+        public IActor Target => _target;
+        public AIAgent AIAgent => _aiAgent;
 
-        public Vector3 DirectionToTarget =>
-            Target ? FeetPosition.DirectionTo(Target.transform.position).Flatten() : transform.forward;
 
         protected override void GetComponents() {
             base.GetComponents();
-            _richAI = GetComponent<RichAI>();
+            _aiAgent = GetComponent<AIAgent>();
+            _blackboard = GetComponent<Blackboard>();
             _hitProcessorComponent = GetComponent<HitProcessorComponent>();
         }
 
         protected override void Initialize() {
-            Log("Test Log");
         }
 
         private void Start() {
-            _target = NpcBlackboard.PlayerInstance.gameObject; // Dependency Injection?
+            _target = NpcBlackboard.PlayerInstance; // Dependency Injection?
+            _blackboard.SetVariableValue("Target", NpcBlackboard.PlayerInstance.gameObject);
         }
 
         public Vector3 GetTargetPosition() => transform.position;

@@ -9,6 +9,8 @@ namespace VHS {
     public class HitProcessorComponent : ChildBehaviour<Actor> {
         [SerializeField] private HitPoints _hitPoints;
 
+        public HitPoints HitPoints => _hitPoints;
+        
         private void Awake() => _hitPoints.Reset();
 
         public void Hit(HitData hitData) {

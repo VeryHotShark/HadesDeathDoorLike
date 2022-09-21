@@ -39,7 +39,7 @@ namespace VHS {
         private void MoveCharacter(float deltaTime) {
             float speed = _distance / SkillDuration;
             Vector3 delta = Owner.Forward * (speed * deltaTime);
-            Owner.RichAI.Move(delta);
+            Owner.AIAgent.Move(delta);
         }
 
         private void CheckForHittables() {

@@ -18,8 +18,8 @@ namespace VHS {
         private void OnHit(HitData hitData) {
             Timing.KillCoroutines(_pushBackRoutine);
             
-            RichAI.SetPath(null);
-            RichAI.isStopped = true;
+            AIAgent.SetPath(null);
+            AIAgent.isStopped = true;
             Parent.SetState(NpcState.Recovery);
 
             Vector3 flattenedDirection = hitData.direction.Flatten();
@@ -27,11 +27,11 @@ namespace VHS {
         }
         
         private void PushBack(Vector3 direction) {
-            RichAI.Move(direction * (_pushSpeed * Time.deltaTime));
+            AIAgent.Move(direction * (_pushSpeed * Time.deltaTime));
         }
         
         private void PushBackEnd(Vector3 direction) {
-            RichAI.isStopped = false;
+            AIAgent.isStopped = false;
             Timing.CallDelayed(_recoveryDuration, () => Parent.SetState(NpcState.Default));
         }
 

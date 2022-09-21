@@ -25,6 +25,9 @@ namespace VHS{
 			
 			if(!canCastSkill)
 				EndAction(false);
+				
+			if(_skill.SkillState == SkillState.Finished)
+				EndAction(true);
 		}
 
 		//Called once per frame while the action is active.

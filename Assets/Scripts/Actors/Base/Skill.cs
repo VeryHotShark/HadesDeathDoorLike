@@ -21,7 +21,7 @@ namespace VHS {
         
         // Dodać property który liczy normalized ratio 0-1 trwania skilla i casta
         public Actor Owner { get; private set; }
-        public SkillState SkillState { get; private set; }
+        public SkillState SkillState { get; private set; } // Managed by SkillCaster
         
         public void SetOwner(Actor owner) => Owner = owner;
         public void SetState(SkillState state) => SkillState = state;

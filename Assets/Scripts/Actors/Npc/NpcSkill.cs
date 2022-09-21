@@ -6,12 +6,12 @@ using UnityEngine;
 namespace VHS {
     public class NpcSkill : Skill<Npc> {
         public override void StartTarget() {
-            Owner.RichAI.SetPath(null);
-            Owner.RichAI.isStopped = true;
+            Owner.AIAgent.ResetPath();
+            Owner.AIAgent.isStopped = true;
         }
 
         public override void FinishSkill() {
-            Owner.RichAI.isStopped = false;
+            Owner.AIAgent.isStopped = false;
         }
     }
 }
