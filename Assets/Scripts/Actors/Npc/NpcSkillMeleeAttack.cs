@@ -23,6 +23,7 @@ namespace VHS {
         }
 
         public override void StartSkill() {
+            Owner.AIAgent.RVO.priorityMultiplier = 2.0f;
             _hittables.Clear();
         }
 
@@ -34,6 +35,7 @@ namespace VHS {
         public override void FinishSkill() {
             base.FinishSkill();
             Owner.SetState(NpcState.Default);
+            Owner.AIAgent.RVO.priorityMultiplier = 1.0f;
         }
 
         private void MoveCharacter(float deltaTime) {
