@@ -8,6 +8,8 @@ namespace VHS {
         Vector3 CenterOfMass { get; }
         Vector3 Forward { get; }
         
+        GameObject GameObject { get; }
+        
         bool IsAlive { get; }
     }
 }

@@ -24,7 +24,6 @@ namespace VHS {
         public IActor Target => _target;
         public AIAgent AIAgent => _aiAgent;
 
-
         protected override void GetComponents() {
             base.GetComponents();
             _aiAgent = GetComponent<AIAgent>();
@@ -32,17 +31,18 @@ namespace VHS {
             _hitProcessorComponent = GetComponent<HitProcessorComponent>();
         }
 
-        protected override void Initialize() {
-            
-        }
-
-        public override void OnCustomUpdate(float dt) {
-            
-        }
-
         private void Start() {
-            _target = NpcBlackboard.PlayerInstance; // Dependency Injection?
-            _blackboard.SetVariableValue("Target", NpcBlackboard.PlayerInstance.gameObject);
+            // _target = NpcBlackboard.PlayerInstance; // Dependency Injection?
+            // _blackboard.SetVariableValue("Target", NpcBlackboard.PlayerInstance.gameObject);
+        }
+
+        public override void Hit(HitData hitData) {
+            base.Hit(hitData);
+
+            if (_target == null) {
+                _target = hitData.dealer; // Dependency Injection?
+                _blackboard.SetVariableValue("Target", _target.GameObject);
+            }
         }
 
         public Vector3 GetTargetPosition() => transform.position;

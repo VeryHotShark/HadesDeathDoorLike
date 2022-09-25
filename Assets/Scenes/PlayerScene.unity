@@ -522,7 +522,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778169, y: 1}
+    m_SensorSize: {x: 1.7791305, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1039,6 +1039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1498138888}
   - component: {fileID: 1498138899}
+  - component: {fileID: 1498138904}
   - component: {fileID: 1498138890}
   - component: {fileID: 1498138889}
   - component: {fileID: 1498138891}
@@ -1054,7 +1055,7 @@ GameObject:
   - component: {fileID: 1498138902}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1505,6 +1506,22 @@ MonoBehaviour:
   _flickerDuration: 0.02
   _flickerOctave: 0.04
   _flickerColor: {r: 1.8117647, g: 0, b: 0.05490196, a: 1}
+--- !u!54 &1498138904
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498138887}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1553780252
 GameObject:
   m_ObjectHideFlags: 0

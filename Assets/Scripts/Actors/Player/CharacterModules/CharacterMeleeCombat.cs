@@ -89,7 +89,7 @@ namespace VHS {
                 Controller.AddVelocity(_currentAttack.pushForce * Motor.CharacterForward);
             
             _attackIndex++;
-
+            
             Timing.CallDelayed(_hitDelay, CheckForHittables);
         }
 
