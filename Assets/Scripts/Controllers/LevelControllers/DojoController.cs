@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 namespace VHS {
     public class DojoController : LevelController {
         public void LoadGame() {
-            SceneManager.LoadPlayer(LoadSceneMode.Single);              
-            SceneManager.LoadGame(LoadSceneMode.Additive);
+            LevelManager.LoadScenes( LevelManager.PlayerScene, LevelManager.GameScene);
         }
         
         public void LoadMenu() {
-            SceneManager.LoadMenu();
+            LevelManager.LoadScenes(LevelManager.MenuScene);
         }
     }
 }

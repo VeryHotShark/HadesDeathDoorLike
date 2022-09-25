@@ -33,6 +33,10 @@ namespace ParadoxNotion.Design
     ///<summary>In custom inspector, private fields even if with [SerializedField] are not exposed by default.</summary>
     [AttributeUsage(AttributeTargets.Field)]
     public class ExposeFieldAttribute : Attribute { }
+    
+    ///<summary>Serialize Reference like unity</summary>
+    [AttributeUsage(AttributeTargets.Field)]
+    public class SerializeReferenceNcAttribute : Attribute { }
 
     ///<summary>Options attribute for list inspector editors</summary>
     [AttributeUsage(AttributeTargets.Field)]

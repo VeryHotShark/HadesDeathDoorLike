@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
+    [Serializable]
     public class NpcSkill : Skill<Npc> {
         public override void StartTarget() {
             Owner.AIAgent.ResetPath();

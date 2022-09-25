@@ -24,8 +24,7 @@ namespace VHS {
         }
 
         public void LoadDojo() {
-            SceneManager.LoadDojo();
-            SceneManager.LoadPlayer();
+            LevelManager.LoadScenes( LevelManager.PlayerScene, LevelManager.DojoScene);
         }
     }
 

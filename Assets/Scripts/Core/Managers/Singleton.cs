@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
+    [SerializeField] private bool _persistent = false;
+    
     private static T _instance;
     private static bool _applicationQuit;
 
@@ -13,7 +15,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
         }
         
         _instance = this as T;
-        DontDestroyOnLoad(gameObject);   
+        
+        if(_persistent)
+            DontDestroyOnLoad(gameObject);
+        
         OnAwake();
     }
     
