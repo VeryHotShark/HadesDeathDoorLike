@@ -58,8 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96fe0f54ac190f45a31d104969b2cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerScene:
-    m_Handle: 0
 --- !u!114 &7829457204714871254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12451bc6a6b4e0d40a1e9e6f4d447861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dojoScene:
-    m_Handle: 0
-  _gameScene:
-    m_Handle: 0
+  _dojoScene: DojoScene
+  _gameScene: PlaygroundScene
+  _playerScene: PlayerScene

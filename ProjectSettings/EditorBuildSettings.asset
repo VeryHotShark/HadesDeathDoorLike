@@ -6,7 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: b6363a02e84962446880dc237817eb1f
+  - enabled: 1
+    path: Assets/Scenes/DojoScene.unity
+    guid: a46f6b580da45ac4f8be3344009c877b
+  - enabled: 1
     path: Assets/Scenes/PlaygroundScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/PlayerScene.unity
+    guid: 3d5a21c888e725a4a887f0f860ababd5
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 1f786c31cd8ee8d45ba6cc6bfccc9717, type: 2}
