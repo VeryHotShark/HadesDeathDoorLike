@@ -26,13 +26,31 @@ namespace VHS {
         public void SetOwner(Actor owner) => Owner = owner;
         public void SetState(SkillState state) => SkillState = state;
 
+        public virtual bool CanCastSkill() => true;
+        
         public virtual void StartTarget() { }
         public virtual void TickTarget(float deltaTime) { }
         public virtual void FinishTarget() { }
+        
+        
         public virtual void StartSkill() { }
         public virtual void TickSkill(float deltaTime) { }
         public virtual void FinishSkill() { }
-        public virtual bool CanCastSkill() => true;
+        
+        /// <summary>
+        /// Called only if current skill State is during Targetting
+        /// </summary>
+        public virtual void CancelTarget() { }
+        
+        /// <summary>
+        /// Called only if current skill State is in Progress
+        /// </summary>
+        public virtual void CancelSkill() { }
+        
+        /// <summary>
+        /// Called when skill is canceled, independently of it current state
+        /// </summary>
+        public virtual void Abort() { }
     }
     
     [Serializable] // Jak się nie uda z generyczną CastSkillem w Node Canvas to zamień spowrotem by został tylko Skill klasa

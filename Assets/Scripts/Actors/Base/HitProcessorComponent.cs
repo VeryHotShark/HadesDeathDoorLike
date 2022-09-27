@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using VHS;
 
 
 namespace VHS {
@@ -21,10 +17,8 @@ namespace VHS {
             
             Parent.OnHit(hitData);
 
-            if (!_hitPoints.AboveZero) {
-                Parent.OnDeath(Parent);
-            }
+            if (!_hitPoints.AboveZero) 
+                Parent.Die();
         }
-
     }
 }

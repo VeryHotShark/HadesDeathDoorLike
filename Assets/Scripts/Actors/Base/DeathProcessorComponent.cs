@@ -7,6 +7,6 @@ namespace VHS {
         protected override void Enable() => Parent.OnDeath += OnDeath;
         protected override void Disable() => Parent.OnDeath -= OnDeath;
 
-        private void OnDeath(IActor actor) => Destroy(gameObject);
+        public virtual void OnDeath(IActor actor) => Destroy(gameObject);
     }
 }

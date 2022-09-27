@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
@@ -26,9 +24,14 @@ namespace VHS {
         public override void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
             if (_orientationSharpness > 0f) {
                 float t = 1 - Mathf.Exp(-_orientationSharpness * deltaTime);
+                
+                /*
                 Vector3 desiredRotation = Controller.LockTarget != null ? 
                     Motor.TransientPosition.DirectionTo(Controller.LockTarget.GetTargetPosition()).Flatten() 
                     : Controller.LastNonZeroMoveInput;
+                */
+
+                Vector3 desiredRotation = Controller.LastNonZeroMoveInput;
                 Vector3 smoothDesiredRotation = Vector3.Slerp(Motor.CharacterForward, desiredRotation, t).normalized;
                 currentRotation = Quaternion.LookRotation(smoothDesiredRotation, Motor.CharacterUp);
             }

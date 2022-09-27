@@ -1,4 +1,5 @@
 using NodeCanvas.Framework;
+using ParadoxNotion;
 using ParadoxNotion.Design;
 using Pathfinding;
 using UnityEngine;
@@ -22,6 +23,13 @@ namespace NodeCanvasAddons.AStarPathfinding
         {
             _richAI.destination = Destination.value;
             EndAction(true);
+        }
+        
+        public override void OnDrawGizmosSelected() {
+            if ( _richAI != null ) {
+                Gizmos.color = Color.red.WithAlpha(0.5f);
+                Gizmos.DrawSphere(_richAI.destination, 3.0f);
+            }
         }
     }
 }

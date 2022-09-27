@@ -16,5 +16,9 @@ namespace VHS {
             Owner.AIAgent.isStopped = false;
             Owner.AIAgent.RVO.locked = false;
         }
+
+        public override void Abort() {
+            FinishSkill();
+        }
     }
 }

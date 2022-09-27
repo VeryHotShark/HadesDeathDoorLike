@@ -87,5 +87,24 @@ namespace VHS {
                     break;
             }
         }
+
+        /// <summary>
+        /// Cancel skill respective to it current state
+        /// </summary>
+        public void CancelSkill() {
+            if(_activeSkill == null)
+                return;
+
+            switch (_activeSkill.SkillState) {
+                case SkillState.Targetting:
+                    _activeSkill.CancelTarget();
+                    break;
+                case SkillState.InProgress:
+                    _activeSkill.CancelSkill();
+                    break;
+            }
+            
+            _activeSkill.Abort();
+        }
     }
 }

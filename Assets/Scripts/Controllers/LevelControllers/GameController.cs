@@ -6,21 +6,26 @@ using MEC;
 
 namespace VHS {
     public class GameController : LevelController {
-        private Actor _player;
+        private WaveController _waveController;
+        
         private void Awake() {
-            _player = FindObjectOfType<Player>(); // Change to DI or PlayerManager refernce
+            _waveController = GetComponentInChildren<WaveController>();
         }
         
         protected override void Enable() {
-            _player.OnDeath += OnPlayerDeath;
+            PlayerManager.OnPlayerDeath += OnPlayerDeath;
         }
 
         protected override void Disable() {
-            _player.OnDeath -= OnPlayerDeath;
+            PlayerManager.OnPlayerDeath -= OnPlayerDeath;
         }
 
-        private void OnPlayerDeath(IActor actor) {
+        private void OnPlayerDeath(Player player) {
             Timing.CallDelayed(2.0f, LoadDojo);
+        }
+
+        protected override void StartLevel() {
+            _waveController.StartWaves();
         }
 
         public void LoadDojo() {

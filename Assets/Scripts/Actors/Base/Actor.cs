@@ -7,9 +7,10 @@ namespace VHS {
     [RequireComponent(typeof(HitProcessorComponent))]
     public abstract class Actor : BaseBehaviour, IHittable, IActor {
         public Action<HitData> OnHit = delegate {  };
-        public  Action<IActor> OnDeath = delegate {  };
+        public event Action<IActor> OnDeath = delegate {  };
 
         protected HitProcessorComponent _hitProcessorComponent;
+        protected DeathProcessorComponent _deathProcessorComponent;
         
         public GameObject GameObject => gameObject;
         
@@ -29,5 +30,6 @@ namespace VHS {
         protected virtual void Initialize() {}
 
         public virtual void Hit(HitData hitData) => _hitProcessorComponent.Hit(hitData);
+        public virtual void Die() => OnDeath(this);
     }
 }

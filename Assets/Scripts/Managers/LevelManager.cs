@@ -10,6 +10,7 @@ using System.Management.Instrumentation;
 using MEC;
 using Sirenix.OdinInspector;
 using TMPro;
+using UnityEditor;
 using UnityEngine.InputSystem;
 
 namespace VHS {
@@ -58,8 +59,6 @@ namespace VHS {
             for (int i = 0; i < scenes.Length; i++) {
                 string scene = scenes[i];
                 
-                Debug.Log(scene + i);
-                
                 AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(scene,
                     i == 0 ? LoadSceneMode.Single : LoadSceneMode.Additive);
 
@@ -85,6 +84,11 @@ namespace VHS {
                 .ToList();
 
             return fileNameList;
+        }
+        
+        [MenuItem("Tools/Hyperstrange/OpenScenes/Game")]
+        private static void OpenGame() {
+            
         }
     }
 }

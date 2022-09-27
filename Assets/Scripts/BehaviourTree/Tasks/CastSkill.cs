@@ -40,6 +40,13 @@ namespace VHS{
 				EndAction(true);
 		}
 
+		protected override void OnStop(bool interrupted) {
+			if(interrupted)
+				agent.CancelSkill();
+			
+			OnStop();
+		}
+
 		//Called when the task is disabled.
 		protected override void OnStop() => _skill.SetState(SkillState.None);
 		

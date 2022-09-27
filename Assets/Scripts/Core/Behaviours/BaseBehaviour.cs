@@ -45,7 +45,7 @@ namespace VHS {
         public virtual void OnCustomUpdate(float deltaTime) { }
 
         protected void Log(params object[] msg) {
-            if(!DISABLE_ALL_LOGS || !_instanceLogs)
+            if(DISABLE_ALL_LOGS || !_instanceLogs)
                 return;
 
             VHSLogger.DoLog(Debug.Log, GetType().Name , gameObject, _color, msg );

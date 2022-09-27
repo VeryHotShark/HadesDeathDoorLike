@@ -13,5 +13,12 @@ namespace VHS {
             base.GetComponents();
             _characterController = GetComponent<CharacterController>();
         }
+
+        public override void Die() {
+            PlayerManager.RegisterPlayerDeath(this);
+            base.Die();
+        }
+        
+        
     }
 }

@@ -8,6 +8,8 @@ namespace VHS {
     public class PlayerManager : Singleton<PlayerManager> {
         private static Player _playerInstance;
         public static Player PlayerInstance => _playerInstance;
-        public static event Action OnPlayerDeath = delegate { };
+        public static event Action<Player> OnPlayerDeath = delegate { };
+
+        public static void RegisterPlayerDeath(Player player) => OnPlayerDeath(player);
     }
 }

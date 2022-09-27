@@ -90,7 +90,7 @@ namespace VHS {
             
             _attackIndex++;
             
-            Timing.CallDelayed(_hitDelay, CheckForHittables);
+            Timing.CallDelayed(_hitDelay, CheckForHittables, gameObject);
         }
 
         private void CheckForHittables() {
