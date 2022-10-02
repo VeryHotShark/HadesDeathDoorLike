@@ -7,18 +7,15 @@ using UnityEngine;
 namespace VHS {
     public class WaveController : ChildBehaviour<GameController> {
         [SerializeField] private float _timeBetweenWaves = 3.0f;
-        [SerializeField] private Npc _npcPrefab;
 
-        private List<Wave> _waves ;
-
-        private int _currentWaveIndex;
-        private Wave _currentWave;
+        private List<Wave> _waves;
         
-        public Npc NpcPrefab => _npcPrefab;
+        public event Action OnWavesCleared = delegate { };
 
-        private void Awake() {
-            _waves = new List<Wave>(GetComponentsInChildren<Wave>());
-        }
+        private Wave _currentWave;
+        private int _currentWaveIndex;
+
+        private void Awake() => _waves = new List<Wave>(GetComponentsInChildren<Wave>());
 
         protected override void Enable() {
             foreach (Wave wave in _waves) 
@@ -31,10 +28,12 @@ namespace VHS {
         }
 
         private void OnWaveCleared(Wave wave) {
+            wave.StopWave();
+            
             _currentWaveIndex++;
 
             if (_currentWaveIndex >= _waves.Count) {
-                OnWavesCleared();
+                WavesCleared();
                 return;
             }
             
@@ -44,11 +43,12 @@ namespace VHS {
         private void StartWave(int index) {
             Timing.CallDelayed(_timeBetweenWaves, delegate {
                 _currentWave = _waves[index];
-                _currentWave.Spawn();
+                _currentWave.StartWave();
             });
         }
 
-        private void OnWavesCleared() {
+        private void WavesCleared() {
+            OnWavesCleared();
             Log("FINISHED ALL WAVES");
         }
 

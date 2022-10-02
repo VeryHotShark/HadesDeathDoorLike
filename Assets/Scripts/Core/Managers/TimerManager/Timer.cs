@@ -6,8 +6,12 @@ using UnityEngine;
 [Serializable]
 public class Timer {
     [SerializeField] private float _duration;
+    [SerializeField] private bool _looping;
 
-    public Timer(float duration = 0.0f) => _duration = duration;
+    public Timer(float duration = 0.0f, bool looping = false) {
+        _duration = duration;
+        _looping = looping;
+    }
 
     private bool _onCooldownLastFrame;
     private bool _started;
@@ -16,6 +20,7 @@ public class Timer {
     public event Action OnEnd = delegate {  };
 
     public float Duration => _duration;
+    public bool IsLooping => _looping;
     public bool IsActive => _started && Time.time < _timestamp + _duration;
 
     public void Start() {

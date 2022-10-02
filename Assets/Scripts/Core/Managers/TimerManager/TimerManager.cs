@@ -15,8 +15,14 @@ public class TimerManager : Singleton<TimerManager>, IUpdateListener {
 
     public void OnUpdate(float deltaTime) {
         for (int i = _timers.Count - 1; i >= 0; i--) {
-            if(_timers[i].CheckTimerEnd())
+            Timer timer = _timers[i];
+            
+            if (timer.CheckTimerEnd()) {
                 _timers.RemoveAt(i);
+                
+                if(timer.IsLooping)
+                    timer.Start();
+            }
         }
     }
 }
