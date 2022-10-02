@@ -9,7 +9,6 @@ namespace VHS{
 	[Category("Skills")]
 	[Description("Cast Chosen Skill")]
 	public class CastSkill : ActionTask<SkillCasterComponent> {
-		public Skill skill;
 		[SerializeReference] public NpcSkillMeleeAttack _skill;
 
 		//Use for initialization. This is called only once in the lifetime of the task.
@@ -48,7 +47,7 @@ namespace VHS{
 		}
 
 		//Called when the task is disabled.
-		protected override void OnStop() => _skill.SetState(SkillState.None);
+		protected override void OnStop() => _skill.Reset();
 		
 #if UNITY_EDITOR
 		protected override void OnTaskInspectorGUI() {

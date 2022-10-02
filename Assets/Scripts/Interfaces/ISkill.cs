@@ -29,7 +29,6 @@ namespace VHS {
         
         Actor Owner { get; }
         void SetOwner(Actor owner);
-        void SetState(SkillState state);
 
         void StartTarget();
         void TickTarget(float dt);
@@ -40,7 +39,8 @@ namespace VHS {
         void TickSkill(float dt);
         void FinishSkill();
         void CancelSkill();
-        
+
+        void Reset();
         void Abort();
         bool CanCastSkill();
     }

@@ -5,16 +5,17 @@ namespace VHS {
         public event Action OnLevelStart = delegate { };
         public event Action OnLevelEnd = delegate { };
 
-        private void Start() {
+        private void Awake() {
+            GetComponents();
+            Initialize();
             StartLevel();
         }
+        
+        protected virtual void GetComponents() {}
+        protected virtual void Initialize() { }
 
-        protected virtual void StartLevel() {
-            OnLevelStart();
-        }
+        protected virtual void StartLevel() => OnLevelStart();
 
-        protected virtual void EndLevel() {
-            OnLevelEnd();
-        }
+        protected virtual void EndLevel() => OnLevelEnd();
     }
 }

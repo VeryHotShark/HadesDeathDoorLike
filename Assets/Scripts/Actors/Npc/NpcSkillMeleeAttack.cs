@@ -13,16 +13,15 @@ namespace VHS {
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
 
-        public override void StartTarget() {
-            base.StartTarget();
+        public override void StartTarget_Hook() {
+            base.StartTarget_Hook();            
             Owner.SetState(NpcState.Attacking);
         }
 
-        public override void TickTarget(float deltaTime) {
-            Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTarget);
-        }
+        public override void TickTarget(float deltaTime) => Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTarget);
 
-        public override void StartSkill() {
+        public override void StartSkill_Hook() {
+            base.StartSkill_Hook();
             Owner.AIAgent.RVO.priorityMultiplier = 2.0f;
             _hittables.Clear();
         }
@@ -32,8 +31,8 @@ namespace VHS {
             CheckForHittables();    
         }
 
-        public override void FinishSkill() {
-            base.FinishSkill();
+        public override void FinishSkill_Hook() {
+            base.FinishSkill_Hook();
             Owner.SetState(NpcState.Default);
             Owner.AIAgent.RVO.priorityMultiplier = 1.0f;
         }
@@ -69,6 +68,8 @@ namespace VHS {
                         _hittables.Add(hittable);
                     }
                 }
+                
+                FinishSkill();
             } 
             
             DebugExtension.DebugWireSphere(position, Color.red, _radius);

@@ -19,7 +19,7 @@ namespace VHS {
         public Quaternion CursorRotation;
     }
 
-    public class PlayerController : MonoBehaviour {
+    public class PlayerController : BaseBehaviour, IUpdateListener, ILateUpdateListener {
         [SerializeField] private CameraController _camera;
         [SerializeField] private CharacterController _character;
 
@@ -33,11 +33,21 @@ namespace VHS {
         private PlayerInput _input;
 
         public CharacterController Character => _character;
+        public Player Player => _character.ControlledCharacter;
 
         private void Awake() => SetInputs();
 
-        private void OnEnable() => _input.Enable();
-        private void OnDisable() => _input.Disable();
+        protected override void Enable() {
+            _input.Enable();
+            UpdateManager.AddUpdateListener(this);
+            UpdateManager.AddLateUpdateListener(this);
+        }
+
+        protected override void Disable() {
+            _input.Disable();
+            UpdateManager.RemoveUpdateListener(this);
+            UpdateManager.RemoveLateUpdateListener(this);
+        }
 
         private void SetInputs() {
             _input = new PlayerInput();
@@ -54,15 +64,15 @@ namespace VHS {
             _input.CharacterControls.Aim.performed += ctx => _aimDown = ctx.ReadValueAsButton();
             _input.CharacterControls.Aim.canceled += ctx => _aimDown = ctx.ReadValueAsButton();
         }
+        
+        public void OnUpdate(float deltaTime) => HandleCharacterInput();
 
-        private void Update() => HandleCharacterInput();
-        private void LateUpdate() {
+        public void OnLateUpdate(float deltaTime) {
             if(!_character)
                 return;
             
             _camera.SetCursorPos(_mousePos);
         }
-
 
         private void HandleCharacterInput() {
             if(!_character)

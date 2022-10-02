@@ -7,11 +7,13 @@ using MEC;
 namespace VHS {
     public class GameController : LevelController {
         private WaveController _waveController;
-        
-        private void Awake() {
+        private PlayerSpawnController _playerSpawnController;
+
+        protected override void GetComponents() {
             _waveController = GetComponentInChildren<WaveController>();
+            _playerSpawnController = GetComponentInChildren<PlayerSpawnController>();
         }
-        
+
         protected override void Enable() {
             PlayerManager.OnPlayerDeath += OnPlayerDeath;
         }
@@ -25,11 +27,12 @@ namespace VHS {
         }
 
         protected override void StartLevel() {
+            _playerSpawnController.Spawn();
             _waveController.StartWaves();
         }
 
         public void LoadDojo() {
-            LevelManager.LoadScenes( LevelManager.PlayerScene, LevelManager.DojoScene);
+            LevelManager.LoadScenes(LevelManager.DojoScene);
         }
     }
 

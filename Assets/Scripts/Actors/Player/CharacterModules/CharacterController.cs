@@ -21,7 +21,9 @@ namespace VHS {
         private StateMachine<CharacterModule> _stateMachine;
 
         private KinematicCharacterMotor _motor;
+        
         public KinematicCharacterMotor Motor => _motor;
+        public Player ControlledCharacter => Parent;
 
         public Vector3 LookInput { get; set; }
         public Vector3 MoveInput { get; set; }

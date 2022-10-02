@@ -25,9 +25,9 @@ namespace VHS {
                 return false;
             
             _activeSkill = skill;
-            _endCastTimestamp = 0.0f;   
+            _endCastTimestamp = 0.0f;
             
-            skill.SetState(SkillState.None);
+            skill.Reset();
             skill.StartTarget();
 
             if (skill.CastType == CastType.SmartCast)
@@ -37,19 +37,10 @@ namespace VHS {
                 case(CastType.SmartCast, SkillType.Instant) :
                     skill.StartSkill();
                     skill.FinishSkill();
-                    skill.SetState(SkillState.Finished); // Consider wheter State should be managed by SKillCaster or Skill itself
                     break;
                 case(CastType.SmartCast, SkillType.ForDuration) :
                     skill.StartSkill();
-                    skill.SetState(SkillState.InProgress);
                     break;
-                case(CastType.CustomCast, SkillType.Instant) :
-                case(CastType.CustomCast, SkillType.ForDuration) :
-                    skill.SetState(SkillState.Targetting);
-                    break;
-                default:
-                    Log("THIS SHOULD NEVER BE THE CASE");
-                    return false;
             }
 
             return true;
@@ -58,7 +49,7 @@ namespace VHS {
         /// <summary>
         /// Evaluate skill and change it state based on elapsed time
         /// </summary>
-        /// <param name="elapsedTime"></param>
+        /// <param name="elapsedTime">skill duration since activation</param>
         /// <returns></returns>
         public void TickSkill(float elapsedTime) {
             switch (_activeSkill.SkillState) {
@@ -67,17 +58,14 @@ namespace VHS {
                         _endCastTimestamp = elapsedTime;
                         _activeSkill.FinishTarget();
                         _activeSkill.StartSkill();
-                        _activeSkill.SetState(SkillState.InProgress);
                     }
                     else
                         _activeSkill.TickTarget(Time.deltaTime);
                     
                     break;
                 case SkillState.InProgress:
-                    if (elapsedTime - _endCastTimestamp > _activeSkill.SkillDuration) {
+                    if (elapsedTime - _endCastTimestamp > _activeSkill.SkillDuration)
                         _activeSkill.FinishSkill();
-                        _activeSkill.SetState(SkillState.Finished);
-                    }
                     else
                         _activeSkill.TickSkill(Time.deltaTime);
                     

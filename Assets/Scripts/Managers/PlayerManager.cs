@@ -10,6 +10,7 @@ namespace VHS {
         public static Player PlayerInstance => _playerInstance;
         public static event Action<Player> OnPlayerDeath = delegate { };
 
+        public static void RegisterPlayer(Player player) => _playerInstance = player;
         public static void RegisterPlayerDeath(Player player) => OnPlayerDeath(player);
     }
 }

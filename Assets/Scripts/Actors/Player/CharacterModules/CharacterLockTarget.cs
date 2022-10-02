@@ -11,7 +11,10 @@ namespace VHS {
         private ITargetable _lockTarget;
         public ITargetable LockTarget => _lockTarget;
         
-        public void ToggleLockTarget() => _lockTarget = _lockTarget != null ? null : CheckForTarget();
+        public void ToggleLockTarget() {
+            return;
+            _lockTarget = _lockTarget != null ? null : CheckForTarget();
+        }
 
         private ITargetable CheckForTarget() {
             ITargetable target = null;

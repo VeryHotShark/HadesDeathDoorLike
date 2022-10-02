@@ -23,8 +23,6 @@ namespace VHS {
         [ValueDropdown("SelectScene", DropdownTitle = "Scene Selection")]
         [SerializeField] private string _gameScene;
         [ValueDropdown("SelectScene", DropdownTitle = "Scene Selection")]
-        [SerializeField] private string _playerScene;
-        [ValueDropdown("SelectScene", DropdownTitle = "Scene Selection")]
         [SerializeField] private string _loadScene;
 
         [SerializeField] private Image _loadBar;
@@ -35,7 +33,6 @@ namespace VHS {
         public static string MenuScene => Instance._menuScene;
         public static string DojoScene => Instance._dojoScene;
         public static string GameScene => Instance._gameScene;
-        public static string PlayerScene => Instance._playerScene;
 
         protected override void OnAwake() {
             _canvas = GetComponentInChildren<Canvas>();

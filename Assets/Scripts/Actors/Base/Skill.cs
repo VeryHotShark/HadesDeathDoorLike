@@ -21,22 +21,57 @@ namespace VHS {
         
         // Dodać property który liczy normalized ratio 0-1 trwania skilla i casta
         public Actor Owner { get; private set; }
-        public SkillState SkillState { get; private set; } // Managed by SkillCaster
+        public SkillState SkillState { get; private set; }
         
         public void SetOwner(Actor owner) => Owner = owner;
-        public void SetState(SkillState state) => SkillState = state;
 
         public virtual bool CanCastSkill() => true;
+
+        public void StartTarget() {
+            SkillState = SkillState.Targetting;
+            StartTarget_Hook();
+        }
+
+        /// <summary>
+        /// Called After Start Target
+        /// </summary>
+        public virtual void StartTarget_Hook() { }
         
-        public virtual void StartTarget() { }
+        /// <summary>
+        /// Called every tick when Targetting is active
+        /// </summary>
         public virtual void TickTarget(float deltaTime) { }
+        
+        /// <summary>
+        /// Called after the targetting is finish
+        /// </summary>
         public virtual void FinishTarget() { }
+
+        public  void StartSkill() {
+            SkillState = SkillState.InProgress;
+            StartSkill_Hook();
+        }
+
+        /// <summary>
+        /// Called After skill is Started
+        /// </summary>
+        public virtual void StartSkill_Hook() {}
         
-        
-        public virtual void StartSkill() { }
+        /// <summary>
+        /// Called every tick when Skill is active
+        /// </summary>
         public virtual void TickSkill(float deltaTime) { }
-        public virtual void FinishSkill() { }
         
+        public void FinishSkill() {
+            FinishSkill_Hook();
+            SkillState = SkillState.Finished;
+        }
+
+        /// <summary>
+        /// Called after skill is Finished
+        /// </summary>
+        public virtual void FinishSkill_Hook() {}
+
         /// <summary>
         /// Called only if current skill State is during Targetting
         /// </summary>
@@ -51,6 +86,11 @@ namespace VHS {
         /// Called when skill is canceled, independently of it current state
         /// </summary>
         public virtual void Abort() { }
+
+        /// <summary>
+        /// Called before skill Activation and after Skill Finish
+        /// </summary>
+        public virtual void Reset() => SkillState = SkillState.None;
     }
     
     [Serializable] // Jak się nie uda z generyczną CastSkillem w Node Canvas to zamień spowrotem by został tylko Skill klasa
