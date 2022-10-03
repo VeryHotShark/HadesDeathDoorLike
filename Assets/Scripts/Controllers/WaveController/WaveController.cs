@@ -10,7 +10,9 @@ namespace VHS {
 
         private List<Wave> _waves;
         
+        public event Action OnWavesStart = delegate { };
         public event Action OnWavesCleared = delegate { };
+        public event Action<int> OnWaveChanged = delegate { };
 
         private Wave _currentWave;
         private int _currentWaveIndex;
@@ -44,6 +46,7 @@ namespace VHS {
             Timing.CallDelayed(_timeBetweenWaves, delegate {
                 _currentWave = _waves[index];
                 _currentWave.StartWave();
+                OnWaveChanged(index);
             });
         }
 
@@ -55,6 +58,7 @@ namespace VHS {
         public void StartWaves() {
             _currentWaveIndex = 0;
             StartWave(_currentWaveIndex);
+            OnWavesStart();
         }
     }
 }

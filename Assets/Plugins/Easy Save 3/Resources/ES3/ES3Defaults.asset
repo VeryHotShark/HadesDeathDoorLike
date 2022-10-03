@@ -40,10 +40,10 @@ MonoBehaviour:
     - Zenject-IntegrationTests
     - Cinemachine
     - MoreMountains.Feedbacks.MMTools
-    - Assembly-CSharp
     - MoreMountains.Feedbacks.NiceVibrations
     - MoreMountains.Feedbacks.PostProcessing
     - MoreMountains.Feedbacks.HDRP
+    - Assembly-CSharp
     - Animancer
     - Animancer.FSM
     - MoreMountains.Feedbacks.TextMeshPro
