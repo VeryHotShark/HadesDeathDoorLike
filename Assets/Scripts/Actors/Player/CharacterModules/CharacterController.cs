@@ -13,9 +13,8 @@ namespace VHS {
 
         private CharacterRoll _rollModule;
         private CharacterMovement _movementModule;
-        private CharacterLockTarget _lockTargetModule;
-        private CharacterRangeCombat _rangeCombatModule;
         private CharacterMeleeCombat _meleeCombatModule;
+        private CharacterRangeCombat _rangeCombatModule;
         private CharacterFallingMovement _fallingMovementModule;
 
         private StateMachine<CharacterModule> _stateMachine;
@@ -30,15 +29,12 @@ namespace VHS {
         public Vector3 LastNonZeroMoveInput { get; set; }
         public CharacterInputs LastCharacterInputs { get; private set; }
 
-        public ITargetable LockTarget => _lockTargetModule ? _lockTargetModule.LockTarget : null;
-
         private void Awake() {
             _motor = GetComponent<KinematicCharacterMotor>();
             _motor.CharacterController = this;
 
             _rollModule = GetComponent<CharacterRoll>();
             _movementModule = GetComponent<CharacterMovement>();
-            _lockTargetModule = GetComponent<CharacterLockTarget>();
             _meleeCombatModule = GetComponent<CharacterMeleeCombat>();
             _rangeCombatModule = GetComponent<CharacterRangeCombat>();
             _fallingMovementModule = GetComponent<CharacterFallingMovement>();
@@ -66,14 +62,11 @@ namespace VHS {
                 LastNonZeroMoveInput = MoveInput;
 
             if (Motor.GroundingStatus.IsStableOnGround) {
-                if (inputs.LockTarget && _lockTargetModule)
-                    _lockTargetModule.ToggleLockTarget();
-                
                 if (inputs.RollDown)
                     _stateMachine.SetState(_rollModule);
-                // else if (inputs.AttackDown && LockTarget != null)
-                    // _stateMachine.SetState(_rangeCombatModule);
-                else if (inputs.AttackDown && !_meleeCombatModule.IsOnCooldown)
+                else if (inputs.SecondaryAttackDown)
+                    _stateMachine.SetState(_rangeCombatModule);
+                else if (inputs.PrimaryAttackDown && !_meleeCombatModule.IsOnCooldown)
                     _stateMachine.SetState(_meleeCombatModule);
             }
 
@@ -93,9 +86,6 @@ namespace VHS {
 
         public void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
             _stateMachine.CurrentState.UpdateRotation(ref currentRotation, deltaTime);
-            
-            if(LockTarget != null && _meleeCombatModule.AttackTimer.IsActive)
-                _movementModule.UpdateRotation(ref currentRotation, deltaTime);
         }
 
         public void BeforeCharacterUpdate(float deltaTime) =>

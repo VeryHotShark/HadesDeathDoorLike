@@ -41,7 +41,8 @@ namespace VHS {
 
             if (hittable != null) {
                 HitData hitData = new HitData {
-                    dealer = _owner
+                    dealer = _owner,
+                    damage = 1,
                 };
                 
                 hittable.Hit(hitData);
