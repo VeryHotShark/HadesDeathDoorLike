@@ -66,7 +66,7 @@ namespace VHS {
                     _stateMachine.SetState(_rollModule);
                 else if (inputs.SecondaryAttackDown)
                     _stateMachine.SetState(_rangeCombatModule);
-                else if (inputs.PrimaryAttackDown && !_meleeCombatModule.IsOnCooldown)
+                else if(inputs.PrimaryAttackDown && !_meleeCombatModule.IsOnCooldown)
                     _stateMachine.SetState(_meleeCombatModule);
             }
 

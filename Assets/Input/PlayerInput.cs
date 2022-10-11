@@ -64,6 +64,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Parry"",
+                    ""type"": ""Button"",
+                    ""id"": ""d50f0f15-4134-4f1c-873f-497a0ad36274"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Crouch"",
                     ""type"": ""Button"",
                     ""id"": ""34269c79-dd40-45f0-ae2c-2049ccc46b6b"",
@@ -78,7 +87,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""id"": ""25ea785e-9246-4c51-a51d-73a21bde21c5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -87,13 +96,13 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""id"": ""bf894976-d7b2-44d5-9430-1c650f56e714"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Parry"",
+                    ""name"": ""UltimateAttack"",
                     ""type"": ""Button"",
-                    ""id"": ""d50f0f15-4134-4f1c-873f-497a0ad36274"",
+                    ""id"": ""8a66fb41-3331-4ab6-8387-5b09df211835"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -224,6 +233,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""8d3f8b7e-7c90-4c24-9542-d33f824a854e"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""UltimateAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""17ca7c6a-410d-4ced-b0b1-87bc590babc6"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
@@ -261,10 +281,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_CharacterControls_MousePosition = m_CharacterControls.FindAction("MousePosition", throwIfNotFound: true);
         m_CharacterControls_Roll = m_CharacterControls.FindAction("Roll", throwIfNotFound: true);
         m_CharacterControls_Look = m_CharacterControls.FindAction("Look", throwIfNotFound: true);
+        m_CharacterControls_Parry = m_CharacterControls.FindAction("Parry", throwIfNotFound: true);
         m_CharacterControls_Crouch = m_CharacterControls.FindAction("Crouch", throwIfNotFound: true);
         m_CharacterControls_PrimaryAttack = m_CharacterControls.FindAction("PrimaryAttack", throwIfNotFound: true);
         m_CharacterControls_SecondaryAttack = m_CharacterControls.FindAction("SecondaryAttack", throwIfNotFound: true);
-        m_CharacterControls_Parry = m_CharacterControls.FindAction("Parry", throwIfNotFound: true);
+        m_CharacterControls_UltimateAttack = m_CharacterControls.FindAction("UltimateAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -328,10 +349,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_MousePosition;
     private readonly InputAction m_CharacterControls_Roll;
     private readonly InputAction m_CharacterControls_Look;
+    private readonly InputAction m_CharacterControls_Parry;
     private readonly InputAction m_CharacterControls_Crouch;
     private readonly InputAction m_CharacterControls_PrimaryAttack;
     private readonly InputAction m_CharacterControls_SecondaryAttack;
-    private readonly InputAction m_CharacterControls_Parry;
+    private readonly InputAction m_CharacterControls_UltimateAttack;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -340,10 +362,11 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @MousePosition => m_Wrapper.m_CharacterControls_MousePosition;
         public InputAction @Roll => m_Wrapper.m_CharacterControls_Roll;
         public InputAction @Look => m_Wrapper.m_CharacterControls_Look;
+        public InputAction @Parry => m_Wrapper.m_CharacterControls_Parry;
         public InputAction @Crouch => m_Wrapper.m_CharacterControls_Crouch;
         public InputAction @PrimaryAttack => m_Wrapper.m_CharacterControls_PrimaryAttack;
         public InputAction @SecondaryAttack => m_Wrapper.m_CharacterControls_SecondaryAttack;
-        public InputAction @Parry => m_Wrapper.m_CharacterControls_Parry;
+        public InputAction @UltimateAttack => m_Wrapper.m_CharacterControls_UltimateAttack;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -365,6 +388,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnLook;
+                @Parry.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnParry;
+                @Parry.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnParry;
+                @Parry.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnParry;
                 @Crouch.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnCrouch;
                 @Crouch.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnCrouch;
                 @Crouch.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnCrouch;
@@ -374,9 +400,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @SecondaryAttack.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSecondaryAttack;
                 @SecondaryAttack.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSecondaryAttack;
                 @SecondaryAttack.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSecondaryAttack;
-                @Parry.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnParry;
-                @Parry.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnParry;
-                @Parry.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnParry;
+                @UltimateAttack.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnUltimateAttack;
+                @UltimateAttack.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnUltimateAttack;
+                @UltimateAttack.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnUltimateAttack;
             }
             m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -393,6 +419,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @Parry.started += instance.OnParry;
+                @Parry.performed += instance.OnParry;
+                @Parry.canceled += instance.OnParry;
                 @Crouch.started += instance.OnCrouch;
                 @Crouch.performed += instance.OnCrouch;
                 @Crouch.canceled += instance.OnCrouch;
@@ -402,9 +431,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @SecondaryAttack.started += instance.OnSecondaryAttack;
                 @SecondaryAttack.performed += instance.OnSecondaryAttack;
                 @SecondaryAttack.canceled += instance.OnSecondaryAttack;
-                @Parry.started += instance.OnParry;
-                @Parry.performed += instance.OnParry;
-                @Parry.canceled += instance.OnParry;
+                @UltimateAttack.started += instance.OnUltimateAttack;
+                @UltimateAttack.performed += instance.OnUltimateAttack;
+                @UltimateAttack.canceled += instance.OnUltimateAttack;
             }
         }
     }
@@ -424,9 +453,10 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnMousePosition(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnParry(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnPrimaryAttack(InputAction.CallbackContext context);
         void OnSecondaryAttack(InputAction.CallbackContext context);
-        void OnParry(InputAction.CallbackContext context);
+        void OnUltimateAttack(InputAction.CallbackContext context);
     }
 }

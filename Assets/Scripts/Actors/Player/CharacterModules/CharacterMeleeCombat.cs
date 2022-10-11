@@ -6,6 +6,9 @@ using UnityEngine;
 using MEC;
 
 namespace VHS {
+    /// <summary>
+    /// This whole thing might be moved to Skill
+    /// </summary>
     public class CharacterMeleeCombat : CharacterModule {
         [Serializable]
         public class AttackInfo {
@@ -14,8 +17,13 @@ namespace VHS {
             public float zOffset = 1.0f;
             public float radius = 1.0f;
         }
-        
+
         [SerializeField] private float _slowDownSharpness = 10.0f;
+        
+        [Header("Heavy Attack")]
+        [SerializeField] private float _heavyAttackThreshold = 0.2f;
+
+        [SerializeField] private AttackInfo _heavyAttackInfo;
 
         [Header("Attacks")] 
         [SerializeField] private List<AttackInfo> _attacks;
@@ -29,6 +37,7 @@ namespace VHS {
 
         private int _attackIndex;
         private bool _duringLastAtttack;
+        private bool _heavyAttackPerformed;
         private AttackInfo _currentAttack;
 
         public Timer ComboCooldown => _comboCooldown;
@@ -36,7 +45,7 @@ namespace VHS {
         public Timer PreAttackBufferTimer => _preAttackBufferTimer;
 
         public bool IsOnCooldown => _comboCooldown.IsActive;
-        public bool IsDuringAttack => AttackTimer.IsActive;
+        public bool IsDuringAttack => AttackTimer.IsActive || _heavyAttackInfo.duration.IsActive;
         public bool IsDuringLastAttack => _attackIndex >= _attacks.Count;
         public bool IsDuringInputBuffering => _preAttackBufferTimer.IsActive || _postAttackBufferTimer.IsActive;
 
@@ -46,6 +55,7 @@ namespace VHS {
             foreach (AttackInfo attack in _attacks) 
                 attack.duration.OnEnd += OnAttackEnd;
 
+            _heavyAttackInfo.duration.OnEnd += OnAttackEnd;
             _postAttackBufferTimer.OnEnd += OnPostInputBufferEnd;
         }
 
@@ -53,6 +63,7 @@ namespace VHS {
             foreach (AttackInfo attack in _attacks) 
                 attack.duration.OnEnd -= OnAttackEnd;
             
+            _heavyAttackInfo.duration.OnEnd -= OnAttackEnd;
             _postAttackBufferTimer.OnEnd -= OnPostInputBufferEnd;
         }
 
@@ -71,29 +82,39 @@ namespace VHS {
                 Controller.TransitionToDefaultState();
         }
 
-        public override void OnEnter() => _attackIndex = 0;
+        public override void OnEnter() {
+            _heavyAttackPerformed = false;
+            _attackIndex = 0;
+        }
+
         public override void OnExit() => _attackIndex = 0;
 
-        private void Attack() {
-            _currentAttack = _attacks[_attackIndex];
-            
+        private void Attack(AttackInfo attackInfo) {
             _preAttackBufferTimer.Reset();
-            _currentAttack.duration.Start();
+            attackInfo.duration.Start();
 
             Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
             Controller.LastNonZeroMoveInput = Controller.LookInput;
-            Controller.AddVelocity(_currentAttack.pushForce * Controller.LookInput);
+            Controller.AddVelocity(attackInfo.pushForce * Controller.LookInput);
             
-            _attackIndex++;
-            
-            Timing.CallDelayed(_hitDelay, CheckForHittables, gameObject);
+            Timing.CallDelayed(_hitDelay, () => CheckForHittables(attackInfo), gameObject);
         }
 
-        private void CheckForHittables() {
-            Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter +
-                               Motor.CharacterForward * _currentAttack.zOffset;
+        private void LightAttack() {
+            _currentAttack = _attacks[_attackIndex];
+            Attack(_currentAttack);
+            _attackIndex++;
+        }
 
-            Collider[] _colliders = Physics.OverlapSphere(position, _currentAttack.radius, LayerManager.Masks.DEFAULT_AND_NPC);
+        private void HeavyAttack() {
+           Attack(_heavyAttackInfo);
+        }
+
+        private void CheckForHittables(AttackInfo attackInfo) {
+            Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter +
+                               Motor.CharacterForward * attackInfo.zOffset;
+
+            Collider[] _colliders = Physics.OverlapSphere(position, attackInfo.radius, LayerManager.Masks.DEFAULT_AND_NPC);
 
             bool hitSomething = false;
             
@@ -115,7 +136,7 @@ namespace VHS {
                 }
             } 
             
-            DebugExtension.DebugWireSphere(position, _currentAttack.radius, 1.0f);
+            DebugExtension.DebugWireSphere(position, attackInfo.radius, 1.0f);
             
             if(hitSomething && _hitFeedback)
                 _hitFeedback.PlayFeedbacks();
@@ -126,18 +147,25 @@ namespace VHS {
 
             if (IsDuringLastAttack)
                 return;
-
-            if (inputs.PrimaryAttackDown) {
-                if(AttackTimer.IsActive)   
-                    _preAttackBufferTimer.Start();
-                else 
-                    Attack();
+            
+            if (inputs.PrimaryAttackHeld) {
+                _heavyAttackPerformed = true;
+                HeavyAttack();                
+            }
+            else if (inputs.PrimaryAttackUp ) {
+                if (!_heavyAttackPerformed) {
+                    if(AttackTimer.IsActive)   
+                        _preAttackBufferTimer.Start();
+                    else 
+                        LightAttack();
+                }
+                else
+                    _heavyAttackPerformed = false;
             }
 
             // Handle Pre Input Buffering
             if (!AttackTimer.IsActive && _preAttackBufferTimer.IsActive) 
-                Attack();
-            
+                LightAttack();
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {

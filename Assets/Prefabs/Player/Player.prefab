@@ -204,7 +204,6 @@ GameObject:
   - component: {fileID: 3532176832971602165}
   - component: {fileID: 3532176832971602167}
   - component: {fileID: 3532176832971602160}
-  - component: {fileID: 3532176832971602158}
   - component: {fileID: 3532176832971602157}
   - component: {fileID: 3532176832971602161}
   - component: {fileID: 3532176832971602162}
@@ -360,24 +359,6 @@ MonoBehaviour:
   _maxStableMoveSpeed: 10
   _stableMovementSharpness: 10
   _orientationSharpness: 10
---- !u!114 &3532176832971602158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3532176832971602171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6fa3e0808f51af4ba1df9fe7d631894, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _customUpdate: 0
-  _updateRate: 0.2
-  _lockTargetRadius: 50
-  _targetSelectDotThreshold: 0.8
 --- !u!114 &3532176832971602157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +397,14 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _slowDownSharpness: 10
+  _heavyAttackThreshold: 0.2
+  _heavyAttackInfo:
+    duration:
+      _duration: 0.4
+      _looping: 0
+    pushForce: 20
+    zOffset: 2
+    radius: 3
   _attacks:
   - duration:
       _duration: 0.25
@@ -436,13 +425,13 @@ MonoBehaviour:
     zOffset: 2
     radius: 2
   _comboCooldown:
-    _duration: 0.1
+    _duration: 0.3
     _looping: 0
   _preAttackBufferTimer:
     _duration: 0.3
     _looping: 0
   _postAttackBufferTimer:
-    _duration: 0.3
+    _duration: 0.15
     _looping: 0
   _hitDelay: 0.1
   _hitFeedback: {fileID: 3532176834377499850}
@@ -480,7 +469,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _duration: 0.4
-  _distance: 5
+  _distance: 6.5
   _maxRollAngle: 45
   _curve:
     serializedVersion: 2

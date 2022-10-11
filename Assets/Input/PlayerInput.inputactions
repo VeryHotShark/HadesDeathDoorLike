@@ -42,6 +42,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Parry",
+                    "type": "Button",
+                    "id": "d50f0f15-4134-4f1c-873f-497a0ad36274",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Crouch",
                     "type": "Button",
                     "id": "34269c79-dd40-45f0-ae2c-2049ccc46b6b",
@@ -56,7 +65,7 @@
                     "id": "25ea785e-9246-4c51-a51d-73a21bde21c5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 },
                 {
@@ -65,13 +74,13 @@
                     "id": "bf894976-d7b2-44d5-9430-1c650f56e714",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Parry",
+                    "name": "UltimateAttack",
                     "type": "Button",
-                    "id": "d50f0f15-4134-4f1c-873f-497a0ad36274",
+                    "id": "8a66fb41-3331-4ab6-8387-5b09df211835",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -197,6 +206,17 @@
                     "processors": "",
                     "groups": "KeyboardAndMouse",
                     "action": "SecondaryAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d3f8b7e-7c90-4c24-9542-d33f824a854e",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "UltimateAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
