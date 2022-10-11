@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using MEC;
+using UnityEngine.Serialization;
 
 namespace VHS {
     /// <summary>
@@ -17,27 +18,37 @@ namespace VHS {
             public float zOffset = 1.0f;
             public float radius = 1.0f;
         }
-
-        [SerializeField] private float _slowDownSharpness = 10.0f;
         
-        [Header("Heavy Attack")]
-        [SerializeField] private float _heavyAttackThreshold = 0.2f;
+        private enum AttackType {
+            Light,
+            Heavy
+        } 
 
-        [SerializeField] private AttackInfo _heavyAttackInfo;
-
-        [Header("Attacks")] 
-        [SerializeField] private List<AttackInfo> _attacks;
+        [Header("General")]
+        [SerializeField] private float _slowDownSharpness = 10.0f;
         [SerializeField] private Timer _comboCooldown = new(0.5f);
         [SerializeField] private Timer _preAttackBufferTimer = new(0.3f);
         [SerializeField] private Timer _postAttackBufferTimer = new(0.3f);
 
+        [FormerlySerializedAs("_attacks")]
+        [Header("Attacks")] 
+        [SerializeField] private List<AttackInfo> _lightAttacks;
+        [SerializeField] private List<AttackInfo> _heavyAttacks;
+        
         [Header("Hit")]
         [SerializeField] private float _hitDelay = 0.2f;
-        [SerializeField] private MMF_Player _hitFeedback;
+        [FormerlySerializedAs("_hitFeedback")] [SerializeField] private MMF_Player _lightHitFeedback;
+        [SerializeField] private MMF_Player _heavyHitFeedback;
 
+        private int _comboIndex;
         private int _attackIndex;
-        private bool _duringLastAtttack;
+        
+        private bool _duringLastAttack;
+        private bool _lastAttackPrimary;
         private bool _heavyAttackPerformed;
+
+        private Queue<AttackType> _queuedAttacks = new Queue<AttackType>();
+
         private AttackInfo _currentAttack;
 
         public Timer ComboCooldown => _comboCooldown;
@@ -45,25 +56,30 @@ namespace VHS {
         public Timer PreAttackBufferTimer => _preAttackBufferTimer;
 
         public bool IsOnCooldown => _comboCooldown.IsActive;
-        public bool IsDuringAttack => AttackTimer.IsActive || _heavyAttackInfo.duration.IsActive;
-        public bool IsDuringLastAttack => _attackIndex >= _attacks.Count;
+        public bool IsDuringAttack => AttackTimer.IsActive;
+        public bool IsDuringLastAttack => _attackIndex >=
+                                          (_lastAttackPrimary ? _lightAttacks.Count : _heavyAttacks.Count);
         public bool IsDuringInputBuffering => _preAttackBufferTimer.IsActive || _postAttackBufferTimer.IsActive;
 
-        private void Awake() => _currentAttack = _attacks[0];
+        private void Awake() => _currentAttack = _lightAttacks[0];
 
         private void OnEnable() {
-            foreach (AttackInfo attack in _attacks) 
+            foreach (AttackInfo attack in _lightAttacks) 
                 attack.duration.OnEnd += OnAttackEnd;
 
-            _heavyAttackInfo.duration.OnEnd += OnAttackEnd;
+            foreach (AttackInfo attack in _heavyAttacks)
+                attack.duration.OnEnd += OnAttackEnd;
+                
             _postAttackBufferTimer.OnEnd += OnPostInputBufferEnd;
         }
 
         private void OnDisable() {
-            foreach (AttackInfo attack in _attacks) 
+            foreach (AttackInfo attack in _lightAttacks) 
                 attack.duration.OnEnd -= OnAttackEnd;
             
-            _heavyAttackInfo.duration.OnEnd -= OnAttackEnd;
+            foreach (AttackInfo attack in _heavyAttacks)
+                attack.duration.OnEnd -= OnAttackEnd;
+            
             _postAttackBufferTimer.OnEnd -= OnPostInputBufferEnd;
         }
 
@@ -83,6 +99,7 @@ namespace VHS {
         }
 
         public override void OnEnter() {
+            _queuedAttacks.Clear();
             _heavyAttackPerformed = false;
             _attackIndex = 0;
         }
@@ -101,13 +118,27 @@ namespace VHS {
         }
 
         private void LightAttack() {
-            _currentAttack = _attacks[_attackIndex];
+            if (!_lastAttackPrimary)
+                _attackIndex = 0;
+            
+            _lastAttackPrimary = true;
+            
+            _currentAttack = _lightAttacks[_attackIndex];
             Attack(_currentAttack);
             _attackIndex++;
         }
 
         private void HeavyAttack() {
-           Attack(_heavyAttackInfo);
+            _heavyAttackPerformed = true;
+            
+            if (_lastAttackPrimary)
+                _attackIndex = 0;
+            
+            _lastAttackPrimary = false;
+
+            _currentAttack = _heavyAttacks[_attackIndex];
+           Attack(_currentAttack);
+           _attackIndex++;
         }
 
         private void CheckForHittables(AttackInfo attackInfo) {
@@ -136,36 +167,54 @@ namespace VHS {
                 }
             } 
             
-            DebugExtension.DebugWireSphere(position, attackInfo.radius, 1.0f);
-            
-            if(hitSomething && _hitFeedback)
-                _hitFeedback.PlayFeedbacks();
+            DebugExtension.DebugWireSphere(position,_lastAttackPrimary ? Color.yellow : Color.red, attackInfo.radius, attackInfo.duration.Duration);
+
+            if (hitSomething) {
+                if(_lastAttackPrimary)   
+                    _lightHitFeedback.PlayFeedbacks();
+                else
+                    _heavyHitFeedback.PlayFeedbacks();
+            }
         }
 
         public override void SetInputs(CharacterInputs inputs) {
-            // Controller.MoveInput = Vector3.zero;
-
             if (IsDuringLastAttack)
                 return;
-            
-            if (inputs.PrimaryAttackHeld) {
-                _heavyAttackPerformed = true;
-                HeavyAttack();                
-            }
-            else if (inputs.PrimaryAttackUp ) {
-                if (!_heavyAttackPerformed) {
-                    if(AttackTimer.IsActive)   
-                        _preAttackBufferTimer.Start();
-                    else 
-                        LightAttack();
+
+            if (inputs.PrimaryAttackPerformed) {
+                if (AttackTimer.IsActive) {
+                    _preAttackBufferTimer.Start();
+                    _queuedAttacks.Enqueue(AttackType.Heavy);   
                 }
                 else
+                    HeavyAttack();
+            }
+            
+            if (inputs.PrimaryAttackReleased ) {
+                if (_heavyAttackPerformed) 
                     _heavyAttackPerformed = false;
+                else
+                {
+                    if (AttackTimer.IsActive) {
+                        _preAttackBufferTimer.Start();
+                        _queuedAttacks.Enqueue(AttackType.Light);   
+                    }
+                    else
+                        LightAttack();
+                }
             }
 
             // Handle Pre Input Buffering
-            if (!AttackTimer.IsActive && _preAttackBufferTimer.IsActive) 
-                LightAttack();
+            if (!AttackTimer.IsActive && _preAttackBufferTimer.IsActive) {
+                if (_queuedAttacks.Count > 0) {
+                    AttackType queuedAttack = _queuedAttacks.Dequeue();
+                    
+                    if(queuedAttack == AttackType.Light)
+                        LightAttack();
+                    else
+                        HeavyAttack();
+                }
+            } 
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {

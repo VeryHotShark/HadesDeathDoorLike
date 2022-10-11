@@ -16,9 +16,9 @@ namespace VHS {
         public bool RollDown;
         public bool ParryDown;
         
-        public bool PrimaryAttackDown;
-        public bool PrimaryAttackHeld;
-        public bool PrimaryAttackUp;
+        public bool PrimaryAttackPressed;
+        public bool PrimaryAttackPerformed;
+        public bool PrimaryAttackReleased;
         
         public bool SecondaryAttackDown;
         public bool SecondaryAttackHeld;
@@ -68,19 +68,15 @@ namespace VHS {
             _input.CharacterControls.Movement.canceled += ctx => _moveInput = ctx.ReadValue<Vector2>();
             
             _input.CharacterControls.PrimaryAttack.started += ctx => {
-                _characterInputs.PrimaryAttackUp = false;
-                _characterInputs.PrimaryAttackDown = ctx.ReadValueAsButton();
+                // Log("Started " + ctx.ReadValueAsButton());
             };
             
             _input.CharacterControls.PrimaryAttack.performed += ctx => {
-                _characterInputs.PrimaryAttackDown = false;
-                _characterInputs.PrimaryAttackHeld = ctx.ReadValueAsButton();
+                // Log("Performed " + ctx.ReadValueAsButton());
             };
             
             _input.CharacterControls.PrimaryAttack.canceled += ctx => {
-                _characterInputs.PrimaryAttackDown = false;
-                _characterInputs.PrimaryAttackHeld = false;
-                _characterInputs.PrimaryAttackUp = true;
+                // Log("Canceled " + ctx.ReadValueAsButton());
             };
 
             _input.CharacterControls.SecondaryAttack.started += ctx => {
@@ -94,9 +90,9 @@ namespace VHS {
             };
             
             _input.CharacterControls.SecondaryAttack.canceled += ctx => {
+                _characterInputs.SecondaryAttackUp = true;
                 _characterInputs.SecondaryAttackHeld = false;
                 _characterInputs.SecondaryAttackDown = false;
-                _characterInputs.SecondaryAttackUp = true;
             };
         }
         
@@ -112,10 +108,14 @@ namespace VHS {
         private void HandleCharacterInput() {
             if(!_character)
                 return;
-
+            
             _characterInputs.LockTarget = Keyboard.current.shiftKey.wasPressedThisFrame;
             _characterInputs.RollDown = _input.CharacterControls.Roll.triggered;
             _characterInputs.ParryDown = _input.CharacterControls.Parry.triggered;
+
+            _characterInputs.PrimaryAttackPressed = _input.CharacterControls.PrimaryAttack.WasPressedThisFrame();
+            _characterInputs.PrimaryAttackPerformed = _input.CharacterControls.PrimaryAttack.WasPerformedThisFrame();
+            _characterInputs.PrimaryAttackReleased = _input.CharacterControls.PrimaryAttack.WasReleasedThisFrame();
             
             _characterInputs.MoveAxisRight = _moveInput.x;
             _characterInputs.MoveAxisForward = _moveInput.y;
@@ -129,9 +129,9 @@ namespace VHS {
         }
 
         private void ResetInputs() {
-            _characterInputs.PrimaryAttackUp = false;
+            // _characterInputs.PrimaryAttackUp = false;
+            // _characterInputs.PrimaryAttackHeld = false;
             _characterInputs.SecondaryAttackUp = false;
-            _characterInputs.PrimaryAttackHeld = false;
             _characterInputs.SecondaryAttackHeld = false;
         }
     }

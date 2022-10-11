@@ -1,5 +1,167 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &602892355388481881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6651845202391211043}
+  - component: {fileID: 1327360357658161227}
+  m_Layer: 0
+  m_Name: MMFeedbackHeavyHit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6651845202391211043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602892355388481881}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.081972, y: 38.456234, z: -10.666081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3532176834494686340}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327360357658161227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602892355388481881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks: []
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  ForceTimescaleMode: 0
+  ForcedTimescaleMode: 1
+  DurationMultiplier: 1
+  DisplayFullDurationDetails: 0
+  PlayerTimescaleMode: 1
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlay: 1
+  CanPlayWhileAlreadyPlaying: 1
+  ChanceToPlay: 100
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
+  FeedbacksList:
+  - rid: 6304312991838633993
+  - rid: 6304312991838633995
+  KeepPlayModeChanges: 0
+  PerformanceMode: 0
+  ForceStopFeedbacksOnDisable: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 6304312991838633993
+      type: {class: MMF_CameraShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+      data:
+        Active: 1
+        UniqueID: -1656511011
+        Label: Camera Shake
+        Channel: 0
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        Owner: {fileID: 1327360357658161227}
+        DebugActive: 0
+        RepeatUntilStopped: 0
+        CameraShakeProperties:
+          Duration: 0.15
+          Amplitude: 0.4
+          Frequency: 30
+          AmplitudeX: 0
+          AmplitudeY: 0
+          AmplitudeZ: 0
+    - rid: 6304312991838633995
+      type: {class: MMF_FreezeFrame, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+      data:
+        Active: 1
+        UniqueID: 1797686234
+        Label: Freeze Frame
+        Channel: 0
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        Owner: {fileID: 1327360357658161227}
+        DebugActive: 0
+        FreezeFrameDuration: 0.099
+        MinimumTimescaleThreshold: 0.1
 --- !u!1 &2332168767523476194
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,15 +559,16 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _slowDownSharpness: 10
-  _heavyAttackThreshold: 0.2
-  _heavyAttackInfo:
-    duration:
-      _duration: 0.4
-      _looping: 0
-    pushForce: 20
-    zOffset: 2
-    radius: 3
-  _attacks:
+  _comboCooldown:
+    _duration: 0.3
+    _looping: 0
+  _preAttackBufferTimer:
+    _duration: 0.3
+    _looping: 0
+  _postAttackBufferTimer:
+    _duration: 0.15
+    _looping: 0
+  _lightAttacks:
   - duration:
       _duration: 0.25
       _looping: 0
@@ -424,17 +587,22 @@ MonoBehaviour:
     pushForce: 15
     zOffset: 2
     radius: 2
-  _comboCooldown:
-    _duration: 0.3
-    _looping: 0
-  _preAttackBufferTimer:
-    _duration: 0.3
-    _looping: 0
-  _postAttackBufferTimer:
-    _duration: 0.15
-    _looping: 0
+  _heavyAttacks:
+  - duration:
+      _duration: 0.4
+      _looping: 0
+    pushForce: 15
+    zOffset: 2
+    radius: 3
+  - duration:
+      _duration: 0.5
+      _looping: 0
+    pushForce: 20
+    zOffset: 2.5
+    radius: 4
   _hitDelay: 0.1
-  _hitFeedback: {fileID: 3532176834377499850}
+  _lightHitFeedback: {fileID: 3532176834377499850}
+  _heavyHitFeedback: {fileID: 1327360357658161227}
 --- !u!114 &3532176832971602162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,7 +1549,7 @@ GameObject:
   - component: {fileID: 3532176834377499851}
   - component: {fileID: 3532176834377499850}
   m_Layer: 0
-  m_Name: MMFeedbackHit
+  m_Name: MMFeedbackLightHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1561,6 +1729,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3532176834377499851}
+  - {fileID: 6651845202391211043}
   m_Father: {fileID: 3532176832971602164}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
