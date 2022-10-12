@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 3532176832971602161}
   - component: {fileID: 3532176832971602162}
   - component: {fileID: 3532176832971602163}
+  - component: {fileID: 5027354044245465734}
   - component: {fileID: 3532176832971602152}
   - component: {fileID: 3532176832971602153}
   - component: {fileID: 3532176832971602155}
@@ -565,10 +566,10 @@ MonoBehaviour:
   _comboCooldown:
     _duration: 0.3
     _looping: 0
-  _preLightAttackBuffer:
+  _preAttackBuffer:
     _duration: 0.3
     _looping: 0
-  _postLightAttackBuffer:
+  _postAttackBuffer:
     _duration: 0.3
     _looping: 0
   _lightAttacks:
@@ -674,6 +675,25 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5027354044245465734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532176832971602171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e18e55be01a1443bb0b51b023c125c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _instanceLogs: 1
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _customUpdate: 0
+  _updateRate: 0.2
+  _parryWindow:
+    _duration: 0.2
+    _looping: 0
 --- !u!114 &3532176832971602152
 MonoBehaviour:
   m_ObjectHideFlags: 0
