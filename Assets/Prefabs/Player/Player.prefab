@@ -565,10 +565,10 @@ MonoBehaviour:
   _comboCooldown:
     _duration: 0.3
     _looping: 0
-  _preAttackBufferTimer:
+  _preLightAttackBuffer:
     _duration: 0.3
     _looping: 0
-  _postAttackBufferTimer:
+  _postLightAttackBuffer:
     _duration: 0.3
     _looping: 0
   _lightAttacks:
@@ -590,31 +590,27 @@ MonoBehaviour:
     pushForce: 15
     zOffset: 2
     radius: 2
-  _heavyAttacks:
-  - duration:
+  _heavyAttack:
+    duration:
       _duration: 0.3
-      _looping: 0
-    pushForce: 10
-    zOffset: 2
-    radius: 3
-  - duration:
-      _duration: 0.4
       _looping: 0
     pushForce: 15
-    zOffset: 2.5
-    radius: 4
-  - duration:
+    zOffset: 2
+    radius: 3
+  _dashAttack:
+    duration:
       _duration: 0.3
       _looping: 0
     pushForce: 10
-    zOffset: 2
-    radius: 3
-  - duration:
-      _duration: 0.4
+    zOffset: 1
+    radius: 1
+  _specialHeavyAttack:
+    duration:
+      _duration: 0.3
       _looping: 0
-    pushForce: 5
-    zOffset: 2.5
-    radius: 2
+    pushForce: 20
+    zOffset: 2
+    radius: 4
   _hitDelay: 0.1
   _lightHitFeedback: {fileID: 3532176834377499850}
   _heavyHitFeedback: {fileID: 1327360357658161227}
@@ -1811,7 +1807,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7770598, y: 1}
+    m_SensorSize: {x: 1.7766143, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

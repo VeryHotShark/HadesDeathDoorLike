@@ -15,7 +15,8 @@ namespace VHS {
         public bool LockTarget;
         public bool RollDown;
         public bool ParryDown;
-        
+
+        public bool PrimaryAttackDown;
         public bool PrimaryAttackPressed;
         public bool PrimaryAttackPerformed;
         public bool PrimaryAttackReleased;
@@ -110,6 +111,7 @@ namespace VHS {
             _characterInputs.RollDown = _input.CharacterControls.Roll.triggered;
             _characterInputs.ParryDown = _input.CharacterControls.Parry.triggered;
 
+            _characterInputs.PrimaryAttackDown = _input.CharacterControls.PrimaryAttack.IsPressed();
             _characterInputs.PrimaryAttackPressed = _input.CharacterControls.PrimaryAttack.WasPressedThisFrame();
             _characterInputs.PrimaryAttackPerformed = _input.CharacterControls.PrimaryAttack.WasPerformedThisFrame();
             _characterInputs.PrimaryAttackReleased = _input.CharacterControls.PrimaryAttack.WasReleasedThisFrame();

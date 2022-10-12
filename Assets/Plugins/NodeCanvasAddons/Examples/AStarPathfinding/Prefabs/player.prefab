@@ -93,11 +93,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_name":null,"_variables":[{"Key":{"$content":"MovementSpeed","$type":"System.String"},"Value":{"_value":6.0,"_propertyPath":null,"_name":"MovementSpeed","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]","$id":"1"}},{"Key":{"$content":"RotationSpeed","$type":"System.String"},"Value":{"_value":6.0,"_propertyPath":null,"_name":"RotationSpeed","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}]}'
+  _serializedBlackboard: '{"_variables":{"MovementSpeed":{"_value":6.0,"_name":"MovementSpeed","_id":"414e0c31-47c4-4509-984d-e50980cb77d0","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"RotationSpeed":{"_value":6.0,"_name":"RotationSpeed","_id":"f8152d02-e8c8-46e2-877a-f96c0f93cd3f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences: []
-  _serializedVariables: []
+  _serializedVariables:
+  - _json: '{"_value":6.0,"_name":"MovementSpeed","_id":"414e0c31-47c4-4509-984d-e50980cb77d0","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":6.0,"_name":"RotationSpeed","_id":"f8152d02-e8c8-46e2-877a-f96c0f93cd3f","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
