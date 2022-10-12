@@ -20,6 +20,7 @@ public class Timer {
     public event Action OnEnd = delegate {  };
 
     public float Duration => _duration;
+    public bool Started => _started;
     public bool IsLooping => _looping;
     public bool IsActive => _started && Time.time < _timestamp + _duration;
 

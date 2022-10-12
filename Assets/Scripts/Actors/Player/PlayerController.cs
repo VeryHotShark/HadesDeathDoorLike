@@ -59,7 +59,6 @@ namespace VHS {
 
         private void SetInputs() {
             _input = new PlayerInput();
-            _characterInputs = new CharacterInputs();
 
             _input.CharacterControls.MousePosition.performed += ctx => _mousePos = ctx.ReadValue<Vector2>();
             _input.CharacterControls.MousePosition.canceled += ctx => _mousePos = ctx.ReadValue<Vector2>();
@@ -108,6 +107,8 @@ namespace VHS {
         private void HandleCharacterInput() {
             if(!_character)
                 return;
+
+            _characterInputs = new CharacterInputs();
             
             _characterInputs.LockTarget = Keyboard.current.shiftKey.wasPressedThisFrame;
             _characterInputs.RollDown = _input.CharacterControls.Roll.triggered;
@@ -125,7 +126,7 @@ namespace VHS {
 
             _character.SetInputs(ref _characterInputs);
 
-            ResetInputs();
+            // ResetInputs();
         }
 
         private void ResetInputs() {

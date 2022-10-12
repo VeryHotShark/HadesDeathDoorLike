@@ -30,14 +30,13 @@ namespace VHS {
         [SerializeField] private Timer _preAttackBufferTimer = new(0.3f);
         [SerializeField] private Timer _postAttackBufferTimer = new(0.3f);
 
-        [FormerlySerializedAs("_attacks")]
         [Header("Attacks")] 
         [SerializeField] private List<AttackInfo> _lightAttacks;
         [SerializeField] private List<AttackInfo> _heavyAttacks;
         
         [Header("Hit")]
         [SerializeField] private float _hitDelay = 0.2f;
-        [FormerlySerializedAs("_hitFeedback")] [SerializeField] private MMF_Player _lightHitFeedback;
+        [SerializeField] private MMF_Player _lightHitFeedback;
         [SerializeField] private MMF_Player _heavyHitFeedback;
 
         private int _comboIndex;

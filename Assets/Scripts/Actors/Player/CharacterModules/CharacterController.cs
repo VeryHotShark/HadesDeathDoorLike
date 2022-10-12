@@ -8,7 +8,11 @@ using UnityEngine;
 namespace VHS {
     public class CharacterController : ChildBehaviour<Player>, ICharacterController, IUpdateListener {
         [ShowInInspector] public CharacterModule CurrentModule => _stateMachine?.CurrentState;
+        
+        // Remove this if Unity fixes Simultanoeus Release Button
+        [SerializeField] private Timer _inputDirectionChangeTimer = new Timer(0.1f);
 
+        private Vector3 _lastMoveInput;
         private Vector3 _internalVelocityAdd;
 
         private CharacterRoll _rollModule;
@@ -52,14 +56,21 @@ namespace VHS {
             Vector3 rawInput = new Vector3(inputs.MoveAxisRight, 0.0f, inputs.MoveAxisForward);
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
 
-            Vector3 cameraPlanarDirection =
-                Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
+            if (_lastMoveInput != clampedMoveInput) {
+                _inputDirectionChangeTimer.Start();
+                _lastMoveInput = clampedMoveInput;
+            }
+            
+            if (!_inputDirectionChangeTimer.IsActive) {
+                Vector3 cameraPlanarDirection =
+                    Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
 
-            Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
-            MoveInput = cameraPlanarRotation * clampedMoveInput;
-
-            if (clampedMoveInput != Vector3.zero)
-                LastNonZeroMoveInput = MoveInput;
+                Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
+                MoveInput = cameraPlanarRotation * clampedMoveInput;
+                
+                if (clampedMoveInput != Vector3.zero)
+                    LastNonZeroMoveInput = MoveInput;
+            }
 
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.RollDown)
