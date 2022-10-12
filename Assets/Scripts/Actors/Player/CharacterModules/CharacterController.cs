@@ -75,7 +75,7 @@ namespace VHS {
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.RollDown)
                     _stateMachine.SetState(_rollModule);
-                else if (inputs.SecondaryAttackDown)
+                else if (inputs.SecondaryAttackPressed)
                     _stateMachine.SetState(_rangeCombatModule);
                 else if(inputs.PrimaryAttackPressed && !_meleeCombatModule.IsOnCooldown)
                     _stateMachine.SetState(_meleeCombatModule);

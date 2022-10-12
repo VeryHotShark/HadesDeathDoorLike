@@ -46,6 +46,7 @@ namespace VHS {
                 };
                 
                 hittable.Hit(hitData);
+                PlayHitFX();
             }
             
             Destroy(gameObject);

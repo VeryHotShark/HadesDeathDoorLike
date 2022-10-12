@@ -8,7 +8,7 @@ namespace VHS {
         [SerializeField] private Projectile _projectile;
 
         public override void SetInputs(CharacterInputs inputs) {
-            if(inputs.SecondaryAttackUp)
+            if(inputs.SecondaryAttackReleased)
                 Shoot();
         }
 

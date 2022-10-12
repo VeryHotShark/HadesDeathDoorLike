@@ -20,9 +20,9 @@ namespace VHS {
         public bool PrimaryAttackPerformed;
         public bool PrimaryAttackReleased;
         
-        public bool SecondaryAttackDown;
-        public bool SecondaryAttackHeld;
-        public bool SecondaryAttackUp;
+        public bool SecondaryAttackPressed;
+        public bool SecondaryAttackPerformed;
+        public bool SecondaryAttackReleased;
 
         public Quaternion CameraRotation;
         public Vector3 CursorPosition;
@@ -79,19 +79,15 @@ namespace VHS {
             };
 
             _input.CharacterControls.SecondaryAttack.started += ctx => {
-                _characterInputs.SecondaryAttackUp = false;
-                _characterInputs.SecondaryAttackDown = ctx.ReadValueAsButton();
+                
             };
             
             _input.CharacterControls.SecondaryAttack.performed += ctx => {
-                _characterInputs.SecondaryAttackDown = false;
-                _characterInputs.SecondaryAttackHeld = ctx.ReadValueAsButton();
+                
             };
             
             _input.CharacterControls.SecondaryAttack.canceled += ctx => {
-                _characterInputs.SecondaryAttackUp = true;
-                _characterInputs.SecondaryAttackHeld = false;
-                _characterInputs.SecondaryAttackDown = false;
+                
             };
         }
         
@@ -118,6 +114,10 @@ namespace VHS {
             _characterInputs.PrimaryAttackPerformed = _input.CharacterControls.PrimaryAttack.WasPerformedThisFrame();
             _characterInputs.PrimaryAttackReleased = _input.CharacterControls.PrimaryAttack.WasReleasedThisFrame();
             
+            _characterInputs.SecondaryAttackPressed = _input.CharacterControls.SecondaryAttack.WasPressedThisFrame();
+            _characterInputs.SecondaryAttackPerformed = _input.CharacterControls.SecondaryAttack.WasPerformedThisFrame();
+            _characterInputs.SecondaryAttackReleased = _input.CharacterControls.SecondaryAttack.WasReleasedThisFrame();
+            
             _characterInputs.MoveAxisRight = _moveInput.x;
             _characterInputs.MoveAxisForward = _moveInput.y;
             _characterInputs.CameraRotation = _camera.transform.rotation;
@@ -132,8 +132,8 @@ namespace VHS {
         private void ResetInputs() {
             // _characterInputs.PrimaryAttackUp = false;
             // _characterInputs.PrimaryAttackHeld = false;
-            _characterInputs.SecondaryAttackUp = false;
-            _characterInputs.SecondaryAttackHeld = false;
+            _characterInputs.SecondaryAttackReleased = false;
+            _characterInputs.SecondaryAttackPerformed = false;
         }
     }
 }
