@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace VHS {
     public class HitProcessorComponent : ChildBehaviour<Actor> {
-        [SerializeField] private HitPoints _hitPoints;
+        [SerializeField] protected HitPoints _hitPoints;
 
         public HitPoints HitPoints => _hitPoints;
         
         private void Awake() => _hitPoints.Reset();
 
-        public void Hit(HitData hitData) {
+        public virtual void Hit(HitData hitData) {
             if(!_hitPoints.AboveZero)
                 return;
             
@@ -20,5 +20,9 @@ namespace VHS {
             if (!_hitPoints.AboveZero) 
                 Parent.Die();
         }
+    }
+    
+    public class HitProcessorComponent<T>: HitProcessorComponent where T : Actor{ // Change to Scriptable Object? So we can create assets out of it
+        protected new T Parent => base.Parent as T;
     }
 }

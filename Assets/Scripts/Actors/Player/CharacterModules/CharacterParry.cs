@@ -8,8 +8,25 @@ namespace VHS {
 
         public bool DuringParryWindow => _parryWindow.IsActive;
         
-        private void OnEnable() => _parryWindow.OnEnd += OnParryEnd;
-        private void OnDisable() => _parryWindow.OnEnd -= OnParryEnd;
+        private void OnEnable() {
+            _parryWindow.OnEnd += OnParryEnd;
+            Player.OnParry += OnParry;
+        }
+
+        private void OnDisable() {
+            _parryWindow.OnEnd -= OnParryEnd;
+            Player.OnParry -= OnParry;
+        }
+
+        private void OnParry(HitData hitData) {
+            if (hitData.dealer != null) {
+                hitData.dealer.OnMyAttackParried(hitData);
+                //Log("DUPA"); // TODO zeby po nacisnieciu przeniosło do dobrej linijki w konsoli
+            }
+            
+            _parryWindow.Reset();
+            Controller.TransitionToDefaultState();
+        }
 
         private void OnParryEnd() => Controller.TransitionToDefaultState();
 

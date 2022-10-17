@@ -25,7 +25,8 @@ namespace VHS {
         private StateMachine<CharacterModule> _stateMachine;
 
         private KinematicCharacterMotor _motor;
-        
+
+        public CharacterParry ParryModule => _parryModule;
         public KinematicCharacterMotor Motor => _motor;
         public Player ControlledCharacter => Parent;
 

@@ -1,3 +1,4 @@
+using MEC;
 using NodeCanvas.Framework;
 using Pathfinding;
 using UnityEngine;
@@ -47,5 +48,15 @@ namespace VHS {
 
         public Vector3 GetTargetPosition() => transform.position;
         public void SetState(NpcState newState) => _state = newState;
+
+        public override void OnMyAttackParried(HitData hitData) {
+            // TODO make seperate Stagger ?
+            Stagger(1f);
+        }
+
+        private void Stagger(float duration) {
+            SetState(NpcState.Recovery);
+            Timing.CallDelayed(duration, () => SetState(NpcState.Default), gameObject);
+        }
     }
 }

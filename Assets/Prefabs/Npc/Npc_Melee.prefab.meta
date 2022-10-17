@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 94582c0e8c0165b44a5982ce7aff715e
+labels:
+- Npc
 PrefabImporter:
   externalObjects: {}
   userData: 

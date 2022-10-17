@@ -31,5 +31,7 @@ namespace VHS {
 
         public virtual void Hit(HitData hitData) => _hitProcessorComponent.Hit(hitData);
         public virtual void Die() => OnDeath(this);
+        
+        public virtual void OnMyAttackParried(HitData hitData) { }
     }
 }

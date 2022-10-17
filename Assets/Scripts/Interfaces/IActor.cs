@@ -11,5 +11,7 @@ namespace VHS {
         GameObject GameObject { get; }
         
         bool IsAlive { get; }
+
+        void OnMyAttackParried(HitData hitData);
     }
 }

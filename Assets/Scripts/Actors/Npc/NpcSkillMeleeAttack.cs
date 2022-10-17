@@ -33,7 +33,11 @@ namespace VHS {
 
         public override void FinishSkill_Hook() {
             base.FinishSkill_Hook();
-            Owner.SetState(NpcState.Default);
+            
+            // TODO rework this, temporary for stagger to work because this gets called after stagger
+            if(Owner.State != NpcState.Recovery)
+                Owner.SetState(NpcState.Default);
+            
             Owner.AIAgent.RVO.priorityMultiplier = 1.0f;
         }
 
