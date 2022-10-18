@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 namespace VHS {
     public class CharacterParry : CharacterModule {
         [SerializeField] private Timer _parryWindow = new Timer(0.5f);
+        [SerializeField] private MMF_Player _parryFeedback;
 
         public bool DuringParryWindow => _parryWindow.IsActive;
         
@@ -26,6 +28,8 @@ namespace VHS {
             
             _parryWindow.Reset();
             Controller.TransitionToDefaultState();
+            
+            _parryFeedback.PlayFeedbacks();
         }
 
         private void OnParryEnd() => Controller.TransitionToDefaultState();
