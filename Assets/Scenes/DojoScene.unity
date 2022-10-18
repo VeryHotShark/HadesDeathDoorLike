@@ -1311,13 +1311,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2332168767523476204, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_FrequencyGain
+      value: 4.213154
+      objectReference: {fileID: 0}
     - target: {fileID: 3532176833039434656, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 22286555}
     - target: {fileID: 3532176833039434656, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_VersionIndex
-      value: 26
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3532176833039434662, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_Mesh

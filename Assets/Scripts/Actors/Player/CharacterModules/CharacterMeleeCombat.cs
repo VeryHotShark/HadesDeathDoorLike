@@ -17,7 +17,10 @@ namespace VHS {
             public float pushForce = 10.0f;
             public float zOffset = 1.0f;
             public float radius = 1.0f;
-        } 
+        }
+
+        [Header("VFX")]
+        [SerializeField] private GameObject _slashParticle;
 
         [Header("General")]
         [SerializeField] private float _slowDownSharpness = 10.0f;
@@ -38,6 +41,8 @@ namespace VHS {
         [SerializeField] private MMF_Player _lightHitFeedback;
         [SerializeField] private MMF_Player _heavyHitFeedback;
 
+        private GameObject _slash;
+        
         private int _comboIndex;
         private int _attackIndex;
 
@@ -109,6 +114,7 @@ namespace VHS {
             
             _currentAttack = _lightAttacks[_attackIndex];
             Attack(_currentAttack);
+            SpawnSlash(Vector3.one * 0.25f, _attackIndex % 2 == 0);
             _attackIndex++;
         }
 
@@ -120,8 +126,23 @@ namespace VHS {
 
             _currentAttack = _heavyAttack;
            Attack(_currentAttack);
-           
+           SpawnSlash(Vector3.one * 0.4f, true);
             _heavyAttackReached = false;
+        }
+
+        private void SpawnSlash( Vector3 size, bool flip = false) {
+            if(_slash)
+                Destroy(_slash);
+            
+            Quaternion rot = Quaternion.LookRotation(Controller.LookInput);
+            _slash = Instantiate(_slashParticle, Parent.CenterOfMass, rot ,Parent.transform);
+
+            size.z *= 1.2f;
+            
+            if (flip)
+                size.x *= -1.0f;
+            
+            _slash.transform.localScale = size;
         }
 
         private void CheckForHittables(AttackInfo attackInfo) {

@@ -562,6 +562,7 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
+  _slashParticle: {fileID: 6445826192643391251, guid: 60d310309985b9d4e9917e6e851e63c9, type: 3}
   _slowDownSharpness: 10
   _comboCooldown:
     _duration: 0.3
@@ -1087,7 +1088,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 23
+  m_VersionIndex: 29
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
