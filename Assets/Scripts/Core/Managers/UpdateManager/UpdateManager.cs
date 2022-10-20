@@ -33,16 +33,16 @@ public class UpdateManager : Singleton<UpdateManager> {
         }
 
         private void CustomUpdate() {
-            foreach (KeyValuePair<float, CustomUpdateListener> kvp in _customUpdateDict) {
-                if (_customUpdateDict[kvp.Key].UpdateTimer >= kvp.Key) {
-                    for (int i = 0; i < _customUpdateDict[kvp.Key].Listeners.Count; i++)
-                        _customUpdateDict[kvp.Key].Listeners[i].OnCustomUpdate(kvp.Key);
+            foreach (float rate in _customUpdateDict.Keys) {
+                if (_customUpdateDict[rate].UpdateTimer >= rate) {
+                    for (int i = 0; i < _customUpdateDict[rate].Listeners.Count; i++)
+                        _customUpdateDict[rate].Listeners[i].OnCustomUpdate(rate);
                     
                     
-                    _customUpdateDict[kvp.Key].UpdateTimer = 0.0f;
+                    _customUpdateDict[rate].UpdateTimer = 0.0f;
                 }
                 else
-                    _customUpdateDict[kvp.Key].UpdateTimer += Time.deltaTime;
+                    _customUpdateDict[rate].UpdateTimer += Time.deltaTime;
             }
         }
 

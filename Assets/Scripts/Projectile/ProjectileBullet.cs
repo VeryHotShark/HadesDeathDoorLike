@@ -16,8 +16,8 @@ namespace VHS {
             _lastPosition = transform.position;
         }
 
-        private void OnEnable() => UpdateManager.AddUpdateListener(this);
-        private void OnDisable() => UpdateManager.RemoveUpdateListener(this);
+        protected override void Enable() => UpdateManager.AddUpdateListener(this);
+        protected override void Disable() => UpdateManager.RemoveUpdateListener(this);
 
         public void OnUpdate(float deltaTime) {
             UpdateMovement(deltaTime);
@@ -49,7 +49,7 @@ namespace VHS {
                 PlayHitFX();
             }
             
-            Destroy(gameObject);
+            PoolManager.Return(this);
         }
     }
 }

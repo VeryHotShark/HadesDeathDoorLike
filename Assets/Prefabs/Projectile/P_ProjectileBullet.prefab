@@ -99,8 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _instanceLogs: 1
   _color: {r: 1, g: 1, b: 1, a: 1}
-  _customUpdate: 0
+  _customUpdate: 1
   _updateRate: 0.2
+  _lifeTime: 3
   _damage: 10
   _hitFeedback: {fileID: 2431464541733702560}
   _speed: 35
