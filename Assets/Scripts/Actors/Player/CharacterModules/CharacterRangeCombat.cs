@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace VHS {
     public class CharacterRangeCombat : CharacterModule {
@@ -24,8 +25,7 @@ namespace VHS {
         public void Shoot() {
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
             Quaternion spawnRot = Quaternion.LookRotation(Controller.LookInput);
-            Projectile spawnedProjectile = Instantiate(_projectile, spawnPos, spawnRot);
-            spawnedProjectile.Init(Parent);
+            PoolManager.Spawn(_projectile, spawnPos, spawnRot).Init(Parent);
             Controller.TransitionToDefaultState();
         }
     }

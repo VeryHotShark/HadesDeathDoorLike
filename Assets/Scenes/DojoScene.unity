@@ -1313,7 +1313,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2332168767523476204, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_FrequencyGain
-      value: 4.213154
+      value: 5.521643
       objectReference: {fileID: 0}
     - target: {fileID: 3532176833039434656, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_Mesh

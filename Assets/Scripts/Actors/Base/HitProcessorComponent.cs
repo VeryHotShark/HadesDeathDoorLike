@@ -23,6 +23,6 @@ namespace VHS {
     }
     
     public class HitProcessorComponent<T>: HitProcessorComponent where T : Actor{ // Change to Scriptable Object? So we can create assets out of it
-        protected new T Parent => base.Parent as T;
+        protected new T Parent => (T) base.Parent;
     }
 }

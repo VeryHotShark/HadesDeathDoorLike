@@ -95,7 +95,7 @@ namespace VHS {
     
     [Serializable] // Jak się nie uda z generyczną CastSkillem w Node Canvas to zamień spowrotem by został tylko Skill klasa
     public class Skill<T>: Skill where T : Actor{ // Change to Scriptable Object? So we can create assets out of it
-        protected new T Owner => base.Owner as T;
+        protected new T Owner => (T) base.Owner;
     }
 
 }
