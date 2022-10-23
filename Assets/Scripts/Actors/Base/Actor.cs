@@ -7,7 +7,9 @@ namespace VHS {
     [RequireComponent(typeof(HitProcessorComponent))]
     public abstract class Actor : BaseBehaviour, IHittable, IActor {
         public Action<HitData> OnHit = delegate {  };
+        
         public event Action<IActor> OnDeath = delegate {  };
+        public event Action OnPostInitialized = delegate { };
 
         protected HitProcessorComponent _hitProcessorComponent;
         protected DeathProcessorComponent _deathProcessorComponent;
@@ -26,12 +28,30 @@ namespace VHS {
         }
 
         protected virtual void GetComponents() => _hitProcessorComponent = GetComponent<HitProcessorComponent>();
-
-        protected virtual void Initialize() {}
+        protected virtual void Initialize() => _hitProcessorComponent.HitPoints.Reset();
 
         public virtual void Hit(HitData hitData) => _hitProcessorComponent.Hit(hitData);
         public virtual void Die() => OnDeath(this);
         
         public virtual void OnMyAttackParried(HitData hitData) { }
+    }
+
+    public class Actor<T> : Actor where T : Actor{
+        private ActorComponent<T>[] _actorComponents;
+
+        protected override void GetComponents() {
+            _actorComponents = GetComponentsInChildren<ActorComponent<T>>();
+            base.GetComponents();
+        }
+
+        /// <summary>
+        /// When overriding call base method at the end, so callback will be properly called
+        /// </summary>
+        protected override void Initialize() {
+            base.Initialize();
+            
+            foreach (ActorComponent<T> actorComponent in _actorComponents) 
+                actorComponent.OnActorInitialized(this as T);
+        }
     }
 }

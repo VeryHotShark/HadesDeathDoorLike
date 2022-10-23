@@ -29,7 +29,6 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
-    - Zenject
     - Assembly-CSharp-firstpass
     - Animancer.Examples
     - ParadoxNotion
@@ -37,7 +36,6 @@ MonoBehaviour:
     - MoreMountains.Feedbacks
     - MoreMountains.Tools
     - MoreMountains.Feedbacks.URP
-    - Zenject-IntegrationTests
     - Cinemachine
     - MoreMountains.Feedbacks.MMTools
     - MoreMountains.Feedbacks.NiceVibrations
@@ -58,7 +56,6 @@ MonoBehaviour:
     - AstarPathfindingProjectEditor
     - MoreMountains.Feedbacks.Editor
     - PPv2URPConverters
-    - Zenject-TestFramework
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - RotaryHeart.PhysicsDebugExtension.Editor
     - AstarPackageToolsEditor

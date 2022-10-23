@@ -10,7 +10,7 @@ namespace VHS {
         Attacking,
     }
     
-    public class Npc : Actor, ITargetable {
+    public class Npc : Actor<Npc>, ITargetable {
 
         private NpcState _state;
         private IActor _target;

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Zenject;
 
 namespace VHS {
     public static class PoolManager {
@@ -63,8 +62,6 @@ namespace VHS {
             
             poolable.gameObject.transform.SetParent(null);
             poolable.gameObject.SetActive(false);
-            
-            // if(_objectPool.TryGetValue())
         }
     }
 }

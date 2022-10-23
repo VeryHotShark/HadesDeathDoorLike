@@ -7,8 +7,6 @@ namespace VHS {
 
         public HitPoints HitPoints => _hitPoints;
         
-        private void Awake() => _hitPoints.Reset();
-
         public virtual void Hit(HitData hitData) {
             if(!_hitPoints.AboveZero)
                 return;
