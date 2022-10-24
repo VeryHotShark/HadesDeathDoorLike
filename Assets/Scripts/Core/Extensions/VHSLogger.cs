@@ -22,7 +22,7 @@ namespace VHS {
             var joinedMsg = String.Join("; ", msg);
 
             string hexColor = ColorToHex(color); 
-            
+
             LogFunction($"[{prefix.Color("brown")}][{name}]: {joinedMsg.Color(hexColor)}\n ", myObj);
 #endif
         }
