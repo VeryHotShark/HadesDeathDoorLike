@@ -17,7 +17,6 @@ namespace VHS {
         public CharacterController CharacterController => _characterController;
 
         public Camera Camera => PlayerController.Camera.Camera;
-        public HitPoints HitPoints => _hitProcessorComponent.HitPoints;
         public bool DuringParry => _characterController.ParryModule.DuringParryWindow;
 
         protected override void GetComponents() {

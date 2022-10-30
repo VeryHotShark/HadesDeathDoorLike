@@ -15,7 +15,8 @@ namespace VHS {
         protected DeathProcessorComponent _deathProcessorComponent;
         
         public GameObject GameObject => gameObject;
-        
+        public HitPoints HitPoints => _hitProcessorComponent.HitPoints;
+
         public virtual Vector3 FeetPosition => transform.position;
         public virtual Vector3 CenterOfMass => FeetPosition + Vector3.up;
         public virtual Vector3 Forward => transform.forward;
