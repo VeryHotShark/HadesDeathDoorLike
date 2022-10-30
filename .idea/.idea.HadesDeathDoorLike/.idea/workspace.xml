@@ -3,20 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityFleeBehaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityFleeBehaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityFollowBehaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityFollowBehaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityMoverBehaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityMoverBehaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityRandomBehaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/EntityRandomBehaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/RVOBehaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/Examples/AStarPathfinding/Behaviours/RVOBehaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion Resources/NodeCanvas Resources/Example Scenes/Scenes/BT Scenes/Soldier Chase BT.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ParadoxNotion Resources/NodeCanvas Resources/Example Scenes/Scenes/BT Scenes/Soldier Chase BT.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GUI PRO Kit - Fantasy RPG/ResourcesData/Sprites/Component/Frame/frame_stageframe_00_n.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GUI PRO Kit - Fantasy RPG/ResourcesData/Sprites/Component/Frame/frame_stageframe_00_n.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Melee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Melee.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/UI_HealthPoint.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/UI_HealthPoint.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Base/Actor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Base/Actor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actors/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/DamagePopUp.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/DamagePopUp.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Player/UIHealthPoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Player/UIHealthPoint.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/FontAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Npc/NpcHealthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Npc/NpcHealthUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actors/Base/SkillCasterComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actors/Npc/AIAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actors/Npc/NpcComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actors/Npc/NpcHealthbarComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actors/Npc/NpcPushComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actors/Npc/NpcSkillMeleeAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actors/Player/CharacterModules/CharacterParry.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,19 +73,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
@@ -131,6 +128,7 @@
       <workItem from="1667121710261" duration="1415000" />
       <workItem from="1667124284954" duration="3554000" />
       <workItem from="1667129553431" duration="956000" />
+      <workItem from="1667161429364" duration="3276000" />
     </task>
     <servers />
   </component>

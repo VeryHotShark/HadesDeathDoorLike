@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4525732249956694763}
   - component: {fileID: 3596951405603907454}
   m_Layer: 0
-  m_Name: UI_HealthPoint
+  m_Name: UI_HeartHealthPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace VHS {
     public class Player : Actor<Player> {
         public Action<HitData> OnParry = delegate { };
-        public Action<HitPoints> OnHealthChanged = delegate { };
+        
         
         public override Vector3 CenterOfMass => FeetPosition + _characterController.Motor.CharacterTransformToCapsuleCenter;
         
@@ -23,11 +23,6 @@ namespace VHS {
             base.GetComponents();
             _characterController = GetComponent<CharacterController>();
             _playerController = GetComponentInParent<PlayerController>();
-        }
-
-        protected override void Initialize() {
-            HitPoints.OnChanged = hitPoints => OnHealthChanged(hitPoints);            
-            base.Initialize();
         }
 
         public override void Die() {

@@ -7,6 +7,7 @@ namespace VHS {
     [RequireComponent(typeof(HitProcessorComponent))]
     public abstract class Actor : BaseBehaviour, IHittable, IActor {
         public Action<HitData> OnHit = delegate {  };
+        public Action<HitPoints> OnHealthChanged = delegate { };
         
         public event Action<IActor> OnDeath = delegate {  };
         public event Action OnPostInitialized = delegate { };
@@ -50,6 +51,8 @@ namespace VHS {
         /// </summary>
         protected override void Initialize() {
             base.Initialize();
+            
+            HitPoints.OnChanged = hitPoints => OnHealthChanged(hitPoints);            
             
             foreach (ActorComponent<T> actorComponent in _actorComponents) 
                 actorComponent.OnActorInitialized(this as T);

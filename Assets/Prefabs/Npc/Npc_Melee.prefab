@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 1921785164}
   - component: {fileID: 1921785163}
   - component: {fileID: 121541551}
+  - component: {fileID: 4269419226646920022}
   m_Layer: 8
   m_Name: Npc_Melee
   m_TagString: Untagged
@@ -459,6 +460,23 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
+--- !u!114 &4269419226646920022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373866698703507712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd75f9dbfe665804391893a5759b5635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _instanceLogs: 1
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _customUpdate: 0
+  _updateRate: 0.2
+  _healthUIPrefab: {fileID: 7771265582580724051, guid: 8cd9a8d1a295989448f5faae700e9f29, type: 3}
 --- !u!1 &373866698728531755
 GameObject:
   m_ObjectHideFlags: 0
