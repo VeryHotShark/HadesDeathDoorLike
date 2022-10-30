@@ -41,6 +41,7 @@ namespace VHS {
         private PlayerInput _input;
         private CharacterInputs _characterInputs;
 
+        public CameraController Camera => _camera;
         public CharacterController Character => _character;
         public Player Player => _character.ControlledCharacter;
 

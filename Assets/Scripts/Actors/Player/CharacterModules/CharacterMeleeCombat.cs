@@ -20,6 +20,7 @@ namespace VHS {
         }
 
         [Header("VFX")]
+        [SerializeField] private DamagePopUp _damagePopUp;
         [SerializeField] private GameObject _slashParticle;
 
         [Header("General")]
@@ -166,7 +167,12 @@ namespace VHS {
                         };
                             
                         hittable.Hit(hitData);
-                        hitSomething = true;   
+                        hitSomething = true;
+
+                        Quaternion rotationToCamera = Quaternion.LookRotation(Player.Camera.transform.forward);
+                        DamagePopUp damagePopUp = PoolManager.Spawn(_damagePopUp, collider.gameObject.transform.position + Vector3.up * 3.0f ,rotationToCamera);
+                        damagePopUp.transform.localScale = Vector3.one * 0.15f;
+                        damagePopUp.Init(hitData.damage, 1.0f);
                     }
                 }
             } 

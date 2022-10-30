@@ -22,9 +22,8 @@ namespace VHS {
         private CharacterRangeCombat _rangeCombatModule;
         private CharacterFallingMovement _fallingMovementModule;
 
-        private StateMachine<CharacterModule> _stateMachine;
-
         private KinematicCharacterMotor _motor;
+        private StateMachine<CharacterModule> _stateMachine;
 
         public CharacterParry ParryModule => _parryModule;
         public KinematicCharacterMotor Motor => _motor;

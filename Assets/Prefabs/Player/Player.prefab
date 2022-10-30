@@ -266,7 +266,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 4.213149
+  m_FrequencyGain: 5.521646
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &3532176832902561215
 GameObject:
@@ -562,6 +562,7 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
+  _damagePopUp: {fileID: 4974578665077627571, guid: b55a6289cec54564e8218b2476d3f9a4, type: 3}
   _slashParticle: {fileID: 6445826192643391251, guid: 60d310309985b9d4e9917e6e851e63c9, type: 3}
   _slowDownSharpness: 10
   _comboCooldown:
@@ -1088,7 +1089,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 29
+  m_VersionIndex: 170
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1832,7 +1833,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.9216818, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2343,6 +2344,18 @@ PrefabInstance:
     - target: {fileID: 5898614393791604993, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Spacing
+      value: 10.108333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
