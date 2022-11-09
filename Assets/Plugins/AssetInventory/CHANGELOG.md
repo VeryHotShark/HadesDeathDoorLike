@@ -1,0 +1,233 @@
+## 1.6.0 (2022-11-02)
+- Support indexing zip archives!
+- Support determining dependencies of binary serialized files (but without scripts)!
+- Index colors & Search/Sort by color (default inactive as it takes a while to index)
+- Expert search with input validation and field picker
+- Support updating individual packages to newest version
+- Support bulk-updating individual packages to newest version (experimental)
+- Easy mode: Update everything in one go with only one button
+- New deduplication workflow
+- Treat storage location of packages as main differentiator
+- Support having the same package multiple times in multiple locations
+- Update metadata of all duplicate packages
+- Handle "outdated" calculation much better
+- Remove old asset splitting logic
+- More efficient and faster update of Asset Store metadata
+- Ability to open package in Package Manager
+- New maintenance view: "Duplicate" showing packages pointing to same Asset Store asset
+- New maintenance view: "Updates Available", with newest updates shown first
+- New maintenance view: Not Downloaded
+- Improve display of ratings (no empty stars)
+- New bulk action: Open Package Locations
+- Retry failed web requests one time (solves Curl error shown every now and then, error will still occur though)
+- Ensure local package header data is preferred to new online data to represent the actual indexed truth
+- Page through search results with arrow keys
+- Jump to first and last search result with page up/down
+- Show if a package is disabled/abandoned
+- Show update available info only if newer update is not yet downloaded in a duplicate asset
+- New setting to exclude newly added packages per default
+- Reinclude packages automatically when triggering manual reindexing of package
+- Optimize database maintenance command
+- Allow hiding search results without preview image
+- Rename long source url files to consistent short form
+- Allow creating a debug report for easier support
+- Hide Reindex button if it is not applicable
+- Fix incorrect version stored in duplicate bundles
+- Fix indexing failing if cached assets are deleted inbetween
+- Fix preview images sometimes not getting generated
+- Fix SemVer parsing errors in edge cases
+- Fix icons not displaying tooltips
+- Fix "goblin" bug: duplication of packages due to identical package filename
+- Fix end of package download not correctly updating package location data
+
+## 1.5.0 (2022-10-17)
+- Allow adding tags to individual files!
+- Download assets into cache right without using the package manager!
+- Bulk-Download assets
+- Support downloading assets from the Import UI
+- Optional backup of assets allowing to keep multiple versions (Custom backup folder, SemVer based)
+- Filter by package and/or file tags
+- Intelligent tile text selection option auto-selecting title on tile size
+- Allow grouping packages by state
+- Read package metadata directly from asset package files
+- Persist downloaded/cached version
+- Show more meaningful data earlier in the indexing process
+- Show phase information when updating Asset Store details
+- Add version column in package list
+- Show indicator if there is a newer version of an asset available
+- Allow instantly reindexing single package
+- Allow triggering package download from search page
+- Ability to activate cooldown during indexing for hard disks that more easily overheat
+- Trigger import optionally by double-clicking onto search results
+- Show advanced features when pressing CTRL key
+- CTRL + Local Update will force updating all assets with the local package metadata
+- CTRL + Asset Store Update will force updating all asset details of all assets
+- CTRL + Import Package will open file location of package
+- CTRL + Delete Package will immediately delete the cached package
+- CTRL + Delete Packages will remove cached files for all selected packages
+- Major performance increase when rescanning media folders
+- Seal classes for performance
+- Stabilize media indexer in some edge conditions
+- Fix assets now correctly removed again after media indexer run
+- Fix dependency extraction sometimes failing if GUIDs appear in multiple packages
+- Fix packages in package browser not detecting immediately if local cache was deleted
+- Fix potentially old preview images shown when clearing or switching database
+- Fix package details sometimes being updated again all the time
+
+## 1.4.0 (2022-09-13)
+- Package Support! Use asset packages and registry packages side-by-side completely transparently. Select preferred versions. Import single or in bulk. Automatically adds scoped registries if needed.
+- Ability to index packages coming from the Unity or other registries
+- Support local tarball packages
+- Support embedded packages
+- Support git URLs for packages
+- Support offline mode in case packages are temporarily not available or Internet is down
+- Fail gracefully if packages contain malformed manifests
+- New settings to enable/disable content indexing
+- New additional filter in search: all packages, asset packages, registry packages, custom packages
+- Optionally use package keywords as tags
+- Extract author data from packages
+- Maintenance filter to show all installed registry packages
+- Maintenance view to see packages with custom registries
+- Show registry packages also in reporting view
+- Show package size in bulk view
+- Show minimal Unity version for packages
+- Show license of packages
+- Allow Open in Search only if there are files indexed
+- Add missing preview icons for images
+- Show tag creation hint also in tag UI
+- Store Guids also for media files if meta files exist
+- Restrict media indexer to only create previews for media files (since CS and asmdef would interrupt import process)
+- Split local update to store package metadata first and then go into indexing
+- New package grouping option: by publisher
+- Connect free-floating asset packages to Asset Store
+- Allow breaking asset store connection again
+- Import also small and icon package image locations into database
+- Gracefully handle invalid package manifests by only omitting the incorrect fields
+- Maintenance view: see all manually linked packages
+- Maintenance view: show disabled by Unity
+- Link to changelog in package version selection if a link exists (e.g. all Unity packages)
+- Added dedicated filter side-bar in package view
+- Show/Hide deprecated packages
+- Show outdated assets in Asset Cache
+- Support deleting files from cache while deleting package from database
+- Regularly refresh Asset details online
+- No-Sort option in search to dramatically speed up browsing and searching (Assets are typically sorted by asset path in the DB initially)
+- Additional minor performance optimizations when searching
+- Show update hint when new version is available
+- Component for semantic versioning comparisons
+- Add safe-guarding timeout to package metadata resolution
+- Make search input delay configurable
+- Link to Asset Store page
+- Correctly handle outdated packages in Unity Asset Cache: Split into two assets, unlink old one from store
+- Add timeout to preview image generation
+- Only show asset store link if there is actually still a linked asset
+- React gracefully when hard drive is full
+- Fix tags not being sorted correctly when mixing upper and lower-case
+- Fix initialization not being done in edge cases when tool is docked
+- Fix media properties extraction aborting if encountering files with very long paths
+- Fix preview generator aborting indexing if files cannot be removed temporarily
+- Fix bulk import not continuing when script files are imported
+- Fix guid extraction stopping indexing when encountering too long paths
+
+## 1.3.0 (2022-08-29)
+- Saved Searches! Save and restore any search easily
+- Bulk package import! New import wizard allows to easily import multiple packages at once
+- Integration with Package2Folder! Allows importing packages into arbitrary sub-folders
+- Move all additional filter options into new filter bar for a much cleaner UI
+- Allow import from search also if a file inside the target dir is selected and not the directory itself
+- Allow deletion of packages from database
+- Bulk action to force reindexing multiple packages at once
+- Bulk include/exclude of packages
+- Bulk deletion of packages
+- Search inside packages view
+- Use default icons when previews are missing
+- Properly support deprecation of assets
+- Bring index and Asset Store update buttons into one section
+- Use progress bars for better visualization
+- Remove package exclusion on-demand
+- Speed up package importer dramatically in case of many excluded packages
+- Big performance increase when scanning for package updates
+- Integrate folder settings into list
+- Make gathering extended media attributes optional
+- Make copying preview images optional
+- Make showing icons instead of empty previews in search optional
+- Make indexing package contents optional
+- Global settings sections
+- Allow to reset additional filters quickly
+- Renamed Index to Settings
+- Show better hint how to create new tag
+- Improved administration of additional folders
+- Split package update process into two steps: create packages in database and index content to show asset results faster
+- Hide collapse button if no grouping is active
+- Handle correctly if asset store purchases could not be retrieved
+- Fix "Reindex Asset" deleting the asset loosing all metadata
+- Fix accidental spill-over of data between live and deprecated versions of an asset
+- Fix 0-byte packages causing import to fail
+- Fix corrupted packages causing import to fail
+
+## 1.2.0 (2022-08-22)
+- Media Indexer! Index and search through arbitrary media files, not just those in unity packages, e.g. for instant unified access to a sound library, texture folder, models downloaded from the web
+- Tagging! Tag assets, import tags from Asset Store, group assets by tag, create/rename/delete tags, set tag colors, bulk add/remove
+- Multi-select in asset tree
+- Reporting tab will display identified asset of currently selected item in Project View
+- Show asset ratings with stars
+- Replace custom folder list UI with standardized reorderable list, with more functionality out of the box and allowing to influence the import order
+- Ability to jump from asset view to filtered search view (button & double click)
+- Exclude assets from search and indexing
+- Exclude files from search by extension
+- Show & Consider deprecated assets
+- Show asset icons in asset browser
+- Allow limiting search to specific file sizes
+- Stop all sounds when tool window is closed
+- Cleaner UX inside dropdowns on Search tab
+- Support Linux
+- Create less garbage during UI refresh
+- Link to Asset Store from asset details
+- Rename Assets to Packages for more clarity
+- Make About tab into an Icon to save space
+- Exclude more files per default from search results
+- Optional grouping of long dropdowns in Search tab
+- Big performance improvements when navigating between tabs and switching from and to play mode
+- Fix asset metadata sometimes not being displayed
+- Fix custom folder enablement state not being saved immediately
+- Fix asset tree collapsing and expanding seemingly randomly
+- Fix filenames with extension only throwing errors (e.g. .wav)
+
+## 1.1.0 (2022-08-08)
+- Ability to move cache database to different location, use other existing database or create a new database
+- Support global (default) and project-specific configurations
+- Support sorting
+- Filter by image dimensions or audio length
+- Asset grouping by category
+- Unify display of path slashes
+- Don't immediately search while typing
+- Option to reindex individual assets
+- Allow direct import of package from asset list
+- First preview version of Reporting feature listing all detected assets in a project
+- Auto-upgrade database
+- Improved asset view, grouping, details pane, UI alignment
+- Add more supported file types for type clustering
+- Add 2022.1 hint
+- Support different Asset Store cache locations through custom folders
+- Officially support 2019.4
+- Prepare for future bulk import of packages
+- Show ratings for assets if available
+- Show last updated date of assets
+- Disable paging arrows when no further pages are available
+- Customizable search view: Tile size, Tile titles, Auto-Ping on select
+- Improved search field UX
+- More tooltips all-over
+- Switch to first result page after different search
+- Show version in About
+- Extent documentation with installation and configuration guide
+- Calculate guessed display catagory during package import if asset store data was not finalized yet
+- Fix audio preview not stopping
+- Fix incorrect _ escaping in search when other conditions are used as well
+- Fix audio preview causing duplicate extraction
+- Fix sound files with # or + in their name not being able to be played
+- Fix massive performance degradation with many files in the database
+- Fix long break between asset imports
+- Fix UI becoming very slow if search term was not found
+
+## 1.0.0 (2022-07-26)
+- Initial release

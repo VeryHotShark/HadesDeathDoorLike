@@ -63,6 +63,9 @@ MonoBehaviour:
     - Sirenix.OdinInspector.Modules.UnityMathematics
     - DrawingPackageToolsEditor
     - DrawingEditor
+    - AssetInventory.Editor
+    - JD.EditorAudioUtils.Editor
+    - CodeStage.Package2Folder
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
