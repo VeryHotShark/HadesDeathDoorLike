@@ -30,42 +30,45 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Assembly-CSharp-firstpass
-    - Animancer.Examples
     - ParadoxNotion
     - AstarPathfindingProject
-    - MoreMountains.Feedbacks
     - MoreMountains.Tools
-    - MoreMountains.Feedbacks.URP
-    - Cinemachine
+    - MoreMountains.Feedbacks
+    - Animancer.Examples
     - MoreMountains.Feedbacks.MMTools
     - MoreMountains.Feedbacks.NiceVibrations
-    - MoreMountains.Feedbacks.PostProcessing
     - MoreMountains.Feedbacks.HDRP
     - Assembly-CSharp
     - Animancer
-    - Animancer.FSM
     - MoreMountains.Feedbacks.TextMeshPro
     - PackageTools
+    - Cinemachine
+    - MoreMountains.Feedbacks.URP
     - MoreMountains.Feedbacks.Cinemachine
+    - MoreMountains.Feedbacks.PostProcessing
     - Drawing
+    - Animancer.FSM
     - Sirenix.OdinInspector.CompatibilityLayer
-    - MoreMountains.Tools.Editor
-    - Ludiq.PeekCore.Runtime
+    - ShaderCrew.SeeThroughShader.Scripts
     - Ludiq.PeekCore.Editor
+    - MoreMountains.Tools.Editor
     - Ludiq.Peek.Editor
+    - AssetInventory.Editor
     - AstarPathfindingProjectEditor
-    - MoreMountains.Feedbacks.Editor
+    - Ludiq.PeekCore.Runtime
     - PPv2URPConverters
+    - MoreMountains.Feedbacks.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - RotaryHeart.PhysicsDebugExtension.Editor
+    - JD.EditorAudioUtils.Editor
     - AstarPackageToolsEditor
-    - RotaryHeart
-    - Sirenix.OdinInspector.Modules.UnityMathematics
     - DrawingPackageToolsEditor
     - DrawingEditor
-    - AssetInventory.Editor
-    - JD.EditorAudioUtils.Editor
+    - RotaryHeart
+    - Sirenix.OdinInspector.Modules.UnityMathematics
     - CodeStage.Package2Folder
+    - ShaderCrew.SeeThroughShader.Editor
+    - STS Stackable Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

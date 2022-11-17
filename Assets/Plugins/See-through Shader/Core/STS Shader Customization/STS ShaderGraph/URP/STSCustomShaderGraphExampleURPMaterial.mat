@@ -1,0 +1,253 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-532918723227732041
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: STSCustomShaderGraphExampleURPMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 8cc2472cff0f73147873c6aafc2e22f6,
+    type: 3}
+  m_ValidKeywords:
+  - _PLAYERINDEPENDENT
+  m_InvalidKeywords:
+  - _CEILING_ON
+  - _FLIPBOOKBLENDING_OFF
+  - _PUDDLESOURCE_CONSTANT
+  - _TEXTUREDEMISSIONEDGE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveMask:
+        m_Texture: {fileID: 2800000, guid: 8d4786e295bc46542bc846c9f5f8ae67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: 3543e527178258847b32c22b46f5cb90, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: e409d96276f411c429c4dd2cef117b72, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MossAlbedo:
+        m_Texture: {fileID: 2800000, guid: 4b82e3852876d544fbc429e7309bd7dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MossMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MossNormal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ObstructionCurve:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PuddleMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _AngleStrength: 1
+    - _AnimationEnabled: 1
+    - _AnimationSpeed: 1
+    - _Blend: 0
+    - _BlendOp: 0
+    - _BumpScale: 1
+    - _CameraFadingEnabled: 0
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 1
+    - _Ceiling: 1
+    - _CeilingBlendMode: 0
+    - _CeilingMode: 0
+    - _CeilingPlayerYOffset: 0
+    - _CeilingY: 1.91
+    - _CeilingYGradientLength: 1.25
+    - _CircleObstructionDestroyRadius: 1.1
+    - _CircleStrength: 0.483
+    - _ColorMode: 0
+    - _ConeObstructionDestroyRadius: 10
+    - _ConeStrength: 1
+    - _Cull: 2
+    - _CurveObstructionDestroyRadius: 159.19
+    - _CurveStrength: 1
+    - _Cutoff: 0.5
+    - _CylinderObstructionDestroyRadius: 10
+    - _CylinderStrength: 1
+    - _DISSOLVEMASK: 0
+    - _DefaultEffectRadius: 287.53
+    - _DetailNormalMapScale: 1
+    - _DissolveColorSaturation: 1
+    - _DissolveEmission: 1
+    - _DissolveEmissionBooster: 48.27
+    - _DissolveFallOff: 0
+    - _DissolveMaskEnabled: 0
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
+    - _DistortionStrength: 1
+    - _DistortionStrengthScaled: 0.1
+    - _DstBlend: 0
+    - _FlipbookBlending: 0
+    - _FlipbookMode: 0
+    - _Floor: 0
+    - _FloorMode: 0
+    - _FloorY: 0
+    - _FloorYTextureGradientLength: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _InteractionMode: 1
+    - _IntrinsicDissolveStrength: 0.835
+    - _IsExempt: 0
+    - _IsReplacementShader: 0
+    - _IsZoningRevealable: 0
+    - _IsometricExclusion: 0
+    - _IsometricExclusionDistance: 0
+    - _IsometricExclusionGradientLength: 0.1
+    - _Metallic: 0
+    - _Mode: 0
+    - _MossAmount: 1
+    - _MossAngleMin: 0
+    - _MossFalloff: 10.69
+    - _MossHeight: 0.891
+    - _MossInvertHeight: 1
+    - _MossTextureSpace: 0
+    - _OBSTRUCTION_CURVE: 0
+    - _Obstruction: 0
+    - _OcclusionStrength: 1
+    - _PLAYERINDEPENDENT: 1
+    - _Parallax: 0.02
+    - _PlayerPosYOffset: 0
+    - _PreviewIndicatorLineThickness: 0.04
+    - _PreviewMode: 0
+    - _PuddleAmount: 0
+    - _PuddleChannel: 0
+    - _PuddleFalloff: 12
+    - _PuddleSource: 0
+    - _QueueControl: -1
+    - _QueueOffset: 0
+    - _REPLACEMENT: 0
+    - _RaycastMode: 0
+    - _ReceiveShadows: 1
+    - _ShowContentAnimationArea: 1
+    - _ShowContentDebugArea: 1
+    - _ShowContentDissolveArea: 1
+    - _ShowContentInteractionOptionsArea: 1
+    - _ShowContentObstructionOptionsArea: 1
+    - _ShowContentReplacementOptionsArea: 1
+    - _ShowContentZoningArea: 1
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SoftParticlesEnabled: 0
+    - _SoftParticlesFarFadeDistance: 1
+    - _SoftParticlesNearFadeDistance: 0
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _SyncCullMode: 0
+    - _SyncZonesFloorYOffset: 0
+    - _SyncZonesWithFloorY: 0
+    - _TexturedEmissionEdge: 1
+    - _TexturedEmissionEdgeStrength: 0.644
+    - _TransitionDuration: 0
+    - _TriggerMode: 0
+    - _UVSec: 0
+    - _UVs: 0.06
+    - _UseGlobalPuddles: 0
+    - _UseMossMaskMap: 0
+    - _VertexWaveAmplitude: 0.3
+    - _VertexWaveFrequency: 2
+    - _VertexWaveHeightScale: 4.47
+    - _ZONING: 0
+    - _ZWrite: 1
+    - _Zoning: 1
+    - _ZoningEdgeGradientLength: 0
+    - _ZoningMode: 0
+    - _hasClippedShadows: 0
+    - _id: 0
+    - _isReferenceMaterial: 0
+    - _numOfPlayersInside: 0
+    - _tDirection: 0
+    - _tValue: 0
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveColor: {r: 0, g: 1, b: 0.07058835, a: 0}
+    - _EmissionColor: {r: 51.984146, g: 51.984146, b: 51.984146, a: 1}
+    - _PuddleColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

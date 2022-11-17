@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: refMaterialVegetationExample01
+  m_Shader: {fileID: 4800000, guid: f7d9c873efc7406488319c0cc4e9c626, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _ANIMATIONENABLED_ON _CEILINGBLENDMODE_SUBTRACTIVE
+    _CEILINGMODE_MANUAL _FLOORMODE_MANUAL _FLOOR_MANUAL _ISREFERENCEMATERIAL_ON _OBSTRUCTION_CYLINDERONLY
+    _SYNCCULLMODE_ON _TEXTUREDEMISSIONEDGE_ON _ZONINGMODE_ADDITATIVE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: 3543e527178258847b32c22b46f5cb90, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6533b97436876c94b8a037c2a0888c71, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ObstructionCurve:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AddPrecomputedVelocity: 0
+    - _AlphaClip: 0
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 0
+    - _AlphaSrcBlend: 1
+    - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
+    - _AngleStrength: 0
+    - _AnimationEnabled: 1
+    - _AnimationSpeed: 0.11
+    - _BlendMode: 0
+    - _BumpScale: 1
+    - _Ceiling: 0
+    - _CeilingBlendMode: 1
+    - _CeilingMode: 0
+    - _CeilingPlayerYOffset: 1
+    - _CeilingY: 1
+    - _CeilingYGradientLength: 0
+    - _CircleObstructionDestroyRadius: 100
+    - _CircleStrength: 0
+    - _ConeObstructionDestroyRadius: 4.1
+    - _ConeStrength: 1
+    - _Cull: 0
+    - _CurveObstructionDestroyRadius: 10
+    - _CurveStrength: 1
+    - _Cutoff: 0.408
+    - _CylinderObstructionDestroyRadius: 1.82
+    - _CylinderStrength: 1
+    - _DefaultEffectRadius: 12
+    - _DepthOffsetEnable: 0
+    - _DetailNormalMapScale: 1
+    - _DissolveColorBrightness: 1
+    - _DissolveColorSaturation: 1
+    - _DissolveEmission: 1
+    - _DissolveEmissionBooster: 644.6
+    - _DissolveFallOff: 0.348
+    - _DissolveMaskEnabled: 0
+    - _DissolveStrength: 0.099
+    - _DstBlend: 0
+    - _Emission: 0
+    - _EnableBlendModePreserveSpecularLighting: 1
+    - _EnableFogOnTransparent: 1
+    - _Floor: 0
+    - _FloorMode: 0
+    - _FloorY: -0.3
+    - _FloorYTextureGradientLength: 0.12
+    - _GlossMapScale: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 1
+    - _Id: 0
+    - _InteractionMode: 0
+    - _IntrinsicDissolveStrength: 0
+    - _IsExempt: 0
+    - _IsReplacementShader: 0
+    - _IsZoningRevealable: 0
+    - _IsometricExclusion: 0
+    - _IsometricExclusionDistance: 0
+    - _IsometricExclusionGradientLength: 0
+    - _Metallic: 1
+    - _Mode: 0
+    - _NextFloorY: 0
+    - _Obstruction: 4
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PlayerPosYOffset: 1
+    - _PreviewIndicatorLineThickness: 0.04
+    - _PreviewMode: 0
+    - _RayTracing: 0
+    - _RaycastMode: 0
+    - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
+    - _RefractionModel: 0
+    - _RenderQueueType: 1
+    - _ReplacementShaderCullingRegion: 0
+    - _RequireSplitLighting: 0
+    - _Shininess: 0.078125
+    - _ShowContentAnimationArea: 1
+    - _ShowContentDebugArea: 1
+    - _ShowContentDissolveArea: 1
+    - _ShowContentInteractionOptionsArea: 1
+    - _ShowContentObstructionOptionsArea: 1
+    - _ShowContentReplacementOptionsArea: 1
+    - _ShowContentZoningArea: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 8
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 10
+    - _StencilRefMV: 40
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
+    - _SupportDecals: 1
+    - _SurfaceType: 0
+    - _SyncCullMode: 1
+    - _SyncZonesFloorYOffset: 0
+    - _SyncZonesWithFloorY: 0
+    - _Test: 0.461
+    - _TextureVisibility: 1
+    - _TexturedEmissionEdge: 1
+    - _TexturedEmissionEdgeStrength: 0.734
+    - _TransitionDuration: 2
+    - _TransparentBackfaceEnable: 0
+    - _TransparentDepthPostpassEnable: 0
+    - _TransparentDepthPrepassEnable: 0
+    - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
+    - _TransparentZWrite: 0
+    - _TriggerMode: 0
+    - _UVSec: 0
+    - _UVs: 1
+    - _UseShadowThreshold: 0
+    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 1
+    - _Zoning: 0
+    - _ZoningEdgeGradientLength: 0.1
+    - _ZoningMode: 0
+    - _hasClippedShadows: 0
+    - _id: 0
+    - _isReferenceMaterial: 1
+    - _numOfPlayersInside: 0
+    - _tDirection: 0
+    - _tValue: 0
+    m_Colors:
+    - _CenterPosition: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.6774292, g: 0.7735849, b: 0.49991098, a: 1}
+    - _DissolveColor: {r: 0.59398735, g: 0.6886792, b: 0.14618193, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
