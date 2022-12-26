@@ -49,7 +49,6 @@ MonoBehaviour:
     - Drawing
     - Animancer.FSM
     - Sirenix.OdinInspector.CompatibilityLayer
-    - ShaderCrew.SeeThroughShader.Scripts
     - Ludiq.PeekCore.Editor
     - MoreMountains.Tools.Editor
     - Ludiq.Peek.Editor
@@ -67,8 +66,6 @@ MonoBehaviour:
     - RotaryHeart
     - Sirenix.OdinInspector.Modules.UnityMathematics
     - CodeStage.Package2Folder
-    - ShaderCrew.SeeThroughShader.Editor
-    - STS Stackable Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
