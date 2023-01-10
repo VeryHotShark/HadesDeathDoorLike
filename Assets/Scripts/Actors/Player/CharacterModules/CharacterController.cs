@@ -46,6 +46,7 @@ namespace VHS {
             _fallingMovementModule = GetComponent<CharacterFallingMovement>();
 
             _stateMachine = new StateMachine<CharacterModule>(_movementModule);
+            _stateMachine.SetState(_fallingMovementModule);
         }
 
         private void OnEnable() => UpdateManager.AddUpdateListener(this);

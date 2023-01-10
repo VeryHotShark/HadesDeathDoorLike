@@ -58,6 +58,7 @@ MonoBehaviour:
     - PPv2URPConverters
     - MoreMountains.Feedbacks.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
+    - FullscreenEditor
     - RotaryHeart.PhysicsDebugExtension.Editor
     - JD.EditorAudioUtils.Editor
     - AstarPackageToolsEditor
@@ -66,7 +67,6 @@ MonoBehaviour:
     - RotaryHeart
     - Sirenix.OdinInspector.Modules.UnityMathematics
     - CodeStage.Package2Folder
-    - FullscreenEditor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
