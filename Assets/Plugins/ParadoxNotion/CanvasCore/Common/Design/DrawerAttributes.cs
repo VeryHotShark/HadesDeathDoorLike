@@ -10,6 +10,12 @@ namespace ParadoxNotion.Design
         virtual public int priority { get { return int.MaxValue; } }
         virtual public bool isDecorator { get { return false; } }
     }
+    
+	/// <summary>
+	/// Will create an Instance of the object and Display it (SerializeReference)
+	/// /// </summary>
+	[AttributeUsage(AttributeTargets.Field)]
+	public class ReferenceFieldAttribute : DrawerAttribute { }
 
     ///----------------------------------------------------------------------------------------------
 

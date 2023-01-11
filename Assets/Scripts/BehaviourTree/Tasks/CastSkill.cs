@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using Sirenix.OdinInspector;
@@ -9,7 +9,7 @@ namespace VHS{
 	[Category("Skills")]
 	[Description("Cast Chosen Skill")]
 	public class CastSkill : ActionTask<SkillCasterComponent> {
-		[SerializeReference] public NpcSkillMeleeAttack _skill;
+		[ReferenceField] public NpcSkill _skill;
 
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise

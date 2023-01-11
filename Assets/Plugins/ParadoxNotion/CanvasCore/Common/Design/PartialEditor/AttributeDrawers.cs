@@ -6,6 +6,27 @@ using System.Linq;
 
 namespace ParadoxNotion.Design
 {
+	///<summary>Used to create instances of class similar to Unity's SerializeReference attribute</summary>
+	public class ReferenceFieldDrawer : AttributeDrawer<ReferenceFieldAttribute>
+	{
+		public override object OnGUI(GUIContent content, object instance)
+		{
+			var options = ReflectionTools.GetImplementationsOf(fieldInfo.FieldType);
+			var selection = EditorUtils.Popup<System.Type>(content, instance != null? instance.GetType() : fieldInfo.FieldType, options);
+			if (selection == null){ return instance = null; }
+ 
+			if (instance == null || instance.GetType() != selection ) {
+				if (!typeof(UnityEngine.Object).IsAssignableFrom(selection)){
+					return System.Activator.CreateInstance(selection);
+				}
+			}
+			EditorGUI.indentLevel++;
+			EditorUtils.ReflectedObjectInspector(instance, contextUnityObject);
+			EditorGUI.indentLevel--;
+			return instance;
+		}
+	}
+	
     ///<summary>Used to create header / separators similar to Unity's Header attribute</summary>
     public class HeaderDrawer : AttributeDrawer<HeaderAttribute>
     {
