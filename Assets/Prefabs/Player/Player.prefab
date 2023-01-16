@@ -907,7 +907,7 @@ Transform:
   m_GameObject: {fileID: 3532176833039434667}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.179}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3532176834213684097}
@@ -933,7 +933,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e74834ba16a1b134194339ebb525adf0, type: 2}
+  - {fileID: 2100000, guid: 7bee73e48c17f46e2aaae9d51d37c76e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1164,14 +1164,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3532176833841247273}
   m_LocalRotation: {x: 0.46193978, y: 0.33141357, z: -0.19134171, w: 0.8001032}
-  m_LocalPosition: {x: -7.071069, y: 17.320509, z: -7.0710673}
+  m_LocalPosition: {x: -7.071069, y: 17.320509, z: -7.071067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3532176834255506441}
   m_Father: {fileID: 3532176833701519981}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 20.146, y: 222.341, z: 0.001}
+  m_LocalEulerAnglesHint: {x: 60.000004, y: 45, z: 0}
 --- !u!20 &3532176833841247268
 Camera:
   m_ObjectHideFlags: 0
@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747205b3fbb71e241b3c70ddd83091aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cursor: {fileID: 3532176834213684097}
+  _cursorTransform: {fileID: 3532176834213684097}
   _characterReferencePoint: {fileID: 3532176832971602164}
 --- !u!1 &3532176834213684096
 GameObject:
@@ -1615,7 +1615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3532176834816662542}
   m_LocalRotation: {x: 0.46193978, y: 0.33141357, z: -0.19134171, w: 0.8001032}
-  m_LocalPosition: {x: -7.071069, y: 17.320509, z: -7.0710673}
+  m_LocalPosition: {x: -7.071069, y: 17.320509, z: -7.071067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1652,7 +1652,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0921053, y: 1}
+    m_SensorSize: {x: 1.3651316, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2170,11 +2170,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}

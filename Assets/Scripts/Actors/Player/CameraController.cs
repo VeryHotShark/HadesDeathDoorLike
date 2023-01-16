@@ -8,7 +8,7 @@ namespace VHS {
         private PlayerCursor _playerCursor;
 
         public Camera Camera => _camera;
-        public Transform CursorTransform => _playerCursor.Cursor;
+        public Transform CursorTransform => _playerCursor.CursorTransform;
 
         private void Awake() {
             _camera = GetComponent<Camera>();
