@@ -10,7 +10,7 @@ namespace VHS {
         Attacking,
     }
     
-    public class Npc : Actor<Npc>, ITargetable {
+    public class Npc : Actor<Npc>, ITargetable, IPoolable {
 
         private NpcState _state;
         private IActor _target;
@@ -34,7 +34,7 @@ namespace VHS {
 
         private void Start() {
             _target = NpcBlackboard.PlayerInstance; // Dependency Injection?
-            _blackboard.SetVariableValue("Target", NpcBlackboard.PlayerInstance.gameObject);
+            _blackboard.SetVariableValue("Target", _target.GameObject);
         }
 
         public override void Hit(HitData hitData) {

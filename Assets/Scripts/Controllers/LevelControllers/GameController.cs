@@ -8,12 +8,15 @@ namespace VHS {
     public class GameController : LevelController {
         private UIController _uiController;
         private WaveController _waveController;
+        private ArenaController _arenaController;
         private PlayerSpawnController _playerSpawnController;
 
         public WaveController WaveController => _waveController;
+        public ArenaController ArenaController => _arenaController;
 
         protected override void GetComponents() {
             _waveController = GetComponentInChildren<WaveController>();
+            _arenaController = GetComponentInChildren<ArenaController>();
             _playerSpawnController = GetComponentInChildren<PlayerSpawnController>();
         }
 
@@ -27,7 +30,8 @@ namespace VHS {
 
         protected override void StartLevel() {
             _playerSpawnController.Spawn();
-            _waveController.StartWaves();
+            _arenaController.StartArena();
+            // _waveController.StartWaves();
         }
 
         public void LoadDojo() {
