@@ -13,12 +13,8 @@ namespace VHS {
             if(!_hitPoints.AboveZero)
                 return;
 
-            if (!Parent.DuringParry) {
-                _hitPoints.Subtract(hitData.damage);
-                Parent.OnHit(hitData);
-            }
-            else 
-                Parent.OnParry(hitData);
+            _hitPoints.Subtract(hitData.damage);
+            Parent.OnHit(hitData);
 
             if (!_hitPoints.AboveZero) 
                 Parent.Die();            

@@ -12,12 +12,12 @@ namespace VHS {
         
         private void OnEnable() {
             _parryWindow.OnEnd += OnParryEnd;
-            Player.OnParry += OnParry;
+            // Player.OnParry += OnParry;
         }
 
         private void OnDisable() {
             _parryWindow.OnEnd -= OnParryEnd;
-            Player.OnParry -= OnParry;
+            // Player.OnParry -= OnParry;
         }
 
         private void OnParry(HitData hitData) {

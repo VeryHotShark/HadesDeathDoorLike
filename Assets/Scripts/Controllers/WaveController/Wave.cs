@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 namespace VHS {
     public class Wave : ChildBehaviour<WaveController> {
-        [SerializeField] private float _spawnRadius;
         [SerializeField] private int _spawnEnemyCount;
 
         private int _spawnCount = 0;

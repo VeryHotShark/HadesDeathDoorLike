@@ -16,7 +16,6 @@ namespace VHS {
         private Vector3 _internalVelocityAdd;
 
         private CharacterRoll _rollModule;
-        private CharacterParry _parryModule;
         private CharacterMovement _movementModule;
         private CharacterMeleeCombat _meleeCombatModule;
         private CharacterRangeCombat _rangeCombatModule;
@@ -25,7 +24,6 @@ namespace VHS {
         private KinematicCharacterMotor _motor;
         private StateMachine<CharacterModule> _stateMachine;
 
-        public CharacterParry ParryModule => _parryModule;
         public KinematicCharacterMotor Motor => _motor;
         public Player ControlledCharacter => Parent;
 
@@ -39,7 +37,6 @@ namespace VHS {
             _motor.CharacterController = this;
 
             _rollModule = GetComponent<CharacterRoll>();
-            _parryModule = GetComponent<CharacterParry>();
             _movementModule = GetComponent<CharacterMovement>();
             _meleeCombatModule = GetComponent<CharacterMeleeCombat>();
             _rangeCombatModule = GetComponent<CharacterRangeCombat>();
@@ -78,8 +75,6 @@ namespace VHS {
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.RollDown)
                     _stateMachine.SetState(_rollModule);
-                else if(inputs.ParryDown)
-                    _stateMachine.SetState(_parryModule);
                 else if (inputs.SecondaryAttackPressed)
                     _stateMachine.SetState(_rangeCombatModule);
                 else if(inputs.PrimaryAttackPressed && !_meleeCombatModule.IsOnCooldown)
