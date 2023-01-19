@@ -10,6 +10,6 @@ namespace NodeCanvasAddons.AStarPathfinding
     public class SetFunnelUnwrapAction : SetModifierValueAction<FunnelModifier, bool>
     {
         protected override void SetModifierValue(bool value)
-        { Modifier.value.unwrap = value; }
+        { ; }
     }
 }

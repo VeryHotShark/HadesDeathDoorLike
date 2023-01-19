@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.arongranberg.astar": {
-      "version": "4.3.57",
+      "version": "4.3.61",
       "depth": 0,
       "source": "registry",
       "dependencies": {

@@ -10,6 +10,6 @@ namespace NodeCanvasAddons.AStarPathfinding
     public class GetFunnelUnwrapAction : GetValueFromModifierAction<FunnelModifier, bool>
     {
         protected override bool GetValueFrom(FunnelModifier modifier)
-        { return modifier.unwrap; }
+        { return modifier; }
     }
 }

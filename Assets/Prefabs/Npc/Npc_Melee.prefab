@@ -256,9 +256,9 @@ MonoBehaviour:
   heightBackingField: 2
   centerBackingField: 1
   locked: 0
-  lockWhenNotMoving: 0
-  agentTimeHorizon: 2
-  obstacleTimeHorizon: 2
+  lockWhenNotMoving: 1
+  agentTimeHorizon: 4
+  obstacleTimeHorizon: 3
   maxNeighbours: 10
   layer: 1
   collidesWith: -1
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 6
-  radius: 0.5
+  radius: 0.6
   height: 2
   canMove: 1
   maxSpeed: 5
@@ -290,7 +290,7 @@ MonoBehaviour:
   endReachedDistance: 3
   whenCloseToDestination: 0
   rvoDensityBehavior:
-    enabled: 1
+    enabled: 0
     densityThreshold: 0.5
     returnAfterBeingPushedAway: 0
     progressAverage: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   acceleration: 8
   rotationSpeed: 360
-  slowdownTime: 0.5
+  slowdownTime: 0.2
   wallForce: 3
   wallDist: 1
   funnelSimplification: 0

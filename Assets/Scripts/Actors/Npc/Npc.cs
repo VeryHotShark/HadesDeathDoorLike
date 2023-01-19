@@ -34,7 +34,9 @@ namespace VHS {
 
         private void Start() {
             _target = NpcBlackboard.PlayerInstance; // Dependency Injection?
-            _blackboard.SetVariableValue("Target", _target.GameObject);
+            
+            if(_target != null)
+                _blackboard.SetVariableValue("Target", _target.GameObject);
         }
 
         public override void Hit(HitData hitData) {

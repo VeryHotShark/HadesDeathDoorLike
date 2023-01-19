@@ -9,7 +9,7 @@
     }
   ],
   "dependencies": {
-    "com.arongranberg.astar": "4.3.57",
+    "com.arongranberg.astar": "4.3.61",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.addressables": "1.19.19",
     "com.unity.ai.navigation": "1.0.0-exp.4",
