@@ -266,7 +266,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 5.521646
+  m_FrequencyGain: 5.525054
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &3532176832902561215
 GameObject:
@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 3532176832971602153}
   - component: {fileID: 3532176832971602155}
   - component: {fileID: 3532176832971602154}
+  - component: {fileID: 6178903009589022373}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -859,6 +860,23 @@ MonoBehaviour:
         DebugActive: 0
         FreezeFrameDuration: 0.066
         MinimumTimescaleThreshold: 0.1
+--- !u!114 &6178903009589022373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532176832971602171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433de592a36793498bf6b2d5bdaf257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _instanceLogs: 1
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _customUpdate: 1
+  _updateRate: 0.5
+  _interactionRadius: 3.5
 --- !u!1 &3532176833039434667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1649,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.512906, y: 1}
+    m_SensorSize: {x: 1.777533, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2145,7 +2163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 10.008335
+      value: 8.775001
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top

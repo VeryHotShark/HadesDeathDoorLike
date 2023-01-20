@@ -128,6 +128,9 @@ namespace VHS {
             _characterInputs.CursorRotation = _camera.CursorTransform.rotation;
 
             _character.SetInputs(ref _characterInputs);
+            
+            if(Keyboard.current.fKey.wasReleasedThisFrame)
+                Player.HandleInteract();
 
             // ResetInputs();
         }
