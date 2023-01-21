@@ -14,7 +14,9 @@ namespace VHS {
         private Collider[] _colliders = new Collider[32];
 
         public override void StartTarget_Hook() {
-            base.StartTarget_Hook();            
+            base.StartTarget_Hook();         
+            Owner.AIAgent.ResetPath();
+            Owner.AIAgent.Stop();
             Owner.SetState(NpcState.Attacking);
         }
 
@@ -22,7 +24,6 @@ namespace VHS {
 
         public override void StartSkill_Hook() {
             base.StartSkill_Hook();
-            Owner.AIAgent.RVO.priorityMultiplier = 2.0f;
             _hittables.Clear();
         }
 
@@ -34,11 +35,11 @@ namespace VHS {
         public override void FinishSkill_Hook() {
             base.FinishSkill_Hook();
             
+            Owner.AIAgent.Resume();
+            
             // TODO rework this, temporary for stagger to work because this gets called after stagger
             if(Owner.State != NpcState.Recovery)
                 Owner.SetState(NpcState.Default);
-            
-            Owner.AIAgent.RVO.priorityMultiplier = 1.0f;
         }
 
         private void MoveCharacter(float deltaTime) {

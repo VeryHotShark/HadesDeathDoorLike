@@ -12,10 +12,23 @@ namespace VHS {
         public RVOController RVO => rvoController;  
         
         public void ResetPath() {
-            rvoController.enabled = false;
-            rvoController.enabled = true;
             enabled = false;
             enabled = true;
+            rvoController.enabled = false;
+            rvoController.enabled = true;
+            desiredVelocityWithoutLocalAvoidance = Vector3.zero;
+        }
+
+        public void Stop() {
+            isStopped = true;
+            canSearch = false;
+            rvoController.locked = true;
+        }
+
+        public void Resume() {
+            canSearch = true;
+            isStopped = false;
+            rvoController.locked = false;
         }
     }
 }
