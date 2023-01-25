@@ -5,7 +5,6 @@ using Object = UnityEngine.Object;
 
 namespace VHS {
     public class BaseBehaviour : MonoBehaviour, ICustomUpdateListener {
-        [FoldoutGroup("Debug Properties"), ShowInInspector] private static bool DISABLE_ALL_LOGS = false;
         [FoldoutGroup("Debug Properties"), SerializeField, DisableIf("DISABLE_ALL_LOGS")] private bool _instanceLogs = true;
         [FoldoutGroup("Debug Properties"), SerializeField, ColorUsage(false,false)] private Color _color = Color.white;
         
@@ -45,7 +44,7 @@ namespace VHS {
         public virtual void OnCustomUpdate(float deltaTime) { }
 
         protected void Log(params object[] msg) {
-            if(DISABLE_ALL_LOGS || !_instanceLogs)
+            if(!_instanceLogs)
                 return;
 
             VHSLogger.DoLog(Debug.Log, GetType().Name , gameObject, _color, msg );

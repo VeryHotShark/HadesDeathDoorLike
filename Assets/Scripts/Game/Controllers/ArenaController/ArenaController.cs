@@ -18,12 +18,39 @@ namespace VHS {
         [Space] 
         [SerializeField] private SpawnData[] _spawnsData;
 
-        public event Action OnArenaCleared = delegate { };
+        [Space, Header("SpawnPoints")]
+        [SerializeField] private float _minDistance = 5.0f;
+
+        [Space, Header("Random")]
+        [SerializeField] private Vector2 _spawnRange = new Vector2(4f, 10f);
         
+        public event Action OnArenaCleared = delegate { };
+
+        private float _minDistanceSqr;
         private float _timer;
         private bool _arenaStarted;
         private List<Npc> _aliveNpcs = new List<Npc>();
         
+        private SpawnPoint[] _spawnPoints = new SpawnPoint[0];
+        private Dictionary<Npc, List<SpawnPoint>> _spawnPointsDict = new Dictionary<Npc, List<SpawnPoint>>();
+        
+        private void Awake() {
+            _minDistanceSqr = _minDistance.Square();
+            
+            foreach (SpawnData spawnData in _spawnsData) {
+                List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+                _spawnPointsDict.Add(spawnData.NpcPrefab, spawnPoints);
+            }
+            
+            SpawnPoint[] allSpawnPoints = GetComponentsInChildren<SpawnPoint>();
+
+            foreach (SpawnPoint spawnPoint in allSpawnPoints) {
+                foreach (Npc npc in spawnPoint.Npcs) {
+                    if (_spawnPointsDict.TryGetValue(npc, out List<SpawnPoint> spawnPoints))
+                        spawnPoints.Add(spawnPoint);                        
+                }
+            }
+        }
 
         protected override void Enable() {
             base.Enable();
@@ -71,16 +98,48 @@ namespace VHS {
         }
 
         private void SpawnEnemy(Npc prefab) {
-            Vector3 spawnPos = GetSpawnPosition();
+            Vector3 spawnPos = GetSpawnPosition(prefab);
             Npc spawnedNpc = Instantiate(prefab, spawnPos, Quaternion.identity);
             spawnedNpc.OnDeath += OnNpcDeath;
             _aliveNpcs.Add(spawnedNpc);
             // PoolManager.Spawn(prefab, sampledInfo.position, Quaternion.identity); TODO make NPC Poolable
         }
 
-        private Vector3 GetSpawnPosition() {
-            Vector3 randomOffset = Random.insideUnitSphere.Flatten() * 10.0f;
-            Vector3 spawnPos = transform.position + randomOffset;
+        private Vector3 GetSpawnPosition(Npc prefab) {
+            SpawnPoint spawnPoint = GetValidSpawnPoint(prefab);
+                
+            if (spawnPoint != null)
+                return spawnPoint.transform.position;
+            
+            return GetRandomPosition();
+        }
+
+        private SpawnPoint GetValidSpawnPoint(Npc prefab) {
+            List<SpawnPoint> validSpawnPoints = new List<SpawnPoint>();
+            
+            foreach (SpawnPoint spawnPoint in _spawnPointsDict[prefab]) {
+                if (spawnPoint.IsValid()) {
+                    float distanceToTarget = Parent.Player.FeetPosition.DistanceSquaredTo(spawnPoint.transform.position);
+                    
+                    if(distanceToTarget > _minDistanceSqr)
+                        validSpawnPoints.Add(spawnPoint);
+                }
+            }
+
+            int validSpawnPointsCount = validSpawnPoints.Count; 
+
+            if (validSpawnPointsCount > 0) {
+                int randomIndex = Random.Range(0,validSpawnPointsCount);
+                return validSpawnPoints[randomIndex];
+            }
+
+            return null;
+        }
+
+        private Vector3 GetRandomPosition() {
+            float randomDistance = _spawnRange.Random();
+            Vector3 randomOffset = Random.insideUnitSphere.Flatten() * randomDistance;
+            Vector3 spawnPos = Parent.Player.FeetPosition + randomOffset;
             NNInfo sampledInfo = AstarPath.active.GetNearest(spawnPos);
             return sampledInfo.position;
         }

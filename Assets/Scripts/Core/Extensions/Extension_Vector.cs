@@ -2,7 +2,16 @@
 using UnityEngine;
 
 namespace VHS {
-    public static class Extension_Vector3 {
+    public static class Extension_Vector {
+        /// <summary>
+        /// returns random between given range
+        /// </summary>
+        /// <param name="range">range used for Min Max</param>
+        /// <returns></returns>
+        public static float Random(this Vector2 range) {
+            return UnityEngine.Random.Range(range.x, range.y);
+        }
+        
         public static Vector3 SetX(this Vector3 vector3, float newX) {
             vector3.x = newX;
             return vector3;
