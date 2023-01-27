@@ -1326,8 +1326,6 @@ GameObject:
   - component: {fileID: 1420193204}
   - component: {fileID: 1420193209}
   - component: {fileID: 1420193208}
-  - component: {fileID: 1420193211}
-  - component: {fileID: 1420193210}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1442,7 +1440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"FlowCanvas.FlowScript","nodes":[{"target":{},"targets":{},"_position":{"x":367.0,"y":321.0},"$type":"FlowCanvas.Nodes.TriggerEvents_Transform","$id":"0"},{"_sourceOutputUID":"9bb04006-9f54-4da5-9b96-2bd623bafe55","_position":{"x":593.0,"y":319.0},"$type":"FlowCanvas.Nodes.CustomFunctionCall","$id":"1"},{"identifier":"EnterPortal","_parameters":[{"_ID":"1990d315-80b1-4e48-bd88-18839526f480","_name":"Other","_type":"UnityEngine.GameObject"}],"_returns":{"_ID":"f085d63f-97fc-4165-9180-97f45fa31509","_name":"Value"},"_UID":"9bb04006-9f54-4da5-9b96-2bd623bafe55","_position":{"x":361.0,"y":628.0},"$type":"FlowCanvas.Nodes.CustomFunctionEvent","$id":"2"},{"_position":{"x":829.0,"y":630.0},"$type":"FlowCanvas.Nodes.SwitchBool","$id":"3"},{"_method":{"_baseInfo":"VHS.DojoController|LoadGame|System.Void","_paramsInfo":""},"_callable":true,"_position":{"x":1137.0,"y":696.0},"$type":"FlowCanvas.Nodes.ReflectedMethodNodeWrapper","$id":"4"},{"_method":{"_baseInfo":"UnityEngine.GameObject|CompareTag|System.Boolean","_paramsInfo":"System.String"},"_inputPortValues":{"tag":{"$content":"Player","$type":"System.String"}},"_position":{"x":609.0,"y":730.0},"$type":"FlowCanvas.Nodes.ReflectedMethodNodeWrapper","$id":"5"},{"value":{"_name":"_dojoController","_targetVariableID":"01493bf9-8ecb-49c5-916c-deb058771d51"},"_position":{"x":829.0,"y":860.0},"$type":"FlowCanvas.Nodes.GetVariable`1[[VHS.DojoController,
+  _boundGraphSerialization: '{"type":"FlowCanvas.FlowScript","nodes":[{"target":{},"targets":{},"_position":{"x":367.0,"y":321.0},"$type":"FlowCanvas.Nodes.TriggerEvents_Transform","$id":"0"},{"_sourceOutputUID":"9bb04006-9f54-4da5-9b96-2bd623bafe55","_position":{"x":593.0,"y":318.0},"$type":"FlowCanvas.Nodes.CustomFunctionCall","$id":"1"},{"identifier":"EnterPortal","_parameters":[{"_ID":"1990d315-80b1-4e48-bd88-18839526f480","_name":"Other","_type":"UnityEngine.GameObject"}],"_returns":{"_ID":"f085d63f-97fc-4165-9180-97f45fa31509","_name":"Value"},"_UID":"9bb04006-9f54-4da5-9b96-2bd623bafe55","_position":{"x":361.0,"y":628.0},"$type":"FlowCanvas.Nodes.CustomFunctionEvent","$id":"2"},{"_position":{"x":829.0,"y":630.0},"$type":"FlowCanvas.Nodes.SwitchBool","$id":"3"},{"_method":{"_baseInfo":"VHS.DojoController|LoadGame|System.Void","_paramsInfo":""},"_callable":true,"_position":{"x":1137.0,"y":696.0},"$type":"FlowCanvas.Nodes.ReflectedMethodNodeWrapper","$id":"4"},{"_method":{"_baseInfo":"UnityEngine.GameObject|CompareTag|System.Boolean","_paramsInfo":"System.String"},"_inputPortValues":{"tag":{"$content":"Player","$type":"System.String"}},"_position":{"x":609.0,"y":730.0},"$type":"FlowCanvas.Nodes.ReflectedMethodNodeWrapper","$id":"5"},{"value":{"_name":"_dojoController","_targetVariableID":"01493bf9-8ecb-49c5-916c-deb058771d51"},"_position":{"x":829.0,"y":860.0},"$type":"FlowCanvas.Nodes.GetVariable`1[[VHS.DojoController,
     Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]","$id":"6"}],"connections":[{"_sourcePortName":"Enter","_targetPortName":"
     ","_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"FlowCanvas.BinderConnection"},{"_sourcePortName":"Other","_targetPortName":"1990d315-80b1-4e48-bd88-18839526f480","_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"FlowCanvas.BinderConnection`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},{"_sourcePortName":"
@@ -1459,8 +1457,8 @@ MonoBehaviour:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: 388, y: 43}
-    _zoomFactor: 0.7581788
+    _translation: {x: -545, y: -497}
+    _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -1469,30 +1467,6 @@ MonoBehaviour:
   _updateMode: 0
   _graph: {fileID: 0}
   _blackboard: {fileID: 1420193208}
---- !u!114 &1420193210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420193203}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1420193211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420193203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1531225176
 GameObject:
   m_ObjectHideFlags: 0

@@ -504,8 +504,7 @@ MonoBehaviour:
   _persistent: 0
   _menuScene: MenuScene
   _dojoScene: DojoScene
-  _gameScene: PlaygroundScene
-  _playerScene: PlayerScene
+  _gameScene: GameScene_00
   _loadScene: LoadScene
   _loadBar: {fileID: 7574128203132211410}
   _loadText: {fileID: 2722631262311461979}
