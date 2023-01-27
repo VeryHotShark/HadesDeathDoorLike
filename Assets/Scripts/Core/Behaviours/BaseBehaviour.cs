@@ -5,7 +5,7 @@ using Object = UnityEngine.Object;
 
 namespace VHS {
     public class BaseBehaviour : MonoBehaviour, ICustomUpdateListener {
-        [FoldoutGroup("Debug Properties"), SerializeField, DisableIf("DISABLE_ALL_LOGS")] private bool _instanceLogs = true;
+        [FoldoutGroup("Debug Properties"), SerializeField] private bool _instanceLogs = true;
         [FoldoutGroup("Debug Properties"), SerializeField, ColorUsage(false,false)] private Color _color = Color.white;
         
         [FoldoutGroup("Behaviour Properties"),SerializeField] private bool _customUpdate = false;
