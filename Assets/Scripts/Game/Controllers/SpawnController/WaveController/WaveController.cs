@@ -5,13 +5,11 @@ using MEC;
 using UnityEngine;
 
 namespace VHS {
-    public class WaveController : ChildBehaviour<GameController> {
-        [SerializeField] private float _timeBetweenWaves = 3.0f;
+    public class WaveController : SpawnController {
+        [SerializeField] private float _timeBetweenWaves = 2.0f;
 
         private List<Wave> _waves;
         
-        public event Action OnWavesStart = delegate { };
-        public event Action OnWavesCleared = delegate { };
         public event Action<int> OnWaveChanged = delegate { };
 
         private Wave _currentWave;
@@ -42,6 +40,12 @@ namespace VHS {
             StartWave(_currentWaveIndex);
         }
 
+        public override void StartSpawn() {
+            _currentWaveIndex = 0;
+            StartWave(_currentWaveIndex);
+            StartCallback();
+        }
+
         private void StartWave(int index) {
             Timing.CallDelayed(_timeBetweenWaves, delegate {
                 _currentWave = _waves[index];
@@ -50,15 +54,6 @@ namespace VHS {
             });
         }
 
-        private void WavesCleared() {
-            OnWavesCleared();
-            Log("FINISHED ALL WAVES");
-        }
-
-        public void StartWaves() {
-            _currentWaveIndex = 0;
-            StartWave(_currentWaveIndex);
-            OnWavesStart();
-        }
+        private void WavesCleared() => FinishCallback();
     }
 }

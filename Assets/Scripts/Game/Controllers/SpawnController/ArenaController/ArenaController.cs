@@ -5,16 +5,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace VHS {
-    [Serializable]
-    public struct SpawnData {
-        public Npc NpcPrefab;
-        public AnimationCurve SpawnCurve;
-    }
     
-    public class ArenaController : ChildBehaviour<GameController>, ISlowUpdateListener {
-        [SerializeField] private float _spawnInterval = 1.0f;
-        [SerializeField] private float _arenaDuration = 30.0f;
-
+    public class ArenaController : SpawnController, ISlowUpdateListener {
         [Space] 
         [SerializeField] private SpawnData[] _spawnsData;
 
@@ -23,16 +15,13 @@ namespace VHS {
 
         [Space, Header("Random")]
         [SerializeField] private Vector2 _spawnRange = new Vector2(4f, 10f);
-        
-        public event Action OnArenaCleared = delegate { };
 
-        private float _minDistanceSqr;
+        private float _minDistanceSqr; // TODO Move this to seperate spawnpoint
         private float _timer;
-        private bool _arenaStarted;
-        private List<Npc> _aliveNpcs = new List<Npc>();
+        private List<Npc> _aliveNpcs = new();
         
         private SpawnPoint[] _spawnPoints = new SpawnPoint[0];
-        private Dictionary<Npc, List<SpawnPoint>> _spawnPointsDict = new Dictionary<Npc, List<SpawnPoint>>();
+        private Dictionary<Npc, List<SpawnPoint>> _spawnPointsDict = new();
         
         private void Awake() {
             _minDistanceSqr = _minDistance.Square();
@@ -52,13 +41,7 @@ namespace VHS {
             }
         }
 
-        protected override void Enable() {
-            base.Enable();
-            UpdateManager.AddSlowUpdateListener(this);
-        }
-
         protected override void Disable() {
-            base.Disable();
             UpdateManager.RemoveSlowUpdateListener(this);
 
             foreach (Npc npc in _aliveNpcs) 
@@ -66,9 +49,6 @@ namespace VHS {
         }
 
         public void OnSlowUpdate(float deltaTime) {
-            if(!_arenaStarted)
-                return;
-            
             _timer += deltaTime;
             ConsoleProDebug.Watch("Arena Timer", _timer.ToString());
 
@@ -90,11 +70,8 @@ namespace VHS {
                 }
             }
 
-            if (removedAllKeys && _aliveNpcs.Count == 0) {
-                Log("VICTORY");
-                OnArenaCleared();
+            if (removedAllKeys && _aliveNpcs.Count == 0) 
                 StopArena();
-            }
         }
 
         private void SpawnEnemy(Npc prefab) {
@@ -150,7 +127,15 @@ namespace VHS {
             _aliveNpcs.Remove(npc);
         }
 
-        public void StartArena() => _arenaStarted = true;
-        public void StopArena() => _arenaStarted = false;
+        
+        public override void StartSpawn() {
+            UpdateManager.AddSlowUpdateListener(this);
+            StartCallback();
+        }
+        
+        private void StopArena() {
+            UpdateManager.RemoveSlowUpdateListener(this);
+            FinishCallback();
+        }
     }
 }

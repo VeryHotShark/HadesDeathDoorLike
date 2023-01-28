@@ -60,5 +60,16 @@ namespace VHS {
             SetState(NpcState.Recovery);
             Timing.CallDelayed(duration, () => SetState(NpcState.Default), gameObject);
         }
+
+        public void Kill(IActor dealer) {
+            HitData hitData = new HitData {
+                damage = 1,
+                dealer = dealer,
+                position = transform.position,
+                direction = -transform.forward
+            };
+
+            Hit(hitData);
+        }
     }
 }

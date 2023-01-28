@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace VHS {
     public class UIController : LevelControllerModule {
-        private WavesUI _wavesUI;
+        private SpawnControllerUI _spawnControllerUI;
 
         private UIModule[] _modules;
 
         public LevelController Controller => Parent;
 
         private void Awake() {
-            _wavesUI = GetComponentInChildren<WavesUI>();
+            _spawnControllerUI = GetComponentInChildren<SpawnControllerUI>();
             _modules = GetComponentsInChildren<UIModule>();
         }
 
@@ -27,7 +27,7 @@ namespace VHS {
         }
 
         public void ShowWaveUI(bool state) {
-            _wavesUI?.Show(state);
+            _spawnControllerUI?.Show(state);
         }
     }
 }
