@@ -12,6 +12,13 @@ namespace VHS {
         private float _timer;
         private Dictionary<Npc, List<Npc>> _aliveNpcsDict = new();
 
+        private void Awake() {
+            foreach (SpawnData spawnData in _spawnsData) {
+                List<Npc> aliveNpcs = new List<Npc>();
+                _aliveNpcsDict.Add(spawnData.NpcPrefab, aliveNpcs);
+            }
+        }
+        
         protected override void Disable() {
             base.Disable();
             UpdateManager.RemoveSlowUpdateListener(this);
@@ -40,15 +47,13 @@ namespace VHS {
             float normalizedTime = Mathf.Clamp01(_timer / _survivalDuration);
             
             foreach (SpawnData spawnData in _spawnsData) {
-                float desiredNpcCount = spawnData.SpawnCurve.Evaluate(normalizedTime);
+                int desiredNpcCount = Mathf.RoundToInt(spawnData.SpawnCurve.Evaluate(normalizedTime));
+                int currentNpcCount = _aliveNpcsDict[spawnData.NpcPrefab].Count;
+                
+                if (currentNpcCount < desiredNpcCount) {
+                    int enemiesCountToSpawn = desiredNpcCount - currentNpcCount;
 
-                Keyframe keyframe = spawnData.SpawnCurve[0];
-
-                if (_timer > keyframe.time) {
-                    spawnData.SpawnCurve.RemoveKey(0);
-                    int spawnAmount = Mathf.RoundToInt(keyframe.value);
-
-                    for (int i = 0; i < spawnAmount; i++)
+                    for (int i = 0; i < enemiesCountToSpawn; i++)
                         SpawnEnemy(spawnData.NpcPrefab);
                 }
             }
