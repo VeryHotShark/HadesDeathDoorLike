@@ -29,10 +29,10 @@ namespace VHS {
             }
         }
 
-        private void OnNpcDeath(IActor actor) {
+        protected override void OnNpcDeath(IActor actor) {
+            base.OnNpcDeath(actor);
             Npc npc = actor as Npc;
-            npc.OnDeath -= OnNpcDeath;
-            _aliveNpcsDict[npc].Remove(npc);
+            // _aliveNpcsDict[npc].Remove(npc); TODO Enemy ID
         }
 
         public void OnSlowUpdate(float deltaTime) {
@@ -53,18 +53,13 @@ namespace VHS {
                 if (currentNpcCount < desiredNpcCount) {
                     int enemiesCountToSpawn = desiredNpcCount - currentNpcCount;
 
-                    for (int i = 0; i < enemiesCountToSpawn; i++)
-                        SpawnEnemy(spawnData.NpcPrefab);
+                    for (int i = 0; i < enemiesCountToSpawn; i++) {
+                        Vector3 SpawnPos = GetSpawnPosition(spawnData.NpcPrefab);
+                        Npc spawnedNpc = SpawnEnemy(spawnData.NpcPrefab, SpawnPos);
+                        _aliveNpcsDict[spawnData.NpcPrefab].Add(spawnedNpc);
+                    }
                 }
             }
-        }
-        
-        private void SpawnEnemy(Npc prefab) {
-            Vector3 spawnPos = transform.position;
-            Npc spawnedNpc = Instantiate(prefab, spawnPos, Quaternion.identity);
-            spawnedNpc.OnDeath += OnNpcDeath;
-            _aliveNpcsDict[prefab].Add(spawnedNpc);
-            // PoolManager.Spawn(prefab, sampledInfo.position, Quaternion.identity); TODO make NPC Poolable
         }
 
         public override void StartSpawn() {

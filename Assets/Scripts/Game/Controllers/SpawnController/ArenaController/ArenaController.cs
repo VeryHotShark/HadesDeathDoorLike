@@ -10,13 +10,7 @@ namespace VHS {
         [Space] 
         [SerializeField] private SpawnData[] _spawnsData;
 
-        [Space, Header("Random")]
-        [SerializeField] private Vector2 _spawnRange = new Vector2(4f, 10f);
-
-  
         private float _timer;
-        private List<Npc> _aliveNpcs = new();
-        
 
         protected override void Disable() {
             base.Disable();

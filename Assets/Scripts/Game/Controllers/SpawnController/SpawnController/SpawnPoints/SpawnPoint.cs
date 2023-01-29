@@ -20,7 +20,7 @@ namespace VHS {
         public Npc[] Npcs => _npcsToSpawn;
         
         public bool IsValid() => !_cooldown.IsActive;
-        
+
         public Vector3 ProvidePoint() {
             OnPointProvided();
             Vector3 point = _spawnPointProvider.ProvidePoint();

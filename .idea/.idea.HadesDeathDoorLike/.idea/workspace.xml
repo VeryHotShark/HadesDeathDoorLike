@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/ArenaController/ArenaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/ArenaController/ArenaController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/SpawnPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SurvivalController/SurvivalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SurvivalController/SurvivalController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +106,7 @@
       <workItem from="1674947004688" duration="1211000" />
       <workItem from="1674986798811" duration="7438000" />
       <workItem from="1675009042364" duration="7309000" />
+      <workItem from="1675025880613" duration="4188000" />
     </task>
     <servers />
   </component>

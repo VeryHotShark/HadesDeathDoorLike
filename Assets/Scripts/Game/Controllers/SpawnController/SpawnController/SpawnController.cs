@@ -21,15 +21,18 @@ namespace VHS {
     }
     
     public abstract class SpawnController : ChildBehaviour<GameController> {
+        [SerializeField] private GameObject _spawnVFX;
         [SerializeField] private SpawnStartType _spawnStartType = SpawnStartType.Immediate;
-
+        
         [TitleGroup("Spawn Requirements")]
         [SerializeField] private EQSPointProvider _eqsPointProvider;
         [SerializeField] private float _minDistance = 5.0f;
+        [SerializeField] private Vector2 _randomSpawnRange = new Vector2(4.0f,10.0f);
 
-        
         public event Action OnStarted = delegate { };
         public event Action OnFinished = delegate { };
+
+        private Collider[] _overlapNpcs = new Collider[5];
         
         protected float _minDistanceSqr;
         
@@ -63,17 +66,17 @@ namespace VHS {
             return spawnedNpc;
         }
         
-        private void OnNpcDeath(IActor actor) {
+        protected virtual void OnNpcDeath(IActor actor) {
             Npc npc = actor as Npc;
             npc.OnDeath -= OnNpcDeath;
             _aliveNpcs.Remove(npc);
         }
         
         protected Vector3 GetSpawnPosition(Npc prefab) {
-            SpawnPoint spawnPoint = GetValidSpawnPoint(prefab);
+            Vector3? spawnPointPosition = GetValidSpawnPointPosition(prefab);
                 
-            if (spawnPoint != null)
-                return spawnPoint.ProvidePoint();
+            if (spawnPointPosition != null)
+                return spawnPointPosition.Value;
 
             var eqsPoint = GetEQSPoint();
 
@@ -82,8 +85,8 @@ namespace VHS {
             
             return GetRandomPosition();
         }
-        
-        protected SpawnPoint GetValidSpawnPoint(Npc prefab) {
+
+        private Vector3? GetValidSpawnPointPosition(Npc prefab) {
             List<SpawnPoint> validSpawnPoints = new List<SpawnPoint>();
             
             foreach (SpawnPoint spawnPoint in _spawnPointsDict[prefab]) {
@@ -95,17 +98,30 @@ namespace VHS {
                 }
             }
 
-            int validSpawnPointsCount = validSpawnPoints.Count; 
+            return FilterProvidedPoints(validSpawnPoints);
+        }
 
-            if (validSpawnPointsCount > 0) {
-                int randomIndex = Random.Range(0,validSpawnPointsCount);
-                return validSpawnPoints[randomIndex];
-            }
+        private Vector3? FilterProvidedPoints(List<SpawnPoint> validSpawnPoints) {
+            if (validSpawnPoints.Count == 0)
+                return null;
+            
+            do {
+                int randomIndex = Random.Range(0, validSpawnPoints.Count);
+                SpawnPoint potentialSpawnPoint = validSpawnPoints[randomIndex];
+                Vector3 providedPoint = potentialSpawnPoint.ProvidePoint();
+
+                int hitCount = Physics.OverlapSphereNonAlloc(providedPoint, 1.0f, _overlapNpcs, LayerManager.Masks.ACTORS);
+
+                if (hitCount == 0) 
+                    return providedPoint;
+
+                validSpawnPoints.RemoveAt(randomIndex);
+            } while (validSpawnPoints.Count > 0);
 
             return null;
         }
 
-        protected Vector3? GetEQSPoint() {
+        private Vector3? GetEQSPoint() {
             Vector3 point = _eqsPointProvider.ProvidePoint();
 
             if (point != Vector3.zero)
@@ -113,9 +129,9 @@ namespace VHS {
             
             return null;
         }
-        
-        protected Vector3 GetRandomPosition() {
-            float randomDistance = new Vector2(4,10).Random();
+
+        private Vector3 GetRandomPosition() {
+            float randomDistance = _randomSpawnRange.Random();
             Vector3 randomOffset = Random.insideUnitSphere.Flatten() * randomDistance;
             Vector3 spawnPos = Parent.Player.FeetPosition + randomOffset;
             NNInfo sampledInfo = AstarPath.active.GetNearest(spawnPos);
