@@ -9,11 +9,11 @@ namespace VHS {
     public class LinePointProvider : ISpawnPointProvider {
         [SerializeField, Range(2, 10)] private int _points = 2;
         [SerializeField] private float _length = 5f;
-        [SerializeField] private Vector3 _start;
-        [SerializeField] private Vector3 _end;
+        /*[DraggablePoint]*/ private Vector3 _start;
+        /*[DraggablePoint]*/ private Vector3 _end;
         
         public Transform Transform { get; set; }
-        
+
         public void OnDrawGizmos(Transform transform) {
             float halfLength = _length / 2f;
             _start = transform.position - transform.right * halfLength;

@@ -10,42 +10,17 @@ namespace VHS {
         [Space] 
         [SerializeField] private SpawnData[] _spawnsData;
 
-        [Space, Header("SpawnPoints")]
-        [SerializeField] private float _minDistance = 5.0f;
-
         [Space, Header("Random")]
         [SerializeField] private Vector2 _spawnRange = new Vector2(4f, 10f);
 
-        private float _minDistanceSqr; // TODO Move this to seperate spawnpoint
+  
         private float _timer;
         private List<Npc> _aliveNpcs = new();
         
-        private SpawnPoint[] _spawnPoints = new SpawnPoint[0];
-        private Dictionary<Npc, List<SpawnPoint>> _spawnPointsDict = new();
-        
-        private void Awake() {
-            _minDistanceSqr = _minDistance.Square();
-            
-            foreach (SpawnData spawnData in _spawnsData) {
-                List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
-                _spawnPointsDict.Add(spawnData.NpcPrefab, spawnPoints);
-            }
-            
-            SpawnPoint[] allSpawnPoints = GetComponentsInChildren<SpawnPoint>();
-
-            foreach (SpawnPoint spawnPoint in allSpawnPoints) {
-                foreach (Npc npc in spawnPoint.Npcs) {
-                    if (_spawnPointsDict.TryGetValue(npc, out List<SpawnPoint> spawnPoints))
-                        spawnPoints.Add(spawnPoint);                        
-                }
-            }
-        }
 
         protected override void Disable() {
+            base.Disable();
             UpdateManager.RemoveSlowUpdateListener(this);
-
-            foreach (Npc npc in _aliveNpcs) 
-                npc.OnDeath -= OnNpcDeath;
         }
 
         public void OnSlowUpdate(float deltaTime) {
@@ -65,21 +40,15 @@ namespace VHS {
                     spawnData.SpawnCurve.RemoveKey(0);
                     int spawnAmount = Mathf.RoundToInt(keyframe.value);
 
-                    for (int i = 0; i < spawnAmount; i++)
-                        SpawnEnemy(spawnData.NpcPrefab);
+                    for (int i = 0; i < spawnAmount; i++) {
+                        Vector3 SpawnPos = GetSpawnPosition(spawnData.NpcPrefab);  
+                        SpawnEnemy(spawnData.NpcPrefab, SpawnPos);
+                    }
                 }
             }
 
             if (removedAllKeys && _aliveNpcs.Count == 0) 
                 StopArena();
-        }
-
-        private void SpawnEnemy(Npc prefab) {
-            Vector3 spawnPos = GetSpawnPosition(prefab);
-            Npc spawnedNpc = Instantiate(prefab, spawnPos, Quaternion.identity);
-            spawnedNpc.OnDeath += OnNpcDeath;
-            _aliveNpcs.Add(spawnedNpc);
-            // PoolManager.Spawn(prefab, sampledInfo.position, Quaternion.identity); TODO make NPC Poolable
         }
 
         private Vector3 GetSpawnPosition(Npc prefab) {
@@ -91,27 +60,7 @@ namespace VHS {
             return GetRandomPosition();
         }
 
-        private SpawnPoint GetValidSpawnPoint(Npc prefab) {
-            List<SpawnPoint> validSpawnPoints = new List<SpawnPoint>();
-            
-            foreach (SpawnPoint spawnPoint in _spawnPointsDict[prefab]) {
-                if (spawnPoint.IsValid()) {
-                    float distanceToTarget = Parent.Player.FeetPosition.DistanceSquaredTo(spawnPoint.transform.position);
-                    
-                    if(distanceToTarget > _minDistanceSqr)
-                        validSpawnPoints.Add(spawnPoint);
-                }
-            }
-
-            int validSpawnPointsCount = validSpawnPoints.Count; 
-
-            if (validSpawnPointsCount > 0) {
-                int randomIndex = Random.Range(0,validSpawnPointsCount);
-                return validSpawnPoints[randomIndex];
-            }
-
-            return null;
-        }
+        
 
         private Vector3 GetRandomPosition() {
             float randomDistance = _spawnRange.Random();

@@ -4,11 +4,12 @@
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene_01.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoint.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/WaveSpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/WaveSpawner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/WaveController/Wave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/WaveController/Wave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Behaviours/BaseBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Behaviours/BaseBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/ArenaController/ArenaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/ArenaController/ArenaController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/EQSPointProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/EQSPointProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/LinePointProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/LinePointProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/SpawnPoint.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +17,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a2330a8321e34aff91e5a223fba578d22ba600/9f/d80c79dd/OdinDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a2330a8321e34aff91e5a223fba578d22ba600/a7/a4164ac0/OdinAttributeDrawer`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a2330a8321e34aff91e5a223fba578d22ba600/c6/bd60a003/OdinAttributeDrawer`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/AstarPathfinding/Actions/RichAI/ClearPath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Behaviours/ChildBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Behaviours/DontDestroyOnLoad.cs" root0="FORCE_HIGHLIGHTING" />
@@ -24,6 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Managers/UpdateManager/Listeners/ICustomUpdateListener.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Interactables/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/CirclePointProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/CustomAttributes/Editor/DraggablePointAttributeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/AIBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/RichAI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Modifiers/FunnelModifier.cs" root0="SKIP_HIGHLIGHTING" />
@@ -102,6 +107,7 @@
       <workItem from="1674856573861" duration="431000" />
       <workItem from="1674947004688" duration="1211000" />
       <workItem from="1674986798811" duration="7438000" />
+      <workItem from="1675009042364" duration="5665000" />
     </task>
     <servers />
   </component>

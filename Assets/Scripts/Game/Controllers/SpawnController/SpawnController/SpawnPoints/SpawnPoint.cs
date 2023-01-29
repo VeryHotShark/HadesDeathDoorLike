@@ -10,7 +10,7 @@ namespace VHS {
         [SerializeReference] private ISpawnPointProvider _spawnPointProvider;
 
         private Timer _cooldown;
-        
+
         private void Awake() {
             _cooldown = new Timer(_cooldownDuration);
             _spawnPointProvider.Transform = transform;
@@ -19,6 +19,7 @@ namespace VHS {
         public Npc[] Npcs => _npcsToSpawn;
         
         public bool IsValid() => !_cooldown.IsActive;
+        public Vector3 ProvidePoint() => _spawnPointProvider.ProvidePoint();
 
         public void OnSelected() {
             if(_cooldown.Duration > 0.0f)

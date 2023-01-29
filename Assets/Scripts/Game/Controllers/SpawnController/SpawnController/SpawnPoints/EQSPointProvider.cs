@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VHS;
 
-public class EQSPointProvider : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+namespace VHS {
+    public class EQSPointProvider : ISpawnPointProvider
     {
-        
-    }
+        public Transform Transform { get; set; }
+        public void OnDrawGizmos(Transform transform) {
+            
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Vector3 ProvidePoint() {
+            return Vector3.zero;
+        }
     }
 }
