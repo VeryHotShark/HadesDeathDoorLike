@@ -11,23 +11,19 @@ namespace VHS {
 
         private int _spawnCount = 0;
         
-        private WaveSpawner[] _waveSpawners;
         private List<Npc> _npcs = new List<Npc>();
 
         public Action<Wave> OnWaveCleared;
 
         private void Awake() {
-            _waveSpawners = GetComponentsInChildren<WaveSpawner>();
         }
 
         public void StartWave() {
-            foreach (WaveSpawner waveSpawner in _waveSpawners) 
-                waveSpawner.StartWave();
+
         }
 
         public void StopWave() {
-            foreach (WaveSpawner waveSpawner in _waveSpawners) 
-                waveSpawner.StopWave();
+
         }
 
         protected override void Disable() {
@@ -46,15 +42,6 @@ namespace VHS {
 
         private bool CanSpawn() {
             return _spawnCount < _spawnEnemyCount;
-        }
-
-        public void RequestSpawn(WaveSpawner spawner) {
-            if (CanSpawn()) {
-                Npc npc = spawner.Spawn();
-                npc.OnDeath += OnNpcDeath;
-                _npcs.Add(npc);
-                _spawnCount++;
-            }
         }
     }
 }

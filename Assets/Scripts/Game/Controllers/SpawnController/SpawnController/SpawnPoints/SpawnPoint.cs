@@ -5,8 +5,16 @@ using UnityEngine;
 
 namespace VHS {
     public class SpawnPoint : BaseBehaviour {
-        [SerializeField] private Timer _cooldown;
+        [SerializeField] private float _cooldownDuration;
         [SerializeField] private Npc[] _npcsToSpawn;
+        [SerializeReference] private ISpawnPointProvider _spawnPointProvider;
+
+        private Timer _cooldown;
+        
+        private void Awake() {
+            _cooldown = new Timer(_cooldownDuration);
+            _spawnPointProvider.Transform = transform;
+        }
 
         public Npc[] Npcs => _npcsToSpawn;
         
@@ -19,7 +27,9 @@ namespace VHS {
 
         private void OnDrawGizmos() {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, 0.5f);
+            
+            if(_spawnPointProvider != null)
+                _spawnPointProvider.OnDrawGizmos(transform);
         }
     }
 }
