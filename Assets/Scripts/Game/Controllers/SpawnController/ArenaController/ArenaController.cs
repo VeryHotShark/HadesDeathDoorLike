@@ -51,31 +51,6 @@ namespace VHS {
                 StopArena();
         }
 
-        private Vector3 GetSpawnPosition(Npc prefab) {
-            SpawnPoint spawnPoint = GetValidSpawnPoint(prefab);
-                
-            if (spawnPoint != null)
-                return spawnPoint.transform.position;
-            
-            return GetRandomPosition();
-        }
-
-        
-
-        private Vector3 GetRandomPosition() {
-            float randomDistance = _spawnRange.Random();
-            Vector3 randomOffset = Random.insideUnitSphere.Flatten() * randomDistance;
-            Vector3 spawnPos = Parent.Player.FeetPosition + randomOffset;
-            NNInfo sampledInfo = AstarPath.active.GetNearest(spawnPos);
-            return sampledInfo.position;
-        }
-        
-        private void OnNpcDeath(IActor actor) {
-            Npc npc = actor as Npc;
-            npc.OnDeath -= OnNpcDeath;
-            _aliveNpcs.Remove(npc);
-        }
-
         
         public override void StartSpawn() {
             UpdateManager.AddSlowUpdateListener(this);

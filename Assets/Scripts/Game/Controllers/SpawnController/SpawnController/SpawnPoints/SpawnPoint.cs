@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 namespace VHS {
@@ -19,9 +20,15 @@ namespace VHS {
         public Npc[] Npcs => _npcsToSpawn;
         
         public bool IsValid() => !_cooldown.IsActive;
-        public Vector3 ProvidePoint() => _spawnPointProvider.ProvidePoint();
+        
+        public Vector3 ProvidePoint() {
+            OnPointProvided();
+            Vector3 point = _spawnPointProvider.ProvidePoint();
+            NNInfo nnInfo = AstarPath.active.GetNearest(point);
+            return nnInfo.position;
+        }
 
-        public void OnSelected() {
+        private void OnPointProvided() {
             if(_cooldown.Duration > 0.0f)
                 _cooldown.Start();
         }

@@ -69,7 +69,7 @@ namespace VHS {
             _aliveNpcs.Remove(npc);
         }
         
-        private Vector3 GetSpawnPosition(Npc prefab) {
+        protected Vector3 GetSpawnPosition(Npc prefab) {
             SpawnPoint spawnPoint = GetValidSpawnPoint(prefab);
                 
             if (spawnPoint != null)
@@ -105,7 +105,7 @@ namespace VHS {
             return null;
         }
 
-        private Vector3? GetEQSPoint() {
+        protected Vector3? GetEQSPoint() {
             Vector3 point = _eqsPointProvider.ProvidePoint();
 
             if (point != Vector3.zero)
@@ -114,7 +114,7 @@ namespace VHS {
             return null;
         }
         
-        private Vector3 GetRandomPosition() {
+        protected Vector3 GetRandomPosition() {
             float randomDistance = new Vector2(4,10).Random();
             Vector3 randomOffset = Random.insideUnitSphere.Flatten() * randomDistance;
             Vector3 spawnPos = Parent.Player.FeetPosition + randomOffset;
