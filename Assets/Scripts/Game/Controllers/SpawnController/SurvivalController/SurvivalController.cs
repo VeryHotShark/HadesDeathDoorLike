@@ -10,29 +10,24 @@ namespace VHS {
         [SerializeField] private SpawnData[] _spawnsData;
 
         private float _timer;
-        private Dictionary<Npc, List<Npc>> _aliveNpcsDict = new();
+        private Dictionary<EnemyID, List<Npc>> _aliveNpcsDict = new();
 
         private void Awake() {
             foreach (SpawnData spawnData in _spawnsData) {
                 List<Npc> aliveNpcs = new List<Npc>();
-                _aliveNpcsDict.Add(spawnData.NpcPrefab, aliveNpcs);
+                _aliveNpcsDict.Add(spawnData.EnemyID, aliveNpcs);
             }
         }
         
         protected override void Disable() {
             base.Disable();
             UpdateManager.RemoveSlowUpdateListener(this);
-
-            foreach (Npc npcKey in _aliveNpcsDict.Keys) {
-                foreach (Npc npc in _aliveNpcsDict[npcKey]) 
-                    npc.OnDeath -= OnNpcDeath;
-            }
         }
 
         protected override void OnNpcDeath(IActor actor) {
             base.OnNpcDeath(actor);
             Npc npc = actor as Npc;
-            // _aliveNpcsDict[npc].Remove(npc); TODO Enemy ID
+            _aliveNpcsDict[npc.EnemyID].Remove(npc);
         }
 
         public void OnSlowUpdate(float deltaTime) {
@@ -48,15 +43,15 @@ namespace VHS {
             
             foreach (SpawnData spawnData in _spawnsData) {
                 int desiredNpcCount = Mathf.RoundToInt(spawnData.SpawnCurve.Evaluate(normalizedTime));
-                int currentNpcCount = _aliveNpcsDict[spawnData.NpcPrefab].Count;
+                int currentNpcCount = _aliveNpcsDict[spawnData.EnemyID].Count;
                 
                 if (currentNpcCount < desiredNpcCount) {
                     int enemiesCountToSpawn = desiredNpcCount - currentNpcCount;
 
                     for (int i = 0; i < enemiesCountToSpawn; i++) {
-                        Vector3 SpawnPos = GetSpawnPosition(spawnData.NpcPrefab);
-                        Npc spawnedNpc = SpawnEnemy(spawnData.NpcPrefab, SpawnPos);
-                        _aliveNpcsDict[spawnData.NpcPrefab].Add(spawnedNpc);
+                        Vector3 SpawnPos = GetSpawnPosition(spawnData.EnemyID);
+                        Npc spawnedNpc = SpawnEnemy(spawnData.EnemyID, SpawnPos);
+                        _aliveNpcsDict[spawnData.EnemyID].Add(spawnedNpc);
                     }
                 }
             }
@@ -70,9 +65,9 @@ namespace VHS {
         private void StopSurvival() {
             UpdateManager.RemoveSlowUpdateListener(this);
             
-            foreach (Npc npcKey in _aliveNpcsDict.Keys) {
-                for (int i = _aliveNpcsDict[npcKey].Count - 1; i >= 0; i--) 
-                    _aliveNpcsDict[npcKey][i].Kill(Parent.Player);
+            foreach (EnemyID enemyID in _aliveNpcsDict.Keys) {
+                for (int i = _aliveNpcsDict[enemyID].Count - 1; i >= 0; i--) 
+                    _aliveNpcsDict[enemyID][i].Kill(Parent.Player);
             }
 
             FinishCallback();

@@ -16,7 +16,7 @@ namespace VHS {
     
     [Serializable]
     public struct SpawnData {
-        public Npc NpcPrefab;
+        public EnemyID EnemyID;
         public AnimationCurve SpawnCurve;
     }
     
@@ -37,7 +37,7 @@ namespace VHS {
         protected float _minDistanceSqr;
         
         protected List<Npc> _aliveNpcs = new();
-        protected Dictionary<Npc, List<SpawnPoint>> _spawnPointsDict = new();
+        protected Dictionary<EnemyID, List<SpawnPoint>> _spawnPointsDict = new();
 
         private void Awake() {
             _minDistanceSqr = _minDistance.Square();
@@ -45,11 +45,11 @@ namespace VHS {
             SpawnPoint[] allSpawnPoints = GetComponentsInChildren<SpawnPoint>();
             
             foreach (SpawnPoint spawnPoint in allSpawnPoints) {
-                foreach (Npc npc in spawnPoint.Npcs) {
-                    if (_spawnPointsDict.TryGetValue(npc, out List<SpawnPoint> spawnPoints))
+                foreach (EnemyID enemyID in spawnPoint.Npcs) {
+                    if (_spawnPointsDict.TryGetValue(enemyID, out List<SpawnPoint> spawnPoints))
                         spawnPoints.Add(spawnPoint); 
                     else 
-                        _spawnPointsDict.Add(npc, new List<SpawnPoint>{spawnPoint});
+                        _spawnPointsDict.Add(enemyID, new List<SpawnPoint>{spawnPoint});
                 }
             }
         }
@@ -58,22 +58,22 @@ namespace VHS {
             foreach (Npc npc in _aliveNpcs) 
                 npc.OnDeath -= OnNpcDeath;
         }
-
-        protected Npc SpawnEnemy(Npc prefab, Vector3 position) {
-            Npc spawnedNpc = Instantiate(prefab, position, Quaternion.identity);
-            spawnedNpc.OnDeath += OnNpcDeath;
-            _aliveNpcs.Add(spawnedNpc);
-            return spawnedNpc;
-        }
         
         protected virtual void OnNpcDeath(IActor actor) {
             Npc npc = actor as Npc;
             npc.OnDeath -= OnNpcDeath;
             _aliveNpcs.Remove(npc);
         }
+
+        protected Npc SpawnEnemy(EnemyID enemyID, Vector3 position) {
+            Npc spawnedNpc = Instantiate(enemyID.Prefab, position, Quaternion.identity);
+            spawnedNpc.OnDeath += OnNpcDeath;
+            _aliveNpcs.Add(spawnedNpc);
+            return spawnedNpc;
+        }
         
-        protected Vector3 GetSpawnPosition(Npc prefab) {
-            Vector3? spawnPointPosition = GetValidSpawnPointPosition(prefab);
+        protected Vector3 GetSpawnPosition(EnemyID enemyID) {
+            Vector3? spawnPointPosition = GetValidSpawnPointPosition(enemyID);
                 
             if (spawnPointPosition != null)
                 return spawnPointPosition.Value;
@@ -86,10 +86,10 @@ namespace VHS {
             return GetRandomPosition();
         }
 
-        private Vector3? GetValidSpawnPointPosition(Npc prefab) {
+        private Vector3? GetValidSpawnPointPosition(EnemyID enemyID) {
             List<SpawnPoint> validSpawnPoints = new List<SpawnPoint>();
             
-            foreach (SpawnPoint spawnPoint in _spawnPointsDict[prefab]) {
+            foreach (SpawnPoint spawnPoint in _spawnPointsDict[enemyID]) {
                 if (spawnPoint.IsValid()) {
                     float distanceToTarget = Parent.Player.FeetPosition.DistanceSquaredTo(spawnPoint.transform.position);
                     
@@ -142,5 +142,6 @@ namespace VHS {
 
         protected void StartCallback() => OnStarted();
         protected void FinishCallback() => OnFinished();
+        
     }
 }

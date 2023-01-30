@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using Pathfinding;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace VHS {
     
@@ -35,8 +31,8 @@ namespace VHS {
                     int spawnAmount = Mathf.RoundToInt(keyframe.value);
 
                     for (int i = 0; i < spawnAmount; i++) {
-                        Vector3 SpawnPos = GetSpawnPosition(spawnData.NpcPrefab);  
-                        SpawnEnemy(spawnData.NpcPrefab, SpawnPos);
+                        Vector3 SpawnPos = GetSpawnPosition(spawnData.EnemyID);  
+                        SpawnEnemy(spawnData.EnemyID, SpawnPos);
                     }
                 }
             }

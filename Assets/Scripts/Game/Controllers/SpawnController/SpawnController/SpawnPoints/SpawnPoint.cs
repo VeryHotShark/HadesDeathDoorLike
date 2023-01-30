@@ -7,7 +7,7 @@ using UnityEngine;
 namespace VHS {
     public class SpawnPoint : BaseBehaviour {
         [SerializeField] private float _cooldownDuration;
-        [SerializeField] private Npc[] _npcsToSpawn;
+        [SerializeField] private EnemyID[] _npcsToSpawn;
         [SerializeReference] private ISpawnPointProvider _spawnPointProvider;
 
         private Timer _cooldown;
@@ -17,7 +17,7 @@ namespace VHS {
             _spawnPointProvider.Transform = transform;
         }
 
-        public Npc[] Npcs => _npcsToSpawn;
+        public EnemyID[] Npcs => _npcsToSpawn;
         
         public bool IsValid() => !_cooldown.IsActive;
 

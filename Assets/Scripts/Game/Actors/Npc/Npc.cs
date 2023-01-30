@@ -11,6 +11,7 @@ namespace VHS {
     }
     
     public class Npc : Actor<Npc>, ITargetable, IPoolable {
+        [SerializeField] private EnemyID _enemyID;
 
         private NpcState _state;
         private IActor _target;
@@ -24,6 +25,7 @@ namespace VHS {
         public NpcState State => _state;
         public IActor Target => _target;
         public AIAgent AIAgent => _aiAgent;
+        public EnemyID EnemyID => _enemyID;
 
         protected override void GetComponents() {
             base.GetComponents();

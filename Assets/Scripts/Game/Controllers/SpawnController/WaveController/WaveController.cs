@@ -17,28 +17,25 @@ namespace VHS {
 
         private void Awake() => _waves = new List<Wave>(GetComponentsInChildren<Wave>());
 
-        protected override void Enable() {
-            foreach (Wave wave in _waves) 
-                wave.OnWaveCleared += OnWaveCleared;
-        }
-
-        protected override void Disable() {
-            foreach (Wave wave in _waves) 
-                wave.OnWaveCleared -= OnWaveCleared;
-        }
-
-        private void OnWaveCleared(Wave wave) {
-            wave.StopWave();
+        protected override void OnNpcDeath(IActor actor) {
+            base.OnNpcDeath(actor);
             
+            if(_aliveNpcs.Count == 0)
+                OnWaveCleared();
+        }
+
+        private void OnWaveCleared() {
             _currentWaveIndex++;
 
             if (_currentWaveIndex >= _waves.Count) {
-                WavesCleared();
+                FinishCallback();
                 return;
             }
             
             StartWave(_currentWaveIndex);
         }
+        
+        public void OnSpawnRequest(EnemyID enemyID, Vector3 spawnPosition) => SpawnEnemy(enemyID, spawnPosition);
 
         public override void StartSpawn() {
             _currentWaveIndex = 0;
@@ -53,7 +50,5 @@ namespace VHS {
                 OnWaveChanged(index);
             });
         }
-
-        private void WavesCleared() => FinishCallback();
     }
 }
