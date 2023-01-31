@@ -15,6 +15,8 @@ namespace VHS {
 
         public Camera Camera => PlayerController.Camera.Camera;
 
+        public Action<IInteractable> OnInteractableChanged = delegate {};
+
         protected override void GetComponents() {
             base.GetComponents();
             _characterController = GetComponent<CharacterController>();

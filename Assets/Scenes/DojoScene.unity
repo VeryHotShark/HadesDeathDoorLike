@@ -322,8 +322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4a09364202af4b999bd51869c52d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _playerPrefab: {fileID: 9180208951810612988, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
@@ -372,8 +370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50266c51df85042bc9a033cbc7b200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
 --- !u!21 &544988618
@@ -904,8 +900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406906d0bcc0ac0478f7d7cc79fb8647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.5
   _interactType: 0
@@ -1262,6 +1256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1888887671480980528, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519980, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1530,8 +1528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406906d0bcc0ac0478f7d7cc79fb8647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.5
   _interactType: 0

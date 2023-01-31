@@ -3,17 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/Skill.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/Skill.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/SkillContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/SkillContainer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/Npc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/Npc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/ArenaController/ArenaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/ArenaController/ArenaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/SpawnPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SurvivalController/SurvivalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SurvivalController/SurvivalController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/WaveController/Wave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/WaveController/Wave.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/WaveController/WaveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/WaveController/WaveController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Core/Systems.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/Systems.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene_00.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene_00.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene_01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyMelee.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyMelee.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerInteractionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerInteractionComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/PlayerInteractionUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/PlayerInteractionUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/PlayerUIModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/PlayerUIModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Prefabs/PlayerUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Prefabs/PlayerUI.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/EntityID.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Interactables/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/CirclePointProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/CustomAttributes/Editor/DraggablePointAttributeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/AIBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/RichAI.cs" root0="SKIP_HIGHLIGHTING" />
@@ -117,6 +120,7 @@
       <workItem from="1675009042364" duration="7309000" />
       <workItem from="1675025880613" duration="6050000" />
       <workItem from="1675034050830" duration="7852000" />
+      <workItem from="1675113776403" duration="10593000" />
     </task>
     <servers />
   </component>

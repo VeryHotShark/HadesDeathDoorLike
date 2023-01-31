@@ -411,8 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f294e22026e7a2468f76fbeb2107ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
 --- !u!54 &3532176832971602148
@@ -499,8 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4191f4fcba85824faebdb835501a20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 0, g: 0.8378122, b: 0.9150943, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _inputDirectionChangeTimer:
@@ -518,8 +514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35cb645ab24754eb35297110101a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _maxStableMoveSpeed: 10
@@ -537,8 +531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b90a65afaa4f442b87706e2bd6b8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _gravity: {x: 0, y: -20, z: 0}
@@ -558,8 +550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4ac9bf2f2b4744e84cafc1adc6c2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _damagePopUp: {fileID: 4974578665077627571, guid: b55a6289cec54564e8218b2476d3f9a4, type: 3}
@@ -629,8 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbc5fd42d91be5439bf079c8fd0fe12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _projectile: {fileID: 1345823360672541587, guid: 01caea0028fae5c4b836c5d5d2d5e04f, type: 3}
@@ -646,8 +634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52308b3aab8922d4c9261386af9815a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _duration: 0.4
@@ -689,8 +675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb4e5be33e20bb4a89bf2f4047351ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _hitPoints:
@@ -707,8 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83d0c558dd46df4e9912f4bc9c0596d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
 --- !u!114 &3532176832971602155
@@ -723,8 +705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7e319abac6b7e43b94629eb6236f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _flickerDuration: 0.02
@@ -872,8 +852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433de592a36793498bf6b2d5bdaf257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 1
   _updateRate: 0.5
   _interactionRadius: 3.5
@@ -1125,8 +1103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b7056d21532d4448514c0fd27b9344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _camera: {fileID: 3532176833841247264}
@@ -1649,7 +1625,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.777533, y: 1}
+    m_SensorSize: {x: 1.7787176, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2069,6 +2045,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3532176833701519981}
     m_Modifications:
+    - target: {fileID: 95972337169050426, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95972337169050426, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95972337169050426, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95972337169050426, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4274825791489799335, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -2163,15 +2155,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 8.775001
+      value: 9.358335
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 14
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: _customUpdate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}

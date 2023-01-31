@@ -2014,15 +2014,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163072
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163072
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &168338286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9750,15 +9753,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163073
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163073
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &796096288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10028,15 +10034,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163074
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163074
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &813274522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10966,8 +10975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4a09364202af4b999bd51869c52d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _playerPrefab: {fileID: 9180208951810612988, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
@@ -12596,15 +12603,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163075
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163075
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &1003873793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13664,15 +13674,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163076
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163076
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &1074457312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14398,15 +14411,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163077
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163077
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &1127705424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14927,8 +14943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208621ac7b58a1641ad7a4a9d4288870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _interactType: 0
@@ -17961,8 +17975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15b8763b38b92349a3602fef377e03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
 --- !u!114 &1413734268
@@ -18921,8 +18933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208621ac7b58a1641ad7a4a9d4288870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
   _interactType: 0
@@ -25435,15 +25445,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163078
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163078
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &1883234828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25730,15 +25743,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129ed81510858c4a82bed0d43bdc063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _cooldown:
-    _duration: 2
-    _looping: 0
+  _cooldownDuration: 1
   _npcsToSpawn:
-  - {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+  _spawnPointProvider:
+    rid: 9061456454828163079
+  references:
+    version: 2
+    RefIds:
+    - rid: 9061456454828163079
+      type: {class: SinglePointProvider, ns: VHS, asm: Assembly-CSharp}
 --- !u!114 &1903419921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30025,13 +30041,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294598e32afb15c47b8ad8e24efd91e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
+  _spawnVFX: {fileID: 0}
   _spawnStartType: 2
+  _minDistance: 5
+  _randomSpawnRange: {x: 4, y: 10}
   _spawnsData:
-  - NpcPrefab: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+  - EnemyID: {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
     SpawnCurve:
       serializedVersion: 2
       m_Curve:
@@ -30065,8 +30082,6 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  _minDistance: 5
-  _spawnRange: {x: 4, y: 10}
 --- !u!4 &6877325685693763015
 Transform:
   m_ObjectHideFlags: 0
@@ -30220,7 +30235,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a55ea6c5376d34baea31f463e3aabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2

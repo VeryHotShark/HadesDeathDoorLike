@@ -9,7 +9,7 @@ namespace VHS {
         
         public Player Player => Parent.Player;
         
-        private void Awake() => _canvasGroup = GetComponent<CanvasGroup>();
+        protected virtual void Awake() => _canvasGroup = GetComponent<CanvasGroup>();
         
         
         public void Show(bool state) => _canvasGroup.alpha = state ? 1f : 0.0f;

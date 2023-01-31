@@ -45,7 +45,11 @@ namespace VHS {
                 }
             }
 
-            _currentInteractable = bestInteractable;
+            if (bestInteractable != _currentInteractable) {
+                _currentInteractable = bestInteractable;
+                Parent.OnInteractableChanged(_currentInteractable);
+            }
+            
         }
 
         private void OnDrawGizmos() {

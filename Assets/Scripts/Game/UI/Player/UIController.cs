@@ -17,17 +17,13 @@ namespace VHS {
         }
 
         public override void MyEnable() {
-            foreach (UIModule module in _modules) 
-                module.MyEnable();
+            // foreach (UIModule module in _modules) 
+                // module.MyEnable();
         }
 
         public override void MyDisable() {
-            foreach (UIModule module in _modules) 
-                module.MyDisable();
-        }
-
-        public void ShowWaveUI(bool state) {
-            _spawnControllerUI?.Show(state);
+            // foreach (UIModule module in _modules) 
+                // module.MyDisable();
         }
     }
 }
