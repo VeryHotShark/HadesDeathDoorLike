@@ -12,7 +12,9 @@ namespace VHS {
         private float _timer;
         private Dictionary<EnemyID, List<Npc>> _aliveNpcsDict = new();
 
-        private void Awake() {
+        protected override void Awake() {
+            base.Awake();
+            
             foreach (SpawnData spawnData in _spawnsData) {
                 List<Npc> aliveNpcs = new List<Npc>();
                 _aliveNpcsDict.Add(spawnData.EnemyID, aliveNpcs);
@@ -64,10 +66,10 @@ namespace VHS {
 
         private void StopSurvival() {
             UpdateManager.RemoveSlowUpdateListener(this);
-            
-            foreach (EnemyID enemyID in _aliveNpcsDict.Keys) {
-                for (int i = _aliveNpcsDict[enemyID].Count - 1; i >= 0; i--) 
-                    _aliveNpcsDict[enemyID][i].Kill(Parent.Player);
+
+            for (int i = _aliveNpcs.Count - 1; i >= 0; i--) {
+                Npc aliveNpc = _aliveNpcs[i];
+                aliveNpc.Kill(Parent.Player);
             }
 
             FinishCallback();

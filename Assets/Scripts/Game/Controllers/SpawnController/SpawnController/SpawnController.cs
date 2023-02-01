@@ -39,7 +39,7 @@ namespace VHS {
         protected List<Npc> _aliveNpcs = new();
         protected Dictionary<EnemyID, List<SpawnPoint>> _spawnPointsDict = new();
 
-        private void Awake() {
+        protected virtual void Awake() {
             _minDistanceSqr = _minDistance.Square();
             
             SpawnPoint[] allSpawnPoints = GetComponentsInChildren<SpawnPoint>();

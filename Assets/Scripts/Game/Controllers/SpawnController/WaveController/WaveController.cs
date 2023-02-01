@@ -15,7 +15,10 @@ namespace VHS {
         private Wave _currentWave;
         private int _currentWaveIndex;
 
-        private void Awake() => _waves = new List<Wave>(GetComponentsInChildren<Wave>());
+        private void Awake() {
+            base.Awake();
+            _waves = new List<Wave>(GetComponentsInChildren<Wave>());
+        }
 
         protected override void OnNpcDeath(IActor actor) {
             base.OnNpcDeath(actor);

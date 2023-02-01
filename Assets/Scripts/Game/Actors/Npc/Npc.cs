@@ -65,7 +65,7 @@ namespace VHS {
 
         public void Kill(IActor dealer) {
             HitData hitData = new HitData {
-                damage = 1,
+                damage = 10,
                 dealer = dealer,
                 position = transform.position,
                 direction = -transform.forward
