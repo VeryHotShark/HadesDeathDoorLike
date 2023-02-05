@@ -97,12 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68923e03ee02dd647a6e5fee0676d347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 1
   _updateRate: 0.2
   _lifeTime: 3
-  _damage: 10
+  _damage: 1
   _hitFeedback: {fileID: 2431464541733702560}
   _speed: 35
   _gravity: 0

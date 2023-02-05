@@ -21,9 +21,13 @@ namespace VHS {
 
         public void OnUpdate(float deltaTime) {
             UpdateMovement(deltaTime);
+            
+            Debug.DrawLine(_lastPosition,transform.position, Color.blue);
 
-            if(CheckForCollision())
+            if (CheckForCollision())    
                 OnHit();
+
+            _lastPosition = transform.position;
         }
 
         private void UpdateMovement(float deltaTime) {
@@ -38,13 +42,14 @@ namespace VHS {
 
         protected override void OnHit() {
             IHittable hittable = _hitInfo.transform.GetComponentInParent<IHittable>();
-
+            
             if (hittable != null) {
                 HitData hitData = new HitData {
-                    dealer = _owner,
-                    damage = 1,
+                    actor = _owner,
+                    dealer = gameObject,
+                    damage = _damage,
                 };
-                
+              
                 hittable.Hit(hitData);
                 PlayHitFX();
             }

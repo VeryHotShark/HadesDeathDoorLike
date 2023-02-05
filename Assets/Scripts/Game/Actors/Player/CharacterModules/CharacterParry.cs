@@ -21,8 +21,8 @@ namespace VHS {
         }
 
         private void OnParry(HitData hitData) {
-            if (hitData.dealer != null) {
-                hitData.dealer.OnMyAttackParried(hitData);
+            if (hitData.actor != null) {
+                hitData.actor.OnMyAttackParried(hitData);
                 //Log("DUPA"); // TODO zeby po nacisnieciu przeniosło do dobrej linijki w konsoli
             }
             

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b45d5b151ae50f142a3a5ccda37e4f2a, type: 3}
-  m_Name: EnemyID
+  m_Name: EnemyID_Melee
   m_EditorClassIdentifier: 
   _prefab: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}

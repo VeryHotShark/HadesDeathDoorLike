@@ -161,7 +161,7 @@ namespace VHS {
                     if (hittable != null) {
                         HitData hitData = new HitData {
                             damage = 1,
-                            dealer = Parent,
+                            actor = Parent,
                             position = collider.ClosestPoint(Parent.CenterOfMass),
                             direction = Parent.FeetPosition.DirectionTo(collider.transform.position)
                         };

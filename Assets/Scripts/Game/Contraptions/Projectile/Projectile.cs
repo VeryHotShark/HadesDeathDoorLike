@@ -9,7 +9,7 @@ namespace VHS {
         [SerializeField, Tooltip("Custom Update needs to be enabled")]
         private float _lifeTime;
         
-        [SerializeField] private float _damage;
+        [SerializeField] protected int _damage;
         [SerializeField] protected MMF_Player _hitFeedback;
 
         protected float _lifeTimer;

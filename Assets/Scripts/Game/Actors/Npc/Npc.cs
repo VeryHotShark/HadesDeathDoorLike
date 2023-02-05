@@ -43,9 +43,11 @@ namespace VHS {
 
         public override void Hit(HitData hitData) {
             base.Hit(hitData);
+            
+            Log(hitData.damage);
 
             if (_target == null) {
-                _target = hitData.dealer; // Dependency Injection?
+                _target = hitData.actor; // Dependency Injection?
                 _blackboard.SetVariableValue("Target", _target.GameObject);
             }
         }
@@ -66,7 +68,7 @@ namespace VHS {
         public void Kill(IActor dealer) {
             HitData hitData = new HitData {
                 damage = 10,
-                dealer = dealer,
+                actor = dealer,
                 position = transform.position,
                 direction = -transform.forward
             };
