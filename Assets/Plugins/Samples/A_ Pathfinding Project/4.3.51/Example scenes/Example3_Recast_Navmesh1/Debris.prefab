@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.2824173, y: 0.6453886, z: -2.8964014}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -62,10 +63,11 @@ Transform:
   m_LocalRotation: {x: -0.14136437, y: -0.2376695, z: -0.16778171, w: 0.94624454}
   m_LocalPosition: {x: 0, y: 7.199627, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 339.67874, y: 334.59244, z: 344.51752}
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -153,7 +155,7 @@ MonoBehaviour:
   meshScale: 1
   center: {x: 0, y: 0, z: 0}
   updateDistance: 0.5
-  isDual: 0
+  isDual: 1
   radiusExpansionMode: 1
   cutsAddedGeom: 1
   updateRotationDistance: 10
