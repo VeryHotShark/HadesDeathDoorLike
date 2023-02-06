@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5995134861632615371
+--- !u!1 &7856075070825554650
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2206134575352743779}
-  - component: {fileID: 4616081615638610965}
-  - component: {fileID: 6328327002306500304}
-  - component: {fileID: 670155115782216218}
+  - component: {fileID: 113341321982940951}
+  - component: {fileID: 6188472040889428994}
+  - component: {fileID: 4696103266123181097}
+  - component: {fileID: 7064380340483286651}
   m_Layer: 0
-  m_Name: UI_PlayerHealth
+  m_Name: UI_PlayerStamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2206134575352743779
+--- !u!224 &113341321982940951
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5995134861632615371}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00014271658}
+  m_GameObject: {fileID: 7856075070825554650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36,55 +36,55 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &4616081615638610965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5995134861632615371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09f6948ae40e89438e3f23d264c9d0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _customUpdate: 0
-  _updateRate: 0.2
-  healthFillPointPrefab: {fileID: 3596951405603907454, guid: bcda400943ddf14459565f6ec1dd788a, type: 3}
---- !u!225 &6328327002306500304
+--- !u!225 &6188472040889428994
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5995134861632615371}
+  m_GameObject: {fileID: 7856075070825554650}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &670155115782216218
+--- !u!114 &4696103266123181097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5995134861632615371}
+  m_GameObject: {fileID: 7856075070825554650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b93b74938c8f0841a87e0da0653c911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  staminaFillPointPrefab: {fileID: 3596951405603907454, guid: d5c816756564c3645a572ae49c8c2b5d, type: 3}
+--- !u!114 &7064380340483286651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856075070825554650}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b54b16f2fcdba244b49be1f398b6562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 13
+    m_Left: 0
     m_Right: 0
-    m_Top: 13
+    m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 8.525
+  m_Spacing: 9.590625
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -95,9 +95,9 @@ MonoBehaviour:
   paddingSizerFallback:
     screenConfigName: 
     OptimizedSize:
-      left: 20
+      left: 0
       right: 0
-      top: 20
+      top: 0
       bottom: 0
     MinSize:
       left: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
     items: []
   spacingSizerFallback:
     screenConfigName: 
-    OptimizedSize: 40
+    OptimizedSize: 45
     MinSize: 0
     MaxSize: 300
     Mod:

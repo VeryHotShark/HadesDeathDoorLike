@@ -4,7 +4,7 @@ using TheraBytes.BetterUi;
 using UnityEngine;
 
 namespace VHS {
-    public class UIHealthPoint : MonoBehaviour {
+    public class UIFillPoint : MonoBehaviour {
         [SerializeField] private BetterImage _fillImage;
 
         public void Fill(bool state) => _fillImage.enabled = state;

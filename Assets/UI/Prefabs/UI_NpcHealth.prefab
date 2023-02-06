@@ -165,11 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34645930aba6c7f408da3c99276c2c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _instanceLogs: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
   _customUpdate: 0
   _updateRate: 0.2
-  _healthPointPrefab: {fileID: 3596951405603907454, guid: 273129dc1299d9d478b01ecf03d92e71, type: 3}
+  healthFillPointPrefab: {fileID: 3596951405603907454, guid: 273129dc1299d9d478b01ecf03d92e71, type: 3}
 --- !u!1818360608 &3932665523998509135
 PositionConstraint:
   m_ObjectHideFlags: 0

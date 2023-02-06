@@ -23,6 +23,8 @@ namespace VHS {
 
         private KinematicCharacterMotor _motor;
         private StateMachine<CharacterModule> _stateMachine;
+        
+        public CharacterRangeCombat RangeCombat => _rangeCombatModule;
 
         public KinematicCharacterMotor Motor => _motor;
         public Player ControlledCharacter => Parent;
@@ -75,7 +77,7 @@ namespace VHS {
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.RollDown)
                     _stateMachine.SetState(_rollModule);
-                else if (inputs.SecondaryAttackPressed)
+                else if (inputs.SecondaryAttackPressed && _rangeCombatModule.HasAmmo)
                     _stateMachine.SetState(_rangeCombatModule);
                 else if(inputs.PrimaryAttackPressed && !_meleeCombatModule.IsOnCooldown)
                     _stateMachine.SetState(_meleeCombatModule);

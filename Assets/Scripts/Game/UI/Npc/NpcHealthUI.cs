@@ -7,11 +7,11 @@ using UnityEngine.Animations;
 namespace VHS {
     public class NpcHealthUI : BaseBehaviour
     {
-        [SerializeField] private UIHealthPoint _healthPointPrefab;
+        [SerializeField] private UIFillPoint healthFillPointPrefab;
         
         private CanvasGroup _canvasGroup;
         private PositionConstraint _positionConstraint;
-        private List<UIHealthPoint> _healthPoints = new();
+        private List<UIFillPoint> _healthPoints = new();
 
         private void Awake() {
             _canvasGroup = GetComponent<CanvasGroup>();
@@ -33,9 +33,9 @@ namespace VHS {
 
         private void SpawnHealthPoints(int count) {
             for (int i = 0; i < count; i++) {
-                UIHealthPoint healthPoint = Instantiate(_healthPointPrefab, transform);
-                healthPoint.Fill(true);
-                _healthPoints.Add(healthPoint);
+                UIFillPoint fillPoint = Instantiate(healthFillPointPrefab, transform);
+                fillPoint.Fill(true);
+                _healthPoints.Add(fillPoint);
             }
         }
         
@@ -44,8 +44,8 @@ namespace VHS {
                 _canvasGroup.alpha = 1.0f;
             
             for (int i = 0; i < _healthPoints.Count; i++) {
-                UIHealthPoint healthPoint = _healthPoints[i];
-                healthPoint.Fill(i < hitPoints.Current);
+                UIFillPoint fillPoint = _healthPoints[i];
+                fillPoint.Fill(i < hitPoints.Current);
             } 
         }
     }

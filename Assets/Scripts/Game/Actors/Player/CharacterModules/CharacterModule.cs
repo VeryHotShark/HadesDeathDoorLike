@@ -9,8 +9,6 @@ namespace VHS {
         protected KinematicCharacterMotor Motor => Controller.Motor;
         protected CharacterController Controller => _controller ??= GetComponent<CharacterController>();
 
-        public Player Player => Parent;
-
         public virtual void OnEnter() { }
         public virtual void OnExit() { }
         public virtual void OnReset() { }

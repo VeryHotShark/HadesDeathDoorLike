@@ -3,30 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOAgent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example11_RVO/RVOAgent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/GroundRTS.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/GroundRTS.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/No Name.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/None__Untitled_001.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/None__Untitled_001.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSBuildingShade4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCliffs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCliffs.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCrystal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSCrystal.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSTurret.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSTurret.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHarvesterTeam1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHarvesterTeam1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHeavyTeam2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitHeavyTeam2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/RTSUnitTeam2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/unnamed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example18_RTS/Materials/unnamed.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Debris.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example3_Recast_Navmesh1/Debris.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/RecastExample2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Example4_Recast_Navmesh2/RecastExample2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Wall.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Samples/A_ Pathfinding Project/4.3.51/Example scenes/Materials/Wall.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyChaser.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyChaser.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyMelee.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyMelee.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/AIAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/AIAgent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playground.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Common/UIHealthPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Common/UIFillPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Common/UIHealthPoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Common/UIFillPoint.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Npc/NpcHealthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Npc/NpcHealthUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/PlayerHealthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/PlayerHealthUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Prefabs/PlayerUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Prefabs/PlayerUI.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +36,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Interactables/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/CirclePointProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/UI/Player/PlayerStaminaUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/CustomAttributes/Editor/DraggablePointAttributeDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/AIBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/RichAI.cs" root0="SKIP_HIGHLIGHTING" />
@@ -71,20 +59,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
@@ -143,6 +131,7 @@
       <workItem from="1675372206549" duration="1482000" />
       <workItem from="1675551770876" duration="6193000" />
       <workItem from="1675627916377" duration="5222000" />
+      <workItem from="1675635196435" duration="5891000" />
     </task>
     <servers />
   </component>

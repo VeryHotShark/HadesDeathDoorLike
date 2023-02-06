@@ -621,6 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
+  _maxAmmoCount: 4
   _projectile: {fileID: 1345823360672541587, guid: 01caea0028fae5c4b836c5d5d2d5e04f, type: 3}
 --- !u!114 &3532176832971602163
 MonoBehaviour:
@@ -1625,7 +1626,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787176, y: 1}
+    m_SensorSize: {x: 1.7766373, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2061,6 +2062,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Spacing
+      value: 9.590625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: staminaFillPointPrefab
+      value: 
+      objectReference: {fileID: 3596951405603907454, guid: d5c816756564c3645a572ae49c8c2b5d, type: 3}
     - target: {fileID: 4274825791489799335, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -2155,15 +2164,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 9.358335
+      value: 8.525
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate

@@ -1,12 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Animancer.Examples.Basics;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.Pool;
 
 namespace VHS {
     public class CharacterRangeCombat : CharacterModule {
+        [SerializeField] private int _maxAmmoCount = 4;
         [SerializeField] private Projectile _projectile;
+
+        private int _currentAmmo;
+
+        public bool HasAmmo => _currentAmmo > 0;
+        public int MaxAmmoCount => _maxAmmoCount;
+        
+        private void Awake() => _currentAmmo = _maxAmmoCount;
+
+        private void OnEnable() => Parent.OnMeleeHit += OnMeleeHit;
+        private void OnDisable() => Parent.OnMeleeHit -= OnMeleeHit;
+
+        private void OnMeleeHit(HitData hitData) => ModifyCurrentAmmo(1);
 
         public override void SetInputs(CharacterInputs inputs) {
             if(inputs.SecondaryAttackReleased)
@@ -23,10 +38,17 @@ namespace VHS {
         }
 
         public void Shoot() {
+            ModifyCurrentAmmo(-1);
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
             Quaternion spawnRot = Quaternion.LookRotation(Controller.LookInput);
             PoolManager.Spawn(_projectile, spawnPos, spawnRot).Init(Parent);
             Controller.TransitionToDefaultState();
         }
+
+        private void ModifyCurrentAmmo(int amount) {
+            _currentAmmo = Mathf.Clamp(_currentAmmo + amount, 0, _maxAmmoCount);
+            Parent.OnCurrentAmmoChanged(_currentAmmo);
+        }
+
     }
 }

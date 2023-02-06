@@ -43,8 +43,6 @@ namespace VHS {
 
         public override void Hit(HitData hitData) {
             base.Hit(hitData);
-            
-            Log(hitData.damage);
 
             if (_target == null) {
                 _target = hitData.actor; // Dependency Injection?

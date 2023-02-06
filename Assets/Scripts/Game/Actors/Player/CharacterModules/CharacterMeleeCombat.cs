@@ -96,16 +96,6 @@ namespace VHS {
         public override void OnEnter() => _attackIndex = 0;
         public override void OnExit() => _attackIndex = 0;
 
-        private void Attack(AttackInfo attackInfo) {
-            attackInfo.duration.Start();
-
-            Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
-            Controller.LastNonZeroMoveInput = Controller.LookInput;
-            Controller.AddVelocity(attackInfo.pushForce * Controller.LookInput);
-            
-            Timing.CallDelayed(_hitDelay, () => CheckForHittables(attackInfo), gameObject);
-        }
-
         private void LightAttack() {
             // if (!_lastAttackPrimary)
                 // _attackIndex = 0;
@@ -129,6 +119,16 @@ namespace VHS {
            Attack(_currentAttack);
            SpawnSlash(Vector3.one * 0.4f, true);
             _heavyAttackReached = false;
+        }
+
+        private void Attack(AttackInfo attackInfo) {
+            attackInfo.duration.Start();
+
+            Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
+            Controller.LastNonZeroMoveInput = Controller.LookInput;
+            Controller.AddVelocity(attackInfo.pushForce * Controller.LookInput);
+            
+            Timing.CallDelayed(_hitDelay, () => CheckForHittables(attackInfo), gameObject);
         }
 
         private void SpawnSlash( Vector3 size, bool flip = false) {
@@ -166,8 +166,9 @@ namespace VHS {
                             direction = Parent.FeetPosition.DirectionTo(collider.transform.position)
                         };
                             
-                        hittable.Hit(hitData);
                         hitSomething = true;
+                        hittable.Hit(hitData);
+                        Parent.OnMeleeHit(hitData);
 
                         /* Damage PopUp
                         Quaternion rotationToCamera = Quaternion.LookRotation(Player.Camera.transform.forward);
