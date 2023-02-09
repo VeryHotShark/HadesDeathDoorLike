@@ -5,7 +5,8 @@ using MEC;
 using UnityEngine;
 
 namespace VHS {
-    public class WaveController : SpawnController {
+    [Serializable]
+    public class WaveController : SpawnHandler {
         [SerializeField] private float _timeBetweenWaves = 2.0f;
 
         private List<Wave> _waves;
@@ -15,15 +16,13 @@ namespace VHS {
         private Wave _currentWave;
         private int _currentWaveIndex;
 
-        private void Awake() {
-            base.Awake();
-            _waves = new List<Wave>(GetComponentsInChildren<Wave>());
+        public override void Init(SpawnController spawnController) {
+            base.Init(spawnController);
+            _waves = new List<Wave>(_spawnController.GetComponentsInChildren<Wave>());
         }
 
-        protected override void OnNpcDeath(IActor actor) {
-            base.OnNpcDeath(actor);
-            
-            if(_aliveNpcs.Count == 0)
+        public override void OnNpcDeath(Npc npc) {
+            if(_spawnController.AliveNpcs.Count == 0)
                 OnWaveCleared();
         }
 
@@ -31,25 +30,22 @@ namespace VHS {
             _currentWaveIndex++;
 
             if (_currentWaveIndex >= _waves.Count) {
-                FinishCallback();
+                Finish();
                 return;
             }
             
-            StartWave(_currentWaveIndex);
+            SpawnWave(_currentWaveIndex);
         }
-        
-        public void OnSpawnRequest(EnemyID enemyID, Vector3 spawnPosition) => SpawnEnemy(enemyID, spawnPosition);
 
-        public override void StartSpawn() {
+        public override void Start() {
             _currentWaveIndex = 0;
-            StartWave(_currentWaveIndex);
-            StartCallback();
+            SpawnWave(_currentWaveIndex);
         }
 
-        private void StartWave(int index) {
+        private void SpawnWave(int index) {
             Timing.CallDelayed(_timeBetweenWaves, delegate {
                 _currentWave = _waves[index];
-                _currentWave.StartWave();
+                _currentWave.Spawn(_spawnController);
                 OnWaveChanged(index);
             });
         }

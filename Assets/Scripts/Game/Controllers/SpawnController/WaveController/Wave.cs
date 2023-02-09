@@ -1,12 +1,14 @@
+using System;
+
 namespace VHS {
-    public class Wave : ChildBehaviour<WaveController> {
-        private SpawnPoint[] _spawnPoints = new SpawnPoint[0];
+    public class Wave : BaseBehaviour {
+        private SpawnPoint[] _spawnPoints = Array.Empty<SpawnPoint>();
 
         private void Awake() => _spawnPoints = GetComponentsInChildren<SpawnPoint>();
 
-        public void StartWave() {
+        public void Spawn(SpawnController spawnController) {
             foreach (SpawnPoint spawnPoint in _spawnPoints)
-                Parent.OnSpawnRequest(spawnPoint.Npcs[0], spawnPoint.ProvidePoint());
+                spawnController.SpawnEnemy(spawnPoint.Npcs[0], spawnPoint.ProvidePoint());
         }
     }
 }

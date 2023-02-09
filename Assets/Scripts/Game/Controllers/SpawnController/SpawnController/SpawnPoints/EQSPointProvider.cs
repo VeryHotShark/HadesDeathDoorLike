@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using VHS;
 
 namespace VHS {
+    [Serializable]
     public class EQSPointProvider : ISpawnPointProvider
     {
         public Transform Transform { get; set; }
+        
         public void OnDrawGizmos(Transform transform) {
             
         }

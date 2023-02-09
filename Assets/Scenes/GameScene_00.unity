@@ -30029,59 +30029,6 @@ MonoBehaviour:
     _visibilityToggleIndent: 0
     _indentContent: 0
     _surroundWithBox: 0
---- !u!114 &6877325685693763014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6877325685693763032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294598e32afb15c47b8ad8e24efd91e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _customUpdate: 0
-  _updateRate: 0.2
-  _spawnVFX: {fileID: 0}
-  _spawnStartType: 2
-  _minDistance: 5
-  _randomSpawnRange: {x: 4, y: 10}
-  _spawnsData:
-  - EnemyID: {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
-    SpawnCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: -0.001529038
-        value: -0.0017325282
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 5
-        value: 2
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 15
-        value: 4
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
 --- !u!4 &6877325685693763015
 Transform:
   m_ObjectHideFlags: 0
@@ -30114,7 +30061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6877325685693763015}
-  - component: {fileID: 6877325685693763014}
+  - component: {fileID: 6877325685693763033}
   m_Layer: 0
   m_Name: ArenaController
   m_TagString: Untagged
@@ -30122,6 +30069,67 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6877325685693763033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877325685693763032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1d8d3af5cf493469657b9fd8f01329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  _spawnVFX: {fileID: 0}
+  _spawnStartType: 2
+  _spawnHandler:
+    rid: 626373295723511809
+  _minDistance: 5
+  _randomSpawnRange: {x: 4, y: 10}
+  references:
+    version: 2
+    RefIds:
+    - rid: 626373295723511809
+      type: {class: ArenaController, ns: VHS, asm: Assembly-CSharp}
+      data:
+        _spawnsData:
+        - EnemyID: {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+          SpawnCurve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: Infinity
+              outSlope: Infinity
+              tangentMode: 103
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 5
+              value: 2
+              inSlope: Infinity
+              outSlope: Infinity
+              tangentMode: 103
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 15
+              value: 3
+              inSlope: Infinity
+              outSlope: Infinity
+              tangentMode: 103
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
 --- !u!223 &6877325686738750304
 Canvas:
   m_ObjectHideFlags: 0

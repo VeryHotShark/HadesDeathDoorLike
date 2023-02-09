@@ -1,19 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class SurvivalController : SpawnController, ISlowUpdateListener {
+    [Serializable]
+    public class SurvivalController : SpawnHandler {
         [SerializeField] private float _survivalDuration = 60.0f;
         
         [Space] 
         [SerializeField] private SpawnData[] _spawnsData;
 
-        private float _timer;
         private Dictionary<EnemyID, List<Npc>> _aliveNpcsDict = new();
 
-        protected override void Awake() {
-            base.Awake();
+        public override void Init(SpawnController spawnController) {
+            base.Init(spawnController);
             
             foreach (SpawnData spawnData in _spawnsData) {
                 List<Npc> aliveNpcs = new List<Npc>();
@@ -21,23 +22,11 @@ namespace VHS {
             }
         }
         
-        protected override void Disable() {
-            base.Disable();
-            UpdateManager.RemoveSlowUpdateListener(this);
-        }
-
-        protected override void OnNpcDeath(IActor actor) {
-            base.OnNpcDeath(actor);
-            Npc npc = actor as Npc;
-            _aliveNpcsDict[npc.EnemyID].Remove(npc);
-        }
-
-        public void OnSlowUpdate(float deltaTime) {
-            _timer += deltaTime;
-            ConsoleProDebug.Watch("Arena Timer", _timer.ToString());
+        public override void OnTick(float dt) {
+            base.OnTick(dt);
 
             if (_timer > _survivalDuration) {
-                StopSurvival();
+                Finish();
                 return;
             }
 
@@ -51,28 +40,20 @@ namespace VHS {
                     int enemiesCountToSpawn = desiredNpcCount - currentNpcCount;
 
                     for (int i = 0; i < enemiesCountToSpawn; i++) {
-                        Vector3 SpawnPos = GetSpawnPosition(spawnData.EnemyID);
-                        Npc spawnedNpc = SpawnEnemy(spawnData.EnemyID, SpawnPos);
+                        Vector3 SpawnPos = _spawnController.GetSpawnPosition(spawnData.EnemyID);
+                        Npc spawnedNpc = _spawnController.SpawnEnemy(spawnData.EnemyID, SpawnPos);
                         _aliveNpcsDict[spawnData.EnemyID].Add(spawnedNpc);
                     }
                 }
             }
         }
 
-        public override void StartSpawn() {
-            UpdateManager.AddSlowUpdateListener(this);
-            StartCallback();
+        public override void OnNpcDeath(Npc npc) => _aliveNpcsDict[npc.EnemyID].Remove(npc);
+
+        public override void Finish() {
+            _spawnController.KillAliveNpcs();
+            base.Finish();
         }
 
-        private void StopSurvival() {
-            UpdateManager.RemoveSlowUpdateListener(this);
-
-            for (int i = _aliveNpcs.Count - 1; i >= 0; i--) {
-                Npc aliveNpc = _aliveNpcs[i];
-                aliveNpc.Kill(Parent.Player);
-            }
-
-            FinishCallback();
-        }
     }
 }

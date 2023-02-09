@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using Sirenix.OdinInspector;
-using UnityEditor.Experimental;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,11 +18,13 @@ namespace VHS {
         public AnimationCurve SpawnCurve;
     }
     
-    public abstract class SpawnController : ChildBehaviour<GameController> {
+    public class SpawnController : ChildBehaviour<GameController>, ISlowUpdateListener {
+        [TitleGroup("Spawn Settings")]
         [SerializeField] private GameObject _spawnVFX;
         [SerializeField] private SpawnStartType _spawnStartType = SpawnStartType.Immediate;
+        [SerializeReference] private SpawnHandler _spawnHandler;
         
-        [TitleGroup("Spawn Requirements")]
+        [TitleGroup("EQS & Random Spawn")]
         [SerializeField] private EQSPointProvider _eqsPointProvider;
         [SerializeField] private float _minDistance = 5.0f;
         [SerializeField] private Vector2 _randomSpawnRange = new Vector2(4.0f,10.0f);
@@ -39,17 +39,25 @@ namespace VHS {
         protected List<Npc> _aliveNpcs = new();
         protected Dictionary<EnemyID, List<SpawnPoint>> _spawnPointsDict = new();
 
-        protected virtual void Awake() {
+        public List<Npc> AliveNpcs => _aliveNpcs;
+
+        private void Awake() {
             _minDistanceSqr = _minDistance.Square();
             
+            InitializeSpawnPoints();
+
+            _spawnHandler.Init(this);
+        }
+
+        private void InitializeSpawnPoints() {
             SpawnPoint[] allSpawnPoints = GetComponentsInChildren<SpawnPoint>();
-            
+
             foreach (SpawnPoint spawnPoint in allSpawnPoints) {
                 foreach (EnemyID enemyID in spawnPoint.Npcs) {
                     if (_spawnPointsDict.TryGetValue(enemyID, out List<SpawnPoint> spawnPoints))
-                        spawnPoints.Add(spawnPoint); 
-                    else 
-                        _spawnPointsDict.Add(enemyID, new List<SpawnPoint>{spawnPoint});
+                        spawnPoints.Add(spawnPoint);
+                    else
+                        _spawnPointsDict.Add(enemyID, new List<SpawnPoint> { spawnPoint });
                 }
             }
         }
@@ -57,22 +65,33 @@ namespace VHS {
         protected override void Disable() {
             foreach (Npc npc in _aliveNpcs) 
                 npc.OnDeath -= OnNpcDeath;
+            
+            UpdateManager.RemoveSlowUpdateListener(this);
         }
         
-        protected virtual void OnNpcDeath(IActor actor) {
+        private void OnNpcDeath(IActor actor) {
             Npc npc = actor as Npc;
             npc.OnDeath -= OnNpcDeath;
             _aliveNpcs.Remove(npc);
+            
+            _spawnHandler.OnNpcDeath(npc);
         }
 
-        protected Npc SpawnEnemy(EnemyID enemyID, Vector3 position) {
+        public void KillAliveNpcs() {
+            for (int i = _aliveNpcs.Count - 1; i >= 0; i--) {
+                Npc aliveNpc = _aliveNpcs[i];
+                aliveNpc.Kill(Parent.Player);
+            }
+        }
+
+        public Npc SpawnEnemy(EnemyID enemyID, Vector3 position) {
             Npc spawnedNpc = Instantiate(enemyID.Prefab, position, Quaternion.identity);
             spawnedNpc.OnDeath += OnNpcDeath;
             _aliveNpcs.Add(spawnedNpc);
             return spawnedNpc;
         }
         
-        protected Vector3 GetSpawnPosition(EnemyID enemyID) {
+        public  Vector3 GetSpawnPosition(EnemyID enemyID) {
             Vector3? spawnPointPosition = GetValidSpawnPointPosition(enemyID);
                 
             if (spawnPointPosition != null)
@@ -138,10 +157,17 @@ namespace VHS {
             return sampledInfo.position;
         }
 
-        public abstract void StartSpawn();
+        public void StartSpawn() {
+            OnStarted();
+            _spawnHandler.Start();
+            UpdateManager.AddSlowUpdateListener(this);
+        }
 
-        protected void StartCallback() => OnStarted();
-        protected void FinishCallback() => OnFinished();
+        public void OnSlowUpdate(float deltaTime) => _spawnHandler.OnTick(deltaTime);
         
+        public void FinishCallback() {
+            OnFinished();
+            UpdateManager.RemoveSlowUpdateListener(this);
+        }
     }
 }

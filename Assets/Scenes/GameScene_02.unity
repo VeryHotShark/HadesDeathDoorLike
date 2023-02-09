@@ -8946,15 +8946,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944984414320280, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4944984414320280, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4944984414320280, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
@@ -27999,51 +27999,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 6877325685693763032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2008c25aed196aa40a218846255d0165, type: 3}
+  m_Script: {fileID: 11500000, guid: ce1d8d3af5cf493469657b9fd8f01329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
   _spawnVFX: {fileID: 0}
   _spawnStartType: 2
+  _spawnHandler:
+    rid: 626373295723511811
   _minDistance: 5
   _randomSpawnRange: {x: 4, y: 10}
-  _survivalDuration: 30
-  _spawnsData:
-  - EnemyID: {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
-    SpawnCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 8
-        outSlope: 8
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.25
-        value: 2
-        inSlope: 6
-        outSlope: 6
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 5
-        inSlope: 4
-        outSlope: 4
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
+  references:
+    version: 2
+    RefIds:
+    - rid: 626373295723511811
+      type: {class: SurvivalController, ns: VHS, asm: Assembly-CSharp}
+      data:
+        _survivalDuration: 30
+        _spawnsData:
+        - EnemyID: {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
+          SpawnCurve:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 5
+              outSlope: 5
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 5
+              inSlope: 5
+              outSlope: 5
+              tangentMode: 34
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
 --- !u!223 &6877325686738750304
 Canvas:
   m_ObjectHideFlags: 0

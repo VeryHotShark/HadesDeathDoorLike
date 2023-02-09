@@ -1,21 +1,14 @@
+using System;
 using UnityEngine;
 
 namespace VHS {
-    
-    public class ArenaController : SpawnController, ISlowUpdateListener {
+    [Serializable]
+    public class ArenaController : SpawnHandler {
         [Space] 
         [SerializeField] private SpawnData[] _spawnsData;
 
-        private float _timer;
-
-        protected override void Disable() {
-            base.Disable();
-            UpdateManager.RemoveSlowUpdateListener(this);
-        }
-
-        public void OnSlowUpdate(float deltaTime) {
-            _timer += deltaTime;
-            ConsoleProDebug.Watch("Arena Timer", _timer.ToString());
+        public override void OnTick(float dt) {
+            base.OnTick(dt);
 
             bool removedAllKeys = true;
 
@@ -31,25 +24,14 @@ namespace VHS {
                     int spawnAmount = Mathf.RoundToInt(keyframe.value);
 
                     for (int i = 0; i < spawnAmount; i++) {
-                        Vector3 SpawnPos = GetSpawnPosition(spawnData.EnemyID);  
-                        SpawnEnemy(spawnData.EnemyID, SpawnPos);
+                        Vector3 SpawnPos = _spawnController.GetSpawnPosition(spawnData.EnemyID);  
+                        _spawnController.SpawnEnemy(spawnData.EnemyID, SpawnPos);
                     }
                 }
             }
 
-            if (removedAllKeys && _aliveNpcs.Count == 0) 
-                StopArena();
-        }
-
-        
-        public override void StartSpawn() {
-            UpdateManager.AddSlowUpdateListener(this);
-            StartCallback();
-        }
-        
-        private void StopArena() {
-            UpdateManager.RemoveSlowUpdateListener(this);
-            FinishCallback();
+            if (removedAllKeys && _spawnController.AliveNpcs.Count == 0) 
+                Finish();
         }
     }
 }
