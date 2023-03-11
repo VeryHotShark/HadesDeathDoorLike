@@ -24,7 +24,7 @@ namespace VHS {
         private void OnMeleeHit(HitData hitData) => ModifyCurrentAmmo(1);
 
         public override void SetInputs(CharacterInputs inputs) {
-            if(inputs.SecondaryAttackReleased)
+            if(inputs.Secondary.Released)
                 Shoot();
         }
 

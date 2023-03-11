@@ -196,12 +196,12 @@ namespace VHS {
                 return;
             }    
             
-            _heavyAttackHeld = inputs.PrimaryAttackDown;
+            _heavyAttackHeld = inputs.Primary.Held;
 
-            if (inputs.PrimaryAttackPerformed)
+            if (inputs.Primary.Performed)
                 _heavyAttackReached = true;
             
-            if (inputs.PrimaryAttackReleased ) {
+            if (inputs.Primary.Released ) {
                 if (!CurrentAttackTimer.IsActive) {
                     if (_heavyAttackReached) 
                         HeavyAttack();

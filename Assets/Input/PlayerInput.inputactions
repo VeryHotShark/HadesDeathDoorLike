@@ -42,15 +42,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Parry",
-                    "type": "Button",
-                    "id": "d50f0f15-4134-4f1c-873f-497a0ad36274",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Crouch",
                     "type": "Button",
                     "id": "34269c79-dd40-45f0-ae2c-2049ccc46b6b",
@@ -217,17 +208,6 @@
                     "processors": "",
                     "groups": "KeyboardAndMouse",
                     "action": "UltimateAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "17ca7c6a-410d-4ced-b0b1-87bc590babc6",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardAndMouse",
-                    "action": "Parry",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

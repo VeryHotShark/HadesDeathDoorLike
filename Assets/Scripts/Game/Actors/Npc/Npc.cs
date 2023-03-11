@@ -10,7 +10,7 @@ namespace VHS {
         Attacking,
     }
     
-    public class Npc : Actor<Npc>, ITargetable, IPoolable {
+    public class Npc : Actor<Npc>, IPoolable {
         [SerializeField] private EnemyID _enemyID;
 
         private NpcState _state;
@@ -50,7 +50,6 @@ namespace VHS {
             }
         }
 
-        public Vector3 GetTargetPosition() => transform.position;
         public void SetState(NpcState newState) => _state = newState;
 
         public override void OnMyAttackParried(HitData hitData) {

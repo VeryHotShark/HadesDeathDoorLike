@@ -19,6 +19,7 @@ namespace VHS {
         private CharacterMovement _movementModule;
         private CharacterMeleeCombat _meleeCombatModule;
         private CharacterRangeCombat _rangeCombatModule;
+        private CharacterSkillCombat _skillCombatModule;
         private CharacterFallingMovement _fallingMovementModule;
 
         private KinematicCharacterMotor _motor;
@@ -55,7 +56,7 @@ namespace VHS {
         public void SetInputs(ref CharacterInputs inputs) {
             LookInput = transform.position.DirectionTo(inputs.CursorPosition).Flatten();
 
-            Vector3 rawInput = new Vector3(inputs.MoveAxisRight, 0.0f, inputs.MoveAxisForward);
+            Vector3 rawInput = new Vector3(inputs.MoveAxis.x, 0.0f, inputs.MoveAxis.y);
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
 
             if (_lastMoveInput != clampedMoveInput) {
@@ -75,11 +76,11 @@ namespace VHS {
             }
 
             if (Motor.GroundingStatus.IsStableOnGround) {
-                if (inputs.RollDown)
+                if (inputs.Roll.Pressed)
                     _stateMachine.SetState(_rollModule);
-                else if (inputs.SecondaryAttackPressed && _rangeCombatModule.HasAmmo)
+                else if (inputs.Secondary.Pressed && _rangeCombatModule.HasAmmo)
                     _stateMachine.SetState(_rangeCombatModule);
-                else if(inputs.PrimaryAttackPressed && !_meleeCombatModule.IsOnCooldown)
+                else if(inputs.Primary.Pressed && !_meleeCombatModule.IsOnCooldown)
                     _stateMachine.SetState(_meleeCombatModule);
             }
 

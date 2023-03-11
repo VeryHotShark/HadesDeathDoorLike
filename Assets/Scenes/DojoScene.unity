@@ -889,6 +889,25 @@ MonoBehaviour:
     m_RotationOrder: 4
   RemapThresholdZero: 0
   RemapThresholdOne: 0
+--- !u!1 &786412306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3532176832971602171, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+  m_PrefabInstance: {fileID: 1270922468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &786412308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786412306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba9e3d49d6b2fb43952fbddde8d63cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
 --- !u!1 &906522548
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using Pathfinding;
 using UnityEngine;
 
 namespace VHS {
-    public class DummyTarget : MonoBehaviour, IHittable, ITargetable {
+    public class DummyTarget : MonoBehaviour, IHittable {
 
         private MMF_Player _hitFeedbacks;
 
@@ -31,7 +31,5 @@ namespace VHS {
         public void Hit(HitData hitData) {
             _hitFeedbacks.PlayFeedbacks();
         }
-
-        public Vector3 GetTargetPosition() => transform.position;
     }
 }

@@ -3,19 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene_00.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene_00.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectile.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectile/Projectile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectile/Projectile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectile/ProjectileBullet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectile/ProjectileBullet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectile/ProjectileHitScan.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectile/ProjectileHitScan.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerInput.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerInput.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Interfaces/ITargetable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Interfaces/ITargetable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/DummyTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/DummyTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/Npc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/Npc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterLockTarget.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterLockTarget.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterParry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterParry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/86acb61e0d2b4b36bc20af11093be9a5157e00/3e/3860d5ed/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
@@ -31,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Managers/UpdateManager/Listeners/ICustomUpdateListener.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/EnemyID.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/EntityID.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterSkillCombat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Interactables/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Triggers/Trigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/CirclePointProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -132,7 +142,8 @@
       <workItem from="1675627916377" duration="5222000" />
       <workItem from="1675635196435" duration="6442000" />
       <workItem from="1675899329663" duration="1577000" />
-      <workItem from="1675933435679" duration="9143000" />
+      <workItem from="1675933435679" duration="10042000" />
+      <workItem from="1678531056183" duration="3624000" />
     </task>
     <servers />
   </component>
