@@ -13,28 +13,24 @@ namespace VHS {
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
 
-        public override void StartTarget_Hook() {
-            base.StartTarget_Hook();         
+        public override void OnCastStart() {
             Owner.AIAgent.ResetPath();
             Owner.AIAgent.Stop();
             Owner.SetState(NpcState.Attacking);
         }
 
-        public override void TickTarget(float deltaTime) => Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTarget);
+        public override void OnCastTick(float deltaTime) => Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTarget);
 
-        public override void StartSkill_Hook() {
-            base.StartSkill_Hook();
+        public override void OnSkillStart() {
             _hittables.Clear();
         }
 
-        public override void TickSkill(float deltaTime) {
+        public override void OnSkillTick(float deltaTime) {
             MoveCharacter(deltaTime);
             CheckForHittables();    
         }
 
-        public override void FinishSkill_Hook() {
-            base.FinishSkill_Hook();
-            
+        public override void OnSkillFinish() {
             Owner.AIAgent.Resume();
             
             // TODO rework this, temporary for stagger to work because this gets called after stagger
@@ -74,7 +70,7 @@ namespace VHS {
                     }
                 }
                 
-                FinishSkill();
+                FinishSkill(true);
             } 
             
             DebugExtension.DebugWireSphere(position, Color.red, _radius);

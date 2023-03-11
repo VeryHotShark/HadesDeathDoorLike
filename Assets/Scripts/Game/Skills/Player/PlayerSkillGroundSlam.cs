@@ -12,7 +12,7 @@ namespace VHS {
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
 
-        public override void FinishSkill_Hook() {
+        public override void OnSkillFinish() {
             int hitCount =
                 Physics.OverlapSphereNonAlloc(Owner.CenterOfMass, _radius, _colliders, LayerManager.Masks.NPC);
 

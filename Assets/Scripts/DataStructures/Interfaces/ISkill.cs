@@ -1,47 +1,49 @@
 namespace VHS {
     public enum SkillState {
         None,
-        Targetting,
+        Casting,
         InProgress,
         Finished,
     }
 
-    public enum SkillType {
+    public enum UseType {
         Instant,
-        ForDuration,
-    }
-
-    public enum CastType {
-        SmartCast,
-        CustomCast,
+        Custom, // Duration or Infinite
     }
     
     /// <summary>
     /// Zastanów się czy ten interface jest potrzebny bo tylko Skill po nim dziedziczy
     /// </summary>
     public interface ISkill {
+        bool FinishSuccessful { get; }
         float CastDuration { get; }
         float SkillDuration { get; }
         
-        CastType CastType { get; }
-        SkillType SkillType { get; }
+        UseType CastType { get; }
+        UseType SkillType { get; }
         SkillState SkillState { get; }
         
         Actor Owner { get; }
         void SetOwner(Actor owner);
 
-        void StartTarget();
-        void TickTarget(float dt);
-        void FinishTarget();
-        void CancelTarget();
+        void OnCastStart();
+        void OnCastTick(float dt);
+        void OnCastFinish();
+        void OnCastCancel();
+        void FinishCast();
         
-        void StartSkill();
-        void TickSkill(float dt);
-        void FinishSkill();
-        void CancelSkill();
+        void OnSkillStart();
+        void OnSkillTick(float dt);
+        void OnSkillFinish();
+        void OnSkillCancel();
+        void FinishSkill(bool successful);
 
+        void Start();
         void Reset();
-        void Abort();
+        
+        void OnReset();
+        void OnAbort();
+        
         bool CanCastSkill();
     }
 }

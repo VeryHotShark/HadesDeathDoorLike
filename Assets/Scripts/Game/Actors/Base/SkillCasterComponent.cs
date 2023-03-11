@@ -6,7 +6,8 @@ using UnityEngine;
 
 namespace VHS {
     public class SkillCasterComponent : ChildBehaviour<Actor> {
-        private float _endCastTimestamp;
+        private float _castDuration;
+        private float _totalDuration;
         private ISkill _activeSkill;
 
         /// <summary>
@@ -24,50 +25,44 @@ namespace VHS {
             if (!skill.CanCastSkill())
                 return false;
             
-            _activeSkill = skill;
-            _endCastTimestamp = 0.0f;
+            _castDuration = 0.0f;
+            _totalDuration = 0.0f;
             
-            skill.Reset();
-            skill.StartTarget();
+            _activeSkill = skill;
+            _activeSkill.Start();
 
-            if (skill.CastType == CastType.SmartCast)
-                skill.FinishTarget();
-
-            switch (skill.CastType, skill.SkillType) {
-                case(CastType.SmartCast, SkillType.Instant) :
-                    skill.StartSkill();
-                    skill.FinishSkill();
-                    break;
-                case(CastType.SmartCast, SkillType.ForDuration) :
-                    skill.StartSkill();
-                    break;
-            }
-
+            if (_activeSkill.CastType == UseType.Instant) {
+                _activeSkill.FinishCast();
+                
+                if(_activeSkill.SkillType == UseType.Instant)
+                    _activeSkill.FinishSkill(true);
+            } 
+            
             return true;
         }
 
         /// <summary>
         /// Evaluate skill and change it state based on elapsed time
         /// </summary>
-        /// <param name="elapsedTime">skill duration since activation</param>
-        /// <returns></returns>
-        public void TickSkill(float elapsedTime) {
+        public void TickSkill(float dt) {
+            _totalDuration += dt;
+            
             switch (_activeSkill.SkillState) {
-                case SkillState.Targetting:
-                    if (elapsedTime > _activeSkill.CastDuration) {
-                        _endCastTimestamp = elapsedTime;
-                        _activeSkill.FinishTarget();
-                        _activeSkill.StartSkill();
-                    }
+                case SkillState.Casting:
+                    if (_activeSkill.CastDuration > 0.0f && _totalDuration > _activeSkill.CastDuration) 
+                        _activeSkill.FinishCast();
                     else
-                        _activeSkill.TickTarget(Time.deltaTime);
+                        _activeSkill.OnCastTick(dt);
+                    
+                    _castDuration = _totalDuration;
                     
                     break;
                 case SkillState.InProgress:
-                    if (elapsedTime - _endCastTimestamp > _activeSkill.SkillDuration)
-                        _activeSkill.FinishSkill();
+                    if (_activeSkill.SkillDuration > 0.0f &&
+                        _totalDuration - _castDuration > _activeSkill.SkillDuration) 
+                        _activeSkill.FinishSkill(true);
                     else
-                        _activeSkill.TickSkill(Time.deltaTime);
+                        _activeSkill.OnSkillTick(dt);
                     
                     break;
                 case SkillState.Finished :
@@ -84,15 +79,15 @@ namespace VHS {
                 return;
 
             switch (_activeSkill.SkillState) {
-                case SkillState.Targetting:
-                    _activeSkill.CancelTarget();
+                case SkillState.Casting:
+                    _activeSkill.OnCastCancel();
                     break;
                 case SkillState.InProgress:
-                    _activeSkill.CancelSkill();
+                    _activeSkill.OnSkillCancel();
                     break;
             }
             
-            _activeSkill.Abort();
+            _activeSkill.OnAbort();
         }
     }
 }

@@ -7,17 +7,21 @@ using UnityEngine;
 namespace VHS {
     [Serializable]
     public class Skill : ISkill {
-        public CastType _castType = CastType.SmartCast;
-        public SkillType _skillType = SkillType.Instant;
+        public UseType _castType = UseType.Instant;
+        public UseType _skillType = UseType.Instant;
         
-        [HideIf("_castType", CastType.SmartCast)]public float _castDuration = 1.0f;
-        [HideIf("_skillType", SkillType.Instant)]public float _skillDuration = 1.0f;
+        [HideIf("_castType", UseType.Instant)]public float _castDuration = 1.0f;
+        [HideIf("_skillType", UseType.Instant)]public float _skillDuration = 1.0f;
 
-        public float CastDuration => _castDuration;
-        public float SkillDuration => _skillDuration;
+        private bool _finishedSuccessful;
+
+        public bool FinishSuccessful => _finishedSuccessful;
         
-        public CastType CastType => _castType;
-        public SkillType SkillType => _skillType;
+        public float SkillDuration => _skillDuration;
+        public float CastDuration => _castDuration;
+        
+        public UseType CastType => _castType;
+        public UseType SkillType => _skillType;
         
         // Dodać property który liczy normalized ratio 0-1 trwania skilla i casta
         public Actor Owner { get; private set; }
@@ -27,70 +31,41 @@ namespace VHS {
 
         public virtual bool CanCastSkill() => true;
 
-        public void StartTarget() {
-            SkillState = SkillState.Targetting;
-            StartTarget_Hook();
+        public void Start() {
+            Reset();
+            SkillState = SkillState.Casting;
+            OnCastStart();
         }
-
-        /// <summary>
-        /// Called After Start Target
-        /// </summary>
-        public virtual void StartTarget_Hook() { }
         
-        /// <summary>
-        /// Called every tick when Targetting is active
-        /// </summary>
-        public virtual void TickTarget(float deltaTime) { }
-        
-        /// <summary>
-        /// Called after the targetting is finish
-        /// </summary>
-        public virtual void FinishTarget() { }
-
-        public  void StartSkill() {
+        public void FinishCast() {
             SkillState = SkillState.InProgress;
-            StartSkill_Hook();
+            OnSkillStart();
         }
-
-        /// <summary>
-        /// Called After skill is Started
-        /// </summary>
-        public virtual void StartSkill_Hook() {}
         
-        /// <summary>
-        /// Called every tick when Skill is active
-        /// </summary>
-        public virtual void TickSkill(float deltaTime) { }
-        
-        public void FinishSkill() {
-            FinishSkill_Hook();
+        public void FinishSkill(bool successful) {
+            _finishedSuccessful = successful;
+            OnSkillFinish();
             SkillState = SkillState.Finished;
         }
-
-        /// <summary>
-        /// Called after skill is Finished
-        /// </summary>
-        public virtual void FinishSkill_Hook() {}
-
-        /// <summary>
-        /// Called only if current skill State is during Targetting
-        /// </summary>
-        public virtual void CancelTarget() { }
         
-        /// <summary>
-        /// Called only if current skill State is in Progress
-        /// </summary>
-        public virtual void CancelSkill() { }
+        public virtual void Reset() {
+            SkillState = SkillState.None;
+            OnReset();
+        }
         
-        /// <summary>
-        /// Called when skill is canceled, independently of it current state
-        /// </summary>
-        public virtual void Abort() { }
+        public virtual void OnCastStart() { }
+        public virtual void OnCastTick(float deltaTime) { }
+        public virtual void OnCastFinish() { }
+        public virtual void OnCastCancel() { }
 
-        /// <summary>
-        /// Called before skill Activation and after Skill Finish
-        /// </summary>
-        public virtual void Reset() => SkillState = SkillState.None;
+        public virtual void OnSkillStart() { }
+        public virtual void OnSkillTick(float deltaTime) { }
+        public virtual void OnSkillFinish() { }
+        public virtual void OnSkillCancel() { }
+
+        public virtual void OnAbort() { }
+        public virtual void OnReset() { }
+        
     }
     
     [Serializable] // Jak się nie uda z generyczną CastSkillem w Node Canvas to zamień spowrotem by został tylko Skill klasa

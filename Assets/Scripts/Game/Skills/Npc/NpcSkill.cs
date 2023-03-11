@@ -6,6 +6,6 @@ using UnityEngine;
 namespace VHS {
     [Serializable]
     public class NpcSkill : Skill<Npc> {
-        public override void Abort() => FinishSkill();
+        public override void OnAbort() => FinishSkill(false);
     }
 }
