@@ -9,8 +9,9 @@ namespace VHS {
     public class Skill : ISkill {
         public CastType _castType = CastType.SmartCast;
         public SkillType _skillType = SkillType.Instant;
-        public float _castDuration = 1.0f;
-        public float _skillDuration = 1.0f;
+        
+        [HideIf("_castType", CastType.SmartCast)]public float _castDuration = 1.0f;
+        [HideIf("_skillType", SkillType.Instant)]public float _skillDuration = 1.0f;
 
         public float CastDuration => _castDuration;
         public float SkillDuration => _skillDuration;

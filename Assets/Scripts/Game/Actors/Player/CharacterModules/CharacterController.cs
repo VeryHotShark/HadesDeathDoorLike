@@ -43,6 +43,7 @@ namespace VHS {
             _movementModule = GetComponent<CharacterMovement>();
             _meleeCombatModule = GetComponent<CharacterMeleeCombat>();
             _rangeCombatModule = GetComponent<CharacterRangeCombat>();
+            _skillCombatModule = GetComponent<CharacterSkillCombat>();
             _fallingMovementModule = GetComponent<CharacterFallingMovement>();
 
             _stateMachine = new StateMachine<CharacterModule>(_movementModule);
@@ -54,6 +55,25 @@ namespace VHS {
         public void OnUpdate(float deltaTime) => _stateMachine.Tick(deltaTime);
 
         public void SetInputs(ref CharacterInputs inputs) {
+            UpdateInput(inputs);
+
+            if (Motor.GroundingStatus.IsStableOnGround) {
+                if (inputs.Roll.Pressed)
+                    _stateMachine.SetState(_rollModule);
+                else if (inputs.Secondary.Pressed && _rangeCombatModule.HasAmmo)
+                    _stateMachine.SetState(_rangeCombatModule);
+                else if(inputs.Primary.Pressed && !_meleeCombatModule.IsOnCooldown)
+                    _stateMachine.SetState(_meleeCombatModule);
+                else if(inputs.Ultimate.Pressed)
+                    _stateMachine.SetState(_skillCombatModule);
+            }
+
+            _stateMachine.CurrentState.SetInputs(inputs);
+
+            LastCharacterInputs = inputs;
+        }
+
+        private void UpdateInput(CharacterInputs inputs) {
             LookInput = transform.position.DirectionTo(inputs.CursorPosition).Flatten();
 
             Vector3 rawInput = new Vector3(inputs.MoveAxis.x, 0.0f, inputs.MoveAxis.y);
@@ -63,30 +83,17 @@ namespace VHS {
                 _inputDirectionChangeTimer.Start();
                 _lastMoveInput = clampedMoveInput;
             }
-            
+
             if (!_inputDirectionChangeTimer.IsActive) {
                 Vector3 cameraPlanarDirection =
                     Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
 
                 Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
                 MoveInput = cameraPlanarRotation * clampedMoveInput;
-                
+
                 if (clampedMoveInput != Vector3.zero)
                     LastNonZeroMoveInput = MoveInput;
             }
-
-            if (Motor.GroundingStatus.IsStableOnGround) {
-                if (inputs.Roll.Pressed)
-                    _stateMachine.SetState(_rollModule);
-                else if (inputs.Secondary.Pressed && _rangeCombatModule.HasAmmo)
-                    _stateMachine.SetState(_rangeCombatModule);
-                else if(inputs.Primary.Pressed && !_meleeCombatModule.IsOnCooldown)
-                    _stateMachine.SetState(_meleeCombatModule);
-            }
-
-            _stateMachine.CurrentState.SetInputs(inputs);
-
-            LastCharacterInputs = inputs;
         }
 
         public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {

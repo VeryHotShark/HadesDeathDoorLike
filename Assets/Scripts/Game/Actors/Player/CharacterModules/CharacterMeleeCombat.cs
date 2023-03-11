@@ -97,9 +97,6 @@ namespace VHS {
         public override void OnExit() => _attackIndex = 0;
 
         private void LightAttack() {
-            // if (!_lastAttackPrimary)
-                // _attackIndex = 0;
-            
             _lastAttackPrimary = true;
             _preAttackBuffer.Reset();
             
