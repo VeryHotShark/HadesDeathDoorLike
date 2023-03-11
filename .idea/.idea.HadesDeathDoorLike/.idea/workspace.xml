@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyMelee.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BehaviourTrees/BT_EnemyMelee.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree/Tasks/CastSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree/Tasks/CastSkill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Interfaces/ISkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Interfaces/ISkill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/Skill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/SkillCasterComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/SkillCasterComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Skills/Npc/NpcSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Skills/Npc/NpcSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Skills/Npc/NpcSkillMeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Skills/Npc/NpcSkillMeleeAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterSkillCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterSkillCombat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Skills/Player/PlayerSkillGroundSlam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Skills/Player/PlayerSkillGroundSlam.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +140,7 @@
       <workItem from="1675899329663" duration="1577000" />
       <workItem from="1675933435679" duration="10042000" />
       <workItem from="1678531056183" duration="7382000" />
-      <workItem from="1678552023730" duration="10111000" />
+      <workItem from="1678552023730" duration="14456000" />
     </task>
     <servers />
   </component>

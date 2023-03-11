@@ -6,9 +6,10 @@ namespace VHS {
         Finished,
     }
 
-    public enum UseType {
+    public enum TimeType {
         Instant,
-        Custom, // Duration or Infinite
+        Duration,
+        Infinite,
     }
     
     /// <summary>
@@ -19,8 +20,8 @@ namespace VHS {
         float CastDuration { get; }
         float SkillDuration { get; }
         
-        UseType CastType { get; }
-        UseType SkillType { get; }
+        TimeType CastType { get; }
+        TimeType SkillType { get; }
         SkillState SkillState { get; }
         
         Actor Owner { get; }

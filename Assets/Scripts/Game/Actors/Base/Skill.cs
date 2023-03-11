@@ -7,11 +7,11 @@ using UnityEngine;
 namespace VHS {
     [Serializable]
     public class Skill : ISkill {
-        public UseType _castType = UseType.Instant;
-        public UseType _skillType = UseType.Instant;
+        public TimeType _castType = TimeType.Instant;
+        public TimeType _skillType = TimeType.Instant;
         
-        [HideIf("_castType", UseType.Instant)]public float _castDuration = 1.0f;
-        [HideIf("_skillType", UseType.Instant)]public float _skillDuration = 1.0f;
+        [ShowIf("_castType", TimeType.Duration), MinValue(0.0f)] public float _castDuration = 1.0f;
+        [ShowIf("_skillType", TimeType.Duration), MinValue(0.0f)] public float _skillDuration = 1.0f;
 
         private bool _finishedSuccessful;
 
@@ -20,8 +20,8 @@ namespace VHS {
         public float SkillDuration => _skillDuration;
         public float CastDuration => _castDuration;
         
-        public UseType CastType => _castType;
-        public UseType SkillType => _skillType;
+        public TimeType CastType => _castType;
+        public TimeType SkillType => _skillType;
         
         // Dodać property który liczy normalized ratio 0-1 trwania skilla i casta
         public Actor Owner { get; private set; }
@@ -38,14 +38,15 @@ namespace VHS {
         }
         
         public void FinishCast() {
+            OnCastFinish();
             SkillState = SkillState.InProgress;
             OnSkillStart();
         }
         
         public void FinishSkill(bool successful) {
             _finishedSuccessful = successful;
-            OnSkillFinish();
             SkillState = SkillState.Finished;
+            OnSkillFinish();
         }
         
         public virtual void Reset() {

@@ -10,6 +10,8 @@ namespace VHS {
         private float _totalDuration;
         private ISkill _activeSkill;
 
+        public ISkill ActiveSkill => _activeSkill;
+
         /// <summary>
         /// Setup skill owner reference to work correctly
         /// </summary>
@@ -31,10 +33,10 @@ namespace VHS {
             _activeSkill = skill;
             _activeSkill.Start();
 
-            if (_activeSkill.CastType == UseType.Instant) {
+            if (_activeSkill.CastType == TimeType.Instant) {
                 _activeSkill.FinishCast();
                 
-                if(_activeSkill.SkillType == UseType.Instant)
+                if(_activeSkill.SkillType == TimeType.Instant)
                     _activeSkill.FinishSkill(true);
             } 
             
@@ -49,7 +51,7 @@ namespace VHS {
             
             switch (_activeSkill.SkillState) {
                 case SkillState.Casting:
-                    if (_activeSkill.CastDuration > 0.0f && _totalDuration > _activeSkill.CastDuration) 
+                    if (_activeSkill.CastType == TimeType.Duration && _totalDuration > _activeSkill.CastDuration) 
                         _activeSkill.FinishCast();
                     else
                         _activeSkill.OnCastTick(dt);
@@ -58,7 +60,11 @@ namespace VHS {
                     
                     break;
                 case SkillState.InProgress:
-                    if (_activeSkill.SkillDuration > 0.0f &&
+                    if (_activeSkill.SkillType == TimeType.Instant) {
+                        _activeSkill.FinishSkill(true);              return;          
+                    }
+                    
+                    if (_activeSkill.SkillType == TimeType.Duration &&
                         _totalDuration - _castDuration > _activeSkill.SkillDuration) 
                         _activeSkill.FinishSkill(true);
                     else

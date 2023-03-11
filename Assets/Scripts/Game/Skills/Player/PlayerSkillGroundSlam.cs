@@ -12,10 +12,18 @@ namespace VHS {
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
 
+        public override void OnReset() {
+            _hittables.Clear();
+        }
+
+        public override void OnCastTick(float deltaTime) => DebugExtension.DebugWireSphere(Owner.CenterOfMass, Color.yellow, _radius);
+
         public override void OnSkillFinish() {
             int hitCount =
                 Physics.OverlapSphereNonAlloc(Owner.CenterOfMass, _radius, _colliders, LayerManager.Masks.NPC);
 
+            DebugExtension.DebugWireSphere(Owner.CenterOfMass, Color.red, _radius, 2.0f);
+            
             if (hitCount == 0)
                 return;
 
@@ -38,8 +46,6 @@ namespace VHS {
                     _hittables.Add(hittable);
                 }
             }
-            
-            DebugExtension.DebugWireSphere(Owner.CenterOfMass, Color.red, _radius, 2.0f);
         }
     }
 }

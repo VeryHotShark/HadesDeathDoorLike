@@ -34,11 +34,9 @@ namespace VHS{
 		//Called once per frame while the action is active.
 		protected override void OnUpdate(){
 			agent.TickSkill(Time.deltaTime);
-
-			if (_skill.SkillState == SkillState.Finished) {
-				Debug.Log("DUPA2");	
+			
+			if (agent.ActiveSkill == null)
 				EndAction(true);
-			}
 		}
 
 		protected override void OnStop(bool interrupted) {

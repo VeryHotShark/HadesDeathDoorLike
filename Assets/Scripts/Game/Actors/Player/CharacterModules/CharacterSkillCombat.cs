@@ -12,10 +12,22 @@ namespace VHS {
         private void Awake() => _skillCaster = GetComponent<SkillCasterComponent>();
 
         public override void SetInputs(CharacterInputs inputs) {
-            if (inputs.Ultimate.Pressed) 
-                _skillCaster.CastSkill(_activeSkill);
+            if(_activeSkill.CastType == TimeType.Infinite)
+                if (inputs.Ultimate.Released)
+                    _activeSkill.FinishCast();                    
+        }
+
+        public override void OnEnter() => _skillCaster.CastSkill(_activeSkill);
+
+        public override void OnTick(float deltaTime) {
+            _skillCaster.TickSkill(deltaTime);
             
-            Controller.TransitionToDefaultState();
+            if(_skillCaster.ActiveSkill == null)   
+               Controller.TransitionToDefaultState();
+        }
+
+        public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
+            currentVelocity = Vector3.zero; // To będzie pewnie per Skill
         }
     }
 }
