@@ -1223,7 +1223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: _activeSkill
-      value: 549692309767192654
+      value: 549692309767192751
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692302052818964]
@@ -1232,6 +1232,10 @@ PrefabInstance:
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692309767192654]
       value: Assembly-CSharp VHS.PlayerSkillGroundSlam
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]
+      value: Assembly-CSharp VHS.PlayerSkillGrenade
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692302052818964]._damage
@@ -1250,11 +1254,23 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692302052818964]._castType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692309767192654]._castType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._castType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
@@ -1266,6 +1282,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._skillType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692302052818964]._castDuration
       value: 1
       objectReference: {fileID: 0}
@@ -1274,11 +1294,19 @@ PrefabInstance:
       value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._castDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692302052818964]._skillDuration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692309767192654]._skillDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._skillDuration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
@@ -1290,11 +1318,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._cooldown._looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692302052818964]._cooldown._duration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: managedReferences[549692309767192654]._cooldown._duration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 786412324, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: managedReferences[549692309767192751]._cooldown._duration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519980, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}

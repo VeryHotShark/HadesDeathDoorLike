@@ -5,24 +5,29 @@ using UnityEngine;
 
 namespace VHS {
     [Serializable]
-    public class PlayerSkillGroundSlam : PlayerSkill {
+    public class PlayerSkillGrenade : PlayerSkill {
         public float _radius = 3.0f;
         public int _damage = 1;
 
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
 
+        private Vector3 _castPosition;
+
         public override void OnReset() {
             _hittables.Clear();
         }
 
-        public override void OnCastTick(float deltaTime) => DebugExtension.DebugWireSphere(Owner.CenterOfMass, Color.yellow, _radius);
+        public override void OnCastTick(float deltaTime) {
+            _castPosition = Owner.PlayerController.Camera.CursorTransform.position;
+            DebugExtension.DebugWireSphere(_castPosition, Color.yellow, _radius);
+        }
 
         public override void OnSkillFinish() {
             int hitCount =
-                Physics.OverlapSphereNonAlloc(Owner.CenterOfMass, _radius, _colliders, LayerManager.Masks.NPC);
+                Physics.OverlapSphereNonAlloc(_castPosition, _radius, _colliders, LayerManager.Masks.NPC);
 
-            DebugExtension.DebugWireSphere(Owner.CenterOfMass, Color.red, _radius, 2.0f);
+            DebugExtension.DebugWireSphere(_castPosition, Color.red, _radius, 2.0f);
             
             if (hitCount == 0)
                 return;
@@ -38,8 +43,8 @@ namespace VHS {
                     HitData hitData = new HitData {
                         damage = _damage,
                         actor = Owner,
-                        position = collider.ClosestPoint(Owner.CenterOfMass),
-                        direction = Owner.FeetPosition.DirectionTo(collider.transform.position)
+                        position = collider.ClosestPoint(_castPosition),
+                        direction = _castPosition.DirectionTo(collider.transform.position)
                     };
 
                     hittable.Hit(hitData);
