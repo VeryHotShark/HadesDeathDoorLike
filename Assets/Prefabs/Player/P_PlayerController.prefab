@@ -66,6 +66,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 3532176832971602164}
+    - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7784946
+      objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758647, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: _characterReferencePoint
       value: 
@@ -113,6 +117,10 @@ PrefabInstance:
     - target: {fileID: 3241024694265406548, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843976083104876090, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_FrequencyGain
+      value: 5.525055
       objectReference: {fileID: 0}
     - target: {fileID: 6155051917543647469, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Name
@@ -166,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 9.590625
+      value: 10.8984375
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -266,15 +274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 8.525
+      value: 9.6875
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate
@@ -342,7 +350,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2946263280485540845, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
 --- !u!4 &3532176832971602164 stripped
 Transform:
@@ -354,9 +363,46 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1866718725280065598, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
   m_PrefabInstance: {fileID: 2946263279925825737}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3532176832971602171}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4191f4fcba85824faebdb835501a20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3532176832971602171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1866718725280065586, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+  m_PrefabInstance: {fileID: 2946263279925825737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1270922470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532176832971602171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8724ce6bf7a95499add7b632c5fbfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  _activeSkill:
+    rid: 6476558073538281472
+  references:
+    version: 2
+    RefIds:
+    - rid: 6476558073538281472
+      type: {class: PlayerSkillGrenade, ns: VHS, asm: Assembly-CSharp}
+      data:
+        _castType: 2
+        _skillType: 0
+        _castDuration: 1
+        _skillDuration: 1
+        _cooldown:
+          _duration: 1
+          _looping: 0
+        _explosionVFX: {fileID: 1390215345322043118, guid: 739d19610906a434a8d67ca770434aca, type: 3}
+        _radius: 3
+        _damage: 1
