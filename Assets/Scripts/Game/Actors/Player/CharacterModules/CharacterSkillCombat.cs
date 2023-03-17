@@ -1,23 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace VHS {
     public class CharacterSkillCombat : CharacterModule {
-        [SerializeReference] private ISkill _activeSkill;
+        [SerializeField] private SkillSO _skill;
 
         private SkillCasterComponent _skillCaster;
         
         private void Awake() => _skillCaster = GetComponent<SkillCasterComponent>();
 
         public override void SetInputs(CharacterInputs inputs) {
-            if(_activeSkill.CastType == TimeType.Infinite)
+            if(_skill.Instance.CastType == TimeType.Infinite)
                 if (inputs.Ultimate.Released)
-                    _activeSkill.FinishCast();                    
+                    _skill.Instance.FinishCast();                    
         }
 
-        public override void OnEnter() => _skillCaster.CastSkill(_activeSkill);
+        public override void OnEnter() => _skillCaster.CastSkill(_skill.Instance);
 
         public override void OnTick(float deltaTime) {
             _skillCaster.TickSkill(deltaTime);
