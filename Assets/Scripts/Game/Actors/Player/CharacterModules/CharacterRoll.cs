@@ -14,14 +14,15 @@ public class CharacterRoll : CharacterModule {
     private bool _lostGround;
     private bool _rollStopped;
     private bool _rollStarted;
-    private float _rollTimestamp;
+    private float _rollTimestamp = -100.0f;
     private float _rollDotThreshold;
     
     private Vector3 _endPos;
     private Vector3 _startPos;
     private Vector3 _lastDesiredPos;
     private Vector3 _rollDirection;
-    
+
+    public float LastRollTimestamp => _rollTimestamp;
     public bool DuringRoll => _rollStarted && !_rollStopped;
 
     private void Awake() => _rollDotThreshold = Mathf.Cos(_maxRollAngle * Mathf.Deg2Rad);

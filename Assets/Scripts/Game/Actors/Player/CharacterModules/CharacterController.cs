@@ -24,7 +24,8 @@ namespace VHS {
 
         private KinematicCharacterMotor _motor;
         private StateMachine<CharacterModule> _stateMachine;
-        
+
+        public CharacterRoll RollModule => _rollModule;
         public CharacterRangeCombat RangeCombat => _rangeCombatModule;
 
         public KinematicCharacterMotor Motor => _motor;

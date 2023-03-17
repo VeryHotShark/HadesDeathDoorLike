@@ -17,6 +17,7 @@ namespace VHS {
             public float pushForce = 10.0f;
             public float zOffset = 1.0f;
             public float radius = 1.0f;
+            public float angle = 360.0f;
         }
 
         [Header("VFX")]
@@ -26,25 +27,25 @@ namespace VHS {
         [Header("General")]
         [SerializeField] private float _slowDownSharpness = 10.0f;
         [SerializeField] private Timer _comboCooldown = new(0.5f);
-        
-        [Header("Input Buffers")]
+
+        [Header("Input Buffers")] 
+        [SerializeField] private float _dashLightBuffer = 0.4f;
+        [SerializeField] private float _dashHeavyBuffer = 0.6f;
+
         [SerializeField] private Timer _preAttackBuffer = new(0.3f);
         [SerializeField] private Timer _postAttackBuffer = new(0.3f);
 
-        [Header("Attacks")] 
-        [SerializeField] private List<AttackInfo> _lightAttacks;
+        [Header("Attacks")] [SerializeField] private List<AttackInfo> _lightAttacks;
         [SerializeField] private AttackInfo _heavyAttack;
-        [SerializeField] private AttackInfo _dashAttack;
-        [SerializeField] private AttackInfo _specialHeavyAttack;
-        
-        [Header("Hit")]
-        [SerializeField] private float _hitDelay = 0.2f;
+        [SerializeField] private AttackInfo _dashLightAttack;
+        [SerializeField] private AttackInfo _dashHeavyAttack;
+
+        [Header("Hit")] [SerializeField] private float _hitDelay = 0.2f;
         [SerializeField] private MMF_Player _lightHitFeedback;
         [SerializeField] private MMF_Player _heavyHitFeedback;
 
         private GameObject _slash;
-        
-        private int _comboIndex;
+
         private int _attackIndex;
 
         private bool _lastAttackPrimary;
@@ -63,59 +64,76 @@ namespace VHS {
         private void Awake() => _currentAttack = _lightAttacks[0];
 
         private void OnEnable() {
-            foreach (AttackInfo attack in _lightAttacks) 
+            foreach (AttackInfo attack in _lightAttacks)
                 attack.duration.OnEnd += OnAttackEnd;
 
+            _dashLightAttack.duration.OnEnd += OnAttackEnd;
+            _dashHeavyAttack.duration.OnEnd += OnAttackEnd;
             _heavyAttack.duration.OnEnd += OnAttackEnd;
             _postAttackBuffer.OnEnd += OnPostInputBufferEnd;
         }
 
         private void OnDisable() {
-            foreach (AttackInfo attack in _lightAttacks) 
+            foreach (AttackInfo attack in _lightAttacks)
                 attack.duration.OnEnd -= OnAttackEnd;
-            
+
+            _dashLightAttack.duration.OnEnd -= OnAttackEnd;
+            _dashHeavyAttack.duration.OnEnd -= OnAttackEnd;
             _heavyAttack.duration.OnEnd -= OnAttackEnd;
             _postAttackBuffer.OnEnd -= OnPostInputBufferEnd;
         }
 
         private void OnPostInputBufferEnd() {
-            if (!IsDuringAttack && !_heavyAttackHeld) 
+            if (!IsDuringAttack && !_heavyAttackHeld)
                 Controller.TransitionToDefaultState();
         }
 
         private void OnAttackEnd() {
-            if (!IsDuringLastAttack)
-                _postAttackBuffer.Start();
-            else 
+            if (IsDuringLastAttack)
                 _comboCooldown.Start();
+            else
+                _postAttackBuffer.Start();
 
-            if (!IsDuringInputBuffering && !_heavyAttackHeld) 
+            if (!IsDuringInputBuffering && !_heavyAttackHeld)
                 Controller.TransitionToDefaultState();
         }
 
         public override void OnEnter() => _attackIndex = 0;
         public override void OnExit() => _attackIndex = 0;
 
+        private void ResetPrimaryAttack() {
+            _attackIndex = 0;
+            _lastAttackPrimary = false;
+        }
+
+        private void DashLightAttack() {
+            ResetPrimaryAttack();
+            SpawnAttack(_dashLightAttack, new Vector3(0.3f, 0.3f, 1f));
+        }
+
+        private void DashHeavyAttack() {
+            ResetPrimaryAttack();
+            SpawnAttack(_dashHeavyAttack, new Vector3(1, 1f, 0.4f));
+        }
+
         private void LightAttack() {
             _lastAttackPrimary = true;
             _preAttackBuffer.Reset();
-            
-            _currentAttack = _lightAttacks[_attackIndex];
-            Attack(_currentAttack);
-            SpawnSlash(Vector3.one * 0.25f, _attackIndex % 2 == 0);
+
+            SpawnAttack(_lightAttacks[_attackIndex], Vector3.one * 0.25f, _attackIndex % 2 == 0);
             _attackIndex++;
         }
 
         private void HeavyAttack() {
-            if (_lastAttackPrimary)
-                _attackIndex = 0;
-            
-            _lastAttackPrimary = false;
-
-            _currentAttack = _heavyAttack;
-           Attack(_currentAttack);
-           SpawnSlash(Vector3.one * 0.4f, true);
+            ResetPrimaryAttack();
+            SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
             _heavyAttackReached = false;
+        }
+
+        private void SpawnAttack(AttackInfo attackInfo, Vector3 slashSize, bool flipSlash = false) {
+            _currentAttack = attackInfo;
+            Attack(_currentAttack);
+            SpawnSlash(slashSize, flipSlash);
         }
 
         private void Attack(AttackInfo attackInfo) {
@@ -124,22 +142,22 @@ namespace VHS {
             Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
             Controller.LastNonZeroMoveInput = Controller.LookInput;
             Controller.AddVelocity(attackInfo.pushForce * Controller.LookInput);
-            
+
             Timing.CallDelayed(_hitDelay, () => CheckForHittables(attackInfo), gameObject);
         }
 
-        private void SpawnSlash( Vector3 size, bool flip = false) {
-            if(_slash)
+        private void SpawnSlash(Vector3 size, bool flip = false) {
+            if (_slash)
                 Destroy(_slash);
-            
+
             Quaternion rot = Quaternion.LookRotation(Controller.LookInput);
-            _slash = Instantiate(_slashParticle, Parent.CenterOfMass, rot ,Parent.transform);
+            _slash = Instantiate(_slashParticle, Parent.CenterOfMass, rot, Parent.transform);
 
             size.z *= 1.2f;
-            
+
             if (flip)
                 size.x *= -1.0f;
-            
+
             _slash.transform.localScale = size;
         }
 
@@ -147,10 +165,11 @@ namespace VHS {
             Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter +
                                Motor.CharacterForward * attackInfo.zOffset;
 
-            Collider[] _colliders = Physics.OverlapSphere(position, attackInfo.radius, LayerManager.Masks.DEFAULT_AND_NPC);
+            Collider[] _colliders =
+                Physics.OverlapSphere(position, attackInfo.radius, LayerManager.Masks.DEFAULT_AND_NPC);
 
             bool hitSomething = false;
-            
+
             if (_colliders.Length > 0) {
                 foreach (Collider collider in _colliders) {
                     IHittable hittable = collider.GetComponentInParent<IHittable>();
@@ -162,7 +181,7 @@ namespace VHS {
                             position = collider.ClosestPoint(Parent.CenterOfMass),
                             direction = Parent.FeetPosition.DirectionTo(collider.transform.position)
                         };
-                            
+
                         hitSomething = true;
                         hittable.Hit(hitData);
                         Parent.OnMeleeHit(hitData);
@@ -175,12 +194,13 @@ namespace VHS {
                         */
                     }
                 }
-            } 
-            
-            DebugExtension.DebugWireSphere(position,_lastAttackPrimary ? Color.yellow : Color.red, attackInfo.radius, attackInfo.duration.Duration);
+            }
+
+            DebugExtension.DebugWireSphere(position, _lastAttackPrimary ? Color.yellow : Color.red, attackInfo.radius,
+                attackInfo.duration.Duration);
 
             if (hitSomething) {
-                if(_lastAttackPrimary)   
+                if (_lastAttackPrimary)
                     _lightHitFeedback.PlayFeedbacks();
                 else
                     _heavyHitFeedback.PlayFeedbacks();
@@ -191,26 +211,37 @@ namespace VHS {
             if (IsDuringLastAttack) {
                 _heavyAttackHeld = false;
                 return;
-            }    
-            
+            }
+
             _heavyAttackHeld = inputs.Primary.Held;
 
             if (inputs.Primary.Performed)
                 _heavyAttackReached = true;
-            
-            if (inputs.Primary.Released ) {
+
+            if (inputs.Primary.Released) {
                 if (!CurrentAttackTimer.IsActive) {
-                    if (_heavyAttackReached) 
-                        HeavyAttack();
-                    else 
-                        LightAttack();
+                    float _attackSinceRoll = Time.time - Controller.RollModule.LastRollTimestamp;
+
+                    //TODO Fix this -> Controller.RollModule.DuringRoll
+                    if (_heavyAttackReached) {
+                        if (_attackSinceRoll < _dashHeavyBuffer)
+                            DashHeavyAttack();
+                        else 
+                            HeavyAttack();
+                    }
+                    else {
+                        if (_attackSinceRoll < _dashLightBuffer)
+                            DashLightAttack();
+                        else
+                            LightAttack();
+                    }
                 }
-                else 
+                else
                     _preAttackBuffer.Start();
             }
 
             // Handle Pre Input Buffering
-            if (!CurrentAttackTimer.IsActive && _preAttackBuffer.IsActive) 
+            if (!CurrentAttackTimer.IsActive && _preAttackBuffer.IsActive)
                 LightAttack();
         }
 
