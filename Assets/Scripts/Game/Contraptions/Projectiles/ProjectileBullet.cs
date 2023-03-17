@@ -8,11 +8,13 @@ namespace VHS {
         [SerializeField] private float _speed = 10.0f;
         [SerializeField] private float _gravity;
 
+        private float _runtimeSpeed;
         private Vector3 _lastPosition;
         private RaycastHit _hitInfo;
 
         public override void Init(IActor owner) {
             base.Init(owner);
+            _runtimeSpeed = _speed;
             _lastPosition = transform.position;
         }
 
@@ -32,13 +34,13 @@ namespace VHS {
 
         private void UpdateMovement(float deltaTime) {
             Vector3 downwardMovement = Vector3.down * (_gravity * deltaTime);
-            Vector3 forwardMovement = transform.forward * (_speed * deltaTime);
+            Vector3 forwardMovement = transform.forward * (_runtimeSpeed * deltaTime);
             transform.position += forwardMovement + downwardMovement;
         }
 
         protected override bool CheckForCollision() =>
             Physics.Linecast(_lastPosition, transform.position, out _hitInfo,
-                LayerManager.Masks.DEFAULT_AND_NPC);
+                LayerManager.Masks.DEFAULT_AND_ACTORS);
 
         protected override void OnHit() {
             IHittable hittable = _hitInfo.transform.GetComponentInParent<IHittable>();
@@ -56,5 +58,8 @@ namespace VHS {
             
             PoolManager.Return(this);
         }
+
+        public void SetSpeed(float speed) => _runtimeSpeed = speed;
+        public override void OnReturnToPool() => _runtimeSpeed = _speed;
     }
 }

@@ -9,5 +9,7 @@ namespace VHS {
     /// </summary>
     public interface IPoolable {
         GameObject gameObject { get; }
+        void OnSpawnFromPool() {  }
+        void OnReturnToPool() { }
     }
 }

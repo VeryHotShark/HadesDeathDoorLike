@@ -20,7 +20,8 @@ namespace VHS {
 
         public bool HasTarget => _target is {IsAlive: true}; // equivalent to != null && IsAlive
         public Vector3 TargetPosition => _target.FeetPosition;
-        public Vector3 DirectionToTarget => HasTarget ? FeetPosition.DirectionTo(Target.FeetPosition).Flatten() : transform.forward;
+        public Vector3 DirectionToTarget => HasTarget ? FeetPosition.DirectionTo(Target.FeetPosition) : transform.forward;
+        public Vector3 DirectionToTargetFlat => DirectionToTarget.Flatten();
         
         public NpcState State => _state;
         public IActor Target => _target;

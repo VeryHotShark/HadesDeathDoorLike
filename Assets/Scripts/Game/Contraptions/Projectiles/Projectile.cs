@@ -41,5 +41,8 @@ namespace VHS {
             _owner = owner;
             _lifeTimer = _lifeTime;
         }
+
+        public virtual void OnReturnToPool() { }
+        public virtual void OnSpawnFromPool() { }
     }
 }

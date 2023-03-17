@@ -9,6 +9,7 @@ using UnityEngine.Pool;
 namespace VHS {
     public class CharacterRangeCombat : CharacterModule {
         [SerializeField] private int _maxAmmoCount = 4;
+        [SerializeField] private float _speed = 35.0f;
         [SerializeField] private Projectile _projectile;
 
         private int _currentAmmo;
@@ -42,6 +43,7 @@ namespace VHS {
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
             Quaternion spawnRot = Quaternion.LookRotation(Controller.LookInput);
             PoolManager.Spawn(_projectile, spawnPos, spawnRot).Init(Parent);
+            (_projectile as ProjectileBullet).SetSpeed(_speed); // TODO zmienić
             Controller.TransitionToDefaultState();
         }
 

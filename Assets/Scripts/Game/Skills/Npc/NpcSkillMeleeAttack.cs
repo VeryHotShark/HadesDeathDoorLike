@@ -19,7 +19,7 @@ namespace VHS {
             Owner.SetState(NpcState.Attacking);
         }
 
-        public override void OnCastTick(float deltaTime) => Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTarget);
+        public override void OnCastTick(float deltaTime) => Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTargetFlat);
 
         public override void OnSkillStart() {
             _hittables.Clear();

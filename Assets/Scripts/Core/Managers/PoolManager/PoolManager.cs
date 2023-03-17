@@ -29,14 +29,16 @@ namespace VHS {
                         poolableInstance.gameObject.transform.SetPositionAndRotation(position,rotation);
                     
                     poolableInstance.gameObject.SetActive(true);
+                    poolableInstance.OnSpawnFromPool();
                     return (T) poolableInstance;
                 }
             }
 
-            T pooledInstance = Object.Instantiate(poolablePrefab.gameObject, position, rotation, parent).GetComponent<T>();
-            _poolPrefabs.Add(pooledInstance, poolablePrefab.gameObject);
+            T spawnedInstance = Object.Instantiate(poolablePrefab.gameObject, position, rotation, parent).GetComponent<T>();
+            _poolPrefabs.Add(spawnedInstance, poolablePrefab.gameObject);
 
-            return pooledInstance;
+            spawnedInstance.OnSpawnFromPool();
+            return spawnedInstance;
         }
 
         public static void Return(IPoolable poolable) {
@@ -60,6 +62,7 @@ namespace VHS {
                 Object.Destroy(poolable.gameObject);
             }
             
+            poolable.OnReturnToPool();
             poolable.gameObject.transform.SetParent(null);
             poolable.gameObject.SetActive(false);
         }
