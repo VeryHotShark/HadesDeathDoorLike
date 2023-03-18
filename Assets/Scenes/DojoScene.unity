@@ -1231,7 +1231,7 @@ PrefabInstance:
       objectReference: {fileID: -7642389300242661848, guid: e3f2adf95423d494fb1bff5a380480f4, type: 3}
     - target: {fileID: 2332168767523476204, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_FrequencyGain
-      value: 11.71484
+      value: 11.79634
       objectReference: {fileID: 0}
     - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: _dashBuffer
