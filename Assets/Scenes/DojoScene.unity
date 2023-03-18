@@ -1221,46 +1221,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1270922470, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _skill
-      value: 
-      objectReference: {fileID: 11400000, guid: 224271209cbf6cd4aa30474d887dd0ba, type: 2}
-    - target: {fileID: 1270922470, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: managedReferences[6476558073538281472]._indicatorVFX
-      value: 
-      objectReference: {fileID: -7642389300242661848, guid: e3f2adf95423d494fb1bff5a380480f4, type: 3}
-    - target: {fileID: 2332168767523476204, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: m_FrequencyGain
-      value: 11.79634
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _dashBuffer
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _dashHeavyAttack.radius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _dashLightAttack.radius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _dashHeavyAttack.zOffset
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _dashLightAttack.zOffset
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _dashHeavyAttack.pushForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
-      propertyPath: _dashLightAttack.pushForce
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519980, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_Name
       value: Player

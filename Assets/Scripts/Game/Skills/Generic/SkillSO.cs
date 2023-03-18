@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    [CreateAssetMenu(fileName = "Skill", menuName = "SkillSO")]
+    [CreateAssetMenu(fileName = "Skill", menuName = "VHS/SkillSO")]
     public class SkillSO : ScriptableObject {
         [SerializeReference] private ISkill _skill;
 

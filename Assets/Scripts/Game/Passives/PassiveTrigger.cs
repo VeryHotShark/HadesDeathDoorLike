@@ -6,41 +6,48 @@ using UnityEngine;
 
 namespace VHS {
     public enum PassiveTriggerType {
-        Tick,
         Interval,
         Event,
     }
 
-    public class PassiveTrigger : IUpdateListener {
+    [Serializable]
+    public class PassiveTrigger : ICustomUpdateListener {
         public event Action OnTriggered = delegate { };
         
         public PassiveTriggerType _triggerType;
 
         [ShowIf("_triggerType", PassiveTriggerType.Interval)]
-        private float _interval;
-        
-        public Timer _triggerTimer;
+        public float _interval = 3.0f;
 
-        public void InitTrigger(Actor actor) {
+        [ShowIf("_triggerType", PassiveTriggerType.Event)]
+        public GameEvent _gameEvent;
+
+        public virtual void OnEnable() {
             switch (_triggerType) {
                 case PassiveTriggerType.Interval:
-                    _triggerTimer = new Timer(_interval, true);
+                    UpdateManager.AddCustomUpdateListener(_interval, this);
                     break;
                 case PassiveTriggerType.Event:
+                    _gameEvent.OnEventRaised += OnEventRaised;
                     break;
             }
         }
 
-        public virtual void OnEnable() {
-            if(_triggerType == PassiveTriggerType.Interval)
-                UpdateManager.AddUpdateListener(this);
-        }
-
         public virtual void OnDisable() {
-            if(_triggerType == PassiveTriggerType.Interval)
-                UpdateManager.RemoveUpdateListener(this);
+            switch (_triggerType) {
+                case PassiveTriggerType.Interval:
+                    UpdateManager.RemoveCustomUpdateListener(_interval, this);
+                    break;
+                case PassiveTriggerType.Event:
+                    _gameEvent.OnEventRaised -= OnEventRaised;
+                    break;
+            }
         }
 
-        public void OnUpdate(float deltaTime) => OnTriggered();
+        private void OnTimerEnd() => OnTriggered();
+
+        public void OnCustomUpdate(float deltaTime) => OnTriggered();
+
+        private void OnEventRaised(UnityEngine.Object sender) => OnTriggered();
     }
 }

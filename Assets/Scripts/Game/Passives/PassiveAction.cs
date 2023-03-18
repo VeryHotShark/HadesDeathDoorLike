@@ -6,7 +6,7 @@ using UnityEngine;
 namespace VHS {
     [Serializable]
     public abstract class PassiveAction {
-        private Actor _actor;
+        protected Actor _actor;
         
         public void Init(Actor actor) => _actor = actor;
 

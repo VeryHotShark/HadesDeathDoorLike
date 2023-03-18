@@ -68,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: 3532176832971602164}
     - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7784946
+      value: 1.7783506
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758647, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: _characterReferencePoint
@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3843976083104876090, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_FrequencyGain
-      value: 5.525055
+      value: 11.79634
       objectReference: {fileID: 0}
     - target: {fileID: 6155051917543647469, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Name
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 10.8984375
+      value: 10.003124
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -274,15 +274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 9.6875
+      value: 8.891666
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate
@@ -302,10 +302,78 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3532176833701519981}
     m_Modifications:
+    - target: {fileID: 1866718725280065574, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _hitEvent
+      value: 
+      objectReference: {fileID: -243778506023724903, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
+    - target: {fileID: 1866718725280065574, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _deathEvent
+      value: 
+      objectReference: {fileID: -4948686910326481164, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
     - target: {fileID: 1866718725280065586, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _anyHitEvent
+      value: 
+      objectReference: {fileID: -9189281669931673665, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyHitEvent
+      value: 
+      objectReference: {fileID: 260569354217564207, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightHitEvent
+      value: 
+      objectReference: {fileID: 2134053037988666889, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackEvent
+      value: 
+      objectReference: {fileID: 1239737310595297918, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightAttackEvent
+      value: 
+      objectReference: {fileID: 7066608735867538234, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyDashHitEvent
+      value: 
+      objectReference: {fileID: 7924356764224376721, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightDashHitEvent
+      value: 
+      objectReference: {fileID: -8319130847581474887, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyDashAttackEvent
+      value: 
+      objectReference: {fileID: 1154590139618921918, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightDashAttackEvent
+      value: 
+      objectReference: {fileID: 3652847077477962159, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _dashHeavyAttack.radius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _dashLightAttack.radius
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _dashHeavyAttack.zOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _dashLightAttack.zOffset
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _dashLightAttack.pushForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065594, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _rollEvent
+      value: 
+      objectReference: {fileID: -5421682918108740309, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
     - target: {fileID: 1866718725280065597, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -388,21 +456,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
-  _activeSkill:
-    rid: 6476558073538281472
+  _skill: {fileID: 11400000, guid: 224271209cbf6cd4aa30474d887dd0ba, type: 2}
+--- !u!114 &3900655775530972018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532176832971602171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458b1a01deef0aa46816a13d25511e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  _passives:
+  - _trigger:
+      _triggerType: 1
+      _interval: 5
+      _gameEvent: {fileID: -9189281669931673665, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    _action:
+      rid: 549692460231032835
   references:
     version: 2
     RefIds:
-    - rid: 6476558073538281472
-      type: {class: PlayerSkillGrenade, ns: VHS, asm: Assembly-CSharp}
+    - rid: 549692460231032835
+      type: {class: PassiveActionIncrementHealth, ns: VHS, asm: Assembly-CSharp}
       data:
-        _castType: 2
-        _skillType: 0
-        _castDuration: 1
-        _skillDuration: 1
-        _cooldown:
-          _duration: 1
-          _looping: 0
-        _explosionVFX: {fileID: 1390215345322043118, guid: 739d19610906a434a8d67ca770434aca, type: 3}
-        _radius: 3
-        _damage: 1
+        _amount: 1

@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 namespace VHS {
     [Serializable]
@@ -11,11 +8,11 @@ namespace VHS {
         public Actor Owner => _owner;
 
         public PassiveTrigger _trigger;
-        public PassiveAction _action;
+        [SerializeReference] public PassiveAction _action;
 
         public void Init(Actor actor) {
             _owner = actor;
-            _trigger.InitTrigger(_owner);
+            _action.Init(_owner);
         }
 
         public void Enable() {

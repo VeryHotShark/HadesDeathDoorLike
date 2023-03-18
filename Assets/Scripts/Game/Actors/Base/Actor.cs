@@ -6,12 +6,16 @@ using UnityEngine;
 namespace VHS { 
     [RequireComponent(typeof(HitProcessorComponent))]
     public abstract class Actor : BaseBehaviour, IHittable, IActor {
+        
         public Action<HitData> OnHit = delegate {  };
         public Action<HitPoints> OnHealthChanged = delegate { };
         
         public event Action<IActor> OnDeath = delegate {  };
         public event Action OnPostInitialized = delegate { };
 
+        [SerializeField] private GameEvent _deathEvent;
+        [SerializeField] private GameEvent _hitEvent;
+        
         protected HitProcessorComponent _hitProcessorComponent;
         protected DeathProcessorComponent _deathProcessorComponent;
         
@@ -32,9 +36,16 @@ namespace VHS {
         protected virtual void GetComponents() => _hitProcessorComponent = GetComponent<HitProcessorComponent>();
         protected virtual void Initialize() => _hitProcessorComponent.HitPoints.Reset();
 
-        public virtual void Hit(HitData hitData) => _hitProcessorComponent.Hit(hitData);
-        public virtual void Die() => OnDeath(this);
-        
+        public virtual void Hit(HitData hitData) {
+            _hitEvent?.Raise(this);
+            _hitProcessorComponent.Hit(hitData);
+        }
+
+        public virtual void Die() {
+            _deathEvent?.Raise(this);
+            OnDeath(this);
+        }
+
         public virtual void OnMyAttackParried(HitData hitData) { }
     }
 

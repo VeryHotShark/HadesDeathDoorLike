@@ -10,6 +10,8 @@ public class CharacterRoll : CharacterModule {
     [SerializeField] private float _distance = 1f;
     [SerializeField] private float _maxRollAngle = 45.0f;
     [SerializeField] private AnimationCurve _curve = AnimationCurve.Linear(0.0f,0.0f,1.0f,1.0f);
+    
+    [SerializeField] private GameEvent _rollEvent;
 
     private bool _lostGround;
     private bool _rollStopped;
@@ -28,6 +30,8 @@ public class CharacterRoll : CharacterModule {
     private void Awake() => _rollDotThreshold = Mathf.Cos(_maxRollAngle * Mathf.Deg2Rad);
 
     public override void OnEnter() {
+        _rollEvent?.Raise(Parent);
+        
         _rollStarted = true;
         _rollTimestamp = Time.time;
         _rollDirection = Controller.MoveInput.sqrMagnitude < Mathf.Epsilon ? Controller.LastNonZeroMoveInput : Controller.MoveInput;

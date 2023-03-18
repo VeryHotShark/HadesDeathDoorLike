@@ -5,7 +5,7 @@ using UnityEditor;
 #endif
 
 namespace VHS {
-    [CreateAssetMenu(menuName = "Hyperstrange/GameEventStorage")]
+    [CreateAssetMenu(menuName = "VHS/GameEventStorage")]
     public class GameEventStorage : ScriptableObject {
 
         public List<Object> GameEvents = new List<Object>();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using MEC;
+using Sirenix.OdinInspector;
 using UnityEngine.Serialization;
 
 namespace VHS {
@@ -27,13 +28,27 @@ namespace VHS {
         [Header("General")]
         [SerializeField] private float _slowDownSharpness = 10.0f;
         [SerializeField] private Timer _comboCooldown = new(0.5f);
-
+        
         [Header("Input Buffers")] 
         [SerializeField] private float _dashLightBuffer = 0.4f;
         [SerializeField] private float _dashHeavyBuffer = 0.6f;
 
         [SerializeField] private Timer _preAttackBuffer = new(0.3f);
         [SerializeField] private Timer _postAttackBuffer = new(0.3f);
+
+        [Header("Events")] 
+        [SerializeField] private GameEvent _lightAttackEvent;
+        [SerializeField] private GameEvent _heavyAttackEvent;
+        [SerializeField] private GameEvent _lightDashAttackEvent;
+        [SerializeField] private GameEvent _heavyDashAttackEvent;
+
+        [Space]
+        [SerializeField] private GameEvent _anyHitEvent;
+        [SerializeField] private GameEvent _lightHitEvent;
+        [SerializeField] private GameEvent _heavyHitEvent;
+        [SerializeField] private GameEvent _lightDashHitEvent;
+        [SerializeField] private GameEvent _heavyDashHitEvent;
+        
 
         [Header("Attacks")] [SerializeField] private List<AttackInfo> _lightAttacks;
         [SerializeField] private AttackInfo _heavyAttack;
@@ -108,11 +123,13 @@ namespace VHS {
 
         private void DashLightAttack() {
             ResetPrimaryAttack();
+            _lightDashAttackEvent?.Raise(this);
             SpawnAttack(_dashLightAttack, new Vector3(0.3f, 0.3f, 1f));
         }
 
         private void DashHeavyAttack() {
             ResetPrimaryAttack();
+            _heavyDashAttackEvent?.Raise(this);
             SpawnAttack(_dashHeavyAttack, new Vector3(1, 1f, 0.4f));
         }
 
@@ -120,12 +137,14 @@ namespace VHS {
             _lastAttackPrimary = true;
             _preAttackBuffer.Reset();
 
+            _lightAttackEvent?.Raise(this);
             SpawnAttack(_lightAttacks[_attackIndex], Vector3.one * 0.25f, _attackIndex % 2 == 0);
             _attackIndex++;
         }
 
         private void HeavyAttack() {
             ResetPrimaryAttack();
+            _heavyAttackEvent?.Raise(this);
             SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
             _heavyAttackReached = false;
         }
@@ -164,46 +183,49 @@ namespace VHS {
         private void CheckForHittables(AttackInfo attackInfo) {
             Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter +
                                Motor.CharacterForward * attackInfo.zOffset;
+            
+            DebugExtension.DebugWireSphere(position, _lastAttackPrimary ? Color.yellow : Color.red, attackInfo.radius,
+                attackInfo.duration.Duration);
 
             Collider[] _colliders =
                 Physics.OverlapSphere(position, attackInfo.radius, LayerManager.Masks.DEFAULT_AND_NPC);
 
             bool hitSomething = false;
+            
+            if(_colliders.Length == 0)
+                return;
 
-            if (_colliders.Length > 0) {
-                foreach (Collider collider in _colliders) {
-                    IHittable hittable = collider.GetComponentInParent<IHittable>();
+            foreach (Collider collider in _colliders) {
+                IHittable hittable = collider.GetComponentInParent<IHittable>();
 
-                    if (hittable != null) {
-                        HitData hitData = new HitData {
-                            damage = 1,
-                            actor = Parent,
-                            position = collider.ClosestPoint(Parent.CenterOfMass),
-                            direction = Parent.FeetPosition.DirectionTo(collider.transform.position)
-                        };
+                if (hittable != null) {
+                    HitData hitData = new HitData {
+                        damage = 1,
+                        actor = Parent,
+                        position = collider.ClosestPoint(Parent.CenterOfMass),
+                        direction = Parent.FeetPosition.DirectionTo(collider.transform.position)
+                    };
 
-                        hitSomething = true;
-                        hittable.Hit(hitData);
-                        Parent.OnMeleeHit(hitData);
+                    hitSomething = true;
+                    hittable.Hit(hitData);
+                    Parent.OnMeleeHit(hitData);
 
-                        /* Damage PopUp
-                        Quaternion rotationToCamera = Quaternion.LookRotation(Player.Camera.transform.forward);
-                        DamagePopUp damagePopUp = PoolManager.Spawn(_damagePopUp, collider.gameObject.transform.position + Vector3.up * 3.0f ,rotationToCamera);
-                        damagePopUp.transform.localScale = Vector3.one * 0.15f;
-                        damagePopUp.Init(hitData.damage, 1.0f);
-                        */
-                    }
+                    /* Damage PopUp
+                    Quaternion rotationToCamera = Quaternion.LookRotation(Player.Camera.transform.forward);
+                    DamagePopUp damagePopUp = PoolManager.Spawn(_damagePopUp, collider.gameObject.transform.position + Vector3.up * 3.0f ,rotationToCamera);
+                    damagePopUp.transform.localScale = Vector3.one * 0.15f;
+                    damagePopUp.Init(hitData.damage, 1.0f);
+                    */
                 }
             }
-
-            DebugExtension.DebugWireSphere(position, _lastAttackPrimary ? Color.yellow : Color.red, attackInfo.radius,
-                attackInfo.duration.Duration);
 
             if (hitSomething) {
                 if (_lastAttackPrimary)
                     _lightHitFeedback.PlayFeedbacks();
                 else
                     _heavyHitFeedback.PlayFeedbacks();
+                
+                _anyHitEvent?.Raise(this);
             }
         }
 
