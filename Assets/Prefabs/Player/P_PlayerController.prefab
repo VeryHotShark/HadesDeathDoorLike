@@ -335,6 +335,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7066608735867538234, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
     - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttack.angle
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: _heavyDashHitEvent
       value: 
       objectReference: {fileID: 7924356764224376721, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
@@ -350,6 +354,14 @@ PrefabInstance:
       propertyPath: _lightDashAttackEvent
       value: 
       objectReference: {fileID: 3652847077477962159, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _dashHeavyAttack.angle
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _dashLightAttack.angle
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: _dashHeavyAttack.radius
       value: 10
@@ -369,6 +381,18 @@ PrefabInstance:
     - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: _dashLightAttack.pushForce
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightAttacks.Array.data[0].angle
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightAttacks.Array.data[1].angle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightAttacks.Array.data[2].angle
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 1866718725280065594, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: _rollEvent

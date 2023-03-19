@@ -18,7 +18,7 @@ namespace VHS {
             public float pushForce = 10.0f;
             public float zOffset = 1.0f;
             public float radius = 1.0f;
-            public float angle = 360.0f;
+            [Range(0.0f,180.0f)] public float angle = 180.0f;
         }
 
         [Header("VFX")]
@@ -197,26 +197,33 @@ namespace VHS {
 
             foreach (Collider collider in _colliders) {
                 IHittable hittable = collider.GetComponentInParent<IHittable>();
+                
 
-                if (hittable != null) {
-                    HitData hitData = new HitData {
-                        damage = 1,
-                        actor = Parent,
-                        position = collider.ClosestPoint(Parent.CenterOfMass),
-                        direction = Parent.FeetPosition.DirectionTo(collider.transform.position)
-                    };
+                Vector3 hitDirection = Parent.FeetPosition.DirectionTo(collider.transform.position).Flatten();
 
-                    hitSomething = true;
-                    hittable.Hit(hitData);
-                    Parent.OnMeleeHit(hitData);
+                float dot = Vector3.Dot(Controller.ControlledCharacter.Forward, hitDirection);
+                float hitAngle = Mathf.Acos(dot) * Mathf.Rad2Deg;
 
-                    /* Damage PopUp
-                    Quaternion rotationToCamera = Quaternion.LookRotation(Player.Camera.transform.forward);
-                    DamagePopUp damagePopUp = PoolManager.Spawn(_damagePopUp, collider.gameObject.transform.position + Vector3.up * 3.0f ,rotationToCamera);
-                    damagePopUp.transform.localScale = Vector3.one * 0.15f;
-                    damagePopUp.Init(hitData.damage, 1.0f);
-                    */
-                }
+                if (hittable == null || hitAngle > attackInfo.angle)
+                    continue;
+                
+                HitData hitData = new HitData {
+                    damage = 1,
+                    actor = Parent,
+                    position = collider.ClosestPoint(Parent.CenterOfMass),
+                    direction = hitDirection
+                };
+                
+                hitSomething = true;
+                hittable.Hit(hitData);
+                Parent.OnMeleeHit(hitData);
+
+                /* Damage PopUp
+                Quaternion rotationToCamera = Quaternion.LookRotation(Player.Camera.transform.forward);
+                DamagePopUp damagePopUp = PoolManager.Spawn(_damagePopUp, collider.gameObject.transform.position + Vector3.up * 3.0f ,rotationToCamera);
+                damagePopUp.transform.localScale = Vector3.one * 0.15f;
+                damagePopUp.Init(hitData.damage, 1.0f);
+                */
             }
 
             if (hitSomething) {
