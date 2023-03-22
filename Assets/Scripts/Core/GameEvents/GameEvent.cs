@@ -14,7 +14,7 @@ namespace VHS {
         public GameEventStorage GameEventStorage { get; private set; }
 
         public void Raise(UnityEngine.Object sender) {
-            Debug.Log(string.Format("Event {0} raised by {1}", name, sender.name));
+            //Debug.Log(string.Format("Event {0} raised by {1}", name, sender.name));
 
             for (int i = _listeners.Count - 1; i >= 0; i--)
                 _listeners[i].OnEventRaised(sender);
