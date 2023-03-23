@@ -3,8 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Hair.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Hair.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Pigeon.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Pigeon.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_Emission.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_Emission.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_MetallicSmoothness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_MetallicSmoothness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Hair_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Hair_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameEvents/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameEvents/GameEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/ForwardRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/ForwardRenderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +162,7 @@
       <workItem from="1679134261230" duration="6152000" />
       <workItem from="1679260354104" duration="2731000" />
       <workItem from="1679346326282" duration="625000" />
+      <workItem from="1679614644650" duration="941000" />
     </task>
     <servers />
   </component>

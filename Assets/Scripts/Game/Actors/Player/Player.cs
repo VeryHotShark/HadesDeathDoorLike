@@ -14,6 +14,7 @@ namespace VHS {
 
         public Camera Camera => PlayerController.Camera.Camera;
 
+        public Action OnMeleeAttack = delegate {};
         public Action<HitData> OnMeleeHit = delegate {};
         public Action<int> OnCurrentAmmoChanged = delegate {};
         public Action<IInteractable> OnInteractableChanged = delegate {};

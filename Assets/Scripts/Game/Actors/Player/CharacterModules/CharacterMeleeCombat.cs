@@ -161,6 +161,7 @@ namespace VHS {
             Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
             Controller.LastNonZeroMoveInput = Controller.LookInput;
             Controller.AddVelocity(attackInfo.pushForce * Controller.LookInput);
+            Parent.OnMeleeAttack();
 
             Timing.CallDelayed(_hitDelay, () => CheckForHittables(attackInfo), gameObject);
         }

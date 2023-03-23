@@ -1164,6 +1164,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2161463334480438740, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1099997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161463334480438740, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9850129
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161463334480438740, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000015214944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161463334480438740, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000021674478
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161463334480438740, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.17248102
+      objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519980, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1174,7 +1194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519981, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.97
       objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519981, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1182,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519981, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519981, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1211,6 +1231,10 @@ PrefabInstance:
     - target: {fileID: 3532176833701519981, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532176834816662543, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7778724
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
@@ -2202,8 +2226,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.02
-    m_NormalBias: 0.1
+    m_Bias: 0.12
+    m_NormalBias: 0
     m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
