@@ -39,6 +39,7 @@ namespace VHS {
         }
 
         public void Shoot() {
+            Parent.OnRangeAttack();
             ModifyCurrentAmmo(-1);
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
             Quaternion spawnRot = Quaternion.LookRotation(Controller.LookInput);

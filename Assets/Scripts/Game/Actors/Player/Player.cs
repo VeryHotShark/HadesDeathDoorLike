@@ -14,10 +14,18 @@ namespace VHS {
 
         public Camera Camera => PlayerController.Camera.Camera;
 
+        
+        public Action OnRoll = delegate { };
+        public Action OnRangeAttack = delegate { };
         public Action<int> OnLightAttack = delegate {};
+        public Action OnHeavyAttack = delegate {};
+        public Action OnHeavyAttackHeld = delegate {};
+        public Action OnHeavyAttackReached = delegate {};
         public Action<HitData> OnMeleeHit = delegate {};
+        
         public Action<int> OnCurrentAmmoChanged = delegate {};
         public Action<IInteractable> OnInteractableChanged = delegate {};
+        public Action<CharacterModule> OnCharacterStateChanged = delegate {  };
 
         protected override void GetComponents() {
             base.GetComponents();

@@ -575,7 +575,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
-  _duration: 0.4
+  _cooldown:
+    _duration: 0.1
+    _looping: 0
+  _duration: 0.45
   _distance: 6.5
   _maxRollAngle: 45
   _curve:
@@ -584,21 +587,21 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2.9069767
-      outSlope: 2.9069767
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.05375
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -909,6 +912,44 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: a937c1643505d8141b3d9a575562095b, type: 3}
     _Speed: 1
     _NormalizedStartTime: 0.2876712
+  _heavyAttack:
+    _FadeDuration: 0.05
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
+    _Speed: 1.5
+    _NormalizedStartTime: 0.17142865
+  _heavyAttackWindup:
+    _FadeDuration: 0.1
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
+    _Speed: -0.4
+    _NormalizedStartTime: 0.25714293
+  _rollClip:
+    _FadeDuration: 0.1
+    _Events:
+      _NormalizedTimes:
+      - 0.5766816
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 347fbfac4e6fefb42ab52b2bd96854e4, type: 3}
+    _Speed: 1.6
+    _NormalizedStartTime: 0.016666666
+  _shootClip:
+    _FadeDuration: 0
+    _Events:
+      _NormalizedTimes:
+      - 0.7931034
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: c9ffd254c8ebfae4fbe97ac489238d8d, type: 2}
+    _Speed: 1
+    _NormalizedStartTime: 0.6206897
 --- !u!1 &2359567007042187664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,11 +1585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e856545d49208704394b471e4ab4145f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.11
+      value: 2.1099997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e856545d49208704394b471e4ab4145f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0000009934107
+      value: -0.0000009934106
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e856545d49208704394b471e4ab4145f, type: 3}
       propertyPath: m_LocalRotation.w

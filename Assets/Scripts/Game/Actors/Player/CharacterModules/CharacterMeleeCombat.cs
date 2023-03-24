@@ -145,6 +145,7 @@ namespace VHS {
 
         private void HeavyAttack() {
             ResetPrimaryAttack();
+            Parent.OnHeavyAttack();
             _heavyAttackEvent?.Raise(this);
             SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
             _heavyAttackReached = false;
@@ -245,14 +246,19 @@ namespace VHS {
 
             _heavyAttackHeld = inputs.Primary.Held;
 
-            if (inputs.Primary.Performed)
+            if (_heavyAttackHeld)
+                Parent.OnHeavyAttackHeld();
+
+            if (inputs.Primary.Performed) {
                 _heavyAttackReached = true;
+                Parent.OnHeavyAttackReached();
+            }
 
             if (inputs.Primary.Released) {
                 if (!CurrentAttackTimer.IsActive) {
                     float _attackSinceRoll = Time.time - Controller.RollModule.LastRollTimestamp;
 
-                    //TODO Fix this -> Controller.RollModule.DuringRoll
+                    //TODO Fix this -> Controller.RollModule.DuringRoll by ten check działał
                     if (_heavyAttackReached) {
                         if (_attackSinceRoll < _dashHeavyBuffer)
                             DashHeavyAttack();

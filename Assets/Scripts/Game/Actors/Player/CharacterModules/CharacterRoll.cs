@@ -6,6 +6,7 @@ using UnityEngine;
 using VHS;
 
 public class CharacterRoll : CharacterModule {
+    [SerializeField] private Timer _cooldown = new Timer(0.5f);
     [SerializeField] private float _duration = 1f;
     [SerializeField] private float _distance = 1f;
     [SerializeField] private float _maxRollAngle = 45.0f;
@@ -26,12 +27,13 @@ public class CharacterRoll : CharacterModule {
 
     public float LastRollTimestamp => _rollTimestamp;
     public bool DuringRoll => _rollStarted && !_rollStopped;
+    public bool OnCoooldown => _cooldown.IsActive;
 
     private void Awake() => _rollDotThreshold = Mathf.Cos(_maxRollAngle * Mathf.Deg2Rad);
 
     public override void OnEnter() {
+        Parent.OnRoll();
         _rollEvent?.Raise(Parent);
-        
         _rollStarted = true;
         _rollTimestamp = Time.time;
         _rollDirection = Controller.MoveInput.sqrMagnitude < Mathf.Epsilon ? Controller.LastNonZeroMoveInput : Controller.MoveInput;
@@ -43,6 +45,7 @@ public class CharacterRoll : CharacterModule {
     public override void OnExit() {
         _rollStarted = false;
         _rollStopped = false;
+        _cooldown.Start();
     }
 
     public override void HandlePostCharacterUpdate(float deltaTime) {

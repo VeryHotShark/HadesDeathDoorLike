@@ -29,6 +29,7 @@ namespace VHS {
         public CharacterMovement MovementModule => _movementModule;
         public CharacterRangeCombat RangeCombat => _rangeCombatModule;
 
+        public StateMachine<CharacterModule> StateMachine => _stateMachine;
         public KinematicCharacterMotor Motor => _motor;
         public Player Player => Parent;
 
@@ -50,6 +51,7 @@ namespace VHS {
 
             _stateMachine = new StateMachine<CharacterModule>(_movementModule);
             _stateMachine.SetState(_fallingMovementModule);
+            _stateMachine.OnStateChanged += Parent.OnCharacterStateChanged;
         }
 
         private void OnEnable() => UpdateManager.AddUpdateListener(this);
@@ -60,7 +62,7 @@ namespace VHS {
             UpdateInput(inputs);
 
             if (Motor.GroundingStatus.IsStableOnGround) {
-                if (inputs.Roll.Pressed)
+                if (inputs.Roll.Pressed && !_rollModule.OnCoooldown)
                     _stateMachine.SetState(_rollModule);
                 else if (inputs.Secondary.Pressed && _rangeCombatModule.HasAmmo)
                     _stateMachine.SetState(_rangeCombatModule);
