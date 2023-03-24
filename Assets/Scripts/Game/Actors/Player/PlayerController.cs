@@ -42,7 +42,7 @@ namespace VHS {
 
         public CameraController Camera => _camera;
         public CharacterController Character => _character;
-        public Player Player => _character.ControlledCharacter;
+        public Player Player => _character.Player;
 
         private void Awake() => SetInputs();
 

@@ -68,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: 3532176832971602164}
     - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7785901
+      value: 1.7771345
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758647, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: _characterReferencePoint
@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3843976083104876090, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_FrequencyGain
-      value: 11.79634
+      value: 11.80734
       objectReference: {fileID: 0}
     - target: {fileID: 6155051917543647469, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Name
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 11.015626
+      value: 16.195312
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -274,15 +274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 9.791668
+      value: 14.395833
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 15
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 15
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate

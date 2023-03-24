@@ -26,10 +26,11 @@ namespace VHS {
         private StateMachine<CharacterModule> _stateMachine;
 
         public CharacterRoll RollModule => _rollModule;
+        public CharacterMovement MovementModule => _movementModule;
         public CharacterRangeCombat RangeCombat => _rangeCombatModule;
 
         public KinematicCharacterMotor Motor => _motor;
-        public Player ControlledCharacter => Parent;
+        public Player Player => Parent;
 
         public Vector3 LookInput { get; set; }
         public Vector3 MoveInput { get; set; }

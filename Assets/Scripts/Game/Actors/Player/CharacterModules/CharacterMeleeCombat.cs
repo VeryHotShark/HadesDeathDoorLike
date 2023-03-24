@@ -137,6 +137,7 @@ namespace VHS {
             _lastAttackPrimary = true;
             _preAttackBuffer.Reset();
 
+            Parent.OnLightAttack(_attackIndex);
             _lightAttackEvent?.Raise(this);
             SpawnAttack(_lightAttacks[_attackIndex], Vector3.one * 0.25f, _attackIndex % 2 == 0);
             _attackIndex++;
@@ -161,7 +162,6 @@ namespace VHS {
             Motor.SetRotation(Controller.LastCharacterInputs.CursorRotation);
             Controller.LastNonZeroMoveInput = Controller.LookInput;
             Controller.AddVelocity(attackInfo.pushForce * Controller.LookInput);
-            Parent.OnMeleeAttack();
 
             Timing.CallDelayed(_hitDelay, () => CheckForHittables(attackInfo), gameObject);
         }
@@ -202,7 +202,7 @@ namespace VHS {
 
                 Vector3 hitDirection = Parent.FeetPosition.DirectionTo(collider.transform.position).Flatten();
 
-                float dot = Vector3.Dot(Controller.ControlledCharacter.Forward, hitDirection);
+                float dot = Vector3.Dot(Controller.Player.Forward, hitDirection);
                 float hitAngle = Mathf.Acos(dot) * Mathf.Rad2Deg;
 
                 if (hittable == null || hitAngle > attackInfo.angle)

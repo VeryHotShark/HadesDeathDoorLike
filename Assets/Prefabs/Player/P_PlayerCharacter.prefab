@@ -244,7 +244,7 @@ Animator:
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -437,7 +437,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _maxStableMoveSpeed: 10
-  _stableMovementSharpness: 10
+  _stableMovementSharpness: 15
   _orientationSharpness: 10
 --- !u!114 &1866718725280065572
 MonoBehaviour:
@@ -506,14 +506,14 @@ MonoBehaviour:
   - duration:
       _duration: 0.25
       _looping: 0
-    pushForce: 10
+    pushForce: 15
     zOffset: 1.5
     radius: 1.5
     angle: 50
   - duration:
       _duration: 0.3
       _looping: 0
-    pushForce: 15
+    pushForce: 20
     zOffset: 2
     radius: 2
     angle: 55
@@ -866,7 +866,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
-  _meleeAttackClip: {fileID: 7400000, guid: 892de13d6a6884a4e8b8965bf2fc27af, type: 3}
+  _idleClip:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 738b43c856812d44485cce817b79ea06, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  _moveClip:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 71e29fef64e545e4e99797d012a3abb1, type: 3}
+    _Speed: 1.6
+    _NormalizedStartTime: NaN
+  _lightAttacks:
+  - _FadeDuration: 0.1
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 892de13d6a6884a4e8b8965bf2fc27af, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: 0.3947368
+  - _FadeDuration: 0.1
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: 35a7fdd9f21767d43b469fbea5ea7f42, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: 0.4285714
+  - _FadeDuration: 0.1
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 7400000, guid: a937c1643505d8141b3d9a575562095b, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: 0.2876712
 --- !u!1 &2359567007042187664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,28 +1514,9 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 043c8df32d63951498f26f0de5ff882b, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 6e52f87fb98a52d4dbfc37409ee34c84, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6e52f87fb98a52d4dbfc37409ee34c84, type: 3}
---- !u!1 &2603734821356857611 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e52f87fb98a52d4dbfc37409ee34c84, type: 3}
-  m_PrefabInstance: {fileID: 2946263279414498394}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &1726823688
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2603734821356857611}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 892de13d6a6884a4e8b8965bf2fc27af, type: 3}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!4 &3416406561843196849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6e52f87fb98a52d4dbfc37409ee34c84, type: 3}
@@ -1521,11 +1544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e856545d49208704394b471e4ab4145f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1099997
+      value: 2.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e856545d49208704394b471e4ab4145f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0000007947285
+      value: -0.0000009934107
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e856545d49208704394b471e4ab4145f, type: 3}
       propertyPath: m_LocalRotation.w

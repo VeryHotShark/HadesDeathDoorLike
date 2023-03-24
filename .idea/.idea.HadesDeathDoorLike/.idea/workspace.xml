@@ -3,31 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Body.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Body.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Hair.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Materials/M_Pigeon_Hair.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Pigeon.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Pigeon.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_AlbedoTransparency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_AlbedoTransparency.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_Emission.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_Emission.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_MetallicSmoothness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Body_MetallicSmoothness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Hair_AlbedoTransparency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Characters/Pigeon/Textures/Pigeon_Hair_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Meshes/Characters/Pigeon/Materials/M_Pigeon_Hair.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Meshes/Characters/Pigeon/Materials/M_Pigeon_Hair.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Meshes/Characters/Pigeon/Pigeon.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Meshes/Characters/Pigeon/Pigeon.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1VfxToolkit/HdrpPackage(post2020).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1VfxToolkit/HdrpPackage(pre2020).unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterAnimationComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterAnimationComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/ForwardRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/ForwardRenderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP-HighQuality.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/86acb61e0d2b4b36bc20af11093be9a5157e00/8d/2d655abc/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/86acb61e0d2b4b36bc20af11093be9a5157e00/6c/4f71d41d/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/NodeCanvasAddons/AstarPathfinding/Actions/RichAI/ClearPath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Behaviours/ChildBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Behaviours/DontDestroyOnLoad.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,23 +68,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "rider.run.widget.enabled.cache": "false",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\2021.3.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Documents\Projects\UnityProjects\HadesDeathDoorLike -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Documents\Projects\UnityProjects\HadesDeathDoorLike" />
       <option name="PASS_PARENT_ENVS" value="1" />
