@@ -3,34 +3,403 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ConsolePro/Remote/LiteNetLib/LiteNetLib.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GUI PRO Kit - Fantasy RPG/ResourcesData/Sprites/Component/Icon_EquipmentIcons_(x2)/NoShadow/NoShadow.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GUI PRO Kit - Fantasy RPG/ResourcesData/Sprites/Component/Icon_EquipmentIcons_(x2)/Shadow/Shadow.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GUI PRO Kit - Fantasy RPG/ResourcesData/Sprites/Component/Icon_ItemIcons_(x2)/NoShadow/NoShadow.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GUI PRO Kit - Fantasy RPG/ResourcesData/Sprites/Component/Icon_ItemIcons_(x2)/Shadow/Shadow.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GUI PRO Kit - Fantasy RPG/ResourcesData/Sprites/Component/Icon_PictoIcons_(x2)/PictoIcons_(x2).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonPrototype/URP_ExtractMe.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/BetterUI_TextMeshPro_EditorPanelUI.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/BetterUI_TextMeshPro_UiEditorPanel.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/Example_AnchorAnimations.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/Example_CustomScreenTag.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/Example_Ghost.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/Example_Overview.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/Example_ResolutionTracking.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/asmdef_excl_TextMeshPro.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Packages/asmdef_incl_TextMeshPro.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/tripolygon/Riverwalk-City-URP-UModeler.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/APIReference.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/APIReference.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/annotated.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/annotated.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/bc_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/bc_s.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/bdwn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/bdwn.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_k_c_c_settings-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_k_c_c_settings-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_k_c_c_settings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_k_c_c_settings.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_motor-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_motor-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_motor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_motor.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_system-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_system-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_system.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_kinematic_character_system.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_physics_mover-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_physics_mover-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_physics_mover.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_physics_mover.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_read_only_attribute.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/class_kinematic_character_controller_1_1_read_only_attribute.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/classes.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/closed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/closed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dir_1bc0c119413f06ce9d7f02f9c6a61a78.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dir_1bc0c119413f06ce9d7f02f9c6a61a78.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dir_1dbfafb2e2ce2523bcbf29d1a187400e.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dir_1dbfafb2e2ce2523bcbf29d1a187400e.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dir_84bbf7b3c7f28a5a18725745e1505219.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dir_84bbf7b3c7f28a5a18725745e1505219.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/doc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/doc.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/doxygen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/doxygen.css.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/doxygen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/doxygen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dynsections.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/dynsections.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/folderclosed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/folderclosed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/folderopen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/folderopen.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions_func.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions_func.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions_prop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions_prop.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions_vars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/functions_vars.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/hierarchy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/hierarchy.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/index.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_character_controller-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_character_controller-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_character_controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_character_controller.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_mover_controller-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_mover_controller-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_mover_controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/interface_kinematic_character_controller_1_1_i_mover_controller.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/jquery.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/menu.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/menudata.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/menudata.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/namespace_kinematic_character_controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/namespace_kinematic_character_controller.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/namespaces.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/namespaces.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/nav_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/nav_f.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/nav_g.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/nav_g.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/nav_h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/nav_h.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/open.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_0.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_0.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_1.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_1.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_10.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_10.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_10.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_11.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_11.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_11.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_12.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_12.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_12.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_2.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_2.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_3.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_3.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_4.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_4.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_5.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_5.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_6.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_6.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_7.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_7.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_8.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_8.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_9.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_9.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_a.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_a.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_b.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_b.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_b.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_c.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_c.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_d.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_d.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_d.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_e.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_e.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_e.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_f.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_f.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/all_f.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_0.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_0.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_1.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_1.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_2.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_2.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_3.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_3.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_4.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_4.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_5.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_5.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_6.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/classes_6.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/close.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_0.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_0.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_1.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_1.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_2.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_2.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_3.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_3.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_4.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_4.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_5.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_5.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_6.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_6.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_7.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_7.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_8.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_8.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_9.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_9.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_a.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_a.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_b.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_b.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_b.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_c.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_c.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_d.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_d.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_d.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_e.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_e.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/functions_e.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/mag_sel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/mag_sel.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/namespaces_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/namespaces_0.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/namespaces_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/namespaces_0.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/nomatches.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/nomatches.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_0.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_0.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_1.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_1.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_2.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_2.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_3.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_3.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_4.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_4.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_5.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/properties_5.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search.css.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search_l.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search_l.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search_r.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/search_r.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/searchdata.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/searchdata.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_0.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_0.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_1.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_1.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_2.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_2.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_3.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_3.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_4.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_4.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_5.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_5.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_6.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_6.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_7.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_7.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_8.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_8.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_9.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_9.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_a.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_a.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_b.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_b.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_b.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_c.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/search/variables_c.js.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/splitbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/splitbar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_grounding_report-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_grounding_report-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_grounding_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_grounding_report.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_transient_grounding_report-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_transient_grounding_report-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_transient_grounding_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_character_transient_grounding_report.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_hit_stability_report-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_hit_stability_report-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_hit_stability_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_hit_stability_report.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_kinematic_character_motor_state-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_kinematic_character_motor_state-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_kinematic_character_motor_state.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_kinematic_character_motor_state.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_overlap_result-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_overlap_result-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_overlap_result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_overlap_result.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_physics_mover_state-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_physics_mover_state-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_physics_mover_state.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_physics_mover_state.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_rigidbody_projection_hit-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_rigidbody_projection_hit-members.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_rigidbody_projection_hit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/struct_kinematic_character_controller_1_1_rigidbody_projection_hit.html.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/sync_off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/sync_off.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/sync_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/sync_on.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_a.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_b.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_h.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tab_s.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tabs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/APIReference/html/tabs.css.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterAnimationComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterAnimationComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRoll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRoll.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +432,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Skills/Npc/NpcSkillRangeAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Skills/Player/PlayerSkill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Skills/Player/PlayerSkillSlash.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/AIBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/RichAI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.arongranberg.astar@4.3.61/Core/AI/RichPath.cs" root0="SKIP_HIGHLIGHTING" />
@@ -84,20 +454,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
@@ -167,6 +537,8 @@
       <workItem from="1679346326282" duration="625000" />
       <workItem from="1679614644650" duration="941000" />
       <workItem from="1679688607527" duration="7558000" />
+      <workItem from="1679775116767" duration="3660000" />
+      <workItem from="1679781567156" duration="1880000" />
     </task>
     <servers />
   </component>

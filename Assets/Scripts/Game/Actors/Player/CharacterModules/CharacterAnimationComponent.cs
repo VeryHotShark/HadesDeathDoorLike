@@ -22,6 +22,8 @@ namespace VHS {
         private bool _duringAction = false;
         private AnimancerComponent _animancer;
 
+        public AnimancerComponent Animancer => _animancer;
+
         private void Awake() {
             _animancer = GetComponentInChildren<AnimancerComponent>();
             _shootClip.Events.OnEnd = OnActionEnd;
@@ -31,8 +33,7 @@ namespace VHS {
         private void OnActionEnd() {
             _duringAction = false;
         }
-
-
+        
         protected override void Enable() {
             Parent.Player.OnRoll += OnRoll;
             Parent.Player.OnLightAttack += OnLightAttack;
@@ -108,6 +109,12 @@ namespace VHS {
                     // _animancer.Play(_rollClip);
                     break;
             }
+        }
+
+        public void PlayAction(ClipTransition clip) {
+            _duringAction = true;
+            clip.Events.OnEnd = OnActionEnd;
+            _animancer.Play(clip);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Animancer;
 using UnityEngine;
 
 namespace VHS {
@@ -13,6 +14,7 @@ namespace VHS {
         public CharacterController CharacterController => _characterController;
 
         public Camera Camera => PlayerController.Camera.Camera;
+        public CharacterAnimationComponent AnimationComponent => CharacterController.AnimationComponent;
 
         
         public Action OnRoll = delegate { };

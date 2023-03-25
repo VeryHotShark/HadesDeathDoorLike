@@ -21,6 +21,7 @@ namespace VHS {
         private CharacterRangeCombat _rangeCombatModule;
         private CharacterSkillCombat _skillCombatModule;
         private CharacterFallingMovement _fallingMovementModule;
+        private CharacterAnimationComponent _animationComponent;
 
         private KinematicCharacterMotor _motor;
         private StateMachine<CharacterModule> _stateMachine;
@@ -28,6 +29,7 @@ namespace VHS {
         public CharacterRoll RollModule => _rollModule;
         public CharacterMovement MovementModule => _movementModule;
         public CharacterRangeCombat RangeCombat => _rangeCombatModule;
+        public CharacterAnimationComponent AnimationComponent => _animationComponent;
 
         public StateMachine<CharacterModule> StateMachine => _stateMachine;
         public KinematicCharacterMotor Motor => _motor;
@@ -47,6 +49,7 @@ namespace VHS {
             _meleeCombatModule = GetComponent<CharacterMeleeCombat>();
             _rangeCombatModule = GetComponent<CharacterRangeCombat>();
             _skillCombatModule = GetComponent<CharacterSkillCombat>();
+            _animationComponent = GetComponent<CharacterAnimationComponent>();
             _fallingMovementModule = GetComponent<CharacterFallingMovement>();
 
             _stateMachine = new StateMachine<CharacterModule>(_movementModule);
@@ -157,5 +160,7 @@ namespace VHS {
 
         public void TransitionToDefaultState() => _stateMachine.TransitionToDefaultState();
         public void TransitionToLastState() => _stateMachine.TransitionToLastState();
+
+        public void SetLastDirectionToForward() => LastNonZeroMoveInput = Motor.CharacterForward;
     }
 }
