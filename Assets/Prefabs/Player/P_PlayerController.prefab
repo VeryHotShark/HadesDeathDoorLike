@@ -68,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: 3532176832971602164}
     - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.777878
+      value: 1.7776852
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758647, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: _characterReferencePoint
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 10.3828125
+      value: 11.259377
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -274,15 +274,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 9.229166
+      value: 10.008335
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate
@@ -302,6 +302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3532176833701519981}
     m_Modifications:
+    - target: {fileID: 1270922470, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _skill
+      value: 
+      objectReference: {fileID: 11400000, guid: dc3ffb8032169b945b040752f32ef74f, type: 2}
     - target: {fileID: 1866718725280065586, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_Name
       value: Character

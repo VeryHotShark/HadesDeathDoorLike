@@ -27,7 +27,7 @@ MonoBehaviour:
         _cooldown:
           _duration: 1
           _looping: 0
-        _explosionVFX: {fileID: 1390215345322043118, guid: 739d19610906a434a8d67ca770434aca, type: 3}
+        _explosionVFX: {fileID: 5967922195045632957, guid: b1b0101b0da57b4419aaea05b83ece01, type: 3}
         _indicatorVFX: {fileID: -7642389300242661848, guid: e3f2adf95423d494fb1bff5a380480f4, type: 3}
         _radius: 3
         _damage: 1

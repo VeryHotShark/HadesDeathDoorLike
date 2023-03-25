@@ -6,6 +6,7 @@ using UnityEngine;
 namespace VHS {
     public class PlayerSkillSlash : PlayerSkill {
         [Header("GFX")]
+        public ParticleController _redImpaxtVFX;
         public ParticleController _indicatorVFX;
         public ClipTransition _windupClip;
         public ClipTransition _slashClip;
@@ -95,6 +96,7 @@ namespace VHS {
                         direction = _castPosition.DirectionTo(collider.transform.position)
                     };
 
+                    PoolManager.Spawn(_redImpaxtVFX, hitData.position, Quaternion.identity);
                     hittable.Hit(hitData);
                     _hittables.Add(hittable);
                 }
