@@ -7,7 +7,7 @@ namespace VHS {
     public class PlayerSkillSlash : PlayerSkill {
         [Header("GFX")]
         public ParticleController _redImpaxtVFX;
-        public ParticleController _indicatorVFX;
+        public SkillIndicator _skillIndicator;
         public ClipTransition _windupClip;
         public ClipTransition _slashClip;
         
@@ -19,12 +19,12 @@ namespace VHS {
 
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
-        private ParticleController _indicatorInstance;
+        private SkillIndicator _indicatorInstance;
 
         private float _timer;
         private float _speed;
         private Vector3 _endPosition;
-        private Vector3 _castPosition;
+        private Vector3 _cursorPosition;
         private Vector3 _startPosition;
         
         public override void OnReset() {
@@ -32,15 +32,17 @@ namespace VHS {
         }
         
         public override void OnCastStart() {
+            Quaternion rotationToCursor = Quaternion.LookRotation(Owner.PlayerController.CharacterDirectionToCursor);
             Owner.AnimationComponent.PlayAction(_windupClip);
-            _indicatorInstance = PoolManager.Spawn(_indicatorVFX,
-                Owner.PlayerController.Camera.CursorTransform.position, Quaternion.identity);
-            _indicatorInstance.transform.SetParent(Owner.PlayerController.Camera.CursorTransform);
+            _indicatorInstance = PoolManager.Spawn(_skillIndicator,
+                Owner.CharacterController.Motor.TransientPosition, rotationToCursor);
+            _indicatorInstance.InitRectangle(_distance, _radius);
         }
         
         public override void OnCastTick(float deltaTime) {
-            _castPosition = Owner.PlayerController.Camera.CursorTransform.position;
-            DebugExtension.DebugWireSphere(_castPosition, Color.yellow, _radius);
+            _cursorPosition = Owner.PlayerController.Camera.CursorTransform.position;
+            _indicatorInstance.transform.rotation = Quaternion.LookRotation(Owner.PlayerController.CharacterDirectionToCursor);
+            DebugExtension.DebugWireSphere(_cursorPosition, Color.yellow, _radius);
         }
         
         public override void OnCastFinish() {
@@ -56,7 +58,7 @@ namespace VHS {
             Owner.AnimationComponent.PlayAction(_slashClip);
             _timer = 0.0f;
             _startPosition = Owner.CharacterController.Motor.TransientPosition;
-            Vector3 direction = _startPosition.DirectionTo(_castPosition).Flatten();
+            Vector3 direction = _startPosition.DirectionTo(_cursorPosition).Flatten();
             _endPosition = _startPosition + (direction * _distance);
             Owner.CharacterController.Motor.SetRotation(Quaternion.LookRotation(direction));
         }
@@ -70,8 +72,8 @@ namespace VHS {
             _timer += dt;
             float t = _curve.Evaluate(_timer / _skillDuration);
             Vector3 desiredPos = Vector3.Lerp(_startPosition, _endPosition, t);
-            // Owner.CharacterController.Motor.MoveCharacter(desiredPos);
-            Owner.CharacterController.Motor.SetPosition(desiredPos);
+            // Owner.CharacterController.Motor.MoveCharacter(desiredPos); // this considers collisons
+            Owner.CharacterController.Motor.SetPosition(desiredPos); // this teleports through
         }
 
         private void CheckForHittables() {
@@ -92,8 +94,8 @@ namespace VHS {
                     HitData hitData = new HitData {
                         damage = 1,
                         actor = Owner,
-                        position = collider.ClosestPoint(_castPosition),
-                        direction = _castPosition.DirectionTo(collider.transform.position)
+                        position = collider.ClosestPoint(_cursorPosition),
+                        direction = _cursorPosition.DirectionTo(collider.transform.position)
                     };
 
                     PoolManager.Spawn(_redImpaxtVFX, hitData.position, Quaternion.identity);

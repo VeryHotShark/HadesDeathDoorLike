@@ -7,4 +7,6 @@ public interface IState {
     void OnExit();
     void OnReset();
     void OnTick(float deltaTime);
+
+    bool CanEnterState();
 }

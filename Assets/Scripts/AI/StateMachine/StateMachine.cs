@@ -45,7 +45,7 @@ public class StateMachine<TState> where TState : class, IState  {
     }
 
     public void SetState(TState newState) {
-        if (_currentState == newState)
+        if (_currentState == newState || !newState.CanEnterState())
             return;
 
         AddState(newState);

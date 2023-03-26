@@ -40,6 +40,9 @@ namespace VHS {
         private PlayerInput _input;
         private CharacterInputs _characterInputs;
 
+        public Vector3 CharacterDirectionToCursor =>
+            Character.Motor.TransientPosition.DirectionTo(Camera.CursorTransform.position).Flatten();
+        
         public CameraController Camera => _camera;
         public CharacterController Character => _character;
         public Player Player => _character.Player;
