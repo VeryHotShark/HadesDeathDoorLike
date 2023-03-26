@@ -7065,6 +7065,7 @@ MonoBehaviour:
   _updateRate: 0.2
   _cooldownDuration: 0
   _npcsToSpawn:
+  - {fileID: 11400000, guid: bc7551349aa4b214487ed164c13bd6dd, type: 2}
   - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
   _spawnPointProvider:
     rid: 626373125122818053
@@ -13313,6 +13314,7 @@ MonoBehaviour:
   _updateRate: 0.2
   _cooldownDuration: 0
   _npcsToSpawn:
+  - {fileID: 11400000, guid: bc7551349aa4b214487ed164c13bd6dd, type: 2}
   - {fileID: 11400000, guid: 1f5d34307194fd04cad6a4c6a5aa1637, type: 2}
   _spawnPointProvider:
     rid: 626373125122818055
