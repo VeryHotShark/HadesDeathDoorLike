@@ -66,6 +66,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 3532176832971602164}
+    - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7787286
+      objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758640, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Dithering
       value: 0
@@ -174,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 10.640623
+      value: 11.503125
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -274,15 +278,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 9.458332
+      value: 10.225
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate
@@ -309,6 +313,22 @@ PrefabInstance:
     - target: {fileID: 1866718725280065586, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttack.angle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightAttacks.Array.data[0].angle
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightAttacks.Array.data[1].angle
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866718725280065592, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _lightAttacks.Array.data[2].angle
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1866718725280065597, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_RootOrder
