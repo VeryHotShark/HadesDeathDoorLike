@@ -7,7 +7,7 @@ namespace VHS {
     [Serializable]
     public class PlayerSkillGrenade : PlayerSkill {
         public ParticleController _explosionVFX;
-        public ParticleController _indicatorVFX;
+        public SkillIndicator _indicatorVFX;
         
         
         public float _radius = 3.0f;
@@ -17,7 +17,7 @@ namespace VHS {
         private Collider[] _colliders = new Collider[32];
 
         private Vector3 _castPosition;
-        private ParticleController _indicatorInstance;
+        private SkillIndicator _indicatorInstance;
 
         public override void OnReset() {
             _hittables.Clear();
@@ -27,11 +27,16 @@ namespace VHS {
             _indicatorInstance = PoolManager.Spawn(_indicatorVFX,
                 Owner.PlayerController.Camera.CursorTransform.position, Quaternion.identity);
             _indicatorInstance.transform.SetParent(Owner.PlayerController.Camera.CursorTransform);
-            
+            _indicatorInstance.InitCircle(_radius);
         }
 
         public override void OnCastFinish() {
             PoolManager.Return(_indicatorInstance);
+        }
+
+        public override void OnAbort() {
+            if(_indicatorInstance != null)
+                PoolManager.Return(_indicatorInstance);
         }
 
         public override void OnCastTick(float deltaTime) {

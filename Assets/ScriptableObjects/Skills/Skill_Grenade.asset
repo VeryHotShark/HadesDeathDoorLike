@@ -28,6 +28,6 @@ MonoBehaviour:
           _duration: 1
           _looping: 0
         _explosionVFX: {fileID: 5967922195045632957, guid: b1b0101b0da57b4419aaea05b83ece01, type: 3}
-        _indicatorVFX: {fileID: -7642389300242661848, guid: e3f2adf95423d494fb1bff5a380480f4, type: 3}
+        _indicatorVFX: {fileID: 6766809057354840544, guid: b8d37c8efa8dd9f43bb6cdc5fbe78fbd, type: 3}
         _radius: 3
         _damage: 1

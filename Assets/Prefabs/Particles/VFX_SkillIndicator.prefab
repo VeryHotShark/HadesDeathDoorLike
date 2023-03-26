@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e591e7fff778b428c13610e45797f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _arrowSprite: {fileID: 2800000, guid: bc748cef76a84dd49a9498f022f91349, type: 3}
+  _circleSprite: {fileID: 2800000, guid: 583c01d24df1343aca31ca5352044c6a, type: 3}
