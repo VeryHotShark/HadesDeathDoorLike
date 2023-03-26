@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &811209887247184144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 811209887247184141}
+  - component: {fileID: 811209887247184140}
+  m_Layer: 0
+  m_Name: Foliage Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &811209887247184141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811209887247184144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811209887247184140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811209887247184144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c122224900a334bd7b15e0923fe4ae28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carrierMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  particleMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  carrierScale: {x: 0.05, y: 0.05, z: 0.05}
+  particleScale: {x: 1, y: 1, z: 1}
+  particleScaleVariance: 0.2
+  numParticles: 50
+  offsetAlongNormal: 0
+  oneNormalPerParticle: 0
+  particleRotationRange: 15
+  particleRotationBias: 0
+  biasTowardRotation: {x: 0, y: 0, z: 0}
+  noiseEnabled: 1
+  noiseFrequency: 0.5
+  noiseAmplitude: 0.2
+  noiseOctaves: 1
+  noiseScale: {x: 1, y: 1, z: 1}
+  noiseSeed: 1
+  folderPath: 
+  fileNamePrefix: Foliage
+  appendMeshName: 1
+  appendTakeNumber: 1
+  takeNumber: 1
+  appendTimestamp: 0
+  exportOnEdit: 0
+  exportDebugMesh: 0
