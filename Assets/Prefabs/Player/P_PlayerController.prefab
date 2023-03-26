@@ -66,18 +66,6 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 3532176832971602164}
-    - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
-      propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7787286
-      objectReference: {fileID: 0}
-    - target: {fileID: 2594597712390758640, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
-      propertyPath: m_Dithering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2594597712390758640, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
-      propertyPath: m_RequiresDepthTextureOption
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758647, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: _characterReferencePoint
       value: 
