@@ -61,6 +61,7 @@ namespace VHS {
 
         private GameObject _slash;
 
+        private bool _heavyFlip;
         private int _attackIndex;
 
         private bool _lastAttackPrimary;
@@ -147,7 +148,8 @@ namespace VHS {
             ResetPrimaryAttack();
             Parent.OnHeavyAttack();
             _heavyAttackEvent?.Raise(this);
-            SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
+            SpawnAttack(_heavyAttack, Vector3.one * 0.4f, _heavyFlip);
+            _heavyFlip = !_heavyFlip;
             _heavyAttackReached = false;
         }
 

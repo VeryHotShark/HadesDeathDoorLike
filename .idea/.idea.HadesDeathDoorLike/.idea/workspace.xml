@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="" />
+    <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Grruzam Powerful Sword Animation(Great Sword, Katana)/Animation/M_Big_Sword/2_Attacks/2__7Combos/M_Big_Sword@Attack_7Combo_2.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Grruzam Powerful Sword Animation(Great Sword, Katana)/Animation/M_Big_Sword/2_Attacks/2__7Combos/M_Big_Sword@Attack_7Combo_2.FBX.meta" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +146,7 @@
       <workItem from="1679839588841" duration="595000" />
       <workItem from="1679847815797" duration="539000" />
       <workItem from="1679865413785" duration="3345000" />
-      <workItem from="1679939809218" duration="7117000" />
+      <workItem from="1679939809218" duration="8039000" />
     </task>
     <servers />
   </component>

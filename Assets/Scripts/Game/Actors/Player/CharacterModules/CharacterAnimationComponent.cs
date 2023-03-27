@@ -13,12 +13,18 @@ namespace VHS {
         
         [TitleGroup("Actions")]
         [SerializeField] private ClipTransition[] _lightAttacks;
+        
+        [Space]
         [SerializeField] private ClipTransition _heavyAttack;
         [SerializeField] private ClipTransition _heavyAttackWindup;
+        [SerializeField] private ClipTransition _heavyAttackMirror;
+        [SerializeField] private ClipTransition _heavyAttackWindupMirror;
         
+        [Space]
         [SerializeField] private ClipTransition _rollClip;
         [SerializeField] private ClipTransition _shootClip;
 
+        private bool _heavyMirror = false;
         private bool _duringAction = false;
         private AnimancerComponent _animancer;
 
@@ -69,11 +75,12 @@ namespace VHS {
         private void OnHeavyAttack() {
             _duringAction = false;
             _animancer.Playable.UnpauseGraph();
-            _animancer.Play(_heavyAttack);
+            _animancer.Play(_heavyMirror ? _heavyAttackMirror : _heavyAttack);
+            _heavyMirror = !_heavyMirror;
         }
 
         private void OnHeavyAttackHeld() {
-            _animancer.Play(_heavyAttackWindup);
+            _animancer.Play(_heavyMirror ? _heavyAttackWindupMirror : _heavyAttackWindup );
         }
 
         private void OnHeavyAttackReached() {

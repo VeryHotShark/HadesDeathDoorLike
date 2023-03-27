@@ -97,6 +97,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 3532176832971602164}
+    - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7778741
+      objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758642, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -217,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 11.503125
+      value: 10.804689
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -317,15 +321,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 10.225
+      value: 9.604168
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate
@@ -412,6 +416,46 @@ PrefabInstance:
     - target: {fileID: 1866718725280065597, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackMirror._Clip
+      value: 
+      objectReference: {fileID: 7400000, guid: 26ed62de90b9db74aa52cf8dd29d7424, type: 3}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackMirror._Speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackWindupMirror._Clip
+      value: 
+      objectReference: {fileID: 7400000, guid: 9b8482507c77b8a4ca0b9df3fcd1369e, type: 3}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackWindupMirror._Speed
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackMirror._FadeDuration
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackWindupMirror._FadeDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackMirror._NormalizedStartTime
+      value: 0.16363637
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackWindupMirror._NormalizedStartTime
+      value: 0.014492753
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackMirror._Events._NormalizedTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752561177657328525, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _heavyAttackMirror._Events._NormalizedTimes.Array.data[0]
+      value: 0.98181814
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
