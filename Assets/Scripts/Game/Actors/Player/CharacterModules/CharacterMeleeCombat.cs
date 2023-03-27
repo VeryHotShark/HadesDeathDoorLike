@@ -12,15 +12,6 @@ namespace VHS {
     /// This whole thing might be moved to Skill
     /// </summary>
     public class CharacterMeleeCombat : CharacterModule {
-        [Serializable]
-        public class AttackInfo {
-            public Timer duration = new(0.3f);
-            public float pushForce = 10.0f;
-            public float zOffset = 1.0f;
-            public float radius = 1.0f;
-            [Range(0.0f,180.0f)] public float angle = 180.0f;
-        }
-
         [Header("VFX")]
         [SerializeField] private DamagePopUp _damagePopUp;
         [SerializeField] private GameObject _slashParticle;
@@ -286,6 +277,35 @@ namespace VHS {
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
             float t = 1 - Mathf.Exp(-_slowDownSharpness * deltaTime);
             currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, t);
+        }
+
+        public void OnLightAttack(PlayerWeapon weapon) {
+            _preAttackBuffer.Reset();
+            Parent.OnLightAttack(weapon.LightAttackIndex);
+            _lightAttackEvent?.Raise(weapon);   
+        }
+
+        public void OnHeavyAttack(PlayerWeapon weapon) {
+            _heavyAttackEvent?.Raise(weapon);
+            Parent.OnHeavyAttack();
+            _heavyAttackReached = false;
+        }
+
+        public void OnHeavyPerfectAttack(PlayerWeapon weapon) {
+            
+        }
+
+        public void OnDashLightAttack(PlayerWeapon weapon) {
+            _lightDashAttackEvent?.Raise(weapon);
+        }
+
+        public void OnDashHeavyAttack(PlayerWeapon weapon) {
+            _heavyDashAttackEvent?.Raise(weapon);
+        }
+
+        public void OnAttackHit(PlayerWeapon weapon, HitData hitData) {
+            Parent.OnMeleeHit(hitData);
+            _anyHitEvent?.Raise(this);
         }
     }
 }
