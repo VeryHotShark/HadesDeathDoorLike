@@ -15,12 +15,8 @@ namespace VHS {
             _playerSpawnController.Spawn();
         }
 
-        public void LoadGame() {
-            LevelManager.LoadScenes(LevelManager.GameScene);
-        }
-        
-        public void LoadMenu() {
-            LevelManager.LoadScenes(LevelManager.MenuScene);
-        }
+        public void LoadGame() => LevelManager.LoadGame();
+
+        public void LoadMenu() => LevelManager.LoadMenu();
     }
 }

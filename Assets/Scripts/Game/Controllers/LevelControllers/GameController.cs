@@ -55,7 +55,7 @@ namespace VHS {
                 _spawnController.StartSpawn();
         }
 
-        public void LoadDojo() => LevelManager.LoadScenes(LevelManager.DojoScene);
+        public void LoadDojo() => LevelManager.LoadDojo();
     }
 
 }

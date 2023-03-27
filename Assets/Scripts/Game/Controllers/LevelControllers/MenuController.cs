@@ -4,8 +4,6 @@ using UnityEngine;
 
 namespace VHS {
     public class MenuController : LevelController {
-        public void StartGame() {
-            LevelManager.LoadScenes(LevelManager.DojoScene);
-        }
+        public void StartGame() => LevelManager.LoadDojo();
     }
 }

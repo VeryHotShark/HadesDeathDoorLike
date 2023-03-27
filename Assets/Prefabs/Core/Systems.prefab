@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7829457204714871259}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &712764269
 MonoBehaviour:
@@ -185,7 +185,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7829457204714871259}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8667693887750746869
 MonoBehaviour:
@@ -230,7 +230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7829457204714871259}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3709484874759080393
 MonoBehaviour:
@@ -321,6 +321,63 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6663882119648562116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6406773286018614966}
+  - component: {fileID: 5261740644113797128}
+  m_Layer: 0
+  m_Name: RoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6406773286018614966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663882119648562116}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7829457204714871259}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5261740644113797128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663882119648562116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd05fcdb6c8e7a449029ce1301e6cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _persistent: 0
+  _bossScenes: []
+  _passiveScenes: []
+  _activeScenes:
+  - sceneAsset: {fileID: 102900000, guid: d1c3109bdb54ad54c8a2b2838528e640, type: 3}
+    required: 0
+    buildIndex: 2
+  - sceneAsset: {fileID: 102900000, guid: 0097b27535df6c84cb3b9f7fab1298b9, type: 3}
+    required: 0
+    buildIndex: 3
+  - sceneAsset: {fileID: 102900000, guid: f0afd71e99c96e845b49154c886c3f5a, type: 3}
+    required: 0
+    buildIndex: 4
 --- !u!1 &7566636303958844052
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +543,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7829457204714871259}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7762688223703957897
 MonoBehaviour:
@@ -547,10 +604,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 0
-  _menuScene: MenuScene
-  _dojoScene: DojoScene
-  _gameScene: GameScene_00
-  _loadScene: LoadScene
+  _menuScene:
+    sceneAsset: {fileID: 102900000, guid: b6363a02e84962446880dc237817eb1f, type: 3}
+    required: 1
+    buildIndex: 0
+  _dojoScene:
+    sceneAsset: {fileID: 102900000, guid: a46f6b580da45ac4f8be3344009c877b, type: 3}
+    required: 1
+    buildIndex: 1
+  _gameScene:
+    sceneAsset: {fileID: 102900000, guid: d1c3109bdb54ad54c8a2b2838528e640, type: 3}
+    required: 1
+    buildIndex: 2
+  _loadScene:
+    sceneAsset: {fileID: 102900000, guid: 7b86ca66f91da3f468ef5b7df49b773d, type: 3}
+    required: 1
+    buildIndex: 5
   _loadBar: {fileID: 7574128203132211410}
   _loadText: {fileID: 2722631262311461979}
 --- !u!1 &7762688225110167289
@@ -629,6 +698,7 @@ Transform:
   m_Children:
   - {fileID: 7762688225110167290}
   - {fileID: 7762688224011899172}
+  - {fileID: 6406773286018614966}
   - {fileID: 7762688223703957896}
   - {fileID: 8735945982111419378}
   - {fileID: 313270040937821860}
