@@ -7,6 +7,7 @@ namespace VHS {
         public int damage;
         public IActor actor;
         public GameObject dealer;
+        public PlayerAttackType playerAttackType;
         public Vector3 position;
         public Vector3 direction;
     }

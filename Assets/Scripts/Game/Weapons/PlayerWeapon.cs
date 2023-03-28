@@ -9,6 +9,16 @@ using ParadoxNotion;
 using UnityEngine;
 
 namespace VHS {
+    public enum PlayerAttackType {
+        LIGHT,
+        HEAVY,
+        PERFECT_HEAVY,
+        DASH_LIGHT,
+        DASH_HEAVY,
+        RANGE,
+        PERFECT_RANGE
+    }
+    
     [Serializable]
     public class AttackInfo {
         public int damage = 1;
@@ -19,10 +29,12 @@ namespace VHS {
         [Range(0.0f,180.0f)] public float angle = 180.0f;
 
         public ClipTransition animation;
-        public MMF_Player feedback;
+        public Feedback feedback;
+        
+        [HideInInspector] public PlayerAttackType attackType;
     }
-    public class PlayerWeapon : BaseBehaviour {
-        private const float HIT_DELAY = 0.2f;
+    public abstract class PlayerWeapon : BaseBehaviour { // TODO do the same to Range and maybe seperate by WeaponMelee, WeaponRange
+        private const float HIT_DELAY = 0.15f;
         
         [Header("VFX")]
         [SerializeField] private GameObject _slashParticle;
@@ -36,8 +48,7 @@ namespace VHS {
         [SerializeField] private AttackInfo _heavyAttack;
         [SerializeField] private AttackInfo _dashLightAttack;
         [SerializeField] private AttackInfo _dashHeavyAttack;
-        
-        private int _lightAttackIndex;
+      
         private GameObject _slashInstance;
         
         protected bool _heavyAttackHeld;
@@ -50,60 +61,54 @@ namespace VHS {
         protected CharacterController Character => _player.CharacterController;
         protected KinematicCharacterMotor Motor => Character.Motor;
         protected CharacterAnimationComponent AnimationController => _player.AnimationComponent;
+
+        public Timer ComboCooldown => _comboCooldown;
+        public Timer CurrentAttackTimer => _currentAttack?.duration;
         
-        public Timer CurrentAttackTimer => _currentAttack.duration;
-        public int LightAttackIndex => _lightAttackIndex;
         public bool IsOnComboCooldown => _comboCooldown.IsActive;
-        public bool IsDuringAttack => CurrentAttackTimer.IsActive;
-        public bool IsDuringLastAttack => _lightAttackIndex >= _lightAttacks.Count;
+        public bool IsDuringAttack => CurrentAttackTimer is {IsActive: true};
+        public int LastLightAttackIndex => _lightAttacks.Count;
 
         public void Init(CharacterMeleeCombat meleeCombat, Player player) {
             _player = player;
             _meleeController = meleeCombat;
-        }
-        
-        public virtual void OnPrimaryPressed() {
-            
-        }
-        
-        public virtual void OnPrimaryHeld() {
-            
-        }
-        
-        public virtual void OnPrimaryReleased() {
-            
-        }
-        
-        public virtual void OnPrimaryPerformed() {
-            
-        }
-        
-        private void ResetLightAttackIndex() => _lightAttackIndex = 0;
 
-        private void DashLightAttack() {
-            ResetLightAttackIndex();
-            _meleeController.OnDashLightAttack(this);
-            SpawnAttack(_dashLightAttack, new Vector3(0.3f, 0.3f, 1f));
+            foreach (AttackInfo attack in _lightAttacks)
+                attack.attackType = PlayerAttackType.LIGHT;
+
+            _heavyAttack.attackType = PlayerAttackType.HEAVY;
+            _dashLightAttack.attackType = PlayerAttackType.DASH_LIGHT;
+            _dashHeavyAttack.attackType = PlayerAttackType.DASH_HEAVY;
         }
 
-        private void DashHeavyAttack() {
-            ResetLightAttackIndex();
-            _meleeController.OnDashHeavyAttack(this);
-            SpawnAttack(_dashHeavyAttack, new Vector3(1, 1f, 0.4f));
+        protected override void Enable() {
+            foreach (AttackInfo attack in _lightAttacks)
+                attack.duration.OnEnd += OnAttackEnd;
+
+            _dashLightAttack.duration.OnEnd += OnAttackEnd;
+            _dashHeavyAttack.duration.OnEnd += OnAttackEnd;
+            _heavyAttack.duration.OnEnd += OnAttackEnd;
         }
 
-        private void LightAttack() {
-            _meleeController.OnLightAttack(this);
-            SpawnAttack(_lightAttacks[_lightAttackIndex], Vector3.one * 0.25f, _lightAttackIndex % 2 == 0);
-            _lightAttackIndex++;
+        protected override void Disable() {
+            foreach (AttackInfo attack in _lightAttacks)
+                attack.duration.OnEnd -= OnAttackEnd;
+
+            _dashLightAttack.duration.OnEnd -= OnAttackEnd;
+            _dashHeavyAttack.duration.OnEnd -= OnAttackEnd;
+            _heavyAttack.duration.OnEnd -= OnAttackEnd;
         }
 
-        private void HeavyAttack() {
-            _meleeController.OnHeavyAttack(this);
-            ResetLightAttackIndex();
-            SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
-        }
-        
+        private void OnAttackEnd() => _meleeController.OnAttackEnd();
+
+        public virtual void DashLightAttack() => SpawnAttack(_dashLightAttack, new Vector3(0.3f, 0.3f, 1f));
+
+        public virtual void DashHeavyAttack() => SpawnAttack(_dashHeavyAttack, new Vector3(1, 1f, 0.4f));
+
+        public virtual void LightAttack(int index) => SpawnAttack(_lightAttacks[index], Vector3.one * 0.25f, index % 2 == 0);
+
+        public virtual void HeavyAttack() => SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
+
         private void SpawnAttack(AttackInfo attackInfo, Vector3 slashSize, bool flipSlash = false) {
             _currentAttack = attackInfo;
             Attack(_currentAttack);
@@ -135,7 +140,7 @@ namespace VHS {
             _slashInstance.transform.localScale = size;
         }
         
-        protected void CheckForHittables(AttackInfo attackInfo) {
+        protected virtual void CheckForHittables(AttackInfo attackInfo) {
             Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter +
                                Motor.CharacterForward * attackInfo.zOffset;
             
@@ -165,17 +170,19 @@ namespace VHS {
                 HitData hitData = new HitData {
                     damage = attackInfo.damage,
                     actor = _player,
+                    dealer = gameObject,
+                    playerAttackType = attackInfo.attackType,
                     position = collider.ClosestPoint(_player.CenterOfMass),
                     direction = hitDirection
                 };
                 
                 hitSomething = true;
                 hittable.Hit(hitData);
-                _meleeController.OnAttackHit(this, hitData);
+                _meleeController.OnAttackHit(hitData);
             }
 
-            if (hitSomething) 
-                attackInfo.feedback.PlayFeedbacks();
+            if (hitSomething)
+                PoolManager.Spawn(attackInfo.feedback, Vector3.zero, Quaternion.identity);
         }
     }
 }

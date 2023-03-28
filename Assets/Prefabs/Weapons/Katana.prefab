@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7931908849652113581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7302619498819549719}
+  - component: {fileID: 5978464918393189810}
+  - component: {fileID: 8436140827878949240}
+  - component: {fileID: 5485674940341796065}
+  - component: {fileID: 6622569001744293905}
+  m_Layer: 0
+  m_Name: Katana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7302619498819549719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931908849652113581}
+  m_LocalRotation: {x: 0, y: 0, z: 0.17247926, w: 0.9850132}
+  m_LocalPosition: {x: 2.47, y: 2.11, z: -0.0000009934107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.864}
+--- !u!33 &5978464918393189810
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931908849652113581}
+  m_Mesh: {fileID: 7991704601645392608, guid: e856545d49208704394b471e4ab4145f, type: 3}
+--- !u!23 &8436140827878949240
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931908849652113581}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 16319354767d0f544af2bfcc65dc7f4c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1773428102 &5485674940341796065
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931908849652113581}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 2.47, y: 2.11, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 19.86421}
+  m_TranslationOffsets:
+  - {x: -0.07648611, y: 0.097972274, z: 0.043355107}
+  m_RotationOffsets:
+  - {x: -5.148009, y: -103.43221, z: -178.54463}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 0}
+    weight: 1
+--- !u!114 &6622569001744293905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931908849652113581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3261f95c1010ad84fbad5e2947401506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  _slashParticle: {fileID: 6445826192643391251, guid: 60d310309985b9d4e9917e6e851e63c9, type: 3}
+  _comboCooldown:
+    _duration: 0.3
+    _looping: 0
+  _lightAttacks:
+  - damage: 1
+    duration:
+      _duration: 0.25
+      _looping: 0
+    pushForce: 10
+    zOffset: 1.5
+    radius: 1.25
+    angle: 70
+    animation:
+      _FadeDuration: 0.25
+      _Events:
+        _NormalizedTimes: []
+        _Callbacks: []
+        _Names: []
+      _Clip: {fileID: 0}
+      _Speed: 1
+      _NormalizedStartTime: NaN
+    feedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
+    attackType: 0
+  - damage: 1
+    duration:
+      _duration: 0.25
+      _looping: 0
+    pushForce: 15
+    zOffset: 1.5
+    radius: 1.5
+    angle: 75
+    animation:
+      _FadeDuration: 0.25
+      _Events:
+        _NormalizedTimes: []
+        _Callbacks: []
+        _Names: []
+      _Clip: {fileID: 0}
+      _Speed: 1
+      _NormalizedStartTime: NaN
+    feedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
+    attackType: 0
+  - damage: 1
+    duration:
+      _duration: 0.3
+      _looping: 0
+    pushForce: 20
+    zOffset: 2
+    radius: 2
+    angle: 80
+    animation:
+      _FadeDuration: 0.25
+      _Events:
+        _NormalizedTimes: []
+        _Callbacks: []
+        _Names: []
+      _Clip: {fileID: 0}
+      _Speed: 1
+      _NormalizedStartTime: NaN
+    feedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
+    attackType: 0
+  _heavyAttack:
+    damage: 1
+    duration:
+      _duration: 0.3
+      _looping: 0
+    pushForce: 15
+    zOffset: 2
+    radius: 3
+    angle: 90
+    animation:
+      _FadeDuration: 0.25
+      _Events:
+        _NormalizedTimes: []
+        _Callbacks: []
+        _Names: []
+      _Clip: {fileID: 0}
+      _Speed: 1
+      _NormalizedStartTime: NaN
+    feedback: {fileID: -8353214994537225984, guid: f0b05f03df5b72c4eb5a8f8e870ac2cb, type: 3}
+    attackType: 0
+  _dashLightAttack:
+    damage: 1
+    duration:
+      _duration: 0.3
+      _looping: 0
+    pushForce: 20
+    zOffset: 4
+    radius: 8
+    angle: 20
+    animation:
+      _FadeDuration: 0.25
+      _Events:
+        _NormalizedTimes: []
+        _Callbacks: []
+        _Names: []
+      _Clip: {fileID: 0}
+      _Speed: 1
+      _NormalizedStartTime: NaN
+    feedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
+    attackType: 0
+  _dashHeavyAttack:
+    damage: 1
+    duration:
+      _duration: 0.3
+      _looping: 0
+    pushForce: 10
+    zOffset: 5
+    radius: 10
+    angle: 100
+    animation:
+      _FadeDuration: 0.25
+      _Events:
+        _NormalizedTimes: []
+        _Callbacks: []
+        _Names: []
+      _Clip: {fileID: 0}
+      _Speed: 1
+      _NormalizedStartTime: NaN
+    feedback: {fileID: -8353214994537225984, guid: f0b05f03df5b72c4eb5a8f8e870ac2cb, type: 3}
+    attackType: 0
