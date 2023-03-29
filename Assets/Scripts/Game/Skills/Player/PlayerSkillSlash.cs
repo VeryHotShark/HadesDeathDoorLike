@@ -33,7 +33,7 @@ namespace VHS {
         
         public override void OnCastStart() {
             Quaternion rotationToCursor = Quaternion.LookRotation(Owner.PlayerController.CharacterDirectionToCursor);
-            Owner.AnimationComponent.PlayAction(_windupClip);
+            Owner.Animancer.Play(_windupClip);
             _indicatorInstance = PoolManager.Spawn(_skillIndicator,
                 Owner.CharacterController.Motor.TransientPosition, rotationToCursor);
             _indicatorInstance.InitRectangle(_distance, _radius);
@@ -55,7 +55,7 @@ namespace VHS {
         }
 
         public override void OnSkillStart() {
-            Owner.AnimationComponent.PlayAction(_slashClip);
+            Owner.Animancer.Play(_slashClip);
             _timer = 0.0f;
             _startPosition = Owner.CharacterController.Motor.TransientPosition;
             Vector3 direction = _startPosition.DirectionTo(_cursorPosition).Flatten();

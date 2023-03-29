@@ -19,20 +19,7 @@ namespace VHS {
         PERFECT_RANGE
     }
     
-    [Serializable]
-    public class AttackInfo {
-        public int damage = 1;
-        public Timer duration = new(0.3f);
-        public float pushForce = 10.0f;
-        public float zOffset = 1.0f;
-        public float radius = 1.0f;
-        [Range(0.0f,180.0f)] public float angle = 180.0f;
-
-        public ClipTransition animation;
-        public Feedback feedback;
-        
-        [HideInInspector] public PlayerAttackType attackType;
-    }
+    
     public abstract class PlayerWeapon : BaseBehaviour { // TODO do the same to Range and maybe seperate by WeaponMelee, WeaponRange
         private const float HIT_DELAY = 0.15f;
         
@@ -44,10 +31,11 @@ namespace VHS {
         
         
         [Header("Attacks")]
-        [SerializeField] private List<AttackInfo> _lightAttacks;
-        [SerializeField] private AttackInfo _heavyAttack;
-        [SerializeField] private AttackInfo _dashLightAttack;
-        [SerializeField] private AttackInfo _dashHeavyAttack;
+        [SerializeField] protected List<AttackInfo> _lightAttacks;
+        [SerializeField] protected AttackInfo _heavyAttack;
+        [SerializeField] protected AttackInfo _dashLightAttack;
+        [SerializeField] protected AttackInfo _dashHeavyAttack;
+        [SerializeField] protected ClipTransition _heavyAttackWindupClip;
       
         private GameObject _slashInstance;
         
@@ -57,9 +45,10 @@ namespace VHS {
         protected Player _player;
         protected AttackInfo _currentAttack;
         protected CharacterMeleeCombat _meleeController;
-
-        protected CharacterController Character => _player.CharacterController;
+        
         protected KinematicCharacterMotor Motor => Character.Motor;
+        protected CharacterController Character => _player.CharacterController;
+        protected AnimancerComponent Animancer => _player.Animancer;
         protected CharacterAnimationComponent AnimationController => _player.AnimationComponent;
 
         public Timer ComboCooldown => _comboCooldown;
@@ -69,7 +58,7 @@ namespace VHS {
         public bool IsDuringAttack => CurrentAttackTimer is {IsActive: true};
         public int LastLightAttackIndex => _lightAttacks.Count;
 
-        public void Init(CharacterMeleeCombat meleeCombat, Player player) {
+        public virtual void Init(CharacterMeleeCombat meleeCombat, Player player) {
             _player = player;
             _meleeController = meleeCombat;
 
@@ -108,8 +97,13 @@ namespace VHS {
         public virtual void LightAttack(int index) => SpawnAttack(_lightAttacks[index], Vector3.one * 0.25f, index % 2 == 0);
 
         public virtual void HeavyAttack() => SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
+        
+        public virtual void PerfectHeavyAttack() { }
+        
+        public virtual void OnHeavyAttackReached() { }
+        public virtual void OnHeavyAttackHeld() => Animancer.Play(_heavyAttackWindupClip);
 
-        private void SpawnAttack(AttackInfo attackInfo, Vector3 slashSize, bool flipSlash = false) {
+        protected void SpawnAttack(AttackInfo attackInfo, Vector3 slashSize, bool flipSlash = false) {
             _currentAttack = attackInfo;
             Attack(_currentAttack);
             SpawnSlash(slashSize, flipSlash);
@@ -121,6 +115,7 @@ namespace VHS {
             Motor.SetRotation(Character.LastCharacterInputs.CursorRotation);
             Character.LastNonZeroMoveInput = Character.LookInput;
             Character.AddVelocity(attackInfo.pushForce * Character.LookInput);
+            Animancer.Play(attackInfo.animation);
 
             Timing.CallDelayed(HIT_DELAY, () => CheckForHittables(attackInfo), gameObject);
         }

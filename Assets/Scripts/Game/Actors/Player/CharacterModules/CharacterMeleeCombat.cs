@@ -55,11 +55,14 @@ namespace VHS {
         protected override void Enable() => _postAttackBuffer.OnEnd += OnPostInputBufferEnd;
         protected override void Disable() => _postAttackBuffer.OnEnd -= OnPostInputBufferEnd;
         
-        public override void OnEnter() => ResetLightAttackIndex();
-        public override void OnExit() => ResetLightAttackIndex();
+        public override void OnEnter() => ResetAttackVariables();
+        public override void OnExit() => ResetAttackVariables();
 
-        private void ResetLightAttackIndex() => _lightAttackIndex = 0;
-        
+        private void ResetAttackVariables() {
+            _lightAttackIndex = 0;
+            _heavyAttackReached = false;
+        }
+
         private void OnPostInputBufferEnd() {
             if (!IsDuringAttack && !_heavyAttackHeld)
                 Controller.TransitionToDefaultState();
@@ -84,11 +87,11 @@ namespace VHS {
             _heavyAttackHeld = inputs.Primary.Held;
 
             if (_heavyAttackHeld)
-                Parent.OnHeavyAttackHeld();
+                OnHeavyAttackHeld();
 
             if (inputs.Primary.Performed) {
                 _heavyAttackReached = true;
-                Parent.OnHeavyAttackReached();
+                OnHeavyAttackReached();
             }
 
             if (inputs.Primary.Released) {
@@ -119,13 +122,14 @@ namespace VHS {
         }
 
         private void DashLightAttack() {
-            ResetLightAttackIndex();
+            ResetAttackVariables();
             _lightDashAttackEvent?.Raise(this);
             _currentWeapon.DashLightAttack();
         }
 
         private void DashHeavyAttack() {
-            ResetLightAttackIndex();
+            ResetAttackVariables();
+            Parent.Animancer.Playable.UnpauseGraph();
             _heavyDashAttackEvent?.Raise(this);
             _currentWeapon.DashHeavyAttack();
         }
@@ -133,20 +137,31 @@ namespace VHS {
         private void LightAttack() {
             _preAttackBuffer.Reset();
             Parent.OnLightAttack(_lightAttackIndex);
-            _lightAttackEvent?.Raise(this);
             _currentWeapon.LightAttack(_lightAttackIndex);
+            _lightAttackEvent?.Raise(this);
             _lightAttackIndex++;
         }
 
         private void HeavyAttack() {
-            ResetLightAttackIndex();
+            ResetAttackVariables();
+            Parent.Animancer.Playable.UnpauseGraph();
             Parent.OnHeavyAttack();
-            _heavyAttackEvent?.Raise(this);
             _currentWeapon.HeavyAttack();
-            _heavyAttackReached = false;
+            _heavyAttackEvent?.Raise(this);
         }
 
-        public void HeavyPerfectAttack() {
+        private void OnHeavyAttackReached() {
+            Parent.Animancer.Playable.PauseGraph();
+            Parent.OnHeavyAttackReached();
+            _currentWeapon.OnHeavyAttackReached();
+        }
+
+        private void OnHeavyAttackHeld() {
+            Parent.OnHeavyAttackHeld();
+            _currentWeapon.OnHeavyAttackHeld();
+        }
+
+        private void HeavyPerfectAttack() {
             
         }
 

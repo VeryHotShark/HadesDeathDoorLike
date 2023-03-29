@@ -14,6 +14,7 @@ namespace VHS {
         public CharacterController CharacterController => _characterController;
 
         public Camera Camera => PlayerController.Camera.Camera;
+        public AnimancerComponent Animancer => AnimationComponent.Animancer;
         public CharacterAnimationComponent AnimationComponent => CharacterController.AnimationComponent;
 
         
