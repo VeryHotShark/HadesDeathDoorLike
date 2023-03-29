@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class PlayerInteractionComponent : ChildBehaviour<Player> {
+    public class InteractionComponent : ChildBehaviour<Player> {
         [SerializeField] private float _interactionRadius = 3.0f;
 
         private Collider[] _colliders = new Collider[10];

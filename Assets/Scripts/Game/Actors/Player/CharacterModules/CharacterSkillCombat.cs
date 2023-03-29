@@ -19,6 +19,7 @@ namespace VHS {
         }
 
         public override void OnEnter() => _skillCaster.CastSkill(_skill.Instance);
+        public override void OnExit() => _skillCaster.CancelSkill();
 
         public override void OnTick(float deltaTime) {
             _skillCaster.TickSkill(deltaTime);

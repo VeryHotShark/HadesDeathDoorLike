@@ -8,14 +8,20 @@ namespace VHS {
 
         private PlayerController _playerController;
         private CharacterController _characterController;
-        private PlayerInteractionComponent _playerInteractionComponent;
+        private InteractionComponent _interactionComponent;
+        private WeaponController _weaponController;
+        private AnimationController _animationController;
+        
+        
                 
         public PlayerController PlayerController => _playerController;
         public CharacterController CharacterController => _characterController;
 
         public Camera Camera => PlayerController.Camera.Camera;
-        public AnimancerComponent Animancer => AnimationComponent.Animancer;
-        public CharacterAnimationComponent AnimationComponent => CharacterController.AnimationComponent;
+        public AnimancerComponent Animancer => _animationController.Animancer;
+        public WeaponController WeaponController => _weaponController;
+        public AnimationController AnimationController => _animationController;
+        
 
         
         public Action OnRoll = delegate { };
@@ -27,14 +33,17 @@ namespace VHS {
         public Action<HitData> OnMeleeHit = delegate {};
         
         public Action<int> OnCurrentAmmoChanged = delegate {};
+        public Action<Weapon> OnWeaponChanged = delegate { };
         public Action<IInteractable> OnInteractableChanged = delegate {};
         public Action<CharacterModule> OnCharacterStateChanged = delegate {  };
 
         protected override void GetComponents() {
             base.GetComponents();
+            _animationController = GetComponent<AnimationController>();
             _characterController = GetComponent<CharacterController>();
             _playerController = GetComponentInParent<PlayerController>();
-            _playerInteractionComponent = GetComponent<PlayerInteractionComponent>();
+            _weaponController = GetComponent<WeaponController>();
+            _interactionComponent = GetComponent<InteractionComponent>();
         }
 
         public override void Die() {
@@ -42,6 +51,6 @@ namespace VHS {
             base.Die();
         }
 
-        public void HandleInteract() => _playerInteractionComponent.TryInteract();
+        public void HandleInteract() => _interactionComponent.TryInteract();
     }
 }

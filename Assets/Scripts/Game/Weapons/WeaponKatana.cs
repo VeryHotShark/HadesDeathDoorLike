@@ -4,15 +4,15 @@ using Animancer;
 using UnityEngine;
 
 namespace VHS {
-    public class PlayerWeaponKatana : PlayerWeapon {
+    public class WeaponKatana : Weapon {
         [SerializeField] private ClipTransition _mirroredHeavy;
         [SerializeField] private ClipTransition _mirroredHeavyWindup;
 
         private bool _flipHeavy = false;
         private AttackInfo _mirroredHeavyAttack;
 
-        public override void Init(CharacterMeleeCombat meleeCombat, Player player) {
-            base.Init(meleeCombat, player);
+        public override void Init(Player player) {
+            base.Init(player);
             _mirroredHeavyAttack = AttackInfo.Copy(_heavyAttack);
             _mirroredHeavyAttack.animation = _mirroredHeavy;
         }

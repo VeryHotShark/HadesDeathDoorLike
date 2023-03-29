@@ -21,7 +21,6 @@ namespace VHS {
         private CharacterRangeCombat _rangeCombatModule;
         private CharacterSkillCombat _skillCombatModule;
         private CharacterFallingMovement _fallingMovementModule;
-        private CharacterAnimationComponent _animationComponent;
 
         private KinematicCharacterMotor _motor;
         private StateMachine<CharacterModule> _stateMachine;
@@ -29,7 +28,8 @@ namespace VHS {
         public CharacterRoll RollModule => _rollModule;
         public CharacterMovement MovementModule => _movementModule;
         public CharacterRangeCombat RangeCombat => _rangeCombatModule;
-        public CharacterAnimationComponent AnimationComponent => _animationComponent;
+        public CharacterMeleeCombat MeleeCombat => _meleeCombatModule;
+        
 
         public StateMachine<CharacterModule> StateMachine => _stateMachine;
         public KinematicCharacterMotor Motor => _motor;
@@ -49,12 +49,12 @@ namespace VHS {
             _meleeCombatModule = GetComponent<CharacterMeleeCombat>();
             _rangeCombatModule = GetComponent<CharacterRangeCombat>();
             _skillCombatModule = GetComponent<CharacterSkillCombat>();
-            _animationComponent = GetComponent<CharacterAnimationComponent>();
             _fallingMovementModule = GetComponent<CharacterFallingMovement>();
 
             _stateMachine = new StateMachine<CharacterModule>(_movementModule);
             _stateMachine.SetState(_fallingMovementModule);
             _stateMachine.OnStateChanged += Parent.OnCharacterStateChanged;
+            
         }
 
         private void OnEnable() => UpdateManager.AddUpdateListener(this);
@@ -64,12 +64,13 @@ namespace VHS {
         public void SetInputs(ref CharacterInputs inputs) {
             UpdateInput(inputs);
 
+            // TODO Add CanEnterState to Modules
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.Roll.Pressed && !_rollModule.OnCoooldown)
                     _stateMachine.SetState(_rollModule);
                 else if (inputs.Secondary.Pressed && _rangeCombatModule.HasAmmo)
                     _stateMachine.SetState(_rangeCombatModule);
-                else if(inputs.Primary.Pressed && !_meleeCombatModule.IsOnCooldown)
+                else if(inputs.Primary.Pressed && Parent.WeaponController.HasMeleeWeapon && !_meleeCombatModule.IsOnCooldown)
                     _stateMachine.SetState(_meleeCombatModule);
                 else if(inputs.Ultimate.Pressed)
                     _stateMachine.SetState(_skillCombatModule);

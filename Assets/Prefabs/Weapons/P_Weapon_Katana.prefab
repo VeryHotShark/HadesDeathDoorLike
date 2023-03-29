@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7302619498819549719}
   - component: {fileID: 5978464918393189810}
   - component: {fileID: 8436140827878949240}
-  - component: {fileID: 5485674940341796065}
   - component: {fileID: 6622569001744293905}
   m_Layer: 0
   m_Name: P_Weapon_Katana
@@ -85,32 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1773428102 &5485674940341796065
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7931908849652113581}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 2.47, y: 2.11, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 19.86421}
-  m_TranslationOffsets:
-  - {x: -0.07648611, y: 0.097972274, z: 0.043355107}
-  m_RotationOffsets:
-  - {x: -5.148009, y: -103.43221, z: -178.54463}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 1
 --- !u!114 &6622569001744293905
 MonoBehaviour:
   m_ObjectHideFlags: 0

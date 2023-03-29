@@ -9,7 +9,6 @@ using UnityEngine.Serialization;
 
 namespace VHS {
     public class CharacterMeleeCombat : CharacterModule {
-        private PlayerWeapon _currentWeapon; // TODO Move to separate WeaponManager component
 
         [Header("General")]
         [SerializeField] private float _slowDownSharpness = 10.0f;
@@ -42,19 +41,17 @@ namespace VHS {
         private bool _heavyAttackHeld;
         private bool _heavyAttackReached;
 
-        public bool IsOnCooldown => _currentWeapon.IsOnComboCooldown;
-        public bool IsDuringAttack => _currentWeapon?.IsDuringAttack ?? false;
-        public bool IsDuringLastAttack => _lightAttackIndex >= _currentWeapon.LastLightAttackIndex;
+        public bool IsOnCooldown => CurrentWeapon.IsOnComboCooldown;
+        public bool IsDuringAttack => CurrentWeapon.IsDuringAttack;
+        public bool IsDuringLastAttack => _lightAttackIndex >= CurrentWeapon.LastLightAttackIndex;
         public bool IsDuringInputBuffering => _preAttackBuffer.IsActive || _postAttackBuffer.IsActive;
-
-        private void Awake() {
-            _currentWeapon = GetComponentInChildren<PlayerWeapon>(); // TODO this will be moved
-            _currentWeapon.Init(this, Parent);
-        }
+        
+        private Weapon CurrentWeapon => Parent.WeaponController.MeleeWeapon;
 
         protected override void Enable() => _postAttackBuffer.OnEnd += OnPostInputBufferEnd;
+
         protected override void Disable() => _postAttackBuffer.OnEnd -= OnPostInputBufferEnd;
-        
+
         public override void OnEnter() => ResetAttackVariables();
         public override void OnExit() => ResetAttackVariables();
 
@@ -70,7 +67,7 @@ namespace VHS {
 
         public void OnAttackEnd() {
             if (IsDuringLastAttack)
-                _currentWeapon.ComboCooldown.Start();
+                CurrentWeapon.ComboCooldown.Start();
             else
                 _postAttackBuffer.Start();
 
@@ -124,20 +121,20 @@ namespace VHS {
         private void DashLightAttack() {
             ResetAttackVariables();
             _lightDashAttackEvent?.Raise(this);
-            _currentWeapon.DashLightAttack();
+            CurrentWeapon.DashLightAttack();
         }
 
         private void DashHeavyAttack() {
             ResetAttackVariables();
             Parent.Animancer.Playable.UnpauseGraph();
             _heavyDashAttackEvent?.Raise(this);
-            _currentWeapon.DashHeavyAttack();
+            CurrentWeapon.DashHeavyAttack();
         }
 
         private void LightAttack() {
             _preAttackBuffer.Reset();
             Parent.OnLightAttack(_lightAttackIndex);
-            _currentWeapon.LightAttack(_lightAttackIndex);
+            CurrentWeapon.LightAttack(_lightAttackIndex);
             _lightAttackEvent?.Raise(this);
             _lightAttackIndex++;
         }
@@ -146,19 +143,19 @@ namespace VHS {
             ResetAttackVariables();
             Parent.Animancer.Playable.UnpauseGraph();
             Parent.OnHeavyAttack();
-            _currentWeapon.HeavyAttack();
+            CurrentWeapon.HeavyAttack();
             _heavyAttackEvent?.Raise(this);
         }
 
         private void OnHeavyAttackReached() {
             Parent.Animancer.Playable.PauseGraph();
             Parent.OnHeavyAttackReached();
-            _currentWeapon.OnHeavyAttackReached();
+            CurrentWeapon.OnHeavyAttackReached();
         }
 
         private void OnHeavyAttackHeld() {
             Parent.OnHeavyAttackHeld();
-            _currentWeapon.OnHeavyAttackHeld();
+            CurrentWeapon.OnHeavyAttackHeld();
         }
 
         private void HeavyPerfectAttack() {

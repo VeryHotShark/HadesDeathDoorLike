@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace VHS {
-    public class CharacterAnimationComponent : ChildBehaviour<CharacterController>, IUpdateListener {
+    public class AnimationController : ChildBehaviour<Player>, IUpdateListener {
         [TitleGroup("Movement")]
         [SerializeField] private ClipTransition _idleClip;
         [SerializeField] private ClipTransition _moveClip;
@@ -16,24 +16,23 @@ namespace VHS {
         [SerializeField] private ClipTransition _shootClip;
 
         private AnimancerComponent _animancer;
-
         public AnimancerComponent Animancer => _animancer;
+        private CharacterController Character => Parent.CharacterController;
 
-        private void Awake() {
-            _animancer = GetComponentInChildren<AnimancerComponent>();
-        }
+
+        private void Awake() => _animancer = GetComponentInChildren<AnimancerComponent>();
 
         protected override void Enable() {
-            Parent.Player.OnRoll += OnRoll;
-            Parent.Player.OnRangeAttack += OnRangeAttack;
-            Parent.Player.OnCharacterStateChanged += OnCharacterStateChanged;
+            Parent.OnRoll += OnRoll;
+            Parent.OnRangeAttack += OnRangeAttack;
+            Parent.OnCharacterStateChanged += OnCharacterStateChanged;
             UpdateManager.AddUpdateListener(this);
         }
 
         protected override void Disable() {
-            Parent.Player.OnRoll -= OnRoll;
-            Parent.Player.OnRangeAttack -= OnRangeAttack;
-            Parent.Player.OnCharacterStateChanged -= OnCharacterStateChanged;
+            Parent.OnRoll -= OnRoll;
+            Parent.OnRangeAttack -= OnRangeAttack;
+            Parent.OnCharacterStateChanged -= OnCharacterStateChanged;
             UpdateManager.RemoveUpdateListener(this);
         }
 
@@ -57,9 +56,9 @@ namespace VHS {
         }
 
         public void OnUpdate(float deltaTime) {
-            switch (Parent.CurrentModule) {
+            switch (Parent.CharacterController.CurrentModule) {
                 case CharacterMovement movement:
-                    _animancer.Play(Parent.Motor.Velocity != Vector3.zero && Parent.MoveInput != Vector3.zero ? _moveClip : _idleClip);
+                    _animancer.Play(Character.Motor.Velocity != Vector3.zero && Character.MoveInput != Vector3.zero ? _moveClip : _idleClip);
                     break;
                 case CharacterFallingMovement falling:
                     // _animancer.Play(_rollClip);

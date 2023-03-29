@@ -4,13 +4,11 @@ using KinematicCharacterController;
 using UnityEngine;
 
 namespace VHS {
-    public abstract class CharacterModule : ChildBehaviour<Player>, IState {
+    public abstract class CharacterModule : ChildBehaviour<Player>, IState{
         private CharacterController _controller;
         protected KinematicCharacterMotor Motor => Controller.Motor;
         protected CharacterController Controller => _controller ??= GetComponent<CharacterController>();
-
-        public virtual bool CanEnterState() => true;
-
+        
         public virtual void OnEnter() { }
         public virtual void OnExit() { }
         public virtual void OnReset() { }

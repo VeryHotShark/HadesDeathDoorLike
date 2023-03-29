@@ -5,6 +5,6 @@ using UnityEngine;
 namespace VHS {
     [CreateAssetMenu(fileName = "EntityID", menuName = "ID/Entity")]
     public class EntityID : ScriptableObject {
-        
+        [SerializeField] private string _name;
     }
 }

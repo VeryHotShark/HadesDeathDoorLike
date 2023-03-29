@@ -20,7 +20,7 @@ namespace VHS {
     }
     
     
-    public abstract class PlayerWeapon : BaseBehaviour { // TODO do the same to Range and maybe seperate by WeaponMelee, WeaponRange
+    public abstract class Weapon : BaseBehaviour { // TODO do the same to Range and maybe seperate by WeaponMelee, WeaponRange
         private const float HIT_DELAY = 0.15f;
         
         [Header("VFX")]
@@ -44,12 +44,11 @@ namespace VHS {
         
         protected Player _player;
         protected AttackInfo _currentAttack;
-        protected CharacterMeleeCombat _meleeController;
         
         protected KinematicCharacterMotor Motor => Character.Motor;
         protected CharacterController Character => _player.CharacterController;
         protected AnimancerComponent Animancer => _player.Animancer;
-        protected CharacterAnimationComponent AnimationController => _player.AnimationComponent;
+        protected AnimationController AnimationController => _player.AnimationController;
 
         public Timer ComboCooldown => _comboCooldown;
         public Timer CurrentAttackTimer => _currentAttack?.duration;
@@ -58,9 +57,8 @@ namespace VHS {
         public bool IsDuringAttack => CurrentAttackTimer is {IsActive: true};
         public int LastLightAttackIndex => _lightAttacks.Count;
 
-        public virtual void Init(CharacterMeleeCombat meleeCombat, Player player) {
+        public virtual void Init(Player player) {
             _player = player;
-            _meleeController = meleeCombat;
 
             foreach (AttackInfo attack in _lightAttacks)
                 attack.attackType = PlayerAttackType.LIGHT;
@@ -88,7 +86,7 @@ namespace VHS {
             _heavyAttack.duration.OnEnd -= OnAttackEnd;
         }
 
-        private void OnAttackEnd() => _meleeController.OnAttackEnd();
+        private void OnAttackEnd() => Character.MeleeCombat.OnAttackEnd();
 
         public virtual void DashLightAttack() => SpawnAttack(_dashLightAttack, new Vector3(0.3f, 0.3f, 1f));
 
@@ -173,7 +171,7 @@ namespace VHS {
                 
                 hitSomething = true;
                 hittable.Hit(hitData);
-                _meleeController.OnAttackHit(hitData);
+                Character.MeleeCombat.OnAttackHit(hitData);
             }
 
             if (hitSomething)
