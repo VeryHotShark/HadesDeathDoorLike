@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace VHS {
     [Serializable]
-    public class Skill : ISkill {
+    public class Skill<T> : ISkill where T : Actor {
         public TimeType _castType = TimeType.Instant;
         public TimeType _skillType = TimeType.Instant;
         
@@ -24,12 +24,11 @@ namespace VHS {
         public TimeType SkillType => _skillType;
         
         // Dodać property który liczy normalized ratio 0-1 trwania skilla i casta
-        public Actor Owner { get; private set; }
-        public SkillState SkillState { get; private set; }
         
-        public void SetOwner(Actor owner) => Owner = owner;
+        public T Owner { get; private set; }
+        public SkillState SkillState { get; private set; }
 
-        public virtual bool CanCastSkill() => true;
+        public void SetOwner(Actor owner) => Owner = (T)owner;
 
         public void Start() {
             Reset();
@@ -53,7 +52,7 @@ namespace VHS {
             SkillState = SkillState.None;
             OnReset();
         }
-        
+
         public virtual void OnCastStart() { }
         public virtual void OnCastTick(float deltaTime) { }
         public virtual void OnCastFinish() { }
@@ -66,12 +65,13 @@ namespace VHS {
 
         public virtual void OnAbort() { }
         public virtual void OnReset() { }
-        
     }
     
-    [Serializable] // Jak się nie uda z generyczną CastSkillem w Node Canvas to zamień spowrotem by został tylko Skill klasa
-    public class Skill<T>: Skill where T : Actor{ // Change to Scriptable Object? So we can create assets out of it
+    
+    /*
+    [Serializable]
+    public class Skill<T>: Skill where T : Actor{
         protected new T Owner => (T) base.Owner;
     }
-
+    */
 }

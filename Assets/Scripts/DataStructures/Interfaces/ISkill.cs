@@ -24,7 +24,7 @@ namespace VHS {
         TimeType SkillType { get; }
         SkillState SkillState { get; }
         
-        Actor Owner { get; }
+        // Actor Owner { get; }
         void SetOwner(Actor owner);
 
         void OnCastStart();
@@ -45,6 +45,6 @@ namespace VHS {
         void OnReset();
         void OnAbort();
         
-        bool CanCastSkill();
+        bool CanCastSkill() => true;
     }
 }
