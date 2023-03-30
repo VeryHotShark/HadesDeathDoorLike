@@ -1,0 +1,394 @@
+﻿BEGIN_OPTIONS
+    ShaderName "SeeThroughShader/SeeThroughShaderStackable" 
+    CustomEditor "JBooth.BetterShaders.BetterShaderMaterialGUI"
+    SubEditor "SeeThroughShaderStackableEditor"
+END_OPTIONS
+
+BEGIN_PROPERTIES
+
+	_DissolveColor("Dissolve Color", Color) = (1,1,1,1)
+	_DissolveColorSaturation("Dissolve Color Saturation", Range(0,1)) = 1.0
+	_DissolveEmission("Dissolve Emission", Range(0,1)) = 1.0
+	[AbsoluteValue()] _DissolveEmissionBooster("Dissolve Emission Booster", float) = 1
+	_DissolveTex("Dissolve Effect Texture", 2D) = "white" {}
+
+	[Enum(STSInteractionMode)] _InteractionMode ("Interaction Mode", Float) = 0
+	[Enum(ObstructionMode)] _Obstruction ("Obstruction Mode", Float) = 0
+	_AngleStrength("Angle Obstruction Strength", Range(0,1)) = 1.0
+        
+	_ConeStrength ("Cone Obstruction Strength", Range(0,1)) = 1.0
+	_ConeObstructionDestroyRadius ("Cone Obstruction Destroy Radius", float) = 10.0
+
+        
+	_CylinderStrength ("Cylinder Obstruction Strength", Range(0,1)) = 1.0
+	_CylinderObstructionDestroyRadius ("Cylinder Obstruction Destroy Radius", float) = 10.0
+
+	_CircleStrength ("Circle Obstruction Strength", Range(0,1)) = 1.0
+	_CircleObstructionDestroyRadius ("Circle Obstruction Destroy Radius", float) = 10.0
+
+	_CurveStrength ("Curve Obstruction Strength", Range(0,1)) = 1.0
+	_CurveObstructionDestroyRadius ("Curve Obstruction Destroy Radius", float) = 10.0
+	[HideInInspector] _ObstructionCurve("Obstruction Curve", 2D) = "white" {}
+
+	_DissolveFallOff("Dissolve FallOff", Range(0,1)) = 0.0
+
+	_DissolveMask("Dissolve Mask", 2D) = "white" {}
+	_DissolveMaskEnabled("Use DissolveMask", float) = 0.0
+
+	_IntrinsicDissolveStrength("Intrinsic Dissolve Strength", Range(0,1)) = 0.0
+
+	[MaterialToggle] _PreviewMode("Preview Mode", float) = 0.0
+	_PreviewIndicatorLineThickness("Indicator Line Thickness",  Range(0.01,0.5)) = 0.04        
+
+	[AbsoluteValue()] _UVs ("Dissolve Texture Scale", float) = 1.0
+	[MaterialToggle] _hasClippedShadows("Has Clipped Shadows", Float) = 0
+        
+	[MaterialToggle] _Floor ("Floor", float) = 1.0
+	[Enum(FloorMode)] _FloorMode ("Floor Mode", Float) = 0
+	_FloorY ("FloorY",  float) = 1.0
+	_PlayerPosYOffset ("PlayerPos Y Offset", float) = 1.0  
+
+	[AbsoluteValue()] _FloorYTextureGradientLength ("FloorY Texture Gradient Length", float) = 0.1  
+
+	[MaterialToggle] _AnimationEnabled("Animation Enabled", Float) = 1
+	_AnimationSpeed("Animation Speed", Range(0,2)) = 1
+
+	[MaterialToggle] _IsReplacementShader ("hidden: _IsReplacementShader", Float) = 0
+
+	[HideInInspector] _RaycastMode ("hidden: _RaycastMode", Float) = 0
+	[HideInInspector] _TriggerMode ("hidden: _TriggerMode", Float) = 0
+
+	[HideInInspector] _IsExempt ("_IsExempt", Float) = 0
+
+	[AbsoluteValue()] _TransitionDuration ("Transition Duration In Seconds", Float) = 2
+	[AbsoluteValue()] _DefaultEffectRadius ("Default Effect Radius",Float) = 25
+
+
+	[HideInInspector] _numOfPlayersInside ("hidden: _numOfPlayersInside", Float) = 0
+	[HideInInspector] _tValue ("hidden: _tValue", Float) = 0
+	[HideInInspector] _tDirection ("hidden: _tDirection", Float) = 0
+	[HideInInspector] _id ("hidden: _id", Float) = 0
+
+	[MaterialToggle] _TexturedEmissionEdge("Textured Emission Edge", float) = 1.0
+	_TexturedEmissionEdgeStrength("Textured Emission Edge Strength", Range(0,1)) = 0.3
+
+	[MaterialToggle] _IsometricExclusion("Isometric Exclusion", float) = 0.0
+	_IsometricExclusionDistance("Isometric Exclusion Distance", float) = 0.0
+	_IsometricExclusionGradientLength("Isometric Exclusion Gradient Length", float) = 0.1
+
+	[MaterialToggle] _Ceiling ("Ceiling", float) = 0.0
+
+	[Enum(CeilingMode)] _CeilingMode ("Ceiling Mode", Float) = 0
+	[Enum(CeilingBlendMode)] _CeilingBlendMode ("Blending Mode", Float) = 1.0
+	_CeilingY ("CeilingY",  float) = 1.0
+	_CeilingPlayerYOffset ("PlayerPos Y Offset", float) = 1.0  
+	_CeilingYGradientLength ("CeilingY Gradient Length", float) = 0.1
+
+	[MaterialToggle] _Zoning("Zoning", float) = 0.0
+	[Enum(ZoningMode)] _ZoningMode("Zoning Mode", Float) = 0.0
+	_ZoningEdgeGradientLength ("Edge Gradient Length", float) = 0.1
+	[MaterialToggle] _IsZoningRevealable ("Is Zoning Revealable", float) = 0.0
+
+	[MaterialToggle] _SyncZonesWithFloorY ("Sync Zones With FloorY", float) = 0.0
+	_SyncZonesFloorYOffset ("Sync Zones Floor YOffset", float) = 0.0
+
+	[MaterialToggle] _isReferenceMaterial("Is Reference Material", float) = 0.0
+
+
+    // FOR UI ONLY
+    [HideInInspector] _ShowContentDissolveArea ("hidden: _ShowContentDissolveArea", Float) = 1
+    [HideInInspector] _ShowContentInteractionOptionsArea ("hidden: _ShowContentInteractionOptionsArea", Float) = 1
+    [HideInInspector] _ShowContentObstructionOptionsArea ("hidden: _ShowContentObstructionOptionsArea", Float) = 1
+    [HideInInspector] _ShowContentAnimationArea ("hidden: _ShowContentAnimationArea", Float) = 1
+    [HideInInspector] _ShowContentZoningArea ("hidden: _ShowContentZoningArea", Float) = 1
+    [HideInInspector] _ShowContentReplacementOptionsArea ("hidden: _ShowContentReplacementOptionsArea", Float) = 1
+    [HideInInspector] _ShowContentDebugArea ("hidden: _ShowContentDebugArea", Float) = 1
+    
+    [MaterialToggle] _SyncCullMode ("_SyncCullMode", Float) = 0
+
+END_PROPERTIES
+
+BEGIN_CBUFFER
+    float _SyncCullMode;
+
+    float _IsReplacementShader;
+    float _TriggerMode;
+    float _RaycastMode;
+    float _IsExempt;
+    float _isReferenceMaterial;
+    float _InteractionMode;
+    int _ArrayLength = 0;
+    #if (defined(SHADER_API_GLES) || defined(SHADER_API_GLES3)) 
+        float4 _PlayersPosVectorArray[20];
+        float _PlayersDataFloatArray[150];     
+    #else
+        float4 _PlayersPosVectorArray[100];
+        float _PlayersDataFloatArray[500];  
+    #endif
+    float _tDirection = 0;
+    float _numOfPlayersInside = 0;
+    float _tValue = 0;
+    float _id = 0;
+    #if _ZONING
+        #if (defined(SHADER_API_GLES) || defined(SHADER_API_GLES3)) 
+            float _ZDFA[500];
+        #else
+            float _ZDFA[1000];
+        #endif
+        float _ZonesDataCount;
+    #endif
+    #if _REPLACEMENT        
+        fixed4 _DissolveColorGlobal;
+        float _DissolveColorSaturationGlobal;
+        float _DissolveEmissionGlobal;
+        float _DissolveEmissionBoosterGlobal;
+        float _TextureVisibilityGlobal;
+        float _ObstructionGlobal;
+        float _AngleStrengthGlobal;
+        float _ConeStrengthGlobal;
+        float _ConeObstructionDestroyRadiusGlobal;
+        float _CylinderStrengthGlobal;
+        float _CylinderObstructionDestroyRadiusGlobal;
+        float _CircleStrengthGlobal;
+        float _CircleObstructionDestroyRadiusGlobal;
+        float _CurveStrengthGlobal;
+        float _CurveObstructionDestroyRadiusGlobal;
+        float _DissolveFallOffGlobal;
+        float _IntrinsicDissolveStrengthGlobal;
+        float _PreviewModeGlobal;
+        float _UVsGlobal;
+        float _hasClippedShadowsGlobal;
+        float _FloorGlobal;
+        float _FloorModeGlobal;
+        float _FloorYGlobal;
+        float _PlayerPosYOffsetGlobal;
+        float _FloorYTextureGradientLengthGlobal;
+        float _AnimationEnabledGlobal;
+        float _AnimationSpeedGlobal;
+        float _DefaultEffectRadiusGlobal;
+        float _TransitionDurationGlobal;        
+        float _TexturedEmissionEdgeGlobal;
+        float _TexturedEmissionEdgeStrengthGlobal;
+        float _IsometricExclusionGlobal;
+        float _IsometricExclusionDistanceGlobal;
+        float _IsometricExclusionGradientLengthGlobal;
+        float _CeilingGlobal;
+        float _CeilingModeGlobal;
+        float _CeilingBlendModeGlobal;
+        float _CeilingYGlobal;
+        float _CeilingPlayerYOffsetGlobal;
+        float _CeilingYGradientLengthGlobal;
+        float _ZoningGlobal;
+        float _ZoningModeGlobal;
+        float _ZoningEdgeGradientLengthGlobal;
+        float _IsZoningRevealableGlobal;
+        float _SyncZonesWithFloorYGlobal;
+        float _SyncZonesFloorYOffsetGlobal;
+        float4 _ObstructionCurveGlobal_TexelSize;
+        float4 _DissolveMaskGlobal_TexelSize;
+        float _DissolveMaskEnabledGlobal;
+        float _PreviewIndicatorLineThicknessGlobal;
+    #else
+        half _TextureVisibility;
+        half _AngleStrength;
+        float _Obstruction;
+        float _UVs;
+        float4 _ObstructionCurve_TexelSize;      
+        float _DissolveMaskEnabled;
+        float4 _DissolveMask_TexelSize;
+        fixed4 _DissolveColor;
+        float _DissolveColorSaturation;
+        float _DissolveEmission;
+        float _DissolveEmissionBooster;
+        float _hasClippedShadows;
+        float _ConeStrength;
+        float _ConeObstructionDestroyRadius;
+        float _CylinderStrength;
+        float _CylinderObstructionDestroyRadius;
+        float _CircleStrength;
+        float _CircleObstructionDestroyRadius;
+        float _CurveStrength;
+        float _CurveObstructionDestroyRadius;
+        float _IntrinsicDissolveStrength;
+        float _DissolveFallOff;
+        float _PreviewMode;
+        float _PreviewIndicatorLineThickness;
+        float _AnimationEnabled;
+        float _AnimationSpeed;
+        float _DefaultEffectRadius;
+        float _TransitionDuration;
+        float _TexturedEmissionEdge;
+        float _TexturedEmissionEdgeStrength;
+        float _IsometricExclusion;
+        float _IsometricExclusionDistance;
+        float _IsometricExclusionGradientLength;
+        float _Floor;
+        float _FloorMode;
+        float _FloorY;
+        float _FloorYTextureGradientLength;
+        float _PlayerPosYOffset;
+        float _Ceiling;
+        float _CeilingMode;
+        float _CeilingBlendMode;
+        float _CeilingY;
+        float _CeilingPlayerYOffset;
+        float _CeilingYGradientLength;
+        float _Zoning;
+        float _ZoningMode;
+        float _ZoningEdgeGradientLength;
+        float _IsZoningRevealable;
+        float _SyncZonesWithFloorY;
+        float _SyncZonesFloorYOffset;
+    #endif
+END_CBUFFER
+
+BEGIN_DEFINES
+        #pragma shader_feature_local_fragment _OBSTRUCTION_CURVE
+        #pragma shader_feature_local_fragment _DISSOLVEMASK
+        #pragma shader_feature_local_fragment _ZONING
+        #pragma shader_feature_local_fragment _REPLACEMENT
+        #pragma shader_feature_local_fragment _PLAYERINDEPENDENT
+END_DEFINES
+
+
+BEGIN_CODE
+
+    #if _REPLACEMENT
+        sampler2D _DissolveTexGlobal;
+    #else
+        sampler2D _DissolveTex;
+    #endif
+
+    //#if _DISSOLVEMASK
+    #if _REPLACEMENT
+        sampler2D _DissolveMaskGlobal;
+    #else
+        sampler2D _DissolveMask;
+    #endif
+    //#endif
+
+    #if _REPLACEMENT
+        sampler2D _ObstructionCurveGlobal;
+    #else
+        sampler2D _ObstructionCurve;
+    #endif
+
+
+
+
+
+#ifdef USE_UNITY_TEXTURE_2D_TYPE
+#undef USE_UNITY_TEXTURE_2D_TYPE
+#endif
+
+#include "Packages/com.shadercrew.seethroughshader.core/Scripts/Shaders/xxSharedSTSDependencies/SeeThroughShaderFunction.hlsl"
+
+
+
+
+	void SurfaceFunction(inout Surface o, ShaderData d)
+	{
+        half3 albedo;
+        half3 emission;
+        float alphaForClipping;
+#ifdef USE_UNITY_TEXTURE_2D_TYPE
+#undef USE_UNITY_TEXTURE_2D_TYPE
+#endif
+#if _REPLACEMENT
+    DoSeeThroughShading( o.Albedo, o.Normal, d.worldSpacePosition, d.worldSpaceNormal,
+
+                        _numOfPlayersInside, _tDirection, _tValue, _id,
+                        _TriggerMode, _RaycastMode,
+                        _IsExempt,
+
+                        _DissolveColorGlobal, _DissolveColorSaturationGlobal, _UVsGlobal,
+                        _DissolveEmissionGlobal, _DissolveEmissionBoosterGlobal, _TexturedEmissionEdgeGlobal, _TexturedEmissionEdgeStrengthGlobal,
+                        _hasClippedShadowsGlobal,
+
+                        _ObstructionGlobal,
+                        _AngleStrengthGlobal,
+                        _ConeStrengthGlobal, _ConeObstructionDestroyRadiusGlobal,
+                        _CylinderStrengthGlobal, _CylinderObstructionDestroyRadiusGlobal,
+                        _CircleStrengthGlobal, _CircleObstructionDestroyRadiusGlobal,
+                        _CurveStrengthGlobal, _CurveObstructionDestroyRadiusGlobal,
+                        _DissolveFallOffGlobal,
+                        _DissolveMaskEnabledGlobal,
+                        _IntrinsicDissolveStrengthGlobal,
+                        _DefaultEffectRadiusGlobal,
+
+                        _IsometricExclusionGlobal, _IsometricExclusionDistanceGlobal, _IsometricExclusionGradientLengthGlobal,
+                        _CeilingGlobal, _CeilingModeGlobal, _CeilingBlendModeGlobal, _CeilingYGlobal, _CeilingPlayerYOffsetGlobal, _CeilingYGradientLengthGlobal,
+                        _FloorGlobal, _FloorModeGlobal, _FloorYGlobal, _PlayerPosYOffsetGlobal, _FloorYTextureGradientLengthGlobal,
+
+                        _AnimationEnabledGlobal, _AnimationSpeedGlobal,
+                        _TransitionDurationGlobal,
+
+                        _ZoningGlobal, _ZoningModeGlobal, _IsZoningRevealableGlobal, _ZoningEdgeGradientLengthGlobal,
+                        _SyncZonesWithFloorYGlobal, _SyncZonesFloorYOffsetGlobal,
+
+                        _PreviewModeGlobal,
+                        _PreviewIndicatorLineThicknessGlobal,
+
+                        _DissolveTexGlobal,
+                        _DissolveMaskGlobal,
+                        _ObstructionCurveGlobal,
+
+                        _DissolveMaskGlobal_TexelSize,
+                        _ObstructionCurveGlobal_TexelSize,
+
+                        albedo, emission, alphaForClipping);
+#else 
+    
+    DoSeeThroughShading( o.Albedo, o.Normal, d.worldSpacePosition, d.worldSpaceNormal,
+
+                        _numOfPlayersInside, _tDirection, _tValue, _id,
+                        _TriggerMode, _RaycastMode,
+                        _IsExempt,
+
+                        _DissolveColor, _DissolveColorSaturation, _UVs,
+                        _DissolveEmission, _DissolveEmissionBooster, _TexturedEmissionEdge, _TexturedEmissionEdgeStrength,
+                        _hasClippedShadows,
+
+                        _Obstruction,
+                        _AngleStrength,
+                        _ConeStrength, _ConeObstructionDestroyRadius,
+                        _CylinderStrength, _CylinderObstructionDestroyRadius,
+                        _CircleStrength, _CircleObstructionDestroyRadius,
+                        _CurveStrength, _CurveObstructionDestroyRadius,
+                        _DissolveFallOff,
+                        _DissolveMaskEnabled,
+                        _IntrinsicDissolveStrength,
+                        _DefaultEffectRadius,
+
+                        _IsometricExclusion, _IsometricExclusionDistance, _IsometricExclusionGradientLength,
+                        _Ceiling, _CeilingMode, _CeilingBlendMode, _CeilingY, _CeilingPlayerYOffset, _CeilingYGradientLength,
+                        _Floor, _FloorMode, _FloorY, _PlayerPosYOffset, _FloorYTextureGradientLength,
+
+                        _AnimationEnabled, _AnimationSpeed,
+                        _TransitionDuration,
+
+                        _Zoning, _ZoningMode, _IsZoningRevealable, _ZoningEdgeGradientLength,
+                        _SyncZonesWithFloorY, _SyncZonesFloorYOffset,
+
+                        _PreviewMode,
+                        _PreviewIndicatorLineThickness,                            
+
+                        _DissolveTex,
+                        _DissolveMask,
+                        _ObstructionCurve,
+
+                        _DissolveMask_TexelSize,
+                        _ObstructionCurve_TexelSize,
+
+                        albedo, emission, alphaForClipping);
+#endif 
+
+
+
+        o.Albedo = albedo;
+        o.Emission += emission;   
+
+	}
+
+END_CODE
+

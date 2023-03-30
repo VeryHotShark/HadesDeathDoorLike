@@ -1,0 +1,38 @@
+{
+    "name": "ShaderCrew.SeeThroughShader.Core.StackableForBetterShaders.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1e1df38bdb063c04fb8d144480b35d37",
+        "GUID:6a37219044b169f4fa7e60a15e3e8279",
+        "GUID:a0792b212a555914396dda56372bbfdf",
+        "GUID:cdceab6cf2a6d4e55a7addf4eb7df4e7",
+        "GUID:dd08c718ae20d47b38a10f833dfca957"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "",
+            "define": "USING_URP"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "",
+            "define": "USING_HDRP"
+        },
+        {
+            "name": "com.jbooth.better-shaders",
+            "expression": "",
+            "define": "USING_BETTERSHADERS"
+        }
+    ],
+    "noEngineReferences": false
+}

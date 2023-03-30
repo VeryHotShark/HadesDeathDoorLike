@@ -21,6 +21,12 @@
       },
       "url": "https://arongranberg.com/packages/22e51b8ffb6542f41e4beae8b3c9cb2e62ff2f6742218"
     },
+    "com.shadercrew.seethroughshader.core": {
+      "version": "file:com.shadercrew.seethroughshader.core",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

@@ -1,0 +1,30 @@
+{
+    "name": "ShaderCrew.SeeThroughShader.Core.ShaderGraph.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1e1df38bdb063c04fb8d144480b35d37",
+        "GUID:6a37219044b169f4fa7e60a15e3e8279"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "",
+            "define": "USING_URP"
+        },
+        {
+            "name": "com.unity.render-pipelines.high-definition",
+            "expression": "",
+            "define": "USING_HDRP"
+        }
+    ],
+    "noEngineReferences": false
+}

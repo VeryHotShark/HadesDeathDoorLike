@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: STSCustomShaderGraphExampleHDRPMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 932bbf08c01a71945b3a2f9c82a5791e,
+    type: 3}
+  m_ValidKeywords:
+  - _DISABLE_SSR_TRANSPARENT
+  - _HDRP
+  - _PLAYERINDEPENDENT
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2225
+  stringTagMap: {}
+  disabledShaderPasses:
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
+  - RayTracingPrepass
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DissolveMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: 689e9aed28a8ca94f933accd814309a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ObstructionCurve:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AddPrecomputedVelocity: 0
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 0
+    - _AlphaSrcBlend: 1
+    - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
+    - _AngleStrength: 1
+    - _AnimationEnabled: 1
+    - _AnimationSpeed: 1
+    - _BlendMode: 0
+    - _Ceiling: 0
+    - _CeilingBlendMode: 1
+    - _CeilingMode: 0
+    - _CeilingPlayerYOffset: 0
+    - _CeilingY: 1
+    - _CeilingYGradientLength: 0.1
+    - _CircleObstructionDestroyRadius: 10
+    - _CircleStrength: 1
+    - _ConeObstructionDestroyRadius: 10
+    - _ConeStrength: 1
+    - _ConservativeDepthOffsetEnable: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _CurveObstructionDestroyRadius: 10
+    - _CurveStrength: 1
+    - _CylinderObstructionDestroyRadius: 10
+    - _CylinderStrength: 1
+    - _DISSOLVEMASK: 0
+    - _DefaultEffectRadius: 25
+    - _DepthOffsetEnable: 0
+    - _DissolveColorSaturation: 1
+    - _DissolveEmission: 1
+    - _DissolveEmissionBooster: 1
+    - _DissolveFallOff: 0
+    - _DissolveMaskEnabled: 0
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedGIMode: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 0
+    - _EnableBlendModePreserveSpecularLighting: 1
+    - _EnableFogOnTransparent: 1
+    - _Floor: 1
+    - _FloorMode: 0
+    - _FloorY: 2.48
+    - _FloorYTextureGradientLength: 0
+    - _HDRP: 1
+    - _InteractionMode: 1
+    - _IntrinsicDissolveStrength: 0.838
+    - _IsExempt: 0
+    - _IsReplacementShader: 0
+    - _IsZoningRevealable: 0
+    - _IsometricExclusion: 0
+    - _IsometricExclusionDistance: 0
+    - _IsometricExclusionGradientLength: 0.1
+    - _OBSTRUCTION_CURVE: 0
+    - _Obstruction: 0
+    - _OpaqueCullMode: 2
+    - _PLAYERINDEPENDENT: 1
+    - _PlayerPosYOffset: 0
+    - _PreviewIndicatorLineThickness: 0.04
+    - _PreviewMode: 0
+    - _REPLACEMENT: 0
+    - _RayTracing: 0
+    - _RaycastMode: 0
+    - _ReceivesSSR: 1
+    - _ReceivesSSRTransparent: 0
+    - _RefractionModel: 0
+    - _RenderQueueType: 1
+    - _RequireSplitLighting: 0
+    - _ShowContentAnimationArea: 1
+    - _ShowContentDebugArea: 1
+    - _ShowContentDissolveArea: 1
+    - _ShowContentInteractionOptionsArea: 1
+    - _ShowContentObstructionOptionsArea: 1
+    - _ShowContentReplacementOptionsArea: 1
+    - _ShowContentZoningArea: 1
+    - _SrcBlend: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 8
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 10
+    - _StencilRefMV: 40
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
+    - _SupportDecals: 1
+    - _SurfaceType: 0
+    - _SyncCullMode: 0
+    - _SyncZonesFloorYOffset: 0
+    - _SyncZonesWithFloorY: 0
+    - _TexturedEmissionEdge: 1
+    - _TexturedEmissionEdgeStrength: 0.3
+    - _TransitionDuration: 2
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentDepthPostpassEnable: 0
+    - _TransparentDepthPrepassEnable: 0
+    - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
+    - _TransparentZWrite: 0
+    - _TriggerMode: 0
+    - _UVs: 1
+    - _UseShadowThreshold: 0
+    - _ZONING: 0
+    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 1
+    - _Zoning: 0
+    - _ZoningEdgeGradientLength: 0
+    - _ZoningMode: 0
+    - _hasClippedShadows: 1
+    - _id: 0
+    - _isReferenceMaterial: 0
+    - _numOfPlayersInside: 0
+    - _tDirection: 0
+    - _tValue: 0
+    m_Colors:
+    - _DissolveColor: {r: 1, g: 1, b: 1, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!114 &721422895194618399
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 12
+  hdPluginSubTargetMaterialVersions:
+    m_Keys: []
+    m_Values: 
