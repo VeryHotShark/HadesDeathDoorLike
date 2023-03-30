@@ -146,7 +146,7 @@ public class FoliageGenerator : MonoBehaviour {
         if (exportOnEdit) ExportMesh();
     }
 
-    [Button]
+    [Button("Export Mesh")]
     private void ExportMesh() {
         // Validate input.
         if (carrierMesh == null || particleMesh == null) {

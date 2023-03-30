@@ -93,6 +93,8 @@ namespace TheraBytes.BetterUi.Editor
 
         public void Save()
         {
+            return; // TODO This creates unncesary folder
+            
             // ensure the directory exists
             var dir = Path.GetDirectoryName(filePath);
             if(!Directory.Exists(dir))
