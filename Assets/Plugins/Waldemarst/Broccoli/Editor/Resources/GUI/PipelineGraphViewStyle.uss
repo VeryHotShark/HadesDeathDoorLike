@@ -1,0 +1,25 @@
+GridBackground {
+    /*--grid-background-color: rgb(40, 40, 40);*/
+    --line-color: rgba(193, 196, 192, 0.05);
+    --spacing: 10;
+    --thick-line-color: rgba(193, 196, 192, 0.05);
+}
+
+Label {
+    color: rgb(196, 196, 196);
+}
+
+.graph-title {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(63, 63, 63);
+    -unity-text-align: middle-center;
+    align-self: center;
+    font-size: 13px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
