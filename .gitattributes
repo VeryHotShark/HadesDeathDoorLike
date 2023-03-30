@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Assets/Plugins/Toon[[:space:]]Fantasy[[:space:]]Nature/Scenes/\*\* filter=lfs diff=lfs merge=lfs -text
+Assets/Plugins/Toon[[:space:]]Fantasy[[:space:]]Nature/Terrain/\*\* filter=lfs diff=lfs merge=lfs -text
+Assets/Plugins/Toon[[:space:]]Fantasy[[:space:]]Nature/Scenes/\*\* filter=lfs diff=lfs merge=lfs -text
+Assets/Plugins/Toon[[:space:]]Fantasy[[:space:]]Nature/Terrain/\*\* filter=lfs diff=lfs merge=lfs -text
+Assets/Plugins/Toon filter=lfs diff=lfs merge=lfs -text
+Fantasy filter=lfs diff=lfs merge=lfs -text
+Nature/Terrain/\*\* filter=lfs diff=lfs merge=lfs -text
+Nature/Scenes/\*\* filter=lfs diff=lfs merge=lfs -text
