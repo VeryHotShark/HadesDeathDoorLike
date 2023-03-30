@@ -8,3 +8,5 @@ Assets/Plugins/Toon filter=lfs diff=lfs merge=lfs -text
 Fantasy filter=lfs diff=lfs merge=lfs -text
 Nature/Terrain/\*\* filter=lfs diff=lfs merge=lfs -text
 Nature/Scenes/\*\* filter=lfs diff=lfs merge=lfs -text
+Assets/Toon filter=lfs diff=lfs merge=lfs -text
+Nature/\*\* filter=lfs diff=lfs merge=lfs -text

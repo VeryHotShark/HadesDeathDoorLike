@@ -2,14 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TFF_Grass_Patch_01C
   m_Shader: {fileID: 4800000, guid: 2fcab0b6e64ffa64da84ab855bac8735, type: 3}
-  m_ShaderKeywords: _ACCENTS_ON _HIGHLIGHTS_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ACCENTS_ON
+  - _HIGHLIGHTS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -63,6 +66,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: cc7e7bd6e8649344dbadd965a58f1123, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureSample1:
+        m_Texture: {fileID: 2800000, guid: cc7e7bd6e8649344dbadd965a58f1123, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _WindNoiseTexture:
         m_Texture: {fileID: 2800000, guid: 41d01fe6e8db970449385e7f43d4aa06, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -75,8 +82,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _Accents: 1
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Color1Level: 0.439
     - _Color2Level: 0.336
@@ -91,6 +112,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -103,8 +126,9 @@ Material:
     - _AccentColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color0: {r: 0.17030083, g: 0.4056604, b: 0.21175925, a: 0}
-    - _Color1: {r: 0.36078432, g: 0.58431375, b: 0.49019608, a: 1}
-    - _Color2: {r: 0.2633427, g: 0.3215686, b: 0.2039216, a: 1}
+    - _Color1: {r: 0.36142755, g: 0.5849056, b: 0.49178973, a: 1}
+    - _Color2: {r: 0.2627451, g: 0.32075468, b: 0.20392157, a: 1}
     - _Color3: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _HighlightColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  m_BuildTextureStacks: []
