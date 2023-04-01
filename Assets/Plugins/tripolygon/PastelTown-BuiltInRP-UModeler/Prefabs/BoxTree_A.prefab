@@ -30,10 +30,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 83.494, z: 0}
+  m_LocalEulerAnglesHint: {x: -0, y: 0, z: 0}
 --- !u!114 &6084264702399950612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +292,6 @@ MonoBehaviour:
     polygonGroupManager_:
       polygonGroups_: []
     activePolygonGroupId: 0
-    IsBuilt: 0
   backfaces_: 0
   materials:
   - {fileID: 2100000, guid: 14c110f6155b25b4d808c151150a2097, type: 2}
@@ -327,6 +327,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

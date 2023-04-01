@@ -13,8 +13,23 @@ MonoBehaviour:
   m_Name: FlatKitFog
   m_EditorClassIdentifier: 
   m_Active: 0
-  settings: {fileID: 11400000, guid: f68defe9b6889484787a8d20c715e802, type: 2}
+  settings: {fileID: 11400000, guid: 66442b5f3fe3da846a88cf145e08aa9f, type: 2}
   _effectMaterial: {fileID: 0}
+--- !u!114 &-6607162627466787696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473a86c9e274347dfbdde619584cebe9, type: 3}
+  m_Name: HighlightPlusRenderPassFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  renderPassEvent: 500
+  clearStencil: 0
 --- !u!114 &-6110150647774056298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,6 +68,21 @@ MonoBehaviour:
     ApplyPixelizationMap: {fileID: 4800000, guid: f47f4f650fb29834684600d9a95f41c7, type: 3}
   OutlineShaders:
     OutlineDetection: {fileID: 4800000, guid: c59878161c7e0ad40b0661b47620d0e5, type: 3}
+--- !u!114 &-4522067860573520799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cca7768aaaea4b0081f14e7f9d4b5ad, type: 3}
+  m_Name: FlatKitOutline
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings: {fileID: 11400000, guid: ff3dfd77429d64938a26bd54c27dacd8, type: 2}
+  _effectMaterial: {fileID: 0}
 --- !u!114 &-3217223611604831166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +126,9 @@ MonoBehaviour:
   - {fileID: 7364522415760905419}
   - {fileID: -6110150647774056298}
   - {fileID: -8596528526948552056}
-  m_RendererFeatureMap: 42744bbb2b205ad3f86cf8e0fd2ef766cb94d4431e0a346696f04ddb5b6234ab8832b8e1d9feb288
+  - {fileID: -4522067860573520799}
+  - {fileID: -6607162627466787696}
+  m_RendererFeatureMap: 42744bbb2b205ad3f86cf8e0fd2ef766cb94d4431e0a346696f04ddb5b6234ab8832b8e1d9feb28861fc4d603d633ec190049bb898a44ea4
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
