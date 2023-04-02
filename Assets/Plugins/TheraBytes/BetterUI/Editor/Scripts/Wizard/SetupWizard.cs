@@ -45,7 +45,8 @@ namespace TheraBytes.BetterUi.Editor
         {
             if (StaticPersistentWizardData.FileExists())
                 return;
-
+                
+            return;
             EditorApplication.delayCall += ShowWindow;
         }
 
