@@ -1,5 +1,6 @@
 using System;
 using Animancer;
+using KinematicCharacterController;
 using UnityEngine;
 
 namespace VHS {
@@ -12,17 +13,15 @@ namespace VHS {
         private WeaponController _weaponController;
         private AnimationController _animationController;
         
-        
-                
         public PlayerController PlayerController => _playerController;
+        public CameraController CameraController => _playerController.Camera;
         public CharacterController CharacterController => _characterController;
+        public KinematicCharacterMotor CharacterMotor => CharacterController.Motor;
 
-        public Camera Camera => PlayerController.Camera.Camera;
+        public Camera Camera => CameraController.Camera;
         public AnimancerComponent Animancer => _animationController.Animancer;
         public WeaponController WeaponController => _weaponController;
         public AnimationController AnimationController => _animationController;
-        
-
         
         public Action OnRoll = delegate { };
         public Action OnRangeAttack = delegate { };
