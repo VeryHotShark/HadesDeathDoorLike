@@ -24,11 +24,11 @@ namespace KinematicCharacterController.Examples
 
         private void Start()
         {
-            OnPlaygroundTeleportingZone.OnCharacterTeleport -= ControlGravity;
-            OnPlaygroundTeleportingZone.OnCharacterTeleport += ControlGravity;
+            // OnPlaygroundTeleportingZone.OnCharacterTeleport -= ControlGravity;
+            // OnPlaygroundTeleportingZone.OnCharacterTeleport += ControlGravity;
 
-            OnPlanetTeleportingZone.OnCharacterTeleport -= UnControlGravity;
-            OnPlanetTeleportingZone.OnCharacterTeleport += UnControlGravity;
+            // OnPlanetTeleportingZone.OnCharacterTeleport -= UnControlGravity;
+            // OnPlanetTeleportingZone.OnCharacterTeleport += UnControlGravity;
 
             _lastRotation = PlanetMover.transform.rotation;
 

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="" />
+    <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FlatKit/PresetsShared/Materials/DarkPaleWhiteRim__StylSurf_Single_Rim.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FlatKit/PresetsShared/Materials/DarkPaleWhiteRim__StylSurf_Single_Rim.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PlanetManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/PlanetManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/Teleporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/KinematicCharacterController/Examples/Scripts/Teleporter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Triggers/ITriggerType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Triggers/ITriggerType.cs.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,13 +27,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Extensions/SceneViewContextMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Extensions/VHSLogger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Managers/UpdateManager/Listeners/ICustomUpdateListener.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataStructures/Interfaces/ITriggerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/EnemyID.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataStructures/ScriptableObjects/EntityID.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/PassivesHandlerComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/TriggerHandlerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterSkillCombat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Feedbacks/Feedback.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Interactables/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Particles/ParticleController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Triggers/Teleport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Triggers/Trigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Controllers/SpawnController/SpawnController/SpawnPoints/CirclePointProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -150,7 +162,7 @@
       <workItem from="1680200592376" duration="2845000" />
       <workItem from="1680379275231" duration="1217000" />
       <workItem from="1680473028022" duration="620000" />
-      <workItem from="1680545212803" duration="4490000" />
+      <workItem from="1680545212803" duration="6870000" />
     </task>
     <servers />
   </component>

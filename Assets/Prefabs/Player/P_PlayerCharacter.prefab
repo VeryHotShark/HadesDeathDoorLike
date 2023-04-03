@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 3900655775530972018}
   - component: {fileID: 4752561177657328525}
   - component: {fileID: 5605950517285389633}
+  - component: {fileID: -6901970142474631732}
   m_Layer: 7
   m_Name: P_PlayerCharacter
   m_TagString: Player
@@ -719,6 +720,21 @@ MonoBehaviour:
   _updateRate: 0.2
   _meleeWeaponID: {fileID: 11400000, guid: 0a0165bc1014f4347a9b293b108f572c, type: 2}
   _weaponSocket: {fileID: 5074986791276105340}
+--- !u!114 &-6901970142474631732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866718725280065586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865edf1123ed28d46b47aef2c9fd95c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  priority: 0
 --- !u!1 &8740889620083433615
 GameObject:
   m_ObjectHideFlags: 0
