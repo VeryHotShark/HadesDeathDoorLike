@@ -15,6 +15,21 @@ namespace VHS {
 
         private void Awake() => SpawnMeleeWeapon();
 
+        protected override void Enable() => Parent.OnCharacterStateChanged += OnCharacterStateChanged;
+        protected override void Disable() => Parent.OnCharacterStateChanged -= OnCharacterStateChanged;
+
+        private void OnCharacterStateChanged(CharacterModule module) {
+            switch (module) {
+                case CharacterRangeCombat range:
+                    _meleeWeapon.SetVisible(false);
+                    break;
+                case CharacterSkillCombat skill:
+                case CharacterMeleeCombat melee:
+                    _meleeWeapon.SetVisible(true);
+                    break;
+            }  
+        }
+
         private void SpawnMeleeWeapon() {
             _meleeWeapon = Instantiate(_meleeWeaponID.Prefab, _weaponSocket);
             _meleeWeapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);

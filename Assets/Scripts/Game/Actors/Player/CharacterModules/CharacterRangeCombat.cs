@@ -25,6 +25,9 @@ namespace VHS {
         private void OnMeleeHit(HitData hitData) => ModifyCurrentAmmo(1);
 
         public override void SetInputs(CharacterInputs inputs) {
+            if (inputs.Secondary.Held)
+                OnRangeWindup();
+            
             if(inputs.Secondary.Released)
                 Shoot();
         }
@@ -36,6 +39,10 @@ namespace VHS {
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
             currentVelocity = Vector3.zero;
+        }
+
+        private void OnRangeWindup() {
+            Parent.OnRangeAttackHeld();
         }
 
         public void Shoot() {

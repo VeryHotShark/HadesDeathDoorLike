@@ -38,6 +38,7 @@ namespace VHS {
         [SerializeField] protected ClipTransition _heavyAttackWindupClip;
       
         private GameObject _slashInstance;
+        private MeshRenderer[] _renderers;
         
         protected bool _heavyAttackHeld;
         protected bool _heavyAttackReached;
@@ -56,6 +57,8 @@ namespace VHS {
         public bool IsOnComboCooldown => _comboCooldown.IsActive;
         public bool IsDuringAttack => CurrentAttackTimer is {IsActive: true};
         public int LastLightAttackIndex => _lightAttacks.Count;
+
+        private void Awake() => _renderers = GetComponentsInChildren<MeshRenderer>();
 
         public virtual void Init(Player player) {
             _player = player;
@@ -176,6 +179,11 @@ namespace VHS {
 
             if (hitSomething)
                 PoolManager.Spawn(attackInfo.feedback, Vector3.zero, Quaternion.identity);
+        }
+
+        public void SetVisible(bool state) {
+            foreach (MeshRenderer renderer in _renderers)
+                renderer.enabled = state;
         }
     }
 }

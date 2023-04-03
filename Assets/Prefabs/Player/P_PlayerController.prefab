@@ -68,7 +68,15 @@ PrefabInstance:
       objectReference: {fileID: 3532176832971602164}
     - target: {fileID: 2594597711448852697, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7779456
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594597711448852702, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.0710692
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594597711448852702, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.815511
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758642, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_ClearFlags
@@ -89,6 +97,14 @@ PrefabInstance:
     - target: {fileID: 2594597712390758642, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_BackGroundColor.r
       value: 0.0754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594597712390758643, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.0710692
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594597712390758643, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.815511
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758647, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: _characterReferencePoint
@@ -194,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 15.515624
+      value: 11.653126
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -294,15 +310,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 13.791666
+      value: 10.358334
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 22
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 22
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate

@@ -14,30 +14,41 @@ namespace VHS {
         [Space]
         [SerializeField] private ClipTransition _rollClip;
         [SerializeField] private ClipTransition _shootClip;
+        [SerializeField] private ClipTransition _shootWindupClip;
 
         private AnimancerComponent _animancer;
         public AnimancerComponent Animancer => _animancer;
         private CharacterController Character => Parent.CharacterController;
 
 
-        private void Awake() => _animancer = GetComponentInChildren<AnimancerComponent>();
+        private void Awake() {
+            _animancer = GetComponentInChildren<AnimancerComponent>();
+        }
 
         protected override void Enable() {
             Parent.OnRoll += OnRoll;
             Parent.OnRangeAttack += OnRangeAttack;
+            Parent.OnRangeAttackHeld += OnRangeAttackHeld;
             Parent.OnCharacterStateChanged += OnCharacterStateChanged;
+            _shootWindupClip.Events.OnEnd += PauseGraph;
             UpdateManager.AddUpdateListener(this);
         }
 
         protected override void Disable() {
             Parent.OnRoll -= OnRoll;
             Parent.OnRangeAttack -= OnRangeAttack;
+            Parent.OnRangeAttackHeld -= OnRangeAttackHeld;
             Parent.OnCharacterStateChanged -= OnCharacterStateChanged;
+            _shootWindupClip.Events.OnEnd -= PauseGraph;
             UpdateManager.RemoveUpdateListener(this);
         }
 
         private void OnRoll() {
             _animancer.Play(_rollClip);
+        }
+        
+        private void OnRangeAttackHeld() {
+            _animancer.Play(_shootWindupClip);
         }
 
         private void OnRangeAttack() {
@@ -46,6 +57,8 @@ namespace VHS {
         }
         
         private void OnCharacterStateChanged(CharacterModule module) {
+            return;
+            
             switch (module) {
                 case CharacterRangeCombat range:
                     _animancer.Play(_shootClip);
@@ -64,6 +77,10 @@ namespace VHS {
                     // _animancer.Play(_rollClip);
                     break;
             }
+        }
+
+        public void PauseGraph() {
+            _animancer.Playable.PauseGraph();
         }
     }
 }

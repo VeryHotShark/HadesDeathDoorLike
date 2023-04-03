@@ -26,6 +26,7 @@ namespace VHS {
         
         public Action OnRoll = delegate { };
         public Action OnRangeAttack = delegate { };
+        public Action OnRangeAttackHeld = delegate { };
         public Action<int> OnLightAttack = delegate {};
         public Action OnHeavyAttack = delegate {};
         public Action OnHeavyAttackHeld = delegate {};
