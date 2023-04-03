@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Editor/Scripts/Wizard/SetupWizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TheraBytes/BetterUI/Editor/Scripts/Wizard/SetupWizard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/PolygonPrototype/Materials/PolygonPrototype_Texture_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/PolygonPrototype/Materials/PolygonPrototype_Texture_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RiderFlow.UserData/Editor/Scenes/Sections.Map/a46f6b580da45ac4f8be3344009c877b.userdata" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RiderFlow.UserData/Editor/Scenes/Sections.Map/a46f6b580da45ac4f8be3344009c877b.userdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/DummyTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Npc/DummyTarget.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +154,7 @@
       <workItem from="1680200592376" duration="2845000" />
       <workItem from="1680379275231" duration="1217000" />
       <workItem from="1680473028022" duration="620000" />
+      <workItem from="1680545212803" duration="872000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,8 @@ using UnityEngine;
 namespace VHS {
     public class DummyTarget : MonoBehaviour, IHittable {
 
+        [SerializeField, ColorUsage(false,true)] private Color _flashColor = Color.white * 1.5f;
+        
         private MMF_Player _hitFeedbacks;
 
         private void Awake() {
@@ -17,7 +19,7 @@ namespace VHS {
                 BoundRenderer = GetComponentInChildren<Renderer>(),
                 FlickerDuration = 0.1f,
                 FlickerOctave = 0.04f,
-                FlickerColor = Color.white * 1.5f,
+                FlickerColor = _flashColor,
                 Mode = MMF_Flicker.Modes.PropertyName,
                 UseMaterialPropertyBlocks = true,
                 MaterialIndexes = new [] {0},
