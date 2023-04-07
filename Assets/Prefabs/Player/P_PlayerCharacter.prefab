@@ -345,9 +345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
-  _maxAmmoCount: 4
-  _speed: 45
-  _projectile: {fileID: 4264151059569921054, guid: 78ffa31571dc4bf46a8e336b3291648d, type: 3}
 --- !u!114 &1866718725280065594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,6 +716,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _meleeWeaponID: {fileID: 11400000, guid: 0a0165bc1014f4347a9b293b108f572c, type: 2}
+  _rangeWeaponID: {fileID: 11400000, guid: 5e8c64b9188a6644f90815b9acb21980, type: 2}
   _weaponSocket: {fileID: 5074986791276105340}
 --- !u!114 &-6901970142474631732
 MonoBehaviour:

@@ -9,7 +9,7 @@ namespace VHS {
         void OnReset();
         void OnTick(float deltaTime);
 
-        bool CanEnterState() => true;
-        bool CanExitState() => true;
+        bool CanEnterState();
+        bool CanExitState();
     }
 }

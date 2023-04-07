@@ -41,12 +41,12 @@ namespace VHS {
         private bool _heavyAttackHeld;
         private bool _heavyAttackReached;
 
-        public bool IsOnCooldown => CurrentWeapon.IsOnComboCooldown;
+        public bool IsOnCooldown => CurrentWeapon.IsOnCooldown;
         public bool IsDuringAttack => CurrentWeapon.IsDuringAttack;
         public bool IsDuringLastAttack => _lightAttackIndex >= CurrentWeapon.LastLightAttackIndex;
         public bool IsDuringInputBuffering => _preAttackBuffer.IsActive || _postAttackBuffer.IsActive;
         
-        private Weapon CurrentWeapon => Parent.WeaponController.MeleeWeapon;
+        private WeaponMelee CurrentWeapon => Parent.WeaponController.MeleeWeapon;
 
         protected override void Enable() => _postAttackBuffer.OnEnd += OnPostInputBufferEnd;
 
@@ -67,7 +67,7 @@ namespace VHS {
 
         public void OnAttackEnd() {
             if (IsDuringLastAttack)
-                CurrentWeapon.ComboCooldown.Start();
+                CurrentWeapon.StartCooldown();
             else
                 _postAttackBuffer.Start();
 
@@ -191,5 +191,7 @@ namespace VHS {
             
             _anyHitEvent?.Raise(this);
         }
+
+        public override bool CanEnterState() => !IsOnCooldown;
     }
 }

@@ -4,7 +4,7 @@ using Animancer;
 using UnityEngine;
 
 namespace VHS {
-    public class WeaponKatana : Weapon {
+    public class WeaponKatana : WeaponMelee {
         [SerializeField] private ClipTransition _mirroredHeavy;
         [SerializeField] private ClipTransition _mirroredHeavyWindup;
 

@@ -66,11 +66,11 @@ namespace VHS {
 
             // TODO Add CanEnterState to Modules
             if (Motor.GroundingStatus.IsStableOnGround) {
-                if (inputs.Roll.Pressed && !_rollModule.OnCoooldown)
+                if (inputs.Roll.Pressed)
                     _stateMachine.SetState(_rollModule);
-                else if (inputs.Secondary.Pressed && _rangeCombatModule.HasAmmo)
+                else if (inputs.Secondary.Pressed)
                     _stateMachine.SetState(_rangeCombatModule);
-                else if(inputs.Primary.Pressed && Parent.WeaponController.HasMeleeWeapon && !_meleeCombatModule.IsOnCooldown)
+                else if(inputs.Primary.Pressed)
                     _stateMachine.SetState(_meleeCombatModule);
                 else if(inputs.Ultimate.Pressed)
                     _stateMachine.SetState(_skillCombatModule);

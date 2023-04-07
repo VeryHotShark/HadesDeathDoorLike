@@ -8,28 +8,26 @@ using UnityEngine.Pool;
 
 namespace VHS {
     public class CharacterRangeCombat : CharacterModule {
-        [SerializeField] private int _maxAmmoCount = 4;
-        [SerializeField] private float _speed = 35.0f;
-        [SerializeField] private Projectile _projectile;
+        private WeaponRange CurrentWeapon => Parent.WeaponController.WeaponRange;
 
-        private int _currentAmmo;
-
-        public bool HasAmmo => _currentAmmo > 0;
-        public int MaxAmmoCount => _maxAmmoCount;
-        
-        private void Awake() => _currentAmmo = _maxAmmoCount;
+        public bool HasAmmo => Parent.WeaponController.WeaponRange.HasAmmo;
+        public bool IsOnCooldown => Parent.WeaponController.WeaponRange.IsOnCooldown;
+        public int MaxAmmoCount => Parent.WeaponController.WeaponRange.MaxAmmoCount;
 
         private void OnEnable() => Parent.OnMeleeHit += OnMeleeHit;
         private void OnDisable() => Parent.OnMeleeHit -= OnMeleeHit;
 
-        private void OnMeleeHit(HitData hitData) => ModifyCurrentAmmo(1);
+        private void OnMeleeHit(HitData hitData) => CurrentWeapon.ModifyCurrentAmmo(1);
 
         public override void SetInputs(CharacterInputs inputs) {
+            if (inputs.Secondary.Performed)
+                OnRangeAttackReached();
+            
             if (inputs.Secondary.Held)
-                OnRangeWindup();
+                OnRangeAttackHeld();
             
             if(inputs.Secondary.Released)
-                Shoot();
+                OnRangeAttackReleased();
         }
 
         public override void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
@@ -37,28 +35,31 @@ namespace VHS {
             Controller.LastNonZeroMoveInput = Controller.LookInput;
         }
 
-        public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {
-            currentVelocity = Vector3.zero;
+        public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) => currentVelocity = Vector3.zero;
+
+        private void OnRangeAttackReached() {
+            CurrentWeapon.OnRangeAttackReached();
         }
 
-        private void OnRangeWindup() {
-            Parent.OnRangeAttackHeld();
+        private void OnRangeAttackHeld() {
+            CurrentWeapon.OnRangeAttackHeld();
         }
 
-        public void Shoot() {
+        private void OnRangeAttackReleased() {
             Parent.OnRangeAttack();
-            ModifyCurrentAmmo(-1);
-            Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
-            Quaternion spawnRot = Quaternion.LookRotation(Controller.LookInput);
-            PoolManager.Spawn(_projectile, spawnPos, spawnRot).Init(Parent);
-            (_projectile as ProjectileBullet).SetSpeed(_speed); // TODO zmienić
+            CurrentWeapon.OnRangeAttack();
+            CurrentWeapon.StartCooldown();
             Controller.TransitionToDefaultState();
         }
 
-        private void ModifyCurrentAmmo(int amount) {
-            _currentAmmo = Mathf.Clamp(_currentAmmo + amount, 0, _maxAmmoCount);
-            Parent.OnCurrentAmmoChanged(_currentAmmo);
+        public Projectile SpawnProjectile(Projectile prefab) {
+            Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
+            Quaternion spawnRot = Quaternion.LookRotation(Controller.LookInput);
+            Projectile  projectile =PoolManager.Spawn(prefab, spawnPos, spawnRot);
+            projectile.Init(Parent);
+            return projectile;
         }
 
+        public override bool CanEnterState() => HasAmmo && !IsOnCooldown;
     }
 }

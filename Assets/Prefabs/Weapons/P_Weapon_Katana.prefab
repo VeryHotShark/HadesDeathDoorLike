@@ -98,10 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
-  _slashParticle: {fileID: 6445826192643391251, guid: 60d310309985b9d4e9917e6e851e63c9, type: 3}
-  _comboCooldown:
+  _cooldown:
     _duration: 0.3
     _looping: 0
+  _slashParticle: {fileID: 6445826192643391251, guid: 60d310309985b9d4e9917e6e851e63c9, type: 3}
   _lightAttacks:
   - damage: 1
     duration:

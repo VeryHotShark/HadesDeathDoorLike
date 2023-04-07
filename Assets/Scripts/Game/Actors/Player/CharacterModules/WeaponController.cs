@@ -6,14 +6,21 @@ using UnityEngine;
 namespace VHS {
     public class WeaponController : ChildBehaviour<Player> {
         [SerializeField] private WeaponID _meleeWeaponID;
+        [SerializeField] private WeaponID _rangeWeaponID;
         [SerializeField] private Transform _weaponSocket;
 
-        private Weapon _meleeWeapon;
-        public Weapon MeleeWeapon => _meleeWeapon;
+        private WeaponMelee _meleeWeapon;
+        private WeaponRange _rangeWeapon;
+        
+        public WeaponMelee MeleeWeapon => _meleeWeapon;
+        public WeaponRange WeaponRange => _rangeWeapon;
 
         public bool HasMeleeWeapon => _meleeWeapon != null;
 
-        private void Awake() => SpawnMeleeWeapon();
+        private void Awake() {
+            SpawnMeleeWeapon();
+            SpawnRangeWeapon();
+        }
 
         protected override void Enable() => Parent.OnCharacterStateChanged += OnCharacterStateChanged;
         protected override void Disable() => Parent.OnCharacterStateChanged -= OnCharacterStateChanged;
@@ -31,10 +38,15 @@ namespace VHS {
         }
 
         private void SpawnMeleeWeapon() {
-            _meleeWeapon = Instantiate(_meleeWeaponID.Prefab, _weaponSocket);
+            _meleeWeapon = Instantiate(_meleeWeaponID.Prefab, _weaponSocket) as WeaponMelee;
             _meleeWeapon.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             _meleeWeapon.Init(Parent);
             Parent.OnWeaponChanged(_meleeWeapon);
+        }
+
+        private void SpawnRangeWeapon() {
+            _rangeWeapon = Instantiate(_rangeWeaponID.Prefab, _weaponSocket) as WeaponRange;
+            _rangeWeapon.Init(Parent);
         }
     }
 }

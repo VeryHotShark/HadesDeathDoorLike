@@ -8,11 +8,14 @@ namespace VHS {
         private CharacterController _controller;
         protected KinematicCharacterMotor Motor => Controller.Motor;
         protected CharacterController Controller => _controller ??= GetComponent<CharacterController>();
-        
+
         public virtual void OnEnter() { }
         public virtual void OnExit() { }
         public virtual void OnReset() { }
         public virtual void OnTick(float deltaTime) { }
+        
+        public virtual bool CanEnterState() => true;
+        public virtual bool CanExitState() => true;
 
         public virtual void SetInputs(CharacterInputs inputs) { }
         public virtual void HandlePreCharacterUpdate(float deltaTime) { }

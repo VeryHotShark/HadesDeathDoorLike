@@ -95,4 +95,6 @@ public class CharacterRoll : CharacterModule {
         _lostGround = true;
         _rollStopped = true;
     }
+    
+    public override bool CanEnterState() => !OnCoooldown;
 }
