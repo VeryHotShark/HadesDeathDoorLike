@@ -3,20 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerController.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/P_Weapon_Katana.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/P_Weapon_Katana.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DojoScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/StateMachine/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/StateMachine/IState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/AnimationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRoll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRoll.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/WeaponController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapons/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Weapons/WeaponKatana.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapons/WeaponKatana.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveActionIncrementHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveActionIncrementHealth.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveActionIncrementHealth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveActionIncrementStamina.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Skills/Npc/NpcSkillRangeAttack.cs" root0="FORCE_HIGHLIGHTING" />
@@ -177,7 +169,7 @@
       <workItem from="1680379275231" duration="1217000" />
       <workItem from="1680473028022" duration="620000" />
       <workItem from="1680545212803" duration="11250000" />
-      <workItem from="1680901197138" duration="8321000" />
+      <workItem from="1680901197138" duration="9905000" />
     </task>
     <servers />
   </component>

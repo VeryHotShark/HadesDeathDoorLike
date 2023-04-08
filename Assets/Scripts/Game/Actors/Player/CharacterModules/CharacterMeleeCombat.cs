@@ -49,7 +49,6 @@ namespace VHS {
         private WeaponMelee CurrentWeapon => Parent.WeaponController.MeleeWeapon;
 
         protected override void Enable() => _postAttackBuffer.OnEnd += OnPostInputBufferEnd;
-
         protected override void Disable() => _postAttackBuffer.OnEnd -= OnPostInputBufferEnd;
 
         public override void OnEnter() => ResetAttackVariables();

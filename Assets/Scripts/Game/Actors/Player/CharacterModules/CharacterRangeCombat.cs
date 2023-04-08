@@ -14,11 +14,6 @@ namespace VHS {
         public bool IsOnCooldown => Parent.WeaponController.WeaponRange.IsOnCooldown;
         public int MaxAmmoCount => Parent.WeaponController.WeaponRange.MaxAmmoCount;
 
-        private void OnEnable() => Parent.OnMeleeHit += OnMeleeHit;
-        private void OnDisable() => Parent.OnMeleeHit -= OnMeleeHit;
-
-        private void OnMeleeHit(HitData hitData) => CurrentWeapon.ModifyCurrentAmmo(1);
-
         public override void SetInputs(CharacterInputs inputs) {
             if (inputs.Secondary.Performed)
                 OnRangeAttackReached();

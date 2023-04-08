@@ -628,16 +628,26 @@ MonoBehaviour:
   priority: 0
   _passives:
   - _trigger:
-      _triggerType: 1
-      _interval: 5
+      _triggerType: 0
+      _interval: 20
       _gameEvent: {fileID: -9189281669931673665, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
     _action:
       rid: 549692460231032835
+  - _trigger:
+      _triggerType: 1
+      _interval: 3
+      _gameEvent: {fileID: -9189281669931673665, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    _action:
+      rid: 2617311743904841758
   references:
     version: 2
     RefIds:
     - rid: 549692460231032835
       type: {class: PassiveActionIncrementHealth, ns: VHS, asm: Assembly-CSharp}
+      data:
+        _amount: 1
+    - rid: 2617311743904841758
+      type: {class: PassiveActionIncrementStamina, ns: VHS, asm: Assembly-CSharp}
       data:
         _amount: 1
 --- !u!114 &4752561177657328525
@@ -682,25 +692,6 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 347fbfac4e6fefb42ab52b2bd96854e4, type: 3}
     _Speed: 1.6
     _NormalizedStartTime: 0.016666666
-  _shootClip:
-    _FadeDuration: 0
-    _Events:
-      _NormalizedTimes: []
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: bf12677a6be1e77428d098f7aba7ab86, type: 3}
-    _Speed: -1
-    _NormalizedStartTime: 0.4
-  _shootWindupClip:
-    _FadeDuration: 0.2
-    _Events:
-      _NormalizedTimes:
-      - 0.4
-      _Callbacks: []
-      _Names: []
-    _Clip: {fileID: 7400000, guid: bf12677a6be1e77428d098f7aba7ab86, type: 3}
-    _Speed: -1.5
-    _NormalizedStartTime: NaN
 --- !u!114 &5605950517285389633
 MonoBehaviour:
   m_ObjectHideFlags: 0

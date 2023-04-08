@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
-  m_Name: EVT_AnyAttackHit
+  m_Name: EVT_AnyMeleeAttackHit
   m_EditorClassIdentifier: 
 --- !u!114 &-8319130847581474887
 MonoBehaviour:

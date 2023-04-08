@@ -15,8 +15,6 @@ namespace VHS {
         public WeaponMelee MeleeWeapon => _meleeWeapon;
         public WeaponRange WeaponRange => _rangeWeapon;
 
-        public bool HasMeleeWeapon => _meleeWeapon != null;
-
         private void Awake() {
             SpawnMeleeWeapon();
             SpawnRangeWeapon();
