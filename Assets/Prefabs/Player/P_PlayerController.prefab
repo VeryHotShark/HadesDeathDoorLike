@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 5.4609375
+      value: 12.726562
       objectReference: {fileID: 0}
     - target: {fileID: 3484941369325991831, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: staminaFillPointPrefab
@@ -310,15 +310,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Spacing
-      value: 4.8541665
+      value: 11.312499
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 8
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 8
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7382580064569857742, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: _customUpdate
@@ -385,6 +385,42 @@ PrefabInstance:
     - target: {fileID: 1866718725280065597, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900655775530972018, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _startPassives.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900655775530972018, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _startPassives.Array.data[0]._action
+      value: 1066911297432715264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900655775530972018, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: managedReferences[1066911297432715264]
+      value: Assembly-CSharp VHS.PassiveActionIncrementStamina
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900655775530972018, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: managedReferences[1066911297432715264]._amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900655775530972018, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _startPassives.Array.data[0]._trigger._interval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900655775530972018, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _startPassives.Array.data[0]._trigger._gameEvent
+      value: 
+      objectReference: {fileID: -9189281669931673665, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+    - target: {fileID: 3900655775530972018, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: _startPassives.Array.data[0]._trigger._triggerType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074986791276105340, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.109998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074986791276105340, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000009934107
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}

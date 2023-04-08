@@ -15,14 +15,14 @@ namespace VHS {
         private bool _waitForEndOfFrameCached;
         private bool _waitForFixedUpdateCached;
         
-        private Transform _transform;
+        // private Transform _transform;
         private WaitForEndOfFrame _frame;
         private WaitForFixedUpdate _fixedFrame;
 
         protected WaitForEndOfFrame Frame => _frame ??= new WaitForEndOfFrame();
         protected WaitForFixedUpdate FixedFrame => _fixedFrame ??= new WaitForFixedUpdate();
             
-        public new Transform transform => _transform ??= GetComponent<Transform>();
+        // public new Transform transform => _transform ??= GetComponent<Transform>();
 
         private void OnEnable() {
             if(_customUpdate)

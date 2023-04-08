@@ -8,6 +8,6 @@ namespace VHS {
     public class PassiveActionIncrementStamina : PassiveAction<Player> {
         public int _amount = 1;
         
-        public override void PerformAction() => _actor.WeaponController.WeaponRange.ModifyCurrentAmmo(_amount);
+        public override void PerformAction() => _owner.WeaponController.WeaponRange.ModifyCurrentAmmo(_amount);
     }
 }

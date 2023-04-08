@@ -17,8 +17,11 @@ namespace VHS {
     }
 
     public abstract class PassiveAction<T> : PassiveAction where T : Actor {
-        protected new T _actor;
+        protected T _owner;
 
-        public override void Init(Actor actor) => _actor = (T)actor;
+        public override void Init(Actor actor) {
+            base.Init(actor);
+            _owner = (T) actor;
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace VHS {
     public enum PassiveTriggerType {
         Interval,
         Event,
+        Instant
     }
 
     [Serializable]
@@ -29,6 +30,9 @@ namespace VHS {
                     break;
                 case PassiveTriggerType.Event:
                     _gameEvent.OnEventRaised += OnEventRaised;
+                    break;
+                case PassiveTriggerType.Instant:
+                    OnTriggered();
                     break;
             }
         }
