@@ -132,7 +132,7 @@ namespace VHS {
 
                 if (hittable == null || hitAngle > attackInfo.angle)
                     continue;
-                
+            
                 HitData hitData = new HitData {
                     damage = attackInfo.damage,
                     actor = _player,

@@ -7,7 +7,9 @@ using MEC;
 namespace VHS {
     
     public class GameController : LevelController {
-        
+        [SerializeField] private Feedback _endLevelFeedback;
+
+
         private UIController _uiController;
         private SpawnController _spawnController;
         private PlayerSpawnController _playerSpawnController;
@@ -42,7 +44,10 @@ namespace VHS {
 
         private void OnLevelFinished() {
             foreach (ExitDoor exitDoor in _exitDoors)
-                exitDoor.SetLocked(false);            
+                exitDoor.SetLocked(false);
+
+            PoolManager.Spawn(_endLevelFeedback, Vector3.zero, Quaternion.identity);
+            
         }
 
         protected override void StartLevel() {

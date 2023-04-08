@@ -8,7 +8,6 @@ using UnityEngine.Events;
 namespace VHS {
     public class Feedback : MonoBehaviour, IPoolable {
         private MMF_Player _mmfPlayer;
-
         public MMF_Player FeedbackPlayer => _mmfPlayer;
 
         private void Awake() {
