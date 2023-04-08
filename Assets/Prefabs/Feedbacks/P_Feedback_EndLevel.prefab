@@ -141,7 +141,7 @@ MonoBehaviour:
         Timing:
           TimescaleMode: 1
           ExcludeFromHoldingPauses: 0
-          ContributeToTotalDuration: 1
+          ContributeToTotalDuration: 0
           InitialDelay: 0
           CooldownDuration: 0
           InterruptsOnStop: 1
@@ -246,7 +246,7 @@ MonoBehaviour:
         Timing:
           TimescaleMode: 1
           ExcludeFromHoldingPauses: 0
-          ContributeToTotalDuration: 1
+          ContributeToTotalDuration: 0
           InitialDelay: 0
           CooldownDuration: 0
           InterruptsOnStop: 1
