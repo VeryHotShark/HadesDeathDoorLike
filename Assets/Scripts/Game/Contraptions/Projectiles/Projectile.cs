@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
@@ -12,11 +13,13 @@ namespace VHS {
         [SerializeField] protected int _damage;
         [SerializeField] protected MMF_Player _hitFeedback;
 
+        public Action<Projectile, HitData> OnHit = delegate { };
+
         protected float _lifeTimer;
         protected IActor _owner;
 
         protected abstract bool CheckForCollision();
-        protected abstract void OnHit();
+        protected abstract void Hit();
 
         public override void OnCustomUpdate(float deltaTime) {
             _lifeTimer -= deltaTime;
@@ -29,6 +32,13 @@ namespace VHS {
 
         protected virtual void OnLifetimeExpired() => PoolManager.Return(this);
 
+        protected virtual void RaiseEvents(HitData hitData) {
+            OnHit(this, hitData);
+
+            if (_owner != null)
+                _owner.LastDealtData = hitData;
+        }
+        
         protected virtual void PlayHitFX() {
             if (_hitFeedback) {
                 // TODO make this spawn Feedback

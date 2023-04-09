@@ -169,6 +169,7 @@ namespace VHS {
 
         public void OnAttackHit(HitData hitData) {
             Parent.OnMeleeHit(hitData);
+            Parent.LastDealtData = hitData;
             
             switch (hitData.playerAttackType) {
                 case PlayerAttackType.LIGHT:

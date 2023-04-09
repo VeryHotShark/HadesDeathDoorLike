@@ -8,6 +8,8 @@ using UnityEngine.Pool;
 
 namespace VHS {
     public class CharacterRangeCombat : CharacterModule {
+        [SerializeField] private GameEvent _hitEvent;
+        
         private WeaponRange CurrentWeapon => Parent.WeaponController.WeaponRange;
 
         public bool HasAmmo => Parent.WeaponController.WeaponRange.HasAmmo;
@@ -50,10 +52,13 @@ namespace VHS {
         public Projectile SpawnProjectile(Projectile prefab) {
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
             Quaternion spawnRot = Quaternion.LookRotation(Controller.LookInput);
-            Projectile  projectile =PoolManager.Spawn(prefab, spawnPos, spawnRot);
+            Projectile  projectile = PoolManager.Spawn(prefab, spawnPos, spawnRot);
             projectile.Init(Parent);
+            projectile.OnHit = OnProjectileHit;
             return projectile;
         }
+
+        private void OnProjectileHit(Projectile projectile, HitData hitData) => _hitEvent?.Raise(projectile);
 
         public override bool CanEnterState() => HasAmmo && !IsOnCooldown;
     }

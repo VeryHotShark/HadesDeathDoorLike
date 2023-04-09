@@ -13,6 +13,7 @@ namespace VHS {
             
             _hitPoints.Subtract(hitData.damage);
             
+            Parent.LastHitData = hitData;
             Parent.OnHit(hitData);
 
             if (!_hitPoints.AboveZero) 

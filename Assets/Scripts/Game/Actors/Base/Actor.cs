@@ -20,6 +20,10 @@ namespace VHS {
         protected DeathProcessorComponent _deathProcessorComponent;
         
         public GameObject GameObject => gameObject;
+        
+        public HitData LastHitData { get; set; }
+        public HitData LastDealtData { get; set; }
+        
         public HitPoints HitPoints => _hitProcessorComponent.HitPoints;
 
         public virtual Vector3 FeetPosition => transform.position;

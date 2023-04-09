@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
-  _deathEvent: {fileID: -4948686910326481164, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
-  _hitEvent: {fileID: -243778506023724903, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
+  _deathEvent: {fileID: -4045129071139456866, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
+  _hitEvent: {fileID: -1940056905711698346, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
 --- !u!54 &1866718725280065581
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -345,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
+  _hitEvent: {fileID: -6450641512531500500, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
 --- !u!114 &1866718725280065594
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
-  m_Name: EVT_Death
+  m_Name: EVT_EnemyDeath
   m_EditorClassIdentifier: 
---- !u!114 &-243778506023724903
+--- !u!114 &-4045129071139456866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22,7 +22,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
-  m_Name: EVT_OnBeingHit
+  m_Name: EVT_PlayerDeath
+  m_EditorClassIdentifier: 
+--- !u!114 &-1940056905711698346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
+  m_Name: EVT_PlayerHit
   m_EditorClassIdentifier: 
 --- !u!114 &11400000
 MonoBehaviour:
@@ -37,7 +49,20 @@ MonoBehaviour:
   m_Name: GES_Actors
   m_EditorClassIdentifier: 
   GameEvents:
-  - {fileID: -243778506023724903}
-  - {fileID: 0}
+  - {fileID: 7256634008489309537}
+  - {fileID: -1940056905711698346}
   - {fileID: -4948686910326481164}
   - {fileID: 0}
+  - {fileID: -4045129071139456866}
+--- !u!114 &7256634008489309537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
+  m_Name: EVT_EnemyHit
+  m_EditorClassIdentifier: 

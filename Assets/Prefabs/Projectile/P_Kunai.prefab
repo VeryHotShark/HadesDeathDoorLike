@@ -213,6 +213,7 @@ MonoBehaviour:
   _lifeTime: 3
   _damage: 1
   _hitFeedback: {fileID: 7679643324742484208}
+  _hitEvent: {fileID: -6450641512531500500, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
   _speed: 45
   _gravity: 0
 --- !u!1 &7610582763238336789

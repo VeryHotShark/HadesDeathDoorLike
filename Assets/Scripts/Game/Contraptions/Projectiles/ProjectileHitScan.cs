@@ -8,7 +8,7 @@ namespace VHS {
             throw new System.NotImplementedException();
         }
 
-        protected override void OnHit() {
+        protected override void Hit() {
             throw new System.NotImplementedException();
         }
     }

@@ -9,15 +9,5 @@ namespace VHS {
     /// </summary>
     public class PlayerHitProcessorComponent : HitProcessorComponent<Player> {
         
-        public override void Hit(HitData hitData) {
-            if(!_hitPoints.AboveZero)
-                return;
-
-            _hitPoints.Subtract(hitData.damage);
-            Parent.OnHit(hitData);
-
-            if (!_hitPoints.AboveZero) 
-                Parent.Die();            
-        }
     }
 }

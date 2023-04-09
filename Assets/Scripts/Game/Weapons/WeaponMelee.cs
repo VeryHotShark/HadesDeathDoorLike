@@ -134,6 +134,7 @@ namespace VHS {
                     continue;
             
                 HitData hitData = new HitData {
+                    hittable = hittable,
                     damage = attackInfo.damage,
                     actor = _player,
                     dealer = gameObject,

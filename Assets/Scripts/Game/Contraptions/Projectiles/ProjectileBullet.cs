@@ -27,7 +27,7 @@ namespace VHS {
             Debug.DrawLine(_lastPosition,transform.position, Color.blue);
 
             if (CheckForCollision())    
-                OnHit();
+                Hit();
 
             _lastPosition = transform.position;
         }
@@ -42,20 +42,24 @@ namespace VHS {
             Physics.Linecast(_lastPosition, transform.position, out _hitInfo,
                 LayerManager.Masks.DEFAULT_AND_ACTORS);
 
-        protected override void OnHit() {
+        protected override void Hit() {
             IHittable hittable = _hitInfo.transform.GetComponentInParent<IHittable>();
             
             if (hittable != null) {
                 HitData hitData = new HitData {
-                    actor = _owner,
+                    position = _hitInfo.point,
+                    hittable = hittable,
                     dealer = gameObject,
+                    actor = _owner,
                     damage = _damage,
+                    playerAttackType = PlayerAttackType.RANGE,
                 };
-              
+                
                 hittable.Hit(hitData);
+                RaiseEvents(hitData);
                 PlayHitFX();
             }
-            
+
             PoolManager.Return(this);
         }
 

@@ -59,6 +59,14 @@ PrefabInstance:
       propertyPath: _enemyID
       value: 
       objectReference: {fileID: 11400000, guid: 95fa9b38ae8430f49b6a1260cef9ece7, type: 2}
+    - target: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+      propertyPath: _hitEvent
+      value: 
+      objectReference: {fileID: 7256634008489309537, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
+    - target: {fileID: 373866698703507964, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+      propertyPath: _deathEvent
+      value: 
+      objectReference: {fileID: -4948686910326481164, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
     - target: {fileID: 373866698728531749, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
