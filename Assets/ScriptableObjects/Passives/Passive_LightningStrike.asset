@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b362f7e15a7e14458f08b5745496aec, type: 3}
   m_Name: Passive_LightningStrike
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
   _icon: {fileID: 21300000, guid: 85b4f0956ff764269b9dcb974286977e, type: 3}
   _name: Lightning Strike
   _description: Strikes Enemies every x Seconds
   _passive:
     _trigger:
-      _triggerType: 0
-      _interval: 3
-      _gameEvent: {fileID: 0}
+      rid: 2617311788291325971
     _action:
       rid: 2617311777596112915
   references:
@@ -33,3 +32,9 @@ MonoBehaviour:
         radius: 5
         hitFeedback: {fileID: -8353214994537225984, guid: f0b05f03df5b72c4eb5a8f8e870ac2cb, type: 3}
         particle: {fileID: 3298263891686694609, guid: d7b6718ad13d4574084ee36a2089a7c8, type: 3}
+    - rid: 2617311788291325971
+      type: {class: PassiveTrigger, ns: VHS, asm: Assembly-CSharp}
+      data:
+        _triggerType: 0
+        _interval: 3
+        _gameEvent: {fileID: 0}

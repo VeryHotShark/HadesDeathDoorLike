@@ -11,7 +11,6 @@ using MEC;
 using Sirenix.OdinInspector;
 using TMPro;
 using Trisibo;
-using UnityEditor;
 using UnityEngine.InputSystem;
 
 namespace VHS {
@@ -68,7 +67,7 @@ namespace VHS {
             Instance._canvas.gameObject.SetActive(false);
         }
         
-        [MenuItem("Tools/Hyperstrange/OpenScenes/Game")]
+        //[MenuItem("Tools/Hyperstrange/OpenScenes/Game")]
         private static void OpenGame() {
             
         }

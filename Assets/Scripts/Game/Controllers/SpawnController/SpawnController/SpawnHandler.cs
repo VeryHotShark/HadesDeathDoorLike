@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace VHS {
     [Serializable]
@@ -14,7 +11,7 @@ namespace VHS {
         
         public virtual void OnTick(float dt) {
             _timer += dt;
-            ConsoleProDebug.Watch("Spawn Timer", _timer.ToString());
+            // ConsoleProDebug.Watch("Spawn Timer", _timer.ToString());
         }
         
         public virtual void Finish() => _spawnController.FinishCallback();

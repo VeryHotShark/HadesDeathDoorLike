@@ -37,6 +37,7 @@ namespace VHS {
                     break;
             }
             
+            
             GameManager.ResumeGame();
         }
 

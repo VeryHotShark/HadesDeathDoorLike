@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace VHS {
     public class ShopItemsManager : Singleton<ShopItemsManager> {
-        [SerializeField] private SkillSO[] _skills;
-        [SerializeField] private PassiveSO[] _passives;
+        [SerializeField] private List<SkillSO> _skills = new List<SkillSO>();
+        [SerializeField] private List<PassiveSO> _passives = new List<PassiveSO>();
 
         public static PassiveSO GetRandomPassiveSO() => Instance._passives.GetRandomElement();
-        public static PassiveSO GetRandomSkillSO() => Instance._passives.GetRandomElement();
+        public static SkillSO GetRandomSkillSO() => Instance._skills.GetRandomElement();
     }
 }

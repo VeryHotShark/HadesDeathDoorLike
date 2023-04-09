@@ -11,8 +11,8 @@ namespace VHS {
         private void Awake() {
             foreach (var passive in _startPassives)
                 passive.Instance.Init(Parent);
-            
-            foreach (var passive in PassiveManager.RuntimePassives)
+
+            foreach (var passive in PassiveManager.RuntimePassives) 
                 passive.Instance.Init(Parent);
         }
 

@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b362f7e15a7e14458f08b5745496aec, type: 3}
   m_Name: Passive_StaminaRoll
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
   _icon: {fileID: 21300000, guid: 99dff1874a9b944a28871c38c7dc5e84, type: 3}
   _name: Stamina Steal
   _description: Regain One Stamina Per Roll
   _passive:
     _trigger:
       _triggerType: 1
-      _interval: 3
-      _gameEvent: {fileID: -5421682918108740309, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+      interval: 3
+      gameEvent: {fileID: 11400000, guid: 0bf6a1c73de5cdf49a3092bb3774d947, type: 2}
     _action:
       rid: 2617311777596112912
   references:

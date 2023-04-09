@@ -17,18 +17,18 @@ namespace VHS {
         public PassiveTriggerType _triggerType;
 
         [ShowIf("_triggerType", PassiveTriggerType.Interval)]
-        public float _interval = 3.0f;
+        public float interval = 3.0f;
 
         [ShowIf("_triggerType", PassiveTriggerType.Event)]
-        public GameEvent _gameEvent;
+        public GameEvent gameEvent;
 
         public virtual void OnEnable() {
             switch (_triggerType) {
                 case PassiveTriggerType.Interval:
-                    UpdateManager.AddCustomUpdateListener(_interval, this);
+                    UpdateManager.AddCustomUpdateListener(interval, this);
                     break;
                 case PassiveTriggerType.Event:
-                    _gameEvent.OnEventRaised += OnEventRaised;
+                    gameEvent.OnEventRaised += OnGameEventRaised;
                     break;
             }
         }
@@ -36,10 +36,10 @@ namespace VHS {
         public virtual void OnDisable() {
             switch (_triggerType) {
                 case PassiveTriggerType.Interval:
-                    UpdateManager.RemoveCustomUpdateListener(_interval, this);
+                    UpdateManager.RemoveCustomUpdateListener(interval, this);
                     break;
                 case PassiveTriggerType.Event:
-                    _gameEvent.OnEventRaised -= OnEventRaised;
+                    gameEvent.OnEventRaised -= OnGameEventRaised;
                     break;
             }
         }
@@ -48,6 +48,6 @@ namespace VHS {
 
         public void OnCustomUpdate(float deltaTime) => OnTriggered();
 
-        private void OnEventRaised(UnityEngine.Object sender) => OnTriggered();
+        private void OnGameEventRaised(UnityEngine.Object sender) => OnTriggered();
     }
 }

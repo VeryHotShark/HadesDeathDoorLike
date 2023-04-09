@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b362f7e15a7e14458f08b5745496aec, type: 3}
   m_Name: Passive_LifeSteal
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
   _icon: {fileID: 21300000, guid: f9552474e117b4fa0be24761c7f3c7dc, type: 3}
   _name: Life Steal
-  _description: Regain One Healt Point Per Heavy Hit
+  _description: Regain One Healt Point Per  Hit
   _passive:
     _trigger:
       _triggerType: 1
-      _interval: 3
-      _gameEvent: {fileID: 260569354217564207, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+      interval: 3
+      gameEvent: {fileID: -9189281669931673665, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
     _action:
       rid: 2617311777596112911
   references:

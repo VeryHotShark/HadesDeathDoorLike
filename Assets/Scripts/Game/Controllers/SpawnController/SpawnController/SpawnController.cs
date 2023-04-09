@@ -163,8 +163,11 @@ namespace VHS {
             UpdateManager.AddSlowUpdateListener(this);
         }
 
-        public void OnSlowUpdate(float deltaTime) => _spawnHandler.OnTick(deltaTime);
-        
+        public void OnSlowUpdate(float deltaTime) {
+            if(Parent.Player != null)
+                _spawnHandler.OnTick(deltaTime);
+        }
+
         public void FinishCallback() {
             OnFinished();
             UpdateManager.RemoveSlowUpdateListener(this);

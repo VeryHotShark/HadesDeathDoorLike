@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using MoreMountains.FeedbacksForThirdParty;
-using UnityEditor.MPE;
 using UnityEngine;
 
 namespace VHS {

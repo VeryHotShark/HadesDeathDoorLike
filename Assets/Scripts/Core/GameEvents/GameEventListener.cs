@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace VHS {
-    public abstract class GameEventListener : BaseBehaviour {
+    public class GameEventListener : BaseBehaviour {
 
-        [SerializeField] private GameEvent gameEventToListenTo = null;
+        [SerializeField] private GameEvent _gameEventToListenTo = null;
+        [SerializeField] private UnityEvent<Object> _onGameEventRaised;
 
-        public abstract void OnEventRaised(UnityEngine.Object raiser);
+        public void OnEventRaised(Object raiser) => _onGameEventRaised.Invoke(raiser);
 
         protected virtual void OnEnable() {
-            if (gameEventToListenTo)
-                gameEventToListenTo.RegisterListener(this);
+            if (_gameEventToListenTo)
+                _gameEventToListenTo.RegisterListener(this);
         }
 
         protected virtual void OnDisable() {
-            if (gameEventToListenTo)
-                gameEventToListenTo.UnregisterListener(this);
+            if (_gameEventToListenTo)
+                _gameEventToListenTo.UnregisterListener(this);
         }
 
     }

@@ -1,12 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Management.Instrumentation;
 using TheraBytes.BetterUi;
 using TMPro;
-using UnityEditor.Animations.Rigging;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace VHS {
     public class UIShopItem : ChildBehaviour<UIShopModule> {

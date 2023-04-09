@@ -390,7 +390,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _rollEvent: {fileID: -5421682918108740309, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+  _rollEvent: {fileID: 11400000, guid: 0bf6a1c73de5cdf49a3092bb3774d947, type: 2}
 --- !u!114 &3369422274557123374
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_AnyMeleeAttackHit
   m_EditorClassIdentifier: 
+  _guid: 6c9193bdff94e844aa053abef34c2841
 --- !u!114 &-8319130847581474887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,6 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_LightDashHit
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &-6450641512531500500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,6 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_ProjectileHit
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &-5421682918108740309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_Roll
   m_EditorClassIdentifier: 
+  _guid: 0dfd1bf1f4738234e8e3ca305e6f2716
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_HeavyHit
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &1154590139618921918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_HeavyDashAttack
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &1239737310595297918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_HeavyAttack
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &2134053037988666889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_LightHit
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &3652847077477962159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_LightDashAttack
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &7066608735867538234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_LightAttack
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID
 --- !u!114 &7924356764224376721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,3 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a7d3a3bdbc2f74498a3709180612be, type: 3}
   m_Name: EVT_HeavyDashHit
   m_EditorClassIdentifier: 
+  _guid: GENERATE ID

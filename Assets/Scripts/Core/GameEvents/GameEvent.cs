@@ -1,10 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Sirenix.OdinInspector;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace VHS {
+    [CreateAssetMenu(menuName = "VHS/GameEvent")]
     public class GameEvent : ScriptableObject {
-
         public Action<UnityEngine.Object> OnEventRaised = delegate { };
 
         private List<GameEventListener> _listeners = new List<GameEventListener>();
@@ -14,11 +19,11 @@ namespace VHS {
         public GameEventStorage GameEventStorage { get; private set; }
 
         public void Raise(UnityEngine.Object sender) {
-            //Debug.Log(string.Format("Event {0} raised by {1}", name, sender.name));
+            // Debug.LogError(string.Format("Event {0} raised by {1}", name, sender.name));
 
             for (int i = _listeners.Count - 1; i >= 0; i--)
                 _listeners[i].OnEventRaised(sender);
-
+            
             OnEventRaised(sender);
         }
 
@@ -33,7 +38,6 @@ namespace VHS {
         }
 
         public void SetGameEventStorage(GameEventStorage gameEventStorage) => GameEventStorage = gameEventStorage;
-
     }
 }
 
