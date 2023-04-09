@@ -21,6 +21,7 @@ namespace VHS {
 
         protected override void GetComponents() {
             _exitDoors = FindObjectsOfType<ExitDoor>();
+            _uiController = GetComponentInChildren<UIController>();
             _spawnController = GetComponentInChildren<SpawnController>();
             _playerSpawnController = GetComponentInChildren<PlayerSpawnController>();
         }
@@ -45,8 +46,13 @@ namespace VHS {
             foreach (ExitDoor exitDoor in _exitDoors)
                 exitDoor.SetLocked(false);
 
-            PoolManager.Spawn(_endLevelFeedback, Vector3.zero, Quaternion.identity);
-            Timing.CallDelayed(1.0f,() => _uiController.ShopModule.Show(true));
+            Feedback feedback = PoolManager.Spawn(_endLevelFeedback, Vector3.zero, Quaternion.identity);
+            feedback.OnComplete = ShowShop;
+        }
+
+        private void ShowShop() {
+            _uiController.ShopModule.Show(true);
+            GameManager.PauseGame();
         }
 
         protected override void StartLevel() {

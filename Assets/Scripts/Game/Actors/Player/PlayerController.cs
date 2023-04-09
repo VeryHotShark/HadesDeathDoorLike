@@ -74,7 +74,7 @@ namespace VHS {
         public void OnUpdate(float deltaTime) => HandleCharacterInput();
 
         public void OnLateUpdate(float deltaTime) {
-            if(!_character)
+            if(!_character || GameManager.IsPaused)
                 return;
             
             _camera.SetCursorPos(_mousePos);
@@ -92,7 +92,7 @@ namespace VHS {
         }
 
         private void HandleCharacterInput() {
-            if(!_character)
+            if(!_character || GameManager.IsPaused)
                 return;
 
             _characterInputs = new CharacterInputs();

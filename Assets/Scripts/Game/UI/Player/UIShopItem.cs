@@ -10,6 +10,7 @@ using UnityEngine.Serialization;
 
 namespace VHS {
     public class UIShopItem : ChildBehaviour<UIShopModule> {
+        
         [SerializeField] private BetterImage _image;
         [SerializeField] private TextMeshProUGUI _name;
         [SerializeField] private TextMeshProUGUI _description;
@@ -26,7 +27,7 @@ namespace VHS {
         protected override void Disable() => _betterButton.onClick.RemoveListener(OnClick);
 
         private void OnClick() {
-            Log(_shopItemSO.name);
+            // Log(_shopItemSO.name);
             OnSelected(this, this);
         }
 

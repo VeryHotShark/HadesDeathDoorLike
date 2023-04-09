@@ -28,7 +28,15 @@ namespace VHS {
         public void Show(bool state) {
             _canvasGroup.alpha = state ? 1f : 0.0f;
             _canvasGroup.interactable = state && _isCanvasInteractable;
+            
+            if(state)
+                OnShow();
+            else
+                OnHide();
         }
+
+        public virtual void OnShow() { }
+        public virtual void OnHide() { }
     }
 
     public class UIModule<T> : UIModule where T : LevelController {
