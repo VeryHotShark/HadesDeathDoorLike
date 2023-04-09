@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    public class UIController : LevelControllerModule {
-        private SpawnControllerUI _spawnControllerUI;
+    public class UIController : ChildBehaviour<LevelController> {
 
-        private UIModule[] _modules;
+        private UIModule[] _modules = new UIModule[0];
+        private UIShopModule _shopModule;
 
         public LevelController Controller => Parent;
+        public UIShopModule ShopModule => _shopModule;
 
         private void Awake() {
-            _spawnControllerUI = GetComponentInChildren<SpawnControllerUI>();
+            _shopModule = GetComponentInChildren<UIShopModule>();
             _modules = GetComponentsInChildren<UIModule>();
+            
+            foreach (UIModule module in _modules) 
+                module.MyAwake();
         }
 
-        public override void MyEnable() {
-            // foreach (UIModule module in _modules) 
-                // module.MyEnable();
+        protected  override void Enable() {
+            foreach (UIModule module in _modules) 
+                module.MyEnable();
         }
 
-        public override void MyDisable() {
-            // foreach (UIModule module in _modules) 
-                // module.MyDisable();
+        protected override void Disable() {
+            foreach (UIModule module in _modules) 
+                module.MyDisable();
         }
     }
 }

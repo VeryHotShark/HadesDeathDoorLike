@@ -5,10 +5,14 @@ using UnityEngine;
 
 namespace VHS {
     public class UIModule : ChildBehaviour<UIController> {
-        
+
+        private bool _isCanvasInteractable;
         private CanvasGroup _canvasGroup;
         
-        private void Awake() => _canvasGroup = GetComponent<CanvasGroup>();
+        public virtual void MyAwake() {
+            _canvasGroup = GetComponent<CanvasGroup>();
+            _isCanvasInteractable = _canvasGroup.interactable;
+        }
 
 
         /// <summary>
@@ -21,7 +25,10 @@ namespace VHS {
         /// </summary>
         public virtual void MyDisable() { }
 
-        public void Show(bool state) => _canvasGroup.alpha = state ? 1f : 0.0f;
+        public void Show(bool state) {
+            _canvasGroup.alpha = state ? 1f : 0.0f;
+            _canvasGroup.interactable = state && _isCanvasInteractable;
+        }
     }
 
     public class UIModule<T> : UIModule where T : LevelController {

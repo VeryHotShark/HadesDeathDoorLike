@@ -8,8 +8,7 @@ namespace VHS {
     
     public class GameController : LevelController {
         [SerializeField] private Feedback _endLevelFeedback;
-
-
+        
         private UIController _uiController;
         private SpawnController _spawnController;
         private PlayerSpawnController _playerSpawnController;
@@ -26,14 +25,14 @@ namespace VHS {
             _playerSpawnController = GetComponentInChildren<PlayerSpawnController>();
         }
 
-        protected override void MyEnable() {
+        protected override void Enable() {
             PlayerManager.OnPlayerDeath += OnPlayerDeath;
 
             if(_spawnController)
                 _spawnController.OnFinished += OnLevelFinished;
         }
 
-        protected override void MyDisable() {
+        protected override void Disable() {
             PlayerManager.OnPlayerDeath -= OnPlayerDeath;
             
             if(_spawnController)
@@ -47,7 +46,7 @@ namespace VHS {
                 exitDoor.SetLocked(false);
 
             PoolManager.Spawn(_endLevelFeedback, Vector3.zero, Quaternion.identity);
-            
+            Timing.CallDelayed(1.0f,() => _uiController.ShopModule.Show(true));
         }
 
         protected override void StartLevel() {
