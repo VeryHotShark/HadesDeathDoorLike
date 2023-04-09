@@ -16,6 +16,8 @@ namespace VHS {
         public bool IsOnCooldown => Parent.WeaponController.WeaponRange.IsOnCooldown;
         public int MaxAmmoCount => Parent.WeaponController.WeaponRange.MaxAmmoCount;
 
+        public override void OnExit() => Parent.AnimationController.UnpauseGraph();
+
         public override void SetInputs(CharacterInputs inputs) {
             if (inputs.Secondary.Performed)
                 OnRangeAttackReached();
