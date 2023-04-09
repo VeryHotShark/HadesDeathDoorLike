@@ -48,6 +48,7 @@ namespace VHS {
         public Player Player => _character.Player;
 
         private void Awake() => SetInputs();
+        private void OnDestroy() => _input.Dispose();
 
         protected override void Enable() {
             _input.Enable();
@@ -81,7 +82,8 @@ namespace VHS {
         }
 
         private KeyInput SetupKeyInput(InputAction inputAction) {
-            KeyInput keyInput = new KeyInput() {
+            // Consider Caching
+            KeyInput keyInput = new KeyInput() { 
                 Held = inputAction.IsPressed(),
                 Pressed =  inputAction.WasPressedThisFrame(),
                 Released = inputAction.WasReleasedThisFrame(),

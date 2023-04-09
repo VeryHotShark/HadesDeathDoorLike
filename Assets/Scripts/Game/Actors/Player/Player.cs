@@ -12,6 +12,7 @@ namespace VHS {
         private InteractionComponent _interactionComponent;
         private WeaponController _weaponController;
         private AnimationController _animationController;
+        private PassivesHandlerComponent _passivesHandlerComponent;
         
         public PlayerController PlayerController => _playerController;
         public CameraController CameraController => _playerController.Camera;

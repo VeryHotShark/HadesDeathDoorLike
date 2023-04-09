@@ -13,16 +13,15 @@ namespace VHS {
         public void Init(Actor actor) {
             _owner = actor;
             _action.Init(_owner);
+            _trigger.OnTriggered = PerformAction;
         }
 
         public void Enable() {
-            _trigger.OnTriggered += PerformAction;
             _action.OnEnable();
             _trigger.OnEnable();
         }
 
         public void Disable() {
-            _trigger.OnTriggered -= PerformAction;
             _action.OnDisable();
             _trigger.OnDisable();
         }

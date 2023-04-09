@@ -5,7 +5,7 @@ using UnityEngine;
 namespace VHS {
     [CreateAssetMenu(fileName = "Passive", menuName = "VHS/PassiveSO")]
     public class PassiveSO : ShopItemSO {
-        [SerializeReference] private Passive _passive;
+        [SerializeField] private Passive _passive;
 
         public Passive Instance => _passive;
     }

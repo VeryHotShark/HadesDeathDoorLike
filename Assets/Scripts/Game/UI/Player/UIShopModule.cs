@@ -30,6 +30,13 @@ namespace VHS {
 
         private void OnItemSelected(object sender, UIShopItem shopItem) {
             Show(false);
+
+            switch (shopItem.Item) {
+                case PassiveSO passiveSO:
+                    PassiveManager.AddPassive(passiveSO);
+                    break;
+            }
+            
             GameManager.ResumeGame();
         }
 
@@ -45,6 +52,11 @@ namespace VHS {
 
         public override void OnShow() {
             EventSystem.current.SetSelectedGameObject(_shopItems[0].gameObject);
+
+            foreach (UIShopItem shopItem in _shopItems) {
+                PassiveSO randomPassive = ShopItemsManager.GetRandomPassiveSO();
+                shopItem.SetShopItemSO(randomPassive);
+            }
         }
     }
 }

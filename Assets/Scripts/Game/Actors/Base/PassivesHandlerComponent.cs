@@ -6,25 +6,30 @@ using UnityEngine.Serialization;
 
 namespace VHS {
     public class PassivesHandlerComponent : ActorComponent<Actor> {
-        [SerializeField] private List<Passive> _startPassives;
+        [SerializeField] private List<PassiveSO> _startPassives;
 
         private void Awake() {
             foreach (var passive in _startPassives)
-                passive.Init(Parent);
+                passive.Instance.Init(Parent);
+            
+            foreach (var passive in PassiveManager.RuntimePassives)
+                passive.Instance.Init(Parent);
         }
 
         private void OnEnable() {
             foreach (var passive in _startPassives) 
-                passive.Enable();
+                passive.Instance.Enable();
+            
+            foreach (var passive in PassiveManager.RuntimePassives)
+                passive.Instance.Enable();
         }
 
         private void OnDisable() {
             foreach (var passive in _startPassives) 
-                passive.Disable();
-        }
-
-        public void AddPassive(Passive passive) {
+                passive.Instance.Disable();
             
+            foreach (var passive in PassiveManager.RuntimePassives)
+                passive.Instance.Disable();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace VHS {
 
     [Serializable]
     public class PassiveTrigger : ICustomUpdateListener {
-        public event Action OnTriggered = delegate { };
+        public Action OnTriggered = delegate { };
         
         public PassiveTriggerType _triggerType;
 
