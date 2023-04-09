@@ -3,26 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e0712e7c-880b-4f01-ab57-84e3e25a6167" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HadesDeathDoorLike/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Chaser.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Chaser.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Melee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Melee.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Range.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Npc/Npc_Range.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/P_PlayerCharacter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AllIn1VfxToolkit/Demo &amp; Assets/Demo/Materials/11_Light_Strike.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AllIn1VfxToolkit/Demo &amp; Assets/Demo/Materials/11_Light_Strike.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Core/Systems.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/Systems.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectile/P_Kunai.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectile/P_Kunai.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Projectile/P_ProjectileBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Projectile/P_ProjectileBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene_02.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene_02.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/ScriptableEvents/GES_Actors.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/ScriptableEvents/GES_Actors.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/ScriptableEvents/GES_Player.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/ScriptableEvents/GES_Player.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Classes/HitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Classes/HitData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Interfaces/IActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataStructures/Interfaces/IActor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/Actor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/Actor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/HitProcessorComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Base/HitProcessorComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterMeleeCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/CharacterModules/CharacterRangeCombat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerHitProcessorComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Actors/Player/PlayerHitProcessorComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/PoolManager/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Managers/PoolManager/PoolManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectiles/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectiles/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectiles/ProjectileBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectiles/ProjectileBullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectiles/ProjectileHitScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Contraptions/Projectiles/ProjectileHitScan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Weapons/WeaponMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Weapons/WeaponMelee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveActionLightningStrike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Passives/PassiveActionLightningStrike.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +175,7 @@
       <workItem from="1680545212803" duration="11250000" />
       <workItem from="1680901197138" duration="9905000" />
       <workItem from="1680951710475" duration="2992000" />
-      <workItem from="1681037166067" duration="16539000" />
+      <workItem from="1681037166067" duration="19777000" />
     </task>
     <servers />
   </component>

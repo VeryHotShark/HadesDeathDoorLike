@@ -14,7 +14,9 @@ namespace VHS {
 
         private static readonly Dictionary<IPoolable, GameObject> _poolPrefabs = new ();
         private static readonly Dictionary<GameObject, Queue<IPoolable>> _objectPool = new();
-        
+
+        public static T Spawn<T>(T poolablePrefab) where T : IPoolable => Spawn(poolablePrefab, Vector3.zero, Quaternion.identity);
+
         public static T Spawn<T>(T poolablePrefab, Vector3 position, Quaternion rotation, Transform parent = null) where T : IPoolable {
 
             if (_objectPool.TryGetValue(poolablePrefab.gameObject, out Queue<IPoolable> queue)) {

@@ -11,7 +11,7 @@ namespace VHS {
         private float _lifeTime;
         
         [SerializeField] protected int _damage;
-        [SerializeField] protected MMF_Player _hitFeedback;
+        [SerializeField] protected Feedback _hitFeedback;
 
         public Action<Projectile, HitData> OnHit = delegate { };
 
@@ -40,11 +40,8 @@ namespace VHS {
         }
         
         protected virtual void PlayHitFX() {
-            if (_hitFeedback) {
-                // TODO make this spawn Feedback
-                _hitFeedback.transform.SetParent(null);
-                _hitFeedback.PlayFeedbacks();
-            }
+            if (_hitFeedback)
+                PoolManager.Spawn(_hitFeedback);
         }
 
         public virtual void Init(IActor owner = null) {
