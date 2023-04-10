@@ -37,7 +37,7 @@ namespace VHS {
         public bool IsOnCooldown => _cooldown.IsActive;
         
 
-        private void Awake() => _renderers = GetComponentsInChildren<MeshRenderer>();
+        protected virtual void Awake() => _renderers = GetComponentsInChildren<MeshRenderer>();
 
         public virtual void Init(Player player) => _player = player;
 

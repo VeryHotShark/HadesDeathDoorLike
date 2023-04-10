@@ -52,6 +52,9 @@ MonoBehaviour:
   _ammoCost: 1
   _maxAmmoCount: 4
   _projectile: {fileID: 4264151059569921054, guid: 78ffa31571dc4bf46a8e336b3291648d, type: 3}
+  _perfectWindowFeedback: {fileID: 5405473040090379584, guid: ec29708d17e6c854597b4cabc64e72ce, type: 3}
+  _perfectWindow: {x: 0.6004311, y: 1}
+  _minHoldDuration: 0
   _shootClip:
     _FadeDuration: 0
     _Events:
@@ -72,3 +75,5 @@ MonoBehaviour:
     _Speed: -1.5
     _NormalizedStartTime: NaN
   _speed: 35
+  _kunaiCount: 3
+  _angle: 10

@@ -12,6 +12,10 @@ namespace VHS {
             return UnityEngine.Random.Range(range.x, range.y);
         }
         
+        public static float Range(this Vector2 window) {
+            return window.y - window.x;
+        }
+        
         public static Vector3 SetX(this Vector3 vector3, float newX) {
             vector3.x = newX;
             return vector3;

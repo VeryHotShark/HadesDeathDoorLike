@@ -25,8 +25,13 @@ namespace VHS {
         public AnimationController AnimationController => _animationController;
         
         public Action OnRoll = delegate { };
+        
         public Action OnRangeAttack = delegate { };
+        public Action OnPerfectRangeAttack = delegate { };
+        public Action OnPerfectRangeAttackEnd = delegate { };
+        public Action OnPerfectRangeAttackStart = delegate { };
         public Action OnRangeAttackHeld = delegate { };
+        
         public Action<int> OnLightAttack = delegate {};
         public Action OnHeavyAttack = delegate {};
         public Action OnHeavyAttackHeld = delegate {};
