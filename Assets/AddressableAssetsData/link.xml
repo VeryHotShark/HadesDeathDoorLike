@@ -1,92 +1,10 @@
 <linker>
-  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UpdateManager" preserve="all" />
-    <type fullname="VHS.CameraManager" preserve="all" />
-    <type fullname="VHS.DontDestroyOnLoad" preserve="all" />
-    <type fullname="VHS.Feedback" preserve="all" />
-    <type fullname="VHS.GameEvent" preserve="all" />
-    <type fullname="VHS.GameManager" preserve="all" />
-    <type fullname="VHS.LevelManager" preserve="all" />
-    <type fullname="VHS.ParticleController" preserve="all" />
-    <type fullname="VHS.PassiveManager" preserve="all" />
-    <type fullname="VHS.PassiveSO" preserve="all" />
-    <type fullname="VHS.PlayerManager" preserve="all" />
-    <type fullname="VHS.RoomManager" preserve="all" />
-    <type fullname="VHS.ShopItemsManager" preserve="all" />
-    <type fullname="VHS.Passive" preserve="nothing" serialized="true" />
-    <type fullname="VHS.PassiveActionIncrementHealth" preserve="nothing" serialized="true" />
-    <type fullname="VHS.PassiveActionIncrementStamina" preserve="nothing" serialized="true" />
-    <type fullname="VHS.PassiveActionLightningStrike" preserve="nothing" serialized="true" />
-    <type fullname="VHS.PassiveTrigger" preserve="nothing" serialized="true" />
-  </assembly>
-  <assembly fullname="MoreMountains.Feedbacks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="MoreMountains.Feedbacks.MMF_Player" preserve="all" />
-    <type fullname="MoreMountains.Feedbacks.MMTimeManager" preserve="all" />
-    <type fullname="MoreMountains.Feedbacks.MMF_CameraShake" preserve="nothing" serialized="true" />
-    <type fullname="MoreMountains.Feedbacks.MMF_FreezeFrame" preserve="nothing" serialized="true" />
-    <type fullname="MoreMountains.Feedbacks.MMFeedbacksEvents" preserve="nothing" serialized="true" />
-  </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
   </assembly>
   <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
-    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
-    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
-  </assembly>
-  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
-    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
-    <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_GlyphAdjustmentRecord" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_GlyphPairAdjustmentRecord" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.TMP_GlyphValueRecord" preserve="nothing" serialized="true" />
-    <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
-  </assembly>
-  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.GameObject" preserve="all" />
-    <type fullname="UnityEngine.Material" preserve="all" />
-    <type fullname="UnityEngine.Mesh" preserve="all" />
-    <type fullname="UnityEngine.Object" preserve="all" />
-    <type fullname="UnityEngine.RectTransform" preserve="all" />
-    <type fullname="UnityEngine.Shader" preserve="all" />
-    <type fullname="UnityEngine.Sprite" preserve="all" />
-    <type fullname="UnityEngine.Texture2D" preserve="all" />
-    <type fullname="UnityEngine.Transform" preserve="all" />
-    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
-  </assembly>
-  <assembly fullname="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.ParticleSystem" preserve="all" />
-    <type fullname="UnityEngine.ParticleSystemRenderer" preserve="all" />
-  </assembly>
-  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.Font" preserve="all" />
-  </assembly>
-  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
-    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
-    <type fullname="UnityEngine.UI.Image" preserve="all" />
-    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
-  </assembly>
-  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.Canvas" preserve="all" />
-    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
-  </assembly>
-  <assembly fullname="Assembly-CSharp-firstpass">
-    <type fullname="Trisibo.SceneField" preserve="nothing" serialized="true" />
-  </assembly>
-  <assembly fullname="UnityEngine.TextCoreFontEngineModule">
-    <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.TextCore.Glyph" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.TextCore.GlyphMetrics" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.TextCore.GlyphRect" preserve="nothing" serialized="true" />
   </assembly>
 </linker>

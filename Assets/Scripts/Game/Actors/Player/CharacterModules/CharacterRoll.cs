@@ -33,7 +33,6 @@ public class CharacterRoll : CharacterModule {
 
     public override void OnEnter() {
         Parent.OnRoll();    
-        Debug.LogError("Roll" + _rollEvent.OnEventRaised.GetInvocationList().Length);
         _rollEvent?.Raise(Parent);
         _rollStarted = true;
         _rollTimestamp = Time.time;
