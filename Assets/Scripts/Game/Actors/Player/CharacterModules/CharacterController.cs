@@ -7,8 +7,6 @@ using UnityEngine;
 
 namespace VHS {
     public class CharacterController : ChildBehaviour<Player>, ICharacterController, IUpdateListener {
-        [ShowInInspector] public CharacterModule CurrentModule => _stateMachine?.CurrentState;
-        
         // Remove this if Unity fixes Simultanoeus Release Button
         [SerializeField] private Timer _inputDirectionChangeTimer = new Timer(0.1f);
 
@@ -25,12 +23,14 @@ namespace VHS {
         private KinematicCharacterMotor _motor;
         private StateMachine<CharacterModule> _stateMachine;
 
+
         public CharacterRoll RollModule => _rollModule;
         public CharacterMovement MovementModule => _movementModule;
         public CharacterRangeCombat RangeCombat => _rangeCombatModule;
         public CharacterMeleeCombat MeleeCombat => _meleeCombatModule;
         
-
+        public CharacterModule LastState => _stateMachine.LastState;
+        public CharacterModule CurrentState => _stateMachine.CurrentState;
         public StateMachine<CharacterModule> StateMachine => _stateMachine;
         public KinematicCharacterMotor Motor => _motor;
         public Player Player => Parent;
@@ -39,6 +39,7 @@ namespace VHS {
         public Vector3 MoveInput { get; set; }
         public Vector3 LastNonZeroMoveInput { get; set; }
         public CharacterInputs LastCharacterInputs { get; private set; }
+
 
         private void Awake() {
             _motor = GetComponent<KinematicCharacterMotor>();

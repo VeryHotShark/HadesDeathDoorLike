@@ -11,7 +11,7 @@ namespace VHS {
 
         protected override void OnProjectileShot(Projectile projectile) => (projectile as ProjectileBullet).SetSpeed(_speed);
 
-        protected override void OnPerfectRangeAttack() {
+        protected override void OnPerfectHoldAttack() {
             float startAngle = -(_kunaiCount / 2.0f) * _angle;
             Vector3 direction =  Character.LookInput;
             

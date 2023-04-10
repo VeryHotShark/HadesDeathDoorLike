@@ -99,8 +99,11 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _cooldown:
-    _duration: 0.3
+    _duration: 0.5
     _looping: 0
+  _perfectWindow: {x: 0.60999775, y: 1}
+  _perfectWindowFeedback: {fileID: 5405473040090379584, guid: ec29708d17e6c854597b4cabc64e72ce, type: 3}
+  _minHoldDuration: 0.3
   _slashParticle: {fileID: 6445826192643391251, guid: 60d310309985b9d4e9917e6e851e63c9, type: 3}
   _lightAttacks:
   - damage: 1
@@ -168,6 +171,26 @@ MonoBehaviour:
     pushForce: 15
     zOffset: 2
     radius: 3
+    angle: 90
+    feedback: {fileID: -8353214994537225984, guid: f0b05f03df5b72c4eb5a8f8e870ac2cb, type: 3}
+    animation:
+      _FadeDuration: 0.05
+      _Events:
+        _NormalizedTimes: []
+        _Callbacks: []
+        _Names: []
+      _Clip: {fileID: 7400000, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
+      _Speed: 1.5
+      _NormalizedStartTime: 0.17142865
+    attackType: 0
+  _perfectHeavyAttack:
+    damage: 2
+    duration:
+      _duration: 0.4
+      _looping: 0
+    pushForce: 20
+    zOffset: 2.5
+    radius: 4
     angle: 90
     feedback: {fileID: -8353214994537225984, guid: f0b05f03df5b72c4eb5a8f8e870ac2cb, type: 3}
     animation:

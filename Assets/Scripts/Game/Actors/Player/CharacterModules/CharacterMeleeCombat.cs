@@ -12,15 +12,9 @@ namespace VHS {
 
         [Header("General")]
         [SerializeField] private float _slowDownSharpness = 10.0f;
-        
-        [Header("Input Buffers")] 
-        [SerializeField] private float _dashLightBuffer = 0.4f;
-        [SerializeField] private float _dashHeavyBuffer = 0.6f;
 
         [SerializeField] private Timer _preAttackBuffer = new(0.3f);
         [SerializeField] private Timer _postAttackBuffer = new(0.3f);
-        
-        [SerializeField] private Timer _perfectHeavyBuffer = new(0.3f);
 
         [Header("Events")] 
         [SerializeField] private GameEvent _lightAttackEvent;
@@ -36,14 +30,13 @@ namespace VHS {
         [SerializeField] private GameEvent _lightDashHitEvent;
         [SerializeField] private GameEvent _heavyDashHitEvent;
 
-        private int _lightAttackIndex;
-        
+        private int _attackIndex;
         private bool _heavyAttackHeld;
-        private bool _heavyAttackReached;
+        private bool _enteredFromDash;
 
         public bool IsOnCooldown => CurrentWeapon.IsOnCooldown;
         public bool IsDuringAttack => CurrentWeapon.IsDuringAttack;
-        public bool IsDuringLastAttack => _lightAttackIndex >= CurrentWeapon.LastLightAttackIndex;
+        public bool IsDuringLastAttack => _attackIndex >= CurrentWeapon.LastLightAttackIndex;
         public bool IsDuringInputBuffering => _preAttackBuffer.IsActive || _postAttackBuffer.IsActive;
         
         private WeaponMelee CurrentWeapon => Parent.WeaponController.MeleeWeapon;
@@ -51,17 +44,25 @@ namespace VHS {
         protected override void Enable() => _postAttackBuffer.OnEnd += OnPostInputBufferEnd;
         protected override void Disable() => _postAttackBuffer.OnEnd -= OnPostInputBufferEnd;
 
-        public override void OnEnter() => ResetAttackVariables();
+        public override void OnEnter() {
+            ResetAttackVariables();
+            CurrentWeapon.OnWeaponStart();
+            _enteredFromDash = Controller.LastState == Controller.RollModule; 
+        }
+
         public override void OnExit() => ResetAttackVariables();
 
         private void ResetAttackVariables() {
-            _lightAttackIndex = 0;
-            _heavyAttackReached = false;
+            _attackIndex = 0;
+            _heavyAttackHeld = false;
+            _postAttackBuffer.Reset();
         }
 
         private void OnPostInputBufferEnd() {
-            if (!IsDuringAttack && !_heavyAttackHeld)
+            if (IsDuringLastAttack || (!IsDuringAttack && !_heavyAttackHeld))
                 Controller.TransitionToDefaultState();
+            else
+                TryResetWeaponHoldTimer();
         }
 
         public void OnAttackEnd() {
@@ -72,37 +73,36 @@ namespace VHS {
 
             if (!IsDuringInputBuffering && !_heavyAttackHeld)
                 Controller.TransitionToDefaultState();
+            else 
+                TryResetWeaponHoldTimer();
+        }
+
+        private void TryResetWeaponHoldTimer() {
+            if (_heavyAttackHeld && !IsDuringLastAttack)
+                CurrentWeapon.OnWeaponStart();
         }
         
         public override void SetInputs(CharacterInputs inputs) {
-            if (IsDuringLastAttack) {
-                _heavyAttackHeld = false;
+            if(IsDuringLastAttack)
                 return;
-            }
-
+            
             _heavyAttackHeld = inputs.Primary.Held;
 
-            if (_heavyAttackHeld)
-                OnHeavyAttackHeld();
-
-            if (inputs.Primary.Performed) {
-                _heavyAttackReached = true;
-                OnHeavyAttackReached();
+            if (_heavyAttackHeld) {
+                Parent.OnHeavyAttackHeld();
+                CurrentWeapon.OnHeavyAttackHeld();
             }
 
             if (inputs.Primary.Released) {
                 if (!IsDuringAttack) {
-                    float _attackSinceRoll = Time.time - Controller.RollModule.LastRollTimestamp;
-
-                    //TODO Fix this -> Controller.RollModule.DuringRoll by ten check działał
-                    if (_heavyAttackReached) {
-                        if (_attackSinceRoll < _dashHeavyBuffer)
+                    if (CurrentWeapon.MinInputReached) {
+                        if (_enteredFromDash)
                             DashHeavyAttack();
                         else 
                             HeavyAttack();
                     }
                     else {
-                        if (_attackSinceRoll < _dashLightBuffer)
+                        if (_enteredFromDash)
                             DashLightAttack();
                         else
                             LightAttack();
@@ -110,13 +110,15 @@ namespace VHS {
                 }
                 else
                     _preAttackBuffer.Start();
+
+                _enteredFromDash = false; // TODO fix to DuringRoll;
             }
 
             // Handle Pre Input Buffering
             if (!IsDuringAttack && _preAttackBuffer.IsActive)
                 LightAttack();
         }
-
+        
         private void DashLightAttack() {
             ResetAttackVariables();
             _lightDashAttackEvent?.Raise(this);
@@ -125,40 +127,23 @@ namespace VHS {
 
         private void DashHeavyAttack() {
             ResetAttackVariables();
-            Parent.Animancer.Playable.UnpauseGraph();
+            Parent.AnimationController.UnpauseGraph();
             _heavyDashAttackEvent?.Raise(this);
             CurrentWeapon.DashHeavyAttack();
         }
 
         private void LightAttack() {
             _preAttackBuffer.Reset();
-            Parent.OnLightAttack(_lightAttackIndex);
-            CurrentWeapon.LightAttack(_lightAttackIndex);
+            Parent.OnLightAttack(_attackIndex);
+            CurrentWeapon.LightAttack(_attackIndex);
             _lightAttackEvent?.Raise(this);
-            _lightAttackIndex++;
+            _attackIndex++;
         }
 
         private void HeavyAttack() {
             ResetAttackVariables();
-            Parent.Animancer.Playable.UnpauseGraph();
-            Parent.OnHeavyAttack();
-            CurrentWeapon.HeavyAttack();
+            CurrentWeapon.OnAttackReleased();
             _heavyAttackEvent?.Raise(this);
-        }
-
-        private void OnHeavyAttackReached() {
-            Parent.Animancer.Playable.PauseGraph();
-            Parent.OnHeavyAttackReached();
-            CurrentWeapon.OnHeavyAttackReached();
-        }
-
-        private void OnHeavyAttackHeld() {
-            Parent.OnHeavyAttackHeld();
-            CurrentWeapon.OnHeavyAttackHeld();
-        }
-
-        private void HeavyPerfectAttack() {
-            
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {

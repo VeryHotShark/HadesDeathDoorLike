@@ -16,7 +16,6 @@ public class CharacterRoll : CharacterModule {
 
     private bool _lostGround;
     private bool _rollStopped;
-    private bool _rollStarted;
     private float _rollTimestamp = -100.0f;
     private float _rollDotThreshold;
     
@@ -24,9 +23,7 @@ public class CharacterRoll : CharacterModule {
     private Vector3 _startPos;
     private Vector3 _lastDesiredPos;
     private Vector3 _rollDirection;
-
-    public float LastRollTimestamp => _rollTimestamp;
-    public bool DuringRoll => _rollStarted && !_rollStopped;
+    
     public bool OnCoooldown => _cooldown.IsActive;
 
     private void Awake() => _rollDotThreshold = Mathf.Cos(_maxRollAngle * Mathf.Deg2Rad);
@@ -34,7 +31,6 @@ public class CharacterRoll : CharacterModule {
     public override void OnEnter() {
         Parent.OnRoll();    
         _rollEvent?.Raise(Parent);
-        _rollStarted = true;
         _rollTimestamp = Time.time;
         _rollDirection = Controller.MoveInput.sqrMagnitude < Mathf.Epsilon ? Controller.LastNonZeroMoveInput : Controller.MoveInput;
         _lastDesiredPos = Motor.TransientPosition;
@@ -43,7 +39,6 @@ public class CharacterRoll : CharacterModule {
     }
 
     public override void OnExit() {
-        _rollStarted = false;
         _rollStopped = false;
         _cooldown.Start();
     }

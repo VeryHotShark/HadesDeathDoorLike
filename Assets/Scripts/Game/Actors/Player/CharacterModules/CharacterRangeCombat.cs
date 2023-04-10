@@ -9,18 +9,20 @@ namespace VHS {
         public bool IsOnCooldown => Parent.WeaponController.WeaponRange.IsOnCooldown;
         public int MaxAmmoCount => Parent.WeaponController.WeaponRange.MaxAmmoCount;
 
-        public override void OnEnter() => OnRangeAttackStart();
+        public override void OnEnter() => CurrentWeapon.OnWeaponStart();
         public override void OnExit() => Parent.AnimationController.UnpauseGraph();
 
         public override void SetInputs(CharacterInputs inputs) {
-            if (inputs.Secondary.Performed)
-                OnRangeAttackReached();
+            if (inputs.Secondary.Held) {
+                Parent.OnRangeAttackHeld();
+                CurrentWeapon.OnRangeAttackHeld();
+            }
 
-            if (inputs.Secondary.Held)
-                OnRangeAttackHeld();
-
-            if (inputs.Secondary.Released)
-                OnRangeAttackReleased();
+            if (inputs.Secondary.Released) {
+                CurrentWeapon.OnAttackReleased();   
+                CurrentWeapon.StartCooldown();
+                Controller.TransitionToDefaultState();
+            }
         }
 
         public override void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
@@ -29,16 +31,6 @@ namespace VHS {
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) => currentVelocity = Vector3.zero;
-
-        private void OnRangeAttackStart() => CurrentWeapon.OnRangeAttackStart();
-        private void OnRangeAttackReached() => CurrentWeapon.OnRangeAttackReached();
-        private void OnRangeAttackHeld() => CurrentWeapon.OnRangeAttackHeld();
-
-        private void OnRangeAttackReleased() {
-            CurrentWeapon.OnRangeAttackReleased();
-            CurrentWeapon.StartCooldown();
-            Controller.TransitionToDefaultState();
-        }
 
         public Projectile SpawnProjectile(Projectile prefab, Vector3? direction = null ) {
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
