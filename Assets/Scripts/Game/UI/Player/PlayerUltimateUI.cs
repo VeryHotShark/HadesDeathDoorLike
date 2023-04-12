@@ -10,7 +10,7 @@ namespace VHS {
         [SerializeField] private BetterImage _fillFrame;
 
         private void Start() {
-            float fillAmount = Player.GetComponentInChildren<CharacterUltimateCombat>().UltimatePercent;
+            float fillAmount = Player.GetComponentInChildren<CharacterUltimateCombat>().CurrentFillAmount;
             OnUltimatePercentChanged(fillAmount);
         }
 

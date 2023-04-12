@@ -86,14 +86,14 @@ namespace VHS {
             if(IsDuringLastAttack)
                 return;
             
-            _heavyAttackHeld = inputs.Primary.Held;
+            _heavyAttackHeld = inputs.Melee.Held;
 
             if (_heavyAttackHeld) {
                 Parent.OnHeavyAttackHeld();
                 CurrentWeapon.OnHeavyAttackHeld();
             }
 
-            if (inputs.Primary.Released) {
+            if (inputs.Melee.Released) {
                 if (!IsDuringAttack) {
                     if (CurrentWeapon.MinInputReached) {
                         if (_enteredFromDash)

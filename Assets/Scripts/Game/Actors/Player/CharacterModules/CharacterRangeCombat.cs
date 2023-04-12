@@ -13,12 +13,12 @@ namespace VHS {
         public override void OnExit() => Parent.AnimationController.UnpauseGraph();
 
         public override void SetInputs(CharacterInputs inputs) {
-            if (inputs.Secondary.Held) {
+            if (inputs.Range.Held) {
                 Parent.OnRangeAttackHeld();
                 CurrentWeapon.OnRangeAttackHeld();
             }
 
-            if (inputs.Secondary.Released) {
+            if (inputs.Range.Released) {
                 CurrentWeapon.OnAttackReleased();   
                 CurrentWeapon.StartCooldown();
                 Controller.TransitionToDefaultState();

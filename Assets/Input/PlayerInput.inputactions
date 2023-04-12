@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PrimaryAttack",
+                    "name": "Melee",
                     "type": "Button",
                     "id": "25ea785e-9246-4c51-a51d-73a21bde21c5",
                     "expectedControlType": "Button",
@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SecondaryAttack",
+                    "name": "Range",
                     "type": "Button",
                     "id": "bf894976-d7b2-44d5-9430-1c650f56e714",
                     "expectedControlType": "Button",
@@ -69,9 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UltimateAttack",
+                    "name": "Skill",
                     "type": "Button",
                     "id": "8a66fb41-3331-4ab6-8387-5b09df211835",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ultimate",
+                    "type": "Button",
+                    "id": "e5962d6b-430d-4189-8661-65eb7334cbb7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -185,7 +194,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "PrimaryAttack",
+                    "action": "Melee",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -196,7 +205,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "SecondaryAttack",
+                    "action": "Range",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -204,10 +213,21 @@
                     "name": "",
                     "id": "8d3f8b7e-7c90-4c24-9542-d33f824a854e",
                     "path": "<Mouse>/middleButton",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "UltimateAttack",
+                    "action": "Skill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "426d77a0-8985-492e-b85d-a9a685c3fb8c",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "Ultimate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

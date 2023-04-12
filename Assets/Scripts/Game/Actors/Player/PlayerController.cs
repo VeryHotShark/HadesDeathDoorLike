@@ -20,9 +20,10 @@ namespace VHS {
         public Vector2 MoveAxis;
 
         public KeyInput Roll;
-        public KeyInput Primary;
+        public KeyInput Melee;
+        public KeyInput Skill;
+        public KeyInput Range;
         public KeyInput Ultimate;
-        public KeyInput Secondary;
 
         public Quaternion CameraRotation;
         public Vector3 CursorPosition;
@@ -100,9 +101,10 @@ namespace VHS {
             _characterInputs = new CharacterInputs();
             
             _characterInputs.Roll = SetupKeyInput(_input.CharacterControls.Roll);
-            _characterInputs.Primary = SetupKeyInput(_input.CharacterControls.PrimaryAttack);
-            _characterInputs.Ultimate = SetupKeyInput(_input.CharacterControls.UltimateAttack);
-            _characterInputs.Secondary = SetupKeyInput(_input.CharacterControls.SecondaryAttack);
+            _characterInputs.Melee = SetupKeyInput(_input.CharacterControls.Melee);
+            _characterInputs.Skill = SetupKeyInput(_input.CharacterControls.Skill);
+            _characterInputs.Range = SetupKeyInput(_input.CharacterControls.Range);
+            _characterInputs.Ultimate = SetupKeyInput(_input.CharacterControls.Ultimate);
             
             _characterInputs.MoveAxis = _moveInput;
             

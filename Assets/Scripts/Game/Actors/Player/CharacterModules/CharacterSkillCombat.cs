@@ -14,7 +14,7 @@ namespace VHS {
 
         public override void SetInputs(CharacterInputs inputs) {
             if(_skill.Instance.CastType == TimeType.Infinite)
-                if (inputs.Ultimate.Released)
+                if (inputs.Skill.Released)
                     _skill.Instance.FinishCast();                    
         }
 

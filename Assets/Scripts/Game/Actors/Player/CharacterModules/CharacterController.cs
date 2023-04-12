@@ -18,6 +18,7 @@ namespace VHS {
         private CharacterMeleeCombat _meleeCombatModule;
         private CharacterRangeCombat _rangeCombatModule;
         private CharacterSkillCombat _skillCombatModule;
+        private CharacterUltimateCombat _ultimateCombatModule;
         private CharacterFallingMovement _fallingMovementModule;
 
         private KinematicCharacterMotor _motor;
@@ -50,12 +51,12 @@ namespace VHS {
             _meleeCombatModule = GetComponent<CharacterMeleeCombat>();
             _rangeCombatModule = GetComponent<CharacterRangeCombat>();
             _skillCombatModule = GetComponent<CharacterSkillCombat>();
+            _ultimateCombatModule = GetComponent<CharacterUltimateCombat>();
             _fallingMovementModule = GetComponent<CharacterFallingMovement>();
 
             _stateMachine = new StateMachine<CharacterModule>(_movementModule);
             _stateMachine.SetState(_fallingMovementModule);
             _stateMachine.OnStateChanged += Parent.OnCharacterStateChanged;
-            
         }
 
         private void OnEnable() => UpdateManager.AddUpdateListener(this);
@@ -67,13 +68,15 @@ namespace VHS {
 
             // TODO Add CanEnterState to Modules
             if (Motor.GroundingStatus.IsStableOnGround) {
-                if (inputs.Roll.Pressed)
+                if (inputs.Ultimate.Pressed)
+                    _stateMachine.SetState(_ultimateCombatModule);
+                else if (inputs.Roll.Pressed)
                     _stateMachine.SetState(_rollModule);
-                else if (inputs.Secondary.Pressed)
+                else if (inputs.Range.Pressed)
                     _stateMachine.SetState(_rangeCombatModule);
-                else if(inputs.Primary.Pressed)
+                else if (inputs.Melee.Pressed)
                     _stateMachine.SetState(_meleeCombatModule);
-                else if(inputs.Ultimate.Pressed)
+                else if (inputs.Skill.Pressed)
                     _stateMachine.SetState(_skillCombatModule);
             }
 
@@ -114,9 +117,8 @@ namespace VHS {
             }
         }
 
-        public void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
-            _stateMachine.CurrentState.UpdateRotation(ref currentRotation, deltaTime);
-        }
+        public void UpdateRotation(ref Quaternion currentRotation, float deltaTime) 
+            => _stateMachine.CurrentState.UpdateRotation(ref currentRotation, deltaTime);
 
         public void BeforeCharacterUpdate(float deltaTime) =>
             _stateMachine.CurrentState.HandlePreCharacterUpdate(deltaTime);

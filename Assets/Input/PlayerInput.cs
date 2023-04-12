@@ -73,7 +73,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""PrimaryAttack"",
+                    ""name"": ""Melee"",
                     ""type"": ""Button"",
                     ""id"": ""25ea785e-9246-4c51-a51d-73a21bde21c5"",
                     ""expectedControlType"": ""Button"",
@@ -82,7 +82,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SecondaryAttack"",
+                    ""name"": ""Range"",
                     ""type"": ""Button"",
                     ""id"": ""bf894976-d7b2-44d5-9430-1c650f56e714"",
                     ""expectedControlType"": ""Button"",
@@ -91,9 +91,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UltimateAttack"",
+                    ""name"": ""Skill"",
                     ""type"": ""Button"",
                     ""id"": ""8a66fb41-3331-4ab6-8387-5b09df211835"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ultimate"",
+                    ""type"": ""Button"",
+                    ""id"": ""e5962d6b-430d-4189-8661-65eb7334cbb7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -207,7 +216,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""PrimaryAttack"",
+                    ""action"": ""Melee"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -218,7 +227,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""SecondaryAttack"",
+                    ""action"": ""Range"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -226,10 +235,21 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""8d3f8b7e-7c90-4c24-9542-d33f824a854e"",
                     ""path"": ""<Mouse>/middleButton"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""UltimateAttack"",
+                    ""action"": ""Skill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""426d77a0-8985-492e-b85d-a9a685c3fb8c"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Ultimate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -262,9 +282,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_Roll = m_CharacterControls.FindAction("Roll", throwIfNotFound: true);
         m_CharacterControls_Look = m_CharacterControls.FindAction("Look", throwIfNotFound: true);
         m_CharacterControls_Crouch = m_CharacterControls.FindAction("Crouch", throwIfNotFound: true);
-        m_CharacterControls_PrimaryAttack = m_CharacterControls.FindAction("PrimaryAttack", throwIfNotFound: true);
-        m_CharacterControls_SecondaryAttack = m_CharacterControls.FindAction("SecondaryAttack", throwIfNotFound: true);
-        m_CharacterControls_UltimateAttack = m_CharacterControls.FindAction("UltimateAttack", throwIfNotFound: true);
+        m_CharacterControls_Melee = m_CharacterControls.FindAction("Melee", throwIfNotFound: true);
+        m_CharacterControls_Range = m_CharacterControls.FindAction("Range", throwIfNotFound: true);
+        m_CharacterControls_Skill = m_CharacterControls.FindAction("Skill", throwIfNotFound: true);
+        m_CharacterControls_Ultimate = m_CharacterControls.FindAction("Ultimate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -331,9 +352,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_Roll;
     private readonly InputAction m_CharacterControls_Look;
     private readonly InputAction m_CharacterControls_Crouch;
-    private readonly InputAction m_CharacterControls_PrimaryAttack;
-    private readonly InputAction m_CharacterControls_SecondaryAttack;
-    private readonly InputAction m_CharacterControls_UltimateAttack;
+    private readonly InputAction m_CharacterControls_Melee;
+    private readonly InputAction m_CharacterControls_Range;
+    private readonly InputAction m_CharacterControls_Skill;
+    private readonly InputAction m_CharacterControls_Ultimate;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -343,9 +365,10 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Roll => m_Wrapper.m_CharacterControls_Roll;
         public InputAction @Look => m_Wrapper.m_CharacterControls_Look;
         public InputAction @Crouch => m_Wrapper.m_CharacterControls_Crouch;
-        public InputAction @PrimaryAttack => m_Wrapper.m_CharacterControls_PrimaryAttack;
-        public InputAction @SecondaryAttack => m_Wrapper.m_CharacterControls_SecondaryAttack;
-        public InputAction @UltimateAttack => m_Wrapper.m_CharacterControls_UltimateAttack;
+        public InputAction @Melee => m_Wrapper.m_CharacterControls_Melee;
+        public InputAction @Range => m_Wrapper.m_CharacterControls_Range;
+        public InputAction @Skill => m_Wrapper.m_CharacterControls_Skill;
+        public InputAction @Ultimate => m_Wrapper.m_CharacterControls_Ultimate;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -370,15 +393,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
-            @PrimaryAttack.started += instance.OnPrimaryAttack;
-            @PrimaryAttack.performed += instance.OnPrimaryAttack;
-            @PrimaryAttack.canceled += instance.OnPrimaryAttack;
-            @SecondaryAttack.started += instance.OnSecondaryAttack;
-            @SecondaryAttack.performed += instance.OnSecondaryAttack;
-            @SecondaryAttack.canceled += instance.OnSecondaryAttack;
-            @UltimateAttack.started += instance.OnUltimateAttack;
-            @UltimateAttack.performed += instance.OnUltimateAttack;
-            @UltimateAttack.canceled += instance.OnUltimateAttack;
+            @Melee.started += instance.OnMelee;
+            @Melee.performed += instance.OnMelee;
+            @Melee.canceled += instance.OnMelee;
+            @Range.started += instance.OnRange;
+            @Range.performed += instance.OnRange;
+            @Range.canceled += instance.OnRange;
+            @Skill.started += instance.OnSkill;
+            @Skill.performed += instance.OnSkill;
+            @Skill.canceled += instance.OnSkill;
+            @Ultimate.started += instance.OnUltimate;
+            @Ultimate.performed += instance.OnUltimate;
+            @Ultimate.canceled += instance.OnUltimate;
         }
 
         private void UnregisterCallbacks(ICharacterControlsActions instance)
@@ -398,15 +424,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
-            @PrimaryAttack.started -= instance.OnPrimaryAttack;
-            @PrimaryAttack.performed -= instance.OnPrimaryAttack;
-            @PrimaryAttack.canceled -= instance.OnPrimaryAttack;
-            @SecondaryAttack.started -= instance.OnSecondaryAttack;
-            @SecondaryAttack.performed -= instance.OnSecondaryAttack;
-            @SecondaryAttack.canceled -= instance.OnSecondaryAttack;
-            @UltimateAttack.started -= instance.OnUltimateAttack;
-            @UltimateAttack.performed -= instance.OnUltimateAttack;
-            @UltimateAttack.canceled -= instance.OnUltimateAttack;
+            @Melee.started -= instance.OnMelee;
+            @Melee.performed -= instance.OnMelee;
+            @Melee.canceled -= instance.OnMelee;
+            @Range.started -= instance.OnRange;
+            @Range.performed -= instance.OnRange;
+            @Range.canceled -= instance.OnRange;
+            @Skill.started -= instance.OnSkill;
+            @Skill.performed -= instance.OnSkill;
+            @Skill.canceled -= instance.OnSkill;
+            @Ultimate.started -= instance.OnUltimate;
+            @Ultimate.performed -= instance.OnUltimate;
+            @Ultimate.canceled -= instance.OnUltimate;
         }
 
         public void RemoveCallbacks(ICharacterControlsActions instance)
@@ -440,8 +469,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnRoll(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
-        void OnPrimaryAttack(InputAction.CallbackContext context);
-        void OnSecondaryAttack(InputAction.CallbackContext context);
-        void OnUltimateAttack(InputAction.CallbackContext context);
+        void OnMelee(InputAction.CallbackContext context);
+        void OnRange(InputAction.CallbackContext context);
+        void OnSkill(InputAction.CallbackContext context);
+        void OnUltimate(InputAction.CallbackContext context);
     }
 }
