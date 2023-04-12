@@ -41,7 +41,10 @@ namespace VHS {
             return projectile;
         }
 
-        private void OnProjectileHit(Projectile projectile, HitData hitData) => _hitEvent?.Raise(projectile);
+        private void OnProjectileHit(Projectile projectile, HitData hitData) {
+            Parent.OnRangeHit(hitData);
+            _hitEvent?.Raise(projectile);
+        }
 
         public override bool CanEnterState() => HasAmmo && !IsOnCooldown;
     }

@@ -18,6 +18,9 @@ namespace VHS {
         private void OnHitPointsChanged(HitPoints hitPoints) => UpdateHealthPoints(hitPoints.Current);
 
         private void SpawnHealthPoints(int count) {
+            for (int i = transform.childCount -1 ; i >= 0; i--) 
+                Destroy(transform.GetChild(i).gameObject);
+            
             for (int i = 0; i < count; i++) {
                 UIFillPoint fillPoint = Instantiate(healthFillPointPrefab, transform);
                 fillPoint.Fill(true);

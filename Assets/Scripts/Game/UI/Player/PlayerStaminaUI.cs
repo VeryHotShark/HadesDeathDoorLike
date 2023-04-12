@@ -16,6 +16,9 @@ namespace VHS {
         private void OnStaminaPointsChanged(int staminaPoints) => UpdateStaminaPoints(staminaPoints);
 
         private void SpawnStaminaPoints(int count) {
+            for (int i = transform.childCount -1 ; i >= 0; i--) 
+                Destroy(transform.GetChild(i).gameObject);
+            
             for (int i = 0; i < count; i++) {
                 UIFillPoint fillPoint = Instantiate(staminaFillPointPrefab, transform);
                 fillPoint.Fill(true);

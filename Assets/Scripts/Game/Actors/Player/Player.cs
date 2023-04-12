@@ -31,6 +31,7 @@ namespace VHS {
         public Action OnPerfectRangeAttackEnd = delegate { };
         public Action OnPerfectRangeAttackStart = delegate { };
         public Action OnRangeAttackHeld = delegate { };
+        public Action<HitData> OnRangeHit = delegate {};
         
         public Action<int> OnLightAttack = delegate {};
         public Action OnHeavyAttack = delegate {};
@@ -40,6 +41,7 @@ namespace VHS {
         public Action OnPerfectMeleeAttackStart = delegate { };
         public Action<HitData> OnMeleeHit = delegate {};
         
+        public Action<float> OnUltimatePercentChanged = delegate {  };
         public Action<int> OnCurrentAmmoChanged = delegate {};
         public Action<Weapon> OnWeaponChanged = delegate { };
         public Action<IInteractable> OnInteractableChanged = delegate {};

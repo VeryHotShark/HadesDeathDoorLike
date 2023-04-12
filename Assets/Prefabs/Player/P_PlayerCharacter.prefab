@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 1866718725280065572}
   - component: {fileID: 1866718725280065592}
   - component: {fileID: 1866718725280065595}
+  - component: {fileID: 9123065501179010827}
   - component: {fileID: 1866718725280065594}
   - component: {fileID: 3369422274557123374}
   - component: {fileID: 1866718725280065568}
@@ -310,15 +311,10 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _slowDownSharpness: 10
-  _dashLightBuffer: 0.4
-  _dashHeavyBuffer: 0.6
   _preAttackBuffer:
     _duration: 0.3
     _looping: 0
   _postAttackBuffer:
-    _duration: 0.3
-    _looping: 0
-  _perfectHeavyBuffer:
     _duration: 0.3
     _looping: 0
   _lightAttackEvent: {fileID: 7066608735867538234, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
@@ -346,6 +342,22 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _hitEvent: {fileID: -6450641512531500500, guid: 64b513ff94a171c40a1b46ee5cde30ef, type: 2}
+--- !u!114 &9123065501179010827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866718725280065586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b18e7af841d094d98b9ce2a6fe738b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  _requiredDealDamage: 20
+  _duration: 5
 --- !u!114 &1866718725280065594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8740889620083433615}
   m_LocalRotation: {x: -0.00000015214944, y: 0.00000021674478, z: 0.17248102, w: 0.9850129}
-  m_LocalPosition: {x: 2.47, y: 2.1099997, z: -0.0000009934106}
+  m_LocalPosition: {x: 2.47, y: 2.1099977, z: -0.0000009934106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
