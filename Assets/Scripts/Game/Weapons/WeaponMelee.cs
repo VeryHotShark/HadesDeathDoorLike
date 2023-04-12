@@ -35,9 +35,15 @@ namespace VHS {
             _coroutineStarted = true;
         }
 
+        protected override void OnPerfectStart() {
+            base.OnPerfectStart();
+            _player.OnPerfectMeleeAttackStart();
+        }
+        
         protected override void OnPerfectEnd() {
             base.OnPerfectEnd();
             _coroutineStarted = false;
+            _player.OnPerfectMeleeAttackEnd();
         }
         
         public override void Init(Player player) {

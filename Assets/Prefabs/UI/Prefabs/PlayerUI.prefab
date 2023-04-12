@@ -110,15 +110,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 670155115782216218, guid: b25b8f51f3dfe62429a9524cf75e9e28, type: 3}
       propertyPath: m_Spacing
-      value: 13.091667
+      value: 8.991666
       objectReference: {fileID: 0}
     - target: {fileID: 670155115782216218, guid: b25b8f51f3dfe62429a9524cf75e9e28, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 21
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 670155115782216218, guid: b25b8f51f3dfe62429a9524cf75e9e28, type: 3}
       propertyPath: m_Padding.m_Left
-      value: 21
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1808219366827175553, guid: b25b8f51f3dfe62429a9524cf75e9e28, type: 3}
       propertyPath: m_AnchorMax.y
@@ -590,6 +590,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3616035315149000784, guid: e948706d190a997498c3ea9be934d7c8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5790745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3616035315149000784, guid: e948706d190a997498c3ea9be934d7c8, type: 3}
+      propertyPath: fallbackSpriteSettings.PrimaryColor.g
+      value: 0.5790745
+      objectReference: {fileID: 0}
     - target: {fileID: 6358986354098640856, guid: e948706d190a997498c3ea9be934d7c8, type: 3}
       propertyPath: m_Name
       value: HUD_UltimateBar
@@ -742,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7064380340483286651, guid: 942173c40937e934f944e79e47bb505e, type: 3}
       propertyPath: m_Spacing
-      value: 14.728125
+      value: 10.115624
       objectReference: {fileID: 0}
     - target: {fileID: 7138152695139537855, guid: 942173c40937e934f944e79e47bb505e, type: 3}
       propertyPath: m_AnchorMax.y
