@@ -38,11 +38,11 @@ namespace VHS {
 
         public void OnSpawnFromPool() {
             if(!_manualControl)
-                _mmfPlayer.PlayFeedbacks();
+                Play();
         }
 
         public void Play() => _mmfPlayer.PlayFeedbacks();
         public void Stop() => _mmfPlayer.StopFeedbacks();
-        public void Reset() => _mmfPlayer.ResetFeedbacks();
+        public void ResetFeedbacks() => _mmfPlayer.ResetFeedbacks();
     }
 }

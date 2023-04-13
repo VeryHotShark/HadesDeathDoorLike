@@ -359,7 +359,8 @@ MonoBehaviour:
   _requiredDealDamage: 20
   _duration: 5
   _slowDownTimescale: 0.5
-  _ultimateFeedback: {fileID: 0}
+  _ultimateFeedback: {fileID: 5405473040090379584, guid: 6f650e1d29214344d92ae793cdad0c32, type: 3}
+  _hitFeedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
   _radius: 20
   _lerpDuration: 0.5
 --- !u!114 &1866718725280065594

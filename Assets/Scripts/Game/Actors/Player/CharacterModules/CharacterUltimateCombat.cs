@@ -10,6 +10,7 @@ namespace VHS {
         [SerializeField] private float _duration = 3.0f;
         [SerializeField] private float _slowDownTimescale = 0.5f;
         [SerializeField] private Feedback _ultimateFeedback;
+        [SerializeField] private Feedback _hitFeedback;
 
         [Title("Ultimate")] 
         [SerializeField] private float _radius = 10.0f;
@@ -132,6 +133,7 @@ namespace VHS {
                     
                     hittable.Hit(hitData);
                     _lastCollider = collider;
+                    PoolManager.Spawn(_hitFeedback);
                     break;
                 }
             }
