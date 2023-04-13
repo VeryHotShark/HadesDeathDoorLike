@@ -15,12 +15,14 @@ namespace VHS {
 
         [SerializeField] private GameEvent _deathEvent;
         [SerializeField] private GameEvent _hitEvent;
-        
+
+        protected CapsuleCollider _capsuleCollider;
         protected HitProcessorComponent _hitProcessorComponent;
         protected DeathProcessorComponent _deathProcessorComponent;
         
+        public float Radius => _capsuleCollider.radius;
         public GameObject GameObject => gameObject;
-        
+
         public HitData LastHitData { get; set; }
         public HitData LastDealtData { get; set; }
         
@@ -37,7 +39,11 @@ namespace VHS {
             Initialize();
         }
 
-        protected virtual void GetComponents() => _hitProcessorComponent = GetComponent<HitProcessorComponent>();
+        protected virtual void GetComponents() {
+            _hitProcessorComponent = GetComponent<HitProcessorComponent>();
+            _capsuleCollider = GetComponentInChildren<CapsuleCollider>();
+        }
+
         protected virtual void Initialize() => _hitProcessorComponent.HitPoints.Reset();
 
         public virtual void Hit(HitData hitData) {

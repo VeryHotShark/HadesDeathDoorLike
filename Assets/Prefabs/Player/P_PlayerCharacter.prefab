@@ -358,6 +358,10 @@ MonoBehaviour:
   _updateRate: 0.2
   _requiredDealDamage: 20
   _duration: 5
+  _slowDownTimescale: 0.5
+  _ultimateFeedback: {fileID: 0}
+  _radius: 20
+  _lerpDuration: 0.5
 --- !u!114 &1866718725280065594
 MonoBehaviour:
   m_ObjectHideFlags: 0

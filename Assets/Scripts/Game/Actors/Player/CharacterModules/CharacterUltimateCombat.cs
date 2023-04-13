@@ -1,5 +1,7 @@
 using System;
 using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace VHS {
@@ -9,11 +11,18 @@ namespace VHS {
         [SerializeField] private float _slowDownTimescale = 0.5f;
         [SerializeField] private Feedback _ultimateFeedback;
 
+        [Title("Ultimate")] 
+        [SerializeField] private float _radius = 10.0f;
+        [SerializeField] private float _lerpDuration = 0.5f;
+
         private float _currentDuration = 0.0f;
         private float _currentDealtDamage = 0.0f;
         
         private Feedback _feedbackInstance;
         private MMF_CameraZoom _cameraZoom;
+
+        private Collider _lastCollider;
+        private Collider[] _colliders = new Collider[10];
 
         private void Start() {
             _feedbackInstance = PoolManager.Spawn(_ultimateFeedback);
@@ -81,6 +90,51 @@ namespace VHS {
         public override void SetInputs(CharacterInputs inputs) {
             if (inputs.Ultimate.Performed) 
                 Controller.TransitionToDefaultState(true);
+
+            if (inputs.Melee.Released)
+                AttackClosestTarget();
+        }
+
+        private void AttackClosestTarget() {
+            int hitCount =
+                Physics.OverlapSphereNonAlloc(Parent.CenterOfMass, _radius, _colliders, LayerManager.Masks.NPC);
+            
+            if(hitCount == 0)
+                return;
+
+            _colliders.MMShuffle();
+
+            for (int i = 0; i < hitCount - 1; i++) {
+                Collider collider = _colliders[i];
+
+                if (_lastCollider == collider)
+                    continue;
+                
+                IActor enemyActor = collider.GetComponentInParent<IActor>();
+                
+                if(enemyActor == null)
+                    continue;
+
+                IHittable hittable = enemyActor.GameObject.GetComponent<IHittable>();
+
+                if (hittable != null) {
+                    var closest = Parent.ClosestPosRotToActor(enemyActor);
+                    Motor.SetPositionAndRotation(closest.Pos, closest.Rot);
+                    
+                    HitData hitData = new HitData {
+                        hittable = hittable,
+                        damage = 1,
+                        actor = Parent,
+                        dealer = gameObject,
+                        position = closest.Pos,
+                        direction = closest.Rot * Vector3.forward
+                    };
+                    
+                    hittable.Hit(hitData);
+                    _lastCollider = collider;
+                    break;
+                }
+            }
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) => currentVelocity = Vector3.zero;

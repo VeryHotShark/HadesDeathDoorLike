@@ -150,7 +150,6 @@ namespace VHS {
             float t = 1 - Mathf.Exp(-_slowDownSharpness * deltaTime);
             currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, t);
         }
-        
 
         public void OnAttackHit(HitData hitData) {
             Parent.OnMeleeHit(hitData);
