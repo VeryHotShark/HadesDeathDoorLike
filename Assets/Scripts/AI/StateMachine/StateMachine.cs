@@ -102,7 +102,7 @@ namespace VHS {
                 state.OnReset();
         }
 
-        public void TransitionToDefaultState() => SetState(_defaultState);
-        public void TransitionToLastState() => SetState(_lastState);
+        public void TransitionToDefaultState(bool force = false) => SetState(_defaultState, force);
+        public void TransitionToLastState(bool force = false) => SetState(_lastState, force);
     }
 }

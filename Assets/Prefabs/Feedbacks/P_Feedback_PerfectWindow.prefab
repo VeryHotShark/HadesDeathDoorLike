@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5322407333153694465}
   - component: {fileID: 5405473040090379584}
   m_Layer: 0
-  m_Name: P_Feedback_PerfectWindow_Range
+  m_Name: P_Feedback_PerfectWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

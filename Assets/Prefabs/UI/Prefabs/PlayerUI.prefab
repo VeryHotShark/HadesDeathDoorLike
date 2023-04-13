@@ -598,6 +598,14 @@ PrefabInstance:
       propertyPath: fallbackSpriteSettings.PrimaryColor.g
       value: 0.5790745
       objectReference: {fileID: 0}
+    - target: {fileID: 3618254622615600203, guid: e948706d190a997498c3ea9be934d7c8, type: 3}
+      propertyPath: m_Padding.x
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3618254622615600203, guid: e948706d190a997498c3ea9be934d7c8, type: 3}
+      propertyPath: m_Padding.z
+      value: 6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6358986354098640856, guid: e948706d190a997498c3ea9be934d7c8, type: 3}
       propertyPath: m_Name
       value: HUD_UltimateBar

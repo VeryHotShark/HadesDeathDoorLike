@@ -162,8 +162,8 @@ namespace VHS {
 
         public void AddVelocity(Vector3 velocity) => _internalVelocityAdd += velocity;
 
-        public void TransitionToDefaultState() => _stateMachine.TransitionToDefaultState();
-        public void TransitionToLastState() => _stateMachine.TransitionToLastState();
+        public void TransitionToDefaultState(bool force = false) => _stateMachine.TransitionToDefaultState(force);
+        public void TransitionToLastState(bool force = false) => _stateMachine.TransitionToLastState(force);
 
         public void SetLastDirectionToForward() => LastNonZeroMoveInput = Motor.CharacterForward;
     }

@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 namespace VHS {
     public class Feedback : MonoBehaviour, IPoolable {
+        [SerializeField] private bool _manualControl;
+        
         private MMF_Player _mmfPlayer;
         public MMF_Player FeedbackPlayer => _mmfPlayer;
         
@@ -17,8 +19,15 @@ namespace VHS {
             _mmfPlayer.Initialization();
         }
 
-        private void OnEnable() => _mmfPlayer.Events.OnComplete.AddListener(OnFeedbackComplete);
-        private void OnDisable() => _mmfPlayer.Events.OnComplete.RemoveListener(OnFeedbackComplete);
+        private void OnEnable() {
+            if(!_manualControl)
+                _mmfPlayer.Events.OnComplete.AddListener(OnFeedbackComplete);
+        }
+
+        private void OnDisable() {
+            if(!_manualControl)
+                _mmfPlayer.Events.OnComplete.RemoveListener(OnFeedbackComplete);
+        }
 
         private void OnFeedbackComplete() {
             OnComplete();
@@ -27,6 +36,13 @@ namespace VHS {
 
         public void ReturnToPool() => PoolManager.Return(this);
 
-        public void OnSpawnFromPool() => _mmfPlayer.PlayFeedbacks();
+        public void OnSpawnFromPool() {
+            if(!_manualControl)
+                _mmfPlayer.PlayFeedbacks();
+        }
+
+        public void Play() => _mmfPlayer.PlayFeedbacks();
+        public void Stop() => _mmfPlayer.StopFeedbacks();
+        public void Reset() => _mmfPlayer.ResetFeedbacks();
     }
 }

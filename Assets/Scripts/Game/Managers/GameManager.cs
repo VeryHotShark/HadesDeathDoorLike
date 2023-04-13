@@ -13,7 +13,7 @@ namespace VHS {
         public static void PauseGame() {
             // Time.timeScale = 0.0f;
             Instance._isPaused = true;
-            MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 0.0f, 1.0f, true, 5.0f, true);
+            SetTimescale(0.0f,true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -21,9 +21,13 @@ namespace VHS {
         public static void ResumeGame() {
             // Time.timeScale = 1.0f;
             Instance._isPaused = false;
-            MMTimeScaleEvent.Trigger(MMTimeScaleMethods.Reset, 1f, 1f, true, 5.0f, false);
+            ResetTimescale(1.0f, true);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Confined;
         }
+
+        public static void SetTimescale(float timeScale, bool lerp = false, float lerpSpeed = 5.0f, float duration = 0.0f ,bool infinite = true) => MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, timeScale, duration, lerp, lerpSpeed, infinite);
+
+        public static void ResetTimescale(float duration = 0.0f, bool lerp = false, float lerpSpeed = 5.0f) => MMTimeScaleEvent.Trigger(MMTimeScaleMethods.Reset, 1f, duration, lerp, lerpSpeed, false);
     }
 }
