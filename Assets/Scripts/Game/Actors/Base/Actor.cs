@@ -19,8 +19,9 @@ namespace VHS {
         protected CapsuleCollider _capsuleCollider;
         protected HitProcessorComponent _hitProcessorComponent;
         protected DeathProcessorComponent _deathProcessorComponent;
-        
+
         public float Radius => _capsuleCollider.radius;
+        public Collider Collider => _capsuleCollider;
         public GameObject GameObject => gameObject;
 
         public HitData LastHitData { get; set; }
