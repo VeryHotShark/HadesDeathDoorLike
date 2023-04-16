@@ -53,11 +53,6 @@ namespace VHS {
 
         public void SetState(NpcState newState) => _state = newState;
 
-        public override void OnMyAttackParried(HitData hitData) {
-            // TODO make seperate Stagger ?
-            Stagger(1f);
-        }
-
         private void Stagger(float duration) {
             SetState(NpcState.Recovery);
             Timing.CallDelayed(duration, () => SetState(NpcState.Default), gameObject);
@@ -65,7 +60,7 @@ namespace VHS {
 
         public void Kill(IActor dealer) {
             HitData hitData = new HitData {
-                damage = 10,
+                damage = HitPoints.Max,
                 actor = dealer,
                 position = transform.position,
                 direction = -transform.forward

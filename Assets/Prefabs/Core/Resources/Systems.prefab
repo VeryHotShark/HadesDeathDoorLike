@@ -416,7 +416,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistent: 0
-  _bossScenes: []
+  _bossScenes:
+  - sceneAsset: {fileID: 102900000, guid: cea7a7fe7cb332844a1d9a848522cea7, type: 3}
+    required: 0
+    buildIndex: -1
   _passiveScenes: []
   _activeScenes:
   - sceneAsset: {fileID: 102900000, guid: d1c3109bdb54ad54c8a2b2838528e640, type: 3}

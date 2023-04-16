@@ -16,7 +16,5 @@ namespace VHS {
         
         float Radius { get; }
         bool IsAlive { get; }
-
-        void OnMyAttackParried(HitData hitData);
     }
 }
