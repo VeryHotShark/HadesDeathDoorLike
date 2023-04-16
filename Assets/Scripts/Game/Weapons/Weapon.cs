@@ -19,7 +19,6 @@ namespace VHS {
     public abstract class Weapon : BaseBehaviour { // TODO do the same to Range and maybe seperate by WeaponMelee, WeaponRange
         [Header("Common")]
         [SerializeField] protected Timer _cooldown = new(0.5f);
-                
 
         [TitleGroup("Input")]
         [SerializeField, MinMaxSlider(0.0f, 2.0f)] protected Vector2 _perfectWindow = new Vector2(0.7f, 1.0f);
@@ -58,6 +57,8 @@ namespace VHS {
             _heldInputDuration = 0.0f;
             _perfectWindowCoroutine = Timing.CallDelayed(_perfectWindow.x, OnPerfectStart);
         }
+
+        public virtual void OnWeaponStop() => OnPerfectEnd();
 
         public void OnAttackReleased() {
             OnPerfectEnd();

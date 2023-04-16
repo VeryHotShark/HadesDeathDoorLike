@@ -50,7 +50,10 @@ namespace VHS {
             _enteredFromDash = Controller.LastState == Controller.RollModule; 
         }
 
-        public override void OnExit() => ResetAttackVariables();
+        public override void OnExit() {
+            ResetAttackVariables();
+            CurrentWeapon.OnWeaponStop();
+        }
 
         private void ResetAttackVariables() {
             _attackIndex = 0;

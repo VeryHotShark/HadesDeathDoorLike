@@ -21,6 +21,11 @@ namespace VHS {
         public bool HasAmmo => _currentAmmo > 0;
         public int MaxAmmoCount => _maxAmmoCount;
 
+        public override void OnWeaponStop() {
+            base.OnWeaponStop();
+            UnpauseGraph();
+        }
+
         public override void Init(Player player) {
             base.Init(player);
             _currentAmmo = _maxAmmoCount;
@@ -37,6 +42,7 @@ namespace VHS {
         }
 
         private void PauseGraph() => AnimationController.PauseGraph();
+        private void UnpauseGraph() => AnimationController.UnpauseGraph();
 
         protected override void OnPerfectStart() {
             base.OnPerfectStart();

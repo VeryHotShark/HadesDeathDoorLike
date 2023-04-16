@@ -10,7 +10,7 @@ namespace VHS {
         public int MaxAmmoCount => Parent.WeaponController.WeaponRange.MaxAmmoCount;
 
         public override void OnEnter() => CurrentWeapon.OnWeaponStart();
-        public override void OnExit() => Parent.AnimationController.UnpauseGraph();
+        public override void OnExit() => CurrentWeapon.OnWeaponStop();
 
         public override void SetInputs(CharacterInputs inputs) {
             if (inputs.Range.Held) {
