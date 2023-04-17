@@ -13,12 +13,6 @@ namespace VHS {
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
 
-        public override void OnCastStart() {
-            Owner.AIAgent.ResetPath();
-            Owner.AIAgent.Stop();
-            Owner.SetState(NpcState.Attacking);
-        }
-
         public override void OnCastTick(float deltaTime) => Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTargetFlat);
 
         public override void OnSkillStart() {

@@ -9,12 +9,6 @@ namespace VHS {
         public Projectile _projectile;
         public float _speed = 5.0f; // TODO maybe change Projetile to SerializeReferce do all properties can be set directly in editor
 
-        public override void OnCastStart() {
-            Owner.AIAgent.ResetPath();
-            Owner.AIAgent.Stop();
-            Owner.SetState(NpcState.Attacking);
-        }
-
         public override void OnCastTick(float deltaTime) => Owner.transform.rotation = Quaternion.LookRotation(Owner.DirectionToTargetFlat);
         
         public override void OnSkillStart() {

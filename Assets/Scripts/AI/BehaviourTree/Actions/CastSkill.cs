@@ -8,6 +8,7 @@ using UnityEngine;
 namespace VHS{
 	[Category("Skills")]
 	[Description("Cast Chosen Skill")]
+	[Color("990000")]
 	public class CastSkill : ActionTask<SkillCasterComponent> {
 		[ReferenceField] public NpcSkill _skill;
 

@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
+using ParadoxNotion.Design;
 using UnityEngine;
 
 namespace VHS {
     [Serializable]
     public class Skill<T> : ISkill where T : Actor {
-        public TimeType _castType = TimeType.Instant;
-        public TimeType _skillType = TimeType.Instant;
+        [ParadoxNotion.Design.Header("Common")]
         
-        [ShowIf("_castType", TimeType.Duration), MinValue(0.0f)] public float _castDuration = 1.0f;
-        [ShowIf("_skillType", TimeType.Duration), MinValue(0.0f)] public float _skillDuration = 1.0f;
+        public TimeType _castType = TimeType.Instant;
+        [ShowIf("_castType", 1), Sirenix.OdinInspector.MinValue(0.0f)] public float _castDuration = 1.0f;
+        
+        public TimeType _skillType = TimeType.Instant;
+        [ShowIf("_skillType", 1), Sirenix.OdinInspector.MinValue(0.0f)] public float _skillDuration = 1.0f;
 
         private bool _finishedSuccessful;
 

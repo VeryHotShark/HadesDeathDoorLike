@@ -14,10 +14,8 @@ namespace VHS {
         private float _rvoPriorityBeforeStop;
         
         public void ResetPath() {
-            enabled = false;
-            enabled = true;
-            rvoController.enabled = false;
-            rvoController.enabled = true;
+            Disable();
+            Enable();
             desiredVelocityWithoutLocalAvoidance = Vector3.zero;
         }
 
@@ -34,6 +32,17 @@ namespace VHS {
             isStopped = false;
             rvoController.priority = _rvoPriorityBeforeStop;
             rvoController.locked = false;
+        }
+
+        public void Disable() {
+            ClearPath();
+            enabled = false;
+            rvoController.enabled = false;
+        }
+        
+        public void Enable() {
+            enabled = true;
+            rvoController.enabled = true;
         }
     }
 }

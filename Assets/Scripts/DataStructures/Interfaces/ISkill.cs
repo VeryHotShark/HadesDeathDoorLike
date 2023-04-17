@@ -7,9 +7,9 @@ namespace VHS {
     }
 
     public enum TimeType {
-        Instant,
-        Duration,
-        Infinite,
+        Instant = 0,
+        Duration = 1,
+        Infinite = 2,
     }
     
     /// <summary>
