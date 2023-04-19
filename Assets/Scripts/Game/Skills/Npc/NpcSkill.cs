@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using FlowCanvas.Nodes;
 
 namespace VHS {
     [Serializable]
@@ -9,7 +10,15 @@ namespace VHS {
             Owner.AIAgent.Stop();
             Owner.SetState(NpcState.Attacking);
         }
-        
+
+        public override void OnSkillFinish() {
+            Owner.AIAgent.Resume();
+            
+            // TODO rework this, temporary for stagger to work because this gets called after stagger
+            if(Owner.State != NpcState.Recovery)
+                Owner.SetState(NpcState.Default);
+        }
+
         public override void OnAbort() => FinishSkill(false);
     }
 }

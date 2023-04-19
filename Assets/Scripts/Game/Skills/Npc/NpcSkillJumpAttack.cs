@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Blobcreate.ProjectileToolkit;
+using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 
 namespace VHS {
     [Serializable]
     public class NpcSkillJumpAttack : NpcSkill {
+        public BBParameter<Vector3> _jumpDestination;
         public float _jumpHeight;
         public AnimationCurve _jumpCurve;
         
@@ -25,7 +27,7 @@ namespace VHS {
         public override void OnSkillStart() {
             _jumpStartTimer = 0.0f;
             _startPos = Owner.FeetPosition;
-            _endPos = Owner.TargetPosition;
+            _endPos = _jumpDestination.value;
             Owner.AIAgent.Disable();
         }
 
@@ -41,6 +43,7 @@ namespace VHS {
         public override void OnSkillFinish() {
             Extension_Skill.DoSphereDamage(Owner, _radius, _damage, null, null, _particle);
             Owner.AIAgent.Enable();
+            base.OnSkillFinish();
         }
 
         public override void OnSkillCancel() => Owner.AIAgent.Enable();

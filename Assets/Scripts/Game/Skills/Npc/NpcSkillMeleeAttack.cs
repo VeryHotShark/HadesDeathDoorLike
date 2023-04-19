@@ -23,15 +23,6 @@ namespace VHS {
             MoveCharacter(deltaTime);
             CheckForHittables();    
         }
-
-        public override void OnSkillFinish() {
-            Owner.AIAgent.Resume();
-            
-            // TODO rework this, temporary for stagger to work because this gets called after stagger
-            if(Owner.State != NpcState.Recovery)
-                Owner.SetState(NpcState.Default);
-        }
-
         private void MoveCharacter(float deltaTime) {
             float speed = _distance / SkillDuration;
             Vector3 delta = Owner.Forward * (speed * deltaTime);
