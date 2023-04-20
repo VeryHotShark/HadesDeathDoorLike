@@ -12,7 +12,7 @@ namespace VHS {
         }
 
         [SerializeField] private TrapActivationType _activationType;
-        [SerializeField] private Timer _cooldown;
+        [SerializeField] private Timer _cooldown = new Timer();
 
         protected bool _isActive = true; 
         public virtual bool CanActivate => _isActive && !_cooldown.IsActive;
