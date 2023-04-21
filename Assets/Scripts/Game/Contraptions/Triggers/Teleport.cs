@@ -7,11 +7,11 @@ namespace VHS {
     public class Teleport : MonoBehaviour, ITriggerable {
         [SerializeField] private Transform _teleportTo;
         
-        public void OnActorTriggerEnter(IActor Actor) {
-            Player player = Actor as Player;
+        public void OnActorTriggerEnter(IActor actor) {
+            Player player = actor as Player;
             
             if (player != null) {
-                Vector3 startPos = Actor.FeetPosition;
+                Vector3 startPos = actor.FeetPosition;
                 Vector3 endPos = _teleportTo.transform.position;
                 Vector3 delta = endPos - startPos;
                 player.CharacterMotor.SetPositionAndRotation(endPos, _teleportTo.transform.rotation);
@@ -19,7 +19,7 @@ namespace VHS {
             }
         }
 
-        public void OnActorTriggerExit(IActor Actor) {
+        public void OnActorTriggerExit(IActor actor) {
             Debug.Log("EXIT");
         }
 

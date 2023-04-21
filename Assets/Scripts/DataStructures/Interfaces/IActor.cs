@@ -12,7 +12,7 @@ namespace VHS {
         HitData LastHitData { get; set; }
         HitData LastDealtData { get; set; }
 
-        GameObject GameObject { get; }
+        GameObject gameObject { get; }
         Collider Collider { get; }
         
         float Radius { get; }

@@ -39,15 +39,15 @@ namespace VHS {
             _target = NpcBlackboard.PlayerInstance; // Dependency Injection?
             
             if(_target != null)
-                _blackboard.SetVariableValue("Target", _target.GameObject);
+                _blackboard.SetVariableValue("Target", _target.gameObject);
         }
 
         public override void Hit(HitData hitData) {
             base.Hit(hitData);
 
             if (_target == null) {
-                _target = hitData.actor; // Dependency Injection?
-                _blackboard.SetVariableValue("Target", _target.GameObject);
+                _target = hitData.instigator; // Dependency Injection?
+                _blackboard.SetVariableValue("Target", _target.gameObject);
             }
         }
 
@@ -55,13 +55,13 @@ namespace VHS {
 
         private void Stagger(float duration) {
             SetState(NpcState.Recovery);
-            Timing.CallDelayed(duration, () => SetState(NpcState.Default), gameObject);
+            Timing.CallDelayed(duration, () => SetState(NpcState.Default), ((Component)this).gameObject);
         }
 
         public void Kill(IActor dealer) {
             HitData hitData = new HitData {
                 damage = HitPoints.Max,
-                actor = dealer,
+                instigator = dealer,
                 position = transform.position,
                 direction = -transform.forward
             };

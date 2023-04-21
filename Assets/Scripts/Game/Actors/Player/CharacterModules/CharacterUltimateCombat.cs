@@ -116,7 +116,7 @@ namespace VHS {
                 if(enemyActor == null)
                     continue;
 
-                IHittable hittable = enemyActor.GameObject.GetComponent<IHittable>();
+                IHittable hittable = enemyActor.gameObject.GetComponent<IHittable>();
 
                 if (hittable != null) {
                     var closest = Parent.ClosestPosRotToActor(enemyActor);
@@ -125,7 +125,7 @@ namespace VHS {
                     HitData hitData = new HitData {
                         hittable = hittable,
                         damage = 1,
-                        actor = Parent,
+                        instigator = Parent,
                         dealer = gameObject,
                         position = closest.Pos,
                         direction = closest.Rot * Vector3.forward

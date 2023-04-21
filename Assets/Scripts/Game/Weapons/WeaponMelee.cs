@@ -166,7 +166,7 @@ namespace VHS {
                 HitData hitData = new HitData {
                     hittable = hittable,
                     damage = attackInfo.damage,
-                    actor = _player,
+                    instigator = _player,
                     dealer = gameObject,
                     playerAttackType = attackInfo.attackType,
                     position = col.ClosestPoint(_player.CenterOfMass),

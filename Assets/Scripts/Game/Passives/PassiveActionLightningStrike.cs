@@ -31,7 +31,7 @@ namespace VHS {
                 if (hittable != null) {
                     HitData hitData = new HitData() {
                         position = collider.transform.position,
-                        actor = _owner,
+                        instigator = _owner,
                         hittable = hittable,
                         damage = damage,
                         direction = Vector3.down

@@ -1046,6 +1046,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _activationType: 4
+  _activationActor: 6
   _cooldown:
     _duration: 2
     _looping: 0

@@ -45,7 +45,7 @@ namespace VHS {
 
                         HitData hitData = new HitData {
                             damage = 1,
-                            actor = Owner,
+                            instigator = Owner,
                             position = collider.ClosestPoint(Owner.CenterOfMass),
                             direction = Owner.FeetPosition.DirectionTo(collider.transform.position)
                         };

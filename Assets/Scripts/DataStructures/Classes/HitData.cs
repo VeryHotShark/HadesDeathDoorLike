@@ -5,7 +5,7 @@ using UnityEngine;
 namespace VHS {
     public class HitData {
         public int damage;
-        public IActor actor;
+        public IActor instigator;
         public IHittable hittable;
         public GameObject dealer;
         public PlayerAttackType playerAttackType;

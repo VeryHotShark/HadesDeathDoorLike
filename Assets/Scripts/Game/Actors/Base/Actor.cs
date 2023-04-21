@@ -22,7 +22,7 @@ namespace VHS {
 
         public float Radius => _capsuleCollider.radius;
         public Collider Collider => _capsuleCollider;
-        public GameObject GameObject => gameObject;
+        public GameObject gameObject => ((Component)this).gameObject;
 
         public HitData LastHitData { get; set; }
         public HitData LastDealtData { get; set; }

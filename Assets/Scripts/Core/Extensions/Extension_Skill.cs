@@ -20,7 +20,7 @@ namespace VHS {
 
                 if (hittable != null) {
                     HitData hitData = new HitData() {
-                        actor = owner,
+                        instigator = owner,
                         damage = damage,
                         position = position
                     };

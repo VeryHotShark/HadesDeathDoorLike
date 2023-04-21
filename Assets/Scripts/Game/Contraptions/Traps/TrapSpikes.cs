@@ -9,7 +9,7 @@ namespace VHS {
         [SerializeField] private float _spikeHeight;
         [SerializeField] private Transform _spikeMesh;
 
-        protected override void OnActivate() {
+        protected override void OnActivate(IActor actor) {
             Sequence spikeSequence = DOTween.Sequence();
             
             float startY = _spikeMesh.localPosition.y;

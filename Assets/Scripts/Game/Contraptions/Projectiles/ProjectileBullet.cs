@@ -50,7 +50,7 @@ namespace VHS {
                     position = _hitInfo.point,
                     hittable = hittable,
                     dealer = gameObject,
-                    actor = _owner,
+                    instigator = _owner,
                     damage = _damage,
                     playerAttackType = PlayerAttackType.RANGE,
                 };
