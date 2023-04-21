@@ -5,6 +5,10 @@ using UnityEngine;
 
 namespace VHS {
     public interface ISpawnPointProvider {
+        void Initialize(Transform transform) {
+            Transform = transform;
+        }
+        
         Transform Transform { get; set; }
 
         void OnDrawGizmos(Transform transform);

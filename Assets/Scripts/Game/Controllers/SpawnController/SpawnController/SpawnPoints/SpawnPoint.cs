@@ -14,7 +14,7 @@ namespace VHS {
 
         private void Awake() {
             _cooldown = new Timer(_cooldownDuration);
-            _spawnPointProvider.Transform = transform;
+            _spawnPointProvider.Initialize(transform);
         }
 
         public EnemyID[] Npcs => _npcsToSpawn;

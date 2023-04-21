@@ -419,7 +419,7 @@ MonoBehaviour:
   _bossScenes:
   - sceneAsset: {fileID: 102900000, guid: cea7a7fe7cb332844a1d9a848522cea7, type: 3}
     required: 0
-    buildIndex: -1
+    buildIndex: 5
   _passiveScenes: []
   _activeScenes:
   - sceneAsset: {fileID: 102900000, guid: d1c3109bdb54ad54c8a2b2838528e640, type: 3}
@@ -431,6 +431,9 @@ MonoBehaviour:
   - sceneAsset: {fileID: 102900000, guid: f0afd71e99c96e845b49154c886c3f5a, type: 3}
     required: 0
     buildIndex: 4
+  - sceneAsset: {fileID: 102900000, guid: 427560f7a5243934e9244a33b209575c, type: 3}
+    required: 0
+    buildIndex: -1
 --- !u!1 &6665249486015149605
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +720,7 @@ MonoBehaviour:
   _loadScene:
     sceneAsset: {fileID: 102900000, guid: 7b86ca66f91da3f468ef5b7df49b773d, type: 3}
     required: 1
-    buildIndex: 5
+    buildIndex: 6
   _loadBar: {fileID: 7574128203132211410}
   _loadText: {fileID: 2722631262311461979}
 --- !u!1 &7762688225110167289
