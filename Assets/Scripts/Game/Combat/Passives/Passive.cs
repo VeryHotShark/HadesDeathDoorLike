@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace VHS {
     [Serializable]
-    public class Passive {
+    public abstract class Passive {
         private Actor _owner;
         public Actor Owner => _owner;
 

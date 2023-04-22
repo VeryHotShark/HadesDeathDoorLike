@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Status : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+namespace VHS {
+    [Serializable]
+    public abstract class Status {
+        private Npc _npc;
+        public Npc Npc => _npc;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Init(Npc npc) => npc = _npc;
+
+        public abstract void OnApplied();
+        public abstract void OnTick(float dt);
+        public abstract void OnRemoved();
     }
 }
