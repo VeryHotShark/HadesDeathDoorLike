@@ -6,11 +6,6 @@ namespace VHS {
     public class NpcStatusComponent : NpcComponent, IUpdateListener {
         private List<Status> _statuses = new List<Status>();
 
-        public override void OnActorInitialized(Npc actor) {
-            foreach(Status status in _statuses)
-                status.Init(actor);
-        }
-
         protected override void Enable() => UpdateManager.AddUpdateListener(this);
         protected override void Disable() => UpdateManager.RemoveUpdateListener(this);
 
@@ -21,9 +16,15 @@ namespace VHS {
             }
         }
 
-        public void AddStatus(Status status) {
-            _statuses.Add(status);
-            status.OnApplied();
+        public void ApplyStatus(Status status) {
+            if (!ContainsStatus(status)) {
+                _statuses.Add(status);
+                status.Init(Parent, this);
+                status.OnApplied();
+            }
+            else
+                status.OnReapplied();
+            
         }
 
         public void RemoveStatus(Status status) {
