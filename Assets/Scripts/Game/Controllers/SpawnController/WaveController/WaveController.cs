@@ -7,6 +7,7 @@ using UnityEngine;
 namespace VHS {
     [Serializable]
     public class WaveController : SpawnHandler {
+        [SerializeField] private float _startDelay = 0.0f;
         [SerializeField] private float _timeBetweenWaves = 2.0f;
 
         private List<Wave> _waves;
@@ -43,7 +44,7 @@ namespace VHS {
         }
 
         private void SpawnWave(int index) {
-            Timing.CallDelayed(_timeBetweenWaves, delegate {
+            Timing.CallDelayed(index == 0 ? _startDelay : _timeBetweenWaves, delegate {
                 _currentWave = _waves[index];
                 _currentWave.Spawn(_spawnController);
                 OnWaveChanged(index);

@@ -6,11 +6,13 @@ using UnityEngine;
 
 namespace VHS {
     public class SpawnPoint : BaseBehaviour {
+        [SerializeField, Tooltip("Applicable only if SpawnHandler is WaveController")] private float _spawnDelay;
         [SerializeField] private float _cooldownDuration;
         [SerializeField] private EnemyID[] _npcsToSpawn;
         [SerializeReference] private ISpawnPointProvider _spawnPointProvider;
 
         private Timer _cooldown;
+        public float SpawnDelay => _spawnDelay;
 
         private void Awake() {
             _cooldown = new Timer(_cooldownDuration);

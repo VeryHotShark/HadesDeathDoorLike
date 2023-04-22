@@ -85,6 +85,7 @@ namespace VHS {
         }
 
         public Npc SpawnEnemy(EnemyID enemyID, Vector3 position) {
+            
             Npc spawnedNpc = Instantiate(enemyID.Prefab, position, Quaternion.identity);
             spawnedNpc.OnDeath += OnNpcDeath;
             _aliveNpcs.Add(spawnedNpc);
