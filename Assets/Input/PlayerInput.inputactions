@@ -69,9 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Skill",
+                    "name": "SkillPrimary",
                     "type": "Button",
                     "id": "8a66fb41-3331-4ab6-8387-5b09df211835",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillSecondary",
+                    "type": "Button",
+                    "id": "d7940db5-aa29-41f4-b009-c6049c82bd14",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -216,7 +225,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
-                    "action": "Skill",
+                    "action": "SkillPrimary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5c0df74-168e-4794-b9b0-c18f075344e7",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "SkillPrimary",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -228,6 +248,17 @@
                     "processors": "",
                     "groups": "KeyboardAndMouse",
                     "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "467f49b8-b69e-4160-8ebc-452b265a1082",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "SkillSecondary",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -8,6 +8,7 @@ namespace VHS {
         public IActor instigator;
         public IHittable hittable;
         public GameObject dealer;
+        public Status statusToApply;
         public PlayerAttackType playerAttackType;
         public Vector3 position;
         public Vector3 direction;

@@ -21,7 +21,8 @@ namespace VHS {
 
         public KeyInput Roll;
         public KeyInput Melee;
-        public KeyInput Skill;
+        public KeyInput SkillPrimary;
+        public KeyInput SkillSecondary;
         public KeyInput Range;
         public KeyInput Ultimate;
 
@@ -102,7 +103,8 @@ namespace VHS {
             
             _characterInputs.Roll = SetupKeyInput(_input.CharacterControls.Roll);
             _characterInputs.Melee = SetupKeyInput(_input.CharacterControls.Melee);
-            _characterInputs.Skill = SetupKeyInput(_input.CharacterControls.Skill);
+            _characterInputs.SkillPrimary = SetupKeyInput(_input.CharacterControls.SkillPrimary);
+            _characterInputs.SkillSecondary = SetupKeyInput(_input.CharacterControls.SkillSecondary);
             _characterInputs.Range = SetupKeyInput(_input.CharacterControls.Range);
             _characterInputs.Ultimate = SetupKeyInput(_input.CharacterControls.Ultimate);
             

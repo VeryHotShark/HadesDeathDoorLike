@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    [CreateAssetMenu(fileName = "WeaponID", menuName = "ID/Weapon")]
+    [CreateAssetMenu(fileName = "WeaponID", menuName = "VHS/ID/Weapon")]
     public class WeaponID : EntityID {
         [SerializeField] private Weapon _prefab;
 

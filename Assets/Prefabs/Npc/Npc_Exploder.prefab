@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 2003397940021612395}
   - component: {fileID: 2003397939154534799}
   - component: {fileID: 2345665006419569014}
+  - component: {fileID: -350069843173266689}
   m_Layer: 8
   m_Name: Npc_Exploder
   m_TagString: Untagged
@@ -532,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
+  priority: 0
   _pushSpeed: 5
   _pushDuration: 0.2
   _recoveryDuration: 0.175
@@ -563,4 +565,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
+  priority: 0
   _healthUIPrefab: {fileID: 7771265582580724051, guid: 8cd9a8d1a295989448f5faae700e9f29, type: 3}
+--- !u!114 &-350069843173266689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233013591125181216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3622da3d6b26da44486a7a00bef2b795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  priority: 0

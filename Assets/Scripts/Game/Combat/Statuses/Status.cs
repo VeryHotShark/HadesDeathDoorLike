@@ -7,7 +7,11 @@ using UnityEngine.UI;
 namespace VHS {
     [Serializable]
     public abstract class Status {
-        [SerializeField] protected Timer _durationTimer;
+        [SerializeField] protected float _interval = 0.0f;
+        [SerializeField] protected float _duration = 0.0f;
+
+        private float _durationTimer = 0.0f;
+        private float _intervalTimer = 0.0f;
         
         protected Npc _npc;
         protected NpcStatusComponent _statusComponent;
@@ -15,14 +19,34 @@ namespace VHS {
         public void Init(Npc npc, NpcStatusComponent statusComponent) {
             _npc = npc;
             _statusComponent = statusComponent;
-            _durationTimer.OnEnd = RemoveSelfOnEnd;
         }
 
-        public virtual void OnReapplied() => _durationTimer?.Start();
-        public abstract void OnApplied();
-        public abstract void OnTick(float dt);
-        public abstract void OnRemoved();
+        public virtual void OnReapplied() => _durationTimer = 0.0f;
+        public virtual void OnApplied() {}
 
-        private void RemoveSelfOnEnd() => _statusComponent.RemoveStatus(this);
+        public void OnTick(float dt) {
+            if (_interval > 0.0f) {
+                _intervalTimer += dt;
+
+                if (_intervalTimer > _interval) {
+                    _intervalTimer = 0.0f;
+                    OnInterval(_interval);
+                }
+            }
+            else 
+                OnInterval(dt);
+            
+            if (_duration > 0.0f) {
+                _durationTimer += dt;
+
+                if (_durationTimer > _duration)
+                    RemoveSelf();
+            }
+        }
+
+        protected virtual void OnInterval(float interval) { }
+        public virtual  void OnRemoved() {}
+        
+        private void RemoveSelf() => _statusComponent.RemoveStatus(this);
     }
 }

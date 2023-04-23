@@ -91,9 +91,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Skill"",
+                    ""name"": ""SkillPrimary"",
                     ""type"": ""Button"",
                     ""id"": ""8a66fb41-3331-4ab6-8387-5b09df211835"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillSecondary"",
+                    ""type"": ""Button"",
+                    ""id"": ""d7940db5-aa29-41f4-b009-c6049c82bd14"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -238,7 +247,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""Skill"",
+                    ""action"": ""SkillPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5c0df74-168e-4794-b9b0-c18f075344e7"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""SkillPrimary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -250,6 +270,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
                     ""action"": ""Ultimate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""467f49b8-b69e-4160-8ebc-452b265a1082"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""SkillSecondary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -284,7 +315,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_Crouch = m_CharacterControls.FindAction("Crouch", throwIfNotFound: true);
         m_CharacterControls_Melee = m_CharacterControls.FindAction("Melee", throwIfNotFound: true);
         m_CharacterControls_Range = m_CharacterControls.FindAction("Range", throwIfNotFound: true);
-        m_CharacterControls_Skill = m_CharacterControls.FindAction("Skill", throwIfNotFound: true);
+        m_CharacterControls_SkillPrimary = m_CharacterControls.FindAction("SkillPrimary", throwIfNotFound: true);
+        m_CharacterControls_SkillSecondary = m_CharacterControls.FindAction("SkillSecondary", throwIfNotFound: true);
         m_CharacterControls_Ultimate = m_CharacterControls.FindAction("Ultimate", throwIfNotFound: true);
     }
 
@@ -354,7 +386,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_Crouch;
     private readonly InputAction m_CharacterControls_Melee;
     private readonly InputAction m_CharacterControls_Range;
-    private readonly InputAction m_CharacterControls_Skill;
+    private readonly InputAction m_CharacterControls_SkillPrimary;
+    private readonly InputAction m_CharacterControls_SkillSecondary;
     private readonly InputAction m_CharacterControls_Ultimate;
     public struct CharacterControlsActions
     {
@@ -367,7 +400,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_CharacterControls_Crouch;
         public InputAction @Melee => m_Wrapper.m_CharacterControls_Melee;
         public InputAction @Range => m_Wrapper.m_CharacterControls_Range;
-        public InputAction @Skill => m_Wrapper.m_CharacterControls_Skill;
+        public InputAction @SkillPrimary => m_Wrapper.m_CharacterControls_SkillPrimary;
+        public InputAction @SkillSecondary => m_Wrapper.m_CharacterControls_SkillSecondary;
         public InputAction @Ultimate => m_Wrapper.m_CharacterControls_Ultimate;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
@@ -399,9 +433,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Range.started += instance.OnRange;
             @Range.performed += instance.OnRange;
             @Range.canceled += instance.OnRange;
-            @Skill.started += instance.OnSkill;
-            @Skill.performed += instance.OnSkill;
-            @Skill.canceled += instance.OnSkill;
+            @SkillPrimary.started += instance.OnSkillPrimary;
+            @SkillPrimary.performed += instance.OnSkillPrimary;
+            @SkillPrimary.canceled += instance.OnSkillPrimary;
+            @SkillSecondary.started += instance.OnSkillSecondary;
+            @SkillSecondary.performed += instance.OnSkillSecondary;
+            @SkillSecondary.canceled += instance.OnSkillSecondary;
             @Ultimate.started += instance.OnUltimate;
             @Ultimate.performed += instance.OnUltimate;
             @Ultimate.canceled += instance.OnUltimate;
@@ -430,9 +467,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Range.started -= instance.OnRange;
             @Range.performed -= instance.OnRange;
             @Range.canceled -= instance.OnRange;
-            @Skill.started -= instance.OnSkill;
-            @Skill.performed -= instance.OnSkill;
-            @Skill.canceled -= instance.OnSkill;
+            @SkillPrimary.started -= instance.OnSkillPrimary;
+            @SkillPrimary.performed -= instance.OnSkillPrimary;
+            @SkillPrimary.canceled -= instance.OnSkillPrimary;
+            @SkillSecondary.started -= instance.OnSkillSecondary;
+            @SkillSecondary.performed -= instance.OnSkillSecondary;
+            @SkillSecondary.canceled -= instance.OnSkillSecondary;
             @Ultimate.started -= instance.OnUltimate;
             @Ultimate.performed -= instance.OnUltimate;
             @Ultimate.canceled -= instance.OnUltimate;
@@ -471,7 +511,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
         void OnRange(InputAction.CallbackContext context);
-        void OnSkill(InputAction.CallbackContext context);
+        void OnSkillPrimary(InputAction.CallbackContext context);
+        void OnSkillSecondary(InputAction.CallbackContext context);
         void OnUltimate(InputAction.CallbackContext context);
     }
 }

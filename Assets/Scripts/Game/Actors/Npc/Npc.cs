@@ -1,4 +1,5 @@
 using MEC;
+using NodeCanvas.BehaviourTrees;
 using NodeCanvas.Framework;
 using Pathfinding;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace VHS {
         private IActor _target;
         private AIAgent _aiAgent;
         private Blackboard _blackboard;
+        private NpcStatusComponent _statusComponent;
+        private BehaviourTreeOwner _behaviourTreeOwner;
 
         public bool HasTarget => _target is {IsAlive: true}; // equivalent to != null && IsAlive
         public Vector3 TargetPosition => _target.FeetPosition;
@@ -27,12 +30,15 @@ namespace VHS {
         public IActor Target => _target;
         public AIAgent AIAgent => _aiAgent;
         public EnemyID EnemyID => _enemyID;
+        public Blackboard Blackboard => _blackboard;
+        public BehaviourTreeOwner BehaviourTreeOwner => _behaviourTreeOwner;
 
         protected override void GetComponents() {
             base.GetComponents();
             _aiAgent = GetComponent<AIAgent>();
             _blackboard = GetComponent<Blackboard>();
-            _hitProcessorComponent = GetComponent<HitProcessorComponent>();
+            _statusComponent = GetComponent<NpcStatusComponent>();
+            _behaviourTreeOwner = GetComponent<BehaviourTreeOwner>();
         }
 
         private void Start() {
@@ -44,6 +50,9 @@ namespace VHS {
 
         public override void Hit(HitData hitData) {
             base.Hit(hitData);
+            
+            if(hitData.statusToApply != null) 
+                ApplyStatus(hitData.statusToApply);
 
             if (_target == null) {
                 _target = hitData.instigator; // Dependency Injection?
@@ -53,10 +62,13 @@ namespace VHS {
 
         public void SetState(NpcState newState) => _state = newState;
 
-        private void Stagger(float duration) {
+        public void Stagger(float duration) {
             SetState(NpcState.Recovery);
             Timing.CallDelayed(duration, () => SetState(NpcState.Default), ((Component)this).gameObject);
         }
+
+        public void ApplyStatus(Status status) => _statusComponent.ApplyStatus(status);
+        public void RemoveStatus(Status status) => _statusComponent.RemoveStatus(status);
 
         public void Kill(IActor dealer) {
             HitData hitData = new HitData {

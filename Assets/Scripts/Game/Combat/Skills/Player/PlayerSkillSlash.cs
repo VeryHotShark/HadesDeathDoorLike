@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace VHS {
     public class PlayerSkillSlash : PlayerSkill {
+        public StatusSO _statusToApply;
+        
         [Header("GFX")]
         public ParticleController _redImpaxtVFX;
         public SkillIndicator _skillIndicator;
@@ -12,7 +14,7 @@ namespace VHS {
         public ClipTransition _slashClip;
         
         
-        [Header("settins")]
+        [Header("settings")]
         public float _distance = 10.0f;
         public float _radius = 3.0f;
         public AnimationCurve _curve = AnimationCurve.EaseInOut(0,0,1,1);
@@ -94,10 +96,11 @@ namespace VHS {
                     HitData hitData = new HitData {
                         damage = 1,
                         instigator = Owner,
+                        // statusToApply = _statusToApply.Instance,
                         position = collider.ClosestPoint(_cursorPosition),
                         direction = _cursorPosition.DirectionTo(collider.transform.position)
                     };
-
+                    
                     PoolManager.Spawn(_redImpaxtVFX, hitData.position, Quaternion.identity);
                     hittable.Hit(hitData);
                     _hittables.Add(hittable);

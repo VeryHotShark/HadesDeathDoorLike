@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace VHS {
     public class PassivesHandlerComponent : ActorComponent<Actor> {
-        [SerializeField] private List<PassiveSO> _startPassives;
+        [SerializeField] private List<PassiveSO> _startPassives = new List<PassiveSO>();
 
         private void Awake() {
             foreach (var passive in _startPassives)
@@ -16,7 +16,7 @@ namespace VHS {
                 passive.Instance.Init(Parent);
         }
 
-        private void OnEnable() {
+        protected override void Enable() {
             foreach (var passive in _startPassives) 
                 passive.Instance.Enable();
             
@@ -24,7 +24,7 @@ namespace VHS {
                 passive.Instance.Enable();
         }
 
-        private void OnDisable() {
+        protected override void Disable() {
             foreach (var passive in _startPassives) 
                 passive.Instance.Disable();
             

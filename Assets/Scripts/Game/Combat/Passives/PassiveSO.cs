@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace VHS {
-    [CreateAssetMenu(fileName = "Passive", menuName = "VHS/PassiveSO")]
+    [CreateAssetMenu(fileName = "Passive", menuName = "VHS/Combat/PassiveSO")]
     public class PassiveSO : ShopItemSO {
         [SerializeField] private Passive _passive;
 

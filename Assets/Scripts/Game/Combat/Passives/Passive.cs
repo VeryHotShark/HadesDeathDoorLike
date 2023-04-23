@@ -2,8 +2,9 @@ using System;
 using UnityEngine;
 
 namespace VHS {
+    // IT IS NOT ABSTRACT FOR A PURPOS, BECAUSE PASSIVE SO CANT SERIALIZE ABSTRACT
     [Serializable]
-    public abstract class Passive {
+    public class Passive {
         private Actor _owner;
         public Actor Owner => _owner;
 
