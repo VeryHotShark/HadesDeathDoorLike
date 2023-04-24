@@ -60,6 +60,13 @@ namespace VHS {
 
         public virtual void OnWeaponStop() => OnPerfectEnd();
 
+        public void AttackHeld() {
+            _heldInputDuration += Time.deltaTime;
+            OnAttackHeld();
+        }
+        
+        protected virtual void OnAttackHeld() { }
+
         public void OnAttackReleased() {
             OnPerfectEnd();
             AnimationController.UnpauseGraph();

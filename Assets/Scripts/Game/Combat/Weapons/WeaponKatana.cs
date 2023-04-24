@@ -15,11 +15,8 @@ namespace VHS {
             _mirroredHeavyAttack.animation = _mirroredHeavy;
         }
 
-        public override void OnHeavyAttackHeld() {
-            Animancer.Play(_flipHeavy ? _mirroredHeavyWindup : _heavyAttackWindupClip);
-            _heldInputDuration += Time.deltaTime;
-        }
-        
+        protected override void OnAttackHeld() => Animancer.Play(_flipHeavy ? _mirroredHeavyWindup : _heavyAttackWindupClip);
+
         protected override void OnPerfectHoldAttack() {
             base.OnPerfectHoldAttack();
             _flipHeavy = !_flipHeavy;

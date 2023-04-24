@@ -68,10 +68,7 @@ namespace VHS {
             _player.OnRangeAttack();
         }
 
-        public virtual void OnRangeAttackHeld() {
-            Animancer.Play(_shootWindupClip);
-            _heldInputDuration += Time.deltaTime;
-        }
+        protected override void OnAttackHeld() => Animancer.Play(_shootWindupClip);
 
         protected virtual void OnProjectileShot(Projectile projectile) { }
         

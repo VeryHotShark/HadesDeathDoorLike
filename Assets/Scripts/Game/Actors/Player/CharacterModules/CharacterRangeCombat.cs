@@ -15,7 +15,7 @@ namespace VHS {
         public override void SetInputs(CharacterInputs inputs) {
             if (inputs.Range.Held) {
                 Parent.OnRangeAttackHeld();
-                CurrentWeapon.OnRangeAttackHeld();
+                CurrentWeapon.AttackHeld();
             }
 
             if (inputs.Range.Released) {

@@ -98,10 +98,7 @@ namespace VHS {
             _player.OnHeavyAttack();
         }
 
-        public virtual void OnHeavyAttackHeld() {
-            Animancer.Play(_heavyAttackWindupClip);
-            _heldInputDuration += Time.deltaTime;
-        }
+        protected override void OnAttackHeld() => Animancer.Play(_heavyAttackWindupClip);
 
         protected void SpawnAttack(AttackInfo attackInfo, Vector3 slashSize, bool flipSlash = false) {
             OnPerfectEnd();

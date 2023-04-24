@@ -61,7 +61,8 @@ namespace VHS {
                     break;
                 case SkillState.InProgress:
                     if (_activeSkill.SkillType == TimeType.Instant) {
-                        _activeSkill.FinishSkill(true);              return;          
+                        _activeSkill.FinishSkill(true);
+                        return;          
                     }
                     
                     if (_activeSkill.SkillType == TimeType.Duration &&
@@ -93,7 +94,8 @@ namespace VHS {
                     break;
             }
             
-            _activeSkill.OnAbort();
+            _activeSkill.Abort();
+            _activeSkill = null;
         }
     }
 }

@@ -62,8 +62,13 @@ namespace VHS {
             SkillState = SkillState.Finished;
             OnSkillFinish();
         }
+
+        public void Abort() {
+            SkillState = SkillState.None;
+            OnAbort();
+        }
         
-        public virtual void Reset() {
+        public void Reset() {
             SkillState = SkillState.None;
             OnReset();
         }

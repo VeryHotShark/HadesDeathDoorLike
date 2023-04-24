@@ -93,7 +93,7 @@ namespace VHS {
 
             if (_heavyAttackHeld) {
                 Parent.OnHeavyAttackHeld();
-                CurrentWeapon.OnHeavyAttackHeld();
+                CurrentWeapon.AttackHeld();
             }
 
             if (inputs.Melee.Released) {
