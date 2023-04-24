@@ -40,6 +40,7 @@ namespace VHS {
         public Vector3 MoveInput { get; set; }
         public Vector3 LastNonZeroMoveInput { get; set; }
         public CharacterInputs LastCharacterInputs { get; private set; }
+        public CharacterInputs CurrentCharacterInputs { get; private set; }
 
 
         private void Awake() {
@@ -65,8 +66,9 @@ namespace VHS {
 
         public void SetInputs(ref CharacterInputs inputs) {
             UpdateInput(inputs);
+            
+            CurrentCharacterInputs = inputs;
 
-            // TODO Add CanEnterState to Modules
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.Ultimate.Pressed)
                     _stateMachine.SetState(_ultimateCombatModule);
@@ -76,7 +78,9 @@ namespace VHS {
                     _stateMachine.SetState(_rangeCombatModule);
                 else if (inputs.Melee.Pressed)
                     _stateMachine.SetState(_meleeCombatModule);
-                else if (inputs.SkillPrimary.Pressed)
+                else if (inputs.SkillPrimary.Pressed &&  _skillCombatModule.CanCastPrimary()) 
+                    _stateMachine.SetState(_skillCombatModule);
+                else if (inputs.SkillSecondary.Pressed && _skillCombatModule.CanCastSecondary()) 
                     _stateMachine.SetState(_skillCombatModule);
             }
 

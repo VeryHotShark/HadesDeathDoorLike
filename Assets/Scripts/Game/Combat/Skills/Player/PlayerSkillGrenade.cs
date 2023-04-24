@@ -6,6 +6,8 @@ using UnityEngine;
 namespace VHS {
     [Serializable]
     public class PlayerSkillGrenade : PlayerSkill {
+        public StatusSO _statusToApply;
+        
         public ParticleController _explosionVFX;
         public SkillIndicator _indicatorVFX;
         
@@ -19,9 +21,7 @@ namespace VHS {
         private Vector3 _castPosition;
         private SkillIndicator _indicatorInstance;
 
-        public override void OnReset() {
-            _hittables.Clear();
-        }
+        public override void OnReset() => _hittables.Clear();
 
         public override void OnCastStart() {
             _indicatorInstance = PoolManager.Spawn(_indicatorVFX,
@@ -45,6 +45,8 @@ namespace VHS {
         }
 
         public override void OnSkillFinish() {
+            base.OnSkillFinish();
+            
             int hitCount =
                 Physics.OverlapSphereNonAlloc(_castPosition, _radius, _colliders, LayerManager.Masks.NPC);
             
@@ -65,6 +67,7 @@ namespace VHS {
                     HitData hitData = new HitData {
                         damage = _damage,
                         instigator = Owner,
+                        statusToApply = _statusToApply.GetInstance(),
                         position = collider.ClosestPoint(_castPosition),
                         direction = _castPosition.DirectionTo(collider.transform.position)
                     };

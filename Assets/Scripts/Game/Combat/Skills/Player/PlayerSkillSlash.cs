@@ -29,10 +29,8 @@ namespace VHS {
         private Vector3 _cursorPosition;
         private Vector3 _startPosition;
         
-        public override void OnReset() {
-            _hittables.Clear();
-        }
-        
+        public override void OnReset() => _hittables.Clear();
+
         public override void OnCastStart() {
             Quaternion rotationToCursor = Quaternion.LookRotation(Owner.PlayerController.CharacterDirectionToCursor);
             Owner.Animancer.Play(_windupClip);
@@ -109,6 +107,7 @@ namespace VHS {
         }
 
         public override void OnSkillFinish() {
+            base.OnSkillFinish();
             Owner.CharacterController.SetLastDirectionToForward();
         }
     }
