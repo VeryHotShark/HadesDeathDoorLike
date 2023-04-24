@@ -92,11 +92,11 @@ namespace VHS {
                 if (hittable != null) {
                     if (_hittables.Contains(hittable))
                         continue;
-
+                    
                     HitData hitData = new HitData {
                         damage = 1,
                         instigator = Owner,
-                        // statusToApply = _statusToApply.Instance,
+                        statusToApply = _statusToApply.GetInstance(),
                         position = collider.ClosestPoint(_cursorPosition),
                         direction = _cursorPosition.DirectionTo(collider.transform.position)
                     };

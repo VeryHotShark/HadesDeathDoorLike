@@ -9,8 +9,6 @@ namespace VHS {
         [SerializeField] private int _damagePerInterval;
 
         protected override void OnInterval(float interval) {
-            Debug.Log("DUPA");
-            
             HitData hitData = new HitData() {
                 damage = _damagePerInterval,
                 position = _npc.CenterOfMass,
