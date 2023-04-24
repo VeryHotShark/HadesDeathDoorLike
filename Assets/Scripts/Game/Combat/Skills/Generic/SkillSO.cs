@@ -5,8 +5,8 @@ using UnityEngine;
 namespace VHS {
     [CreateAssetMenu(fileName = "Skill", menuName = "VHS/Combat/SkillSO")]
     public class SkillSO : ShopItemSO {
-        [SerializeReference] private ISkill _skill;
+        [SerializeReference] private Skill _skill;
 
-        public ISkill Instance => _skill;
+        public Skill Instance => _skill;
     }
 }

@@ -9,5 +9,7 @@ namespace VHS {
         public Timer _cooldown = new Timer(1.0f);
 
         public bool DuringCooldown => _cooldown.IsActive;
+
+        public override bool CanCastSkill() => !DuringCooldown;
     }
 }

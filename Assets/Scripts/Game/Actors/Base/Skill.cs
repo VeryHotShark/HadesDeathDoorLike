@@ -5,8 +5,21 @@ using ParadoxNotion.Design;
 using UnityEngine;
 
 namespace VHS {
+    public enum SkillState {
+        None,
+        Casting,
+        InProgress,
+        Finished,
+    }
+
+    public enum TimeType {
+        Instant = 0,
+        Duration = 1,
+        Infinite = 2,
+    }
+    
     [Serializable]
-    public class Skill<T> : ISkill where T : Actor {
+    public class Skill {
         [ParadoxNotion.Design.Header("Common")]
         
         public TimeType _castType = TimeType.Instant;
@@ -27,10 +40,10 @@ namespace VHS {
         
         // Dodać property który liczy normalized ratio 0-1 trwania skilla i casta
         
-        public T Owner { get; private set; }
+        public Actor Owner { get; private set; }
         public SkillState SkillState { get; private set; }
 
-        public void SetOwner(Actor owner) => Owner = (T)owner;
+        public void SetOwner(Actor owner) => Owner = owner;
 
         public void Start() {
             Reset();
@@ -55,6 +68,8 @@ namespace VHS {
             OnReset();
         }
 
+        public virtual bool CanCastSkill() => true;
+
         public virtual void OnCastStart() { }
         public virtual void OnCastTick(float deltaTime) { }
         public virtual void OnCastFinish() { }
@@ -70,10 +85,9 @@ namespace VHS {
     }
     
     
-    /*
+    
     [Serializable]
     public class Skill<T>: Skill where T : Actor{
         protected new T Owner => (T) base.Owner;
     }
-    */
 }
