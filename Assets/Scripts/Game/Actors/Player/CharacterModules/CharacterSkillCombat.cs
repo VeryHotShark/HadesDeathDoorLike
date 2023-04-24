@@ -14,7 +14,12 @@ namespace VHS {
         private bool _enteredFromPrimary;
         
         private void Awake() => _skillCaster = GetComponent<SkillCasterComponent>();
-        
+
+        private void Start() {
+            _skillPrimary.Instance.Reset();
+            _skillSecondary.Instance.Reset();
+        }
+
         public override void OnEnter() {
             _enteredFromPrimary = Controller.CurrentCharacterInputs.SkillPrimary.Pressed;
             _skillCaster.CastSkill(_enteredFromPrimary ? _skillPrimary.Instance : _skillSecondary.Instance);

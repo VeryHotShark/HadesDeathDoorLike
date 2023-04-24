@@ -72,16 +72,16 @@ namespace VHS {
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.Ultimate.Pressed)
                     _stateMachine.SetState(_ultimateCombatModule);
+                else if (inputs.SkillPrimary.Pressed && _skillCombatModule.CanCastPrimary()) 
+                    _stateMachine.SetState(_skillCombatModule);
+                else if (inputs.SkillSecondary.Pressed && _skillCombatModule.CanCastSecondary()) 
+                    _stateMachine.SetState(_skillCombatModule);
                 else if (inputs.Roll.Pressed)
                     _stateMachine.SetState(_rollModule);
                 else if (inputs.Range.Pressed)
                     _stateMachine.SetState(_rangeCombatModule);
                 else if (inputs.Melee.Pressed)
                     _stateMachine.SetState(_meleeCombatModule);
-                else if (inputs.SkillPrimary.Pressed &&  _skillCombatModule.CanCastPrimary()) 
-                    _stateMachine.SetState(_skillCombatModule);
-                else if (inputs.SkillSecondary.Pressed && _skillCombatModule.CanCastSecondary()) 
-                    _stateMachine.SetState(_skillCombatModule);
             }
 
             _stateMachine.CurrentState.SetInputs(inputs);

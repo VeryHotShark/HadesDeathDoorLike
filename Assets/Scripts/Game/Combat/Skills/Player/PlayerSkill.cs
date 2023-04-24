@@ -12,5 +12,7 @@ namespace VHS {
 
         public override void OnSkillFinish() => _cooldown.Start();
         public override bool CanCastSkill() => !DuringCooldown;
+
+        public override void OnReset() => _cooldown.Reset();
     }
 }

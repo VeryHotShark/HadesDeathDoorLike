@@ -21,7 +21,10 @@ namespace VHS {
         private Vector3 _castPosition;
         private SkillIndicator _indicatorInstance;
 
-        public override void OnReset() => _hittables.Clear();
+        public override void OnReset() {
+            base.OnReset();
+            _hittables.Clear();
+        }
 
         public override void OnCastStart() {
             _indicatorInstance = PoolManager.Spawn(_indicatorVFX,
