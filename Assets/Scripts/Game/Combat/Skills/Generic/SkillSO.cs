@@ -7,6 +7,6 @@ namespace VHS {
     public class SkillSO : ShopItemSO {
         [SerializeReference] private PlayerSkill _skill;
 
-        public PlayerSkill Instance => _skill;
+        public PlayerSkill GetInstance() => ScriptableObject.Instantiate(this)._skill;
     }
 }

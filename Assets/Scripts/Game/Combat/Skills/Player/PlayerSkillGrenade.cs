@@ -48,8 +48,6 @@ namespace VHS {
         }
 
         public override void OnSkillFinish() {
-            base.OnSkillFinish();
-            
             int hitCount =
                 Physics.OverlapSphereNonAlloc(_castPosition, _radius, _colliders, LayerManager.Masks.NPC);
             

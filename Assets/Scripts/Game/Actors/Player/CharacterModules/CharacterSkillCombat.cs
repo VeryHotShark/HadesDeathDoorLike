@@ -10,34 +10,38 @@ namespace VHS {
         [SerializeField] private SkillSO _skillPrimary;
         [SerializeField] private SkillSO _skillSecondary;
 
-        private SkillCasterComponent _skillCaster;
         private bool _enteredFromPrimary;
+        private SkillCasterComponent _skillCaster;
+
+        private PlayerSkill _primaryInstance;
+        private PlayerSkill _secondaryInstance;
         
-        private void Awake() => _skillCaster = GetComponent<SkillCasterComponent>();
-
-        private void Start() {
-            _skillPrimary.Instance.Reset();
-            _skillSecondary.Instance.Reset();
+        public PlayerSkill SkillPrimary => _primaryInstance;
+        public PlayerSkill SkillSecondary => _secondaryInstance;
+        
+        private void Awake() {
+            _skillCaster = GetComponent<SkillCasterComponent>();
+            _primaryInstance = _skillPrimary.GetInstance();
+            _secondaryInstance = _skillSecondary.GetInstance();
         }
-
+        
         public override void OnEnter() {
             _enteredFromPrimary = Controller.CurrentCharacterInputs.SkillPrimary.Pressed;
-            _skillCaster.CastSkill(_enteredFromPrimary ? _skillPrimary.Instance : _skillSecondary.Instance);
+            _skillCaster.CastSkill(_enteredFromPrimary ? _primaryInstance : _secondaryInstance);
         }
         
         public override void SetInputs(CharacterInputs inputs) {
             if (_enteredFromPrimary) {
-                if(_skillPrimary.Instance.CastType == TimeType.Infinite)
+                if(_primaryInstance.CastType == TimeType.Infinite)
                     if (inputs.SkillPrimary.Released)
-                        _skillPrimary.Instance.FinishCast(); 
+                        _primaryInstance.FinishCast(); 
             }
             else {
-                if(_skillSecondary.Instance.CastType == TimeType.Infinite)
+                if(_secondaryInstance.CastType == TimeType.Infinite)
                     if (inputs.SkillSecondary.Released)
-                        _skillSecondary.Instance.FinishCast(); 
+                        _secondaryInstance.FinishCast(); 
             }
         }
-        
 
         public override void OnExit() => _skillCaster.CancelSkill();
 
@@ -52,7 +56,7 @@ namespace VHS {
 
         public override bool CanEnterState() => _skillCaster.ActiveSkill == null;
 
-        public bool CanCastPrimary() => _skillPrimary.Instance.CanCastSkill();
-        public bool CanCastSecondary() => _skillSecondary.Instance.CanCastSkill();
+        public bool CanCastPrimary() => _primaryInstance.CanCastSkill();
+        public bool CanCastSecondary() => _secondaryInstance.CanCastSkill();
     }
 }

@@ -28,8 +28,10 @@ namespace VHS {
         public TimeType _skillType = TimeType.Instant;
         [ShowIf("_skillType", 1), Sirenix.OdinInspector.MinValue(0.0f)] public float _skillDuration = 1.0f;
 
+        private bool _initialized;
         private bool _finishedSuccessful;
 
+        public bool Initialized => _initialized;
         public bool FinishSuccessful => _finishedSuccessful;
         
         public float SkillDuration => _skillDuration;
@@ -39,10 +41,15 @@ namespace VHS {
         public TimeType SkillType => _skillType;
         
         // Dodać property który liczy normalized ratio 0-1 trwania skilla i casta
-        
+
         public Actor Owner { get; private set; }
         public SkillState SkillState { get; private set; }
 
+        public void Initialize() {
+            _initialized = true;
+            OnInitialize();
+        }
+        
         public void SetOwner(Actor owner) => Owner = owner;
 
         public void Start() {
@@ -52,6 +59,9 @@ namespace VHS {
         }
         
         public void FinishCast() {
+            if (SkillState != SkillState.Casting)
+                return; // Prevents Double Invocation
+                
             OnCastFinish();
             SkillState = SkillState.InProgress;
             OnSkillStart();
@@ -87,6 +97,7 @@ namespace VHS {
 
         public virtual void OnAbort() { }
         public virtual void OnReset() { }
+        public virtual void OnInitialize() { }
     }
     
     

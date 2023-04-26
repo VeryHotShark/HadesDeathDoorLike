@@ -8,6 +8,7 @@ namespace VHS {
         private CanvasGroup _canvasGroup;
         
         public Player Player => Parent.Player;
+        public CharacterController Character => Player.CharacterController;
         
         protected virtual void Awake() => _canvasGroup = GetComponent<CanvasGroup>();
         

@@ -23,12 +23,12 @@ namespace VHS {
 
         private KinematicCharacterMotor _motor;
         private StateMachine<CharacterModule> _stateMachine;
-
-
+        
         public CharacterRoll RollModule => _rollModule;
         public CharacterMovement MovementModule => _movementModule;
         public CharacterRangeCombat RangeCombat => _rangeCombatModule;
         public CharacterMeleeCombat MeleeCombat => _meleeCombatModule;
+        public CharacterSkillCombat SkillCombat => _skillCombatModule;
         
         public CharacterModule LastState => _stateMachine.LastState;
         public CharacterModule CurrentState => _stateMachine.CurrentState;

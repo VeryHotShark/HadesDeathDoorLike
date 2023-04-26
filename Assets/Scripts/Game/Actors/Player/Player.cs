@@ -41,6 +41,10 @@ namespace VHS {
         public Action OnPerfectMeleeAttackStart = delegate { };
         public Action<HitData> OnMeleeHit = delegate {};
         
+        public Action<PlayerSkill> OnSkillCooldownStart = delegate {  };
+        public Action<PlayerSkill> OnSkillCooldownUpdate = delegate {  };
+        public Action<PlayerSkill> OnSkillCooldownEnd = delegate {  };
+
         public Action OnUltimateEnter = delegate {  };
         public Action OnUltimateExit = delegate {  };
         public Action<float> OnUltimatePercentChanged = delegate {  };

@@ -17,8 +17,11 @@ public class Timer {
     private bool _started;
     private float _timestamp;
     
+    public Action OnStart = delegate {  };
+    public Action OnUpdate = delegate {  };
     public Action OnEnd = delegate {  };
 
+    public float NormalizedTime => Mathf.Clamp01(Time.time - _timestamp / _duration);
     public float Duration => _duration;
     public bool Started => _started;
     public bool IsLooping => _looping;
@@ -30,7 +33,8 @@ public class Timer {
         
         if(!_started)
             _started = true;
-        
+
+        OnStart();
         _timestamp = Time.time;
     }
 
@@ -43,6 +47,8 @@ public class Timer {
     }
 
     public bool CheckTimerEnd() {
+        OnUpdate();
+        
         if (_onCooldownLastFrame && !IsActive) {
             OnEnd();
             _onCooldownLastFrame = false;

@@ -16,13 +16,19 @@ namespace VHS {
         /// Setup skill owner reference to work correctly
         /// </summary>
         /// <param name="skill"> skill reference to be set </param>
-        public void InitSkill(Skill skill) => skill.SetOwner(Parent);
+        public void InitSkill(Skill skill) {
+            skill.Initialize();
+            skill.SetOwner(Parent);
+        }
 
         /// <summary>
         ///  Entry point of Casting Skill, decides whether to start target or start skill
         /// </summary>
         public bool CastSkill(Skill skill) {
-            skill.SetOwner(Parent);
+            if (!skill.Initialized) {
+                skill.Initialize();   
+                skill.SetOwner(Parent);
+            }
 
             if (!skill.CanCastSkill())
                 return false;

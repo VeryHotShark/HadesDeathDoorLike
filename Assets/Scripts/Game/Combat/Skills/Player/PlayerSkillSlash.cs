@@ -58,6 +58,8 @@ namespace VHS {
         }
 
         public override void OnSkillStart() {
+            base.OnSkillStart();
+            
             Owner.Animancer.Play(_slashClip);
             _timer = 0.0f;
             _startPosition = Owner.CharacterController.Motor.TransientPosition;
@@ -109,9 +111,6 @@ namespace VHS {
             }
         }
 
-        public override void OnSkillFinish() {
-            base.OnSkillFinish();
-            Owner.CharacterController.SetLastDirectionToForward();
-        }
+        public override void OnSkillFinish() => Owner.CharacterController.SetLastDirectionToForward();
     }
 }
