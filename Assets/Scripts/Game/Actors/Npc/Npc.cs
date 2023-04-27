@@ -1,3 +1,4 @@
+using System;
 using MEC;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.Framework;
@@ -18,8 +19,13 @@ namespace VHS {
         private IActor _target;
         private AIAgent _aiAgent;
         private Blackboard _blackboard;
+        private NpcPushComponent _pushComponent;
         private NpcStatusComponent _statusComponent;
+        private NpcStaggerComponent _staggerComponent;
         private BehaviourTreeOwner _behaviourTreeOwner;
+
+        public Action OnStaggerStart = delegate { };
+        public Action OnStaggerEnd = delegate { };
 
         public bool HasTarget => _target is {IsAlive: true}; // equivalent to != null && IsAlive
         public Vector3 TargetPosition => _target.FeetPosition;
@@ -33,16 +39,20 @@ namespace VHS {
         public Blackboard Blackboard => _blackboard;
         public BehaviourTreeOwner BehaviourTreeOwner => _behaviourTreeOwner;
 
+        public NpcPushComponent PushComponent => _pushComponent;
+
         protected override void GetComponents() {
             base.GetComponents();
             _aiAgent = GetComponent<AIAgent>();
             _blackboard = GetComponent<Blackboard>();
+            _pushComponent = GetComponent<NpcPushComponent>();
             _statusComponent = GetComponent<NpcStatusComponent>();
+            _staggerComponent = GetComponent<NpcStaggerComponent>();
             _behaviourTreeOwner = GetComponent<BehaviourTreeOwner>();
         }
 
         private void Start() {
-            _target = NpcBlackboard.PlayerInstance; // Dependency Injection?
+            _target = NpcBlackboard.PlayerInstance;
             
             if(_target != null)
                 _blackboard.SetVariableValue("Target", _target.gameObject);
@@ -55,17 +65,15 @@ namespace VHS {
                 ApplyStatus(hitData.statusToApply);
 
             if (_target == null) {
-                _target = hitData.instigator; // Dependency Injection?
+                _target = hitData.instigator;
                 _blackboard.SetVariableValue("Target", _target.gameObject);
             }
         }
 
         public void SetState(NpcState newState) => _state = newState;
 
-        public void Stagger(float duration) {
-            SetState(NpcState.Recovery);
-            Timing.CallDelayed(duration, () => SetState(NpcState.Default), ((Component)this).gameObject);
-        }
+        public void Push(float duration, float distance, Vector3 direction) => _pushComponent.Push(duration, distance, direction);
+        public void Stagger(float duration) => _staggerComponent.Stagger(duration);
 
         public void ApplyStatus(Status status) => _statusComponent.ApplyStatus(status);
         public void RemoveStatus(Status status) => _statusComponent.RemoveStatus(status);

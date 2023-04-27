@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 2003397939154534799}
   - component: {fileID: 2345665006419569014}
   - component: {fileID: -350069843173266689}
+  - component: {fileID: -6249605732167253865}
   m_Layer: 8
   m_Name: Npc_Exploder
   m_TagString: Untagged
@@ -534,7 +535,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   priority: 0
-  _pushSpeed: 5
+  _pushDistance: 1
   _pushDuration: 0.2
   _recoveryDuration: 0.175
 --- !u!114 &2003397939154534799
@@ -582,3 +583,22 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   priority: 0
+--- !u!114 &-6249605732167253865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233013591125181216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bdb8e7890ced14486d9df800080aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  priority: 0
+  _maxStaggerCount: 3
+  _staggerCooldown:
+    _duration: 1
+    _looping: 0

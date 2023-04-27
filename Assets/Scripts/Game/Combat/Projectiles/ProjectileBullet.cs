@@ -24,7 +24,7 @@ namespace VHS {
         public void OnUpdate(float deltaTime) {
             UpdateMovement(deltaTime);
             
-            Debug.DrawLine(_lastPosition,transform.position, Color.blue);
+            Debug.DrawLine(_lastPosition,transform.position, Color.blue, 1f);
 
             if (CheckForCollision())    
                 Hit();

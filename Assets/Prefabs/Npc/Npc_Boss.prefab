@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 2991129355986402685}
   - component: {fileID: 1351825802201814404}
   - component: {fileID: 8944743637071957790}
+  - component: {fileID: -5322940553122666000}
   m_Layer: 8
   m_Name: Npc_Boss
   m_TagString: Untagged
@@ -438,7 +439,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   priority: 0
-  _pushSpeed: 5
+  _pushDistance: 1
   _pushDuration: 0.2
   _recoveryDuration: 0.175
 --- !u!114 &2991129355986402685
@@ -486,6 +487,25 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   priority: 0
+--- !u!114 &-5322940553122666000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220809878790701010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bdb8e7890ced14486d9df800080aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _customUpdate: 0
+  _updateRate: 0.2
+  priority: 0
+  _maxStaggerCount: 3
+  _staggerCooldown:
+    _duration: 1
+    _looping: 0
 --- !u!1 &3806651427183412760
 GameObject:
   m_ObjectHideFlags: 0
