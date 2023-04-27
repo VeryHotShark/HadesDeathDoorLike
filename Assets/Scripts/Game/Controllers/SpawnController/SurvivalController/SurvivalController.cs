@@ -48,7 +48,7 @@ namespace VHS {
             }
         }
 
-        public override void OnNpcDeath(Npc npc) => _aliveNpcsDict[npc.EnemyID].Remove(npc);
+        public override void OnNpcDeath(Npc npc) => _aliveNpcsDict[npc.ID].Remove(npc);
 
         public override void Finish() {
             _spawnController.KillAliveNpcs();

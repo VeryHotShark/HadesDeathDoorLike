@@ -213,7 +213,8 @@ MonoBehaviour:
   _updateRate: 0.2
   _deathEvent: {fileID: -4948686910326481164, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
   _hitEvent: {fileID: 7256634008489309537, guid: 27ec0e79c058acd429c489daec3b9b0d, type: 2}
-  _enemyID: {fileID: 11400000, guid: 39c2bc2c8acd2e84f9c2871be6045ccc, type: 2}
+  id: {fileID: 11400000, guid: 39c2bc2c8acd2e84f9c2871be6045ccc, type: 2}
+  model: {fileID: 11400000, guid: a98b26351f69f0848882c9706531d8ac, type: 2}
   _stages:
   - HPThreshold: 8
 --- !u!114 &3220809878790701009

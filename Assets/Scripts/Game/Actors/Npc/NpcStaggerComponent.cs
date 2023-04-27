@@ -19,7 +19,7 @@ namespace VHS {
         private void Awake() => _staggerCooldown.OnEnd = () => _staggerCount = 0;
 
         public void Stagger(float duration) {
-            if(_staggerCount >= _maxStaggerCount)
+            if(!Parent.Model.CanBeStaggered || _staggerCount >= _maxStaggerCount)
                 return;
             
             _staggerCount++;

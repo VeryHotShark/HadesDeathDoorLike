@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 namespace VHS {
     public class NpcPushComponent : NpcComponent {
-        [FormerlySerializedAs("_pushSpeed")] [FoldoutGroup("Push Properties"),SerializeField] private float _pushDistance;
+        [FoldoutGroup("Push Properties"),SerializeField] private float _pushDistance;
         [FoldoutGroup("Push Properties"),SerializeField] private float _pushDuration;
         [FoldoutGroup("Push Properties"),SerializeField] private float _recoveryDuration;
 

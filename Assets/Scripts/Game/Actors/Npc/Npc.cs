@@ -4,6 +4,7 @@ using NodeCanvas.BehaviourTrees;
 using NodeCanvas.Framework;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace VHS {
     public enum NpcState {
@@ -13,7 +14,8 @@ namespace VHS {
     }
     
     public class Npc : Actor<Npc>, IPoolable {
-        [SerializeField] private EnemyID _enemyID;
+        [FormerlySerializedAs("_enemyID")] [SerializeField] private EnemyID id;
+        [FormerlySerializedAs("_enemyModel")] [SerializeField] private EnemyModel model;
 
         private NpcState _state;
         private IActor _target;
@@ -32,12 +34,14 @@ namespace VHS {
         public Vector3 DirectionToTarget => HasTarget ? FeetPosition.DirectionTo(Target.FeetPosition) : transform.forward;
         public Vector3 DirectionToTargetFlat => DirectionToTarget.Flatten();
         
-        public NpcState State => _state;
         public IActor Target => _target;
         public AIAgent AIAgent => _aiAgent;
-        public EnemyID EnemyID => _enemyID;
         public Blackboard Blackboard => _blackboard;
         public BehaviourTreeOwner BehaviourTreeOwner => _behaviourTreeOwner;
+        
+        public NpcState State => _state;
+        public EnemyID ID => id;
+        public EnemyModel Model => model;
 
         public NpcPushComponent PushComponent => _pushComponent;
 
