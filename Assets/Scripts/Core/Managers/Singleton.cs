@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,8 +23,15 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
         OnAwake();
     }
     
-    protected static T Instance => _instance || _applicationQuit ? _instance : new GameObject(typeof(T).Name, typeof(T)).GetComponent<T>();
+    protected static T Instance {
+        get {
+            if (_applicationQuit)
+                return _instance;
+            
+            return _instance ? _instance : new GameObject(typeof(T).Name, typeof(T)).GetComponent<T>();
+        }
+    }
 
     protected virtual void OnAwake() {}
-    protected virtual void OnApplicationQuit() => _applicationQuit = true;
+    private void OnApplicationQuit() => _applicationQuit = true;
 }
