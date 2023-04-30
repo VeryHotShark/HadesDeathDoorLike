@@ -9,6 +9,7 @@ namespace VHS {
         private float _castDuration;
         private float _totalDuration;
         private Skill _activeSkill;
+        private List<Skill> _castedSkills = new List<Skill>();
 
         public Skill ActiveSkill => _activeSkill;
 
@@ -17,18 +18,26 @@ namespace VHS {
         /// </summary>
         /// <param name="skill"> skill reference to be set </param>
         public void InitSkill(Skill skill) {
-            skill.Initialize();
-            skill.SetOwner(Parent);
+            if(_castedSkills.Contains(skill))
+                _castedSkills.Add(skill);
+            
+            skill.Initialize(Parent);
+        }
+
+        /// <summary>
+        /// Callback for Skills to know when Owner is Disabled/Dead
+        /// </summary>
+        protected override void Disable() {
+            foreach (Skill skill in _castedSkills) 
+                skill.Disable();                
         }
 
         /// <summary>
         ///  Entry point of Casting Skill, decides whether to start target or start skill
         /// </summary>
         public bool CastSkill(Skill skill) {
-            if (!skill.Initialized) {
-                skill.Initialize();   
-                skill.SetOwner(Parent);
-            }
+            if (!skill.Initialized) 
+                InitSkill(skill);
 
             if (!skill.CanCastSkill())
                 return false;

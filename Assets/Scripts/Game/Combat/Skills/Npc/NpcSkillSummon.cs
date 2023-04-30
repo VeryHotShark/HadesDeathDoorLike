@@ -12,9 +12,6 @@ namespace VHS {
         private List<Actor> _spawnedNpcs = new List<Actor>();
 
         public override void OnSkillFinish() {
-            if(_spawnedNpcs.Count - 1 > _maxCount.value)
-                return;
-            
             Vector3 randomOffset = Random.insideUnitSphere.Flatten() * _radius.value;
             Vector3 spawnPos = Owner.FeetPosition + randomOffset;
 
@@ -30,5 +27,12 @@ namespace VHS {
             actor.OnDeath -= OnSpawnedNpcDeath;
             _spawnedNpcs.Remove(actor);
         }
+
+        public override void OnDisable() {
+            foreach (Actor spawnedNpc in _spawnedNpcs) 
+                spawnedNpc.OnDeath -= OnSpawnedNpcDeath;
+        }
+
+        public override bool CanCastSkill() => _spawnedNpcs.Count < _maxCount.value;
     }
 }

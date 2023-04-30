@@ -45,12 +45,17 @@ namespace VHS {
         public Actor Owner { get; private set; }
         public SkillState SkillState { get; private set; }
 
-        public void Initialize() {
+        public void Initialize(Actor owner) {
+            Owner = owner;
             _initialized = true;
             OnInitialize();
         }
-        
-        public void SetOwner(Actor owner) => Owner = owner;
+
+        public void Disable() {
+            Owner = null;
+            _initialized = false;
+            OnDisable();
+        }
 
         public void Start() {
             Reset();
@@ -98,6 +103,7 @@ namespace VHS {
         public virtual void OnAbort() { }
         public virtual void OnReset() { }
         public virtual void OnInitialize() { }
+        public virtual void OnDisable() { }
     }
     
     
