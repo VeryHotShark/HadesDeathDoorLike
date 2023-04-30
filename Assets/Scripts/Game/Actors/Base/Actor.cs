@@ -10,7 +10,7 @@ namespace VHS {
         public Action<HitData> OnHit = delegate {  };
         public Action<HitPoints> OnHealthChanged = delegate { };
         
-        public event Action<IActor> OnDeath = delegate {  };
+        public event Action<Actor> OnDeath = delegate {  };
 
         [SerializeField] private GameEvent _deathEvent;
         [SerializeField] private GameEvent _hitEvent;

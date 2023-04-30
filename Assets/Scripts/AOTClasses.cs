@@ -23,7 +23,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.BinderConnection<UnityEngine.RaycastHit2D> FlowCanvas_BinderConnection_UnityEngine_RaycastHit2D;
 		FlowCanvas.BinderConnection<UnityEngine.Ray> FlowCanvas_BinderConnection_UnityEngine_Ray;
 		FlowCanvas.BinderConnection<UnityEngine.Space> FlowCanvas_BinderConnection_UnityEngine_Space;
+		FlowCanvas.BinderConnection<PlayerInput.CharacterControlsActions> FlowCanvas_BinderConnection_PlayerInput_CharacterControlsActions;
 		FlowCanvas.BinderConnection<UnityEngine.LayerMask> FlowCanvas_BinderConnection_UnityEngine_LayerMask;
+		FlowCanvas.BinderConnection<VHS.BossStage> FlowCanvas_BinderConnection_VHS_BossStage;
+		FlowCanvas.BinderConnection<VHS.CharacterInputs> FlowCanvas_BinderConnection_VHS_CharacterInputs;
+		FlowCanvas.BinderConnection<VHS.InteractType> FlowCanvas_BinderConnection_VHS_InteractType;
+		FlowCanvas.BinderConnection<VHS.KeyInput> FlowCanvas_BinderConnection_VHS_KeyInput;
+		FlowCanvas.BinderConnection<VHS.NpcState> FlowCanvas_BinderConnection_VHS_NpcState;
+		FlowCanvas.BinderConnection<VHS.PassiveTriggerType> FlowCanvas_BinderConnection_VHS_PassiveTriggerType;
+		FlowCanvas.BinderConnection<VHS.PlayerAttackType> FlowCanvas_BinderConnection_VHS_PlayerAttackType;
+		FlowCanvas.BinderConnection<VHS.ShopItemType> FlowCanvas_BinderConnection_VHS_ShopItemType;
+		FlowCanvas.BinderConnection<VHS.SkillState> FlowCanvas_BinderConnection_VHS_SkillState;
+		FlowCanvas.BinderConnection<VHS.SpawnData> FlowCanvas_BinderConnection_VHS_SpawnData;
+		FlowCanvas.BinderConnection<VHS.SpawnStartType> FlowCanvas_BinderConnection_VHS_SpawnStartType;
+		FlowCanvas.BinderConnection<VHS.TimeType> FlowCanvas_BinderConnection_VHS_TimeType;
 
 		void FlowCanvas_ValueHandler_Delegate(){
 			FlowCanvas.ValueHandler<System.Boolean> _FlowCanvas_ValueHandler_System_Boolean;
@@ -43,7 +56,20 @@ namespace ParadoxNotion.Internal{
 			FlowCanvas.ValueHandler<UnityEngine.RaycastHit2D> _FlowCanvas_ValueHandler_UnityEngine_RaycastHit2D;
 			FlowCanvas.ValueHandler<UnityEngine.Ray> _FlowCanvas_ValueHandler_UnityEngine_Ray;
 			FlowCanvas.ValueHandler<UnityEngine.Space> _FlowCanvas_ValueHandler_UnityEngine_Space;
+			FlowCanvas.ValueHandler<PlayerInput.CharacterControlsActions> _FlowCanvas_ValueHandler_PlayerInput_CharacterControlsActions;
 			FlowCanvas.ValueHandler<UnityEngine.LayerMask> _FlowCanvas_ValueHandler_UnityEngine_LayerMask;
+			FlowCanvas.ValueHandler<VHS.BossStage> _FlowCanvas_ValueHandler_VHS_BossStage;
+			FlowCanvas.ValueHandler<VHS.CharacterInputs> _FlowCanvas_ValueHandler_VHS_CharacterInputs;
+			FlowCanvas.ValueHandler<VHS.InteractType> _FlowCanvas_ValueHandler_VHS_InteractType;
+			FlowCanvas.ValueHandler<VHS.KeyInput> _FlowCanvas_ValueHandler_VHS_KeyInput;
+			FlowCanvas.ValueHandler<VHS.NpcState> _FlowCanvas_ValueHandler_VHS_NpcState;
+			FlowCanvas.ValueHandler<VHS.PassiveTriggerType> _FlowCanvas_ValueHandler_VHS_PassiveTriggerType;
+			FlowCanvas.ValueHandler<VHS.PlayerAttackType> _FlowCanvas_ValueHandler_VHS_PlayerAttackType;
+			FlowCanvas.ValueHandler<VHS.ShopItemType> _FlowCanvas_ValueHandler_VHS_ShopItemType;
+			FlowCanvas.ValueHandler<VHS.SkillState> _FlowCanvas_ValueHandler_VHS_SkillState;
+			FlowCanvas.ValueHandler<VHS.SpawnData> _FlowCanvas_ValueHandler_VHS_SpawnData;
+			FlowCanvas.ValueHandler<VHS.SpawnStartType> _FlowCanvas_ValueHandler_VHS_SpawnStartType;
+			FlowCanvas.ValueHandler<VHS.TimeType> _FlowCanvas_ValueHandler_VHS_TimeType;
 		}
 
 		FlowCanvas.ValueInput<System.Boolean> FlowCanvas_ValueInput_System_Boolean;
@@ -63,7 +89,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.ValueInput<UnityEngine.RaycastHit2D> FlowCanvas_ValueInput_UnityEngine_RaycastHit2D;
 		FlowCanvas.ValueInput<UnityEngine.Ray> FlowCanvas_ValueInput_UnityEngine_Ray;
 		FlowCanvas.ValueInput<UnityEngine.Space> FlowCanvas_ValueInput_UnityEngine_Space;
+		FlowCanvas.ValueInput<PlayerInput.CharacterControlsActions> FlowCanvas_ValueInput_PlayerInput_CharacterControlsActions;
 		FlowCanvas.ValueInput<UnityEngine.LayerMask> FlowCanvas_ValueInput_UnityEngine_LayerMask;
+		FlowCanvas.ValueInput<VHS.BossStage> FlowCanvas_ValueInput_VHS_BossStage;
+		FlowCanvas.ValueInput<VHS.CharacterInputs> FlowCanvas_ValueInput_VHS_CharacterInputs;
+		FlowCanvas.ValueInput<VHS.InteractType> FlowCanvas_ValueInput_VHS_InteractType;
+		FlowCanvas.ValueInput<VHS.KeyInput> FlowCanvas_ValueInput_VHS_KeyInput;
+		FlowCanvas.ValueInput<VHS.NpcState> FlowCanvas_ValueInput_VHS_NpcState;
+		FlowCanvas.ValueInput<VHS.PassiveTriggerType> FlowCanvas_ValueInput_VHS_PassiveTriggerType;
+		FlowCanvas.ValueInput<VHS.PlayerAttackType> FlowCanvas_ValueInput_VHS_PlayerAttackType;
+		FlowCanvas.ValueInput<VHS.ShopItemType> FlowCanvas_ValueInput_VHS_ShopItemType;
+		FlowCanvas.ValueInput<VHS.SkillState> FlowCanvas_ValueInput_VHS_SkillState;
+		FlowCanvas.ValueInput<VHS.SpawnData> FlowCanvas_ValueInput_VHS_SpawnData;
+		FlowCanvas.ValueInput<VHS.SpawnStartType> FlowCanvas_ValueInput_VHS_SpawnStartType;
+		FlowCanvas.ValueInput<VHS.TimeType> FlowCanvas_ValueInput_VHS_TimeType;
 
 		FlowCanvas.ValueOutput<System.Boolean> FlowCanvas_ValueOutput_System_Boolean;
 		FlowCanvas.ValueOutput<System.Single> FlowCanvas_ValueOutput_System_Single;
@@ -82,7 +121,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.ValueOutput<UnityEngine.RaycastHit2D> FlowCanvas_ValueOutput_UnityEngine_RaycastHit2D;
 		FlowCanvas.ValueOutput<UnityEngine.Ray> FlowCanvas_ValueOutput_UnityEngine_Ray;
 		FlowCanvas.ValueOutput<UnityEngine.Space> FlowCanvas_ValueOutput_UnityEngine_Space;
+		FlowCanvas.ValueOutput<PlayerInput.CharacterControlsActions> FlowCanvas_ValueOutput_PlayerInput_CharacterControlsActions;
 		FlowCanvas.ValueOutput<UnityEngine.LayerMask> FlowCanvas_ValueOutput_UnityEngine_LayerMask;
+		FlowCanvas.ValueOutput<VHS.BossStage> FlowCanvas_ValueOutput_VHS_BossStage;
+		FlowCanvas.ValueOutput<VHS.CharacterInputs> FlowCanvas_ValueOutput_VHS_CharacterInputs;
+		FlowCanvas.ValueOutput<VHS.InteractType> FlowCanvas_ValueOutput_VHS_InteractType;
+		FlowCanvas.ValueOutput<VHS.KeyInput> FlowCanvas_ValueOutput_VHS_KeyInput;
+		FlowCanvas.ValueOutput<VHS.NpcState> FlowCanvas_ValueOutput_VHS_NpcState;
+		FlowCanvas.ValueOutput<VHS.PassiveTriggerType> FlowCanvas_ValueOutput_VHS_PassiveTriggerType;
+		FlowCanvas.ValueOutput<VHS.PlayerAttackType> FlowCanvas_ValueOutput_VHS_PlayerAttackType;
+		FlowCanvas.ValueOutput<VHS.ShopItemType> FlowCanvas_ValueOutput_VHS_ShopItemType;
+		FlowCanvas.ValueOutput<VHS.SkillState> FlowCanvas_ValueOutput_VHS_SkillState;
+		FlowCanvas.ValueOutput<VHS.SpawnData> FlowCanvas_ValueOutput_VHS_SpawnData;
+		FlowCanvas.ValueOutput<VHS.SpawnStartType> FlowCanvas_ValueOutput_VHS_SpawnStartType;
+		FlowCanvas.ValueOutput<VHS.TimeType> FlowCanvas_ValueOutput_VHS_TimeType;
 
 		FlowCanvas.Nodes.AddDictionaryItem<System.Boolean> FlowCanvas_Nodes_AddDictionaryItem_System_Boolean;
 		FlowCanvas.Nodes.AddDictionaryItem<System.Single> FlowCanvas_Nodes_AddDictionaryItem_System_Single;
@@ -101,7 +153,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.AddDictionaryItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_AddDictionaryItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.AddDictionaryItem<UnityEngine.Ray> FlowCanvas_Nodes_AddDictionaryItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.AddDictionaryItem<UnityEngine.Space> FlowCanvas_Nodes_AddDictionaryItem_UnityEngine_Space;
+		FlowCanvas.Nodes.AddDictionaryItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_AddDictionaryItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.AddDictionaryItem<UnityEngine.LayerMask> FlowCanvas_Nodes_AddDictionaryItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.BossStage> FlowCanvas_Nodes_AddDictionaryItem_VHS_BossStage;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.CharacterInputs> FlowCanvas_Nodes_AddDictionaryItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.InteractType> FlowCanvas_Nodes_AddDictionaryItem_VHS_InteractType;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.KeyInput> FlowCanvas_Nodes_AddDictionaryItem_VHS_KeyInput;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.NpcState> FlowCanvas_Nodes_AddDictionaryItem_VHS_NpcState;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_AddDictionaryItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.PlayerAttackType> FlowCanvas_Nodes_AddDictionaryItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.ShopItemType> FlowCanvas_Nodes_AddDictionaryItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.SkillState> FlowCanvas_Nodes_AddDictionaryItem_VHS_SkillState;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.SpawnData> FlowCanvas_Nodes_AddDictionaryItem_VHS_SpawnData;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.SpawnStartType> FlowCanvas_Nodes_AddDictionaryItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.AddDictionaryItem<VHS.TimeType> FlowCanvas_Nodes_AddDictionaryItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.AddListItem<System.Boolean> FlowCanvas_Nodes_AddListItem_System_Boolean;
 		FlowCanvas.Nodes.AddListItem<System.Single> FlowCanvas_Nodes_AddListItem_System_Single;
@@ -120,13 +185,50 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.AddListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_AddListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.AddListItem<UnityEngine.Ray> FlowCanvas_Nodes_AddListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.AddListItem<UnityEngine.Space> FlowCanvas_Nodes_AddListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.AddListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_AddListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.AddListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_AddListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.AddListItem<VHS.BossStage> FlowCanvas_Nodes_AddListItem_VHS_BossStage;
+		FlowCanvas.Nodes.AddListItem<VHS.CharacterInputs> FlowCanvas_Nodes_AddListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.AddListItem<VHS.InteractType> FlowCanvas_Nodes_AddListItem_VHS_InteractType;
+		FlowCanvas.Nodes.AddListItem<VHS.KeyInput> FlowCanvas_Nodes_AddListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.AddListItem<VHS.NpcState> FlowCanvas_Nodes_AddListItem_VHS_NpcState;
+		FlowCanvas.Nodes.AddListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_AddListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.AddListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_AddListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.AddListItem<VHS.ShopItemType> FlowCanvas_Nodes_AddListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.AddListItem<VHS.SkillState> FlowCanvas_Nodes_AddListItem_VHS_SkillState;
+		FlowCanvas.Nodes.AddListItem<VHS.SpawnData> FlowCanvas_Nodes_AddListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.AddListItem<VHS.SpawnStartType> FlowCanvas_Nodes_AddListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.AddListItem<VHS.TimeType> FlowCanvas_Nodes_AddListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.BitwiseAnd<UnityEngine.Space> FlowCanvas_Nodes_BitwiseAnd_UnityEngine_Space;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.InteractType> FlowCanvas_Nodes_BitwiseAnd_VHS_InteractType;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.NpcState> FlowCanvas_Nodes_BitwiseAnd_VHS_NpcState;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.PassiveTriggerType> FlowCanvas_Nodes_BitwiseAnd_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.PlayerAttackType> FlowCanvas_Nodes_BitwiseAnd_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.ShopItemType> FlowCanvas_Nodes_BitwiseAnd_VHS_ShopItemType;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.SkillState> FlowCanvas_Nodes_BitwiseAnd_VHS_SkillState;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.SpawnStartType> FlowCanvas_Nodes_BitwiseAnd_VHS_SpawnStartType;
+		FlowCanvas.Nodes.BitwiseAnd<VHS.TimeType> FlowCanvas_Nodes_BitwiseAnd_VHS_TimeType;
 
 		FlowCanvas.Nodes.BitwiseInvert<UnityEngine.Space> FlowCanvas_Nodes_BitwiseInvert_UnityEngine_Space;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.InteractType> FlowCanvas_Nodes_BitwiseInvert_VHS_InteractType;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.NpcState> FlowCanvas_Nodes_BitwiseInvert_VHS_NpcState;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.PassiveTriggerType> FlowCanvas_Nodes_BitwiseInvert_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.PlayerAttackType> FlowCanvas_Nodes_BitwiseInvert_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.ShopItemType> FlowCanvas_Nodes_BitwiseInvert_VHS_ShopItemType;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.SkillState> FlowCanvas_Nodes_BitwiseInvert_VHS_SkillState;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.SpawnStartType> FlowCanvas_Nodes_BitwiseInvert_VHS_SpawnStartType;
+		FlowCanvas.Nodes.BitwiseInvert<VHS.TimeType> FlowCanvas_Nodes_BitwiseInvert_VHS_TimeType;
 
 		FlowCanvas.Nodes.BitwiseOr<UnityEngine.Space> FlowCanvas_Nodes_BitwiseOr_UnityEngine_Space;
+		FlowCanvas.Nodes.BitwiseOr<VHS.InteractType> FlowCanvas_Nodes_BitwiseOr_VHS_InteractType;
+		FlowCanvas.Nodes.BitwiseOr<VHS.NpcState> FlowCanvas_Nodes_BitwiseOr_VHS_NpcState;
+		FlowCanvas.Nodes.BitwiseOr<VHS.PassiveTriggerType> FlowCanvas_Nodes_BitwiseOr_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.BitwiseOr<VHS.PlayerAttackType> FlowCanvas_Nodes_BitwiseOr_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.BitwiseOr<VHS.ShopItemType> FlowCanvas_Nodes_BitwiseOr_VHS_ShopItemType;
+		FlowCanvas.Nodes.BitwiseOr<VHS.SkillState> FlowCanvas_Nodes_BitwiseOr_VHS_SkillState;
+		FlowCanvas.Nodes.BitwiseOr<VHS.SpawnStartType> FlowCanvas_Nodes_BitwiseOr_VHS_SpawnStartType;
+		FlowCanvas.Nodes.BitwiseOr<VHS.TimeType> FlowCanvas_Nodes_BitwiseOr_VHS_TimeType;
 
 		FlowCanvas.Nodes.Buffer<System.Boolean> FlowCanvas_Nodes_Buffer_System_Boolean;
 		FlowCanvas.Nodes.Buffer<System.Single> FlowCanvas_Nodes_Buffer_System_Single;
@@ -145,7 +247,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.Buffer<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_Buffer_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.Buffer<UnityEngine.Ray> FlowCanvas_Nodes_Buffer_UnityEngine_Ray;
 		FlowCanvas.Nodes.Buffer<UnityEngine.Space> FlowCanvas_Nodes_Buffer_UnityEngine_Space;
+		FlowCanvas.Nodes.Buffer<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_Buffer_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.Buffer<UnityEngine.LayerMask> FlowCanvas_Nodes_Buffer_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.Buffer<VHS.BossStage> FlowCanvas_Nodes_Buffer_VHS_BossStage;
+		FlowCanvas.Nodes.Buffer<VHS.CharacterInputs> FlowCanvas_Nodes_Buffer_VHS_CharacterInputs;
+		FlowCanvas.Nodes.Buffer<VHS.InteractType> FlowCanvas_Nodes_Buffer_VHS_InteractType;
+		FlowCanvas.Nodes.Buffer<VHS.KeyInput> FlowCanvas_Nodes_Buffer_VHS_KeyInput;
+		FlowCanvas.Nodes.Buffer<VHS.NpcState> FlowCanvas_Nodes_Buffer_VHS_NpcState;
+		FlowCanvas.Nodes.Buffer<VHS.PassiveTriggerType> FlowCanvas_Nodes_Buffer_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.Buffer<VHS.PlayerAttackType> FlowCanvas_Nodes_Buffer_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.Buffer<VHS.ShopItemType> FlowCanvas_Nodes_Buffer_VHS_ShopItemType;
+		FlowCanvas.Nodes.Buffer<VHS.SkillState> FlowCanvas_Nodes_Buffer_VHS_SkillState;
+		FlowCanvas.Nodes.Buffer<VHS.SpawnData> FlowCanvas_Nodes_Buffer_VHS_SpawnData;
+		FlowCanvas.Nodes.Buffer<VHS.SpawnStartType> FlowCanvas_Nodes_Buffer_VHS_SpawnStartType;
+		FlowCanvas.Nodes.Buffer<VHS.TimeType> FlowCanvas_Nodes_Buffer_VHS_TimeType;
 
 		FlowCanvas.Nodes.Cache<System.Boolean> FlowCanvas_Nodes_Cache_System_Boolean;
 		FlowCanvas.Nodes.Cache<System.Single> FlowCanvas_Nodes_Cache_System_Single;
@@ -164,7 +279,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.Cache<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_Cache_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.Cache<UnityEngine.Ray> FlowCanvas_Nodes_Cache_UnityEngine_Ray;
 		FlowCanvas.Nodes.Cache<UnityEngine.Space> FlowCanvas_Nodes_Cache_UnityEngine_Space;
+		FlowCanvas.Nodes.Cache<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_Cache_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.Cache<UnityEngine.LayerMask> FlowCanvas_Nodes_Cache_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.Cache<VHS.BossStage> FlowCanvas_Nodes_Cache_VHS_BossStage;
+		FlowCanvas.Nodes.Cache<VHS.CharacterInputs> FlowCanvas_Nodes_Cache_VHS_CharacterInputs;
+		FlowCanvas.Nodes.Cache<VHS.InteractType> FlowCanvas_Nodes_Cache_VHS_InteractType;
+		FlowCanvas.Nodes.Cache<VHS.KeyInput> FlowCanvas_Nodes_Cache_VHS_KeyInput;
+		FlowCanvas.Nodes.Cache<VHS.NpcState> FlowCanvas_Nodes_Cache_VHS_NpcState;
+		FlowCanvas.Nodes.Cache<VHS.PassiveTriggerType> FlowCanvas_Nodes_Cache_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.Cache<VHS.PlayerAttackType> FlowCanvas_Nodes_Cache_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.Cache<VHS.ShopItemType> FlowCanvas_Nodes_Cache_VHS_ShopItemType;
+		FlowCanvas.Nodes.Cache<VHS.SkillState> FlowCanvas_Nodes_Cache_VHS_SkillState;
+		FlowCanvas.Nodes.Cache<VHS.SpawnData> FlowCanvas_Nodes_Cache_VHS_SpawnData;
+		FlowCanvas.Nodes.Cache<VHS.SpawnStartType> FlowCanvas_Nodes_Cache_VHS_SpawnStartType;
+		FlowCanvas.Nodes.Cache<VHS.TimeType> FlowCanvas_Nodes_Cache_VHS_TimeType;
 
 		FlowCanvas.Nodes.Cast<System.Boolean> FlowCanvas_Nodes_Cast_System_Boolean;
 		FlowCanvas.Nodes.Cast<System.Single> FlowCanvas_Nodes_Cast_System_Single;
@@ -183,7 +311,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.Cast<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_Cast_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.Cast<UnityEngine.Ray> FlowCanvas_Nodes_Cast_UnityEngine_Ray;
 		FlowCanvas.Nodes.Cast<UnityEngine.Space> FlowCanvas_Nodes_Cast_UnityEngine_Space;
+		FlowCanvas.Nodes.Cast<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_Cast_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.Cast<UnityEngine.LayerMask> FlowCanvas_Nodes_Cast_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.Cast<VHS.BossStage> FlowCanvas_Nodes_Cast_VHS_BossStage;
+		FlowCanvas.Nodes.Cast<VHS.CharacterInputs> FlowCanvas_Nodes_Cast_VHS_CharacterInputs;
+		FlowCanvas.Nodes.Cast<VHS.InteractType> FlowCanvas_Nodes_Cast_VHS_InteractType;
+		FlowCanvas.Nodes.Cast<VHS.KeyInput> FlowCanvas_Nodes_Cast_VHS_KeyInput;
+		FlowCanvas.Nodes.Cast<VHS.NpcState> FlowCanvas_Nodes_Cast_VHS_NpcState;
+		FlowCanvas.Nodes.Cast<VHS.PassiveTriggerType> FlowCanvas_Nodes_Cast_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.Cast<VHS.PlayerAttackType> FlowCanvas_Nodes_Cast_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.Cast<VHS.ShopItemType> FlowCanvas_Nodes_Cast_VHS_ShopItemType;
+		FlowCanvas.Nodes.Cast<VHS.SkillState> FlowCanvas_Nodes_Cast_VHS_SkillState;
+		FlowCanvas.Nodes.Cast<VHS.SpawnData> FlowCanvas_Nodes_Cast_VHS_SpawnData;
+		FlowCanvas.Nodes.Cast<VHS.SpawnStartType> FlowCanvas_Nodes_Cast_VHS_SpawnStartType;
+		FlowCanvas.Nodes.Cast<VHS.TimeType> FlowCanvas_Nodes_Cast_VHS_TimeType;
 
 		FlowCanvas.Nodes.CreateCollection<System.Boolean> FlowCanvas_Nodes_CreateCollection_System_Boolean;
 		FlowCanvas.Nodes.CreateCollection<System.Single> FlowCanvas_Nodes_CreateCollection_System_Single;
@@ -202,7 +343,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.CreateCollection<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_CreateCollection_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.CreateCollection<UnityEngine.Ray> FlowCanvas_Nodes_CreateCollection_UnityEngine_Ray;
 		FlowCanvas.Nodes.CreateCollection<UnityEngine.Space> FlowCanvas_Nodes_CreateCollection_UnityEngine_Space;
+		FlowCanvas.Nodes.CreateCollection<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_CreateCollection_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.CreateCollection<UnityEngine.LayerMask> FlowCanvas_Nodes_CreateCollection_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.CreateCollection<VHS.BossStage> FlowCanvas_Nodes_CreateCollection_VHS_BossStage;
+		FlowCanvas.Nodes.CreateCollection<VHS.CharacterInputs> FlowCanvas_Nodes_CreateCollection_VHS_CharacterInputs;
+		FlowCanvas.Nodes.CreateCollection<VHS.InteractType> FlowCanvas_Nodes_CreateCollection_VHS_InteractType;
+		FlowCanvas.Nodes.CreateCollection<VHS.KeyInput> FlowCanvas_Nodes_CreateCollection_VHS_KeyInput;
+		FlowCanvas.Nodes.CreateCollection<VHS.NpcState> FlowCanvas_Nodes_CreateCollection_VHS_NpcState;
+		FlowCanvas.Nodes.CreateCollection<VHS.PassiveTriggerType> FlowCanvas_Nodes_CreateCollection_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.CreateCollection<VHS.PlayerAttackType> FlowCanvas_Nodes_CreateCollection_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.CreateCollection<VHS.ShopItemType> FlowCanvas_Nodes_CreateCollection_VHS_ShopItemType;
+		FlowCanvas.Nodes.CreateCollection<VHS.SkillState> FlowCanvas_Nodes_CreateCollection_VHS_SkillState;
+		FlowCanvas.Nodes.CreateCollection<VHS.SpawnData> FlowCanvas_Nodes_CreateCollection_VHS_SpawnData;
+		FlowCanvas.Nodes.CreateCollection<VHS.SpawnStartType> FlowCanvas_Nodes_CreateCollection_VHS_SpawnStartType;
+		FlowCanvas.Nodes.CreateCollection<VHS.TimeType> FlowCanvas_Nodes_CreateCollection_VHS_TimeType;
 
 		FlowCanvas.Nodes.CreateDictionary<System.Boolean> FlowCanvas_Nodes_CreateDictionary_System_Boolean;
 		FlowCanvas.Nodes.CreateDictionary<System.Single> FlowCanvas_Nodes_CreateDictionary_System_Single;
@@ -221,7 +375,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.CreateDictionary<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_CreateDictionary_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.CreateDictionary<UnityEngine.Ray> FlowCanvas_Nodes_CreateDictionary_UnityEngine_Ray;
 		FlowCanvas.Nodes.CreateDictionary<UnityEngine.Space> FlowCanvas_Nodes_CreateDictionary_UnityEngine_Space;
+		FlowCanvas.Nodes.CreateDictionary<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_CreateDictionary_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.CreateDictionary<UnityEngine.LayerMask> FlowCanvas_Nodes_CreateDictionary_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.CreateDictionary<VHS.BossStage> FlowCanvas_Nodes_CreateDictionary_VHS_BossStage;
+		FlowCanvas.Nodes.CreateDictionary<VHS.CharacterInputs> FlowCanvas_Nodes_CreateDictionary_VHS_CharacterInputs;
+		FlowCanvas.Nodes.CreateDictionary<VHS.InteractType> FlowCanvas_Nodes_CreateDictionary_VHS_InteractType;
+		FlowCanvas.Nodes.CreateDictionary<VHS.KeyInput> FlowCanvas_Nodes_CreateDictionary_VHS_KeyInput;
+		FlowCanvas.Nodes.CreateDictionary<VHS.NpcState> FlowCanvas_Nodes_CreateDictionary_VHS_NpcState;
+		FlowCanvas.Nodes.CreateDictionary<VHS.PassiveTriggerType> FlowCanvas_Nodes_CreateDictionary_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.CreateDictionary<VHS.PlayerAttackType> FlowCanvas_Nodes_CreateDictionary_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.CreateDictionary<VHS.ShopItemType> FlowCanvas_Nodes_CreateDictionary_VHS_ShopItemType;
+		FlowCanvas.Nodes.CreateDictionary<VHS.SkillState> FlowCanvas_Nodes_CreateDictionary_VHS_SkillState;
+		FlowCanvas.Nodes.CreateDictionary<VHS.SpawnData> FlowCanvas_Nodes_CreateDictionary_VHS_SpawnData;
+		FlowCanvas.Nodes.CreateDictionary<VHS.SpawnStartType> FlowCanvas_Nodes_CreateDictionary_VHS_SpawnStartType;
+		FlowCanvas.Nodes.CreateDictionary<VHS.TimeType> FlowCanvas_Nodes_CreateDictionary_VHS_TimeType;
 
 		FlowCanvas.Nodes.CustomEvent<System.Boolean> FlowCanvas_Nodes_CustomEvent_System_Boolean;
 		FlowCanvas.Nodes.CustomEvent<System.Single> FlowCanvas_Nodes_CustomEvent_System_Single;
@@ -240,7 +407,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.CustomEvent<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_CustomEvent_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.CustomEvent<UnityEngine.Ray> FlowCanvas_Nodes_CustomEvent_UnityEngine_Ray;
 		FlowCanvas.Nodes.CustomEvent<UnityEngine.Space> FlowCanvas_Nodes_CustomEvent_UnityEngine_Space;
+		FlowCanvas.Nodes.CustomEvent<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_CustomEvent_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.CustomEvent<UnityEngine.LayerMask> FlowCanvas_Nodes_CustomEvent_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.CustomEvent<VHS.BossStage> FlowCanvas_Nodes_CustomEvent_VHS_BossStage;
+		FlowCanvas.Nodes.CustomEvent<VHS.CharacterInputs> FlowCanvas_Nodes_CustomEvent_VHS_CharacterInputs;
+		FlowCanvas.Nodes.CustomEvent<VHS.InteractType> FlowCanvas_Nodes_CustomEvent_VHS_InteractType;
+		FlowCanvas.Nodes.CustomEvent<VHS.KeyInput> FlowCanvas_Nodes_CustomEvent_VHS_KeyInput;
+		FlowCanvas.Nodes.CustomEvent<VHS.NpcState> FlowCanvas_Nodes_CustomEvent_VHS_NpcState;
+		FlowCanvas.Nodes.CustomEvent<VHS.PassiveTriggerType> FlowCanvas_Nodes_CustomEvent_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.CustomEvent<VHS.PlayerAttackType> FlowCanvas_Nodes_CustomEvent_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.CustomEvent<VHS.ShopItemType> FlowCanvas_Nodes_CustomEvent_VHS_ShopItemType;
+		FlowCanvas.Nodes.CustomEvent<VHS.SkillState> FlowCanvas_Nodes_CustomEvent_VHS_SkillState;
+		FlowCanvas.Nodes.CustomEvent<VHS.SpawnData> FlowCanvas_Nodes_CustomEvent_VHS_SpawnData;
+		FlowCanvas.Nodes.CustomEvent<VHS.SpawnStartType> FlowCanvas_Nodes_CustomEvent_VHS_SpawnStartType;
+		FlowCanvas.Nodes.CustomEvent<VHS.TimeType> FlowCanvas_Nodes_CustomEvent_VHS_TimeType;
 
 		FlowCanvas.Nodes.DictionaryContainsKey<System.Boolean> FlowCanvas_Nodes_DictionaryContainsKey_System_Boolean;
 		FlowCanvas.Nodes.DictionaryContainsKey<System.Single> FlowCanvas_Nodes_DictionaryContainsKey_System_Single;
@@ -259,7 +439,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.DictionaryContainsKey<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_DictionaryContainsKey_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.DictionaryContainsKey<UnityEngine.Ray> FlowCanvas_Nodes_DictionaryContainsKey_UnityEngine_Ray;
 		FlowCanvas.Nodes.DictionaryContainsKey<UnityEngine.Space> FlowCanvas_Nodes_DictionaryContainsKey_UnityEngine_Space;
+		FlowCanvas.Nodes.DictionaryContainsKey<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_DictionaryContainsKey_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.DictionaryContainsKey<UnityEngine.LayerMask> FlowCanvas_Nodes_DictionaryContainsKey_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.BossStage> FlowCanvas_Nodes_DictionaryContainsKey_VHS_BossStage;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.CharacterInputs> FlowCanvas_Nodes_DictionaryContainsKey_VHS_CharacterInputs;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.InteractType> FlowCanvas_Nodes_DictionaryContainsKey_VHS_InteractType;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.KeyInput> FlowCanvas_Nodes_DictionaryContainsKey_VHS_KeyInput;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.NpcState> FlowCanvas_Nodes_DictionaryContainsKey_VHS_NpcState;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.PassiveTriggerType> FlowCanvas_Nodes_DictionaryContainsKey_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.PlayerAttackType> FlowCanvas_Nodes_DictionaryContainsKey_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.ShopItemType> FlowCanvas_Nodes_DictionaryContainsKey_VHS_ShopItemType;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.SkillState> FlowCanvas_Nodes_DictionaryContainsKey_VHS_SkillState;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.SpawnData> FlowCanvas_Nodes_DictionaryContainsKey_VHS_SpawnData;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.SpawnStartType> FlowCanvas_Nodes_DictionaryContainsKey_VHS_SpawnStartType;
+		FlowCanvas.Nodes.DictionaryContainsKey<VHS.TimeType> FlowCanvas_Nodes_DictionaryContainsKey_VHS_TimeType;
 
 		FlowCanvas.Nodes.ForEach<System.Boolean> FlowCanvas_Nodes_ForEach_System_Boolean;
 		FlowCanvas.Nodes.ForEach<System.Single> FlowCanvas_Nodes_ForEach_System_Single;
@@ -278,7 +471,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.ForEach<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_ForEach_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.ForEach<UnityEngine.Ray> FlowCanvas_Nodes_ForEach_UnityEngine_Ray;
 		FlowCanvas.Nodes.ForEach<UnityEngine.Space> FlowCanvas_Nodes_ForEach_UnityEngine_Space;
+		FlowCanvas.Nodes.ForEach<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_ForEach_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.ForEach<UnityEngine.LayerMask> FlowCanvas_Nodes_ForEach_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.ForEach<VHS.BossStage> FlowCanvas_Nodes_ForEach_VHS_BossStage;
+		FlowCanvas.Nodes.ForEach<VHS.CharacterInputs> FlowCanvas_Nodes_ForEach_VHS_CharacterInputs;
+		FlowCanvas.Nodes.ForEach<VHS.InteractType> FlowCanvas_Nodes_ForEach_VHS_InteractType;
+		FlowCanvas.Nodes.ForEach<VHS.KeyInput> FlowCanvas_Nodes_ForEach_VHS_KeyInput;
+		FlowCanvas.Nodes.ForEach<VHS.NpcState> FlowCanvas_Nodes_ForEach_VHS_NpcState;
+		FlowCanvas.Nodes.ForEach<VHS.PassiveTriggerType> FlowCanvas_Nodes_ForEach_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.ForEach<VHS.PlayerAttackType> FlowCanvas_Nodes_ForEach_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.ForEach<VHS.ShopItemType> FlowCanvas_Nodes_ForEach_VHS_ShopItemType;
+		FlowCanvas.Nodes.ForEach<VHS.SkillState> FlowCanvas_Nodes_ForEach_VHS_SkillState;
+		FlowCanvas.Nodes.ForEach<VHS.SpawnData> FlowCanvas_Nodes_ForEach_VHS_SpawnData;
+		FlowCanvas.Nodes.ForEach<VHS.SpawnStartType> FlowCanvas_Nodes_ForEach_VHS_SpawnStartType;
+		FlowCanvas.Nodes.ForEach<VHS.TimeType> FlowCanvas_Nodes_ForEach_VHS_TimeType;
 
 		FlowCanvas.Nodes.GetDictionaryItem<System.Boolean> FlowCanvas_Nodes_GetDictionaryItem_System_Boolean;
 		FlowCanvas.Nodes.GetDictionaryItem<System.Single> FlowCanvas_Nodes_GetDictionaryItem_System_Single;
@@ -297,7 +503,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.GetDictionaryItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_GetDictionaryItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.GetDictionaryItem<UnityEngine.Ray> FlowCanvas_Nodes_GetDictionaryItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.GetDictionaryItem<UnityEngine.Space> FlowCanvas_Nodes_GetDictionaryItem_UnityEngine_Space;
+		FlowCanvas.Nodes.GetDictionaryItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_GetDictionaryItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.GetDictionaryItem<UnityEngine.LayerMask> FlowCanvas_Nodes_GetDictionaryItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.BossStage> FlowCanvas_Nodes_GetDictionaryItem_VHS_BossStage;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.CharacterInputs> FlowCanvas_Nodes_GetDictionaryItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.InteractType> FlowCanvas_Nodes_GetDictionaryItem_VHS_InteractType;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.KeyInput> FlowCanvas_Nodes_GetDictionaryItem_VHS_KeyInput;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.NpcState> FlowCanvas_Nodes_GetDictionaryItem_VHS_NpcState;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_GetDictionaryItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.PlayerAttackType> FlowCanvas_Nodes_GetDictionaryItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.ShopItemType> FlowCanvas_Nodes_GetDictionaryItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.SkillState> FlowCanvas_Nodes_GetDictionaryItem_VHS_SkillState;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.SpawnData> FlowCanvas_Nodes_GetDictionaryItem_VHS_SpawnData;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.SpawnStartType> FlowCanvas_Nodes_GetDictionaryItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.GetDictionaryItem<VHS.TimeType> FlowCanvas_Nodes_GetDictionaryItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.GetFirstListItem<System.Boolean> FlowCanvas_Nodes_GetFirstListItem_System_Boolean;
 		FlowCanvas.Nodes.GetFirstListItem<System.Single> FlowCanvas_Nodes_GetFirstListItem_System_Single;
@@ -316,7 +535,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.GetFirstListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_GetFirstListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.GetFirstListItem<UnityEngine.Ray> FlowCanvas_Nodes_GetFirstListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.GetFirstListItem<UnityEngine.Space> FlowCanvas_Nodes_GetFirstListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.GetFirstListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_GetFirstListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.GetFirstListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_GetFirstListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.BossStage> FlowCanvas_Nodes_GetFirstListItem_VHS_BossStage;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.CharacterInputs> FlowCanvas_Nodes_GetFirstListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.InteractType> FlowCanvas_Nodes_GetFirstListItem_VHS_InteractType;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.KeyInput> FlowCanvas_Nodes_GetFirstListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.NpcState> FlowCanvas_Nodes_GetFirstListItem_VHS_NpcState;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_GetFirstListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_GetFirstListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.ShopItemType> FlowCanvas_Nodes_GetFirstListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.SkillState> FlowCanvas_Nodes_GetFirstListItem_VHS_SkillState;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.SpawnData> FlowCanvas_Nodes_GetFirstListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.SpawnStartType> FlowCanvas_Nodes_GetFirstListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.GetFirstListItem<VHS.TimeType> FlowCanvas_Nodes_GetFirstListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.GetLastListItem<System.Boolean> FlowCanvas_Nodes_GetLastListItem_System_Boolean;
 		FlowCanvas.Nodes.GetLastListItem<System.Single> FlowCanvas_Nodes_GetLastListItem_System_Single;
@@ -335,7 +567,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.GetLastListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_GetLastListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.GetLastListItem<UnityEngine.Ray> FlowCanvas_Nodes_GetLastListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.GetLastListItem<UnityEngine.Space> FlowCanvas_Nodes_GetLastListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.GetLastListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_GetLastListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.GetLastListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_GetLastListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.GetLastListItem<VHS.BossStage> FlowCanvas_Nodes_GetLastListItem_VHS_BossStage;
+		FlowCanvas.Nodes.GetLastListItem<VHS.CharacterInputs> FlowCanvas_Nodes_GetLastListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.GetLastListItem<VHS.InteractType> FlowCanvas_Nodes_GetLastListItem_VHS_InteractType;
+		FlowCanvas.Nodes.GetLastListItem<VHS.KeyInput> FlowCanvas_Nodes_GetLastListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.GetLastListItem<VHS.NpcState> FlowCanvas_Nodes_GetLastListItem_VHS_NpcState;
+		FlowCanvas.Nodes.GetLastListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_GetLastListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.GetLastListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_GetLastListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.GetLastListItem<VHS.ShopItemType> FlowCanvas_Nodes_GetLastListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.GetLastListItem<VHS.SkillState> FlowCanvas_Nodes_GetLastListItem_VHS_SkillState;
+		FlowCanvas.Nodes.GetLastListItem<VHS.SpawnData> FlowCanvas_Nodes_GetLastListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.GetLastListItem<VHS.SpawnStartType> FlowCanvas_Nodes_GetLastListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.GetLastListItem<VHS.TimeType> FlowCanvas_Nodes_GetLastListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.GetListItem<System.Boolean> FlowCanvas_Nodes_GetListItem_System_Boolean;
 		FlowCanvas.Nodes.GetListItem<System.Single> FlowCanvas_Nodes_GetListItem_System_Single;
@@ -354,7 +599,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.GetListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_GetListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.GetListItem<UnityEngine.Ray> FlowCanvas_Nodes_GetListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.GetListItem<UnityEngine.Space> FlowCanvas_Nodes_GetListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.GetListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_GetListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.GetListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_GetListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.GetListItem<VHS.BossStage> FlowCanvas_Nodes_GetListItem_VHS_BossStage;
+		FlowCanvas.Nodes.GetListItem<VHS.CharacterInputs> FlowCanvas_Nodes_GetListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.GetListItem<VHS.InteractType> FlowCanvas_Nodes_GetListItem_VHS_InteractType;
+		FlowCanvas.Nodes.GetListItem<VHS.KeyInput> FlowCanvas_Nodes_GetListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.GetListItem<VHS.NpcState> FlowCanvas_Nodes_GetListItem_VHS_NpcState;
+		FlowCanvas.Nodes.GetListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_GetListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.GetListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_GetListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.GetListItem<VHS.ShopItemType> FlowCanvas_Nodes_GetListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.GetListItem<VHS.SkillState> FlowCanvas_Nodes_GetListItem_VHS_SkillState;
+		FlowCanvas.Nodes.GetListItem<VHS.SpawnData> FlowCanvas_Nodes_GetListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.GetListItem<VHS.SpawnStartType> FlowCanvas_Nodes_GetListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.GetListItem<VHS.TimeType> FlowCanvas_Nodes_GetListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.GetOtherVariable<System.Boolean> FlowCanvas_Nodes_GetOtherVariable_System_Boolean;
 		FlowCanvas.Nodes.GetOtherVariable<System.Single> FlowCanvas_Nodes_GetOtherVariable_System_Single;
@@ -373,7 +631,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.GetOtherVariable<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_GetOtherVariable_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.GetOtherVariable<UnityEngine.Ray> FlowCanvas_Nodes_GetOtherVariable_UnityEngine_Ray;
 		FlowCanvas.Nodes.GetOtherVariable<UnityEngine.Space> FlowCanvas_Nodes_GetOtherVariable_UnityEngine_Space;
+		FlowCanvas.Nodes.GetOtherVariable<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_GetOtherVariable_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.GetOtherVariable<UnityEngine.LayerMask> FlowCanvas_Nodes_GetOtherVariable_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.BossStage> FlowCanvas_Nodes_GetOtherVariable_VHS_BossStage;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.CharacterInputs> FlowCanvas_Nodes_GetOtherVariable_VHS_CharacterInputs;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.InteractType> FlowCanvas_Nodes_GetOtherVariable_VHS_InteractType;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.KeyInput> FlowCanvas_Nodes_GetOtherVariable_VHS_KeyInput;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.NpcState> FlowCanvas_Nodes_GetOtherVariable_VHS_NpcState;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.PassiveTriggerType> FlowCanvas_Nodes_GetOtherVariable_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.PlayerAttackType> FlowCanvas_Nodes_GetOtherVariable_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.ShopItemType> FlowCanvas_Nodes_GetOtherVariable_VHS_ShopItemType;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.SkillState> FlowCanvas_Nodes_GetOtherVariable_VHS_SkillState;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.SpawnData> FlowCanvas_Nodes_GetOtherVariable_VHS_SpawnData;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.SpawnStartType> FlowCanvas_Nodes_GetOtherVariable_VHS_SpawnStartType;
+		FlowCanvas.Nodes.GetOtherVariable<VHS.TimeType> FlowCanvas_Nodes_GetOtherVariable_VHS_TimeType;
 
 		FlowCanvas.Nodes.GetRandomListItem<System.Boolean> FlowCanvas_Nodes_GetRandomListItem_System_Boolean;
 		FlowCanvas.Nodes.GetRandomListItem<System.Single> FlowCanvas_Nodes_GetRandomListItem_System_Single;
@@ -392,7 +663,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.GetRandomListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_GetRandomListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.GetRandomListItem<UnityEngine.Ray> FlowCanvas_Nodes_GetRandomListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.GetRandomListItem<UnityEngine.Space> FlowCanvas_Nodes_GetRandomListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.GetRandomListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_GetRandomListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.GetRandomListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_GetRandomListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.BossStage> FlowCanvas_Nodes_GetRandomListItem_VHS_BossStage;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.CharacterInputs> FlowCanvas_Nodes_GetRandomListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.InteractType> FlowCanvas_Nodes_GetRandomListItem_VHS_InteractType;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.KeyInput> FlowCanvas_Nodes_GetRandomListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.NpcState> FlowCanvas_Nodes_GetRandomListItem_VHS_NpcState;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_GetRandomListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_GetRandomListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.ShopItemType> FlowCanvas_Nodes_GetRandomListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.SkillState> FlowCanvas_Nodes_GetRandomListItem_VHS_SkillState;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.SpawnData> FlowCanvas_Nodes_GetRandomListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.SpawnStartType> FlowCanvas_Nodes_GetRandomListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.GetRandomListItem<VHS.TimeType> FlowCanvas_Nodes_GetRandomListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.GetVariable<System.Boolean> FlowCanvas_Nodes_GetVariable_System_Boolean;
 		FlowCanvas.Nodes.GetVariable<System.Single> FlowCanvas_Nodes_GetVariable_System_Single;
@@ -411,7 +695,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.GetVariable<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_GetVariable_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.GetVariable<UnityEngine.Ray> FlowCanvas_Nodes_GetVariable_UnityEngine_Ray;
 		FlowCanvas.Nodes.GetVariable<UnityEngine.Space> FlowCanvas_Nodes_GetVariable_UnityEngine_Space;
+		FlowCanvas.Nodes.GetVariable<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_GetVariable_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.GetVariable<UnityEngine.LayerMask> FlowCanvas_Nodes_GetVariable_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.GetVariable<VHS.BossStage> FlowCanvas_Nodes_GetVariable_VHS_BossStage;
+		FlowCanvas.Nodes.GetVariable<VHS.CharacterInputs> FlowCanvas_Nodes_GetVariable_VHS_CharacterInputs;
+		FlowCanvas.Nodes.GetVariable<VHS.InteractType> FlowCanvas_Nodes_GetVariable_VHS_InteractType;
+		FlowCanvas.Nodes.GetVariable<VHS.KeyInput> FlowCanvas_Nodes_GetVariable_VHS_KeyInput;
+		FlowCanvas.Nodes.GetVariable<VHS.NpcState> FlowCanvas_Nodes_GetVariable_VHS_NpcState;
+		FlowCanvas.Nodes.GetVariable<VHS.PassiveTriggerType> FlowCanvas_Nodes_GetVariable_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.GetVariable<VHS.PlayerAttackType> FlowCanvas_Nodes_GetVariable_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.GetVariable<VHS.ShopItemType> FlowCanvas_Nodes_GetVariable_VHS_ShopItemType;
+		FlowCanvas.Nodes.GetVariable<VHS.SkillState> FlowCanvas_Nodes_GetVariable_VHS_SkillState;
+		FlowCanvas.Nodes.GetVariable<VHS.SpawnData> FlowCanvas_Nodes_GetVariable_VHS_SpawnData;
+		FlowCanvas.Nodes.GetVariable<VHS.SpawnStartType> FlowCanvas_Nodes_GetVariable_VHS_SpawnStartType;
+		FlowCanvas.Nodes.GetVariable<VHS.TimeType> FlowCanvas_Nodes_GetVariable_VHS_TimeType;
 
 		FlowCanvas.Nodes.Identity<System.Boolean> FlowCanvas_Nodes_Identity_System_Boolean;
 		FlowCanvas.Nodes.Identity<System.Single> FlowCanvas_Nodes_Identity_System_Single;
@@ -430,7 +727,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.Identity<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_Identity_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.Identity<UnityEngine.Ray> FlowCanvas_Nodes_Identity_UnityEngine_Ray;
 		FlowCanvas.Nodes.Identity<UnityEngine.Space> FlowCanvas_Nodes_Identity_UnityEngine_Space;
+		FlowCanvas.Nodes.Identity<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_Identity_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.Identity<UnityEngine.LayerMask> FlowCanvas_Nodes_Identity_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.Identity<VHS.BossStage> FlowCanvas_Nodes_Identity_VHS_BossStage;
+		FlowCanvas.Nodes.Identity<VHS.CharacterInputs> FlowCanvas_Nodes_Identity_VHS_CharacterInputs;
+		FlowCanvas.Nodes.Identity<VHS.InteractType> FlowCanvas_Nodes_Identity_VHS_InteractType;
+		FlowCanvas.Nodes.Identity<VHS.KeyInput> FlowCanvas_Nodes_Identity_VHS_KeyInput;
+		FlowCanvas.Nodes.Identity<VHS.NpcState> FlowCanvas_Nodes_Identity_VHS_NpcState;
+		FlowCanvas.Nodes.Identity<VHS.PassiveTriggerType> FlowCanvas_Nodes_Identity_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.Identity<VHS.PlayerAttackType> FlowCanvas_Nodes_Identity_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.Identity<VHS.ShopItemType> FlowCanvas_Nodes_Identity_VHS_ShopItemType;
+		FlowCanvas.Nodes.Identity<VHS.SkillState> FlowCanvas_Nodes_Identity_VHS_SkillState;
+		FlowCanvas.Nodes.Identity<VHS.SpawnData> FlowCanvas_Nodes_Identity_VHS_SpawnData;
+		FlowCanvas.Nodes.Identity<VHS.SpawnStartType> FlowCanvas_Nodes_Identity_VHS_SpawnStartType;
+		FlowCanvas.Nodes.Identity<VHS.TimeType> FlowCanvas_Nodes_Identity_VHS_TimeType;
 
 		FlowCanvas.Nodes.InsertListItem<System.Boolean> FlowCanvas_Nodes_InsertListItem_System_Boolean;
 		FlowCanvas.Nodes.InsertListItem<System.Single> FlowCanvas_Nodes_InsertListItem_System_Single;
@@ -449,7 +759,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.InsertListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_InsertListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.InsertListItem<UnityEngine.Ray> FlowCanvas_Nodes_InsertListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.InsertListItem<UnityEngine.Space> FlowCanvas_Nodes_InsertListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.InsertListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_InsertListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.InsertListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_InsertListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.InsertListItem<VHS.BossStage> FlowCanvas_Nodes_InsertListItem_VHS_BossStage;
+		FlowCanvas.Nodes.InsertListItem<VHS.CharacterInputs> FlowCanvas_Nodes_InsertListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.InsertListItem<VHS.InteractType> FlowCanvas_Nodes_InsertListItem_VHS_InteractType;
+		FlowCanvas.Nodes.InsertListItem<VHS.KeyInput> FlowCanvas_Nodes_InsertListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.InsertListItem<VHS.NpcState> FlowCanvas_Nodes_InsertListItem_VHS_NpcState;
+		FlowCanvas.Nodes.InsertListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_InsertListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.InsertListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_InsertListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.InsertListItem<VHS.ShopItemType> FlowCanvas_Nodes_InsertListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.InsertListItem<VHS.SkillState> FlowCanvas_Nodes_InsertListItem_VHS_SkillState;
+		FlowCanvas.Nodes.InsertListItem<VHS.SpawnData> FlowCanvas_Nodes_InsertListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.InsertListItem<VHS.SpawnStartType> FlowCanvas_Nodes_InsertListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.InsertListItem<VHS.TimeType> FlowCanvas_Nodes_InsertListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.ReadFlowParameter<System.Boolean> FlowCanvas_Nodes_ReadFlowParameter_System_Boolean;
 		FlowCanvas.Nodes.ReadFlowParameter<System.Single> FlowCanvas_Nodes_ReadFlowParameter_System_Single;
@@ -468,7 +791,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.ReadFlowParameter<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_ReadFlowParameter_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.ReadFlowParameter<UnityEngine.Ray> FlowCanvas_Nodes_ReadFlowParameter_UnityEngine_Ray;
 		FlowCanvas.Nodes.ReadFlowParameter<UnityEngine.Space> FlowCanvas_Nodes_ReadFlowParameter_UnityEngine_Space;
+		FlowCanvas.Nodes.ReadFlowParameter<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_ReadFlowParameter_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.ReadFlowParameter<UnityEngine.LayerMask> FlowCanvas_Nodes_ReadFlowParameter_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.BossStage> FlowCanvas_Nodes_ReadFlowParameter_VHS_BossStage;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.CharacterInputs> FlowCanvas_Nodes_ReadFlowParameter_VHS_CharacterInputs;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.InteractType> FlowCanvas_Nodes_ReadFlowParameter_VHS_InteractType;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.KeyInput> FlowCanvas_Nodes_ReadFlowParameter_VHS_KeyInput;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.NpcState> FlowCanvas_Nodes_ReadFlowParameter_VHS_NpcState;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.PassiveTriggerType> FlowCanvas_Nodes_ReadFlowParameter_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.PlayerAttackType> FlowCanvas_Nodes_ReadFlowParameter_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.ShopItemType> FlowCanvas_Nodes_ReadFlowParameter_VHS_ShopItemType;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.SkillState> FlowCanvas_Nodes_ReadFlowParameter_VHS_SkillState;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.SpawnData> FlowCanvas_Nodes_ReadFlowParameter_VHS_SpawnData;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.SpawnStartType> FlowCanvas_Nodes_ReadFlowParameter_VHS_SpawnStartType;
+		FlowCanvas.Nodes.ReadFlowParameter<VHS.TimeType> FlowCanvas_Nodes_ReadFlowParameter_VHS_TimeType;
 
 		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<System.Boolean> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_System_Boolean;
 		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<System.Single> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_System_Single;
@@ -487,7 +823,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<UnityEngine.Ray> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_UnityEngine_Ray;
 		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<UnityEngine.Space> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_UnityEngine_Space;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<UnityEngine.LayerMask> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.BossStage> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_BossStage;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.CharacterInputs> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_CharacterInputs;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.InteractType> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_InteractType;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.KeyInput> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_KeyInput;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.NpcState> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_NpcState;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.PassiveTriggerType> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.PlayerAttackType> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.ShopItemType> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_ShopItemType;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.SkillState> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_SkillState;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.SpawnData> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_SpawnData;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.SpawnStartType> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_SpawnStartType;
+		FlowCanvas.Nodes.ReflectedExtractorNodeWrapper<VHS.TimeType> FlowCanvas_Nodes_ReflectedExtractorNodeWrapper_VHS_TimeType;
 
 		FlowCanvas.Nodes.RelayValueInput<System.Boolean> FlowCanvas_Nodes_RelayValueInput_System_Boolean;
 		FlowCanvas.Nodes.RelayValueInput<System.Single> FlowCanvas_Nodes_RelayValueInput_System_Single;
@@ -506,7 +855,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.RelayValueInput<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_RelayValueInput_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.RelayValueInput<UnityEngine.Ray> FlowCanvas_Nodes_RelayValueInput_UnityEngine_Ray;
 		FlowCanvas.Nodes.RelayValueInput<UnityEngine.Space> FlowCanvas_Nodes_RelayValueInput_UnityEngine_Space;
+		FlowCanvas.Nodes.RelayValueInput<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_RelayValueInput_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.RelayValueInput<UnityEngine.LayerMask> FlowCanvas_Nodes_RelayValueInput_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.RelayValueInput<VHS.BossStage> FlowCanvas_Nodes_RelayValueInput_VHS_BossStage;
+		FlowCanvas.Nodes.RelayValueInput<VHS.CharacterInputs> FlowCanvas_Nodes_RelayValueInput_VHS_CharacterInputs;
+		FlowCanvas.Nodes.RelayValueInput<VHS.InteractType> FlowCanvas_Nodes_RelayValueInput_VHS_InteractType;
+		FlowCanvas.Nodes.RelayValueInput<VHS.KeyInput> FlowCanvas_Nodes_RelayValueInput_VHS_KeyInput;
+		FlowCanvas.Nodes.RelayValueInput<VHS.NpcState> FlowCanvas_Nodes_RelayValueInput_VHS_NpcState;
+		FlowCanvas.Nodes.RelayValueInput<VHS.PassiveTriggerType> FlowCanvas_Nodes_RelayValueInput_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.RelayValueInput<VHS.PlayerAttackType> FlowCanvas_Nodes_RelayValueInput_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.RelayValueInput<VHS.ShopItemType> FlowCanvas_Nodes_RelayValueInput_VHS_ShopItemType;
+		FlowCanvas.Nodes.RelayValueInput<VHS.SkillState> FlowCanvas_Nodes_RelayValueInput_VHS_SkillState;
+		FlowCanvas.Nodes.RelayValueInput<VHS.SpawnData> FlowCanvas_Nodes_RelayValueInput_VHS_SpawnData;
+		FlowCanvas.Nodes.RelayValueInput<VHS.SpawnStartType> FlowCanvas_Nodes_RelayValueInput_VHS_SpawnStartType;
+		FlowCanvas.Nodes.RelayValueInput<VHS.TimeType> FlowCanvas_Nodes_RelayValueInput_VHS_TimeType;
 
 		FlowCanvas.Nodes.RelayValueOutput<System.Boolean> FlowCanvas_Nodes_RelayValueOutput_System_Boolean;
 		FlowCanvas.Nodes.RelayValueOutput<System.Single> FlowCanvas_Nodes_RelayValueOutput_System_Single;
@@ -525,7 +887,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.RelayValueOutput<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_RelayValueOutput_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.RelayValueOutput<UnityEngine.Ray> FlowCanvas_Nodes_RelayValueOutput_UnityEngine_Ray;
 		FlowCanvas.Nodes.RelayValueOutput<UnityEngine.Space> FlowCanvas_Nodes_RelayValueOutput_UnityEngine_Space;
+		FlowCanvas.Nodes.RelayValueOutput<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_RelayValueOutput_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.RelayValueOutput<UnityEngine.LayerMask> FlowCanvas_Nodes_RelayValueOutput_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.BossStage> FlowCanvas_Nodes_RelayValueOutput_VHS_BossStage;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.CharacterInputs> FlowCanvas_Nodes_RelayValueOutput_VHS_CharacterInputs;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.InteractType> FlowCanvas_Nodes_RelayValueOutput_VHS_InteractType;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.KeyInput> FlowCanvas_Nodes_RelayValueOutput_VHS_KeyInput;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.NpcState> FlowCanvas_Nodes_RelayValueOutput_VHS_NpcState;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.PassiveTriggerType> FlowCanvas_Nodes_RelayValueOutput_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.PlayerAttackType> FlowCanvas_Nodes_RelayValueOutput_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.ShopItemType> FlowCanvas_Nodes_RelayValueOutput_VHS_ShopItemType;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.SkillState> FlowCanvas_Nodes_RelayValueOutput_VHS_SkillState;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.SpawnData> FlowCanvas_Nodes_RelayValueOutput_VHS_SpawnData;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.SpawnStartType> FlowCanvas_Nodes_RelayValueOutput_VHS_SpawnStartType;
+		FlowCanvas.Nodes.RelayValueOutput<VHS.TimeType> FlowCanvas_Nodes_RelayValueOutput_VHS_TimeType;
 
 		FlowCanvas.Nodes.RemoveDictionaryKey<System.Boolean> FlowCanvas_Nodes_RemoveDictionaryKey_System_Boolean;
 		FlowCanvas.Nodes.RemoveDictionaryKey<System.Single> FlowCanvas_Nodes_RemoveDictionaryKey_System_Single;
@@ -544,7 +919,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.RemoveDictionaryKey<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_RemoveDictionaryKey_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.RemoveDictionaryKey<UnityEngine.Ray> FlowCanvas_Nodes_RemoveDictionaryKey_UnityEngine_Ray;
 		FlowCanvas.Nodes.RemoveDictionaryKey<UnityEngine.Space> FlowCanvas_Nodes_RemoveDictionaryKey_UnityEngine_Space;
+		FlowCanvas.Nodes.RemoveDictionaryKey<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_RemoveDictionaryKey_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.RemoveDictionaryKey<UnityEngine.LayerMask> FlowCanvas_Nodes_RemoveDictionaryKey_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.BossStage> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_BossStage;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.CharacterInputs> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_CharacterInputs;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.InteractType> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_InteractType;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.KeyInput> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_KeyInput;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.NpcState> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_NpcState;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.PassiveTriggerType> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.PlayerAttackType> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.ShopItemType> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_ShopItemType;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.SkillState> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_SkillState;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.SpawnData> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_SpawnData;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.SpawnStartType> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_SpawnStartType;
+		FlowCanvas.Nodes.RemoveDictionaryKey<VHS.TimeType> FlowCanvas_Nodes_RemoveDictionaryKey_VHS_TimeType;
 
 		FlowCanvas.Nodes.RemoveListItem<System.Boolean> FlowCanvas_Nodes_RemoveListItem_System_Boolean;
 		FlowCanvas.Nodes.RemoveListItem<System.Single> FlowCanvas_Nodes_RemoveListItem_System_Single;
@@ -563,7 +951,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.RemoveListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_RemoveListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.RemoveListItem<UnityEngine.Ray> FlowCanvas_Nodes_RemoveListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.RemoveListItem<UnityEngine.Space> FlowCanvas_Nodes_RemoveListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.RemoveListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_RemoveListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.RemoveListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_RemoveListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.RemoveListItem<VHS.BossStage> FlowCanvas_Nodes_RemoveListItem_VHS_BossStage;
+		FlowCanvas.Nodes.RemoveListItem<VHS.CharacterInputs> FlowCanvas_Nodes_RemoveListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.RemoveListItem<VHS.InteractType> FlowCanvas_Nodes_RemoveListItem_VHS_InteractType;
+		FlowCanvas.Nodes.RemoveListItem<VHS.KeyInput> FlowCanvas_Nodes_RemoveListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.RemoveListItem<VHS.NpcState> FlowCanvas_Nodes_RemoveListItem_VHS_NpcState;
+		FlowCanvas.Nodes.RemoveListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_RemoveListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.RemoveListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_RemoveListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.RemoveListItem<VHS.ShopItemType> FlowCanvas_Nodes_RemoveListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.RemoveListItem<VHS.SkillState> FlowCanvas_Nodes_RemoveListItem_VHS_SkillState;
+		FlowCanvas.Nodes.RemoveListItem<VHS.SpawnData> FlowCanvas_Nodes_RemoveListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.RemoveListItem<VHS.SpawnStartType> FlowCanvas_Nodes_RemoveListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.RemoveListItem<VHS.TimeType> FlowCanvas_Nodes_RemoveListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.RemoveListItemAt<System.Boolean> FlowCanvas_Nodes_RemoveListItemAt_System_Boolean;
 		FlowCanvas.Nodes.RemoveListItemAt<System.Single> FlowCanvas_Nodes_RemoveListItemAt_System_Single;
@@ -582,7 +983,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.RemoveListItemAt<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_RemoveListItemAt_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.RemoveListItemAt<UnityEngine.Ray> FlowCanvas_Nodes_RemoveListItemAt_UnityEngine_Ray;
 		FlowCanvas.Nodes.RemoveListItemAt<UnityEngine.Space> FlowCanvas_Nodes_RemoveListItemAt_UnityEngine_Space;
+		FlowCanvas.Nodes.RemoveListItemAt<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_RemoveListItemAt_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.RemoveListItemAt<UnityEngine.LayerMask> FlowCanvas_Nodes_RemoveListItemAt_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.BossStage> FlowCanvas_Nodes_RemoveListItemAt_VHS_BossStage;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.CharacterInputs> FlowCanvas_Nodes_RemoveListItemAt_VHS_CharacterInputs;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.InteractType> FlowCanvas_Nodes_RemoveListItemAt_VHS_InteractType;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.KeyInput> FlowCanvas_Nodes_RemoveListItemAt_VHS_KeyInput;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.NpcState> FlowCanvas_Nodes_RemoveListItemAt_VHS_NpcState;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.PassiveTriggerType> FlowCanvas_Nodes_RemoveListItemAt_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.PlayerAttackType> FlowCanvas_Nodes_RemoveListItemAt_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.ShopItemType> FlowCanvas_Nodes_RemoveListItemAt_VHS_ShopItemType;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.SkillState> FlowCanvas_Nodes_RemoveListItemAt_VHS_SkillState;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.SpawnData> FlowCanvas_Nodes_RemoveListItemAt_VHS_SpawnData;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.SpawnStartType> FlowCanvas_Nodes_RemoveListItemAt_VHS_SpawnStartType;
+		FlowCanvas.Nodes.RemoveListItemAt<VHS.TimeType> FlowCanvas_Nodes_RemoveListItemAt_VHS_TimeType;
 
 		FlowCanvas.Nodes.SelectOnBool<System.Boolean> FlowCanvas_Nodes_SelectOnBool_System_Boolean;
 		FlowCanvas.Nodes.SelectOnBool<System.Single> FlowCanvas_Nodes_SelectOnBool_System_Single;
@@ -601,7 +1015,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SelectOnBool<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SelectOnBool_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SelectOnBool<UnityEngine.Ray> FlowCanvas_Nodes_SelectOnBool_UnityEngine_Ray;
 		FlowCanvas.Nodes.SelectOnBool<UnityEngine.Space> FlowCanvas_Nodes_SelectOnBool_UnityEngine_Space;
+		FlowCanvas.Nodes.SelectOnBool<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SelectOnBool_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SelectOnBool<UnityEngine.LayerMask> FlowCanvas_Nodes_SelectOnBool_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SelectOnBool<VHS.BossStage> FlowCanvas_Nodes_SelectOnBool_VHS_BossStage;
+		FlowCanvas.Nodes.SelectOnBool<VHS.CharacterInputs> FlowCanvas_Nodes_SelectOnBool_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SelectOnBool<VHS.InteractType> FlowCanvas_Nodes_SelectOnBool_VHS_InteractType;
+		FlowCanvas.Nodes.SelectOnBool<VHS.KeyInput> FlowCanvas_Nodes_SelectOnBool_VHS_KeyInput;
+		FlowCanvas.Nodes.SelectOnBool<VHS.NpcState> FlowCanvas_Nodes_SelectOnBool_VHS_NpcState;
+		FlowCanvas.Nodes.SelectOnBool<VHS.PassiveTriggerType> FlowCanvas_Nodes_SelectOnBool_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SelectOnBool<VHS.PlayerAttackType> FlowCanvas_Nodes_SelectOnBool_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SelectOnBool<VHS.ShopItemType> FlowCanvas_Nodes_SelectOnBool_VHS_ShopItemType;
+		FlowCanvas.Nodes.SelectOnBool<VHS.SkillState> FlowCanvas_Nodes_SelectOnBool_VHS_SkillState;
+		FlowCanvas.Nodes.SelectOnBool<VHS.SpawnData> FlowCanvas_Nodes_SelectOnBool_VHS_SpawnData;
+		FlowCanvas.Nodes.SelectOnBool<VHS.SpawnStartType> FlowCanvas_Nodes_SelectOnBool_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SelectOnBool<VHS.TimeType> FlowCanvas_Nodes_SelectOnBool_VHS_TimeType;
 
 		FlowCanvas.Nodes.SelectOnEnum<System.Boolean> FlowCanvas_Nodes_SelectOnEnum_System_Boolean;
 		FlowCanvas.Nodes.SelectOnEnum<System.Single> FlowCanvas_Nodes_SelectOnEnum_System_Single;
@@ -620,7 +1047,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SelectOnEnum<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SelectOnEnum_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SelectOnEnum<UnityEngine.Ray> FlowCanvas_Nodes_SelectOnEnum_UnityEngine_Ray;
 		FlowCanvas.Nodes.SelectOnEnum<UnityEngine.Space> FlowCanvas_Nodes_SelectOnEnum_UnityEngine_Space;
+		FlowCanvas.Nodes.SelectOnEnum<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SelectOnEnum_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SelectOnEnum<UnityEngine.LayerMask> FlowCanvas_Nodes_SelectOnEnum_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.BossStage> FlowCanvas_Nodes_SelectOnEnum_VHS_BossStage;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.CharacterInputs> FlowCanvas_Nodes_SelectOnEnum_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.InteractType> FlowCanvas_Nodes_SelectOnEnum_VHS_InteractType;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.KeyInput> FlowCanvas_Nodes_SelectOnEnum_VHS_KeyInput;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.NpcState> FlowCanvas_Nodes_SelectOnEnum_VHS_NpcState;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.PassiveTriggerType> FlowCanvas_Nodes_SelectOnEnum_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.PlayerAttackType> FlowCanvas_Nodes_SelectOnEnum_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.ShopItemType> FlowCanvas_Nodes_SelectOnEnum_VHS_ShopItemType;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.SkillState> FlowCanvas_Nodes_SelectOnEnum_VHS_SkillState;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.SpawnData> FlowCanvas_Nodes_SelectOnEnum_VHS_SpawnData;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.SpawnStartType> FlowCanvas_Nodes_SelectOnEnum_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SelectOnEnum<VHS.TimeType> FlowCanvas_Nodes_SelectOnEnum_VHS_TimeType;
 
 		FlowCanvas.Nodes.SelectOnInt<System.Boolean> FlowCanvas_Nodes_SelectOnInt_System_Boolean;
 		FlowCanvas.Nodes.SelectOnInt<System.Single> FlowCanvas_Nodes_SelectOnInt_System_Single;
@@ -639,7 +1079,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SelectOnInt<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SelectOnInt_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SelectOnInt<UnityEngine.Ray> FlowCanvas_Nodes_SelectOnInt_UnityEngine_Ray;
 		FlowCanvas.Nodes.SelectOnInt<UnityEngine.Space> FlowCanvas_Nodes_SelectOnInt_UnityEngine_Space;
+		FlowCanvas.Nodes.SelectOnInt<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SelectOnInt_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SelectOnInt<UnityEngine.LayerMask> FlowCanvas_Nodes_SelectOnInt_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SelectOnInt<VHS.BossStage> FlowCanvas_Nodes_SelectOnInt_VHS_BossStage;
+		FlowCanvas.Nodes.SelectOnInt<VHS.CharacterInputs> FlowCanvas_Nodes_SelectOnInt_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SelectOnInt<VHS.InteractType> FlowCanvas_Nodes_SelectOnInt_VHS_InteractType;
+		FlowCanvas.Nodes.SelectOnInt<VHS.KeyInput> FlowCanvas_Nodes_SelectOnInt_VHS_KeyInput;
+		FlowCanvas.Nodes.SelectOnInt<VHS.NpcState> FlowCanvas_Nodes_SelectOnInt_VHS_NpcState;
+		FlowCanvas.Nodes.SelectOnInt<VHS.PassiveTriggerType> FlowCanvas_Nodes_SelectOnInt_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SelectOnInt<VHS.PlayerAttackType> FlowCanvas_Nodes_SelectOnInt_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SelectOnInt<VHS.ShopItemType> FlowCanvas_Nodes_SelectOnInt_VHS_ShopItemType;
+		FlowCanvas.Nodes.SelectOnInt<VHS.SkillState> FlowCanvas_Nodes_SelectOnInt_VHS_SkillState;
+		FlowCanvas.Nodes.SelectOnInt<VHS.SpawnData> FlowCanvas_Nodes_SelectOnInt_VHS_SpawnData;
+		FlowCanvas.Nodes.SelectOnInt<VHS.SpawnStartType> FlowCanvas_Nodes_SelectOnInt_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SelectOnInt<VHS.TimeType> FlowCanvas_Nodes_SelectOnInt_VHS_TimeType;
 
 		FlowCanvas.Nodes.SelectOnString<System.Boolean> FlowCanvas_Nodes_SelectOnString_System_Boolean;
 		FlowCanvas.Nodes.SelectOnString<System.Single> FlowCanvas_Nodes_SelectOnString_System_Single;
@@ -658,7 +1111,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SelectOnString<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SelectOnString_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SelectOnString<UnityEngine.Ray> FlowCanvas_Nodes_SelectOnString_UnityEngine_Ray;
 		FlowCanvas.Nodes.SelectOnString<UnityEngine.Space> FlowCanvas_Nodes_SelectOnString_UnityEngine_Space;
+		FlowCanvas.Nodes.SelectOnString<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SelectOnString_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SelectOnString<UnityEngine.LayerMask> FlowCanvas_Nodes_SelectOnString_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SelectOnString<VHS.BossStage> FlowCanvas_Nodes_SelectOnString_VHS_BossStage;
+		FlowCanvas.Nodes.SelectOnString<VHS.CharacterInputs> FlowCanvas_Nodes_SelectOnString_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SelectOnString<VHS.InteractType> FlowCanvas_Nodes_SelectOnString_VHS_InteractType;
+		FlowCanvas.Nodes.SelectOnString<VHS.KeyInput> FlowCanvas_Nodes_SelectOnString_VHS_KeyInput;
+		FlowCanvas.Nodes.SelectOnString<VHS.NpcState> FlowCanvas_Nodes_SelectOnString_VHS_NpcState;
+		FlowCanvas.Nodes.SelectOnString<VHS.PassiveTriggerType> FlowCanvas_Nodes_SelectOnString_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SelectOnString<VHS.PlayerAttackType> FlowCanvas_Nodes_SelectOnString_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SelectOnString<VHS.ShopItemType> FlowCanvas_Nodes_SelectOnString_VHS_ShopItemType;
+		FlowCanvas.Nodes.SelectOnString<VHS.SkillState> FlowCanvas_Nodes_SelectOnString_VHS_SkillState;
+		FlowCanvas.Nodes.SelectOnString<VHS.SpawnData> FlowCanvas_Nodes_SelectOnString_VHS_SpawnData;
+		FlowCanvas.Nodes.SelectOnString<VHS.SpawnStartType> FlowCanvas_Nodes_SelectOnString_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SelectOnString<VHS.TimeType> FlowCanvas_Nodes_SelectOnString_VHS_TimeType;
 
 		FlowCanvas.Nodes.SelectOnTag<System.Boolean> FlowCanvas_Nodes_SelectOnTag_System_Boolean;
 		FlowCanvas.Nodes.SelectOnTag<System.Single> FlowCanvas_Nodes_SelectOnTag_System_Single;
@@ -677,7 +1143,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SelectOnTag<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SelectOnTag_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SelectOnTag<UnityEngine.Ray> FlowCanvas_Nodes_SelectOnTag_UnityEngine_Ray;
 		FlowCanvas.Nodes.SelectOnTag<UnityEngine.Space> FlowCanvas_Nodes_SelectOnTag_UnityEngine_Space;
+		FlowCanvas.Nodes.SelectOnTag<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SelectOnTag_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SelectOnTag<UnityEngine.LayerMask> FlowCanvas_Nodes_SelectOnTag_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SelectOnTag<VHS.BossStage> FlowCanvas_Nodes_SelectOnTag_VHS_BossStage;
+		FlowCanvas.Nodes.SelectOnTag<VHS.CharacterInputs> FlowCanvas_Nodes_SelectOnTag_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SelectOnTag<VHS.InteractType> FlowCanvas_Nodes_SelectOnTag_VHS_InteractType;
+		FlowCanvas.Nodes.SelectOnTag<VHS.KeyInput> FlowCanvas_Nodes_SelectOnTag_VHS_KeyInput;
+		FlowCanvas.Nodes.SelectOnTag<VHS.NpcState> FlowCanvas_Nodes_SelectOnTag_VHS_NpcState;
+		FlowCanvas.Nodes.SelectOnTag<VHS.PassiveTriggerType> FlowCanvas_Nodes_SelectOnTag_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SelectOnTag<VHS.PlayerAttackType> FlowCanvas_Nodes_SelectOnTag_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SelectOnTag<VHS.ShopItemType> FlowCanvas_Nodes_SelectOnTag_VHS_ShopItemType;
+		FlowCanvas.Nodes.SelectOnTag<VHS.SkillState> FlowCanvas_Nodes_SelectOnTag_VHS_SkillState;
+		FlowCanvas.Nodes.SelectOnTag<VHS.SpawnData> FlowCanvas_Nodes_SelectOnTag_VHS_SpawnData;
+		FlowCanvas.Nodes.SelectOnTag<VHS.SpawnStartType> FlowCanvas_Nodes_SelectOnTag_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SelectOnTag<VHS.TimeType> FlowCanvas_Nodes_SelectOnTag_VHS_TimeType;
 
 		FlowCanvas.Nodes.SendEvent<System.Boolean> FlowCanvas_Nodes_SendEvent_System_Boolean;
 		FlowCanvas.Nodes.SendEvent<System.Single> FlowCanvas_Nodes_SendEvent_System_Single;
@@ -696,7 +1175,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SendEvent<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SendEvent_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SendEvent<UnityEngine.Ray> FlowCanvas_Nodes_SendEvent_UnityEngine_Ray;
 		FlowCanvas.Nodes.SendEvent<UnityEngine.Space> FlowCanvas_Nodes_SendEvent_UnityEngine_Space;
+		FlowCanvas.Nodes.SendEvent<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SendEvent_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SendEvent<UnityEngine.LayerMask> FlowCanvas_Nodes_SendEvent_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SendEvent<VHS.BossStage> FlowCanvas_Nodes_SendEvent_VHS_BossStage;
+		FlowCanvas.Nodes.SendEvent<VHS.CharacterInputs> FlowCanvas_Nodes_SendEvent_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SendEvent<VHS.InteractType> FlowCanvas_Nodes_SendEvent_VHS_InteractType;
+		FlowCanvas.Nodes.SendEvent<VHS.KeyInput> FlowCanvas_Nodes_SendEvent_VHS_KeyInput;
+		FlowCanvas.Nodes.SendEvent<VHS.NpcState> FlowCanvas_Nodes_SendEvent_VHS_NpcState;
+		FlowCanvas.Nodes.SendEvent<VHS.PassiveTriggerType> FlowCanvas_Nodes_SendEvent_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SendEvent<VHS.PlayerAttackType> FlowCanvas_Nodes_SendEvent_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SendEvent<VHS.ShopItemType> FlowCanvas_Nodes_SendEvent_VHS_ShopItemType;
+		FlowCanvas.Nodes.SendEvent<VHS.SkillState> FlowCanvas_Nodes_SendEvent_VHS_SkillState;
+		FlowCanvas.Nodes.SendEvent<VHS.SpawnData> FlowCanvas_Nodes_SendEvent_VHS_SpawnData;
+		FlowCanvas.Nodes.SendEvent<VHS.SpawnStartType> FlowCanvas_Nodes_SendEvent_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SendEvent<VHS.TimeType> FlowCanvas_Nodes_SendEvent_VHS_TimeType;
 
 		FlowCanvas.Nodes.SendGlobalEvent<System.Boolean> FlowCanvas_Nodes_SendGlobalEvent_System_Boolean;
 		FlowCanvas.Nodes.SendGlobalEvent<System.Single> FlowCanvas_Nodes_SendGlobalEvent_System_Single;
@@ -715,7 +1207,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SendGlobalEvent<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SendGlobalEvent_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SendGlobalEvent<UnityEngine.Ray> FlowCanvas_Nodes_SendGlobalEvent_UnityEngine_Ray;
 		FlowCanvas.Nodes.SendGlobalEvent<UnityEngine.Space> FlowCanvas_Nodes_SendGlobalEvent_UnityEngine_Space;
+		FlowCanvas.Nodes.SendGlobalEvent<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SendGlobalEvent_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SendGlobalEvent<UnityEngine.LayerMask> FlowCanvas_Nodes_SendGlobalEvent_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.BossStage> FlowCanvas_Nodes_SendGlobalEvent_VHS_BossStage;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.CharacterInputs> FlowCanvas_Nodes_SendGlobalEvent_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.InteractType> FlowCanvas_Nodes_SendGlobalEvent_VHS_InteractType;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.KeyInput> FlowCanvas_Nodes_SendGlobalEvent_VHS_KeyInput;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.NpcState> FlowCanvas_Nodes_SendGlobalEvent_VHS_NpcState;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.PassiveTriggerType> FlowCanvas_Nodes_SendGlobalEvent_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.PlayerAttackType> FlowCanvas_Nodes_SendGlobalEvent_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.ShopItemType> FlowCanvas_Nodes_SendGlobalEvent_VHS_ShopItemType;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.SkillState> FlowCanvas_Nodes_SendGlobalEvent_VHS_SkillState;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.SpawnData> FlowCanvas_Nodes_SendGlobalEvent_VHS_SpawnData;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.SpawnStartType> FlowCanvas_Nodes_SendGlobalEvent_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SendGlobalEvent<VHS.TimeType> FlowCanvas_Nodes_SendGlobalEvent_VHS_TimeType;
 
 		FlowCanvas.Nodes.SetListItem<System.Boolean> FlowCanvas_Nodes_SetListItem_System_Boolean;
 		FlowCanvas.Nodes.SetListItem<System.Single> FlowCanvas_Nodes_SetListItem_System_Single;
@@ -734,7 +1239,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SetListItem<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SetListItem_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SetListItem<UnityEngine.Ray> FlowCanvas_Nodes_SetListItem_UnityEngine_Ray;
 		FlowCanvas.Nodes.SetListItem<UnityEngine.Space> FlowCanvas_Nodes_SetListItem_UnityEngine_Space;
+		FlowCanvas.Nodes.SetListItem<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SetListItem_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SetListItem<UnityEngine.LayerMask> FlowCanvas_Nodes_SetListItem_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SetListItem<VHS.BossStage> FlowCanvas_Nodes_SetListItem_VHS_BossStage;
+		FlowCanvas.Nodes.SetListItem<VHS.CharacterInputs> FlowCanvas_Nodes_SetListItem_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SetListItem<VHS.InteractType> FlowCanvas_Nodes_SetListItem_VHS_InteractType;
+		FlowCanvas.Nodes.SetListItem<VHS.KeyInput> FlowCanvas_Nodes_SetListItem_VHS_KeyInput;
+		FlowCanvas.Nodes.SetListItem<VHS.NpcState> FlowCanvas_Nodes_SetListItem_VHS_NpcState;
+		FlowCanvas.Nodes.SetListItem<VHS.PassiveTriggerType> FlowCanvas_Nodes_SetListItem_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SetListItem<VHS.PlayerAttackType> FlowCanvas_Nodes_SetListItem_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SetListItem<VHS.ShopItemType> FlowCanvas_Nodes_SetListItem_VHS_ShopItemType;
+		FlowCanvas.Nodes.SetListItem<VHS.SkillState> FlowCanvas_Nodes_SetListItem_VHS_SkillState;
+		FlowCanvas.Nodes.SetListItem<VHS.SpawnData> FlowCanvas_Nodes_SetListItem_VHS_SpawnData;
+		FlowCanvas.Nodes.SetListItem<VHS.SpawnStartType> FlowCanvas_Nodes_SetListItem_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SetListItem<VHS.TimeType> FlowCanvas_Nodes_SetListItem_VHS_TimeType;
 
 		FlowCanvas.Nodes.SetOtherVariable<System.Boolean> FlowCanvas_Nodes_SetOtherVariable_System_Boolean;
 		FlowCanvas.Nodes.SetOtherVariable<System.Single> FlowCanvas_Nodes_SetOtherVariable_System_Single;
@@ -753,7 +1271,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SetOtherVariable<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SetOtherVariable_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SetOtherVariable<UnityEngine.Ray> FlowCanvas_Nodes_SetOtherVariable_UnityEngine_Ray;
 		FlowCanvas.Nodes.SetOtherVariable<UnityEngine.Space> FlowCanvas_Nodes_SetOtherVariable_UnityEngine_Space;
+		FlowCanvas.Nodes.SetOtherVariable<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SetOtherVariable_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SetOtherVariable<UnityEngine.LayerMask> FlowCanvas_Nodes_SetOtherVariable_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.BossStage> FlowCanvas_Nodes_SetOtherVariable_VHS_BossStage;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.CharacterInputs> FlowCanvas_Nodes_SetOtherVariable_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.InteractType> FlowCanvas_Nodes_SetOtherVariable_VHS_InteractType;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.KeyInput> FlowCanvas_Nodes_SetOtherVariable_VHS_KeyInput;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.NpcState> FlowCanvas_Nodes_SetOtherVariable_VHS_NpcState;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.PassiveTriggerType> FlowCanvas_Nodes_SetOtherVariable_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.PlayerAttackType> FlowCanvas_Nodes_SetOtherVariable_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.ShopItemType> FlowCanvas_Nodes_SetOtherVariable_VHS_ShopItemType;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.SkillState> FlowCanvas_Nodes_SetOtherVariable_VHS_SkillState;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.SpawnData> FlowCanvas_Nodes_SetOtherVariable_VHS_SpawnData;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.SpawnStartType> FlowCanvas_Nodes_SetOtherVariable_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SetOtherVariable<VHS.TimeType> FlowCanvas_Nodes_SetOtherVariable_VHS_TimeType;
 
 		FlowCanvas.Nodes.SetVariable<System.Boolean> FlowCanvas_Nodes_SetVariable_System_Boolean;
 		FlowCanvas.Nodes.SetVariable<System.Single> FlowCanvas_Nodes_SetVariable_System_Single;
@@ -772,7 +1303,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.SetVariable<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_SetVariable_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.SetVariable<UnityEngine.Ray> FlowCanvas_Nodes_SetVariable_UnityEngine_Ray;
 		FlowCanvas.Nodes.SetVariable<UnityEngine.Space> FlowCanvas_Nodes_SetVariable_UnityEngine_Space;
+		FlowCanvas.Nodes.SetVariable<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_SetVariable_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.SetVariable<UnityEngine.LayerMask> FlowCanvas_Nodes_SetVariable_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.SetVariable<VHS.BossStage> FlowCanvas_Nodes_SetVariable_VHS_BossStage;
+		FlowCanvas.Nodes.SetVariable<VHS.CharacterInputs> FlowCanvas_Nodes_SetVariable_VHS_CharacterInputs;
+		FlowCanvas.Nodes.SetVariable<VHS.InteractType> FlowCanvas_Nodes_SetVariable_VHS_InteractType;
+		FlowCanvas.Nodes.SetVariable<VHS.KeyInput> FlowCanvas_Nodes_SetVariable_VHS_KeyInput;
+		FlowCanvas.Nodes.SetVariable<VHS.NpcState> FlowCanvas_Nodes_SetVariable_VHS_NpcState;
+		FlowCanvas.Nodes.SetVariable<VHS.PassiveTriggerType> FlowCanvas_Nodes_SetVariable_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.SetVariable<VHS.PlayerAttackType> FlowCanvas_Nodes_SetVariable_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.SetVariable<VHS.ShopItemType> FlowCanvas_Nodes_SetVariable_VHS_ShopItemType;
+		FlowCanvas.Nodes.SetVariable<VHS.SkillState> FlowCanvas_Nodes_SetVariable_VHS_SkillState;
+		FlowCanvas.Nodes.SetVariable<VHS.SpawnData> FlowCanvas_Nodes_SetVariable_VHS_SpawnData;
+		FlowCanvas.Nodes.SetVariable<VHS.SpawnStartType> FlowCanvas_Nodes_SetVariable_VHS_SpawnStartType;
+		FlowCanvas.Nodes.SetVariable<VHS.TimeType> FlowCanvas_Nodes_SetVariable_VHS_TimeType;
 
 		FlowCanvas.Nodes.ShuffleList<System.Boolean> FlowCanvas_Nodes_ShuffleList_System_Boolean;
 		FlowCanvas.Nodes.ShuffleList<System.Single> FlowCanvas_Nodes_ShuffleList_System_Single;
@@ -791,7 +1335,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.ShuffleList<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_ShuffleList_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.ShuffleList<UnityEngine.Ray> FlowCanvas_Nodes_ShuffleList_UnityEngine_Ray;
 		FlowCanvas.Nodes.ShuffleList<UnityEngine.Space> FlowCanvas_Nodes_ShuffleList_UnityEngine_Space;
+		FlowCanvas.Nodes.ShuffleList<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_ShuffleList_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.ShuffleList<UnityEngine.LayerMask> FlowCanvas_Nodes_ShuffleList_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.ShuffleList<VHS.BossStage> FlowCanvas_Nodes_ShuffleList_VHS_BossStage;
+		FlowCanvas.Nodes.ShuffleList<VHS.CharacterInputs> FlowCanvas_Nodes_ShuffleList_VHS_CharacterInputs;
+		FlowCanvas.Nodes.ShuffleList<VHS.InteractType> FlowCanvas_Nodes_ShuffleList_VHS_InteractType;
+		FlowCanvas.Nodes.ShuffleList<VHS.KeyInput> FlowCanvas_Nodes_ShuffleList_VHS_KeyInput;
+		FlowCanvas.Nodes.ShuffleList<VHS.NpcState> FlowCanvas_Nodes_ShuffleList_VHS_NpcState;
+		FlowCanvas.Nodes.ShuffleList<VHS.PassiveTriggerType> FlowCanvas_Nodes_ShuffleList_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.ShuffleList<VHS.PlayerAttackType> FlowCanvas_Nodes_ShuffleList_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.ShuffleList<VHS.ShopItemType> FlowCanvas_Nodes_ShuffleList_VHS_ShopItemType;
+		FlowCanvas.Nodes.ShuffleList<VHS.SkillState> FlowCanvas_Nodes_ShuffleList_VHS_SkillState;
+		FlowCanvas.Nodes.ShuffleList<VHS.SpawnData> FlowCanvas_Nodes_ShuffleList_VHS_SpawnData;
+		FlowCanvas.Nodes.ShuffleList<VHS.SpawnStartType> FlowCanvas_Nodes_ShuffleList_VHS_SpawnStartType;
+		FlowCanvas.Nodes.ShuffleList<VHS.TimeType> FlowCanvas_Nodes_ShuffleList_VHS_TimeType;
 
 		FlowCanvas.Nodes.TryGetValue<System.Boolean> FlowCanvas_Nodes_TryGetValue_System_Boolean;
 		FlowCanvas.Nodes.TryGetValue<System.Single> FlowCanvas_Nodes_TryGetValue_System_Single;
@@ -810,7 +1367,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.TryGetValue<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_TryGetValue_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.TryGetValue<UnityEngine.Ray> FlowCanvas_Nodes_TryGetValue_UnityEngine_Ray;
 		FlowCanvas.Nodes.TryGetValue<UnityEngine.Space> FlowCanvas_Nodes_TryGetValue_UnityEngine_Space;
+		FlowCanvas.Nodes.TryGetValue<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_TryGetValue_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.TryGetValue<UnityEngine.LayerMask> FlowCanvas_Nodes_TryGetValue_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.TryGetValue<VHS.BossStage> FlowCanvas_Nodes_TryGetValue_VHS_BossStage;
+		FlowCanvas.Nodes.TryGetValue<VHS.CharacterInputs> FlowCanvas_Nodes_TryGetValue_VHS_CharacterInputs;
+		FlowCanvas.Nodes.TryGetValue<VHS.InteractType> FlowCanvas_Nodes_TryGetValue_VHS_InteractType;
+		FlowCanvas.Nodes.TryGetValue<VHS.KeyInput> FlowCanvas_Nodes_TryGetValue_VHS_KeyInput;
+		FlowCanvas.Nodes.TryGetValue<VHS.NpcState> FlowCanvas_Nodes_TryGetValue_VHS_NpcState;
+		FlowCanvas.Nodes.TryGetValue<VHS.PassiveTriggerType> FlowCanvas_Nodes_TryGetValue_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.TryGetValue<VHS.PlayerAttackType> FlowCanvas_Nodes_TryGetValue_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.TryGetValue<VHS.ShopItemType> FlowCanvas_Nodes_TryGetValue_VHS_ShopItemType;
+		FlowCanvas.Nodes.TryGetValue<VHS.SkillState> FlowCanvas_Nodes_TryGetValue_VHS_SkillState;
+		FlowCanvas.Nodes.TryGetValue<VHS.SpawnData> FlowCanvas_Nodes_TryGetValue_VHS_SpawnData;
+		FlowCanvas.Nodes.TryGetValue<VHS.SpawnStartType> FlowCanvas_Nodes_TryGetValue_VHS_SpawnStartType;
+		FlowCanvas.Nodes.TryGetValue<VHS.TimeType> FlowCanvas_Nodes_TryGetValue_VHS_TimeType;
 
 		FlowCanvas.Nodes.WriteFlowParameter<System.Boolean> FlowCanvas_Nodes_WriteFlowParameter_System_Boolean;
 		FlowCanvas.Nodes.WriteFlowParameter<System.Single> FlowCanvas_Nodes_WriteFlowParameter_System_Single;
@@ -829,7 +1399,20 @@ namespace ParadoxNotion.Internal{
 		FlowCanvas.Nodes.WriteFlowParameter<UnityEngine.RaycastHit2D> FlowCanvas_Nodes_WriteFlowParameter_UnityEngine_RaycastHit2D;
 		FlowCanvas.Nodes.WriteFlowParameter<UnityEngine.Ray> FlowCanvas_Nodes_WriteFlowParameter_UnityEngine_Ray;
 		FlowCanvas.Nodes.WriteFlowParameter<UnityEngine.Space> FlowCanvas_Nodes_WriteFlowParameter_UnityEngine_Space;
+		FlowCanvas.Nodes.WriteFlowParameter<PlayerInput.CharacterControlsActions> FlowCanvas_Nodes_WriteFlowParameter_PlayerInput_CharacterControlsActions;
 		FlowCanvas.Nodes.WriteFlowParameter<UnityEngine.LayerMask> FlowCanvas_Nodes_WriteFlowParameter_UnityEngine_LayerMask;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.BossStage> FlowCanvas_Nodes_WriteFlowParameter_VHS_BossStage;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.CharacterInputs> FlowCanvas_Nodes_WriteFlowParameter_VHS_CharacterInputs;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.InteractType> FlowCanvas_Nodes_WriteFlowParameter_VHS_InteractType;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.KeyInput> FlowCanvas_Nodes_WriteFlowParameter_VHS_KeyInput;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.NpcState> FlowCanvas_Nodes_WriteFlowParameter_VHS_NpcState;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.PassiveTriggerType> FlowCanvas_Nodes_WriteFlowParameter_VHS_PassiveTriggerType;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.PlayerAttackType> FlowCanvas_Nodes_WriteFlowParameter_VHS_PlayerAttackType;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.ShopItemType> FlowCanvas_Nodes_WriteFlowParameter_VHS_ShopItemType;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.SkillState> FlowCanvas_Nodes_WriteFlowParameter_VHS_SkillState;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.SpawnData> FlowCanvas_Nodes_WriteFlowParameter_VHS_SpawnData;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.SpawnStartType> FlowCanvas_Nodes_WriteFlowParameter_VHS_SpawnStartType;
+		FlowCanvas.Nodes.WriteFlowParameter<VHS.TimeType> FlowCanvas_Nodes_WriteFlowParameter_VHS_TimeType;
 
 		NodeCanvas.Framework.BBParameter<System.Boolean> NodeCanvas_Framework_BBParameter_System_Boolean;
 		NodeCanvas.Framework.BBParameter<System.Single> NodeCanvas_Framework_BBParameter_System_Single;
@@ -848,7 +1431,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Framework.BBParameter<UnityEngine.RaycastHit2D> NodeCanvas_Framework_BBParameter_UnityEngine_RaycastHit2D;
 		NodeCanvas.Framework.BBParameter<UnityEngine.Ray> NodeCanvas_Framework_BBParameter_UnityEngine_Ray;
 		NodeCanvas.Framework.BBParameter<UnityEngine.Space> NodeCanvas_Framework_BBParameter_UnityEngine_Space;
+		NodeCanvas.Framework.BBParameter<PlayerInput.CharacterControlsActions> NodeCanvas_Framework_BBParameter_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Framework.BBParameter<UnityEngine.LayerMask> NodeCanvas_Framework_BBParameter_UnityEngine_LayerMask;
+		NodeCanvas.Framework.BBParameter<VHS.BossStage> NodeCanvas_Framework_BBParameter_VHS_BossStage;
+		NodeCanvas.Framework.BBParameter<VHS.CharacterInputs> NodeCanvas_Framework_BBParameter_VHS_CharacterInputs;
+		NodeCanvas.Framework.BBParameter<VHS.InteractType> NodeCanvas_Framework_BBParameter_VHS_InteractType;
+		NodeCanvas.Framework.BBParameter<VHS.KeyInput> NodeCanvas_Framework_BBParameter_VHS_KeyInput;
+		NodeCanvas.Framework.BBParameter<VHS.NpcState> NodeCanvas_Framework_BBParameter_VHS_NpcState;
+		NodeCanvas.Framework.BBParameter<VHS.PassiveTriggerType> NodeCanvas_Framework_BBParameter_VHS_PassiveTriggerType;
+		NodeCanvas.Framework.BBParameter<VHS.PlayerAttackType> NodeCanvas_Framework_BBParameter_VHS_PlayerAttackType;
+		NodeCanvas.Framework.BBParameter<VHS.ShopItemType> NodeCanvas_Framework_BBParameter_VHS_ShopItemType;
+		NodeCanvas.Framework.BBParameter<VHS.SkillState> NodeCanvas_Framework_BBParameter_VHS_SkillState;
+		NodeCanvas.Framework.BBParameter<VHS.SpawnData> NodeCanvas_Framework_BBParameter_VHS_SpawnData;
+		NodeCanvas.Framework.BBParameter<VHS.SpawnStartType> NodeCanvas_Framework_BBParameter_VHS_SpawnStartType;
+		NodeCanvas.Framework.BBParameter<VHS.TimeType> NodeCanvas_Framework_BBParameter_VHS_TimeType;
 
 		NodeCanvas.Framework.ExposedParameter<System.Boolean> NodeCanvas_Framework_ExposedParameter_System_Boolean;
 		NodeCanvas.Framework.ExposedParameter<System.Single> NodeCanvas_Framework_ExposedParameter_System_Single;
@@ -867,7 +1463,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Framework.ExposedParameter<UnityEngine.RaycastHit2D> NodeCanvas_Framework_ExposedParameter_UnityEngine_RaycastHit2D;
 		NodeCanvas.Framework.ExposedParameter<UnityEngine.Ray> NodeCanvas_Framework_ExposedParameter_UnityEngine_Ray;
 		NodeCanvas.Framework.ExposedParameter<UnityEngine.Space> NodeCanvas_Framework_ExposedParameter_UnityEngine_Space;
+		NodeCanvas.Framework.ExposedParameter<PlayerInput.CharacterControlsActions> NodeCanvas_Framework_ExposedParameter_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Framework.ExposedParameter<UnityEngine.LayerMask> NodeCanvas_Framework_ExposedParameter_UnityEngine_LayerMask;
+		NodeCanvas.Framework.ExposedParameter<VHS.BossStage> NodeCanvas_Framework_ExposedParameter_VHS_BossStage;
+		NodeCanvas.Framework.ExposedParameter<VHS.CharacterInputs> NodeCanvas_Framework_ExposedParameter_VHS_CharacterInputs;
+		NodeCanvas.Framework.ExposedParameter<VHS.InteractType> NodeCanvas_Framework_ExposedParameter_VHS_InteractType;
+		NodeCanvas.Framework.ExposedParameter<VHS.KeyInput> NodeCanvas_Framework_ExposedParameter_VHS_KeyInput;
+		NodeCanvas.Framework.ExposedParameter<VHS.NpcState> NodeCanvas_Framework_ExposedParameter_VHS_NpcState;
+		NodeCanvas.Framework.ExposedParameter<VHS.PassiveTriggerType> NodeCanvas_Framework_ExposedParameter_VHS_PassiveTriggerType;
+		NodeCanvas.Framework.ExposedParameter<VHS.PlayerAttackType> NodeCanvas_Framework_ExposedParameter_VHS_PlayerAttackType;
+		NodeCanvas.Framework.ExposedParameter<VHS.ShopItemType> NodeCanvas_Framework_ExposedParameter_VHS_ShopItemType;
+		NodeCanvas.Framework.ExposedParameter<VHS.SkillState> NodeCanvas_Framework_ExposedParameter_VHS_SkillState;
+		NodeCanvas.Framework.ExposedParameter<VHS.SpawnData> NodeCanvas_Framework_ExposedParameter_VHS_SpawnData;
+		NodeCanvas.Framework.ExposedParameter<VHS.SpawnStartType> NodeCanvas_Framework_ExposedParameter_VHS_SpawnStartType;
+		NodeCanvas.Framework.ExposedParameter<VHS.TimeType> NodeCanvas_Framework_ExposedParameter_VHS_TimeType;
 
 		NodeCanvas.Framework.Variable<System.Boolean> NodeCanvas_Framework_Variable_System_Boolean;
 		NodeCanvas.Framework.Variable<System.Single> NodeCanvas_Framework_Variable_System_Single;
@@ -886,7 +1495,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Framework.Variable<UnityEngine.RaycastHit2D> NodeCanvas_Framework_Variable_UnityEngine_RaycastHit2D;
 		NodeCanvas.Framework.Variable<UnityEngine.Ray> NodeCanvas_Framework_Variable_UnityEngine_Ray;
 		NodeCanvas.Framework.Variable<UnityEngine.Space> NodeCanvas_Framework_Variable_UnityEngine_Space;
+		NodeCanvas.Framework.Variable<PlayerInput.CharacterControlsActions> NodeCanvas_Framework_Variable_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Framework.Variable<UnityEngine.LayerMask> NodeCanvas_Framework_Variable_UnityEngine_LayerMask;
+		NodeCanvas.Framework.Variable<VHS.BossStage> NodeCanvas_Framework_Variable_VHS_BossStage;
+		NodeCanvas.Framework.Variable<VHS.CharacterInputs> NodeCanvas_Framework_Variable_VHS_CharacterInputs;
+		NodeCanvas.Framework.Variable<VHS.InteractType> NodeCanvas_Framework_Variable_VHS_InteractType;
+		NodeCanvas.Framework.Variable<VHS.KeyInput> NodeCanvas_Framework_Variable_VHS_KeyInput;
+		NodeCanvas.Framework.Variable<VHS.NpcState> NodeCanvas_Framework_Variable_VHS_NpcState;
+		NodeCanvas.Framework.Variable<VHS.PassiveTriggerType> NodeCanvas_Framework_Variable_VHS_PassiveTriggerType;
+		NodeCanvas.Framework.Variable<VHS.PlayerAttackType> NodeCanvas_Framework_Variable_VHS_PlayerAttackType;
+		NodeCanvas.Framework.Variable<VHS.ShopItemType> NodeCanvas_Framework_Variable_VHS_ShopItemType;
+		NodeCanvas.Framework.Variable<VHS.SkillState> NodeCanvas_Framework_Variable_VHS_SkillState;
+		NodeCanvas.Framework.Variable<VHS.SpawnData> NodeCanvas_Framework_Variable_VHS_SpawnData;
+		NodeCanvas.Framework.Variable<VHS.SpawnStartType> NodeCanvas_Framework_Variable_VHS_SpawnStartType;
+		NodeCanvas.Framework.Variable<VHS.TimeType> NodeCanvas_Framework_Variable_VHS_TimeType;
 
 		NodeCanvas.Framework.Internal.ReflectedAction<System.Boolean> NodeCanvas_Framework_Internal_ReflectedAction_System_Boolean;
 		NodeCanvas.Framework.Internal.ReflectedAction<System.Single> NodeCanvas_Framework_Internal_ReflectedAction_System_Single;
@@ -905,7 +1527,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Framework.Internal.ReflectedAction<UnityEngine.RaycastHit2D> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_RaycastHit2D;
 		NodeCanvas.Framework.Internal.ReflectedAction<UnityEngine.Ray> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Ray;
 		NodeCanvas.Framework.Internal.ReflectedAction<UnityEngine.Space> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Space;
+		NodeCanvas.Framework.Internal.ReflectedAction<PlayerInput.CharacterControlsActions> NodeCanvas_Framework_Internal_ReflectedAction_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Framework.Internal.ReflectedAction<UnityEngine.LayerMask> NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_LayerMask;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.BossStage> NodeCanvas_Framework_Internal_ReflectedAction_VHS_BossStage;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.CharacterInputs> NodeCanvas_Framework_Internal_ReflectedAction_VHS_CharacterInputs;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.InteractType> NodeCanvas_Framework_Internal_ReflectedAction_VHS_InteractType;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.KeyInput> NodeCanvas_Framework_Internal_ReflectedAction_VHS_KeyInput;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.NpcState> NodeCanvas_Framework_Internal_ReflectedAction_VHS_NpcState;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.PassiveTriggerType> NodeCanvas_Framework_Internal_ReflectedAction_VHS_PassiveTriggerType;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.PlayerAttackType> NodeCanvas_Framework_Internal_ReflectedAction_VHS_PlayerAttackType;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.ShopItemType> NodeCanvas_Framework_Internal_ReflectedAction_VHS_ShopItemType;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.SkillState> NodeCanvas_Framework_Internal_ReflectedAction_VHS_SkillState;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.SpawnData> NodeCanvas_Framework_Internal_ReflectedAction_VHS_SpawnData;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.SpawnStartType> NodeCanvas_Framework_Internal_ReflectedAction_VHS_SpawnStartType;
+		NodeCanvas.Framework.Internal.ReflectedAction<VHS.TimeType> NodeCanvas_Framework_Internal_ReflectedAction_VHS_TimeType;
 
 		NodeCanvas.Framework.Internal.ReflectedFunction<System.Boolean> NodeCanvas_Framework_Internal_ReflectedFunction_System_Boolean;
 		NodeCanvas.Framework.Internal.ReflectedFunction<System.Single> NodeCanvas_Framework_Internal_ReflectedFunction_System_Single;
@@ -924,7 +1559,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Framework.Internal.ReflectedFunction<UnityEngine.RaycastHit2D> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_RaycastHit2D;
 		NodeCanvas.Framework.Internal.ReflectedFunction<UnityEngine.Ray> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Ray;
 		NodeCanvas.Framework.Internal.ReflectedFunction<UnityEngine.Space> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Space;
+		NodeCanvas.Framework.Internal.ReflectedFunction<PlayerInput.CharacterControlsActions> NodeCanvas_Framework_Internal_ReflectedFunction_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Framework.Internal.ReflectedFunction<UnityEngine.LayerMask> NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_LayerMask;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.BossStage> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_BossStage;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.CharacterInputs> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_CharacterInputs;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.InteractType> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_InteractType;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.KeyInput> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_KeyInput;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.NpcState> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_NpcState;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.PassiveTriggerType> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_PassiveTriggerType;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.PlayerAttackType> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_PlayerAttackType;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.ShopItemType> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_ShopItemType;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.SkillState> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_SkillState;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.SpawnData> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_SpawnData;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.SpawnStartType> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_SpawnStartType;
+		NodeCanvas.Framework.Internal.ReflectedFunction<VHS.TimeType> NodeCanvas_Framework_Internal_ReflectedFunction_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.AddElementToDictionary<System.Boolean> NodeCanvas_Tasks_Actions_AddElementToDictionary_System_Boolean;
 		NodeCanvas.Tasks.Actions.AddElementToDictionary<System.Single> NodeCanvas_Tasks_Actions_AddElementToDictionary_System_Single;
@@ -943,7 +1591,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.AddElementToDictionary<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.AddElementToDictionary<UnityEngine.Ray> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.AddElementToDictionary<UnityEngine.Space> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_AddElementToDictionary_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.AddElementToDictionary<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_AddElementToDictionary_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.BossStage> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.InteractType> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.KeyInput> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.NpcState> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.ShopItemType> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.SkillState> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.SpawnData> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.AddElementToDictionary<VHS.TimeType> NodeCanvas_Tasks_Actions_AddElementToDictionary_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.AddElementToList<System.Boolean> NodeCanvas_Tasks_Actions_AddElementToList_System_Boolean;
 		NodeCanvas.Tasks.Actions.AddElementToList<System.Single> NodeCanvas_Tasks_Actions_AddElementToList_System_Single;
@@ -962,7 +1623,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.AddElementToList<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.AddElementToList<UnityEngine.Ray> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.AddElementToList<UnityEngine.Space> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.AddElementToList<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_AddElementToList_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.AddElementToList<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_AddElementToList_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.BossStage> NodeCanvas_Tasks_Actions_AddElementToList_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_AddElementToList_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.InteractType> NodeCanvas_Tasks_Actions_AddElementToList_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.KeyInput> NodeCanvas_Tasks_Actions_AddElementToList_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.NpcState> NodeCanvas_Tasks_Actions_AddElementToList_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_AddElementToList_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_AddElementToList_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.ShopItemType> NodeCanvas_Tasks_Actions_AddElementToList_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.SkillState> NodeCanvas_Tasks_Actions_AddElementToList_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.SpawnData> NodeCanvas_Tasks_Actions_AddElementToList_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_AddElementToList_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.AddElementToList<VHS.TimeType> NodeCanvas_Tasks_Actions_AddElementToList_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.GetDictionaryElement<System.Boolean> NodeCanvas_Tasks_Actions_GetDictionaryElement_System_Boolean;
 		NodeCanvas.Tasks.Actions.GetDictionaryElement<System.Single> NodeCanvas_Tasks_Actions_GetDictionaryElement_System_Single;
@@ -981,7 +1655,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.GetDictionaryElement<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.GetDictionaryElement<UnityEngine.Ray> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.GetDictionaryElement<UnityEngine.Space> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_GetDictionaryElement_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.GetDictionaryElement<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_GetDictionaryElement_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.BossStage> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.InteractType> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.KeyInput> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.NpcState> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.ShopItemType> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.SkillState> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.SpawnData> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.GetDictionaryElement<VHS.TimeType> NodeCanvas_Tasks_Actions_GetDictionaryElement_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.GetIndexOfElement<System.Boolean> NodeCanvas_Tasks_Actions_GetIndexOfElement_System_Boolean;
 		NodeCanvas.Tasks.Actions.GetIndexOfElement<System.Single> NodeCanvas_Tasks_Actions_GetIndexOfElement_System_Single;
@@ -1000,7 +1687,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.GetIndexOfElement<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.GetIndexOfElement<UnityEngine.Ray> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.GetIndexOfElement<UnityEngine.Space> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_GetIndexOfElement_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.GetIndexOfElement<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_GetIndexOfElement_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.BossStage> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.InteractType> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.KeyInput> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.NpcState> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.ShopItemType> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.SkillState> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.SpawnData> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.GetIndexOfElement<VHS.TimeType> NodeCanvas_Tasks_Actions_GetIndexOfElement_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.InsertElementToList<System.Boolean> NodeCanvas_Tasks_Actions_InsertElementToList_System_Boolean;
 		NodeCanvas.Tasks.Actions.InsertElementToList<System.Single> NodeCanvas_Tasks_Actions_InsertElementToList_System_Single;
@@ -1019,7 +1719,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.InsertElementToList<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.InsertElementToList<UnityEngine.Ray> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.InsertElementToList<UnityEngine.Space> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.InsertElementToList<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_InsertElementToList_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.InsertElementToList<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_InsertElementToList_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.BossStage> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.InteractType> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.KeyInput> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.NpcState> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.ShopItemType> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.SkillState> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.SpawnData> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.InsertElementToList<VHS.TimeType> NodeCanvas_Tasks_Actions_InsertElementToList_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.PickListElement<System.Boolean> NodeCanvas_Tasks_Actions_PickListElement_System_Boolean;
 		NodeCanvas.Tasks.Actions.PickListElement<System.Single> NodeCanvas_Tasks_Actions_PickListElement_System_Single;
@@ -1038,7 +1751,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.PickListElement<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.PickListElement<UnityEngine.Ray> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.PickListElement<UnityEngine.Space> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.PickListElement<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_PickListElement_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.PickListElement<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_PickListElement_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.BossStage> NodeCanvas_Tasks_Actions_PickListElement_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_PickListElement_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.InteractType> NodeCanvas_Tasks_Actions_PickListElement_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.KeyInput> NodeCanvas_Tasks_Actions_PickListElement_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.NpcState> NodeCanvas_Tasks_Actions_PickListElement_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_PickListElement_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_PickListElement_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.ShopItemType> NodeCanvas_Tasks_Actions_PickListElement_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.SkillState> NodeCanvas_Tasks_Actions_PickListElement_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.SpawnData> NodeCanvas_Tasks_Actions_PickListElement_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_PickListElement_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.PickListElement<VHS.TimeType> NodeCanvas_Tasks_Actions_PickListElement_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.PickRandomListElement<System.Boolean> NodeCanvas_Tasks_Actions_PickRandomListElement_System_Boolean;
 		NodeCanvas.Tasks.Actions.PickRandomListElement<System.Single> NodeCanvas_Tasks_Actions_PickRandomListElement_System_Single;
@@ -1057,7 +1783,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.PickRandomListElement<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.PickRandomListElement<UnityEngine.Ray> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.PickRandomListElement<UnityEngine.Space> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_PickRandomListElement_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.PickRandomListElement<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_PickRandomListElement_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.BossStage> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.InteractType> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.KeyInput> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.NpcState> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.ShopItemType> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.SkillState> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.SpawnData> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.PickRandomListElement<VHS.TimeType> NodeCanvas_Tasks_Actions_PickRandomListElement_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.RemoveElementFromList<System.Boolean> NodeCanvas_Tasks_Actions_RemoveElementFromList_System_Boolean;
 		NodeCanvas.Tasks.Actions.RemoveElementFromList<System.Single> NodeCanvas_Tasks_Actions_RemoveElementFromList_System_Single;
@@ -1076,7 +1815,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.RemoveElementFromList<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.RemoveElementFromList<UnityEngine.Ray> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.RemoveElementFromList<UnityEngine.Space> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_RemoveElementFromList_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.RemoveElementFromList<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_RemoveElementFromList_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.BossStage> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.InteractType> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.KeyInput> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.NpcState> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.ShopItemType> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.SkillState> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.SpawnData> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.RemoveElementFromList<VHS.TimeType> NodeCanvas_Tasks_Actions_RemoveElementFromList_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.SendEvent<System.Boolean> NodeCanvas_Tasks_Actions_SendEvent_System_Boolean;
 		NodeCanvas.Tasks.Actions.SendEvent<System.Single> NodeCanvas_Tasks_Actions_SendEvent_System_Single;
@@ -1095,7 +1847,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.SendEvent<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.SendEvent<UnityEngine.Ray> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.SendEvent<UnityEngine.Space> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.SendEvent<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_SendEvent_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.SendEvent<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_SendEvent_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.BossStage> NodeCanvas_Tasks_Actions_SendEvent_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_SendEvent_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.InteractType> NodeCanvas_Tasks_Actions_SendEvent_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.KeyInput> NodeCanvas_Tasks_Actions_SendEvent_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.NpcState> NodeCanvas_Tasks_Actions_SendEvent_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_SendEvent_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_SendEvent_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.ShopItemType> NodeCanvas_Tasks_Actions_SendEvent_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.SkillState> NodeCanvas_Tasks_Actions_SendEvent_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.SpawnData> NodeCanvas_Tasks_Actions_SendEvent_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_SendEvent_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.SendEvent<VHS.TimeType> NodeCanvas_Tasks_Actions_SendEvent_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.SendEventToObjects<System.Boolean> NodeCanvas_Tasks_Actions_SendEventToObjects_System_Boolean;
 		NodeCanvas.Tasks.Actions.SendEventToObjects<System.Single> NodeCanvas_Tasks_Actions_SendEventToObjects_System_Single;
@@ -1114,7 +1879,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.SendEventToObjects<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.SendEventToObjects<UnityEngine.Ray> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.SendEventToObjects<UnityEngine.Space> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_SendEventToObjects_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.SendEventToObjects<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_SendEventToObjects_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.BossStage> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.InteractType> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.KeyInput> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.NpcState> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.ShopItemType> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.SkillState> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.SpawnData> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.SendEventToObjects<VHS.TimeType> NodeCanvas_Tasks_Actions_SendEventToObjects_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.SendMessage<System.Boolean> NodeCanvas_Tasks_Actions_SendMessage_System_Boolean;
 		NodeCanvas.Tasks.Actions.SendMessage<System.Single> NodeCanvas_Tasks_Actions_SendMessage_System_Single;
@@ -1133,7 +1911,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.SendMessage<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.SendMessage<UnityEngine.Ray> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.SendMessage<UnityEngine.Space> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.SendMessage<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_SendMessage_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.SendMessage<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_SendMessage_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.BossStage> NodeCanvas_Tasks_Actions_SendMessage_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_SendMessage_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.InteractType> NodeCanvas_Tasks_Actions_SendMessage_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.KeyInput> NodeCanvas_Tasks_Actions_SendMessage_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.NpcState> NodeCanvas_Tasks_Actions_SendMessage_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_SendMessage_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_SendMessage_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.ShopItemType> NodeCanvas_Tasks_Actions_SendMessage_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.SkillState> NodeCanvas_Tasks_Actions_SendMessage_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.SpawnData> NodeCanvas_Tasks_Actions_SendMessage_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_SendMessage_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.SendMessage<VHS.TimeType> NodeCanvas_Tasks_Actions_SendMessage_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.SetListElement<System.Boolean> NodeCanvas_Tasks_Actions_SetListElement_System_Boolean;
 		NodeCanvas.Tasks.Actions.SetListElement<System.Single> NodeCanvas_Tasks_Actions_SetListElement_System_Single;
@@ -1152,7 +1943,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.SetListElement<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.SetListElement<UnityEngine.Ray> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.SetListElement<UnityEngine.Space> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.SetListElement<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_SetListElement_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.SetListElement<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_SetListElement_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.BossStage> NodeCanvas_Tasks_Actions_SetListElement_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_SetListElement_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.InteractType> NodeCanvas_Tasks_Actions_SetListElement_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.KeyInput> NodeCanvas_Tasks_Actions_SetListElement_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.NpcState> NodeCanvas_Tasks_Actions_SetListElement_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_SetListElement_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_SetListElement_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.ShopItemType> NodeCanvas_Tasks_Actions_SetListElement_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.SkillState> NodeCanvas_Tasks_Actions_SetListElement_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.SpawnData> NodeCanvas_Tasks_Actions_SetListElement_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_SetListElement_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.SetListElement<VHS.TimeType> NodeCanvas_Tasks_Actions_SetListElement_VHS_TimeType;
 
 		NodeCanvas.Tasks.Actions.SetVariable<System.Boolean> NodeCanvas_Tasks_Actions_SetVariable_System_Boolean;
 		NodeCanvas.Tasks.Actions.SetVariable<System.Single> NodeCanvas_Tasks_Actions_SetVariable_System_Single;
@@ -1171,7 +1975,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Actions.SetVariable<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Actions.SetVariable<UnityEngine.Ray> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Ray;
 		NodeCanvas.Tasks.Actions.SetVariable<UnityEngine.Space> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_Space;
+		NodeCanvas.Tasks.Actions.SetVariable<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Actions_SetVariable_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Actions.SetVariable<UnityEngine.LayerMask> NodeCanvas_Tasks_Actions_SetVariable_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.BossStage> NodeCanvas_Tasks_Actions_SetVariable_VHS_BossStage;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.CharacterInputs> NodeCanvas_Tasks_Actions_SetVariable_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.InteractType> NodeCanvas_Tasks_Actions_SetVariable_VHS_InteractType;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.KeyInput> NodeCanvas_Tasks_Actions_SetVariable_VHS_KeyInput;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.NpcState> NodeCanvas_Tasks_Actions_SetVariable_VHS_NpcState;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.PassiveTriggerType> NodeCanvas_Tasks_Actions_SetVariable_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.PlayerAttackType> NodeCanvas_Tasks_Actions_SetVariable_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.ShopItemType> NodeCanvas_Tasks_Actions_SetVariable_VHS_ShopItemType;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.SkillState> NodeCanvas_Tasks_Actions_SetVariable_VHS_SkillState;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.SpawnData> NodeCanvas_Tasks_Actions_SetVariable_VHS_SpawnData;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.SpawnStartType> NodeCanvas_Tasks_Actions_SetVariable_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Actions.SetVariable<VHS.TimeType> NodeCanvas_Tasks_Actions_SetVariable_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<System.Boolean> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_System_Boolean;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<System.Single> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_System_Single;
@@ -1190,7 +2007,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<UnityEngine.Space> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.BossStage> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.InteractType> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.KeyInput> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.NpcState> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.SkillState> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.SpawnData> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEvent<VHS.TimeType> NodeCanvas_Tasks_Conditions_CheckCSharpEvent_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<System.Boolean> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_System_Boolean;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<System.Single> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_System_Single;
@@ -1209,7 +2039,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<UnityEngine.Space> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.BossStage> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.InteractType> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.KeyInput> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.NpcState> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.SkillState> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.SpawnData> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.CheckCSharpEventValue<VHS.TimeType> NodeCanvas_Tasks_Conditions_CheckCSharpEventValue_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.CheckEvent<System.Boolean> NodeCanvas_Tasks_Conditions_CheckEvent_System_Boolean;
 		NodeCanvas.Tasks.Conditions.CheckEvent<System.Single> NodeCanvas_Tasks_Conditions_CheckEvent_System_Single;
@@ -1228,7 +2071,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.CheckEvent<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.CheckEvent<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.CheckEvent<UnityEngine.Space> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.CheckEvent<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_CheckEvent_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.CheckEvent<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_CheckEvent_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.BossStage> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.InteractType> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.KeyInput> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.NpcState> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.SkillState> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.SpawnData> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.CheckEvent<VHS.TimeType> NodeCanvas_Tasks_Conditions_CheckEvent_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.CheckEventValue<System.Boolean> NodeCanvas_Tasks_Conditions_CheckEventValue_System_Boolean;
 		NodeCanvas.Tasks.Conditions.CheckEventValue<System.Single> NodeCanvas_Tasks_Conditions_CheckEventValue_System_Single;
@@ -1247,7 +2103,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.CheckEventValue<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.CheckEventValue<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.CheckEventValue<UnityEngine.Space> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_CheckEventValue_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.CheckEventValue<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_CheckEventValue_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.BossStage> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.InteractType> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.KeyInput> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.NpcState> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.SkillState> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.SpawnData> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.CheckEventValue<VHS.TimeType> NodeCanvas_Tasks_Conditions_CheckEventValue_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.CheckUnityEvent<System.Boolean> NodeCanvas_Tasks_Conditions_CheckUnityEvent_System_Boolean;
 		NodeCanvas.Tasks.Conditions.CheckUnityEvent<System.Single> NodeCanvas_Tasks_Conditions_CheckUnityEvent_System_Single;
@@ -1266,7 +2135,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.CheckUnityEvent<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.CheckUnityEvent<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.CheckUnityEvent<UnityEngine.Space> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_CheckUnityEvent_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.CheckUnityEvent<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_CheckUnityEvent_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.BossStage> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.InteractType> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.KeyInput> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.NpcState> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.SkillState> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.SpawnData> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEvent<VHS.TimeType> NodeCanvas_Tasks_Conditions_CheckUnityEvent_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<System.Boolean> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_System_Boolean;
 		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<System.Single> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_System_Single;
@@ -1285,7 +2167,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<UnityEngine.Space> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.BossStage> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.InteractType> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.KeyInput> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.NpcState> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.SkillState> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.SpawnData> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.CheckUnityEventValue<VHS.TimeType> NodeCanvas_Tasks_Conditions_CheckUnityEventValue_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.CheckVariable<System.Boolean> NodeCanvas_Tasks_Conditions_CheckVariable_System_Boolean;
 		NodeCanvas.Tasks.Conditions.CheckVariable<System.Single> NodeCanvas_Tasks_Conditions_CheckVariable_System_Single;
@@ -1304,7 +2199,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.CheckVariable<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.CheckVariable<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.CheckVariable<UnityEngine.Space> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.CheckVariable<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_CheckVariable_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.CheckVariable<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_CheckVariable_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.BossStage> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.InteractType> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.KeyInput> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.NpcState> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.SkillState> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.SpawnData> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.CheckVariable<VHS.TimeType> NodeCanvas_Tasks_Conditions_CheckVariable_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.ListContainsElement<System.Boolean> NodeCanvas_Tasks_Conditions_ListContainsElement_System_Boolean;
 		NodeCanvas.Tasks.Conditions.ListContainsElement<System.Single> NodeCanvas_Tasks_Conditions_ListContainsElement_System_Single;
@@ -1323,7 +2231,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.ListContainsElement<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.ListContainsElement<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.ListContainsElement<UnityEngine.Space> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_ListContainsElement_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.ListContainsElement<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_ListContainsElement_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.BossStage> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.InteractType> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.KeyInput> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.NpcState> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.SkillState> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.SpawnData> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.ListContainsElement<VHS.TimeType> NodeCanvas_Tasks_Conditions_ListContainsElement_VHS_TimeType;
 
 		NodeCanvas.Tasks.Conditions.TryGetValue<System.Boolean> NodeCanvas_Tasks_Conditions_TryGetValue_System_Boolean;
 		NodeCanvas.Tasks.Conditions.TryGetValue<System.Single> NodeCanvas_Tasks_Conditions_TryGetValue_System_Single;
@@ -1342,7 +2263,20 @@ namespace ParadoxNotion.Internal{
 		NodeCanvas.Tasks.Conditions.TryGetValue<UnityEngine.RaycastHit2D> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_RaycastHit2D;
 		NodeCanvas.Tasks.Conditions.TryGetValue<UnityEngine.Ray> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Ray;
 		NodeCanvas.Tasks.Conditions.TryGetValue<UnityEngine.Space> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_Space;
+		NodeCanvas.Tasks.Conditions.TryGetValue<PlayerInput.CharacterControlsActions> NodeCanvas_Tasks_Conditions_TryGetValue_PlayerInput_CharacterControlsActions;
 		NodeCanvas.Tasks.Conditions.TryGetValue<UnityEngine.LayerMask> NodeCanvas_Tasks_Conditions_TryGetValue_UnityEngine_LayerMask;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.BossStage> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_BossStage;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.CharacterInputs> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_CharacterInputs;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.InteractType> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_InteractType;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.KeyInput> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_KeyInput;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.NpcState> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_NpcState;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.PassiveTriggerType> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_PassiveTriggerType;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.PlayerAttackType> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_PlayerAttackType;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.ShopItemType> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_ShopItemType;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.SkillState> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_SkillState;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.SpawnData> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_SpawnData;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.SpawnStartType> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_SpawnStartType;
+		NodeCanvas.Tasks.Conditions.TryGetValue<VHS.TimeType> NodeCanvas_Tasks_Conditions_TryGetValue_VHS_TimeType;
 
 		///----------------------------------------------------------------------------------------------
 		void FlowCanvas_Flow_ReadParameter_1() {
@@ -1364,7 +2298,20 @@ namespace ParadoxNotion.Internal{
 			_FlowCanvas_Flow.ReadParameter<UnityEngine.RaycastHit2D>( (System.String)o );
 			_FlowCanvas_Flow.ReadParameter<UnityEngine.Ray>( (System.String)o );
 			_FlowCanvas_Flow.ReadParameter<UnityEngine.Space>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<PlayerInput.CharacterControlsActions>( (System.String)o );
 			_FlowCanvas_Flow.ReadParameter<UnityEngine.LayerMask>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.BossStage>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.CharacterInputs>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.InteractType>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.KeyInput>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.NpcState>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.PassiveTriggerType>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.PlayerAttackType>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.ShopItemType>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.SkillState>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.SpawnData>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.SpawnStartType>( (System.String)o );
+			_FlowCanvas_Flow.ReadParameter<VHS.TimeType>( (System.String)o );
 		}
 
 		void FlowCanvas_Flow_WriteParameter_2() {
@@ -1386,7 +2333,20 @@ namespace ParadoxNotion.Internal{
 			_FlowCanvas_Flow.WriteParameter<UnityEngine.RaycastHit2D>( (System.String)o, (UnityEngine.RaycastHit2D)o );
 			_FlowCanvas_Flow.WriteParameter<UnityEngine.Ray>( (System.String)o, (UnityEngine.Ray)o );
 			_FlowCanvas_Flow.WriteParameter<UnityEngine.Space>( (System.String)o, (UnityEngine.Space)o );
+			_FlowCanvas_Flow.WriteParameter<PlayerInput.CharacterControlsActions>( (System.String)o, (PlayerInput.CharacterControlsActions)o );
 			_FlowCanvas_Flow.WriteParameter<UnityEngine.LayerMask>( (System.String)o, (UnityEngine.LayerMask)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.BossStage>( (System.String)o, (VHS.BossStage)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.CharacterInputs>( (System.String)o, (VHS.CharacterInputs)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.InteractType>( (System.String)o, (VHS.InteractType)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.KeyInput>( (System.String)o, (VHS.KeyInput)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.NpcState>( (System.String)o, (VHS.NpcState)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.PassiveTriggerType>( (System.String)o, (VHS.PassiveTriggerType)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.PlayerAttackType>( (System.String)o, (VHS.PlayerAttackType)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.ShopItemType>( (System.String)o, (VHS.ShopItemType)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.SkillState>( (System.String)o, (VHS.SkillState)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.SpawnData>( (System.String)o, (VHS.SpawnData)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.SpawnStartType>( (System.String)o, (VHS.SpawnStartType)o );
+			_FlowCanvas_Flow.WriteParameter<VHS.TimeType>( (System.String)o, (VHS.TimeType)o );
 		}
 
 		void FlowCanvas_FlowNode_AddValueInput_1() {
@@ -1408,7 +2368,20 @@ namespace ParadoxNotion.Internal{
 			_FlowCanvas_FlowNode.AddValueInput<UnityEngine.RaycastHit2D>( (System.String)o, (System.String)o );
 			_FlowCanvas_FlowNode.AddValueInput<UnityEngine.Ray>( (System.String)o, (System.String)o );
 			_FlowCanvas_FlowNode.AddValueInput<UnityEngine.Space>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<PlayerInput.CharacterControlsActions>( (System.String)o, (System.String)o );
 			_FlowCanvas_FlowNode.AddValueInput<UnityEngine.LayerMask>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.BossStage>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.CharacterInputs>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.InteractType>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.KeyInput>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.NpcState>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.PassiveTriggerType>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.PlayerAttackType>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.ShopItemType>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.SkillState>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.SpawnData>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.SpawnStartType>( (System.String)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueInput<VHS.TimeType>( (System.String)o, (System.String)o );
 		}
 
 		void FlowCanvas_FlowNode_AddValueOutput_2() {
@@ -1430,7 +2403,20 @@ namespace ParadoxNotion.Internal{
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.RaycastHit2D>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.RaycastHit2D>)o );
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.Ray>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.Ray>)o );
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.Space>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.Space>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<PlayerInput.CharacterControlsActions>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<PlayerInput.CharacterControlsActions>)o );
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.LayerMask>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.LayerMask>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.BossStage>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.BossStage>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.CharacterInputs>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.CharacterInputs>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.InteractType>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.InteractType>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.KeyInput>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.KeyInput>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.NpcState>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.NpcState>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.PassiveTriggerType>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.PassiveTriggerType>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.PlayerAttackType>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.PlayerAttackType>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.ShopItemType>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.ShopItemType>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.SkillState>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.SkillState>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.SpawnData>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.SpawnData>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.SpawnStartType>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.SpawnStartType>)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.TimeType>( (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.TimeType>)o );
 		}
 
 		void FlowCanvas_FlowNode_AddValueOutput_3() {
@@ -1452,7 +2438,20 @@ namespace ParadoxNotion.Internal{
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.RaycastHit2D>( (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.RaycastHit2D>)o, (System.String)o );
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.Ray>( (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.Ray>)o, (System.String)o );
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.Space>( (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.Space>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<PlayerInput.CharacterControlsActions>( (System.String)o, (FlowCanvas.ValueHandler<PlayerInput.CharacterControlsActions>)o, (System.String)o );
 			_FlowCanvas_FlowNode.AddValueOutput<UnityEngine.LayerMask>( (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.LayerMask>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.BossStage>( (System.String)o, (FlowCanvas.ValueHandler<VHS.BossStage>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.CharacterInputs>( (System.String)o, (FlowCanvas.ValueHandler<VHS.CharacterInputs>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.InteractType>( (System.String)o, (FlowCanvas.ValueHandler<VHS.InteractType>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.KeyInput>( (System.String)o, (FlowCanvas.ValueHandler<VHS.KeyInput>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.NpcState>( (System.String)o, (FlowCanvas.ValueHandler<VHS.NpcState>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.PassiveTriggerType>( (System.String)o, (FlowCanvas.ValueHandler<VHS.PassiveTriggerType>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.PlayerAttackType>( (System.String)o, (FlowCanvas.ValueHandler<VHS.PlayerAttackType>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.ShopItemType>( (System.String)o, (FlowCanvas.ValueHandler<VHS.ShopItemType>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.SkillState>( (System.String)o, (FlowCanvas.ValueHandler<VHS.SkillState>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.SpawnData>( (System.String)o, (FlowCanvas.ValueHandler<VHS.SpawnData>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.SpawnStartType>( (System.String)o, (FlowCanvas.ValueHandler<VHS.SpawnStartType>)o, (System.String)o );
+			_FlowCanvas_FlowNode.AddValueOutput<VHS.TimeType>( (System.String)o, (FlowCanvas.ValueHandler<VHS.TimeType>)o, (System.String)o );
 		}
 
 		void FlowCanvas_TypeConverter_GetConverterFuncFromTo_1() {
@@ -1473,7 +2472,20 @@ namespace ParadoxNotion.Internal{
 			FlowCanvas.TypeConverter.GetConverterFuncFromTo<UnityEngine.RaycastHit2D>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
 			FlowCanvas.TypeConverter.GetConverterFuncFromTo<UnityEngine.Ray>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
 			FlowCanvas.TypeConverter.GetConverterFuncFromTo<UnityEngine.Space>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<PlayerInput.CharacterControlsActions>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
 			FlowCanvas.TypeConverter.GetConverterFuncFromTo<UnityEngine.LayerMask>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.BossStage>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.CharacterInputs>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.InteractType>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.KeyInput>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.NpcState>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.PassiveTriggerType>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.PlayerAttackType>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.ShopItemType>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.SkillState>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.SpawnData>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.SpawnStartType>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
+			FlowCanvas.TypeConverter.GetConverterFuncFromTo<VHS.TimeType>( (System.Type)o, (System.Type)o, (FlowCanvas.ValueHandler<System.Object>)o );
 		}
 
 		void FlowCanvas_TypeConverter_QuickConvert_2() {
@@ -1494,7 +2506,20 @@ namespace ParadoxNotion.Internal{
 			FlowCanvas.TypeConverter.QuickConvert<UnityEngine.RaycastHit2D>( (System.Object)o );
 			FlowCanvas.TypeConverter.QuickConvert<UnityEngine.Ray>( (System.Object)o );
 			FlowCanvas.TypeConverter.QuickConvert<UnityEngine.Space>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<PlayerInput.CharacterControlsActions>( (System.Object)o );
 			FlowCanvas.TypeConverter.QuickConvert<UnityEngine.LayerMask>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.BossStage>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.CharacterInputs>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.InteractType>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.KeyInput>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.NpcState>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.PassiveTriggerType>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.PlayerAttackType>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.ShopItemType>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.SkillState>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.SpawnData>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.SpawnStartType>( (System.Object)o );
+			FlowCanvas.TypeConverter.QuickConvert<VHS.TimeType>( (System.Object)o );
 		}
 
 		void FlowCanvas_ValueInput_CreateInstance_1() {
@@ -1515,7 +2540,20 @@ namespace ParadoxNotion.Internal{
 			FlowCanvas.ValueInput.CreateInstance<UnityEngine.RaycastHit2D>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
 			FlowCanvas.ValueInput.CreateInstance<UnityEngine.Ray>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
 			FlowCanvas.ValueInput.CreateInstance<UnityEngine.Space>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<PlayerInput.CharacterControlsActions>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
 			FlowCanvas.ValueInput.CreateInstance<UnityEngine.LayerMask>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.BossStage>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.CharacterInputs>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.InteractType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.KeyInput>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.NpcState>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.PassiveTriggerType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.PlayerAttackType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.ShopItemType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.SkillState>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.SpawnData>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.SpawnStartType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
+			FlowCanvas.ValueInput.CreateInstance<VHS.TimeType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o );
 		}
 
 		void FlowCanvas_ValueOutput_CreateInstance_1() {
@@ -1536,7 +2574,20 @@ namespace ParadoxNotion.Internal{
 			FlowCanvas.ValueOutput.CreateInstance<UnityEngine.RaycastHit2D>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.RaycastHit2D>)o );
 			FlowCanvas.ValueOutput.CreateInstance<UnityEngine.Ray>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.Ray>)o );
 			FlowCanvas.ValueOutput.CreateInstance<UnityEngine.Space>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.Space>)o );
+			FlowCanvas.ValueOutput.CreateInstance<PlayerInput.CharacterControlsActions>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<PlayerInput.CharacterControlsActions>)o );
 			FlowCanvas.ValueOutput.CreateInstance<UnityEngine.LayerMask>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<UnityEngine.LayerMask>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.BossStage>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.BossStage>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.CharacterInputs>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.CharacterInputs>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.InteractType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.InteractType>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.KeyInput>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.KeyInput>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.NpcState>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.NpcState>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.PassiveTriggerType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.PassiveTriggerType>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.PlayerAttackType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.PlayerAttackType>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.ShopItemType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.ShopItemType>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.SkillState>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.SkillState>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.SpawnData>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.SpawnData>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.SpawnStartType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.SpawnStartType>)o );
+			FlowCanvas.ValueOutput.CreateInstance<VHS.TimeType>( (FlowCanvas.FlowNode)o, (System.String)o, (System.String)o, (FlowCanvas.ValueHandler<VHS.TimeType>)o );
 		}
 
 		void FlowCanvas_Nodes_ReflectedDelegateEvent_Callback1_1() {
@@ -1558,7 +2609,20 @@ namespace ParadoxNotion.Internal{
 			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<UnityEngine.RaycastHit2D>( (UnityEngine.RaycastHit2D)o );
 			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<UnityEngine.Ray>( (UnityEngine.Ray)o );
 			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<UnityEngine.Space>( (UnityEngine.Space)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<PlayerInput.CharacterControlsActions>( (PlayerInput.CharacterControlsActions)o );
 			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<UnityEngine.LayerMask>( (UnityEngine.LayerMask)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.BossStage>( (VHS.BossStage)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.CharacterInputs>( (VHS.CharacterInputs)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.InteractType>( (VHS.InteractType)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.KeyInput>( (VHS.KeyInput)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.NpcState>( (VHS.NpcState)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.PassiveTriggerType>( (VHS.PassiveTriggerType)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.PlayerAttackType>( (VHS.PlayerAttackType)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.ShopItemType>( (VHS.ShopItemType)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.SkillState>( (VHS.SkillState)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.SpawnData>( (VHS.SpawnData)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.SpawnStartType>( (VHS.SpawnStartType)o );
+			_FlowCanvas_Nodes_ReflectedDelegateEvent.Callback1<VHS.TimeType>( (VHS.TimeType)o );
 		}
 
 		void FlowCanvas_Nodes_ReflectedUnityEvent_CallbackMethod1_1() {
@@ -1580,7 +2644,20 @@ namespace ParadoxNotion.Internal{
 			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<UnityEngine.RaycastHit2D>( (UnityEngine.RaycastHit2D)o );
 			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<UnityEngine.Ray>( (UnityEngine.Ray)o );
 			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<UnityEngine.Space>( (UnityEngine.Space)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<PlayerInput.CharacterControlsActions>( (PlayerInput.CharacterControlsActions)o );
 			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<UnityEngine.LayerMask>( (UnityEngine.LayerMask)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.BossStage>( (VHS.BossStage)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.CharacterInputs>( (VHS.CharacterInputs)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.InteractType>( (VHS.InteractType)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.KeyInput>( (VHS.KeyInput)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.NpcState>( (VHS.NpcState)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.PassiveTriggerType>( (VHS.PassiveTriggerType)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.PlayerAttackType>( (VHS.PlayerAttackType)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.ShopItemType>( (VHS.ShopItemType)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.SkillState>( (VHS.SkillState)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.SpawnData>( (VHS.SpawnData)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.SpawnStartType>( (VHS.SpawnStartType)o );
+			_FlowCanvas_Nodes_ReflectedUnityEvent.CallbackMethod1<VHS.TimeType>( (VHS.TimeType)o );
 		}
 
 		void NodeCanvas_Framework_Blackboard_GetVariable_1() {
@@ -1602,7 +2679,20 @@ namespace ParadoxNotion.Internal{
 			_NodeCanvas_Framework_Blackboard.GetVariable<UnityEngine.RaycastHit2D>( (System.String)o );
 			_NodeCanvas_Framework_Blackboard.GetVariable<UnityEngine.Ray>( (System.String)o );
 			_NodeCanvas_Framework_Blackboard.GetVariable<UnityEngine.Space>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<PlayerInput.CharacterControlsActions>( (System.String)o );
 			_NodeCanvas_Framework_Blackboard.GetVariable<UnityEngine.LayerMask>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.BossStage>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.CharacterInputs>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.InteractType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.KeyInput>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.NpcState>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.PassiveTriggerType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.PlayerAttackType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.ShopItemType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.SkillState>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.SpawnData>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.SpawnStartType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariable<VHS.TimeType>( (System.String)o );
 		}
 
 		void NodeCanvas_Framework_Blackboard_GetVariableValue_2() {
@@ -1624,7 +2714,20 @@ namespace ParadoxNotion.Internal{
 			_NodeCanvas_Framework_Blackboard.GetVariableValue<UnityEngine.RaycastHit2D>( (System.String)o );
 			_NodeCanvas_Framework_Blackboard.GetVariableValue<UnityEngine.Ray>( (System.String)o );
 			_NodeCanvas_Framework_Blackboard.GetVariableValue<UnityEngine.Space>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<PlayerInput.CharacterControlsActions>( (System.String)o );
 			_NodeCanvas_Framework_Blackboard.GetVariableValue<UnityEngine.LayerMask>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.BossStage>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.CharacterInputs>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.InteractType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.KeyInput>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.NpcState>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.PassiveTriggerType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.PlayerAttackType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.ShopItemType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.SkillState>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.SpawnData>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.SpawnStartType>( (System.String)o );
+			_NodeCanvas_Framework_Blackboard.GetVariableValue<VHS.TimeType>( (System.String)o );
 		}
 
 		void NodeCanvas_Framework_IBlackboardExtensions_AddVariable_1() {
@@ -1645,7 +2748,20 @@ namespace ParadoxNotion.Internal{
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.RaycastHit2D>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (UnityEngine.RaycastHit2D)o );
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.Ray>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (UnityEngine.Ray)o );
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.Space>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (UnityEngine.Space)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<PlayerInput.CharacterControlsActions>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (PlayerInput.CharacterControlsActions)o );
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.LayerMask>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (UnityEngine.LayerMask)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.BossStage>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.BossStage)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.CharacterInputs>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.CharacterInputs)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.InteractType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.InteractType)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.KeyInput>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.KeyInput)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.NpcState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.NpcState)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.PassiveTriggerType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.PassiveTriggerType)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.PlayerAttackType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.PlayerAttackType)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.ShopItemType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.ShopItemType)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.SkillState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.SkillState)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.SpawnData>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.SpawnData)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.SpawnStartType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.SpawnStartType)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.TimeType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o, (VHS.TimeType)o );
 		}
 
 		void NodeCanvas_Framework_IBlackboardExtensions_AddVariable_2() {
@@ -1666,7 +2782,20 @@ namespace ParadoxNotion.Internal{
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.RaycastHit2D>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.Ray>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.Space>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<PlayerInput.CharacterControlsActions>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<UnityEngine.LayerMask>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.BossStage>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.CharacterInputs>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.InteractType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.KeyInput>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.NpcState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.PassiveTriggerType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.PlayerAttackType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.ShopItemType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.SkillState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.SpawnData>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.SpawnStartType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.AddVariable<VHS.TimeType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 		}
 
 		void NodeCanvas_Framework_IBlackboardExtensions_GetVariableValue_3() {
@@ -1687,7 +2816,20 @@ namespace ParadoxNotion.Internal{
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<UnityEngine.RaycastHit2D>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<UnityEngine.Ray>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<UnityEngine.Space>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<PlayerInput.CharacterControlsActions>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<UnityEngine.LayerMask>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.BossStage>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.CharacterInputs>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.InteractType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.KeyInput>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.NpcState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.PassiveTriggerType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.PlayerAttackType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.ShopItemType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.SkillState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.SpawnData>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.SpawnStartType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariableValue<VHS.TimeType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 		}
 
 		void NodeCanvas_Framework_IBlackboardExtensions_GetVariable_4() {
@@ -1708,7 +2850,20 @@ namespace ParadoxNotion.Internal{
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<UnityEngine.RaycastHit2D>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<UnityEngine.Ray>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<UnityEngine.Space>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<PlayerInput.CharacterControlsActions>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<UnityEngine.LayerMask>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.BossStage>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.CharacterInputs>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.InteractType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.KeyInput>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.NpcState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.PassiveTriggerType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.PlayerAttackType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.ShopItemType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.SkillState>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.SpawnData>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.SpawnStartType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
+			NodeCanvas.Framework.IBlackboardExtensions.GetVariable<VHS.TimeType>( (NodeCanvas.Framework.IBlackboard)o, (System.String)o );
 		}
 
 		///----------------------------------------------------------------------------------------------
@@ -1866,6 +3021,15 @@ namespace ParadoxNotion.Internal{
 			System.Collections.Generic.IDictionary<System.String, UnityEngine.Space> IDict_UnityEngine_Space;
 			System.Collections.Generic.Dictionary<System.String, UnityEngine.Space> Dict_UnityEngine_Space;
 			///------
+			System.Action<PlayerInput.CharacterControlsActions> System_Action_PlayerInput_CharacterControlsActions;
+			System.Func<PlayerInput.CharacterControlsActions> System_Func_PlayerInput_CharacterControlsActions;
+			UnityEngine.Events.UnityAction<PlayerInput.CharacterControlsActions> UnityEngine_Events_UnityAction_PlayerInput_CharacterControlsActions;
+			System.Collections.Generic.IList<PlayerInput.CharacterControlsActions> System_Collections_Generic_IList_PlayerInput_CharacterControlsActions;
+			System.Collections.Generic.List<PlayerInput.CharacterControlsActions> System_Collections_Generic_List_PlayerInput_CharacterControlsActions;
+			System.Nullable<PlayerInput.CharacterControlsActions> System_Nullable_PlayerInput_CharacterControlsActions;
+			System.Collections.Generic.IDictionary<System.String, PlayerInput.CharacterControlsActions> IDict_PlayerInput_CharacterControlsActions;
+			System.Collections.Generic.Dictionary<System.String, PlayerInput.CharacterControlsActions> Dict_PlayerInput_CharacterControlsActions;
+			///------
 			System.Action<UnityEngine.LayerMask> System_Action_UnityEngine_LayerMask;
 			System.Func<UnityEngine.LayerMask> System_Func_UnityEngine_LayerMask;
 			UnityEngine.Events.UnityAction<UnityEngine.LayerMask> UnityEngine_Events_UnityAction_UnityEngine_LayerMask;
@@ -1875,9 +3039,117 @@ namespace ParadoxNotion.Internal{
 			System.Collections.Generic.IDictionary<System.String, UnityEngine.LayerMask> IDict_UnityEngine_LayerMask;
 			System.Collections.Generic.Dictionary<System.String, UnityEngine.LayerMask> Dict_UnityEngine_LayerMask;
 			///------
+			System.Action<VHS.BossStage> System_Action_VHS_BossStage;
+			System.Func<VHS.BossStage> System_Func_VHS_BossStage;
+			UnityEngine.Events.UnityAction<VHS.BossStage> UnityEngine_Events_UnityAction_VHS_BossStage;
+			System.Collections.Generic.IList<VHS.BossStage> System_Collections_Generic_IList_VHS_BossStage;
+			System.Collections.Generic.List<VHS.BossStage> System_Collections_Generic_List_VHS_BossStage;
+			System.Nullable<VHS.BossStage> System_Nullable_VHS_BossStage;
+			System.Collections.Generic.IDictionary<System.String, VHS.BossStage> IDict_VHS_BossStage;
+			System.Collections.Generic.Dictionary<System.String, VHS.BossStage> Dict_VHS_BossStage;
+			///------
+			System.Action<VHS.CharacterInputs> System_Action_VHS_CharacterInputs;
+			System.Func<VHS.CharacterInputs> System_Func_VHS_CharacterInputs;
+			UnityEngine.Events.UnityAction<VHS.CharacterInputs> UnityEngine_Events_UnityAction_VHS_CharacterInputs;
+			System.Collections.Generic.IList<VHS.CharacterInputs> System_Collections_Generic_IList_VHS_CharacterInputs;
+			System.Collections.Generic.List<VHS.CharacterInputs> System_Collections_Generic_List_VHS_CharacterInputs;
+			System.Nullable<VHS.CharacterInputs> System_Nullable_VHS_CharacterInputs;
+			System.Collections.Generic.IDictionary<System.String, VHS.CharacterInputs> IDict_VHS_CharacterInputs;
+			System.Collections.Generic.Dictionary<System.String, VHS.CharacterInputs> Dict_VHS_CharacterInputs;
+			///------
+			System.Action<VHS.InteractType> System_Action_VHS_InteractType;
+			System.Func<VHS.InteractType> System_Func_VHS_InteractType;
+			UnityEngine.Events.UnityAction<VHS.InteractType> UnityEngine_Events_UnityAction_VHS_InteractType;
+			System.Collections.Generic.IList<VHS.InteractType> System_Collections_Generic_IList_VHS_InteractType;
+			System.Collections.Generic.List<VHS.InteractType> System_Collections_Generic_List_VHS_InteractType;
+			System.Nullable<VHS.InteractType> System_Nullable_VHS_InteractType;
+			System.Collections.Generic.IDictionary<System.String, VHS.InteractType> IDict_VHS_InteractType;
+			System.Collections.Generic.Dictionary<System.String, VHS.InteractType> Dict_VHS_InteractType;
+			///------
+			System.Action<VHS.KeyInput> System_Action_VHS_KeyInput;
+			System.Func<VHS.KeyInput> System_Func_VHS_KeyInput;
+			UnityEngine.Events.UnityAction<VHS.KeyInput> UnityEngine_Events_UnityAction_VHS_KeyInput;
+			System.Collections.Generic.IList<VHS.KeyInput> System_Collections_Generic_IList_VHS_KeyInput;
+			System.Collections.Generic.List<VHS.KeyInput> System_Collections_Generic_List_VHS_KeyInput;
+			System.Nullable<VHS.KeyInput> System_Nullable_VHS_KeyInput;
+			System.Collections.Generic.IDictionary<System.String, VHS.KeyInput> IDict_VHS_KeyInput;
+			System.Collections.Generic.Dictionary<System.String, VHS.KeyInput> Dict_VHS_KeyInput;
+			///------
+			System.Action<VHS.NpcState> System_Action_VHS_NpcState;
+			System.Func<VHS.NpcState> System_Func_VHS_NpcState;
+			UnityEngine.Events.UnityAction<VHS.NpcState> UnityEngine_Events_UnityAction_VHS_NpcState;
+			System.Collections.Generic.IList<VHS.NpcState> System_Collections_Generic_IList_VHS_NpcState;
+			System.Collections.Generic.List<VHS.NpcState> System_Collections_Generic_List_VHS_NpcState;
+			System.Nullable<VHS.NpcState> System_Nullable_VHS_NpcState;
+			System.Collections.Generic.IDictionary<System.String, VHS.NpcState> IDict_VHS_NpcState;
+			System.Collections.Generic.Dictionary<System.String, VHS.NpcState> Dict_VHS_NpcState;
+			///------
+			System.Action<VHS.PassiveTriggerType> System_Action_VHS_PassiveTriggerType;
+			System.Func<VHS.PassiveTriggerType> System_Func_VHS_PassiveTriggerType;
+			UnityEngine.Events.UnityAction<VHS.PassiveTriggerType> UnityEngine_Events_UnityAction_VHS_PassiveTriggerType;
+			System.Collections.Generic.IList<VHS.PassiveTriggerType> System_Collections_Generic_IList_VHS_PassiveTriggerType;
+			System.Collections.Generic.List<VHS.PassiveTriggerType> System_Collections_Generic_List_VHS_PassiveTriggerType;
+			System.Nullable<VHS.PassiveTriggerType> System_Nullable_VHS_PassiveTriggerType;
+			System.Collections.Generic.IDictionary<System.String, VHS.PassiveTriggerType> IDict_VHS_PassiveTriggerType;
+			System.Collections.Generic.Dictionary<System.String, VHS.PassiveTriggerType> Dict_VHS_PassiveTriggerType;
+			///------
+			System.Action<VHS.PlayerAttackType> System_Action_VHS_PlayerAttackType;
+			System.Func<VHS.PlayerAttackType> System_Func_VHS_PlayerAttackType;
+			UnityEngine.Events.UnityAction<VHS.PlayerAttackType> UnityEngine_Events_UnityAction_VHS_PlayerAttackType;
+			System.Collections.Generic.IList<VHS.PlayerAttackType> System_Collections_Generic_IList_VHS_PlayerAttackType;
+			System.Collections.Generic.List<VHS.PlayerAttackType> System_Collections_Generic_List_VHS_PlayerAttackType;
+			System.Nullable<VHS.PlayerAttackType> System_Nullable_VHS_PlayerAttackType;
+			System.Collections.Generic.IDictionary<System.String, VHS.PlayerAttackType> IDict_VHS_PlayerAttackType;
+			System.Collections.Generic.Dictionary<System.String, VHS.PlayerAttackType> Dict_VHS_PlayerAttackType;
+			///------
+			System.Action<VHS.ShopItemType> System_Action_VHS_ShopItemType;
+			System.Func<VHS.ShopItemType> System_Func_VHS_ShopItemType;
+			UnityEngine.Events.UnityAction<VHS.ShopItemType> UnityEngine_Events_UnityAction_VHS_ShopItemType;
+			System.Collections.Generic.IList<VHS.ShopItemType> System_Collections_Generic_IList_VHS_ShopItemType;
+			System.Collections.Generic.List<VHS.ShopItemType> System_Collections_Generic_List_VHS_ShopItemType;
+			System.Nullable<VHS.ShopItemType> System_Nullable_VHS_ShopItemType;
+			System.Collections.Generic.IDictionary<System.String, VHS.ShopItemType> IDict_VHS_ShopItemType;
+			System.Collections.Generic.Dictionary<System.String, VHS.ShopItemType> Dict_VHS_ShopItemType;
+			///------
+			System.Action<VHS.SkillState> System_Action_VHS_SkillState;
+			System.Func<VHS.SkillState> System_Func_VHS_SkillState;
+			UnityEngine.Events.UnityAction<VHS.SkillState> UnityEngine_Events_UnityAction_VHS_SkillState;
+			System.Collections.Generic.IList<VHS.SkillState> System_Collections_Generic_IList_VHS_SkillState;
+			System.Collections.Generic.List<VHS.SkillState> System_Collections_Generic_List_VHS_SkillState;
+			System.Nullable<VHS.SkillState> System_Nullable_VHS_SkillState;
+			System.Collections.Generic.IDictionary<System.String, VHS.SkillState> IDict_VHS_SkillState;
+			System.Collections.Generic.Dictionary<System.String, VHS.SkillState> Dict_VHS_SkillState;
+			///------
+			System.Action<VHS.SpawnData> System_Action_VHS_SpawnData;
+			System.Func<VHS.SpawnData> System_Func_VHS_SpawnData;
+			UnityEngine.Events.UnityAction<VHS.SpawnData> UnityEngine_Events_UnityAction_VHS_SpawnData;
+			System.Collections.Generic.IList<VHS.SpawnData> System_Collections_Generic_IList_VHS_SpawnData;
+			System.Collections.Generic.List<VHS.SpawnData> System_Collections_Generic_List_VHS_SpawnData;
+			System.Nullable<VHS.SpawnData> System_Nullable_VHS_SpawnData;
+			System.Collections.Generic.IDictionary<System.String, VHS.SpawnData> IDict_VHS_SpawnData;
+			System.Collections.Generic.Dictionary<System.String, VHS.SpawnData> Dict_VHS_SpawnData;
+			///------
+			System.Action<VHS.SpawnStartType> System_Action_VHS_SpawnStartType;
+			System.Func<VHS.SpawnStartType> System_Func_VHS_SpawnStartType;
+			UnityEngine.Events.UnityAction<VHS.SpawnStartType> UnityEngine_Events_UnityAction_VHS_SpawnStartType;
+			System.Collections.Generic.IList<VHS.SpawnStartType> System_Collections_Generic_IList_VHS_SpawnStartType;
+			System.Collections.Generic.List<VHS.SpawnStartType> System_Collections_Generic_List_VHS_SpawnStartType;
+			System.Nullable<VHS.SpawnStartType> System_Nullable_VHS_SpawnStartType;
+			System.Collections.Generic.IDictionary<System.String, VHS.SpawnStartType> IDict_VHS_SpawnStartType;
+			System.Collections.Generic.Dictionary<System.String, VHS.SpawnStartType> Dict_VHS_SpawnStartType;
+			///------
+			System.Action<VHS.TimeType> System_Action_VHS_TimeType;
+			System.Func<VHS.TimeType> System_Func_VHS_TimeType;
+			UnityEngine.Events.UnityAction<VHS.TimeType> UnityEngine_Events_UnityAction_VHS_TimeType;
+			System.Collections.Generic.IList<VHS.TimeType> System_Collections_Generic_IList_VHS_TimeType;
+			System.Collections.Generic.List<VHS.TimeType> System_Collections_Generic_List_VHS_TimeType;
+			System.Nullable<VHS.TimeType> System_Nullable_VHS_TimeType;
+			System.Collections.Generic.IDictionary<System.String, VHS.TimeType> IDict_VHS_TimeType;
+			System.Collections.Generic.Dictionary<System.String, VHS.TimeType> Dict_VHS_TimeType;
+			///------
 		}
 	}
 }
 
-//1372 Types | 306 Methods spoofed
+//2384 Types | 527 Methods spoofed
 #pragma warning restore 0219, 0168, 0612

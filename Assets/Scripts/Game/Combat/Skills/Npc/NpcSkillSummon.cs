@@ -1,25 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using NodeCanvas.Framework;
 using UnityEngine;
 
 namespace VHS {
     public class NpcSkillSummon : NpcSkill {
-        public Npc _npcToSummon;
-        public float _spawnRadius = 3.0f;
+        public BBParameter<Npc> _npc;
+        public BBParameter<float> _radius;
+        public BBParameter<int> _maxCount;
 
-        private List<Npc> _spawnedNpcs = new List<Npc>();
+        private List<Actor> _spawnedNpcs = new List<Actor>();
 
         public override void OnSkillFinish() {
-
-            Vector3 randomOffset = Random.insideUnitSphere.Flatten() * _spawnRadius;
+            if(_spawnedNpcs.Count - 1 > _maxCount.value)
+                return;
+            
+            Vector3 randomOffset = Random.insideUnitSphere.Flatten() * _radius.value;
             Vector3 spawnPos = Owner.FeetPosition + randomOffset;
 
-            Npc spawnedNpc = PoolManager.Spawn(_npcToSummon, spawnPos, Quaternion.Euler(0.0f, Random.value * 360.0f, 0.0f));
+            Npc spawnedNpc = PoolManager.Spawn(_npc.value, spawnPos, Quaternion.Euler(0.0f, Random.value * 360.0f, 0.0f));
             
             _spawnedNpcs.Add(spawnedNpc);
-            // /Debug.Log(_spawnedNpcs.Count);
+            spawnedNpc.OnDeath += OnSpawnedNpcDeath;
                 
             base.OnSkillFinish();
+        }
+
+        private void OnSpawnedNpcDeath(Actor actor) {
+            actor.OnDeath -= OnSpawnedNpcDeath;
+            _spawnedNpcs.Remove(actor);
         }
     }
 }
