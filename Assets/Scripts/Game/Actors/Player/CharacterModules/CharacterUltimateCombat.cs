@@ -108,12 +108,12 @@ namespace VHS {
             for (int i = 0; i < hitCount - 1; i++) {
                 Collider collider = _colliders[i];
 
-                if (_lastCollider == collider)
+                if (collider == null|| _lastCollider == collider)
                     continue;
                 
                 IActor enemyActor = collider.GetComponentInParent<IActor>();
                 
-                if(enemyActor == null)
+                if(enemyActor == null || !enemyActor.IsAlive)
                     continue;
 
                 IHittable hittable = enemyActor.gameObject.GetComponent<IHittable>();
