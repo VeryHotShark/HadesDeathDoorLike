@@ -14,8 +14,7 @@ namespace VHS {
         public override void OnSkillFinish() {
             Owner.AIAgent.Resume();
             
-            // TODO rework this, temporary for stagger to work because this gets called after stagger
-            if(Owner.State != NpcState.Recovery)
+            if(!Owner.IsDuringStagger)
                 Owner.SetState(NpcState.Default);
         }
 

@@ -10,9 +10,10 @@ namespace VHS{
 	[Description("Cast Chosen Skill")]
 	[Color("990000")]
 	public class CastSkill : ActionTask<SkillCasterComponent> {
+		public string _info;
 		[ReferenceField] public NpcSkill _skill;
-		
-		// public override string name => _skill.ToString()
+
+		protected override string info => string.IsNullOrEmpty(_info) ?  base.info : _info;
 
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise

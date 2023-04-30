@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8300896248940068758}
+  - component: {fileID: 8010586890198070706}
   - component: {fileID: -4078219869694860148}
   - component: {fileID: -550870981277176033}
   - component: {fileID: 6506535495484378186}
@@ -47,6 +48,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8010586890198070706
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999888963656335787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-4078219869694860148
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,7 +175,7 @@ MonoBehaviour:
   lockWhenNotMoving: 1
   agentTimeHorizon: 2
   obstacleTimeHorizon: 1
-  maxNeighbours: 10
+  maxNeighbours: 5
   layer: 1
   collidesWith: -1
   wallAvoidForce: 1
@@ -416,7 +431,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   priority: 0
-  _maxStaggerCount: 0
+  _maxStaggerCount: 3
   _staggerCooldown:
     _duration: 0
     _looping: 0
