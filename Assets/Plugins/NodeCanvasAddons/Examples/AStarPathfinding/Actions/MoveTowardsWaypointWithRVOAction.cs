@@ -25,7 +25,7 @@ namespace NodeCanvasAddons.AStarPathfinding.Examples
                 return;
             }
 
-            agent.SetTarget(Waypoint.value, MovementSpeed.value, MovementSpeed.value, Vector3.one * Mathf.Infinity);
+            agent.SetTarget(Waypoint.value, MovementSpeed.value, MovementSpeed.value, Waypoint.value);
             var movement = agent.CalculateMovementDelta(Time.deltaTime);
             agent.transform.position += movement;
 

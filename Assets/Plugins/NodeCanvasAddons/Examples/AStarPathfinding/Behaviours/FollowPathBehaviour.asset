@@ -20,13 +20,13 @@ MonoBehaviour:
     for more complex pathing challenges.","$type":"NodeCanvasAddons.AStarPathfinding.IteratePathVectors","$id":"0"},{"repeaterMode":1,"repeatTimes":{"_value":1},"_position":{"x":5400.0,"y":5325.0},"_comment":"Tells
     it to keep requesting waypoints until a success is returned","$type":"NodeCanvas.BehaviourTrees.Repeater","$id":"1"},{"_position":{"x":5400.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"2"},{"_action":{"Path":{"_name":"currentPath","_targetVariableID":"7c4a59cb-6085-4d70-aa29-3373b880ab72"},"PathColor":{"_value":{"g":1.0,"a":1.0}},"TimeToShow":{"_value":0.1},"$type":"NodeCanvasAddons.AStarPathfinding.DrawDebugPathAction"},"_position":{"x":5205.0,"y":5490.0},"_comment":"This
     is for you to see the paths being drawn in the scene","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"3"},{"_action":{"Waypoint":{"_name":"_waypoint"},"MovementSpeed":{"_name":"MovementSpeed","_targetVariableID":"e2832b85-8d25-4266-9937-f00a05fd61c9"},"RotationSpeed":{"_name":"RotationSpeed","_targetVariableID":"7057a37b-46a4-4ca4-80f2-9438644e5a86"},"$type":"NodeCanvasAddons.AStarPathfinding.Examples.MoveTowardsWaypointAction"},"_position":{"x":5406.0,"y":5491.0},"_comment":"This
-    action moves the entity towards the current waypoint","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_condition":{"Waypoint":{"_name":"_waypoint"},"AcceptableDistance":{"_value":0.2},"$type":"NodeCanvasAddons.AStarPathfinding.HasReachedWaypointCondition"},"_position":{"x":5589.0,"y":5492.0},"_comment":"Checks
+    action moves the entity towards the current waypoint","$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_condition":{"Waypoint":{"_name":"_waypoint"},"AcceptableDistance":{"_value":0.2},"$type":"NodeCanvasAddons.AStarPathfinding.HasReachedWaypointCondition"},"_position":{"x":5590.0,"y":5492.0},"_comment":"Checks
     to see if we have reached our waypoint or not","$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"5"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
   _objectReferences: []
   _graphSource:
     _version: 3.25
     _category: 
     _comments: 
-    _translation: {x: -5127, y: -4920}
+    _translation: {x: -5185, y: -4940}
     _zoomFactor: 1
   _haltSerialization: 0
