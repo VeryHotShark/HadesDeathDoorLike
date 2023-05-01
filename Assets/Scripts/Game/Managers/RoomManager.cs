@@ -10,11 +10,16 @@ namespace VHS {
             
         [SerializeField] private SceneField[] _bossScenes;
         [SerializeField] private SceneField[] _passiveScenes;
-        [SerializeField] private SceneField[] _activeScenes;
+        [SerializeField] private SceneField[] _activeScenesLeft;
+        [SerializeField] private SceneField[] _activeScenesRight;
 
         private static int _currentRoom = 0;
         
         public static void RequestExitRoom(ExitDoor exitDoor) {
+            float dot = Vector3.Dot(Vector3.right, exitDoor.transform.forward);
+
+            bool rightDoor = Mathf.Abs(dot) > 0.5f;
+            
             _currentRoom++;
 
             bool isBossRoom = _currentRoom % BOSS_ROOM_INCREMENT == 0; 
@@ -22,7 +27,7 @@ namespace VHS {
             if(isBossRoom)
                 RequestBossScene();
             else
-                RequestActiveScene();
+                RequestActiveScene(rightDoor);
         }
 
         private static void RequestBossScene() {
@@ -37,9 +42,19 @@ namespace VHS {
             LevelManager.LoadScenes(randomScene.BuildIndex);
         }
 
-        private static void RequestActiveScene() {
-            int randomIndex = Random.Range(0, Instance._activeScenes.Length);
-            SceneField randomScene = Instance._activeScenes[randomIndex];
+        private static void RequestActiveScene(bool isRightDoor) {
+            int randomIndex = -1;
+            SceneField randomScene = null;
+            
+            if (isRightDoor) {
+                randomIndex = Random.Range(0, Instance._activeScenesRight.Length);
+                randomScene = Instance._activeScenesRight[randomIndex];
+            }
+            else {
+                randomIndex = Random.Range(0, Instance._activeScenesLeft.Length);
+                randomScene = Instance._activeScenesLeft[randomIndex];
+            }
+            
             LevelManager.LoadScenes(randomScene.BuildIndex);
         }
     }

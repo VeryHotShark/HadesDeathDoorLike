@@ -15,10 +15,7 @@ namespace VHS {
 
         private List<UIFillPoint> _healthPoints = new();
 
-        private void Start() {
-            SpawnHealthPoints(Player.HitPoints.Max);
-            _lostHealthImage.color = Color.red.WithAlpha(0.0f);
-        }
+        private void Start() => SpawnHealthPoints(Player.HitPoints.Max);
 
         protected override void Enable() {
             Player.OnHit += OnHit;

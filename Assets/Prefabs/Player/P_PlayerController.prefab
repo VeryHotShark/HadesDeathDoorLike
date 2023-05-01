@@ -72,11 +72,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2594597711448852702, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.0710692
+      value: -7.071069
       objectReference: {fileID: 0}
     - target: {fileID: 2594597711448852702, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.815511
+      value: 15.815509
       objectReference: {fileID: 0}
     - target: {fileID: 2594597711448852702, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -104,11 +104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758643, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.0710692
+      value: -7.071069
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758643, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.815511
+      value: 15.815509
       objectReference: {fileID: 0}
     - target: {fileID: 2594597712390758643, guid: 2217097411cd4df47a2b61c6b6fbcbf5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -228,6 +228,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3532176833701519981}
     m_Modifications:
+    - target: {fileID: 1404752280702270917, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Spacing
+      value: 14.964844
+      objectReference: {fileID: 0}
     - target: {fileID: 4274825791489799335, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -320,6 +324,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Spacing
+      value: 13.302083
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409145862556799445, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876670604985783236, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8b34893ac269d4925a510e2eccc43602, type: 3}
+    - target: {fileID: 6876670604985783236, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6876670604985783236, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: fallbackSpriteSettings.Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8b34893ac269d4925a510e2eccc43602, type: 3}
+    - target: {fileID: 6876670604985783236, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
+      propertyPath: fallbackSpriteSettings.PrimaryColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c334b924a87d6b744ab0bd8f1566f011, type: 3}
 --- !u!224 &5385827453693384203 stripped
@@ -384,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5074986791276105340, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1099977
+      value: 2.1099997
       objectReference: {fileID: 0}
     - target: {fileID: 5074986791276105340, guid: 6f9bc8497ace9854096a1faaedbff306, type: 3}
       propertyPath: m_LocalPosition.z
