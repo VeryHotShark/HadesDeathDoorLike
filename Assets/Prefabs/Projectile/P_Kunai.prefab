@@ -50,6 +50,7 @@ MonoBehaviour:
   _lifeTime: 3
   _damage: 1
   _hitFeedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
+  _radius: 0.5
   _speed: 45
   _gravity: 0
 --- !u!1 &7610582763238336789

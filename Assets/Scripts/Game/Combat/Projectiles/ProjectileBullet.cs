@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace VHS {
     public class ProjectileBullet : Projectile, IUpdateListener {
+        [SerializeField] private float _radius = 0.0f;
         [SerializeField] private float _speed = 10.0f;
         [SerializeField] private float _gravity;
 
@@ -38,9 +39,18 @@ namespace VHS {
             transform.position += forwardMovement + downwardMovement;
         }
 
-        protected override bool CheckForCollision() =>
-            Physics.Linecast(_lastPosition, transform.position, out _hitInfo,
-                LayerManager.Masks.DEFAULT_AND_ACTORS);
+        protected override bool CheckForCollision() {
+            if(_radius > 0.0f)
+            {
+                Vector3 direction = _lastPosition.DirectionTo(transform.position);
+                float maxDistance = Vector3.Distance(_lastPosition, transform.position);
+                Ray ray = new Ray(_lastPosition, transform.forward);
+                return Physics.SphereCast(_lastPosition, _radius, direction,out _hitInfo, maxDistance, 
+                    LayerManager.Masks.DEFAULT_AND_ACTORS);
+            }
+            
+            return Physics.Linecast(_lastPosition, transform.position,out _hitInfo,LayerManager.Masks.DEFAULT_AND_ACTORS);                
+        }
 
         protected override void Hit() {
             IHittable hittable = _hitInfo.transform.GetComponentInParent<IHittable>();
@@ -65,5 +75,12 @@ namespace VHS {
 
         public void SetSpeed(float speed) => _runtimeSpeed = speed;
         public override void OnReturnToPool() => _runtimeSpeed = _speed;
+
+        private void OnDrawGizmosSelected() {
+            if (_radius > 0.0f) {
+                Gizmos.color = Color.red;   
+                Gizmos.DrawWireSphere(transform.position, _radius);
+            }
+        }
     }
 }
