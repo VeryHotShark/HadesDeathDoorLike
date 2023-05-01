@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9aad60b09b2d9419e88fd7db49e5db6c, type: 2}
+    - target: {fileID: 6228188815089431888, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
+      propertyPath: maxNeighbours
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8437594107729915311, guid: 94582c0e8c0165b44a5982ce7aff715e, type: 3}
       propertyPath: _graph
       value: 

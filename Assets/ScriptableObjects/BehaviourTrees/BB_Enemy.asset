@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4fa5caed5fb2b43b903ef7859c9bf9, type: 3}
+  m_Name: BB_Enemy
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{"TargetPosition":{"_name":"TargetPosition","_id":"ef855cfe-a83f-440c-b764-313f4d5fc377","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+  _objectReferences: []
+  _UID: da7f0118-4018-4a65-b33f-bf235e0fe5f4

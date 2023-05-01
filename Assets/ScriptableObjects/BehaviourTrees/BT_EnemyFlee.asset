@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: BT_EnemyFlee
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.BehaviourTrees.BehaviourTree","nodes":[{"dynamic":true,"_condition":{"method":{"_baseInfo":"VHS.Npc|get_State|VHS.NpcState","_paramsInfo":""},"checkValue":{"_type":"VHS.NpcState","_value":{"$content":1,"$type":"VHS.NpcState"}},"_invert":true,"$type":"NodeCanvas.Tasks.Conditions.CheckProperty_Multiplatform"},"_position":{"x":660.0959,"y":131.9893},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"0"},{"dynamic":true,"_condition":{"method":{"_baseInfo":"VHS.Npc|get_HasTarget|System.Boolean","_paramsInfo":""},"checkValue":{"_type":"System.Boolean","_value":{"$content":true,"$type":"System.Boolean"}},"$type":"NodeCanvas.Tasks.Conditions.CheckProperty_Multiplatform"},"_position":{"x":560.0959,"y":290.9893},"$type":"NodeCanvas.BehaviourTrees.BinarySelector","$id":"1"},{"_condition":{"distance":{"_value":5.0},"$type":"VHS.DistanceToTarget"},"_position":{"x":374.2493,"y":442.6929},"$type":"NodeCanvas.BehaviourTrees.ConditionalEvaluator","$id":"2"},{"maxCount":{"_value":1},"coolDownTime":{"_value":1.0},"_position":{"x":401.1743,"y":538.3762},"$type":"NodeCanvas.BehaviourTrees.Filter","$id":"3"},{"_action":{"_angleDeviation":50.0,"_fleeRange":{"x":3.0,"y":7.0},"_fleeTarget":{"_name":"TargetPosition","_targetVariableID":"be20aba6-4af3-46e3-9e58-6d36cb6e9f77"},"$type":"VHS.FleeAction"},"_position":{"x":401.4454,"y":631.0528},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"4"},{"_action":{"log":{"_value":"No
+    Target"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},"_position":{"x":712.3912,"y":447.2185},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"5"},{"_action":{"log":{"_value":"Recovering"},"$type":"NodeCanvas.Tasks.Actions.DebugLogText"},"_position":{"x":871.0959,"y":291.9874},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"6"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{"TargetPosition":{"_propertyPath":"VHS.Npc.TargetPosition","_name":"TargetPosition","_id":"be20aba6-4af3-46e3-9e58-6d36cb6e9f77","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Vector3,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"AgentSpeed":{"_propertyPath":"VHS.AIAgent.maxSpeed","_name":"AgentSpeed","_id":"26da1adc-e4c6-4ca7-92ba-d33e1499cc12","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.25
+    _category: 
+    _comments: 
+    _translation: {x: -71, y: 81}
+    _zoomFactor: 0.68843365
+  _haltSerialization: 0
