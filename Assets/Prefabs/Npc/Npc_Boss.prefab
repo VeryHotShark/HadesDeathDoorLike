@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 2991129356199097246}
   - component: {fileID: 2991129356199097241}
   - component: {fileID: 2991129355986402685}
-  - component: {fileID: 1351825802201814404}
   - component: {fileID: 8944743637071957790}
   - component: {fileID: -5322940553122666000}
   m_Layer: 8
@@ -457,22 +456,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _customUpdate: 0
   _updateRate: 0.2
---- !u!114 &1351825802201814404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3220809878790701010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd75f9dbfe665804391893a5759b5635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _customUpdate: 0
-  _updateRate: 0.2
-  priority: 0
-  _healthUIPrefab: {fileID: 7771265582580724051, guid: 8cd9a8d1a295989448f5faae700e9f29, type: 3}
 --- !u!114 &8944743637071957790
 MonoBehaviour:
   m_ObjectHideFlags: 0

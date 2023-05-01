@@ -14,11 +14,24 @@ namespace VHS {
 
         private int _currentStage = 0;
         public int CurrentStage => _currentStage;
+        
+        public static Action<Boss> OnBossEnable = delegate {  };
+        public static Action<HitPoints> OnBossHealthChanged = delegate {  };
+        public static Action<Boss> OnBossDisable = delegate {  };
 
-        protected override void Enable() => OnHealthChanged += OnHealthChangedCallback;
-        protected override void Disable() => OnHealthChanged -= OnHealthChangedCallback;
+        protected override void Enable() {
+            OnBossEnable(this);
+            OnHealthChanged += OnHealthChangedCallback;
+        }
+
+        protected override void Disable() {
+            OnBossDisable(this);
+            OnHealthChanged -= OnHealthChangedCallback;
+        }
 
         private void OnHealthChangedCallback(HitPoints hitPoints) {
+            OnBossHealthChanged(HitPoints);
+            
             if(_stages.Length == 0)
                 return;
 

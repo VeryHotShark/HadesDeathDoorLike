@@ -7,7 +7,7 @@ namespace VHS {
     public class UIModule : ChildBehaviour<UIController> {
 
         private bool _isCanvasInteractable;
-        private CanvasGroup _canvasGroup;
+        protected CanvasGroup _canvasGroup;
         
         public virtual void MyAwake() {
             _canvasGroup = GetComponent<CanvasGroup>();
