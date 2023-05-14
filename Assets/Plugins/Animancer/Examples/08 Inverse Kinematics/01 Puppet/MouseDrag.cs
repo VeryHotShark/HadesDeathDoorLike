@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using UnityEngine;
 
@@ -28,19 +28,32 @@ namespace Animancer.Examples.InverseKinematics
                 if (Physics.Raycast(ray, out var hit))
                 {
                     _Dragging = hit.transform;
-                    _Distance = Vector3.Distance(_Dragging.position, Camera.main.transform.position);
+
+                    var cameraTransform = Camera.main.transform;
+                    _Distance = Vector3.Dot(_Dragging.position - cameraTransform.position, cameraTransform.forward);
                 }
+
+                return;
             }
             // While holding the button, move the object in line with the mouse ray.
             else if (_Dragging != null && ExampleInput.LeftMouseHold)
             {
                 var ray = Camera.main.ScreenPointToRay(ExampleInput.MousePosition);
-                _Dragging.position = Camera.main.transform.position + ray.direction * _Distance;
+
+                var cameraTransform = Camera.main.transform;
+                var forward = cameraTransform.forward;
+
+                var dot = Vector3.Dot(ray.direction, forward);
+                if (dot > 0)
+                {
+                    var planeCenter = cameraTransform.position + forward * _Distance;
+                    var intersection = ray.origin + ray.direction * Vector3.Dot(planeCenter - ray.origin, forward) / dot;
+                    _Dragging.position = intersection;
+                    return;
+                }
             }
-            else
-            {
-                _Dragging = null;
-            }
+
+            _Dragging = null;
         }
 
         /************************************************************************************************************************/

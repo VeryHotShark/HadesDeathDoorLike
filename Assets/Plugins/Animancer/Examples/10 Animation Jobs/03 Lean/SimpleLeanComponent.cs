@@ -1,8 +1,10 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
+using Unity.Collections;
 using UnityEngine;
+using UnityEngine.Animations;
 
 namespace Animancer.Examples.Jobs
 {
@@ -25,17 +27,21 @@ namespace Animancer.Examples.Jobs
     public sealed class SimpleLeanComponent : MonoBehaviour
     {
         /************************************************************************************************************************/
-        // Initialisation.
+        // Initialization.
         /************************************************************************************************************************/
 
-        [SerializeField]
-        private AnimancerComponent _Animancer;
+        [SerializeField] private AnimancerComponent _Animancer;
+        [SerializeField] private Transform[] _Bones;
 
         private SimpleLean _Lean;
 
+        /************************************************************************************************************************/
+
         private void Awake()
         {
-            _Lean = new SimpleLean(_Animancer.Playable);
+            Debug.Assert(_Bones.Length > 0, "No bones are assigned.", this);
+            var boneHandles = AnimancerUtilities.ConvertToTransformStreamHandles(_Bones, _Animancer.Animator);
+            _Lean = new SimpleLean(_Animancer.Playable, _Axis.forward, boneHandles);
         }
 
         /************************************************************************************************************************/

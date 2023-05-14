@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System;
 using System.Collections;
@@ -176,7 +176,7 @@ namespace Animancer.FSM
         /// </code></example>
         /// <remarks>
         /// Unfortunately, <see cref="ISerializationCallbackReceiver"/> can't be used to automate this because many
-        /// Unity functions are not available during serialization such as getting or setting a
+        /// Unity functions aren't available during serialization such as getting or setting a
         /// <see cref="Behaviour.enabled"/> like <see cref="StateBehaviour.OnEnterState"/> does.
         /// </remarks>
         public virtual void InitializeAfterDeserialize()
@@ -329,8 +329,8 @@ namespace Animancer.FSM
             {
                 throw new InvalidOperationException(
                     $"Attempted to use a state in a machine that is not its owner." +
-                    $"\n    State: {state}" +
-                    $"\n    Machine: {this}");
+                    $"\n• State: {state}" +
+                    $"\n• Machine: {this}");
             }
 #endif
 

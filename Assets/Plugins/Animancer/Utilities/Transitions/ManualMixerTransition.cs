@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using Object = UnityEngine.Object;
 using Animancer.Editor;
 using UnityEditor;
 using UnityEditorInternal;
+using static Animancer.Editor.AnimancerGUI;
 #endif
 
 namespace Animancer
@@ -16,9 +17,6 @@ namespace Animancer
     /// <inheritdoc/>
     /// https://kybernetik.com.au/animancer/api/Animancer/ManualMixerTransition
     [Serializable]
-#if !UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     public class ManualMixerTransition : ManualMixerTransition<ManualMixerState>,
         ManualMixerState.ITransition, ICopyable<ManualMixerTransition>
     {
@@ -48,6 +46,15 @@ namespace Animancer
         [CustomPropertyDrawer(typeof(ManualMixerTransition), true)]
         public class Drawer : TransitionDrawer
         {
+            /************************************************************************************************************************/
+
+            /// <summary>Should two lines be used to draw each child?</summary>
+            public static readonly BoolPref
+                TwoLineMode = new BoolPref(
+                    nameof(ManualMixerTransition) + "." + nameof(Drawer) + "." + nameof(TwoLineMode),
+                    "Two Line Mode",
+                    true);
+
             /************************************************************************************************************************/
 
             /// <summary>The property this drawer is currently drawing.</summary>
@@ -87,7 +94,7 @@ namespace Animancer
                     {
                         _MultiSelectDummyList = new ReorderableList(new List<Object>(), typeof(Object))
                         {
-                            elementHeight = AnimancerGUI.LineHeight,
+                            elementHeight = LineHeight,
                             displayAdd = false,
                             displayRemove = false,
                             footerHeight = 0,
@@ -187,16 +194,20 @@ namespace Animancer
                 {
                     var states = GatherDetails(property);
                     if (states != null)
-                        height += AnimancerGUI.StandardSpacing + states.GetHeight();
+                        height += StandardSpacing +
+                            states.GetHeight();
 
                     if (CurrentAnimations != null)
-                        height -= AnimancerGUI.StandardSpacing + EditorGUI.GetPropertyHeight(CurrentAnimations, label);
+                        height -= StandardSpacing +
+                            EditorGUI.GetPropertyHeight(CurrentAnimations, label);
 
                     if (CurrentSpeeds != null)
-                        height -= AnimancerGUI.StandardSpacing + EditorGUI.GetPropertyHeight(CurrentSpeeds, label);
+                        height -= StandardSpacing +
+                            EditorGUI.GetPropertyHeight(CurrentSpeeds, label);
 
                     if (CurrentSynchronizeChildren != null)
-                        height -= AnimancerGUI.StandardSpacing + EditorGUI.GetPropertyHeight(CurrentSynchronizeChildren, label);
+                        height -= StandardSpacing +
+                            EditorGUI.GetPropertyHeight(CurrentSynchronizeChildren, label);
                 }
 
                 return height;
@@ -279,7 +290,8 @@ namespace Animancer
             private static float _SyncLabelWidth;
 
             /// <summary>Splits the specified `area` into separate sections.</summary>
-            protected static void SplitListRect(Rect area, bool isHeader, out Rect animation, out Rect speed, out Rect sync)
+            protected static void SplitListRect(Rect area, bool isHeader,
+                out Rect animation, out Rect speed, out Rect sync)
             {
                 if (_SpeedLabelWidth == 0)
                     _SpeedLabelWidth = AnimancerGUI.CalculateWidth(EditorStyles.popup, "Speed");
@@ -287,11 +299,11 @@ namespace Animancer
                 if (_SyncLabelWidth == 0)
                     _SyncLabelWidth = AnimancerGUI.CalculateWidth(EditorStyles.popup, "Sync");
 
-                var spacing = AnimancerGUI.StandardSpacing;
+                var spacing = StandardSpacing;
 
                 var syncWidth = isHeader ?
                     _SyncLabelWidth :
-                    AnimancerGUI.ToggleWidth - spacing;
+                    ToggleWidth - spacing;
 
                 var speedWidth = _SpeedLabelWidth + _SyncLabelWidth - syncWidth;
                 if (!isHeader)
@@ -302,9 +314,19 @@ namespace Animancer
                 }
 
                 area.width += spacing;
-                sync = AnimancerGUI.StealFromRight(ref area, syncWidth, spacing);
-                speed = AnimancerGUI.StealFromRight(ref area, speedWidth, spacing);
-                animation = area;
+                if (TwoLineMode && !isHeader)
+                {
+                    animation = area;
+                    area.y += area.height;
+                    sync = StealFromRight(ref area, syncWidth, spacing);
+                    speed = area;
+                }
+                else
+                {
+                    sync = StealFromRight(ref area, syncWidth, spacing);
+                    speed = StealFromRight(ref area, speedWidth, spacing);
+                    animation = area;
+                }
             }
 
             /************************************************************************************************************************/
@@ -324,13 +346,20 @@ namespace Animancer
             /************************************************************************************************************************/
 
             /// <summary>Draws an "Animation" header.</summary>
-            protected static void DoAnimationHeaderGUI(Rect area)
+            protected void DoAnimationHeaderGUI(Rect area)
             {
                 using (ObjectPool.Disposable.AcquireContent(out var label, "Animation",
                     $"The animations that will be used for each child state" +
                     $"\n\nCtrl + Click to allow picking Transition Assets (or anything that implements {nameof(ITransition)})"))
                 {
-                    DoHeaderDropdownGUI(area, CurrentAnimations, label, null);
+                    DoHeaderDropdownGUI(area, CurrentAnimations, label, menu =>
+                    {
+                        menu.AddItem(new GUIContent(TwoLineMode.MenuItem), TwoLineMode.Value, () =>
+                        {
+                            TwoLineMode.Value = !TwoLineMode.Value;
+                            ReSelectCurrentObjects();
+                        });
+                    });
                 }
             }
 
@@ -343,7 +372,7 @@ namespace Animancer
             {
                 using (ObjectPool.Disposable.AcquireContent(out var label, "Speed", Strings.Tooltips.Speed))
                 {
-                    DoHeaderDropdownGUI(area, CurrentSpeeds, label, (menu) =>
+                    DoHeaderDropdownGUI(area, CurrentSpeeds, label, menu =>
                     {
                         AddPropertyModifierFunction(menu, "Reset All to 1",
                             CurrentSpeeds.arraySize == 0 ? MenuFunctionState.Selected : MenuFunctionState.Normal,
@@ -431,7 +460,7 @@ namespace Animancer
                 using (ObjectPool.Disposable.AcquireContent(out var label, "Sync",
                     "Determines which child states have their normalized times constantly synchronized"))
                 {
-                    DoHeaderDropdownGUI(area, CurrentSpeeds, label, (menu) =>
+                    DoHeaderDropdownGUI(area, CurrentSpeeds, label, menu =>
                     {
                         var syncCount = CurrentSynchronizeChildren.arraySize;
 
@@ -549,10 +578,10 @@ namespace Animancer
 
                 EditorGUI.BeginChangeCheck();
 
-                area.xMax = EditorGUIUtility.labelWidth + AnimancerGUI.IndentSize;
+                area.xMax = EditorGUIUtility.labelWidth + IndentSize;
 
                 area.y++;
-                area.height = AnimancerGUI.LineHeight;
+                area.height = LineHeight;
 
                 using (ObjectPool.Disposable.AcquireContent(out var label, "Count"))
                 {
@@ -560,7 +589,7 @@ namespace Animancer
                     EditorGUI.indentLevel = 0;
 
                     var labelWidth = EditorGUIUtility.labelWidth;
-                    EditorGUIUtility.labelWidth = AnimancerGUI.CalculateLabelWidth(label.text);
+                    EditorGUIUtility.labelWidth = CalculateLabelWidth(label.text);
 
                     var count = EditorGUI.DelayedIntField(area, label, _CurrentChildList.count);
 
@@ -578,7 +607,10 @@ namespace Animancer
             /************************************************************************************************************************/
 
             /// <summary>Calculates the height of the state at the specified `index`.</summary>
-            protected virtual float GetElementHeight(int index) => AnimancerGUI.LineHeight;
+            protected virtual float GetElementHeight(int index)
+                => TwoLineMode
+                ? LineHeight * 2
+                : LineHeight;
 
             /************************************************************************************************************************/
 
@@ -588,56 +620,25 @@ namespace Animancer
                 if (index < 0 || index > CurrentAnimations.arraySize)
                     return;
 
-                area.height = AnimancerGUI.LineHeight;
+                area.height = LineHeight;
 
                 var state = CurrentAnimations.GetArrayElementAtIndex(index);
-                var speed = CurrentSpeeds.arraySize > 0 ? CurrentSpeeds.GetArrayElementAtIndex(index) : null;
+                var speed = CurrentSpeeds.arraySize > 0
+                    ? CurrentSpeeds.GetArrayElementAtIndex(index)
+                    : null;
                 DoElementGUI(area, index, state, speed);
             }
 
             /************************************************************************************************************************/
 
-            /// <summary>Draws the GUI of the state at the specified `index`.</summary>
+            /// <summary>Draws the GUI of the animation at the specified `index`.</summary>
             protected virtual void DoElementGUI(Rect area, int index,
-                SerializedProperty state, SerializedProperty speed)
+                SerializedProperty animation, SerializedProperty speed)
             {
                 SplitListRect(area, false, out var animationArea, out var speedArea, out var syncArea);
 
-                DoElementGUI(animationArea, speedArea, syncArea, index, state, speed);
-            }
-
-            /// <summary>Draws the GUI of the state at the specified `index`.</summary>
-            protected void DoElementGUI(Rect animationArea, Rect speedArea, Rect syncArea, int index,
-                SerializedProperty state, SerializedProperty speed)
-            {
-                DoAnimationField(animationArea, state);
-
-                if (speed != null)
-                {
-                    EditorGUI.PropertyField(speedArea, speed, GUIContent.none);
-                }
-                else// If this element doesn't have its own speed property, just show 1.
-                {
-                    EditorGUI.BeginProperty(speedArea, GUIContent.none, CurrentSpeeds);
-
-                    var value = Units.UnitsAttribute.DoSpecialFloatField(
-                        speedArea, null, 1, Units.AnimationSpeedAttribute.DisplayConverters[0]);
-
-                    // Middle Click toggles from 1 to -1.
-                    if (AnimancerGUI.TryUseClickEvent(speedArea, 2))
-                        value = -1;
-
-                    if (value != 1)
-                    {
-                        CurrentSpeeds.InsertArrayElementAtIndex(0);
-                        CurrentSpeeds.GetArrayElementAtIndex(0).floatValue = 1;
-                        CurrentSpeeds.arraySize = CurrentAnimations.arraySize;
-                        CurrentSpeeds.GetArrayElementAtIndex(index).floatValue = value;
-                    }
-
-                    EditorGUI.EndProperty();
-                }
-
+                DoAnimationField(animationArea, animation);
+                DoSpeedFieldGUI(speedArea, speed, index);
                 DoSyncToggleGUI(syncArea, index);
             }
 
@@ -693,7 +694,42 @@ namespace Animancer
             /************************************************************************************************************************/
 
             /// <summary>
-            /// Draws a toggle to enable or disable <see cref="MixerState.SynchronizedChildren"/> for the child at
+            /// Draws a toggle to enable or disable <see cref="ManualMixerState.SynchronizedChildren"/> for the child at
+            /// the specified `index`.
+            /// </summary>
+            protected void DoSpeedFieldGUI(Rect area, SerializedProperty speed, int index)
+            {
+                if (speed != null)
+                {
+                    EditorGUI.PropertyField(area, speed, GUIContent.none);
+                }
+                else// If this element doesn't have its own speed property, just show 1.
+                {
+                    EditorGUI.BeginProperty(area, GUIContent.none, CurrentSpeeds);
+
+                    var value = Units.UnitsAttribute.DoSpecialFloatField(
+                        area, null, 1, Units.AnimationSpeedAttribute.DisplayConverters[0]);
+
+                    // Middle Click toggles from 1 to -1.
+                    if (TryUseClickEvent(area, 2))
+                        value = -1;
+
+                    if (value != 1)
+                    {
+                        CurrentSpeeds.InsertArrayElementAtIndex(0);
+                        CurrentSpeeds.GetArrayElementAtIndex(0).floatValue = 1;
+                        CurrentSpeeds.arraySize = CurrentAnimations.arraySize;
+                        CurrentSpeeds.GetArrayElementAtIndex(index).floatValue = value;
+                    }
+
+                    EditorGUI.EndProperty();
+                }
+            }
+
+            /************************************************************************************************************************/
+
+            /// <summary>
+            /// Draws a toggle to enable or disable <see cref="ManualMixerState.SynchronizedChildren"/> for the child at
             /// the specified `index`.
             /// </summary>
             protected void DoSyncToggleGUI(Rect area, int index)

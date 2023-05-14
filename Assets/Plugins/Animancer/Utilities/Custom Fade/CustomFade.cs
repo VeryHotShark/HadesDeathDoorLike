@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -99,7 +99,6 @@ namespace Animancer
             var animancer = node.Root;
             AnimancerUtilities.Assert(animancer != null, $"{nameof(node)}.{nameof(node.Root)} is null.");
 
-#if UNITY_EDITOR
             if (OptionalWarning.CustomFadeBounds.IsEnabled())
             {
                 if (CalculateWeight(0) != 0)
@@ -107,7 +106,6 @@ namespace Animancer
                 if (CalculateWeight(1) != 1)
                     OptionalWarning.CustomFadeBounds.Log("CalculateWeight(1) != 1.", animancer.Component);
             }
-#endif
 #endif
 
             _Time = 0;

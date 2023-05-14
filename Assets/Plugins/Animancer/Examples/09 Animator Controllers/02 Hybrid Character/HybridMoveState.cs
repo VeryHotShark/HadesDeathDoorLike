@@ -1,8 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
-
-#if ! UNITY_EDITOR
-#pragma warning disable CS0618 // Type or member is obsolete (for HybridAnimancerComponent in Animancer Lite).
-#endif
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using Animancer.Examples.StateMachines;
 using Animancer.Units;

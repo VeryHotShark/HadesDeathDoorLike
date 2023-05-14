@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using UnityEngine;
 
@@ -28,9 +28,6 @@ namespace Animancer
     /// </code></example>
     /// https://kybernetik.com.au/animancer/api/Animancer/MixerParameterTweenFloat
     /// 
-#if !UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     public class MixerParameterTweenFloat : MixerParameterTween<float>
     {
         public MixerParameterTweenFloat() { }
@@ -45,9 +42,6 @@ namespace Animancer
     /// <example>See <see cref="MixerParameterTweenFloat"/>.</example>
     /// https://kybernetik.com.au/animancer/api/Animancer/MixerParameterTweenVector2
     /// 
-#if !UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     public class MixerParameterTweenVector2 : MixerParameterTween<Vector2>
     {
         public MixerParameterTweenVector2() { }
@@ -62,9 +56,6 @@ namespace Animancer
     /// <example>See <see cref="MixerParameterTweenFloat"/>.</example>
     /// https://kybernetik.com.au/animancer/api/Animancer/MixerParameterTween_1
     /// 
-#if !UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     public abstract class MixerParameterTween<TParameter> : Key, IUpdatable
     {
         /************************************************************************************************************************/

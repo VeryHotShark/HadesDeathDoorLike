@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 #pragma warning disable CS0414 // Field is assigned but its value is never used.
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.

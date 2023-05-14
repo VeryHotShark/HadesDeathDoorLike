@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -37,21 +37,8 @@ namespace Animancer.Examples.Events
 
             _Swing.Events.SetCallback(HitEventName, HitBall);
             _Swing.Events.OnEnd = EndSwing;
-        }
 
-        /************************************************************************************************************************/
-
-        private void OnEnable()
-        {
             _Animancer.Play(_Ready);
-
-            ResetBall();
-
-            // Awake only gets called once on startup but OnEnable is called every time the object is activated.
-
-            // It doesn't matter in the Golf Events example, but the Hybrid Mini Game example reuses this script and
-            // deactivates it while the Mini Game is not being played so we want to always enter the ready state when
-            // the Mini Game starts.
         }
 
         /************************************************************************************************************************/

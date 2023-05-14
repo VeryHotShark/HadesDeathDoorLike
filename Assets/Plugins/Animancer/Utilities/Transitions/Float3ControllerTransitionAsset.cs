@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System;
 using UnityEngine;
@@ -7,9 +7,6 @@ namespace Animancer
 {
     /// <inheritdoc/>
     /// https://kybernetik.com.au/animancer/api/Animancer/Float3ControllerTransitionAsset
-#if !UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     [CreateAssetMenu(menuName = Strings.MenuPrefix + "Controller Transition/Float 3", order = Strings.AssetMenuOrder + 8)]
     [HelpURL(Strings.DocsURLs.APIDocumentation + "/" + nameof(Float3ControllerTransitionAsset))]
     public class Float3ControllerTransitionAsset : AnimancerTransitionAsset<Float3ControllerTransition>
@@ -25,9 +22,6 @@ namespace Animancer
     /// <inheritdoc/>
     /// https://kybernetik.com.au/animancer/api/Animancer/Float3ControllerTransition
     [Serializable]
-#if ! UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     public class Float3ControllerTransition : ControllerTransition<Float3ControllerState>,
         Float3ControllerState.ITransition, ICopyable<Float3ControllerTransition>
     {

@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System;
 using UnityEngine;
@@ -29,7 +29,7 @@ namespace Animancer
         protected NativeArray<TValue> _Values;
 
         /************************************************************************************************************************/
-        #region Initialisation
+        #region Initialization
         /************************************************************************************************************************/
 
         /// <summary>

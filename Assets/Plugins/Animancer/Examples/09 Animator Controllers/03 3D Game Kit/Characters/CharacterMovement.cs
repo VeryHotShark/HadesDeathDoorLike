@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -13,6 +13,8 @@ namespace Animancer.Examples.AnimatorControllers.GameKit
     /// <example><see href="https://kybernetik.com.au/animancer/docs/examples/animator-controllers/3d-game-kit">3D Game Kit</see></example>
     /// https://kybernetik.com.au/animancer/api/Animancer.Examples.AnimatorControllers.GameKit/CharacterMovement
     /// 
+    [AddComponentMenu(Strings.ExamplesMenuPrefix + "Game Kit - Character Movement")]
+    [HelpURL(Strings.DocsURLs.ExampleAPIDocumentation + nameof(AnimatorControllers) + "." + nameof(GameKit) + "/" + nameof(CharacterMovement))]
     public sealed class CharacterMovement : MonoBehaviour
     {
         /************************************************************************************************************************/

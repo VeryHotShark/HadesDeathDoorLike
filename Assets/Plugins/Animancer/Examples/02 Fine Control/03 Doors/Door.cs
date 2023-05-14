@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -73,7 +73,8 @@ namespace Animancer.Examples.FineControl
         /// <remarks>Called in Edit Mode whenever this script is loaded or a value is changed in the Inspector.</remarks>
         private void OnValidate()
         {
-            AnimancerUtilities.EditModeSampleAnimation(_Open, this, _Openness * _Open.length);
+            if (_Open != null)
+                AnimancerUtilities.EditModeSampleAnimation(_Open, this, _Openness * _Open.length);
         }
 #endif
 

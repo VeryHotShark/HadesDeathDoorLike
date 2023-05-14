@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -43,7 +43,7 @@ namespace Animancer.Examples.DirectionalSprites
             }
             else
             {
-                // When we are not moving, we still remember the direction we are facing
+                // When we're not moving, we still remember the direction we're facing
                 // so we can continue using the correct idle animation for that direction.
                 Play(_Idles);
             }

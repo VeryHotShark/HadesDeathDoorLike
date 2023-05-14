@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value.
 
@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Animancer.Examples.StateMachines
 {
     /// <summary>A <see cref="CharacterState"/> which activates itself when the character takes damage.</summary>
-    /// <example><see href="https://kybernetik.com.au/animancer/docs/examples/fsm/interrupts">Interruptions</see></example>
+    /// <example><see href="https://kybernetik.com.au/animancer/docs/examples/fsm/interruptions">Interruptions</see></example>
     /// https://kybernetik.com.au/animancer/api/Animancer.Examples.StateMachines/FlinchState
     /// 
     [AddComponentMenu(Strings.ExamplesMenuPrefix + "Interruptions - Flinch State")]

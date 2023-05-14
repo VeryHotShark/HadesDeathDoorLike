@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using Animancer.Units;
 using System;
@@ -16,9 +16,6 @@ namespace Animancer
 {
     /// <inheritdoc/>
     /// https://kybernetik.com.au/animancer/api/Animancer/PlayableAssetTransitionAsset
-#if !UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     [CreateAssetMenu(menuName = Strings.MenuPrefix + "Playable Asset Transition", order = Strings.AssetMenuOrder + 9)]
     [HelpURL(Strings.DocsURLs.APIDocumentation + "/" + nameof(PlayableAssetTransitionAsset))]
     public class PlayableAssetTransitionAsset : AnimancerTransitionAsset<PlayableAssetTransition>
@@ -34,9 +31,6 @@ namespace Animancer
     /// <inheritdoc/>
     /// https://kybernetik.com.au/animancer/api/Animancer/PlayableAssetTransition
     [Serializable]
-#if ! UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     public class PlayableAssetTransition : AnimancerTransition<PlayableAssetState>,
         PlayableAssetState.ITransition, IAnimationClipCollection, ICopyable<PlayableAssetTransition>
     {
@@ -107,12 +101,7 @@ namespace Animancer
         public override float MaximumDuration => _Asset != null ? (float)_Asset.duration : 0;
 
         /// <inheritdoc/>
-        public override bool IsValid
-#if UNITY_EDITOR
-            => _Asset != null;
-#else
-            => false;
-#endif
+        public override bool IsValid => _Asset != null;
 
         /************************************************************************************************************************/
 
@@ -167,9 +156,6 @@ namespace Animancer
 
         /// <inheritdoc/>
         [CustomPropertyDrawer(typeof(PlayableAssetTransition), true)]
-#if ! UNITY_EDITOR
-        [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
         public class Drawer : TransitionDrawer
         {
             /************************************************************************************************************************/

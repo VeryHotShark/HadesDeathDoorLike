@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +12,7 @@ namespace Animancer
     /// <item>Call any of the <see cref="StoreTime(object)"/> methods before playing a new animation.</item>
     /// <item>Call any of the <see cref="SyncTime(object)"/> methods after playing that animation.</item>
     /// </list>
-    /// Example: <see href="https://kybernetik.com.au/animancer/docs/examples/directional-sprites/character-controller#synchronization">Character Controller -> Synchronization</see>
+    /// Example: <see href="https://kybernetik.com.au/animancer/docs/examples/directional-sprites/character#synchronization">Character Controller -> Synchronization</see>
     /// </example>
     /// https://kybernetik.com.au/animancer/api/Animancer/TimeSynchronizationGroup
     /// 

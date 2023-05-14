@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System;
 using UnityEngine;
@@ -8,9 +8,6 @@ namespace Animancer
 {
     /// <inheritdoc/>
     /// https://kybernetik.com.au/animancer/api/Animancer/LinearMixerTransitionAsset
-#if !UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     [CreateAssetMenu(menuName = Strings.MenuPrefix + "Mixer Transition/Linear", order = Strings.AssetMenuOrder + 3)]
     [HelpURL(Strings.DocsURLs.APIDocumentation + "/" + nameof(LinearMixerTransitionAsset))]
     public class LinearMixerTransitionAsset : AnimancerTransitionAsset<LinearMixerTransition>
@@ -26,9 +23,6 @@ namespace Animancer
     /// <inheritdoc/>
     /// https://kybernetik.com.au/animancer/api/Animancer/LinearMixerTransition
     [Serializable]
-#if ! UNITY_EDITOR
-    [System.Obsolete(Validate.ProOnlyMessage)]
-#endif
     public class LinearMixerTransition : MixerTransition<LinearMixerState, float>,
         LinearMixerState.ITransition, ICopyable<LinearMixerTransition>
     {
@@ -88,8 +82,8 @@ namespace Animancer
         /// <inheritdoc/>
         public override void Apply(AnimancerState state)
         {
-            State.ExtrapolateSpeed = _ExtrapolateSpeed;
             base.Apply(state);
+            State.ExtrapolateSpeed = _ExtrapolateSpeed;
         }
 
         /************************************************************************************************************************/
@@ -190,12 +184,10 @@ namespace Animancer
                     if (previousThreshold.floatValue >= currentThreshold.floatValue)
                     {
                         if (_SortingErrorContent == null)
-                        {
                             _SortingErrorContent = new GUIContent(Editor.AnimancerGUI.LoadIcon("console.erroricon.sml"))
                             {
                                 tooltip = "Linear Mixer Thresholds must always be unique and sorted in ascending order (click to sort)"
                             };
-                        }
 
                         if (_SortingErrorStyle == null)
                             _SortingErrorStyle = new GUIStyle(GUI.skin.label)

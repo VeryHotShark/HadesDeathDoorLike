@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using Animancer.Units;
 using System;
@@ -29,6 +29,9 @@ namespace Animancer
         ClipState.ITransition, IMotion, IAnimationClipCollection, ICopyable<ClipTransition>
     {
         /************************************************************************************************************************/
+
+        /// <summary>The name of the serialized backing field of <see cref="Clip"/>.</summary>
+        public const string ClipFieldName = nameof(_Clip);
 
         [SerializeField, Tooltip("The animation to play")]
         private AnimationClip _Clip;
@@ -192,7 +195,7 @@ namespace Animancer
             /************************************************************************************************************************/
 
             /// <summary>Creates a new <see cref="Drawer"/>.</summary>
-            public Drawer() : base(nameof(_Clip)) { }
+            public Drawer() : base(ClipFieldName) { }
 
             /************************************************************************************************************************/
         }

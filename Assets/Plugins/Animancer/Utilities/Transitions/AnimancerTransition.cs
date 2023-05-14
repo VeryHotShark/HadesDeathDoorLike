@@ -1,4 +1,4 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using Animancer.Units;
 using System;
@@ -84,11 +84,8 @@ namespace Animancer
         {
             get
             {
-#if UNITY_ASSERTIONS
                 if (_Events == null)
-                    throw new NullReferenceException(
-                        $"{nameof(AnimancerTransition<TState>)}.{nameof(SerializedEvents)} is null.");
-#endif
+                    _Events = new AnimancerEvent.Sequence.Serializable();
 
                 return _Events.Events;
             }

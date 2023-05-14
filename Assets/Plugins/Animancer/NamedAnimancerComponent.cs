@@ -1,7 +1,6 @@
-// Animancer // https://kybernetik.com.au/animancer // Copyright 2022 Kybernetik //
+// Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2023 Kybernetik //
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -21,7 +20,7 @@ namespace Animancer
     /// Documentation: <see href="https://kybernetik.com.au/animancer/docs/manual/playing/component-types">Component Types</see>
     /// </remarks>
     /// 
-    /// <example><see href="https://kybernetik.com.au/animancer/docs/examples/basics/named-animations">Named Animations</see></example>
+    /// <example><see href="https://kybernetik.com.au/animancer/docs/examples/fine-control/named-animations">Named Animations</see></example>
     /// 
     /// https://kybernetik.com.au/animancer/api/Animancer/NamedAnimancerComponent
     /// 
@@ -126,6 +125,9 @@ namespace Animancer
         /// <summary>Creates a state for each clip in the <see cref="Animations"/> array.</summary>
         protected virtual void Awake()
         {
+            if (!TryGetAnimator())
+                return;
+
             States.CreateIfNew(_Animations);
         }
 
@@ -133,11 +135,13 @@ namespace Animancer
 
         /// <summary>
         /// Plays the first clip in the <see cref="Animations"/> array if <see cref="PlayAutomatically"/> is true.
-        /// <para></para>
-        /// Also ensures that the <see cref="PlayableGraph"/> is playing.
         /// </summary>
+        /// <remarks>This method also ensures that the <see cref="PlayableGraph"/> is playing.</remarks>
         protected override void OnEnable()
         {
+            if (!TryGetAnimator())
+                return;
+
             base.OnEnable();
 
             if (_PlayAutomatically && !_Animations.IsNullOrEmpty())
