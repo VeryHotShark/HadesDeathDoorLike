@@ -26,7 +26,7 @@ namespace VHS {
         }
         
         public override void OnEnter() {
-            _enteredFromPrimary = Controller.CurrentCharacterInputs.SkillPrimary.Pressed;
+            _enteredFromPrimary = InputController.CharacterInputs.SkillPrimary.Pressed;
             _skillCaster.CastSkill(_enteredFromPrimary ? _primaryInstance : _secondaryInstance);
         }
         

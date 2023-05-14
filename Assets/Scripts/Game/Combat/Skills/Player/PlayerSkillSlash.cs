@@ -26,7 +26,6 @@ namespace VHS {
         private float _timer;
         private float _speed;
         private Vector3 _endPosition;
-        private Vector3 _cursorPosition;
         private Vector3 _startPosition;
         
         public override void OnReset() {
@@ -35,19 +34,13 @@ namespace VHS {
         }
 
         public override void OnCastStart() {
-            Quaternion rotationToCursor = Quaternion.LookRotation(Owner.PlayerController.CharacterDirectionToCursor);
             Owner.Animancer.Play(_windupClip);
-            _indicatorInstance = PoolManager.Spawn(_skillIndicator,
-                Owner.CharacterController.Motor.TransientPosition, rotationToCursor);
+            _indicatorInstance = PoolManager.Spawn(_skillIndicator, Owner.CharacterController.Motor.TransientPosition, Quaternion.LookRotation(Owner.CharacterController.LastNonZeroLookInput));
             _indicatorInstance.InitRectangle(_distance, _radius);
         }
         
-        public override void OnCastTick(float deltaTime) {
-            _cursorPosition = Owner.PlayerController.Camera.CursorTransform.position;
-            _indicatorInstance.transform.rotation = Quaternion.LookRotation(Owner.PlayerController.CharacterDirectionToCursor);
-            DebugExtension.DebugWireSphere(_cursorPosition, Color.yellow, _radius);
-        }
-        
+        public override void OnCastTick(float deltaTime) => _indicatorInstance.transform.rotation = Quaternion.LookRotation(Owner.CharacterController.LastNonZeroLookInput);
+
         public override void OnCastFinish() {
             PoolManager.Return(_indicatorInstance);
         }
@@ -63,7 +56,7 @@ namespace VHS {
             Owner.Animancer.Play(_slashClip);
             _timer = 0.0f;
             _startPosition = Owner.CharacterController.Motor.TransientPosition;
-            Vector3 direction = _startPosition.DirectionTo(_cursorPosition).Flatten();
+            Vector3 direction = Owner.CharacterController.LastNonZeroLookInput;
             _endPosition = _startPosition + (direction * _distance);
             Owner.CharacterController.Motor.SetRotation(Quaternion.LookRotation(direction));
         }
@@ -100,8 +93,8 @@ namespace VHS {
                         damage = 1,
                         instigator = Owner,
                         statusToApply = _statusToApply.GetInstance(),
-                        position = collider.ClosestPoint(_cursorPosition),
-                        direction = _cursorPosition.DirectionTo(collider.transform.position)
+                        position = collider.ClosestPoint(Owner.FeetPosition),
+                        direction = Owner.FeetPosition.DirectionTo(collider.transform.position)
                     };
                     
                     PoolManager.Spawn(_redImpaxtVFX, hitData.position, Quaternion.identity);

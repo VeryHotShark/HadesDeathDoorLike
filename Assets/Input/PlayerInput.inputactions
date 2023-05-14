@@ -42,21 +42,12 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "34269c79-dd40-45f0-ae2c-2049ccc46b6b",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Melee",
                     "type": "Button",
                     "id": "25ea785e-9246-4c51-a51d-73a21bde21c5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.3)",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -90,6 +81,15 @@
                     "name": "Ultimate",
                     "type": "Button",
                     "id": "e5962d6b-430d-4189-8661-65eb7334cbb7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "424fd491-f913-4477-a8a1-1962ca5ddec5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -154,11 +154,33 @@
                 },
                 {
                     "name": "",
+                    "id": "e12ea0f6-d800-4bf8-a639-54913c8da4b4",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "15315859-2507-4eb0-9515-6e4c3716d4ff",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee035fff-f4ae-489e-b783-a44e755e9771",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
                     "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -176,6 +198,17 @@
                 },
                 {
                     "name": "",
+                    "id": "18387d70-af0d-4124-9968-50b06d3bf28e",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "84d56edb-502f-4c63-a29a-8bb9e8689ec7",
                     "path": "<Mouse>/delta",
                     "interactions": "",
@@ -187,12 +220,12 @@
                 },
                 {
                     "name": "",
-                    "id": "47ccbda8-fa92-4980-a9e6-15b9170d38bb",
-                    "path": "<Keyboard>/ctrl",
+                    "id": "5e4702fe-6f65-49c4-ad60-d1e6aad342a2",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardAndMouse",
-                    "action": "Crouch",
+                    "groups": "Controller",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -203,6 +236,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
+                    "action": "Melee",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2aee3a6-1eac-4b27-b599-edd5a9e72eb5",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
                     "action": "Melee",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -220,12 +264,12 @@
                 },
                 {
                     "name": "",
-                    "id": "8d3f8b7e-7c90-4c24-9542-d33f824a854e",
-                    "path": "<Mouse>/middleButton",
+                    "id": "4b224407-ba1b-4914-90ba-369350455207",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardAndMouse",
-                    "action": "SkillPrimary",
+                    "groups": "Controller",
+                    "action": "Range",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -236,6 +280,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
+                    "action": "SkillPrimary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f97a0014-543e-4fcb-94a8-ac17a63fea98",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
                     "action": "SkillPrimary",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -253,12 +308,56 @@
                 },
                 {
                     "name": "",
+                    "id": "9c49e901-84dd-4d95-971c-6d66ac76cf48",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "467f49b8-b69e-4160-8ebc-452b265a1082",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
                     "action": "SkillSecondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68a969ae-1bfe-4534-a0ed-29cda38fd16b",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "SkillSecondary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "22efab6b-bad4-430e-a161-389902eb2bc6",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09bdc7aa-77ad-4d90-9d60-4ef7de73d83a",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -277,6 +376,17 @@
                 },
                 {
                     "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }

@@ -57,6 +57,10 @@ namespace VHS {
 
             return Vector3.Lerp(ab_bc, bc_cd, t);
         }
+        
+        public static float DistanceTo(this Vector3 a, Vector3 b) {
+            return (a - b).magnitude;
+        }
 
         public static float DistanceSquaredTo(this Vector3 a, Vector3 b) {
             return (a - b).sqrMagnitude;

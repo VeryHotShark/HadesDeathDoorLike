@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Animancer.Examples.AnimatorControllers.GameKit;
 using UnityEngine;
 
 namespace VHS {
@@ -10,16 +11,23 @@ namespace VHS {
         
         public ParticleController _explosionVFX;
         public SkillIndicator _indicatorVFX;
-        
-        
+
+        public float _maxDistance = 5.0f;
         public float _radius = 3.0f;
         public int _damage = 1;
-
+        
         private HashSet<IHittable> _hittables = new HashSet<IHittable>();
         private Collider[] _colliders = new Collider[32];
 
+        private float _sqrMaxDistance;
+        private Vector3 _castOffset;
         private Vector3 _castPosition;
         private SkillIndicator _indicatorInstance;
+
+        public override void OnInitialize() {
+            base.OnInitialize();
+            _sqrMaxDistance = _maxDistance.Square();
+        }
 
         public override void OnReset() {
             base.OnReset();
@@ -27,10 +35,15 @@ namespace VHS {
         }
 
         public override void OnCastStart() {
-            _indicatorInstance = PoolManager.Spawn(_indicatorVFX,
-                Owner.PlayerController.Camera.CursorTransform.position, Quaternion.identity);
-            _indicatorInstance.transform.SetParent(Owner.PlayerController.Camera.CursorTransform);
+            _indicatorInstance = PoolManager.Spawn(_indicatorVFX, Owner.CenterOfMass, Quaternion.identity);
             _indicatorInstance.InitCircle(_radius);
+
+            if (Owner.InputController.IsGamepad) {
+                _castOffset = Owner.CharacterController.LastNonZeroLookInput * (_maxDistance / 2.0f);
+                _indicatorInstance.transform.position += _castOffset;
+            } 
+            else
+                _indicatorInstance.transform.position = Vector3.down * 10.0f;
         }
 
         public override void OnCastFinish() {
@@ -43,8 +56,23 @@ namespace VHS {
         }
 
         public override void OnCastTick(float deltaTime) {
-            _castPosition = Owner.PlayerController.Camera.CursorTransform.position;
-            DebugExtension.DebugWireSphere(_castPosition, Color.yellow, _radius);
+            if (Owner.InputController.IsGamepad) {
+                _castOffset += Owner.CharacterController.LookInput * (30.0f * deltaTime);
+                _castPosition = Owner.CenterOfMass + _castOffset;
+            }
+            else {
+                Vector3 cursorPos = Owner.InputController.CharacterInputs.MousePos;
+                _castPosition = cursorPos;
+            }
+            
+            float distanceSqrToCast = Owner.CenterOfMass.DistanceSquaredTo(_castPosition);
+
+            if (distanceSqrToCast > _sqrMaxDistance) {
+                _castPosition = Owner.CenterOfMass + Owner.CharacterController.LastNonZeroLookInput * _maxDistance;
+                _castOffset = _castPosition - Owner.CenterOfMass;
+            }
+            
+            _indicatorInstance.transform.position = _castPosition;
         }
 
         public override void OnSkillFinish() {

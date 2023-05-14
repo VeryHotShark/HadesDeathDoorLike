@@ -26,15 +26,15 @@ namespace VHS {
         }
 
         public override void UpdateRotation(ref Quaternion currentRotation, float deltaTime) {
-            currentRotation = Quaternion.LookRotation(Controller.LookInput);
-            Controller.LastNonZeroMoveInput = Controller.LookInput;
+            currentRotation = Quaternion.LookRotation(Controller.LastNonZeroLookInput);
+            Controller.LastNonZeroMoveInput = Controller.LastNonZeroLookInput;
         }
 
         public override void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) => currentVelocity = Vector3.zero;
 
         public Projectile SpawnProjectile(Projectile prefab, Vector3? direction = null ) {
             Vector3 spawnPos = Motor.TransientPosition + Vector3.up;
-            Quaternion spawnRot = Quaternion.LookRotation(direction ?? Controller.LookInput);
+            Quaternion spawnRot = Quaternion.LookRotation(direction ?? Controller.LastNonZeroLookInput);
             Projectile  projectile = PoolManager.Spawn(prefab, spawnPos, spawnRot);
             projectile.Init(Parent);
             projectile.OnHit = OnProjectileHit;

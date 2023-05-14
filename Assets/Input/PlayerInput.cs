@@ -64,21 +64,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""34269c79-dd40-45f0-ae2c-2049ccc46b6b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Melee"",
                     ""type"": ""Button"",
                     ""id"": ""25ea785e-9246-4c51-a51d-73a21bde21c5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(duration=0.3)"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -112,6 +103,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""name"": ""Ultimate"",
                     ""type"": ""Button"",
                     ""id"": ""e5962d6b-430d-4189-8661-65eb7334cbb7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""424fd491-f913-4477-a8a1-1962ca5ddec5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -176,11 +176,33 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e12ea0f6-d800-4bf8-a639-54913c8da4b4"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""15315859-2507-4eb0-9515-6e4c3716d4ff"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee035fff-f4ae-489e-b783-a44e755e9771"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Roll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -198,6 +220,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""18387d70-af0d-4124-9968-50b06d3bf28e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""84d56edb-502f-4c63-a29a-8bb9e8689ec7"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
@@ -209,12 +242,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""47ccbda8-fa92-4980-a9e6-15b9170d38bb"",
-                    ""path"": ""<Keyboard>/ctrl"",
+                    ""id"": ""5e4702fe-6f65-49c4-ad60-d1e6aad342a2"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""Crouch"",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -225,6 +258,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Melee"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2aee3a6-1eac-4b27-b599-edd5a9e72eb5"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Melee"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -242,12 +286,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8d3f8b7e-7c90-4c24-9542-d33f824a854e"",
-                    ""path"": ""<Mouse>/middleButton"",
+                    ""id"": ""4b224407-ba1b-4914-90ba-369350455207"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""SkillPrimary"",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Range"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -258,6 +302,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""SkillPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f97a0014-543e-4fcb-94a8-ac17a63fea98"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""SkillPrimary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -275,12 +330,56 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""9c49e901-84dd-4d95-971c-6d66ac76cf48"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Ultimate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""467f49b8-b69e-4160-8ebc-452b265a1082"",
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardAndMouse"",
                     ""action"": ""SkillSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68a969ae-1bfe-4534-a0ed-29cda38fd16b"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""SkillSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22efab6b-bad4-430e-a161-389902eb2bc6"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09bdc7aa-77ad-4d90-9d60-4ef7de73d83a"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -303,6 +402,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -312,12 +422,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_CharacterControls_MousePosition = m_CharacterControls.FindAction("MousePosition", throwIfNotFound: true);
         m_CharacterControls_Roll = m_CharacterControls.FindAction("Roll", throwIfNotFound: true);
         m_CharacterControls_Look = m_CharacterControls.FindAction("Look", throwIfNotFound: true);
-        m_CharacterControls_Crouch = m_CharacterControls.FindAction("Crouch", throwIfNotFound: true);
         m_CharacterControls_Melee = m_CharacterControls.FindAction("Melee", throwIfNotFound: true);
         m_CharacterControls_Range = m_CharacterControls.FindAction("Range", throwIfNotFound: true);
         m_CharacterControls_SkillPrimary = m_CharacterControls.FindAction("SkillPrimary", throwIfNotFound: true);
         m_CharacterControls_SkillSecondary = m_CharacterControls.FindAction("SkillSecondary", throwIfNotFound: true);
         m_CharacterControls_Ultimate = m_CharacterControls.FindAction("Ultimate", throwIfNotFound: true);
+        m_CharacterControls_Interact = m_CharacterControls.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -383,12 +493,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_MousePosition;
     private readonly InputAction m_CharacterControls_Roll;
     private readonly InputAction m_CharacterControls_Look;
-    private readonly InputAction m_CharacterControls_Crouch;
     private readonly InputAction m_CharacterControls_Melee;
     private readonly InputAction m_CharacterControls_Range;
     private readonly InputAction m_CharacterControls_SkillPrimary;
     private readonly InputAction m_CharacterControls_SkillSecondary;
     private readonly InputAction m_CharacterControls_Ultimate;
+    private readonly InputAction m_CharacterControls_Interact;
     public struct CharacterControlsActions
     {
         private @PlayerInput m_Wrapper;
@@ -397,12 +507,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @MousePosition => m_Wrapper.m_CharacterControls_MousePosition;
         public InputAction @Roll => m_Wrapper.m_CharacterControls_Roll;
         public InputAction @Look => m_Wrapper.m_CharacterControls_Look;
-        public InputAction @Crouch => m_Wrapper.m_CharacterControls_Crouch;
         public InputAction @Melee => m_Wrapper.m_CharacterControls_Melee;
         public InputAction @Range => m_Wrapper.m_CharacterControls_Range;
         public InputAction @SkillPrimary => m_Wrapper.m_CharacterControls_SkillPrimary;
         public InputAction @SkillSecondary => m_Wrapper.m_CharacterControls_SkillSecondary;
         public InputAction @Ultimate => m_Wrapper.m_CharacterControls_Ultimate;
+        public InputAction @Interact => m_Wrapper.m_CharacterControls_Interact;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -424,9 +534,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
-            @Crouch.started += instance.OnCrouch;
-            @Crouch.performed += instance.OnCrouch;
-            @Crouch.canceled += instance.OnCrouch;
             @Melee.started += instance.OnMelee;
             @Melee.performed += instance.OnMelee;
             @Melee.canceled += instance.OnMelee;
@@ -442,6 +549,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Ultimate.started += instance.OnUltimate;
             @Ultimate.performed += instance.OnUltimate;
             @Ultimate.canceled += instance.OnUltimate;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(ICharacterControlsActions instance)
@@ -458,9 +568,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
-            @Crouch.started -= instance.OnCrouch;
-            @Crouch.performed -= instance.OnCrouch;
-            @Crouch.canceled -= instance.OnCrouch;
             @Melee.started -= instance.OnMelee;
             @Melee.performed -= instance.OnMelee;
             @Melee.canceled -= instance.OnMelee;
@@ -476,6 +583,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Ultimate.started -= instance.OnUltimate;
             @Ultimate.performed -= instance.OnUltimate;
             @Ultimate.canceled -= instance.OnUltimate;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(ICharacterControlsActions instance)
@@ -502,17 +612,26 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardAndMouseSchemeIndex];
         }
     }
+    private int m_ControllerSchemeIndex = -1;
+    public InputControlScheme ControllerScheme
+    {
+        get
+        {
+            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
+            return asset.controlSchemes[m_ControllerSchemeIndex];
+        }
+    }
     public interface ICharacterControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnCrouch(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
         void OnRange(InputAction.CallbackContext context);
         void OnSkillPrimary(InputAction.CallbackContext context);
         void OnSkillSecondary(InputAction.CallbackContext context);
         void OnUltimate(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

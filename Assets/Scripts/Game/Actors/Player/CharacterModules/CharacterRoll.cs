@@ -32,7 +32,7 @@ public class CharacterRoll : CharacterModule {
         Parent.OnRoll();    
         _rollEvent?.Raise(Parent);
         _rollTimestamp = Time.time;
-        _rollDirection = Controller.MoveInput.sqrMagnitude < Mathf.Epsilon ? Controller.LastNonZeroMoveInput : Controller.MoveInput;
+        _rollDirection = Controller.LastNonZeroMoveInput;
         _lastDesiredPos = Motor.TransientPosition;
         _startPos = _lastDesiredPos;
         _endPos = _startPos + _rollDirection * _distance;

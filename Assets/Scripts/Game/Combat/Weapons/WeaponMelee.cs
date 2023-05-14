@@ -110,9 +110,9 @@ namespace VHS {
         private void Attack(AttackInfo attackInfo) {
             attackInfo.duration.Start();
 
-            Motor.SetRotation(Character.LastCharacterInputs.CursorRotation);
-            Character.LastNonZeroMoveInput = Character.LookInput;
-            Character.AddVelocity(attackInfo.pushForce * Character.LookInput);
+            Motor.SetRotation(Quaternion.LookRotation(Character.LastNonZeroLookInput));
+            Character.LastNonZeroMoveInput = Character.LastNonZeroLookInput;
+            Character.AddVelocity(attackInfo.pushForce * Character.LastNonZeroLookInput);
             Animancer.Play(attackInfo.animation);
 
             Timing.CallDelayed(HIT_DELAY, () => CheckForHittables(attackInfo), gameObject);
@@ -122,7 +122,7 @@ namespace VHS {
             if (_slashInstance)
                 Destroy(_slashInstance);
 
-            Quaternion rot = Quaternion.LookRotation(Character.LookInput);
+            Quaternion rot = Quaternion.LookRotation(Character.LastNonZeroLookInput);
             _slashInstance = Instantiate(_slashParticle, _player.CenterOfMass, rot, _player.transform);
 
             size.z *= 1.2f;

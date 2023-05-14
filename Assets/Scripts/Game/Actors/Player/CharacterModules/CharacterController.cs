@@ -7,10 +7,6 @@ using UnityEngine;
 
 namespace VHS {
     public class CharacterController : ChildBehaviour<Player>, ICharacterController, IUpdateListener {
-        // Remove this if Unity fixes Simultanoeus Release Button
-        [SerializeField] private Timer _inputDirectionChangeTimer = new Timer(0.1f);
-
-        private Vector3 _lastMoveInput;
         private Vector3 _internalVelocityAdd;
 
         private CharacterRoll _rollModule;
@@ -39,9 +35,7 @@ namespace VHS {
         public Vector3 LookInput { get; set; }
         public Vector3 MoveInput { get; set; }
         public Vector3 LastNonZeroMoveInput { get; set; }
-        public CharacterInputs LastCharacterInputs { get; private set; }
-        public CharacterInputs CurrentCharacterInputs { get; private set; }
-
+        public Vector3 LastNonZeroLookInput { get; set; }
 
         private void Awake() {
             _motor = GetComponent<KinematicCharacterMotor>();
@@ -66,8 +60,6 @@ namespace VHS {
 
         public void SetInputs(ref CharacterInputs inputs) {
             UpdateInput(inputs);
-            
-            CurrentCharacterInputs = inputs;
 
             if (Motor.GroundingStatus.IsStableOnGround) {
                 if (inputs.Ultimate.Pressed)
@@ -85,31 +77,28 @@ namespace VHS {
             }
 
             _stateMachine.CurrentState.SetInputs(inputs);
-
-            LastCharacterInputs = inputs;
         }
 
         private void UpdateInput(CharacterInputs inputs) {
-            LookInput = transform.position.DirectionTo(inputs.CursorPosition).Flatten();
+            Vector3 cameraPlanarDirection = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
+            Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
 
-            Vector3 rawInput = new Vector3(inputs.MoveAxis.x, 0.0f, inputs.MoveAxis.y);
+            // Update Move Input
+            Vector3 rawInput = new Vector3(inputs.MoveAxis.x, 0.0f, inputs.MoveAxis.y).normalized;
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
+            MoveInput = cameraPlanarRotation * clampedMoveInput;
+            
+            if (clampedMoveInput != Vector3.zero)
+                LastNonZeroMoveInput = MoveInput;
+            
+            // Update Look Input
+            if(Parent.InputController.IsGamepad)
+                LookInput = cameraPlanarRotation * new Vector3(inputs.LookAxis.x, 0.0f, inputs.LookAxis.y).normalized ;
+            else 
+                LookInput = transform.position.DirectionTo(inputs.MousePos).Flatten();
 
-            if (_lastMoveInput != clampedMoveInput) {
-                _inputDirectionChangeTimer.Start();
-                _lastMoveInput = clampedMoveInput;
-            }
-
-            if (!_inputDirectionChangeTimer.IsActive) {
-                Vector3 cameraPlanarDirection =
-                    Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
-
-                Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
-                MoveInput = cameraPlanarRotation * clampedMoveInput;
-
-                if (clampedMoveInput != Vector3.zero)
-                    LastNonZeroMoveInput = MoveInput;
-            }
+            if (LookInput != Vector3.zero)
+                LastNonZeroLookInput = LookInput;
         }
 
         public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime) {

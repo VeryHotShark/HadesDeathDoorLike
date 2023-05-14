@@ -30,5 +30,7 @@ namespace VHS {
                 _cursorTransform.SetPositionAndRotation(pos, rot);
             }
         }
+
+        public void SetVisible(bool visible) => _cursorTransform.gameObject.SetActive(visible);
     }
 }

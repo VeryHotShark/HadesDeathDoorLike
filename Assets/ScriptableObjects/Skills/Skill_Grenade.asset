@@ -34,5 +34,6 @@ MonoBehaviour:
         _statusToApply: {fileID: 11400000, guid: edffb0342e6789f4a97285cdd5bef0ea, type: 2}
         _explosionVFX: {fileID: 5967922195045632957, guid: b1b0101b0da57b4419aaea05b83ece01, type: 3}
         _indicatorVFX: {fileID: 6766809057354840544, guid: b8d37c8efa8dd9f43bb6cdc5fbe78fbd, type: 3}
+        _maxDistance: 10
         _radius: 3
         _damage: 1

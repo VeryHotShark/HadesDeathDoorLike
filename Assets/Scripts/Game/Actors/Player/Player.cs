@@ -7,15 +7,15 @@ namespace VHS {
     public class Player : Actor<Player> {
         public override Vector3 CenterOfMass => FeetPosition + _characterController.Motor.CharacterTransformToCapsuleCenter;
 
-        private PlayerController _playerController;
+        private InputController _inputController;
         private CharacterController _characterController;
         private InteractionComponent _interactionComponent;
         private WeaponController _weaponController;
         private AnimationController _animationController;
         private PassivesHandlerComponent _passivesHandlerComponent;
         
-        public PlayerController PlayerController => _playerController;
-        public CameraController CameraController => _playerController.Camera;
+        public InputController InputController => _inputController;
+        public CameraController CameraController => _inputController.Camera;
         public CharacterController CharacterController => _characterController;
         public KinematicCharacterMotor CharacterMotor => CharacterController.Motor;
 
@@ -58,7 +58,7 @@ namespace VHS {
             base.GetComponents();
             _animationController = GetComponent<AnimationController>();
             _characterController = GetComponent<CharacterController>();
-            _playerController = GetComponentInParent<PlayerController>();
+            _inputController = GetComponentInParent<InputController>();
             _weaponController = GetComponent<WeaponController>();
             _interactionComponent = GetComponent<InteractionComponent>();
         }

@@ -8,7 +8,8 @@ namespace VHS {
     public abstract class CharacterModule : ChildBehaviour<Player>, IState{
         private CharacterController _controller;
         protected KinematicCharacterMotor Motor => Controller.Motor;
-        protected CharacterController Controller => _controller ??= GetComponent<CharacterController>(); 
+        protected CharacterController Controller => _controller ??= GetComponent<CharacterController>();
+        protected InputController InputController => Parent.InputController;
 
         public virtual void OnEnter() { }
         public virtual void OnExit() { }

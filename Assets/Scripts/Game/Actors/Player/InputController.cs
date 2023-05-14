@@ -17,7 +17,9 @@ namespace VHS {
     /// Consider Wheter this is needed or we can Just Pass PlayerInput
     /// </summary>
     public struct CharacterInputs {
+        public Vector3 MousePos;
         public Vector2 MoveAxis;
+        public Vector2 LookAxis;
 
         public KeyInput Roll;
         public KeyInput Melee;
@@ -25,43 +27,46 @@ namespace VHS {
         public KeyInput SkillSecondary;
         public KeyInput Range;
         public KeyInput Ultimate;
+        public KeyInput Interact; 
 
         public Quaternion CameraRotation;
-        public Vector3 CursorPosition;
-        public Quaternion CursorRotation;
     }
 
-    public class PlayerController : BaseBehaviour, IUpdateListener, ILateUpdateListener {
+    public class InputController : BaseBehaviour, IUpdateListener, ILateUpdateListener {
         [SerializeField] private CameraController _camera;
         [SerializeField] private CharacterController _character;
 
-        private Vector3 _lookVector;
+        private bool _isGamepad;
+        
+        private Vector2 _lookInput;
         private Vector2 _moveInput;
         private Vector2 _mousePos;
 
         private PlayerInput _input;
         private CharacterInputs _characterInputs;
 
-        public Vector3 CharacterDirectionToCursor =>
-            Character.Motor.TransientPosition.DirectionTo(Camera.CursorTransform.position).Flatten();
-        
+        public bool IsGamepad => _isGamepad;
+        public CharacterInputs CharacterInputs => _characterInputs;
         public CameraController Camera => _camera;
         public CharacterController Character => _character;
         public Player Player => _character.Player;
 
         private void Awake() => SetInputs();
         private void OnDestroy() => _input.Dispose();
+ 
 
         protected override void Enable() {
             _input.Enable();
             UpdateManager.AddUpdateListener(this);
             UpdateManager.AddLateUpdateListener(this);
+            InputSystem.onActionChange += InputActionChangeCallback;
         }
 
         protected override void Disable() {
             _input.Disable();
             UpdateManager.RemoveUpdateListener(this);
             UpdateManager.RemoveLateUpdateListener(this);
+            InputSystem.onActionChange -= InputActionChangeCallback;
         }
 
         private void SetInputs() {
@@ -69,9 +74,25 @@ namespace VHS {
 
             _input.CharacterControls.MousePosition.performed += ctx => _mousePos = ctx.ReadValue<Vector2>();
             _input.CharacterControls.MousePosition.canceled += ctx => _mousePos = ctx.ReadValue<Vector2>();
+            
+            _input.CharacterControls.Look.performed += ctx => _lookInput = ctx.ReadValue<Vector2>();
+            _input.CharacterControls.Look.canceled += ctx => _lookInput = ctx.ReadValue<Vector2>();
 
             _input.CharacterControls.Movement.performed += ctx => _moveInput = ctx.ReadValue<Vector2>();
             _input.CharacterControls.Movement.canceled += ctx => _moveInput = ctx.ReadValue<Vector2>();
+        }
+        
+        
+        private void InputActionChangeCallback(object inputAction, InputActionChange change)
+        {
+            if (change == InputActionChange.ActionPerformed)
+            {
+                InputAction receivedInputAction = (InputAction) inputAction;
+                InputDevice lastDevice = receivedInputAction.activeControl.device;
+                _isGamepad = !(lastDevice.name.Equals("Keyboard") || lastDevice.name.Equals("Mouse"));
+                Camera.PlayerCursor.SetVisible(!_isGamepad);
+                Debug.Log("GAMEPAD:" + _isGamepad);
+            }
         }
         
         public void OnUpdate(float deltaTime) => HandleCharacterInput();
@@ -79,8 +100,9 @@ namespace VHS {
         public void OnLateUpdate(float deltaTime) {
             if(!_character || GameManager.IsPaused)
                 return;
-            
-            _camera.SetCursorPos(_mousePos);
+
+            if(!_isGamepad)
+                _camera.SetCursorPos(_mousePos);
         }
 
         private KeyInput SetupKeyInput(InputAction inputAction) {
@@ -100,23 +122,24 @@ namespace VHS {
                 return;
 
             _characterInputs = new CharacterInputs();
-            
+
             _characterInputs.Roll = SetupKeyInput(_input.CharacterControls.Roll);
             _characterInputs.Melee = SetupKeyInput(_input.CharacterControls.Melee);
             _characterInputs.SkillPrimary = SetupKeyInput(_input.CharacterControls.SkillPrimary);
             _characterInputs.SkillSecondary = SetupKeyInput(_input.CharacterControls.SkillSecondary);
             _characterInputs.Range = SetupKeyInput(_input.CharacterControls.Range);
             _characterInputs.Ultimate = SetupKeyInput(_input.CharacterControls.Ultimate);
+            _characterInputs.Interact = SetupKeyInput(_input.CharacterControls.Interact);
             
             _characterInputs.MoveAxis = _moveInput;
+            _characterInputs.LookAxis = _lookInput;
             
+            _characterInputs.MousePos = _camera.CursorTransform.position;
             _characterInputs.CameraRotation = _camera.transform.rotation;
-            _characterInputs.CursorPosition = _camera.CursorTransform.position;
-            _characterInputs.CursorRotation = _camera.CursorTransform.rotation;
 
             _character.SetInputs(ref _characterInputs);
             
-            if(Keyboard.current.fKey.wasReleasedThisFrame)
+            if(_characterInputs.Interact.Released)
                 Player.HandleInteract();
         }
     }

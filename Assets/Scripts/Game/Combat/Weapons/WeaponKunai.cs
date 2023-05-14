@@ -13,7 +13,7 @@ namespace VHS {
 
         protected override void OnPerfectHoldAttack() {
             float startAngle = -(_kunaiCount / 2.0f) * _angle;
-            Vector3 direction =  Character.LookInput;
+            Vector3 direction =  Character.LastNonZeroLookInput;
             
             for (int i = 0; i < _kunaiCount; i++) {
                 Vector3 rotatedDirection = Quaternion.Euler(0.0f, startAngle, 0.0f) * direction;
