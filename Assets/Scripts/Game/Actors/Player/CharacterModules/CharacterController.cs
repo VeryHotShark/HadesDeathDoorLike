@@ -84,7 +84,7 @@ namespace VHS {
             Quaternion cameraPlanarRotation = Quaternion.LookRotation(cameraPlanarDirection, Motor.CharacterUp);
 
             // Update Move Input
-            Vector3 rawInput = new Vector3(inputs.MoveAxis.x, 0.0f, inputs.MoveAxis.y).normalized;
+            Vector3 rawInput = new Vector3(inputs.MoveAxis.x, 0.0f, inputs.MoveAxis.y);
             Vector3 clampedMoveInput = Vector3.ClampMagnitude(rawInput, 1.0f);
             MoveInput = cameraPlanarRotation * clampedMoveInput;
             
@@ -93,7 +93,7 @@ namespace VHS {
             
             // Update Look Input
             if(Parent.InputController.IsGamepad)
-                LookInput = cameraPlanarRotation * new Vector3(inputs.LookAxis.x, 0.0f, inputs.LookAxis.y).normalized ;
+                LookInput = cameraPlanarRotation * new Vector3(inputs.LookAxis.x, 0.0f, inputs.LookAxis.y);
             else 
                 LookInput = transform.position.DirectionTo(inputs.MousePos).Flatten();
 
