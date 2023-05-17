@@ -7,6 +7,8 @@ using UnityEngine;
 
 namespace VHS {
     public class CharacterController : ChildBehaviour<Player>, ICharacterController, IUpdateListener {
+        [SerializeField] private Transform _aimIndicator;
+        
         private Vector3 _internalVelocityAdd;
 
         private CharacterRoll _rollModule;
@@ -159,5 +161,8 @@ namespace VHS {
         public void TransitionToLastState(bool force = false) => _stateMachine.TransitionToLastState(force);
 
         public void SetLastDirectionToForward() => LastNonZeroMoveInput = Motor.CharacterForward;
+
+        public void UpdateAimIndicator() => _aimIndicator.rotation = Quaternion.LookRotation(LastNonZeroLookInput);
+        public void SetIndicatorVisible(bool visible) => _aimIndicator.gameObject.SetActive(visible);
     }
 }

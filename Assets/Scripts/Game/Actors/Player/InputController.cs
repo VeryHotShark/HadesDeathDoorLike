@@ -90,7 +90,8 @@ namespace VHS {
                 InputAction receivedInputAction = (InputAction) inputAction;
                 InputDevice lastDevice = receivedInputAction.activeControl.device;
                 _isGamepad = !(lastDevice.name.Equals("Keyboard") || lastDevice.name.Equals("Mouse"));
-                Camera.PlayerCursor.SetVisible(!_isGamepad);
+                _camera.PlayerCursor.SetVisible(!_isGamepad);
+                _character.SetIndicatorVisible(_isGamepad);
                 Debug.Log("GAMEPAD:" + _isGamepad);
             }
         }
@@ -101,7 +102,9 @@ namespace VHS {
             if(!_character || GameManager.IsPaused)
                 return;
 
-            if(!_isGamepad)
+            if (_isGamepad)
+                _character.UpdateAimIndicator();
+            else
                 _camera.SetCursorPos(_mousePos);
         }
 
