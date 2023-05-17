@@ -104,7 +104,7 @@ namespace VHS {
             OnPerfectEnd();
             _currentAttack = attackInfo;
             Attack(_currentAttack);
-            SpawnSlash(slashSize, flipSlash);
+            // SpawnSlash(slashSize, flipSlash);
         }
 
         private void Attack(AttackInfo attackInfo) {
