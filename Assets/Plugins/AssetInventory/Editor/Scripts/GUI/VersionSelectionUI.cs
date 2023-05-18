@@ -54,7 +54,7 @@ namespace AssetInventory
                 {
                     GUI.backgroundColor = Color.yellow;
                 }
-                if (version == _packageInfo.versions.verified)
+                if (version == _packageInfo.versions.recommended)
                 {
                     GUI.backgroundColor = Color.green;
                     attributes.Add("verified");

@@ -2,17 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 7
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NatureScene_Grass_Details
-  m_Shader: {fileID: -6465566751694194690, guid: 55d33328ab3ba4efca3c7706d97d8ee8,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 55d33328ab3ba4efca3c7706d97d8ee8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ShaderKeywords: _ALPHATEST_ON _RECEIVE_SHADOWS_OFF
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
+  - _RECEIVE_SHADOWS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -79,8 +81,7 @@ Material:
     - _WindSpeed: 1
     m_Colors:
     - Color_8625870c808d4f1b93a120fb2366b73e: {r: 0, g: 0, b: 0, a: 0}
-    - Color_fa7bfd953c0f468faf964c3a5545c86d: {r: 0.9150943, g: 0.7812834, b: 0.7812834,
-        a: 1}
+    - Color_fa7bfd953c0f468faf964c3a5545c86d: {r: 0.9150943, g: 0.7812834, b: 0.7812834, a: 1}
     - _ColorBottom: {r: 0.13972943, g: 0.18867922, b: 0.14748925, a: 1}
     - _ColorTop: {r: 0.9523678, g: 1, b: 0.514151, a: 1}
     - _GustColor: {r: 0.62352943, g: 0.9058824, b: 0.49803925, a: 0.4}
@@ -100,4 +101,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 6
+  version: 7
