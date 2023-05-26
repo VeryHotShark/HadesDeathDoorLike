@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Slash
+  m_Name: M_SlashGeneric
   m_Shader: {fileID: -6465566751694194690, guid: 23eb8e3daa1778e458a27c23cd2bce82, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -60,20 +60,22 @@ Material:
     m_Floats:
     - _AlphaClip: 1
     - _AlphaToMask: 0
-    - _Angle: 0.72
+    - _Angle: 0.4
+    - _AngleNormalized: 0.5
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Radius: 0.82
+    - _Radius: 0
+    - _RadiusNormalized: 1
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.6621657, b: 0, a: 1}
+    - _Color: {r: 0.5283019, g: 0, b: 0, a: 1}
     - _Offset: {r: 0.19, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
