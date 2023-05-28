@@ -59,7 +59,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 1
-    - _AlphaMask: 0.7
+    - _AlphaMask: 0.71
     - _AlphaMaskLerp: 0.34
     - _AlphaMaskScale: 100
     - _AlphaToMask: 0
