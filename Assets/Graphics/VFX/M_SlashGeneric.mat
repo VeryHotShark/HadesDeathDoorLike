@@ -65,12 +65,12 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Distortion: 0.5
-    - _DistortionScale: 25
+    - _Distortion: 0.16
+    - _DistortionScale: 200
     - _DstBlend: 10
     - _EdgeDistortion: 1
     - _EdgeDistortionScale: 1
-    - _EdgeSizeNormalized: 0.6
+    - _EdgeSizeNormalized: 0.38
     - _InvertDirection: 1
     - _LeftToRight: 1
     - _QueueControl: 0
@@ -78,7 +78,7 @@ Material:
     - _Radius: 0
     - _RadiusNormalized: 0.5
     - _SlashAmount: 1
-    - _SlashDissolve: 0.5
+    - _SlashDissolve: 1
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
@@ -87,9 +87,9 @@ Material:
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _DistortionOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _DistortionSpeed: {r: -2, g: 0, b: 0, a: 0}
-    - _DistortionTiling: {r: 0.3, g: 1.2, b: 0, a: 0}
-    - _EdgeColor: {r: 2.9960787, g: 0, b: 0, a: 1}
+    - _DistortionSpeed: {r: -0.3, g: 0, b: 0, a: 0}
+    - _DistortionTiling: {r: 0.1, g: 0.75, b: 0, a: 0}
+    - _EdgeColor: {r: 3.8490572, g: 0.63182616, b: 0.63182616, a: 1}
     - _EdgeDistortionOffset: {r: 0, g: 0, b: 0, a: 0}
     - _EdgeDistortionTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0.19, g: 0, b: 0, a: 0}
