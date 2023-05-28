@@ -59,26 +59,29 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 1
+    - _AlphaMask: 0.7
+    - _AlphaMaskLerp: 0.34
+    - _AlphaMaskScale: 100
     - _AlphaToMask: 0
     - _Angle: 0.4
     - _AngleNormalized: 0
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Distortion: 0.16
+    - _Distortion: 0.15
     - _DistortionScale: 200
     - _DstBlend: 10
     - _EdgeDistortion: 1
     - _EdgeDistortionScale: 1
-    - _EdgeSizeNormalized: 0.38
+    - _EdgeSizeNormalized: 0.4
     - _InvertDirection: 1
     - _LeftToRight: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 0
-    - _RadiusNormalized: 0.5
+    - _RadiusNormalized: 0.6
     - _SlashAmount: 1
-    - _SlashDissolve: 1
+    - _SlashDissolve: 0.5
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
@@ -87,7 +90,7 @@ Material:
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _DistortionOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _DistortionSpeed: {r: -0.3, g: 0, b: 0, a: 0}
+    - _DistortionSpeed: {r: -0.5, g: 0, b: 0, a: 0}
     - _DistortionTiling: {r: 0.1, g: 0.75, b: 0, a: 0}
     - _EdgeColor: {r: 3.8490572, g: 0.63182616, b: 0.63182616, a: 1}
     - _EdgeDistortionOffset: {r: 0, g: 0, b: 0, a: 0}
