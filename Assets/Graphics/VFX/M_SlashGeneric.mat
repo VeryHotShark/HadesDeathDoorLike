@@ -61,26 +61,28 @@ Material:
     - _AlphaClip: 1
     - _AlphaToMask: 0
     - _Angle: 0.4
-    - _AngleNormalized: 1
+    - _AngleNormalized: 0
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _Distortion: 0.48
+    - _Distortion: 0
     - _DstBlend: 10
+    - _EdgeSizeNormalized: 0.25
     - _InvertDirection: 1
     - _LeftToRight: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 0
-    - _RadiusNormalized: 0.42
+    - _RadiusNormalized: 0.5
     - _SlashAmount: 1
-    - _SlashDissolve: 0
+    - _SlashDissolve: 0.5
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0.5283019, g: 0, b: 0, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _EdgeColor: {r: 2.9960787, g: 0, b: 0, a: 1}
     - _Offset: {r: 0.19, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
