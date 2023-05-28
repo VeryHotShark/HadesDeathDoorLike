@@ -61,16 +61,18 @@ Material:
     - _AlphaClip: 1
     - _AlphaToMask: 0
     - _Angle: 0.4
-    - _AngleNormalized: 0
+    - _AngleNormalized: 1
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
+    - _Distortion: 0.48
     - _DstBlend: 10
     - _InvertDirection: 1
+    - _LeftToRight: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius: 0
-    - _RadiusNormalized: 0.4
+    - _RadiusNormalized: 0.42
     - _SlashAmount: 1
     - _SlashDissolve: 0
     - _SrcBlend: 5
