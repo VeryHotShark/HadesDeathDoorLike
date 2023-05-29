@@ -9,8 +9,7 @@ namespace VHS {
         LIGHT,
         HEAVY,
         PERFECT_HEAVY,
-        DASH_LIGHT,
-        DASH_HEAVY,
+        DASH_ATTACK,
         RANGE,
         PERFECT_RANGE
     }

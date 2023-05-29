@@ -11,12 +11,12 @@ namespace VHS {
         public int damage = 1;
         public Timer duration = new(0.3f);
         public float pushForce = 10.0f;
-        public float zOffset = 1.0f;
         public float radius = 1.0f;
         [Range(0.0f,180.0f)] public float angle = 180.0f;
 
         public Feedback feedback;
         public ClipTransition animation;
+        public bool leftToRight = true;
             
         [HideInInspector] public PlayerAttackType attackType;
 
@@ -26,7 +26,6 @@ namespace VHS {
             damage = source.damage;
             duration = source.duration;
             pushForce = source.pushForce;
-            zOffset = source.zOffset;
             radius = source.radius;
             angle = source.angle;
             feedback = source.feedback;

@@ -12,6 +12,7 @@ namespace VHS {
         public override void Init(Player player) {
             base.Init(player);
             _mirroredHeavyAttack = AttackInfo.Copy(_heavyAttack);
+            _mirroredHeavyAttack.leftToRight = false;
             _mirroredHeavyAttack.animation = _mirroredHeavy;
         }
 
@@ -23,7 +24,7 @@ namespace VHS {
         }
 
         protected override void OnRegularHoldAttack() {
-            SpawnAttack(_flipHeavy ? _mirroredHeavyAttack : _heavyAttack, Vector3.one * 0.4f, _flipHeavy);
+            SpawnAttack(_flipHeavy ? _mirroredHeavyAttack : _heavyAttack);
             _flipHeavy = !_flipHeavy;
             _player.OnHeavyAttack();
         }

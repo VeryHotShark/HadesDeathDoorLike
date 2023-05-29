@@ -20,7 +20,6 @@ namespace VHS {
         [SerializeField] private GameEvent _lightAttackEvent;
         [SerializeField] private GameEvent _heavyAttackEvent;
         [SerializeField] private GameEvent _lightDashAttackEvent;
-        [SerializeField] private GameEvent _heavyDashAttackEvent;
 
         [Space]
         [SerializeField] private GameEvent _anyHitEvent;
@@ -99,14 +98,11 @@ namespace VHS {
             if (inputs.Melee.Released) {
                 if (!IsDuringAttack) {
                     if (CurrentWeapon.MinInputReached) {
-                        if (_enteredFromDash)
-                            DashHeavyAttack();
-                        else 
-                            HeavyAttack();
+                        HeavyAttack();
                     }
                     else {
                         if (_enteredFromDash)
-                            DashLightAttack();
+                            DashAttack();
                         else
                             LightAttack();
                     }
@@ -122,17 +118,10 @@ namespace VHS {
                 LightAttack();
         }
         
-        private void DashLightAttack() {
+        private void DashAttack() {
             ResetAttackVariables();
             _lightDashAttackEvent?.Raise(this);
-            CurrentWeapon.DashLightAttack();
-        }
-
-        private void DashHeavyAttack() {
-            ResetAttackVariables();
-            Parent.AnimationController.UnpauseGraph();
-            _heavyDashAttackEvent?.Raise(this);
-            CurrentWeapon.DashHeavyAttack();
+            CurrentWeapon.DashAttack();
         }
 
         private void LightAttack() {
@@ -168,11 +157,8 @@ namespace VHS {
                 case PlayerAttackType.PERFECT_HEAVY:
                     _perfectHeavyHitEvent?.Raise(this);
                     break;
-                case PlayerAttackType.DASH_LIGHT:
+                case PlayerAttackType.DASH_ATTACK:
                     _lightDashHitEvent?.Raise(this);
-                    break;
-                case PlayerAttackType.DASH_HEAVY:
-                    _heavyDashHitEvent?.Raise(this);
                     break;
             }
             

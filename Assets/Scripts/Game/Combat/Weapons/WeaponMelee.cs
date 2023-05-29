@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Animancer;
 using MEC;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace VHS {
     public abstract  class WeaponMelee : Weapon
@@ -10,18 +11,17 @@ namespace VHS {
         private const float HIT_DELAY = 0.15f;
         
         [Header("VFX")]
-        [SerializeField] private GameObject _slashParticle;
+        [SerializeField] private SlashController _slashParticle;
         
         [Header("Attacks")]
         [SerializeField] protected List<AttackInfo> _lightAttacks;
         [SerializeField] protected AttackInfo _heavyAttack;
         [SerializeField] protected AttackInfo _perfectHeavyAttack;
-        [SerializeField] protected AttackInfo _dashLightAttack;
-        [SerializeField] protected AttackInfo _dashHeavyAttack;
+        [FormerlySerializedAs("_dashLightAttack")] [SerializeField] protected AttackInfo _dashAttack;
         [SerializeField] protected ClipTransition _heavyAttackWindupClip;
 
         private bool _coroutineStarted; // TODO temporary because MEC Free doesnt have IsRunning Field
-        private GameObject _slashInstance;
+        private SlashController _slashInstance;
         protected AttackInfo _currentAttack;
         
         public Timer CurrentAttackTimer => _currentAttack?.duration;
@@ -53,8 +53,7 @@ namespace VHS {
                 attack.attackType = PlayerAttackType.LIGHT;
 
             _heavyAttack.attackType = PlayerAttackType.HEAVY;
-            _dashLightAttack.attackType = PlayerAttackType.DASH_LIGHT;
-            _dashHeavyAttack.attackType = PlayerAttackType.DASH_HEAVY;
+            _dashAttack.attackType = PlayerAttackType.DASH_ATTACK;
             _perfectHeavyAttack.attackType = PlayerAttackType.PERFECT_HEAVY;
         }
 
@@ -64,8 +63,7 @@ namespace VHS {
                 attack.duration.OnEnd += OnAttackEnd;
 
             _perfectHeavyAttack.duration.OnEnd += OnAttackEnd;
-            _dashLightAttack.duration.OnEnd += OnAttackEnd;
-            _dashHeavyAttack.duration.OnEnd += OnAttackEnd;
+            _dashAttack.duration.OnEnd += OnAttackEnd;
             _heavyAttack.duration.OnEnd += OnAttackEnd;
         }
 
@@ -75,36 +73,36 @@ namespace VHS {
                 attack.duration.OnEnd -= OnAttackEnd;
 
             _perfectHeavyAttack.duration.OnEnd -= OnAttackEnd;
-            _dashLightAttack.duration.OnEnd -= OnAttackEnd;
-            _dashHeavyAttack.duration.OnEnd -= OnAttackEnd;
+            _dashAttack.duration.OnEnd -= OnAttackEnd;
             _heavyAttack.duration.OnEnd -= OnAttackEnd;
         }
         
         private void OnAttackEnd() => Character.MeleeCombat.OnAttackEnd();
 
-        public virtual void DashLightAttack() => SpawnAttack(_dashLightAttack, new Vector3(0.3f, 0.3f, 1f));
+        public virtual void DashAttack() => SpawnAttack(_dashAttack);
 
-        public virtual void DashHeavyAttack() => SpawnAttack(_dashHeavyAttack, new Vector3(1, 1f, 0.4f));
-
-        public virtual void LightAttack(int index) => SpawnAttack(_lightAttacks[index], Vector3.one * 0.25f, index % 2 == 0);
+        public virtual void LightAttack(int index) => SpawnAttack(_lightAttacks[index]);
 
         protected override void OnPerfectHoldAttack() {
-            SpawnAttack(_perfectHeavyAttack, Vector3.one);
+            SpawnAttack(_perfectHeavyAttack);
             _player.OnPerfectMeleeAttack();
         }
 
         protected override void OnRegularHoldAttack() {
-            SpawnAttack(_heavyAttack, Vector3.one * 0.4f);
+            SpawnAttack(_heavyAttack);
             _player.OnHeavyAttack();
         }
 
         protected override void OnAttackHeld() => Animancer.Play(_heavyAttackWindupClip);
 
-        protected void SpawnAttack(AttackInfo attackInfo, Vector3 slashSize, bool flipSlash = false) {
+        protected void SpawnAttack(AttackInfo attackInfo) {
             OnPerfectEnd();
             _currentAttack = attackInfo;
             Attack(_currentAttack);
-            // SpawnSlash(slashSize, flipSlash);
+            Vector3 slashSize = Vector3.one * attackInfo.radius;
+            slashSize.x *= 0.75f;
+            slashSize.y *= 0.75f;
+            SpawnSlash(attackInfo.angle, slashSize, attackInfo.leftToRight, 0.5f, 0.25f);
         }
 
         private void Attack(AttackInfo attackInfo) {
@@ -118,24 +116,18 @@ namespace VHS {
             Timing.CallDelayed(HIT_DELAY, () => CheckForHittables(attackInfo), gameObject);
         }
 
-        private void SpawnSlash(Vector3 size, bool flip = false) {
+        private void SpawnSlash(float angle, Vector3 size, bool leftToRight = true, float innerRadius = 0.5f, float lifetime = 0.25f) {
             if (_slashInstance)
-                Destroy(_slashInstance);
+                PoolManager.Return(_slashInstance);
 
             Quaternion rot = Quaternion.LookRotation(Character.LastNonZeroLookInput);
             _slashInstance = Instantiate(_slashParticle, _player.CenterOfMass, rot, _player.transform);
-
-            size.z *= 1.2f;
-
-            if (flip)
-                size.x *= -1.0f;
-
-            _slashInstance.transform.localScale = size;
+            _slashInstance.SetSlashSettings(angle, size, leftToRight, innerRadius, lifetime);
         }
         
         protected virtual void CheckForHittables(AttackInfo attackInfo) {
-            Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter +
-                               Motor.CharacterForward * attackInfo.zOffset;
+            Vector3 position = Motor.TransientPosition + Motor.CharacterTransformToCapsuleCenter;
+                               // Motor.CharacterForward * attackInfo.zOffset;
             
             DebugExtension.DebugWireSphere(position, Color.red, attackInfo.radius,
                 attackInfo.duration.Duration);

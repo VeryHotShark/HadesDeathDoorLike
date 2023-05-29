@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_SlashGeneric
+  m_Name: M_SlashParticle
   m_Shader: {fileID: -6465566751694194690, guid: 23eb8e3daa1778e458a27c23cd2bce82, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -64,7 +64,7 @@ Material:
     - _AlphaMaskScale: 100
     - _AlphaToMask: 0
     - _Angle: 0.4
-    - _AngleNormalized: 0.33
+    - _AngleNormalized: 0
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
@@ -81,12 +81,12 @@ Material:
     - _Radius: 0
     - _RadiusNormalized: 0.6
     - _SlashAmount: 1
-    - _SlashDissolve: 0.57
+    - _SlashDissolve: 0.44
     - _SrcBlend: 5
     - _StartColorPercent: 0
     - _Surface: 1
-    - _UVColorLerpZ: 0
-    - _UVSlashDissolveW: 0
+    - _UVColorLerpZ: 1
+    - _UVSlashDissolveW: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
@@ -99,5 +99,5 @@ Material:
     - _EdgeDistortionOffset: {r: 0, g: 0, b: 0, a: 0}
     - _EdgeDistortionTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0.19, g: 0, b: 0, a: 0}
-    - _StartColor: {r: 2.670157, g: 0.6902102, b: 0.6902102, a: 1}
+    - _StartColor: {r: 5.3403144, g: 1.3804206, b: 1.3804206, a: 1}
   m_BuildTextureStacks: []

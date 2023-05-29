@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace VHS {
     public class ParticleController : BaseBehaviour, IPoolable{
-        private ParticleSystem _particle;
+        protected ParticleSystem _particle;
         
-        void Awake() => _particle = GetComponentInChildren<ParticleSystem>();
+        protected virtual void Awake() => _particle = GetComponentInChildren<ParticleSystem>();
 
         public void Play() => _particle.Play(true);
 
