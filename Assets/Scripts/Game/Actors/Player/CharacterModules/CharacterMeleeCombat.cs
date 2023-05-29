@@ -27,9 +27,8 @@ namespace VHS {
         [SerializeField] private GameEvent _heavyHitEvent;
         [SerializeField] private GameEvent _perfectHeavyHitEvent;
         [SerializeField] private GameEvent _lightDashHitEvent;
-        [SerializeField] private GameEvent _heavyDashHitEvent;
 
-        private int _attackIndex;
+        private int _attackIndex = 0;
         private bool _heavyAttackHeld;
         private bool _enteredFromDash;
 

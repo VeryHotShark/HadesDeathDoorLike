@@ -99,7 +99,7 @@ MonoBehaviour:
   _customUpdate: 0
   _updateRate: 0.2
   _cooldown:
-    _duration: 0.5
+    _duration: 0.4
     _looping: 0
   _perfectWindow: {x: 0.60999775, y: 1}
   _perfectWindowFeedback: {fileID: 5405473040090379584, guid: ec29708d17e6c854597b4cabc64e72ce, type: 3}
@@ -108,7 +108,7 @@ MonoBehaviour:
   _lightAttacks:
   - damage: 1
     duration:
-      _duration: 0.25
+      _duration: 0.3
       _looping: 0
     pushForce: 10
     radius: 2.25
@@ -127,7 +127,7 @@ MonoBehaviour:
     attackType: 0
   - damage: 1
     duration:
-      _duration: 0.25
+      _duration: 0.3
       _looping: 0
     pushForce: 15
     radius: 2.25

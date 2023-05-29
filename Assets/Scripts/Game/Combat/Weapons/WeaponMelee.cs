@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Animancer;
 using MEC;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -120,8 +121,7 @@ namespace VHS {
             if (_slashInstance)
                 PoolManager.Return(_slashInstance);
 
-            Quaternion rot = Quaternion.LookRotation(Character.LastNonZeroLookInput);
-            _slashInstance = Instantiate(_slashParticle, _player.CenterOfMass, rot, _player.transform);
+            _slashInstance = PoolManager.Spawn(_slashParticle, Motor.CharacterTransformToCapsuleCenter, Quaternion.identity, _player.transform);
             _slashInstance.SetSlashSettings(angle, size, leftToRight, innerRadius, lifetime);
         }
         

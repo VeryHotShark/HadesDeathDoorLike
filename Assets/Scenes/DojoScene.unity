@@ -36632,11 +36632,11 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _CamFarPlaneDist: 20000
+    - _CamFarPlaneDist: 3708.474
     - _CellSizeX: 3
     - _CellSizeZ: 3
     m_Colors:
-    - _CamWorldPos: {r: 14.672388, g: 33.85511, b: -6.851237, a: 0}
+    - _CamWorldPos: {r: 9.512128, g: 35.42864, b: -21.03765, a: 0}
     - _CellOffset: {r: 0, g: 10.120475, b: 0, a: 0}
     - _LineColor: {r: 0, g: 0, b: 0, a: 1}
     - _PlaneColor: {r: 1, g: 1, b: 1, a: 0}
