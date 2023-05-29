@@ -81,8 +81,9 @@ Material:
     - _Radius: 0
     - _RadiusNormalized: 0.6
     - _SlashAmount: 1
-    - _SlashDissolve: 0.5
+    - _SlashDissolve: 0.55
     - _SrcBlend: 5
+    - _StartColorPercent: 0
     - _Surface: 1
     - _ZTest: 4
     - _ZWrite: 0
@@ -96,4 +97,5 @@ Material:
     - _EdgeDistortionOffset: {r: 0, g: 0, b: 0, a: 0}
     - _EdgeDistortionTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0.19, g: 0, b: 0, a: 0}
+    - _StartColor: {r: 2.670157, g: 0.6902102, b: 0.6902102, a: 1}
   m_BuildTextureStacks: []
