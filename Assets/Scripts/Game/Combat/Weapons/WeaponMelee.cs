@@ -25,8 +25,7 @@ namespace VHS {
         private SlashController _slashInstance;
         protected AttackInfo _currentAttack;
         
-        public Timer CurrentAttackTimer => _currentAttack?.duration;
-        public bool IsDuringAttack => CurrentAttackTimer is {IsActive: true};
+        public bool IsDuringAttack => _currentAttack != null && _currentAttack.animation.State.IsActive;
         public int LastLightAttackIndex => _lightAttacks.Count;
 
         public override void OnWeaponStart() {
@@ -50,35 +49,15 @@ namespace VHS {
         public override void Init(Player player) {
             base.Init(player);
 
-            foreach (AttackInfo attack in _lightAttacks)
+            foreach (AttackInfo attack in _lightAttacks) 
                 attack.attackType = PlayerAttackType.LIGHT;
 
             _heavyAttack.attackType = PlayerAttackType.HEAVY;
             _dashAttack.attackType = PlayerAttackType.DASH_ATTACK;
             _perfectHeavyAttack.attackType = PlayerAttackType.PERFECT_HEAVY;
         }
-
-        protected override void Enable() {
-            base.Enable();
-            foreach (AttackInfo attack in _lightAttacks)
-                attack.duration.OnEnd += OnAttackEnd;
-
-            _perfectHeavyAttack.duration.OnEnd += OnAttackEnd;
-            _dashAttack.duration.OnEnd += OnAttackEnd;
-            _heavyAttack.duration.OnEnd += OnAttackEnd;
-        }
-
-        protected override void Disable() {
-            base.Disable();
-            foreach (AttackInfo attack in _lightAttacks)
-                attack.duration.OnEnd -= OnAttackEnd;
-
-            _perfectHeavyAttack.duration.OnEnd -= OnAttackEnd;
-            _dashAttack.duration.OnEnd -= OnAttackEnd;
-            _heavyAttack.duration.OnEnd -= OnAttackEnd;
-        }
         
-        private void OnAttackEnd() => Character.MeleeCombat.OnAttackEnd();
+        public void OnAttackEnd() => Character.MeleeCombat.OnAttackEnd();
 
         public virtual void DashAttack() => SpawnAttack(_dashAttack);
 
@@ -107,8 +86,6 @@ namespace VHS {
         }
 
         private void Attack(AttackInfo attackInfo) {
-            attackInfo.duration.Start();
-
             Motor.SetRotation(Quaternion.LookRotation(Character.LastNonZeroLookInput));
             Character.LastNonZeroMoveInput = Character.LastNonZeroLookInput;
             Character.AddVelocity(attackInfo.pushForce * Character.LastNonZeroLookInput);
@@ -130,7 +107,7 @@ namespace VHS {
                                // Motor.CharacterForward * attackInfo.zOffset;
             
             DebugExtension.DebugWireSphere(position, Color.red, attackInfo.radius,
-                attackInfo.duration.Duration);
+                attackInfo.animation.Length);
 
             Collider[] _colliders =
                 Physics.OverlapSphere(position, attackInfo.radius, LayerManager.Masks.DEFAULT_AND_NPC);

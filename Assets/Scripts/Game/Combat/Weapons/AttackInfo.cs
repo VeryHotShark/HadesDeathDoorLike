@@ -9,7 +9,6 @@ namespace VHS {
     [Serializable]
     public class AttackInfo {
         public int damage = 1;
-        public Timer duration = new(0.3f);
         public float pushForce = 10.0f;
         public float radius = 1.0f;
         [Range(0.0f,180.0f)] public float angle = 180.0f;
@@ -24,7 +23,6 @@ namespace VHS {
 
         public AttackInfo(AttackInfo source) {
             damage = source.damage;
-            duration = source.duration;
             pushForce = source.pushForce;
             radius = source.radius;
             angle = source.angle;

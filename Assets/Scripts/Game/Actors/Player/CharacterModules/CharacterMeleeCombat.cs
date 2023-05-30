@@ -13,9 +13,6 @@ namespace VHS {
         [Header("General")]
         [SerializeField] private float _slowDownSharpness = 10.0f;
 
-        [SerializeField] private Timer _preAttackBuffer = new(0.3f);
-        [SerializeField] private Timer _postAttackBuffer = new(0.3f);
-
         [Header("Events")] 
         [SerializeField] private GameEvent _lightAttackEvent;
         [SerializeField] private GameEvent _heavyAttackEvent;
@@ -29,18 +26,15 @@ namespace VHS {
         [SerializeField] private GameEvent _lightDashHitEvent;
 
         private int _attackIndex = 0;
+        private bool _hasQueuedInput;
         private bool _heavyAttackHeld;
         private bool _enteredFromDash;
 
         public bool IsOnCooldown => CurrentWeapon.IsOnCooldown;
         public bool IsDuringAttack => CurrentWeapon.IsDuringAttack;
         public bool IsDuringLastAttack => _attackIndex >= CurrentWeapon.LastLightAttackIndex;
-        public bool IsDuringInputBuffering => _preAttackBuffer.IsActive || _postAttackBuffer.IsActive;
         
         private WeaponMelee CurrentWeapon => Parent.WeaponController.MeleeWeapon;
-
-        protected override void Enable() => _postAttackBuffer.OnEnd += OnPostInputBufferEnd;
-        protected override void Disable() => _postAttackBuffer.OnEnd -= OnPostInputBufferEnd;
 
         public override void OnEnter() {
             ResetAttackVariables();
@@ -56,23 +50,15 @@ namespace VHS {
         private void ResetAttackVariables() {
             _attackIndex = 0;
             _heavyAttackHeld = false;
-            _postAttackBuffer.Reset();
-        }
-
-        private void OnPostInputBufferEnd() {
-            if (IsDuringLastAttack || (!IsDuringAttack && !_heavyAttackHeld))
-                Controller.TransitionToDefaultState();
-            else
-                TryResetWeaponHoldTimer();
+            _hasQueuedInput = false;
         }
 
         public void OnAttackEnd() {
+            Debug.Log("DUPA");
             if (IsDuringLastAttack)
                 CurrentWeapon.StartCooldown();
-            else
-                _postAttackBuffer.Start();
 
-            if (!IsDuringInputBuffering && !_heavyAttackHeld)
+            if (!_hasQueuedInput && !_heavyAttackHeld)
                 Controller.TransitionToDefaultState();
             else 
                 TryResetWeaponHoldTimer();
@@ -87,15 +73,18 @@ namespace VHS {
             if(IsDuringLastAttack)
                 return;
             
+            /*
             _heavyAttackHeld = inputs.Melee.Held;
 
             if (_heavyAttackHeld) {
                 Parent.OnHeavyAttackHeld();
                 CurrentWeapon.AttackHeld();
             }
+            */
 
             if (inputs.Melee.Released) {
                 if (!IsDuringAttack) {
+                    /*
                     if (CurrentWeapon.MinInputReached) {
                         HeavyAttack();
                     }
@@ -105,15 +94,18 @@ namespace VHS {
                         else
                             LightAttack();
                     }
+                    */
+                    
+                    LightAttack();
                 }
                 else
-                    _preAttackBuffer.Start();
+                    _hasQueuedInput = true;
 
-                _enteredFromDash = false; // TODO fix to DuringRoll;
+                // _enteredFromDash = false; // TODO fix to DuringRoll;
             }
 
             // Handle Pre Input Buffering
-            if (!IsDuringAttack && _preAttackBuffer.IsActive)
+            if (!IsDuringAttack && _hasQueuedInput)
                 LightAttack();
         }
         
@@ -124,7 +116,7 @@ namespace VHS {
         }
 
         private void LightAttack() {
-            _preAttackBuffer.Reset();
+            _hasQueuedInput = false;
             Parent.OnLightAttack(_attackIndex);
             CurrentWeapon.LightAttack(_attackIndex);
             _lightAttackEvent?.Raise(this);
