@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Animancer;
+using Animancer.Examples.Events;
 using MEC;
 using Unity.Mathematics;
 using UnityEngine;
@@ -89,7 +90,8 @@ namespace VHS {
             Motor.SetRotation(Quaternion.LookRotation(Character.LastNonZeroLookInput));
             Character.LastNonZeroMoveInput = Character.LastNonZeroLookInput;
             Character.AddVelocity(attackInfo.pushForce * Character.LastNonZeroLookInput);
-            Animancer.Play(attackInfo.animation);
+            var state = Animancer.Play(attackInfo.animation);
+            state.Events.Add(state.NormalizedEndTime,EventUtilities.PauseAtCurrentEvent);
 
             Timing.CallDelayed(HIT_DELAY, () => CheckForHittables(attackInfo), gameObject);
         }

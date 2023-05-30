@@ -92,7 +92,7 @@ namespace VHS {
                 _isGamepad = !(lastDevice.name.Equals("Keyboard") || lastDevice.name.Equals("Mouse"));
                 _camera.PlayerCursor.SetVisible(!_isGamepad);
                 _character.SetIndicatorVisible(_isGamepad);
-                Debug.Log("GAMEPAD:" + _isGamepad);
+                // Debug.Log("GAMEPAD:" + _isGamepad);
             }
         }
         

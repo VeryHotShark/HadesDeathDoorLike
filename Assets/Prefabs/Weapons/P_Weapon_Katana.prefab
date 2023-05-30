@@ -112,29 +112,15 @@ MonoBehaviour:
     angle: 75
     feedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
     animation:
-      _FadeDuration: 0.1
+      _FadeDuration: 0
       _Events:
         _NormalizedTimes:
-        - NaN
-        _Callbacks:
-        - m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 6622569001744293905}
-              m_TargetAssemblyTypeName: VHS.WeaponMelee, Assembly-CSharp
-              m_MethodName: OnAttackEnd
-              m_Mode: 1
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
+        - 0.5305883
+        _Callbacks: []
         _Names: []
       _Clip: {fileID: 7400000, guid: 892de13d6a6884a4e8b8965bf2fc27af, type: 3}
       _Speed: 1
-      _NormalizedStartTime: 0.3947368
+      _NormalizedStartTime: 0.2547368
     leftToRight: 0
     attackType: 0
   - damage: 1
@@ -143,29 +129,15 @@ MonoBehaviour:
     angle: 75
     feedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
     animation:
-      _FadeDuration: 0.1
+      _FadeDuration: 0
       _Events:
         _NormalizedTimes:
-        - NaN
-        _Callbacks:
-        - m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 6622569001744293905}
-              m_TargetAssemblyTypeName: VHS.WeaponMelee, Assembly-CSharp
-              m_MethodName: OnAttackEnd
-              m_Mode: 1
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
+        - 0.33
+        _Callbacks: []
         _Names: []
       _Clip: {fileID: 7400000, guid: 35a7fdd9f21767d43b469fbea5ea7f42, type: 3}
       _Speed: 1
-      _NormalizedStartTime: 0.4285714
+      _NormalizedStartTime: 0.1
     leftToRight: 1
     attackType: 0
   - damage: 1
@@ -174,29 +146,15 @@ MonoBehaviour:
     angle: 75
     feedback: {fileID: 5405473040090379584, guid: 183a5da197e68d14582f420d9de5caca, type: 3}
     animation:
-      _FadeDuration: 0.1
+      _FadeDuration: 0
       _Events:
         _NormalizedTimes:
-        - NaN
-        _Callbacks:
-        - m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 6622569001744293905}
-              m_TargetAssemblyTypeName: VHS.WeaponMelee, Assembly-CSharp
-              m_MethodName: OnAttackEnd
-              m_Mode: 1
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
+        - 0.37
+        _Callbacks: []
         _Names: []
-      _Clip: {fileID: 7400000, guid: 892de13d6a6884a4e8b8965bf2fc27af, type: 3}
+      _Clip: {fileID: 7400000, guid: a937c1643505d8141b3d9a575562095b, type: 3}
       _Speed: 1
-      _NormalizedStartTime: 0.3947368
+      _NormalizedStartTime: 0.26
     leftToRight: 0
     attackType: 0
   _heavyAttack:
