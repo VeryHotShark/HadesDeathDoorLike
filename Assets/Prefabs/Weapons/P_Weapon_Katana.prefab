@@ -106,7 +106,7 @@ MonoBehaviour:
   _minHoldDuration: 0.3
   _slashParticle: {fileID: 1138988324212569894, guid: 87daefe2e6033d3479b8ca1f462e520d, type: 3}
   _recoveryTimer:
-    _duration: 0.3
+    _duration: 0.2
     _looping: 0
   _lightAttacks:
   - damage: 1
@@ -233,6 +233,16 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 26ed62de90b9db74aa52cf8dd29d7424, type: 3}
     _Speed: 1.5
     _NormalizedStartTime: 0.16363637
+  _mirroredPerfectHeavy:
+    _FadeDuration: 0.05
+    _Events:
+      _NormalizedTimes:
+      - 0.66
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: -2231932316984721795, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
+    _Speed: 1.5
+    _NormalizedStartTime: 0.17142865
   _mirroredHeavyWindup:
     _FadeDuration: 0.1
     _Events:

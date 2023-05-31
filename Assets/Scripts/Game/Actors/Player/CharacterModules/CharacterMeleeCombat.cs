@@ -68,10 +68,11 @@ namespace VHS {
             if(IsDuringLastAttack)
                 return;
 
-            if (inputs.Melee.Held && !IsDuringAttack) {
+            if (inputs.Melee.Held && (!IsDuringAttack || IsDuringRecovery)) {
                 if (!_heavyStarted) {
                     _heavyStarted = true;
                     CurrentWeapon.OnChargeStart();
+                    CurrentWeapon.RecoveryTimer.Reset();
                 }
                     
                 CurrentWeapon.AttackHeld();
