@@ -26,8 +26,7 @@ namespace VHS {
                     if (parent) {
                         Transform poolableTransform = poolableInstance.gameObject.transform;
                         poolableTransform.SetParent(parent);
-                        poolableTransform.localPosition = position;
-                        poolableTransform.localRotation = rotation;
+                        poolableTransform.gameObject.transform.SetLocalPositionAndRotation(position,rotation);
                     }
                     else
                         poolableInstance.gameObject.transform.SetPositionAndRotation(position,rotation);
@@ -38,8 +37,13 @@ namespace VHS {
                 }
             }
 
-            T spawnedInstance = Object.Instantiate(poolablePrefab.gameObject, position, rotation, parent).GetComponent<T>();
+            T spawnedInstance = Object.Instantiate(poolablePrefab.gameObject, parent).GetComponent<T>();
             _poolPrefabs.Add(spawnedInstance, poolablePrefab.gameObject);
+
+            if (parent) 
+                spawnedInstance.gameObject.transform.SetLocalPositionAndRotation(position,rotation);
+            else
+                spawnedInstance.gameObject.transform.SetPositionAndRotation(position,rotation);
 
             spawnedInstance.OnSpawnFromPool();
             return spawnedInstance;
