@@ -40817,6 +40817,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3532176832971602161, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
+      propertyPath: _recoveryTimer._duration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3532176833701519980, guid: 1d06fa0276f3eeb46bebf6d523ef6e85, type: 3}
       propertyPath: m_Name
       value: Player

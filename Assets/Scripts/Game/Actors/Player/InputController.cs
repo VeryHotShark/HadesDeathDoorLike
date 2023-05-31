@@ -108,7 +108,7 @@ namespace VHS {
                 _camera.SetCursorPos(_mousePos);
         }
 
-        private KeyInput SetupKeyInput(InputAction inputAction) {
+        private KeyInput UpdateKeyInput(InputAction inputAction) {
             // Consider Caching
             KeyInput keyInput = new KeyInput() { 
                 Held = inputAction.IsPressed(),
@@ -126,13 +126,13 @@ namespace VHS {
 
             _characterInputs = new CharacterInputs();
 
-            _characterInputs.Roll = SetupKeyInput(_input.CharacterControls.Roll);
-            _characterInputs.Melee = SetupKeyInput(_input.CharacterControls.Melee);
-            _characterInputs.SkillPrimary = SetupKeyInput(_input.CharacterControls.SkillPrimary);
-            _characterInputs.SkillSecondary = SetupKeyInput(_input.CharacterControls.SkillSecondary);
-            _characterInputs.Range = SetupKeyInput(_input.CharacterControls.Range);
-            _characterInputs.Ultimate = SetupKeyInput(_input.CharacterControls.Ultimate);
-            _characterInputs.Interact = SetupKeyInput(_input.CharacterControls.Interact);
+            _characterInputs.Roll = UpdateKeyInput(_input.CharacterControls.Roll);
+            _characterInputs.Melee = UpdateKeyInput(_input.CharacterControls.Melee);
+            _characterInputs.SkillPrimary = UpdateKeyInput(_input.CharacterControls.SkillPrimary);
+            _characterInputs.SkillSecondary = UpdateKeyInput(_input.CharacterControls.SkillSecondary);
+            _characterInputs.Range = UpdateKeyInput(_input.CharacterControls.Range);
+            _characterInputs.Ultimate = UpdateKeyInput(_input.CharacterControls.Ultimate);
+            _characterInputs.Interact = UpdateKeyInput(_input.CharacterControls.Interact);
             
             _characterInputs.MoveAxis = _moveInput;
             _characterInputs.LookAxis = _lookInput;

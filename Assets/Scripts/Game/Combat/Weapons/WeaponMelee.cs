@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Animancer;
 using Animancer.Examples.Events;
 using MEC;
+using Sirenix.OdinInspector;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,6 +16,10 @@ namespace VHS {
         [Header("VFX")]
         [SerializeField] private SlashController _slashParticle;
         
+        [TitleGroup("Input")]
+        [SerializeField] protected Timer _recoveryTimer = new(0.5f);
+        
+        
         [Header("Attacks")]
         [SerializeField] protected List<AttackInfo> _lightAttacks;
         [SerializeField] protected AttackInfo _heavyAttack;
@@ -25,13 +30,38 @@ namespace VHS {
         private bool _coroutineStarted; // TODO temporary because MEC Free doesnt have IsRunning Field
         private SlashController _slashInstance;
         protected AttackInfo _currentAttack;
-        
-        public bool IsDuringAttack => _currentAttack != null && _currentAttack.animation.State.IsActive;
-        public int LastLightAttackIndex => _lightAttacks.Count;
 
-        public override void OnWeaponStart() {
+        public Timer RecoveryTimer => _recoveryTimer;
+        public bool IsDuringRecovery => _recoveryTimer.IsActive;
+        public bool IsDuringAttack => _currentAttack != null && _currentAttack.animation.State.IsPlayingAndNotEnding();
+        public int LastLightAttackIndex => _lightAttacks.Count;
+        
+        public override void Init(Player player) {
+            base.Init(player);
+
+            foreach (AttackInfo attack in _lightAttacks) {
+                attack.attackType = PlayerAttackType.LIGHT;
+                attack.animation.Events.OnEnd = OnAttackEnd;
+            }
+
+            _heavyAttack.attackType = PlayerAttackType.HEAVY;
+            _dashAttack.attackType = PlayerAttackType.DASH_ATTACK;
+            _perfectHeavyAttack.attackType = PlayerAttackType.PERFECT_HEAVY;
+            
+            // TODO Fix this so OnEnd will not be shared per animation, rather state
+            _dashAttack.animation.Events.OnEnd = OnAttackEnd;
+            _heavyAttack.animation.Events.OnEnd = OnAttackEnd;
+            _perfectHeavyAttack.animation.Events.OnEnd = OnAttackEnd;
+        }
+        
+        protected void OnAttackEnd() {
+            EventUtilities.PauseAtCurrentEvent();
+            Character.MeleeCombat.OnAttackEnd();
+        }
+
+        public override void OnChargeStart() {
             if(!_coroutineStarted)
-                base.OnWeaponStart();
+                base.OnChargeStart();
 
             _coroutineStarted = true;
         }
@@ -46,23 +76,12 @@ namespace VHS {
             _coroutineStarted = false;
             _player.OnPerfectMeleeAttackEnd();
         }
-        
-        public override void Init(Player player) {
-            base.Init(player);
-
-            foreach (AttackInfo attack in _lightAttacks) 
-                attack.attackType = PlayerAttackType.LIGHT;
-
-            _heavyAttack.attackType = PlayerAttackType.HEAVY;
-            _dashAttack.attackType = PlayerAttackType.DASH_ATTACK;
-            _perfectHeavyAttack.attackType = PlayerAttackType.PERFECT_HEAVY;
-        }
-        
-        public void OnAttackEnd() => Character.MeleeCombat.OnAttackEnd();
 
         public virtual void DashAttack() => SpawnAttack(_dashAttack);
 
-        public virtual void LightAttack(int index) => SpawnAttack(_lightAttacks[index]);
+        public virtual void LightAttack(int index) {
+            SpawnAttack(_lightAttacks[index]);
+        }
 
         protected override void OnPerfectHoldAttack() {
             SpawnAttack(_perfectHeavyAttack);
@@ -78,8 +97,10 @@ namespace VHS {
 
         protected void SpawnAttack(AttackInfo attackInfo) {
             OnPerfectEnd();
+            _recoveryTimer.Reset();
             _currentAttack = attackInfo;
             Attack(_currentAttack);
+            
             Vector3 slashSize = Vector3.one * attackInfo.radius;
             slashSize.x *= 0.75f;
             slashSize.y *= 0.75f;
@@ -90,8 +111,10 @@ namespace VHS {
             Motor.SetRotation(Quaternion.LookRotation(Character.LastNonZeroLookInput));
             Character.LastNonZeroMoveInput = Character.LastNonZeroLookInput;
             Character.AddVelocity(attackInfo.pushForce * Character.LastNonZeroLookInput);
-            var state = Animancer.Play(attackInfo.animation);
-            state.Events.Add(state.NormalizedEndTime,EventUtilities.PauseAtCurrentEvent);
+            
+            AnimancerState state = Animancer.Play(attackInfo.animation);
+            // state.Events.SetShouldNotModifyReason(null);
+            // state.Events.OnEnd = OnAttackEnd;
 
             Timing.CallDelayed(HIT_DELAY, () => CheckForHittables(attackInfo), gameObject);
         }

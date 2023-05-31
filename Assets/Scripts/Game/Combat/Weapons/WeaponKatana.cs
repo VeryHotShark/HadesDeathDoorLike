@@ -8,12 +8,13 @@ namespace VHS {
 
         private bool _flipHeavy = false;
         private AttackInfo _mirroredHeavyAttack;
-
+        
         public override void Init(Player player) {
             base.Init(player);
             _mirroredHeavyAttack = AttackInfo.Copy(_heavyAttack);
             _mirroredHeavyAttack.leftToRight = false;
             _mirroredHeavyAttack.animation = _mirroredHeavy;
+            _mirroredHeavyAttack.animation.Events.OnEnd = OnAttackEnd;
         }
 
         protected override void OnAttackHeld() => Animancer.Play(_flipHeavy ? _mirroredHeavyWindup : _heavyAttackWindupClip);

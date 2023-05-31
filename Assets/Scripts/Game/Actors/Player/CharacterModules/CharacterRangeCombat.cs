@@ -9,8 +9,8 @@ namespace VHS {
         public bool IsOnCooldown => Parent.WeaponController.WeaponRange.IsOnCooldown;
         public int MaxAmmoCount => Parent.WeaponController.WeaponRange.MaxAmmoCount;
 
-        public override void OnEnter() => CurrentWeapon.OnWeaponStart();
-        public override void OnExit() => CurrentWeapon.OnWeaponStop();
+        public override void OnEnter() => CurrentWeapon.OnChargeStart();
+        public override void OnExit() => CurrentWeapon.OnChargeStop();
 
         public override void SetInputs(CharacterInputs inputs) {
             if (inputs.Range.Held) {

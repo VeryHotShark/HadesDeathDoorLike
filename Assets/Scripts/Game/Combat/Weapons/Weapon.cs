@@ -52,12 +52,13 @@ namespace VHS {
 
         public virtual void Init(Player player) => _player = player;
         
-        public virtual void OnWeaponStart() {
+        public virtual void OnChargeStart() {
             _heldInputDuration = 0.0f;
             _perfectWindowCoroutine = Timing.CallDelayed(_perfectWindow.x, OnPerfectStart);
         }
 
-        public virtual void OnWeaponStop() => OnPerfectEnd();
+        // TODO Check if this is neccesary or should merge with PerfectEnd
+        public virtual void OnChargeStop() => OnPerfectEnd();
 
         public void AttackHeld() {
             _heldInputDuration += Time.deltaTime;

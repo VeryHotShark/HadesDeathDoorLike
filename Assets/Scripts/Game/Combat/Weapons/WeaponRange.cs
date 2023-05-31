@@ -21,8 +21,8 @@ namespace VHS {
         public bool HasAmmo => _currentAmmo > 0;
         public int MaxAmmoCount => _maxAmmoCount;
 
-        public override void OnWeaponStop() {
-            base.OnWeaponStop();
+        public override void OnChargeStop() {
+            base.OnChargeStop();
             UnpauseGraph();
         }
 

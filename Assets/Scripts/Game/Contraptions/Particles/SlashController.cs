@@ -16,8 +16,6 @@ namespace VHS {
             _propertyBlock = new MaterialPropertyBlock();
             _slashRenderer = _particle.GetComponentInChildren<Renderer>();
             _slashRenderer.GetPropertyBlock(_propertyBlock);
-            
-            
         }
         
         public void SetSlashSettings( float angle, Vector3 size,bool leftToRight = true, float innerRadius = 0.5f, float lifetime = 0.3f) {

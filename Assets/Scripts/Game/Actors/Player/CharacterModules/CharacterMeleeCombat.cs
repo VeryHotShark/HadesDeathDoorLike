@@ -26,86 +26,79 @@ namespace VHS {
         [SerializeField] private GameEvent _lightDashHitEvent;
 
         private int _attackIndex = 0;
+        private bool _heavyStarted;
         private bool _hasQueuedInput;
-        private bool _heavyAttackHeld;
         private bool _enteredFromDash;
 
         public bool IsOnCooldown => CurrentWeapon.IsOnCooldown;
         public bool IsDuringAttack => CurrentWeapon.IsDuringAttack;
+        public bool IsDuringRecovery => CurrentWeapon.IsDuringRecovery;
         public bool IsDuringLastAttack => _attackIndex >= CurrentWeapon.LastLightAttackIndex;
         
         private WeaponMelee CurrentWeapon => Parent.WeaponController.MeleeWeapon;
 
         public override void OnEnter() {
             ResetAttackVariables();
-            CurrentWeapon.OnWeaponStart();
             _enteredFromDash = Controller.LastState == Controller.RollModule; 
         }
 
         public override void OnExit() {
             ResetAttackVariables();
-            CurrentWeapon.OnWeaponStop();
+            CurrentWeapon.OnChargeStop();
+            CurrentWeapon.RecoveryTimer.Reset();
         }
 
         private void ResetAttackVariables() {
             _attackIndex = 0;
-            _heavyAttackHeld = false;
+            _heavyStarted = false;
             _hasQueuedInput = false;
         }
 
         public void OnAttackEnd() {
-            Debug.Log("DUPA");
-            if (IsDuringLastAttack)
+            if (IsDuringLastAttack) 
                 CurrentWeapon.StartCooldown();
-
-            if (!_hasQueuedInput && !_heavyAttackHeld)
-                Controller.TransitionToDefaultState();
-            else 
-                TryResetWeaponHoldTimer();
+            
+            CurrentWeapon.RecoveryTimer.Start();
+            CurrentWeapon.RecoveryTimer.OnEnd = OnRecoveryTimerEnd;
         }
 
-        private void TryResetWeaponHoldTimer() {
-            if (_heavyAttackHeld && !IsDuringLastAttack)
-                CurrentWeapon.OnWeaponStart();
-        }
+        private void OnRecoveryTimerEnd() => Controller.TransitionToDefaultState();
         
         public override void SetInputs(CharacterInputs inputs) {
             if(IsDuringLastAttack)
                 return;
-            
-            /*
-            _heavyAttackHeld = inputs.Melee.Held;
 
-            if (_heavyAttackHeld) {
-                Parent.OnHeavyAttackHeld();
+            if (inputs.Melee.Held && !IsDuringAttack) {
+                if (!_heavyStarted) {
+                    _heavyStarted = true;
+                    CurrentWeapon.OnChargeStart();
+                }
+                    
                 CurrentWeapon.AttackHeld();
+                Parent.OnHeavyAttackHeld();
             }
-            */
 
             if (inputs.Melee.Released) {
                 if (!IsDuringAttack) {
-                    /*
-                    if (CurrentWeapon.MinInputReached) {
-                        HeavyAttack();
-                    }
-                    else {
+                    if (!CurrentWeapon.MinInputReached) {
                         if (_enteredFromDash)
                             DashAttack();
                         else
                             LightAttack();
                     }
-                    */
-                    
-                    LightAttack();
+                    else 
+                        HeavyAttack();
                 }
                 else
                     _hasQueuedInput = true;
 
-                // _enteredFromDash = false; // TODO fix to DuringRoll;
+                _heavyStarted = false;
+                _enteredFromDash = false; // TODO fix to DuringRoll;
+                CurrentWeapon.OnChargeStop();
             }
 
-            // Handle Pre Input Buffering
-            if (!IsDuringAttack && _hasQueuedInput)
+            // Handle Input Buffering
+            if (_hasQueuedInput && !IsDuringAttack)
                 LightAttack();
         }
         
