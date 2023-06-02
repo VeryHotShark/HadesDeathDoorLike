@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Animancer;
+using Animancer.Examples.Events;
 using MEC;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -20,29 +21,13 @@ namespace VHS {
 
         public bool HasAmmo => _currentAmmo > 0;
         public int MaxAmmoCount => _maxAmmoCount;
-
-        public override void OnChargeStop() {
-            base.OnChargeStop();
-            UnpauseGraph();
-        }
+        
 
         public override void Init(Player player) {
             base.Init(player);
             _currentAmmo = _maxAmmoCount;
+            _shootWindupClip.Events.OnEnd = EventUtilities.PauseAtCurrentEvent;
         }
-
-        protected override void Enable() {
-            base.Enable();
-            _shootWindupClip.Events.OnEnd += PauseGraph;
-        }
-
-        protected override void Disable() {
-            base.Disable();
-            _shootWindupClip.Events.OnEnd -= PauseGraph;
-        }
-
-        private void PauseGraph() => AnimationController.PauseGraph();
-        private void UnpauseGraph() => AnimationController.UnpauseGraph();
 
         protected override void OnPerfectStart() {
             base.OnPerfectStart();

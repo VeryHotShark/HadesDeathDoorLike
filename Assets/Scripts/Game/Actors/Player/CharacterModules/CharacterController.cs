@@ -72,9 +72,9 @@ namespace VHS {
                     _stateMachine.SetState(_skillCombatModule);
                 else if (inputs.Roll.Pressed)
                     _stateMachine.SetState(_rollModule);
-                else if (inputs.Range.Pressed)
+                else if (inputs.Range.Held)
                     _stateMachine.SetState(_rangeCombatModule);
-                else if (inputs.Melee.Pressed)
+                else if (inputs.Melee.Held)
                     _stateMachine.SetState(_meleeCombatModule);
             }
 
