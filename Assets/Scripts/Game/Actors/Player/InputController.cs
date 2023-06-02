@@ -85,6 +85,9 @@ namespace VHS {
         
         private void InputActionChangeCallback(object inputAction, InputActionChange change)
         {
+            if(!_character)
+                return;
+            
             if (change == InputActionChange.ActionPerformed)
             {
                 InputAction receivedInputAction = (InputAction) inputAction;
