@@ -4,9 +4,7 @@ using Animancer;
 using Animancer.Examples.Events;
 using MEC;
 using Sirenix.OdinInspector;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace VHS {
     public abstract  class WeaponMelee : Weapon
@@ -24,11 +22,13 @@ namespace VHS {
         [SerializeField] protected List<AttackInfo> _lightAttacks;
         [SerializeField] protected AttackInfo _heavyAttack;
         [SerializeField] protected AttackInfo _perfectHeavyAttack;
-        [FormerlySerializedAs("_dashLightAttack")] [SerializeField] protected AttackInfo _dashAttack;
+        [SerializeField] protected AttackInfo _dashAttack;
         [SerializeField] protected ClipTransition _heavyAttackWindupClip;
 
         private bool _coroutineStarted; // TODO temporary because MEC Free doesnt have IsRunning Field
         private SlashController _slashInstance;
+
+        protected AnimancerEvent.Sequence _events;
         protected AttackInfo _currentAttack;
 
         public Timer RecoveryTimer => _recoveryTimer;
@@ -39,19 +39,18 @@ namespace VHS {
         public override void Init(Player player) {
             base.Init(player);
 
-            foreach (AttackInfo attack in _lightAttacks) {
+            foreach (AttackInfo attack in _lightAttacks) 
                 attack.attackType = PlayerAttackType.LIGHT;
-                attack.animation.Events.OnEnd = OnAttackEnd;
-            }
 
             _heavyAttack.attackType = PlayerAttackType.HEAVY;
             _dashAttack.attackType = PlayerAttackType.DASH_ATTACK;
             _perfectHeavyAttack.attackType = PlayerAttackType.PERFECT_HEAVY;
             
-            // TODO Fix this so OnEnd will not be shared per animation, rather state
-            _dashAttack.animation.Events.OnEnd = OnAttackEnd;
-            _heavyAttack.animation.Events.OnEnd = OnAttackEnd;
-            _perfectHeavyAttack.animation.Events.OnEnd = OnAttackEnd;
+            // We do this so the same animation wont share the events
+            // we assign them on play
+            _events = new AnimancerEvent.Sequence {
+                OnEnd = OnAttackEnd
+            };
         }
         
         protected void OnAttackEnd() {
@@ -113,8 +112,8 @@ namespace VHS {
             Character.AddVelocity(attackInfo.pushForce * Character.LastNonZeroLookInput);
             
             AnimancerState state = Animancer.Play(attackInfo.animation);
-            // state.Events.SetShouldNotModifyReason(null);
-            // state.Events.OnEnd = OnAttackEnd;
+            _events.NormalizedEndTime = state.NormalizedEndTime;
+            state.Events = _events;
 
             Timing.CallDelayed(HIT_DELAY, () => CheckForHittables(attackInfo), gameObject);
         }

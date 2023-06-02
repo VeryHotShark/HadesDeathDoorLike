@@ -16,18 +16,16 @@ namespace VHS {
             _mirroredHeavyAttack = AttackInfo.Copy(_heavyAttack);
             _mirroredHeavyAttack.leftToRight = false;
             _mirroredHeavyAttack.animation = _mirroredHeavy;
-            _mirroredHeavyAttack.animation.Events.OnEnd = OnAttackEnd;
             
             _mirroredPerfectHeavyAttack = AttackInfo.Copy(_perfectHeavyAttack);
             _mirroredPerfectHeavyAttack.leftToRight = false;
             _mirroredPerfectHeavyAttack.animation = _mirroredPerfectHeavy;
-            _mirroredPerfectHeavyAttack.animation.Events.OnEnd = OnAttackEnd;
         }
 
         protected override void OnAttackHeld() => Animancer.Play(_flipHeavy ? _mirroredHeavyWindup : _heavyAttackWindupClip);
 
         protected override void OnPerfectHoldAttack() {
-            SpawnAttack(_mirroredPerfectHeavyAttack);
+            SpawnAttack(_flipHeavy ? _mirroredPerfectHeavyAttack : _perfectHeavyAttack);
             _player.OnPerfectMeleeAttack();
             _flipHeavy = !_flipHeavy;
         }

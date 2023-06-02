@@ -121,7 +121,7 @@ MonoBehaviour:
         - 0.5305883
         _Callbacks: []
         _Names: []
-      _Clip: {fileID: 7400000, guid: 892de13d6a6884a4e8b8965bf2fc27af, type: 3}
+      _Clip: {fileID: 7400000, guid: e57fc394b88a4904b93ac216f138e34e, type: 3}
       _Speed: 1
       _NormalizedStartTime: 0.2547368
     leftToRight: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
         - 0.33
         _Callbacks: []
         _Names: []
-      _Clip: {fileID: 7400000, guid: 35a7fdd9f21767d43b469fbea5ea7f42, type: 3}
+      _Clip: {fileID: 7400000, guid: 0faafc763f001ca4d95fcc89fcc40111, type: 3}
       _Speed: 1
       _NormalizedStartTime: 0.1
     leftToRight: 1
@@ -155,7 +155,7 @@ MonoBehaviour:
         - 0.37
         _Callbacks: []
         _Names: []
-      _Clip: {fileID: 7400000, guid: a937c1643505d8141b3d9a575562095b, type: 3}
+      _Clip: {fileID: 7400000, guid: f1449fb106a8289428aa593db4bedb1e, type: 3}
       _Speed: 1
       _NormalizedStartTime: 0.26
     leftToRight: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
         - 0.66
         _Callbacks: []
         _Names: []
-      _Clip: {fileID: -2231932316984721795, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
+      _Clip: {fileID: 7400000, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
       _Speed: 1.5
       _NormalizedStartTime: 0.17142865
     leftToRight: 1
@@ -220,35 +220,35 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: -9187572878021351284, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
+    _Clip: {fileID: 7400000, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
     _Speed: -0.4
     _NormalizedStartTime: 0.25714293
   _mirroredHeavy:
     _FadeDuration: 0.05
     _Events:
       _NormalizedTimes:
-      - 0.5
+      - 0.22149977
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 7400000, guid: 26ed62de90b9db74aa52cf8dd29d7424, type: 3}
     _Speed: 1.5
-    _NormalizedStartTime: 0.16363637
+    _NormalizedStartTime: 0.1
   _mirroredPerfectHeavy:
     _FadeDuration: 0.05
     _Events:
       _NormalizedTimes:
-      - 0.66
+      - 0.2214998
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: -2231932316984721795, guid: 7880debb8c11bb24fb791405e0967658, type: 3}
+    _Clip: {fileID: 7400000, guid: 26ed62de90b9db74aa52cf8dd29d7424, type: 3}
     _Speed: 1.5
-    _NormalizedStartTime: 0.17142865
+    _NormalizedStartTime: 0.1
   _mirroredHeavyWindup:
     _FadeDuration: 0.1
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 3206311218405801423, guid: 26ed62de90b9db74aa52cf8dd29d7424, type: 3}
-    _Speed: -0.4
-    _NormalizedStartTime: 0.12449275
+    _Clip: {fileID: 7400000, guid: 26ed62de90b9db74aa52cf8dd29d7424, type: 3}
+    _Speed: -0.2
+    _NormalizedStartTime: 0.11
