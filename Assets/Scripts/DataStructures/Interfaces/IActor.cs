@@ -16,6 +16,7 @@ namespace VHS {
         Collider Collider { get; }
         
         float Radius { get; }
+        float Height { get; }
         bool IsAlive { get; }
     }
 }

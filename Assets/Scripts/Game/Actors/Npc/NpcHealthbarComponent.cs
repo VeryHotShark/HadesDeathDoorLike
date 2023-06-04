@@ -16,9 +16,8 @@ namespace VHS {
         private void OnHealthChanged(HitPoints hitPoints) {
             if (_healthUI == null) {
                 _healthUI = Instantiate(_healthUIPrefab);
-                _healthUI.transform.localScale = Vector3.one * 0.005f;
-                _healthUI.transform.rotation = Quaternion.Euler(60.0f,45.0f,0.0f);
-                _healthUI.Init(hitPoints.Max, Parent.transform, Vector3.up * 3.0f);
+                Parent.UIComponent.Attach(_healthUI.transform);
+                _healthUI.Init(hitPoints.Max);
             }
             
             _healthUI.OnHitPointsChanged(hitPoints);

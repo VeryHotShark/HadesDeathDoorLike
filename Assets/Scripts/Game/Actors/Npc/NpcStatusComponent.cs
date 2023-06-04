@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace VHS {
     public class NpcStatusComponent : NpcComponent, IUpdateListener {
+        
         private List<Status> _statuses = new List<Status>();
         private Dictionary<Type, Status> _statusesDict = new Dictionary<Type, Status>();
 
@@ -30,13 +31,15 @@ namespace VHS {
             }
             else
                 status.OnReapplied();
-            
+
+            Parent.OnStatusApplied(status);
         }
 
         public void RemoveStatus(Status status) {
             _statusesDict.Remove(status.GetType());
             _statuses.Remove(status);
             status.OnRemoved();
+            Parent.OnStatusRemoved(status);
         }
 
         public bool ContainsStatus(Status status) => _statusesDict.ContainsKey(status.GetType());

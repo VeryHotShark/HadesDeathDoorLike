@@ -10,23 +10,13 @@ namespace VHS {
         [SerializeField] private UIFillPoint healthFillPointPrefab;
         
         private CanvasGroup _canvasGroup;
-        private PositionConstraint _positionConstraint;
         private List<UIFillPoint> _healthPoints = new();
 
         private void Awake() {
             _canvasGroup = GetComponent<CanvasGroup>();
-            _positionConstraint = GetComponent<PositionConstraint>();
         }
 
-        public void Init(int maxPoints, Transform attachTransform, Vector3 offset) {
-            ConstraintSource constraintSource = new ConstraintSource {
-                weight = 1.0f,
-                sourceTransform = attachTransform
-            };
-
-            _positionConstraint.AddSource(constraintSource);
-            _positionConstraint.translationOffset = offset;
-            _positionConstraint.constraintActive = true;
+        public void Init(int maxPoints) {
             SpawnHealthPoints(maxPoints);
             _canvasGroup.alpha = 0.0f;
         }

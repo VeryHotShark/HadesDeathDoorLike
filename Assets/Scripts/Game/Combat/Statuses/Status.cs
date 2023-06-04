@@ -7,6 +7,7 @@ using UnityEngine.UI;
 namespace VHS {
     [Serializable]
     public abstract class Status {
+        [SerializeField] protected Sprite _icon;
         [SerializeField] protected float _interval = 0.0f;
         [SerializeField] protected float _duration = 0.0f;
 
@@ -15,6 +16,9 @@ namespace VHS {
         
         protected Npc _npc;
         protected NpcStatusComponent _statusComponent;
+
+        public Sprite Icon => _icon;
+        public float DurationNormalized => Mathf.Clamp01(_durationTimer / _duration) ;
 
         public void Init(Npc npc, NpcStatusComponent statusComponent) {
             _npc = npc;

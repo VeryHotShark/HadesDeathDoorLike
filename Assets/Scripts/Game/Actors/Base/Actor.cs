@@ -10,6 +10,9 @@ namespace VHS {
         public Action<HitData> OnHit = delegate {  };
         public Action<HitPoints> OnHealthChanged = delegate { };
         
+        public Action<Status> OnStatusApplied = delegate {  };
+        public Action<Status> OnStatusRemoved = delegate {  };
+        
         public event Action<Actor> OnDeath = delegate {  };
 
         [SerializeField] private GameEvent _deathEvent;
@@ -20,6 +23,7 @@ namespace VHS {
         protected DeathProcessorComponent _deathProcessorComponent;
 
         public float Radius => _capsuleCollider.radius;
+        public float Height => _capsuleCollider.height;
         public Collider Collider => _capsuleCollider;
         public GameObject gameObject => ((Component)this).gameObject;
 

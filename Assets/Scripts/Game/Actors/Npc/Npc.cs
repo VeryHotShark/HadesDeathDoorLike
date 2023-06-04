@@ -21,6 +21,7 @@ namespace VHS {
         private IActor _target;
         private AIAgent _aiAgent;
         private Blackboard _blackboard;
+        private NpcUIComponent _uiComponent;
         private NpcPushComponent _pushComponent;
         private NpcStatusComponent _statusComponent;
         private NpcStaggerComponent _staggerComponent;
@@ -45,12 +46,14 @@ namespace VHS {
         public EnemyID ID => id;
         public EnemyModel Model => model;
 
+        public NpcUIComponent UIComponent => _uiComponent;
         public NpcPushComponent PushComponent => _pushComponent;
 
         protected override void GetComponents() {
             base.GetComponents();
             _aiAgent = GetComponent<AIAgent>();
             _blackboard = GetComponent<Blackboard>();
+            _uiComponent = GetComponent<NpcUIComponent>();
             _pushComponent = GetComponent<NpcPushComponent>();
             _statusComponent = GetComponent<NpcStatusComponent>();
             _staggerComponent = GetComponent<NpcStaggerComponent>();

@@ -20,5 +20,6 @@ MonoBehaviour:
     - rid: 2617312103706132481
       type: {class: StatusIce, ns: VHS, asm: Assembly-CSharp}
       data:
+        _icon: {fileID: 21300000, guid: a960ec5e84e7c4baa96a46c3ffc5f8ca, type: 3}
         _interval: 0
         _duration: 3
